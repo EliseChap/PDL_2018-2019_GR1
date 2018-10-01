@@ -39,18 +39,18 @@ public class App
     	
     }
     
+    /* Convertir Url Entrée en URL WikiCode
+     * 
+     * 1) Récupération du titre de l'article
+     * 2) Concaténation sous la forme edit 
+     * 
+     */    
+    
     public static void ConvertirAdresseWikiCode(String url) {
-        // String to be scanned to find the pattern.
         String pattern = ".*wiki/(.*)";
-        // Create a Pattern object
         Pattern r = Pattern.compile(pattern);
-        // Now create matcher object.
         Matcher m = r.matcher(url);
         if (m.find( )) {
-           //System.out.println("Found value: " + m.group(0) );
-           //System.out.println("Found value: " + m.group(1) );
-           //System.out.println("Found value: " + m.group(2) );
-           //System.out.println("Found value: " + m.group(3) );
         String d = "https://fr.wikipedia.org/w/index.php?title="; 
         String d1 = "&action=edit";
         String d2 = d+m.group(1)+d1;
@@ -61,6 +61,10 @@ public class App
         }
     }
    
+    /**
+     * ouverture du fichier adresse.txt
+     * lire toutes les lignes (url)
+     */
     public static void Extraction() {
     	try{
     		InputStream flux=new FileInputStream("adresse.txt"); 
@@ -78,6 +82,7 @@ public class App
     		}
     }
     /*
+     * Param : Url
      * Précondiction = True if adresse Wiki faux sinon
      *
      */
@@ -89,6 +94,9 @@ public class App
     	return url.contains(URLValide);
     }
     
+    /*
+     * récupère le html
+     */
     public static void BaliseTableau(String txtHtml) {
     	Pattern p = Pattern.compile(".*<tr(.*)</tr>.*");
     	Matcher match = p.matcher(txtHtml);
@@ -96,7 +104,10 @@ public class App
             System.out.println(match.group(1));
 
     }
-       
+     
+    /*
+     * récupère le wikicode
+     */
     public static void ExtraireWikiCode(String text) {
     	System.out.println("bien");
     	   // String to be scanned to find the pattern.
@@ -111,9 +122,11 @@ public class App
          else {
         	 System.out.println("nomatch");
          }
-
-    	   
     } 
+    
+    /*
+     * lecture du site internet affiche de lire le html
+     */
     public static String getTextFile(String _url) {
         BufferedReader reader = null;
         try {

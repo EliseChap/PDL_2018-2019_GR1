@@ -1,17 +1,5 @@
 package PDL_2018_2019.Groupe1;
 
-/**
- * Hello world!
- *
- */
-/*public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello Worl" );
-    }
-}*/
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,6 +15,23 @@ import java.util.regex.Pattern;
 
 import javax.swing.text.BadLocationException;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+/**
+ * Hello world!
+ *
+ */
+/*public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello Worl" );
+    }
+}*/
+
 
 
 /**
@@ -35,12 +40,12 @@ import javax.swing.text.BadLocationException;
  */
 public class App 
 {
-    public static void main( String[] args ) throws FileNotFoundException
+    public static void main( String[] args ) throws IOException
     {
-       Extraction();
+       //Extraction();
     	//ConvertirAdresseWikiCode("https://en.wikipedia.org/wiki/Comparison_of_Canon_EOS_digital_cameras");
     	//exporterCSV("e");
-    	
+    	testJsoup();
     }
     
     
@@ -135,12 +140,11 @@ public class App
             
                 //sb.append("\n");
             }
-            System.out.println("bien");;
-            System.out.println(sb.toString());
-           //BaliseTableau(sb.toString());
+
+           BaliseTableau(sb.toString());
            // ExtraireWikiCode(sb.toString());
             
-            exporterCSV(sb.toString());
+
             return sb.toString();
             
         } catch (IOException ex) {
@@ -159,12 +163,19 @@ public class App
     /*
      * récupère le html
      */
-    public static void BaliseTableau(String txtHtml) {
-    	Pattern p = Pattern.compile(".*<tr(.*)</tr>.*");
+    public static void BaliseTableau(String txtHtml) throws FileNotFoundException {
+    	Pattern p = Pattern.compile(".*<table class=\"wikitable.*<tbody><tr><th>(.*)</table>.*");
     	Matcher match = p.matcher(txtHtml);
-    	if(match.matches())
-            System.out.println(match.group(1));
-
+    	if(match.matches()) {
+           String textComplet=match.group(1);
+           textComplet=textComplet.replace("</th><th>",";");
+           textComplet=textComplet.replace("<p>"," ");
+           textComplet=textComplet.replace("</p>"," ");
+           textComplet=textComplet.replace("</th></tr><tr><td>","\n");
+           textComplet=textComplet.replace("<a href=\"/wiki/Canon_EOS-1Ds\" title=\"Canon EOS-1Ds\">","");
+           
+           System.out.println(textComplet);
+        exporterCSV(match.group(1));}
     }
     
     /*
@@ -186,6 +197,34 @@ public class App
     	
     }
 
+    public static void testJsoup() throws IOException {
+    	Document doc = Jsoup.connect("https://en.wikipedia.org/wiki/Comparison_of_Canon_EOS_digital_cameras").get();
+    	    	
+    	Element table =  doc.select("table.wikitable").get(0);
+    	
+    	Elements rows = table.getElementsByTag("tr");
+    	for (int i = 1; i < rows.size(); i++) { //first row is the col names so skip it.
+    	    Element row = rows.get(i);
+    	    Elements cols = row.select("td");
+    	    cols.select("span").remove();
+
+    	    String d = cols.toString();
+    	    
+    	    d=d.replace("<a href=\"/wiki/Canon_EOS_M100\" title=\"Canon EOS M100\">", "");
+    	    
+    	    d=d.replace("<td>", "");
+    	    d=d.replace("</td>", "");
+    	    
+    	    d=d.replace("<p>", "");
+    	    d=d.replace("</p>", "");
+    	        	    
+    	    d=d.replace("</a>", "");
+    	    
+    	    System.out.println(d);
+    	  
+    	}
+    }
+    
 } 
     
 

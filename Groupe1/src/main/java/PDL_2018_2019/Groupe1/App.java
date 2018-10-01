@@ -35,7 +35,11 @@ import org.jsoup.select.Elements;
 
 
 /**
+<<<<<<< HEAD
  * Hello world! test commit
+=======
+ * Hello world! testsophie
+>>>>>>> branch 'master' of https://github.com/SulliDai/PDL_2018-2019_GR1.git
  *
  */
 public class App 

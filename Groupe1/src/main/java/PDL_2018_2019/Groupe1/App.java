@@ -197,7 +197,7 @@ public class App
     	
     }
 
-    public static void testSophie423()
+    public static void testSophie()
     {
     	
     }

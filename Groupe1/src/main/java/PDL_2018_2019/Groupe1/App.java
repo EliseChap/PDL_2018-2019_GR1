@@ -35,7 +35,7 @@ import org.jsoup.select.Elements;
 
 
 /**
- * Hello world! testsophie
+ * Hello world! test commit
  *
  */
 public class App 
@@ -197,6 +197,7 @@ public class App
     	
     }
 
+    
     public static void testJsoup() throws IOException {
     	Document doc = Jsoup.connect("https://en.wikipedia.org/wiki/Comparison_of_Canon_EOS_digital_cameras").get();
     	    	
@@ -209,16 +210,26 @@ public class App
     	    cols.select("span").remove();
 
     	    String d = cols.toString();
-    	    
-    	    d=d.replace("<a href=\"/wiki/Canon_EOS_M100\" title=\"Canon EOS M100\">", "");
-    	    
+        	//Pattern p = Pattern.compile(" <a href=.*\">");
+        	Pattern p = Pattern.compile("( {0,1}<a href=.*\">)");
+        	Matcher match = p.matcher(d);
+      
+        	if(match.find()) {
+        	//	System.out.println("sophie");
+               String textComplet=match.group(0);
+             //d=d.replace(textComplet, "");
+            //  System.out.println(textComplet);
+        	}
+    	    //d=d.replace("<a href=\"/wiki/Canon_EOS_M100\" title=\"Canon EOS M100\">", "");
+        	d=d.replace("<br>", " ");
+        	d=d.replace("</br>", " ");
     	    d=d.replace("<td>", "");
     	    d=d.replace("</td>", "");
     	    
     	    d=d.replace("<p>", "");
     	    d=d.replace("</p>", "");
     	        	    
-    	    d=d.replace("</a>", "");
+    	   d=d.replace("</a>", "");
     	    
     	    System.out.println(d);
     	  

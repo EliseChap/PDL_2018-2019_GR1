@@ -276,7 +276,7 @@ public class App
     	
 		try {
 			Mediawiki wiki = new Mediawiki();
-			wiki.login("Dx002", "cenadu50!");
+			wiki.login("Dx002", "test");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

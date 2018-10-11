@@ -275,8 +275,8 @@ public class App
     
     	
 		try {
-			Mediawiki wiki = new Mediawiki();
-			wiki.login("Dx002", "test");
+		Mediawiki wiki = new Mediawiki("https://fr.wikipedia.org/wiki/Rennes");
+			//wiki.login("Dx002", "test");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

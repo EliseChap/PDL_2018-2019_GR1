@@ -1,4 +1,5 @@
 package PDL_2018_2019.Groupe1;
+import org.apache.log4j.Logger; 
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -47,6 +48,7 @@ import net.sourceforge.jwbf.mediawiki.bots.MediaWikiBot;
  */
 public class App 
 {
+	 Logger Logger = org.apache.log4j.Logger.getLogger (App.class);
     public static void main( String[] args ) throws Throwable
     {
        //Extraction();
@@ -272,7 +274,7 @@ public class App
     
     
     public static void testLibrary()  {
-    
+    	//Mediawiki("https://fr.wikipedia.org/wiki/Discussion_utilisateur:185.76.0.147");
     	
 		try {
 		Mediawiki wiki = new Mediawiki("https://fr.wikipedia.org/wiki/Rennes");

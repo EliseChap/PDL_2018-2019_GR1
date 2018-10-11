@@ -19,6 +19,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.sweble.wikitext.engine.PageTitle;
+import org.sweble.wikitext.parser.parser.LinkTargetException;
+
+import com.bitplan.mediawiki.japi.Mediawiki;
+
+import net.sourceforge.jwbf.core.contentRep.Article;
+import net.sourceforge.jwbf.mediawiki.bots.MediaWikiBot;
 
 /**
  * Hello world! d
@@ -40,12 +47,14 @@ import org.jsoup.select.Elements;
  */
 public class App 
 {
-    public static void main( String[] args ) throws IOException
+    public static void main( String[] args ) throws Throwable
     {
        //Extraction();
     	//ConvertirAdresseWikiCode("https://en.wikipedia.org/wiki/Comparison_of_Canon_EOS_digital_cameras");
     	//exporterCSV("e");
-    	testJsoup();
+    	//testJsoup();
+    	testLibrary();
+
     }
     
     
@@ -236,6 +245,46 @@ public class App
     	}
     }
     
+ // System.out.println(URLEncoder.encode(getFileContent("d:/1.jpg"), "ISO-8859-1"));
+
+    public static String getFileContent(String filePath) {
+        try {
+            File file = new File(filePath);
+            byte bt[] = new byte[(int)file.length()];
+            FileInputStream fis = new FileInputStream(file);
+            fis.read(bt);
+            fis.close();
+
+            return new String(bt, "ISO-8859-1");
+        }
+        catch(FileNotFoundException e){
+            System.out.print("error 1" + e.getMessage());
+        }
+        catch(IOException e){
+            System.out.print("error 2" + e.getMessage());
+        }
+        catch(Exception e){
+            System.out.print("error 3" + e.getMessage());
+        }
+
+        return "";
+}
+    
+    
+    public static void testLibrary()  {
+    
+    	
+		try {
+			Mediawiki wiki = new Mediawiki();
+			wiki.login("Dx002", "cenadu50!");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+
+  
+    }
 } 
     
 

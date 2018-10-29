@@ -2,6 +2,24 @@ package APPLICATION.src.main.java.pdl_2018.groupeSMKS1;
 
 public class CommandLine implements ICommandLine{
 
+    Char delimit;
+    String cheminCSV;
+    String nomCSV;
+    String cheminEntree;
+    Boolean extraHTML;
+    Boolean extraWiki;
+    String url;
+
+    /**
+     * Constructeur de la classe CommandLine
+     * @param delimit : délimiteur pour le fichier CSV en sortie
+     * @param cheminCSV :
+     *
+     */
+    public CommandLine(){
+        //Constructeur vide, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
+    }
+
     /**
      * Vérification de l'intégrité de la ligne de commande
      *

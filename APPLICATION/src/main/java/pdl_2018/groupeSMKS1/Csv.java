@@ -1,4 +1,4 @@
-package pdl_2018.groupeSMKS1;
+package APPLICATION.src.main.java.pdl_2018.groupeSMKS1;
 
 
 import java.io.File;
@@ -24,6 +24,8 @@ public class Csv implements ICsv{
 	
 	
 	public Csv(char delimit, String cheminCsv, String nomCsv) {
+		
+		Url url = new Url();
 		
 		
 		//Vérification si délimitation est null
@@ -116,7 +118,8 @@ public class Csv implements ICsv{
 					separateurUtilisateur=true;
 				
 				}
-			
+
+	
 				Set cles = separateurAutomatique.keySet();
 				Iterator it = cles.iterator();
 				while (it.hasNext()){

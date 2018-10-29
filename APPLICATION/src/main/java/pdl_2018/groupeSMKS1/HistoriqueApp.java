@@ -1,4 +1,4 @@
-package pdl_2018.groupeSMKS1;
+package APPLICATION.src.main.java.pdl_2018.groupeSMKS1;
 
 import org.apache.log4j.Logger;
 import org.apache.commons.lang.*;

@@ -1,25 +1,22 @@
-import java.util.ArrayList;
+package TESTSJUNIT.test.java.pdl_2018.groupeSMKS1;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import APPLICATION.src.main.java.pdl_2018.groupeSMKS1.Csv;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 
 import junit.framework.TestCase;
-import test2.Csv;
 
 public class TestCsv extends TestCase {
 
-	
-	public TestCsv() {
-		
-		Csv csv = new Csv(';',"","");
-		
-	}
 
-/**
- * Test des paramètres en entrée et création de l'objet CVS
- */
+	/**
+	 * Test des paramètres en entrée et création de l'objet CVS
+	 */
 	@Test
 	public void testObjectCsvStandard() {
 		Csv csv = new Csv(';',"C:/Users/sullivand/Music/Desktop/Nouveau dossier/","WikiMatrix");
@@ -79,7 +76,7 @@ public class TestCsv extends TestCase {
 	
 	
 	/**
-	 * Verification de l'exportation d'un txt vers un cvs
+	 * Verification de l'exportation d'un txt vers un csv
 	 */
 	
 	@Test
@@ -110,16 +107,25 @@ public class TestCsv extends TestCase {
 		Assertions.assertEquals(verification,false);
 				
 	}
+	
 	@Test
 	public void testNomCsvIncrementer() {
-		
+		Csv csv = new Csv(';',"","");
 	}
+	
+	@Test
 	public void testVerificationCheminDispo() {
 		
-		Csv csv = new Csv(';',"","");
-		csv.
+		Csv csv = new Csv(';',"","WikiMatrix");
+		csv.exporterCSV("test");
+		Assertions.assertFalse(!csv.verificationCheminDispo());
+		
+		
+		
 		
 	}
+	
+	
 	@Test
 	public void testVerificationSeparateurValide() {
 		

@@ -1,4 +1,6 @@
-package pdl_2018.groupeSMKS1;
+package APPLICATION.src.main.java.pdl_2018.groupeSMKS1;
+
+import java.util.ArrayList;
 
 public interface ICsv {
 
@@ -13,5 +15,7 @@ public interface ICsv {
 	boolean verificationCheminDispo();
 
 	String nomCsvIncrémenter();
+
+	String verificationSeparateurValide(ArrayList<String[]> tableau);
 
 }

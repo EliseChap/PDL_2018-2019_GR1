@@ -1,4 +1,6 @@
-package pdl_2018.groupeSMKS1;
+package TESTSJUNIT.test.java.pdl_2018.groupeSMKS1;
+
+
 
 import junit.framework.Test;
 import junit.framework.TestCase;

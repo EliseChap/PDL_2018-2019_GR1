@@ -20,6 +20,7 @@ public class TestCsv extends TestCase {
 /**
  * Test des paramètres en entrée et création de l'objet CVS
  */
+	@Test
 	public void testObjectCsvStandard() {
 		Csv csv = new Csv(';',"C:/Users/sullivand/Music/Desktop/Nouveau dossier/","WikiMatrix");
 		Assertions.assertEquals(csv.getDelimit(),';');
@@ -31,7 +32,7 @@ public class TestCsv extends TestCase {
 	/**
 	 * Test des paramètres en entrée null et création de l'objet CVS
 	 */
-	
+	@Test
 	public void testObjectCsvNull() {
 		Csv csv = new Csv('\u0000',null,null);
 		Assertions.assertEquals(csv.getDelimit(),',');
@@ -81,6 +82,7 @@ public class TestCsv extends TestCase {
 	 * Verification de l'exportation d'un txt vers un cvs
 	 */
 	
+	@Test
 	public void testExporterCSV() {
 		
 		
@@ -90,7 +92,7 @@ public class TestCsv extends TestCase {
 	/**
 	 * Vérifiation si le hashmap est initialisé en faux
 	 */
-	
+	@Test
 	public void testInitialisationSeparateurAutomatique() {
 		
 		boolean verification = false;
@@ -108,13 +110,17 @@ public class TestCsv extends TestCase {
 		Assertions.assertEquals(verification,false);
 				
 	}
-	
+	@Test
 	public void testNomCsvIncrementer() {
 		
 	}
 	public void testVerificationCheminDispo() {
 		
+		Csv csv = new Csv(';',"","");
+		csv.
+		
 	}
+	@Test
 	public void testVerificationSeparateurValide() {
 		
 	}

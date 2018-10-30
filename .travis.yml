@@ -3,7 +3,5 @@ jdk:
 - oraclejdk8
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-before_install:
-  - cd java
 script:
   - ant test

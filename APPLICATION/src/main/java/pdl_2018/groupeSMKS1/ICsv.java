@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public interface ICsv {
 
 	void initialisationSeparateurAutomatique();
+	
 
-	String verificationSeparateurValide(ArrayList<String[]> tableau);
+	//public String verificationSeparateurValide(ArrayList<String[]> tableau);
 
 	String convertionTableauEnStringDelimiter(ArrayList<String[]> tableau);
 
@@ -14,8 +15,8 @@ public interface ICsv {
 
 	boolean verificationCheminDispo();
 
-	String nomCsvIncrémenter();
+	//String nomCsvIncrementer();
 
-	String verificationSeparateurValide(ArrayList<String[]> tableau);
+//	String verificationSeparateurValide(ArrayList<String[]> tableau);
 
 }

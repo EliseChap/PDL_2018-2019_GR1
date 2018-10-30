@@ -39,6 +39,8 @@ import org.wikipedia.Wiki;
 
 import com.bitplan.mediawiki.japi.Mediawiki;
 
+import pdl_2018.groupeSMKS1.TextConverter;
+
 
 /*public class App 
 {
@@ -54,7 +56,7 @@ import com.bitplan.mediawiki.japi.Mediawiki;
  * Hello world! test commit de Margaux 
  *
  */
-public class App {
+public class HistoriqueApp {
 	Logger Logger = org.apache.log4j.Logger.getLogger(App.class);
 
 	public static void main(String[] args) throws Throwable {

@@ -1,4 +1,5 @@
-package APPLICATION.src.main.java.pdl_2018.groupeSMKS1;
+package pdl_2018.groupeSMKS1;
+
 
 
 import java.io.File;
@@ -13,13 +14,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import APPLICATION.src.main.java.pdl_2018.groupeSMKS1.ICsv;
+import APPLICATION.src.main.java.pdl_2018.groupeSMKS1.Url;
+
 public class Csv implements ICsv{
 	
 	static char delimit;
 	static String cheminCsv;
 	static String nomCsv;
 	
-    static Map<String, Boolean> separateurAutomatique = new HashMap<>();
+    static Map<String, Boolean> separateurAutomatique = new HashMap<String, Boolean>();
 	
 	
 	
@@ -28,7 +32,7 @@ public class Csv implements ICsv{
 		Url url = new Url();
 		
 		
-		//Vérification si délimitation est null
+		//Vï¿½rification si dï¿½limitation est null
 		if(delimit=='\u0000') {
 			this.delimit = ',';
 		}
@@ -36,7 +40,7 @@ public class Csv implements ICsv{
 			this.delimit = delimit;
 		}
 		
-		//Vérification si nom est null
+		//Vï¿½rification si nom est null
 		if(nomCsv==null || nomCsv=="") {
 			this.nomCsv = "WikiMatrix.csv";
 		}
@@ -44,7 +48,7 @@ public class Csv implements ICsv{
 			this.nomCsv = nomCsv;
 		}
 		
-		//Vérification si cheminCsv est null
+		//Vï¿½rification si cheminCsv est null
 		if(cheminCsv==null) {
 			this.cheminCsv = "";
 		}
@@ -73,11 +77,10 @@ public class Csv implements ICsv{
 	
 	/**
 	 * Initialisation du hashmap du separateur
-	 * False signifie non present dans les données
+	 * False signifie non present dans les donnï¿½es
 	 * @date 25/10/2018
 	 */
 	
-	@Override
 	public void initialisationSeparateurAutomatique() {
 		separateurAutomatique.clear();
 		separateurAutomatique.put(";", false);
@@ -85,9 +88,9 @@ public class Csv implements ICsv{
 		//separateurAutomatique.put(">", false);
 		//separateurAutomatique.put("<", false);
 		separateurAutomatique.put(":", false);
-		//separateurAutomatique.put("§", false);
+		//separateurAutomatique.put("ï¿½", false);
 		//separateurAutomatique.put("*", false);
-		//separateurAutomatique.put("¤", false);
+		//separateurAutomatique.put("ï¿½", false);
 		//separateurAutomatique.put("\\", false);
 		//separateurAutomatique.put("/", false);
 		separateurAutomatique.put("-", false);
@@ -97,24 +100,24 @@ public class Csv implements ICsv{
 	
 
 	/**
-	 * Vérifie si le séparateur de l'utilisateur n'est pas utilisé sinon choisi un autre automatiquement
+	 * Vï¿½rifie si le sï¿½parateur de l'utilisateur n'est pas utilisï¿½ sinon choisi un autre automatiquement
 	 * @param tableau
 	 * @return le separateur choisi
 	 * @date 25/10/2018
 	 */
 	
-	@Override
+
 	public String verificationSeparateurValide(ArrayList<String[]> tableau) {
 		
 		Boolean separateurUtilisateur = false;
 		
-		//Analyse les données afin de savoir quel est le séparateur adapté
+		//Analyse les donnï¿½es afin de savoir quel est le sï¿½parateur adaptï¿½
 		
 		String separateur = ""+ delimit;
 		for (String[] strArr : tableau) {
 			for(String cellule :strArr) {
 				if(cellule.contains(separateur)) {
-					System.out.println("un choix de seperateur va être effectué par défaut, car celui définit pose des incohérences dans le csv");
+					System.out.println("un choix de seperateur va ï¿½tre effectuï¿½ par dï¿½faut, car celui dï¿½finit pose des incohï¿½rences dans le csv");
 					separateurUtilisateur=true;
 				
 				}
@@ -150,12 +153,12 @@ public class Csv implements ICsv{
 	}	
 	
 	/**
-	 * Convertie un ArrayList avec des tableaux en String avec séparateur
+	 * Convertie un ArrayList avec des tableaux en String avec sï¿½parateur
 	 * @param tableau
 	 * @return stringDelimiter
 	 * @date 25/10/2018
 	 */
-	@Override
+	
 	public String convertionTableauEnStringDelimiter(ArrayList<String[]> tableau) {
 		
 		String stringDelimiter = "";
@@ -171,13 +174,13 @@ public class Csv implements ICsv{
 	}
 	
 	/**
-	 * Création du CSV grâce a un String en entrée
+	 * Crï¿½ation du CSV grï¿½ce a un String en entrï¿½e
 	 * @param Text
 	 * @throws FileNotFoundException
 	 * @date 25/10/2018
 	 */
 	
-	@Override
+	
 	public void exporterCSV(String Text) {
 		PrintWriter pw;
 		try {
@@ -187,7 +190,7 @@ public class Csv implements ICsv{
 				lien = cheminCsv+nomCsv;
 						}
 			else {
-				lien = nomCsvIncrémenter();
+				lien = nomCsvIncrementer();
 			}
 				
 			File nomFichier = new File(lien);
@@ -211,36 +214,36 @@ public class Csv implements ICsv{
 	}
 	
 	/**
-	 * Vérifie si le fichier existe si oui alors true
+	 * Vï¿½rifie si le fichier existe si oui alors true
 	 * @return Boolean
 	 * @date 25/10/2018
 	 */
 	
-	@Override
+	
 	public boolean verificationCheminDispo() {
 		File f = new File(cheminCsv+nomCsv);
-		System.out.println("le fichier existe déjà, un nom incrementé va être créé");
+		System.out.println("le fichier existe dï¿½jï¿½, un nom incrementï¿½ va ï¿½tre crï¿½ï¿½");
 		return f.isFile();
 	}
 
 	/**
-	 * Trouve un nom de CSV non déjà pris
-	 * @return String nomDuFichierAléatoire
+	 * Trouve un nom de CSV non dï¿½jï¿½ pris
+	 * @return String nomDuFichierAlï¿½atoire
 	 * @date 25/10/2018
 	 */
 	
 
-	public String nomCsvIncrémenter() {
+	public String nomCsvIncrementer() {
 		
-		int incrémentation = 1;
+		int incrementation = 1;
 		File f = new File(cheminCsv+nomCsv);
 		String[] split = nomCsv.split("\\.");
 		System.out.println(split[0]);
 		while(f.isFile()) {
-			incrémentation++;
-			f= new File(cheminCsv+split[0]+"_"+incrémentation+"."+split[1]);			
+			incrementation++;
+			f= new File(cheminCsv+split[0]+"_"+incrementation+"."+split[1]);			
 		}
-		return cheminCsv+split[0]+"_"+incrémentation+"."+split[1];
+		return cheminCsv+split[0]+"_"+incrementation+"."+split[1];
 		
 	}
 
@@ -268,5 +271,10 @@ public class Csv implements ICsv{
 				csv.exporterCSV(text);
 
 
-    }     
+    }
+
+	public void menter() {
+		// TODO Auto-generated method stub
+		
+	}     
  }

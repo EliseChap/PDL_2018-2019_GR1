@@ -1,16 +1,5 @@
 language: java
-
-jdk: oraclejdk8
-
-before_script:
-	- mvn install -DskipTests = true -Dmaven .javadoc.skip = true -B -V
-	- mvn test -B 
-
-	
-	
-install : true script : ./mvnw clean install 
-
-cache : directories : - $HOME/.m2 
-
- script : - ./mvnw clean install - bash <(curl -s https://codecov.io/bash) 
- deploy : - on : branch : release provider : bintray skip_cleanup : true file : target/bin/bintray.json user : nfrankel key : $BINTRAY_API_KEY 
+jdk:
+ - oraclejdk8
+after_success:
+- bash <(curl -s https://codecov.io/bash)

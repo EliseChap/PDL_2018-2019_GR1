@@ -39,7 +39,7 @@ import org.wikipedia.Wiki;
 
 import com.bitplan.mediawiki.japi.Mediawiki;
 
-import pdl_2018.groupeSMKS1.TextConverter;
+//import pdl_2018.groupeSMKS1.TextConverter;
 
 
 /*public class App 

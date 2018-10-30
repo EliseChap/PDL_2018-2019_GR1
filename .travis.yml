@@ -1,16 +1,19 @@
 language: java
+# use Java 8
+jdk:
+- oraclejdk8
 
-jdk: oraclejdk8
+# see https://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure
+sudo: false
+
 
 before_script:
 	- mvn install -DskipTests = true -Dmaven .javadoc.skip = true -B -V
 	- mvn test -B 
 
-	
-	
-install : true script : ./mvnw clean install 
+# cache the build tool's caches
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle
 
-cache : directories : - $HOME/.m2 
-
- script : - ./mvnw clean install - bash <(curl -s https://codecov.io/bash) 
- deploy : - on : branch : release provider : bintray skip_cleanup : true file : target/bin/bintray.json user : nfrankel key : $BINTRAY_API_KEY 

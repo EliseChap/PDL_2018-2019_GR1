@@ -148,7 +148,7 @@
   	<url>https://travis-ci.org/SulliDai/PDL_2018-2019_GR1</url>
   </ciManagement>
   <build>
-  <finalName>Calculatrice</finalName>
+  <finalName>WikiMatrix</finalName>
   <plugins>
      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -156,7 +156,20 @@
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
+          
+                    <!-- Specify where this pom will output files -->
+          <outputDirectory>${basedir}/target/test-classes/pdl_2018/groupeSMKS1</outputDirectory>
+
+          <!-- By default <<<${basedir}/target/local-repo", where basedir refers
+               to the basedir of maven-my-plugin. -->
+          <localRepository>${localRepository}</localRepository>
+          <!-- The defined stub -->
+          <project implementation="TESTSJUNIT.test.java.pdl_2018.groupeSMKS1"/>
+          
         </configuration>
+        
+   
+        
       </plugin>
   </plugins>
 </build>

@@ -43,7 +43,7 @@ public class TestCsv extends TestCase {
 	/**
 	 * Test simple convertionTableauEnStringDelimiter
 	 */
-	/*public void testConvertionTableauEnStringDelimiter() {
+	public void testConvertionTableauEnStringDelimiter() {
 		Csv csv = new Csv(';',"","");
 		ArrayList<String[]> list = new ArrayList<String[]>();
 		String[] arr1 = { "a", "b", "c" };
@@ -58,7 +58,7 @@ public class TestCsv extends TestCase {
 		System.out.println(text.equals(chaineValide));
 		System.out.println(chaineValide);
 		Assertions.assertEquals(chaineValide,text);
-	}*/
+	}
 	
 	/*
 	 * 

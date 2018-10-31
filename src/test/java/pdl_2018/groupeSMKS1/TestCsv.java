@@ -1,6 +1,10 @@
 package src.test.java.pdl_2018.groupeSMKS1;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
@@ -83,9 +87,26 @@ public class TestCsv extends TestCase {
 	
 	@Test
 	public void testExporterCSV() {
+		File fichier = new File("testExporterCSV.csv");
+		fichier.delete();
+		Csv csv = new Csv(';',"","testExporterCSV.csv");
+		Assertions.assertFalse(csv.verificationCheminDispo());
+		csv.exporterCSV("Ceci est un test de la classe Csv avec la methode ExporterCsv");
+		Assertions.assertTrue(csv.verificationCheminDispo());
+		BufferedReader buf;
+		try {
+			buf = new BufferedReader(new FileReader("testExporterCSV.csv"));
+			String line = buf.readLine();
+
+			Assertions.assertTrue(line.toString().equals("Ceci est un test de la classe Csv avec la methode ExporterCsv"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		
 
-		
+		fichier.delete();
 	}
 	
 	/**

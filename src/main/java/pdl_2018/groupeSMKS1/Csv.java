@@ -2,8 +2,10 @@ package src.main.java.pdl_2018.groupeSMKS1;
 
 
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Array;
@@ -13,6 +15,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+
+import org.junit.jupiter.api.Assertions;
 
 import src.main.java.pdl_2018.groupeSMKS1.ICsv;
 import src.main.java.pdl_2018.groupeSMKS1.Url;
@@ -251,16 +255,27 @@ public class Csv implements ICsv{
 		// TODO Auto-generated method stub
 		// List of String arrays
 		//char delimit ='\u0000';
+		File fichier = new File("testExporterCSV.csv");
+		fichier.delete();
+		Csv csv = new Csv(';',"","testExporterCSV.csv");
+		//Assertions.assertFalse(csv.verificationCheminDispo());
+		csv.exporterCSV("Ceci est un test de la classe Csv avec la methode ExporterCsv");
+		//Assertions.assertTrue(csv.verificationCheminDispo());
+		BufferedReader buf;
+		try {
+			buf = new BufferedReader(new FileReader("testExporterCSV.csv"));
+			String line = buf.readLine();
+			System.out.println(line);
+			System.out.println(line.toString().equals("Ceci est un test de la classe Csv avec la methode ExporterCsv"));
+			//Assertions.assertEquals(line, "Ceci est un test de la classe Csv avec la methode ExporterCsv");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		
-		Csv csv = new Csv(';',"","");
-		ArrayList<String[]> list = new ArrayList<String[]>();
-		String[] arr1 = { "a;", "b", "c" };
-		String[] arr2 = { "1,0:-", "2", "3", "4" };
-		list.add(arr1);
-		list.add(arr2);
-		
-		csv.verificationSeparateurValide(list);
-		csv.getSeparateur();
+
+		fichier.delete();
 		
 		
 		/*separateurAutomatique.put(";", false);

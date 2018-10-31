@@ -4,5 +4,5 @@ jdk:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 script: 
-- mvn test -f pom.xml 
-- mvn test -f PDL_2018-2019_GR1\TESTSJUNIT\test\java\pdl_2018\groupeSMKS1\TestCsv.java
+- mvn test -f pom.xml
+- mvn -Dtest=TestCsv test

@@ -16,8 +16,9 @@ public class CommandLine implements ICommandLine{
      * @param cheminCSV :
      *
      */
-    public CommandLine(){
+    public CommandLine(String commandLine){
         //Constructeur vide, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
+        verifIntegriteCommandLine(commandLine);
     }
 
     /**

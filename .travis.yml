@@ -3,5 +3,5 @@ jdk:
 - oraclejdk8
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-script:
-  - ant test
+before_cache:
+- rm -f  $HOME/.gradle/caches/*/*.lock

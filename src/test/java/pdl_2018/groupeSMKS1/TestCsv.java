@@ -122,7 +122,7 @@ public class TestCsv extends TestCase {
 		
 		Csv csv = new Csv(';',"","WikiMatrix");
 		csv.exporterCSV("test");
-		Assertions.assertTrue(!csv.verificationCheminDispo());
+		Assertions.assertTrue(csv.verificationCheminDispo());
 		
 	}
 	

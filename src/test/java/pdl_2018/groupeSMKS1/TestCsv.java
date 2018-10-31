@@ -1,5 +1,7 @@
 package src.test.java.pdl_2018.groupeSMKS1;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -8,7 +10,7 @@ import src.main.java.pdl_2018.groupeSMKS1.Csv;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
+import ch.qos.logback.core.net.SyslogOutputStream;
 import junit.framework.TestCase;
 
 public class TestCsv extends TestCase {
@@ -82,7 +84,7 @@ public class TestCsv extends TestCase {
 	@Test
 	public void testExporterCSV() {
 		
-		
+
 		
 	}
 	
@@ -108,28 +110,78 @@ public class TestCsv extends TestCase {
 				
 	}
 	
+	/*
+	 * Vérification de l'incrementation du fichier
+	 */
+	
 	@Test
 	public void testNomCsvIncrementer() {
-		Csv csv = new Csv(';',"","");
+		//initialisation
+		File fichier = new File("testIncrementer.csv");
+		fichier.delete();
+		File fichier1 = new File("testIncrementer_2.csv");
+		fichier1.delete();
+		File fichier2 = new File("testIncrementer_3.csv");
+		fichier2.delete();
+		File fichier3 = new File("testIncrementer_4.csv");
+		fichier3.delete();
+		
+		//création des fichiers
+		
+		Csv csv = new Csv(';',"","testIncrementer.csv");
+		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_1.csv");
+		csv.exporterCSV("testNomCsvIncrementer");
+		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_2.csv");
+		csv.exporterCSV("testNomCsvIncrementer");
+		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_3.csv");
+		csv.exporterCSV("testNomCsvIncrementer");
+		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_4.csv");
+		
+		//supprimer les fichers
+		fichier.delete();
+		fichier1.delete();
+		fichier2.delete();
+		fichier3.delete();
 	}
 	
 	/**
 	 * Verifie si l'emplacement est pris
 	 */
 	
-	/*@Test
+	@Test
 	public void testVerificationCheminDispo() {
-		
-		Csv csv = new Csv(';',"","WikiMatrix");
-		csv.exporterCSV("test");
+		File fichier = new File("testChemin.csv");
+		fichier.delete();
+		Csv csv = new Csv(';',"","testChemin.csv");
+		Assertions.assertTrue(!csv.verificationCheminDispo());
+		csv.exporterCSV("testChemin");
 		Assertions.assertTrue(csv.verificationCheminDispo());
+		fichier.delete();
+		Assertions.assertTrue(!csv.verificationCheminDispo());
 		
-	}*/
+	}
 	
+	/*
+	 * Verification du choix du délimiter
+	 */
 	
 	@Test
 	public void testVerificationSeparateurValide() {
+		Csv csv = new Csv(';',"","");
+		ArrayList<String[]> list = new ArrayList<String[]>();
+		String[] arr1 = { "a;", "b", "c" };
+		String[] arr2 = { "1,0:-", "2", "3", "4" };
+		list.add(arr1);
+		list.add(arr2);
 		
+		csv.verificationSeparateurValide(list);
+		Map<String, Boolean> cle = csv.getSeparateur();
+		String separateur = cle.toString();
+		Assertions.assertTrue(separateur!=";");
+		Assertions.assertTrue(separateur!=",");
+		Assertions.assertTrue(separateur!=":");
+		Assertions.assertTrue(separateur!="-");
+
 	}
 	
 	

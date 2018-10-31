@@ -29,8 +29,7 @@ public class Csv implements ICsv{
 	
 	public Csv(char delimit, String cheminCsv, String nomCsv) {
 		
-		Url url = new Url();
-		
+
 		
 		//V�rification si d�limitation est null
 		if(delimit=='\u0000') {
@@ -252,7 +251,33 @@ public class Csv implements ICsv{
 		// TODO Auto-generated method stub
 		// List of String arrays
 		//char delimit ='\u0000';
-		char delimit =';';
+		
+		Csv csv = new Csv(';',"","");
+		ArrayList<String[]> list = new ArrayList<String[]>();
+		String[] arr1 = { "a;", "b", "c" };
+		String[] arr2 = { "1,0:-", "2", "3", "4" };
+		list.add(arr1);
+		list.add(arr2);
+		
+		csv.verificationSeparateurValide(list);
+		csv.getSeparateur();
+		
+		
+		/*separateurAutomatique.put(";", false);
+		//separateurAutomatique.put("&", false);
+		//separateurAutomatique.put(">", false);
+		//separateurAutomatique.put("<", false);
+		separateurAutomatique.put(":", false);
+		//separateurAutomatique.put("�", false);
+		//separateurAutomatique.put("*", false);
+		//separateurAutomatique.put("�", false);
+		//separateurAutomatique.put("\\", false);
+		//separateurAutomatique.put("/", false);
+		separateurAutomatique.put("-", false);
+		separateurAutomatique.put("|", false);
+		separateurAutomatique.put(",", false);*/
+/*
+char delimit =';';
 		String cheminCsv="";
 		//String cheminCsv="../";
 		String nomCsv=null;
@@ -269,13 +294,8 @@ public class Csv implements ICsv{
 				list.add(arr2);
 				
 				String text = csv.convertionTableauEnStringDelimiter(list);
-				csv.exporterCSV(text);
-
+				csv.exporterCSV(text);*/
 
     }
-
-	public void menter() {
-		// TODO Auto-generated method stub
-		
-	}     
+   
  }

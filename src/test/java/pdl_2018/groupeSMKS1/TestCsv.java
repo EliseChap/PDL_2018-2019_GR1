@@ -34,7 +34,7 @@ public class TestCsv extends TestCase {
 		Csv csv = new Csv('\u0000',null,null);
 		Assertions.assertEquals(csv.getDelimit(),',');
 		Assertions.assertEquals(csv.getCheminCsv(),"");
-		Assertions.assertEquals(csv.getNomCsv(),"WikiMatrix.csv");
+		Assertions.assertEquals(csv.getNomCsv(),"WikiMaix.csv");
 	}
 	
 	

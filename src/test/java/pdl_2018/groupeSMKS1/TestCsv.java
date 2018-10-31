@@ -113,17 +113,18 @@ public class TestCsv extends TestCase {
 		Csv csv = new Csv(';',"","");
 	}
 	
-/*	@Test
+	/**
+	 * Verifie si l'emplacement est pris
+	 */
+	
+	@Test
 	public void testVerificationCheminDispo() {
 		
 		Csv csv = new Csv(';',"","WikiMatrix");
 		csv.exporterCSV("test");
-		Assertions.assertFalse(!csv.verificationCheminDispo());
+		Assertions.assertTrue(!csv.verificationCheminDispo());
 		
-		
-		
-		
-	}*/
+	}
 	
 	
 	@Test

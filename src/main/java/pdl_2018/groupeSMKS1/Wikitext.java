@@ -1,0 +1,7 @@
+package src.main.java.pdl_2018.groupeSMKS1;
+
+
+
+public class Wikitext extends Extracteur{
+
+}

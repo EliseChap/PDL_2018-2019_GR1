@@ -143,4 +143,8 @@
     </dependency>
 
   </dependencies>
+  <ciManagement>
+  	<system>Travis-Ci</system>
+  	<url>https://travis-ci.org/SulliDai/PDL_2018-2019_GR1</url>
+  </ciManagement>
 </project>

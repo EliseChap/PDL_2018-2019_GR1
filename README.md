@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/SulliDai/PDL_2018-2019_GR1.svg?branch=master)](https://travis-ci.org/SulliDai/PDL_2018-2019_GR1)
 # PDL_2018-2019_GR1
 
 →  Objectif général à atteindre

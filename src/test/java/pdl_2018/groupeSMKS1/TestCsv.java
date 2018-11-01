@@ -87,7 +87,7 @@ public class TestCsv extends TestCase {
 	
 	@Test
 	public void testExporterCSV() {
-	/*	File fichier = new File("testExporterCSV.csv");
+		File fichier = new File("testExporterCSV.csv");
 		fichier.delete();
 		Csv csv = new Csv(';',"","testExporterCSV.csv");
 		Assertions.assertFalse(csv.verificationCheminDispo());
@@ -106,7 +106,7 @@ public class TestCsv extends TestCase {
 	
 		
 
-		fichier.delete();*/
+		fichier.delete();
 	}
 	
 	/**

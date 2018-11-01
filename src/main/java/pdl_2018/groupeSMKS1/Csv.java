@@ -2,13 +2,11 @@ package src.main.java.pdl_2018.groupeSMKS1;
 
 
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -16,10 +14,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.junit.jupiter.api.Assertions;
+
 
 import src.main.java.pdl_2018.groupeSMKS1.ICsv;
-import src.main.java.pdl_2018.groupeSMKS1.Url;
 
 public class Csv implements ICsv{
 	
@@ -255,7 +252,7 @@ public class Csv implements ICsv{
 		// TODO Auto-generated method stub
 		// List of String arrays
 		//char delimit ='\u0000';
-		File fichier = new File("testExporterCSV.csv");
+	/*	File fichier = new File("testExporterCSV.csv");
 		fichier.delete();
 		Csv csv = new Csv(';',"","testExporterCSV.csv");
 		//Assertions.assertFalse(csv.verificationCheminDispo());
@@ -275,7 +272,7 @@ public class Csv implements ICsv{
 	
 		
 
-		fichier.delete();
+		fichier.delete();*/
 		
 		
 		/*separateurAutomatique.put(";", false);

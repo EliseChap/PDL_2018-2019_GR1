@@ -28,7 +28,7 @@ public class TestCsv extends TestCase {
 		Csv csv = new Csv(';',"C:/Users/sullivand/Music/Desktop/Nouveau dossier/","WikiMatrix");
 		Assertions.assertEquals(csv.getDelimit(),';');
 		Assertions.assertEquals(csv.getCheminCsv(),"C:/Users/sullivand/Music/Desktop/Nouveau dossier/");
-		Assertions.assertEquals(csv.getNomCsv(),"WikiMatrix");
+		Assertions.assertEquals(csv.getNomCsv(),"WikiMkjkjatrix");
 	}
 	
 	

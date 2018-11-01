@@ -5,4 +5,6 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 script: 
 - mvn test -f pom.xml
-
+notifications:
+  email:
+    - sul.gohan@hotmail.fr

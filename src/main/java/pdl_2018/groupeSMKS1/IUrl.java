@@ -16,7 +16,6 @@ public interface IUrl {
   */
  public boolean isWikipediaURL(String URL);
  
-
  /**
   * 
   * @param delimit le délimiteur choisit par l'utilisateur

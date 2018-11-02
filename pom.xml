@@ -141,11 +141,7 @@
         <artifactId>swc-engine</artifactId>
         <version>3.1.9</version>
     </dependency>
-      <dependency>
-          <groupId>PDL_2018-2019</groupId>
-          <artifactId>Groupe1</artifactId>
-          <version>0.0.1-SNAPSHOT</version>
-      </dependency>
+
 
   </dependencies>
   <ciManagement>

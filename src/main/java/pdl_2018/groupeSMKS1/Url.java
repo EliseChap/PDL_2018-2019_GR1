@@ -29,7 +29,7 @@ try {
 } 
 return true; 
 }
-
+//test
 @Override
 public boolean verifURL(String URL) {
 	// TODO Auto-generated method stub

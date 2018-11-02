@@ -7,7 +7,6 @@ script:
 - mvn test -f pom.xml
 notifications:
   email:
-    - sul.gohan@hotmail.fr
     - sophie.bouvry1@gmail.com
     - kenan.lethimonier@etudiant.univ-rennes1.fr
     - margaux.boulle@laposte.net

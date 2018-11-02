@@ -39,8 +39,9 @@ public boolean verifURL(String url) {
 	return true; 
 }
 
-@Override
-public boolean isWikipediaURL(String url) {
+//TEST
+public static boolean isWikiURL(String url) {
+	String domain = "wikipedia.org";
 	URL u = null; 
 	try { 
 	    u = new URL(url); 
@@ -49,9 +50,30 @@ public boolean isWikipediaURL(String url) {
 	}
 	String host = u.getHost();
 	InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
-	System.out.println(host);
-    System.out.println(name);
+    //System.out.println(name); // A supp apres
+    //System.out.println(name.toString());// A supp apres
+    if(name.toString().equals(domain)){
+    	return true;
+    }
 	return false;
+}
+
+
+@Override
+public boolean isWikipediaURL(String url) {
+	String domain = "wikipedia.org";
+	URL u = null; 
+	try { 
+	    u = new URL(url); 
+	} catch (MalformedURLException e) { 
+	    return false; 
+	}
+	String host = u.getHost();
+	InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
+	 if(name.toString().equals(domain)){
+	    	return true;
+	    }
+		return false;
 }
 
 @Override
@@ -61,6 +83,12 @@ public Extracteur ConstructeurExtracteur(char delimit, String cheminCSV, String 
 	return null;
 } 
 
-
-
+public static void main(String[] args){
+	String u ="https://fr.wikipedia.org/wiki/France";
+	boolean test =isWikiURL(u);
+	 System.out.println(test);
 }
+		
+}
+
+

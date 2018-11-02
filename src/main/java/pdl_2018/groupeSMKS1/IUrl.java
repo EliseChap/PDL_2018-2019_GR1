@@ -26,7 +26,7 @@ public interface IUrl {
   * @param extraWiki Un boolean à true si l'extraction doit etre faite avec le 	Wikicode, false sinon
   * @return Retour un object extracteur
   */
- public Extracteur ConstructeurExtracteur( char delimit, String cheminCSV,String NomCSV, boolean extraHTML, boolean extraWiki);
+ public Extracteur ConstructeurExtracteur(char delimit, String cheminCSV,String NomCSV, boolean extraHTML, boolean extraWiki);
 }
 
 

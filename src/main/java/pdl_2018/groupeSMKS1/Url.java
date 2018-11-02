@@ -4,6 +4,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.io.IOException;
 
+import src.main.java.pdl_2018.groupeSMKS1.IUrl;
+
 public class Url implements IUrl{ 
 
 /**
@@ -26,6 +28,25 @@ try {
     return false; 
 } 
 return true; 
+}
+
+@Override
+public boolean verifURL(String URL) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public boolean isWikipediaURL(String URL) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public Extracteur ConstructeurExtracteur(char delimit, String cheminCSV, String NomCSV, boolean extraHTML,
+		boolean extraWiki) {
+	// TODO Auto-generated method stub
+	return null;
 } 
 
 

@@ -1,4 +1,4 @@
-package src.main.java.pdl_2018.groupeSMKS1;
+package pdl_2018.groupeSMKS1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang.StringUtils;
 //import src.main.java.pdl_2018.groupeSMKS1.ICommandLine;
 
-//public class CommandLine implements ICommandLine{
-public class CommandLine{
+public class CommandLine implements ICommandLine {
     char delimit;
     String cheminCSV;
     String nomCSV;
@@ -20,8 +19,6 @@ public class CommandLine{
 
     /**
      * Constructeur de la classe CommandLine
-     * @param delimit : délimiteur pour le fichier CSV en sortie
-     * @param cheminCSV :
      *
      */
     public CommandLine(String commandLine){
@@ -31,8 +28,8 @@ public class CommandLine{
 
     /**
      * Vérification de l'intégrité de la ligne de commande
-     *
-     * @param commandLine
+     * @override
+     * @param commandLine : Ligne de commande saisie par l'utilisateur
      * @author KLE
      * @date 14 octobre 2018
      * La méthode prend en paramètre une ligne de commande String, et renvoi "true" si cette ligne de commande est conforme à la charte Wikimatrix, "false" sinon.
@@ -127,5 +124,62 @@ public class CommandLine{
 
         return jetonIntegrite;
     }
+
+    public char getDelimit() {
+        return delimit;
+    }
+
+    public void setDelimit(char delimit) {
+        this.delimit = delimit;
+    }
+
+    public String getCheminCSV() {
+        return cheminCSV;
+    }
+
+    public void setCheminCSV(String cheminCSV) {
+        this.cheminCSV = cheminCSV;
+    }
+
+    public String getNomCSV() {
+        return nomCSV;
+    }
+
+    public void setNomCSV(String nomCSV) {
+        this.nomCSV = nomCSV;
+    }
+
+    public String getCheminEntree() {
+        return cheminEntree;
+    }
+
+    public void setCheminEntree(String cheminEntree) {
+        this.cheminEntree = cheminEntree;
+    }
+
+    public Boolean getExtraHTML() {
+        return extraHTML;
+    }
+
+    public void setExtraHTML(Boolean extraHTML) {
+        this.extraHTML = extraHTML;
+    }
+
+    public Boolean getExtraWiki() {
+        return extraWiki;
+    }
+
+    public void setExtraWiki(Boolean extraWiki) {
+        this.extraWiki = extraWiki;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
 
 }

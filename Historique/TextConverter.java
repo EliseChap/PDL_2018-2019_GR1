@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package pdl_2018.groupeSMKS1;
+package Historique;
 
 import java.util.LinkedList;
 import java.util.regex.Pattern;

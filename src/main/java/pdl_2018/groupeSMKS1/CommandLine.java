@@ -44,25 +44,7 @@ public class CommandLine implements ICommandLine {
 
 
         // Vérification de l'URL
-        int nbURL = StringUtils.countMatches(commandLine, "-url");
-        int nbImport = StringUtils.countMatches(commandLine, "-import");
-        if (nbURL > 1) {
-            System.out.println(
-                    "Pour lancer l'extraction à partir de plusieurs URLs, veuillez utiliser la commande -import");
-            jetonIntegrite = false;
-        }
-        if (nbImport > 1) {
-            System.out.println("La commande import ne permet de manipuler qu'un seul fichier d'URLs à la fois");
-            jetonIntegrite = false;
-        }
-        if ((nbImport < 1) && (nbURL < 1)) {
-            System.out.println("Vous n'avez pas choisi de source à partir de laquelle lancer l'extraction");
-            jetonIntegrite = false;
-        }
-        if ((nbImport > 0) && (nbURL > 0)) {
-            System.out.println("Vous ne pouvez choisir qu'un seul mode d'importation pour lancer l'extraction");
-            jetonIntegrite = false;
-        }
+
 
         if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié est valide (on ne teste pas s'il est fonctionnel)
             Pattern pImport=Pattern.compile("-import\\[.*?\\]");
@@ -138,6 +120,34 @@ public class CommandLine implements ICommandLine {
         }else{
             return true;
         }
+    }
+
+    public Boolean verifUrlOrFichierChoice(String commandLine){
+        int nbURL = StringUtils.countMatches(commandLine, "-url");
+        int nbImport = StringUtils.countMatches(commandLine, "-import");
+        boolean jetonLocal = true;
+        if (nbURL > 1) {
+            System.out.println(
+                    "Pour lancer l'extraction à partir de plusieurs URLs, veuillez utiliser la commande -import");
+            jetonLocal = false;
+        }
+        if (nbImport > 1) {
+            System.out.println("La commande import ne permet de manipuler qu'un seul fichier d'URLs à la fois");
+            jetonLocal = false;
+        }
+        if ((nbImport < 1) && (nbURL < 1)) {
+            System.out.println("Vous n'avez pas choisi de source à partir de laquelle lancer l'extraction");
+            jetonLocal = false;
+        }
+        if ((nbImport > 0) && (nbURL > 0)) {
+            System.out.println("Vous ne pouvez choisir qu'un seul mode d'importation pour lancer l'extraction");
+            jetonLocal = false;
+        }
+
+        if(jetonLocal) {
+            jetonLocal = true; //Lancer ici la verif en profondeur
+        }
+        return jetonLocal;
     }
 
 

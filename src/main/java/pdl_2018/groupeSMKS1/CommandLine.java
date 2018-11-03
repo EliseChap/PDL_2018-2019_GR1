@@ -107,7 +107,7 @@ public class CommandLine implements ICommandLine {
      * @param commandLine : ligne de commande saisie par l'utilisateur
      * @return
      */
-    public Boolean verifHtmlWikicodeChoice(String commandLine){
+    public Boolean verifHtmlOrWikicodeChoice(String commandLine){
         int nbHTML = StringUtils.countMatches(commandLine, "-html");
         int nbWikicode = StringUtils.countMatches(commandLine, "-wikicode");
         if ((nbHTML > 1) || (nbWikicode > 1)) {

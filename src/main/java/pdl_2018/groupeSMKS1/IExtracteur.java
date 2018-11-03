@@ -28,6 +28,5 @@ public interface IExtracteur {
 	 * Ajout un tableau
 	 */
 	public void addTableau();
-	
-	
+		
 }

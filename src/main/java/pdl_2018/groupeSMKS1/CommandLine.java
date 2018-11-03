@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
-//import src.main.java.pdl_2018.groupeSMKS1.ICommandLine;
+import src.main.java.pdl_2018.groupeSMKS1.Url;
 
 public class CommandLine implements ICommandLine {
     char delimit;
@@ -23,7 +23,9 @@ public class CommandLine implements ICommandLine {
      */
     public CommandLine(String commandLine){
         //Constructeur vide, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
-        verifIntegriteCommandLine(commandLine);
+        if(verifIntegriteCommandLine(commandLine)){
+            Url monUrl = new src.main.java.pdl_2018.groupeSMKS1.Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ?
+        }
     }
 
     /**
@@ -39,16 +41,7 @@ public class CommandLine implements ICommandLine {
         boolean jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
 
         // Vérification du choix HTML / Wikicode
-        int nbHTML = StringUtils.countMatches(commandLine, "-html");
-        int nbWikicode = StringUtils.countMatches(commandLine, "-wikicode");
-        if ((nbHTML > 1) || (nbWikicode > 1)) {
-            System.out.println("La syntaxe de la commande est erronée : un même paramètre est saisi plusieurs fois");
-            jetonIntegrite = false;
-        } else if ((nbHTML < 1) && (nbWikicode < 1)) {
-            System.out.println(
-                    "Vous devez obligatoirement indiquer une méthode d'extraction, en ajoutant -html ou -wikicode");
-            jetonIntegrite = false;
-        }
+
 
         // Vérification de l'URL
         int nbURL = StringUtils.countMatches(commandLine, "-url");
@@ -124,6 +117,29 @@ public class CommandLine implements ICommandLine {
 
         return jetonIntegrite;
     }
+
+    /**
+     * Cette fonction prend en paramètre la ligne de commande et renvoie false si le choix html/wikicode n'est pas effectué ou effectué anormalement, true sinon.
+     * @author KLH
+     * @date 3 novembre 2018
+     * @param commandLine : ligne de commande saisie par l'utilisateur
+     * @return
+     */
+    public Boolean verifHtmlWikicodeChoice(String commandLine){
+        int nbHTML = StringUtils.countMatches(commandLine, "-html");
+        int nbWikicode = StringUtils.countMatches(commandLine, "-wikicode");
+        if ((nbHTML > 1) || (nbWikicode > 1)) {
+            System.out.println("La syntaxe de la commande est erronée : un même paramètre est saisi plusieurs fois");
+            return false;
+        } else if ((nbHTML < 1) && (nbWikicode < 1)) {
+            System.out.println(
+                    "Vous devez obligatoirement indiquer une méthode d'extraction, en ajoutant -html ou -wikicode");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
 
     public char getDelimit() {
         return delimit;

@@ -22,9 +22,11 @@ public class CommandLine implements ICommandLine {
      *
      */
     public CommandLine(String commandLine){
-        //Constructeur vide, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
+        //Constructeur vide de variables, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
         if(verifIntegriteCommandLine(commandLine)){
-            Url monUrl = new Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ?
+            Url monUrl = new Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ? A voir ensemble, pour le moment je transmets rien.
+        } else {
+            //Demander à l'utilisateur de saisir à nouveau la ligne de commande, en prenant compte des messages d'erreurs affichés. Comment on gère ça ?
         }
     }
 
@@ -40,10 +42,18 @@ public class CommandLine implements ICommandLine {
 
         boolean jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
 
-        // Vérification du choix HTML / Wikicode
-
-
-        // Vérification de l'URL
+        if(!verifUrlOrFichierChoice(commandLine)){
+            jetonIntegrite = false;
+        }
+        if(!verifCheminSortie(commandLine)){
+            jetonIntegrite = false;
+        }
+        if(!verifDelimiteur(commandLine)){
+            jetonIntegrite = false;
+        }
+        if(!verifHtmlOrWikicodeChoice(commandLine)){
+            jetonIntegrite = false;
+        }
 
         return jetonIntegrite;
     }
@@ -66,6 +76,16 @@ public class CommandLine implements ICommandLine {
                     "Vous devez obligatoirement indiquer une méthode d'extraction, en ajoutant -html ou -wikicode");
             return false;
         }else{
+            if(nbHTML==1 && nbWikicode==1){
+                setExtraHTML(true);
+                setExtraWiki(true);
+            } else if (nbHTML==1 && nbWikicode!=1){
+                setExtraHTML(true);
+                setExtraWiki(false);
+            } else if (nbHTML!=1 && nbWikicode==1){
+                setExtraHTML(false);
+                setExtraWiki(true);
+            }
             return true;
         }
     }
@@ -124,6 +144,7 @@ public class CommandLine implements ICommandLine {
                 System.out.print("Le chemin d'accès au fichier d'URLs à importer est invalide");
                return false;
             }
+            setCheminEntree(contenuImport);
         } else if (nbURL == 1){ // On vérifie que l'URL spécifiée est valide, qu'il s'agit d'une url wiki (on ne teste pas si elle est fonctionnelle)
             Pattern pURL=Pattern.compile("-url\\[.*?\\]");
             Matcher mURL = pURL.matcher(commandLine);
@@ -132,6 +153,7 @@ public class CommandLine implements ICommandLine {
                 System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
                 return false;
             }
+            setUrl(contenuURL);
         }
         return true;
     }
@@ -145,10 +167,11 @@ public class CommandLine implements ICommandLine {
      */
     public boolean verifCheminSortie(String commandLine){
         int nbSave = StringUtils.countMatches(commandLine, "-save");
+        String contenuSave = null;
         if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
             Pattern pSave=Pattern.compile("-save\\[.*?\\]");
             Matcher mSave=pSave.matcher(commandLine);
-            String contenuSave = mSave.group(1);
+            contenuSave = mSave.group(1);
             String contenuSaveExtension = contenuSave.substring(contenuSave.length() -4, contenuSave.length());
             if((contenuSaveExtension!=".csv") || (contenuSave.length()<5)){
                 System.out.println("Le chemin du fichier de sortie spécifié est invalide");
@@ -158,6 +181,7 @@ public class CommandLine implements ICommandLine {
             System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
             return false;
         }
+        setCheminCSV(contenuSave);
         return true;
     }
 
@@ -170,13 +194,14 @@ public class CommandLine implements ICommandLine {
      */
     public boolean verifDelimiteur(String commandLine){
         int nbDelimit = StringUtils.countMatches(commandLine, "-delimit");
+        char contenuDelimit = '\0';
         List caracteresAutorises = new ArrayList(); // Cette liste permet de modifier facilement les délimiteurs autorisés par Wikimatrix sans changer le reste de la méthode.
         caracteresAutorises.add(';');
         caracteresAutorises.add(','); // A CHANGER, C'EST PAS BEAU
         if (nbDelimit == 1) { //On vérifie l'intégrité du délimiteur : est-il autorisé par Wikimatrix ?
             Pattern pDelimit=Pattern.compile("-delimit\\[.*?\\]");
             Matcher mDelimit = pDelimit.matcher(commandLine);
-            char contenuDelimit = mDelimit.group(1).charAt(0);
+            contenuDelimit = mDelimit.group(1).charAt(0);
             if(!caracteresAutorises.contains(contenuDelimit)){
                 System.out.println("Le délimiteur saisi n'est pas pris en charge par Wikimatrix");
                 return false;
@@ -185,6 +210,7 @@ public class CommandLine implements ICommandLine {
             System.out.println("Vous ne pouvez choisir qu'un seul délimiteur");
             return false;
         }
+        setDelimit(contenuDelimit);
         return true;
     }
 

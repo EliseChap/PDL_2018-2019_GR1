@@ -24,7 +24,7 @@ public class CommandLine implements ICommandLine {
     public CommandLine(String commandLine){
         //Constructeur vide de variables, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
         if(verifIntegriteCommandLine(commandLine)){
-            Url monUrl = new Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ? A voir ensemble, pour le moment je transmets rien.
+            //Url monUrl = new Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ? A voir ensemble, pour le moment je transmets rien.
         } else {
             //Demander à l'utilisateur de saisir à nouveau la ligne de commande, en prenant compte des messages d'erreurs affichés. Comment on gère ça ?
         }
@@ -38,6 +38,7 @@ public class CommandLine implements ICommandLine {
      * @date 14 octobre 2018
      * La méthode prend en paramètre une ligne de commande String, et renvoi "true" si cette ligne de commande est conforme à la charte Wikimatrix, "false" sinon.
      */
+    @Override
     public boolean verifIntegriteCommandLine(String commandLine) {
 
         boolean jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
@@ -65,7 +66,8 @@ public class CommandLine implements ICommandLine {
      * @param commandLine : ligne de commande saisie par l'utilisateur
      * @return
      */
-    public Boolean verifHtmlOrWikicodeChoice(String commandLine){
+    @Override
+    public boolean verifHtmlOrWikicodeChoice(String commandLine){
         int nbHTML = StringUtils.countMatches(commandLine, "-html");
         int nbWikicode = StringUtils.countMatches(commandLine, "-wikicode");
         if ((nbHTML > 1) || (nbWikicode > 1)) {
@@ -97,7 +99,8 @@ public class CommandLine implements ICommandLine {
      * @param commandLine
      * @return
      */
-    public Boolean verifUrlOrFichierChoice(String commandLine){
+    @Override
+    public boolean verifUrlOrFichierChoice(String commandLine){
         int nbURL = StringUtils.countMatches(commandLine, "-url");
         int nbImport = StringUtils.countMatches(commandLine, "-import");
         boolean jetonLocal = true;
@@ -134,6 +137,7 @@ public class CommandLine implements ICommandLine {
      * @param nbImport : nombre de commandes "import" dans la ligne de commande
      * @return
      */
+    @Override
     public boolean verifUrlOrCheminEntree(String commandLine, int nbURL, int nbImport){
         if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié est valide (on ne teste pas s'il est fonctionnel)
             Pattern pImport=Pattern.compile("-import\\[.*?\\]");
@@ -165,6 +169,7 @@ public class CommandLine implements ICommandLine {
      * @param commandLine : ligne de commande saisie par l'utilisateur
      * @return
      */
+    @Override
     public boolean verifCheminSortie(String commandLine){
         int nbSave = StringUtils.countMatches(commandLine, "-save");
         String contenuSave = null;
@@ -192,6 +197,7 @@ public class CommandLine implements ICommandLine {
      * @param commandLine : ligne de commande saisie par l'utilisateur
      * @return
      */
+    @Override
     public boolean verifDelimiteur(String commandLine){
         int nbDelimit = StringUtils.countMatches(commandLine, "-delimit");
         char contenuDelimit = '\0';

@@ -122,6 +122,13 @@ public class CommandLine implements ICommandLine {
         }
     }
 
+    /**
+     * Cette fonction prend en paramètre la ligne de commande et renvoie false si aucune url ou aucun fichier d'entrée n'est indiqué, ou si l'indication n'est pas exploitable, et renvoie true sinon.
+     * @author KLH
+     * @date 3 novembre 2018
+     * @param commandLine
+     * @return
+     */
     public Boolean verifUrlOrFichierChoice(String commandLine){
         int nbURL = StringUtils.countMatches(commandLine, "-url");
         int nbImport = StringUtils.countMatches(commandLine, "-import");

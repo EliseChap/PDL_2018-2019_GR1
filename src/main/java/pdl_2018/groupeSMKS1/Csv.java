@@ -101,7 +101,7 @@ public class Csv implements ICsv{
 	
 
 	/**
-	 * V�rifie si le s�parateur de l'utilisateur n'est pas utilis� sinon choisi un autre automatiquement
+	 * Vérifie si le séparateur de l'utilisateur n'est pas utilisé sinon choisi un autre automatiquement
 	 * @param tableau
 	 * @return le separateur choisi
 	 * @date 25/10/2018

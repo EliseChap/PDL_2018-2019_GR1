@@ -24,7 +24,7 @@ public class CommandLine implements ICommandLine {
     public CommandLine(String commandLine){
         //Constructeur vide, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
         if(verifIntegriteCommandLine(commandLine)){
-            Url monUrl = new src.main.java.pdl_2018.groupeSMKS1.Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ?
+            Url monUrl = new Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ?
         }
     }
 
@@ -44,23 +44,6 @@ public class CommandLine implements ICommandLine {
 
 
         // Vérification de l'URL
-
-        int nbDelimit = StringUtils.countMatches(commandLine, "-delimit");
-        List caracteresAutorises = new ArrayList(); // Cette liste permet de modifier facilement les délimiteurs autorisés par Wikimatrix sans changer le reste de la méthode.
-        caracteresAutorises.add(';');
-        caracteresAutorises.add(','); // A CHANGER, C'EST PAS BEAU
-        if (nbDelimit == 1) { //On vérifie l'intégrité du délimiteur : est-il autorisé par Wikimatrix ?
-            Pattern pDelimit=Pattern.compile("-delimit\\[.*?\\]");
-            Matcher mDelimit = pDelimit.matcher(commandLine);
-            char contenuDelimit = mDelimit.group(1).charAt(0);
-            if(!caracteresAutorises.contains(contenuDelimit)){
-                System.out.println("Le délimiteur saisi n'est pas pris en charge par Wikimatrix");
-                jetonIntegrite = false;
-            }
-        } else if (nbDelimit>1){
-            System.out.println("Vous ne pouvez choisir qu'un seul délimiteur");
-            jetonIntegrite = false;
-        }
 
         return jetonIntegrite;
     }
@@ -173,6 +156,33 @@ public class CommandLine implements ICommandLine {
             }
         } else if (nbSave > 1){
             System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Cette fonction prend en paramètre la ligne de commande, et renvoie vrai si le délimiteur choisi par l'utilisateur est autorisé par l'application, et renvoie false sinon.
+     * @author KLE
+     * @date 4 novembre 2018
+     * @param commandLine : ligne de commande saisie par l'utilisateur
+     * @return
+     */
+    public boolean verifDelimiteur(String commandLine){
+        int nbDelimit = StringUtils.countMatches(commandLine, "-delimit");
+        List caracteresAutorises = new ArrayList(); // Cette liste permet de modifier facilement les délimiteurs autorisés par Wikimatrix sans changer le reste de la méthode.
+        caracteresAutorises.add(';');
+        caracteresAutorises.add(','); // A CHANGER, C'EST PAS BEAU
+        if (nbDelimit == 1) { //On vérifie l'intégrité du délimiteur : est-il autorisé par Wikimatrix ?
+            Pattern pDelimit=Pattern.compile("-delimit\\[.*?\\]");
+            Matcher mDelimit = pDelimit.matcher(commandLine);
+            char contenuDelimit = mDelimit.group(1).charAt(0);
+            if(!caracteresAutorises.contains(contenuDelimit)){
+                System.out.println("Le délimiteur saisi n'est pas pris en charge par Wikimatrix");
+                return false;
+            }
+        } else if (nbDelimit>1){
+            System.out.println("Vous ne pouvez choisir qu'un seul délimiteur");
             return false;
         }
         return true;

@@ -14,6 +14,16 @@ public class Url implements IUrl{
 	private String nomCsv; 
 	private boolean extraWiki;
 	private boolean extraHtml;
+	
+	
+	public Url(String url,char delimit,String nomCsv, boolean extraWiki, boolean extraHtml){
+		this.url= url; 
+		this.delimit = delimit;
+		this.nomCsv = nomCsv;
+		this.extraHtml = extraHtml;
+		this.extraWiki = extraWiki;
+	}
+	
 
 /**
  * 
@@ -39,6 +49,62 @@ public boolean verifURL(String url) {
 	return true; 
 }
 
+/**
+ * 
+ * @return l'Url traitée
+ */
+
+public String getUrl() {
+	return url;
+}
+
+/**
+ * 
+ * @para Nouvelle Url 
+ * 
+ */
+
+
+public void setUrl(String newUrl){
+	if(verifURL(newUrl))
+	url = newUrl;
+}
+
+/**
+ * 
+ * @return le délimiteur choisit par l'utilisateur
+ */
+public char getDelimit() {
+	return this.delimit;
+}
+
+
+/**
+ * 
+ * @return le nom du fichier CSV choisit par l'utilisateur
+ */
+public String getNomCSV() {
+	return this.nomCsv;
+}
+
+/**
+ * 
+ * @return Un booléen qui indique si l'extraction doit être faite en HTML (true)
+ *         ou non (false)
+ */
+public boolean getExtraHTML() {
+	return this.extraHtml;
+}
+
+/**
+ * 
+ * @return Un booléen qui indique si l'extraction doit être faite en
+ *         wikicode(true) ou non (false)
+ */
+public boolean getExtraWiki() {
+	return this.extraWiki;
+}
+
 //TEST
 public static boolean isWikiURL(String url) {
 	String domain = "wikipedia.org";
@@ -57,7 +123,9 @@ public static boolean isWikiURL(String url) {
     }
 	return false;
 }
-
+/**
+ * @param 
+ */
 
 @Override
 public boolean isWikipediaURL(String url) {

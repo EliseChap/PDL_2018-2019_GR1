@@ -31,7 +31,6 @@ public class Csv implements ICsv{
 	public Csv(char delimit, String cheminCsv, String nomCsv) {
 		
 
-		// ê é è test accent
 		//V�rification si d�limitation est null
 		if(delimit=='\u0000') {
 			this.delimit = ',';

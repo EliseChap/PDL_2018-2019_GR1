@@ -45,21 +45,6 @@ public class CommandLine implements ICommandLine {
 
         // Vérification de l'URL
 
-        int nbSave = StringUtils.countMatches(commandLine, "-save");
-        if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
-            Pattern pSave=Pattern.compile("-save\\[.*?\\]");
-            Matcher mSave=pSave.matcher(commandLine);
-            String contenuSave = mSave.group(1);
-            String contenuSaveExtension = contenuSave.substring(contenuSave.length() -4, contenuSave.length());
-            if((contenuSaveExtension!=".csv") || (contenuSave.length()<5)){
-                System.out.println("Le chemin du fichier de sortie spécifié est invalide");
-                jetonIntegrite=false;
-            }
-        } else if (nbSave > 1){
-            System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
-            jetonIntegrite = false;
-        }
-
         int nbDelimit = StringUtils.countMatches(commandLine, "-delimit");
         List caracteresAutorises = new ArrayList(); // Cette liste permet de modifier facilement les délimiteurs autorisés par Wikimatrix sans changer le reste de la méthode.
         caracteresAutorises.add(';');
@@ -164,6 +149,31 @@ public class CommandLine implements ICommandLine {
                 System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
                 return false;
             }
+        }
+        return true;
+    }
+
+    /**
+     * Cette fonction prend en paramètre la ligne de commande, et vérifie que le chemin de sortie, si spécifié, est valide puis renvoie vrai dans ce cas, false sinon.
+     * @author KLH
+     * @date 4 novembre 2018
+     * @param commandLine : ligne de commande saisie par l'utilisateur
+     * @return
+     */
+    public boolean verifCheminSortie(String commandLine){
+        int nbSave = StringUtils.countMatches(commandLine, "-save");
+        if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
+            Pattern pSave=Pattern.compile("-save\\[.*?\\]");
+            Matcher mSave=pSave.matcher(commandLine);
+            String contenuSave = mSave.group(1);
+            String contenuSaveExtension = contenuSave.substring(contenuSave.length() -4, contenuSave.length());
+            if((contenuSaveExtension!=".csv") || (contenuSave.length()<5)){
+                System.out.println("Le chemin du fichier de sortie spécifié est invalide");
+                return false;
+            }
+        } else if (nbSave > 1){
+            System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
+            return false;
         }
         return true;
     }

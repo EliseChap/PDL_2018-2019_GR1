@@ -45,26 +45,6 @@ public class CommandLine implements ICommandLine {
 
         // Vérification de l'URL
 
-
-        if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié est valide (on ne teste pas s'il est fonctionnel)
-            Pattern pImport=Pattern.compile("-import\\[.*?\\]");
-            Matcher mImport=pImport.matcher(commandLine);
-            String contenuImport = mImport.group(1);
-            String contenuImportExtension = contenuImport.substring(contenuImport.length() -4, contenuImport.length());
-            if((contenuImportExtension!=".txt") || (contenuImport.length()<5)){
-                System.out.print("Le chemin d'accès au fichier d'URLs à importer est invalide");
-                jetonIntegrite=false;
-            }
-        } else if (nbURL == 1){ // On vérifie que l'URL spécifiée est valide, qu'il s'agit d'une url wiki (on ne teste pas si elle est fonctionnelle)
-            Pattern pURL=Pattern.compile("-url\\[.*?\\]");
-            Matcher mURL = pURL.matcher(commandLine);
-            String contenuURL = mURL.group(1);
-            if((contenuURL!="https://en.wikipedia.org/") || (contenuURL!="https://fr.wikipedia.org/") || (contenuURL!="http://en.wikipedia.org/") || (contenuURL!="http://fr.wikipedia.org/")){
-                System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
-                jetonIntegrite=false;
-            }
-        }
-
         int nbSave = StringUtils.countMatches(commandLine, "-save");
         if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
             Pattern pSave=Pattern.compile("-save\\[.*?\\]");
@@ -152,11 +132,41 @@ public class CommandLine implements ICommandLine {
         }
 
         if(jetonLocal) {
-            jetonLocal = true; //Lancer ici la verif en profondeur
+            jetonLocal = verifUrlOrCheminEntree(commandLine, nbURL, nbImport); //Lancement de l'analyse en profondeur
         }
         return jetonLocal;
     }
 
+    /**
+     * Cette fonction vérifie que le chemin du fichier d'entrée ou l'url saisie par l'utilisateur est exploitable et renvoie vrai dans ce cas, et false sinon.
+     * @author KLH
+     * @date 3 novembre 2018
+     * @param commandLine : ligne de commande saisie par l'utilisateur
+     * @param nbURL : nombre de commandes "url" dans la ligne de commande
+     * @param nbImport : nombre de commandes "import" dans la ligne de commande
+     * @return
+     */
+    public boolean verifUrlOrCheminEntree(String commandLine, int nbURL, int nbImport){
+        if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié est valide (on ne teste pas s'il est fonctionnel)
+            Pattern pImport=Pattern.compile("-import\\[.*?\\]");
+            Matcher mImport=pImport.matcher(commandLine);
+            String contenuImport = mImport.group(1);
+            String contenuImportExtension = contenuImport.substring(contenuImport.length() -4, contenuImport.length());
+            if((contenuImportExtension!=".txt") || (contenuImport.length()<5)){
+                System.out.print("Le chemin d'accès au fichier d'URLs à importer est invalide");
+               return false;
+            }
+        } else if (nbURL == 1){ // On vérifie que l'URL spécifiée est valide, qu'il s'agit d'une url wiki (on ne teste pas si elle est fonctionnelle)
+            Pattern pURL=Pattern.compile("-url\\[.*?\\]");
+            Matcher mURL = pURL.matcher(commandLine);
+            String contenuURL = mURL.group(1);
+            if((contenuURL!="https://en.wikipedia.org/") || (contenuURL!="https://fr.wikipedia.org/") || (contenuURL!="http://en.wikipedia.org/") || (contenuURL!="http://fr.wikipedia.org/")){
+                System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
+                return false;
+            }
+        }
+        return true;
+    }
 
     public char getDelimit() {
         return delimit;

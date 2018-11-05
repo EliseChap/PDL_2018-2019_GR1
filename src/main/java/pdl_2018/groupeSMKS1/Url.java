@@ -3,6 +3,9 @@ package src.main.java.pdl_2018.groupeSMKS1;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+
+import org.checkerframework.checker.regex.RegexUtil;
+
 import java.io.IOException;
 import com.google.common.net.InternetDomainName;
 
@@ -150,18 +153,27 @@ public class Url implements IUrl {
 		}
 		return false;
 	}
-
+	
+public String GetSousDomaine(String url){
+	URL u = null;
+	try {
+		u = new URL(url);
+	} catch (MalformedURLException e) {
+	}
+	String path = u.getPath();
+	 String[] str =url.split("/wiki/");
+     return str[1];
+}
 	@Override
-	public Extracteur ConstructeurExtracteur(char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
+	public Extracteur ConstructeurExtracteur(String url,char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) {
-		String url = getUrl();
 		if (verifURL(url) && isWikipediaURL(url)) {
 			if (extraWiki) {
-				Extracteur wiki = new Wikitext(delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
+				Extracteur wiki = new Wikitext(url,delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
 				return wiki;
 			}
 			if (extraHtml) {
-				Extracteur html = new Html(delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
+				Extracteur html = new Html(url,delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
 				return html;
 			}
 		}
@@ -173,6 +185,19 @@ public class Url implements IUrl {
 		String u = "https://fr.wikipedia.org/wiki/France";
 		boolean test = isWikiURL(u);
 		System.out.println(test);
+		URL url = null;
+		try {
+			url = new URL(u);
+		} catch (MalformedURLException e) {
+			
+		}
+	
+
+	        String utest =url.getPath();
+	        String[] str =utest.split("/wiki/");
+	        System.out.println (str[1]);
+	       
+		
 	}
 
 }

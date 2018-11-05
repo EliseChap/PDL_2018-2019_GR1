@@ -1,14 +1,15 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
 public class Wikitext extends Extracteur {
-
+	private String url;
 	private char delimit;
 	private String cheminCSV;
 	private String nomCSV;
 	private boolean extraHTML;
 	private boolean extraWiki;
 
-	public Wikitext(char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
+	public Wikitext(String url,char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
+		this.url=url;
 		this.delimit = delimit;
 		this.cheminCSV = cheminCSV;
 		this.extraHTML = extraHTML;

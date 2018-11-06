@@ -3,16 +3,13 @@ package src.main.java.pdl_2018.groupeSMKS1;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-
-import org.checkerframework.checker.regex.RegexUtil;
-
 import java.io.IOException;
 import com.google.common.net.InternetDomainName;
 
 import src.main.java.pdl_2018.groupeSMKS1.IUrl;
 
 public class Url implements IUrl {
-private URL u;
+	private URL myUrl;
 	private String url;
 	private char delimit;
 	private String cheminCsv;
@@ -27,12 +24,11 @@ private URL u;
 		this.extraHtml = extraHtml;
 		this.extraWiki = extraWiki;
 		this.cheminCsv = cheminCsv;
-		
-		
+
 		try {
-		u = new URL(url);
+			myUrl = new URL(url);
 		} catch (MalformedURLException e) {
-			//return false;
+			// return false;
 		}
 	}
 
@@ -44,9 +40,9 @@ private URL u;
 
 	@Override
 	public boolean verifURL() {
-		
+
 		try {
-			URLConnection c = u.openConnection();
+			URLConnection c = myUrl.openConnection();
 			c.connect();
 		} catch (IOException e) {
 			return false;
@@ -135,13 +131,13 @@ private URL u;
 	}
 
 	/**
-	 * @param
+	 * @return true si l'url est une adresse wikipédia, false sinon 
 	 */
 
 	@Override
 	public boolean isWikipediaURL() {
 		String domain = "wikipedia.org";
-		String host = u.getHost();
+		String host = myUrl.getHost();
 		InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
 		if (name.toString().equals(domain)) {
 			return true;
@@ -149,20 +145,30 @@ private URL u;
 		return false;
 	}
 	
-public String GetSousDomaine(){
-	String path = u.getPath();
-	 String[] str =url.split("/wiki/");
-     return str[1];
-}
+	/**
+	 * @return Une string avec le sous domaine de l'url
+	 */
+
+	public String GetSousDomaine() {
+		String path = myUrl.getPath();
+		String[] str = url.split("/wiki/");
+		return str[1];
+	}
+
+	
+	/**
+	 * 
+	 * @return un Extracteur wiki et/ un Extracteur html
+	 */
 	@Override
 	public Extracteur ConstructeurExtracteur() {
 		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
-				Extracteur wiki = new Wikitext(url,delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
+				Extracteur wiki = new Wikitext(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				return wiki;
 			}
 			if (extraHtml) {
-				Extracteur html = new Html(url,delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
+				Extracteur html = new Html(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				return html;
 			}
 		}
@@ -178,14 +184,13 @@ public String GetSousDomaine(){
 		try {
 			url = new URL(u);
 		} catch (MalformedURLException e) {
-			
+
 		}
-	
-	        String utest =url.getPath();
-	        String[] str =utest.split("/wiki/");
-	        System.out.println (str[1]);
-	       
-		
+
+		String utest = url.getPath();
+		String[] str = utest.split("/wiki/");
+		System.out.println(str[1]);
+
 	}
 
 }

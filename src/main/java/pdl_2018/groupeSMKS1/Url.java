@@ -161,15 +161,14 @@ public String GetSousDomaine(){
      return str[1];
 }
 	@Override
-	public Extracteur ConstructeurExtracteur(String url,char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
-			boolean extraWiki) {
+	public Extracteur ConstructeurExtracteur() {
 		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
-				Extracteur wiki = new Wikitext(url,delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
+				Extracteur wiki = new Wikitext(url,delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				return wiki;
 			}
 			if (extraHtml) {
-				Extracteur html = new Html(url,delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
+				Extracteur html = new Html(url,delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				return html;
 			}
 		}

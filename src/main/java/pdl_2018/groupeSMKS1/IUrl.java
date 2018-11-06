@@ -17,14 +17,9 @@ public interface IUrl {
  
  /**
   * 
-  * @param delimit le délimiteur choisit par l'utilisateur
-  * @param cheminCSV le chemin ou le fichier sera sauvegardé
-  * @param NomCSV Le nom du fichier CSV de sortie
-  * @param extraHTML Un boolean à true si l'extraction doit étre faite en HTML, false sinon
-  * @param extraWiki Un boolean à true si l'extraction doit etre faite avec le 	Wikicode, false sinon
   * @return Retour un object extracteur
   */
- public Extracteur ConstructeurExtracteur(String url,char delimit, String cheminCSV,String NomCSV, boolean extraHTML, boolean extraWiki);
+ public Extracteur ConstructeurExtracteur();
 }
 
 

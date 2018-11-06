@@ -141,12 +141,6 @@ private URL u;
 	@Override
 	public boolean isWikipediaURL() {
 		String domain = "wikipedia.org";
-		URL u = null;
-		try {
-			u = new URL(url);
-		} catch (MalformedURLException e) {
-			return false;
-		}
 		String host = u.getHost();
 		InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
 		if (name.toString().equals(domain)) {
@@ -187,7 +181,6 @@ public String GetSousDomaine(){
 			
 		}
 	
-
 	        String utest =url.getPath();
 	        String[] str =utest.split("/wiki/");
 	        System.out.println (str[1]);

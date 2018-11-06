@@ -12,7 +12,7 @@ import com.google.common.net.InternetDomainName;
 import src.main.java.pdl_2018.groupeSMKS1.IUrl;
 
 public class Url implements IUrl {
-
+private URL u;
 	private String url;
 	private char delimit;
 	private String cheminCsv;
@@ -27,23 +27,24 @@ public class Url implements IUrl {
 		this.extraHtml = extraHtml;
 		this.extraWiki = extraWiki;
 		this.cheminCsv = cheminCsv;
+		
+		
+		try {
+		u = new URL(url);
+		} catch (MalformedURLException e) {
+			//return false;
+		}
 	}
 
 	/**
 	 * 
-	 * @param url
 	 * @return true si l'URL est valide, false sinon
 	 * 
 	 */
 
 	@Override
-	public boolean verifURL(String url) {
-		URL u = null;
-		try {
-			u = new URL(url);
-		} catch (MalformedURLException e) {
-			return false;
-		}
+	public boolean verifURL() {
+		
 		try {
 			URLConnection c = u.openConnection();
 			c.connect();
@@ -138,7 +139,7 @@ public class Url implements IUrl {
 	 */
 
 	@Override
-	public boolean isWikipediaURL(String url) {
+	public boolean isWikipediaURL() {
 		String domain = "wikipedia.org";
 		URL u = null;
 		try {
@@ -154,12 +155,7 @@ public class Url implements IUrl {
 		return false;
 	}
 	
-public String GetSousDomaine(String url){
-	URL u = null;
-	try {
-		u = new URL(url);
-	} catch (MalformedURLException e) {
-	}
+public String GetSousDomaine(){
 	String path = u.getPath();
 	 String[] str =url.split("/wiki/");
      return str[1];
@@ -167,7 +163,7 @@ public String GetSousDomaine(String url){
 	@Override
 	public Extracteur ConstructeurExtracteur(String url,char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) {
-		if (verifURL(url) && isWikipediaURL(url)) {
+		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
 				Extracteur wiki = new Wikitext(url,delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
 				return wiki;

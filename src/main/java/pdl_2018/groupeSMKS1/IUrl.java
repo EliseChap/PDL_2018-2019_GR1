@@ -4,17 +4,15 @@ public interface IUrl {
 	
 	/**
 	 * 
-	 * @param URL est l'adresse URL d'une page web
 	 * @return True si l'URL est bien formé, false sinon
 	 */
- public  boolean verifURL(String URL);
+ public  boolean verifURL();
  
  /**
   * 
-  * @param URL est l'adresse URL d'une page web
   * @return True si l'URL provient d'une page wikipedia, false sinon
   */
- public boolean isWikipediaURL(String URL);
+ public boolean isWikipediaURL();
  
  
  /**

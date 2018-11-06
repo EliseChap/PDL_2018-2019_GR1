@@ -52,7 +52,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return l'Url traitée
+	 * @return l'Url traitee
 	 */
 
 	public String getUrl() {
@@ -71,7 +71,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return le délimiteur choisit par l'utilisateur
+	 * @return le delimiteur choisit par lutilisateur
 	 */
 	public char getDelimit() {
 		return this.delimit;
@@ -79,7 +79,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return le nom du fichier CSV choisit par l'utilisateur
+	 * @return le nom du fichier CSV choisit par lutilisateur
 	 */
 	public String getNomCSV() {
 		return this.nomCsv;
@@ -87,7 +87,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return le chemin de sauvegarde du fichier choisit par l'utilisateur
+	 * @return le chemin de sauvegarde du fichier choisit par lutilisateur
 	 */
 	public String getCheminCSV() {
 		return this.cheminCsv;
@@ -95,7 +95,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return Un booléen qui indique si l'extraction doit être faite en HTML
+	 * @return Un booleen qui indique si lextraction doit etre faite en HTML
 	 *         (true) ou non (false)
 	 */
 	public boolean getExtraHTML() {
@@ -104,7 +104,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return Un booléen qui indique si l'extraction doit être faite en
+	 * @return Un booleen qui indique si l'extraction doit etre faite en
 	 *         wikicode(true) ou non (false)
 	 */
 	public boolean getExtraWiki() {
@@ -131,7 +131,7 @@ public class Url implements IUrl {
 	}
 
 	/**
-	 * @return true si l'url est une adresse wikipédia, false sinon 
+	 * @return true si lurl est une adresse wikipedia, false sinon 
 	 */
 
 	@Override
@@ -146,7 +146,7 @@ public class Url implements IUrl {
 	}
 	
 	/**
-	 * @return Une string avec le sous domaine de l'url
+	 * @return Une string avec le sous domaine de lurl
 	 */
 
 	public String GetSousDomaine() {
@@ -158,7 +158,7 @@ public class Url implements IUrl {
 	
 	/**
 	 * 
-	 * @return un Extracteur wiki et/ un Extracteur html
+	 * @return un Extracteur wiki et/ou un Extracteur html
 	 */
 	@Override
 	public Extracteur ConstructeurExtracteur() {
@@ -177,7 +177,7 @@ public class Url implements IUrl {
 	}
 
 	public static void main(String[] args) {
-		String u = "https://fr.wikipedia.org/wiki/France";
+		String u = "https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones#Tournage";
 		boolean test = isWikiURL(u);
 		System.out.println(test);
 		URL url = null;

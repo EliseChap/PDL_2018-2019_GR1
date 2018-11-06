@@ -164,7 +164,7 @@ public class Url implements IUrl {
 	public Extracteur ConstructeurExtracteur() {
 		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
-				Extracteur wiki = new Wikitext(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
+				Extracteur wiki  = new Wikitext(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				return wiki;
 			}
 			if (extraHtml) {

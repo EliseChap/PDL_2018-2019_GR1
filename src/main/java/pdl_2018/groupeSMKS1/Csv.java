@@ -54,6 +54,7 @@ public class Csv implements ICsv{
 		else {
 			this.cheminCsv= cheminCsv;
 		}
+		this.tableau=tableau;
 		initialisationSeparateurAutomatique();
 		
 
@@ -287,24 +288,26 @@ public class Csv implements ICsv{
 		separateurAutomatique.put("-", false);
 		separateurAutomatique.put("|", false);
 		separateurAutomatique.put(",", false);*/
-/*
+
 char delimit =';';
 		String cheminCsv="";
 		//String cheminCsv="../";
 		String nomCsv=null;
 		String cheminEntree=null;
+		ArrayList<String[]> list = new ArrayList<String[]>();
+		String[] arr1 = { "a", "b", "c" };
+		String[] arr2 = { "1,0", "2", "3", "4" };
+		list.add(arr1);
+		list.add(arr2);
 		
-		Csv csv = new Csv(delimit, cheminCsv,nomCsv);
+		Csv csv = new Csv(delimit, cheminCsv,nomCsv, list);
+		
 		
 		System.out.println(csv.verificationCheminDispo());
 		
-		ArrayList<String[]> list = new ArrayList<String[]>();
-				String[] arr1 = { "a", "b", "c" };
-				String[] arr2 = { "1,0", "2", "3", "4" };
-				list.add(arr1);
-				list.add(arr2);
+
 				
-				String text = csv.convertionTableauEnStringDelimiter(list);
+				/*String text = csv.convertionTableauEnStringDelimiter();
 				csv.exporterCSV(text);*/
 
     }

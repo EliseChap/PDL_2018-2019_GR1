@@ -41,14 +41,15 @@ public class Url implements IUrl {
 	@Override
 	public boolean verifURL() {
 
-//		try {
-//			URLConnection c = myUrl.openConnection();
-//			c.connect();
-//		} catch (IOException e) {
-//			return false;
-//		}
+		try {
+			URLConnection c = myUrl.openConnection();
+			c.connect();
+		} catch (IOException e) {
+			return false;
+		}
 		return true;
 	}
+	
 
 	/**
 	 * 

@@ -61,21 +61,22 @@ public class Tableau implements ITableau{
 	
 	/**
 	 * Check the validity of the table and send it to convert it to CSV
+	 * @return 
 	 */
 	
 	@Override
-	public void constructorCsv() {
+	public boolean constructorCsv() {
 		if(verificationNumberIdenticalColumn()) {
 			Csv csv = new Csv(delimit, cheminCsv, nomCsv, tableau);
-			System.out.println("convertie en CSV");
+			return true;
 		}
-		else System.out.println("Le tableau n'est pas correcte en nombre de colonne");
+		else {
+			System.out.println("Le tableau n'est pas correcte en nombre de colonne");
+			return false;
+		}
 	}
 	
 	public static void main(String[] args) {
-	
-
-
 		char delimit =';';
 		String cheminCsv="";
 		String nomCsv=null;

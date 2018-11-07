@@ -12,7 +12,7 @@ public interface ITableau {
 
 	boolean verificationNumberIdenticalColumn();
 
-	void constructorCsv();
+	boolean constructorCsv();
 
 
 }

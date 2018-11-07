@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
 import src.main.java.pdl_2018.groupeSMKS1.Url;
+import src.main.java.pdl_2018.groupeSMKS1.Fichier;
 
 public class CommandLine implements ICommandLine {
     char delimit;
@@ -17,13 +18,16 @@ public class CommandLine implements ICommandLine {
     Boolean extraWiki;
     String url;
 
+    String ligneDeCommande;
+
     /**
      * Constructeur de la classe CommandLine
      *
      */
     public CommandLine(String commandLine){
+        this.ligneDeCommande = commandLine;
         //Constructeur vide de variables, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
-        if(verifIntegriteCommandLine(commandLine)){
+        if(verifIntegriteCommandLine(this.ligneDeCommande)){
             //Url monUrl = new Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ? A voir ensemble, pour le moment je transmets rien.
         } else {
             //Demander à l'utilisateur de saisir à nouveau la ligne de commande, en prenant compte des messages d'erreurs affichés. Comment on gère ça ?

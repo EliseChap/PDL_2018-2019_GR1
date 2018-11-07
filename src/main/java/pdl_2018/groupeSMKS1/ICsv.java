@@ -7,11 +7,6 @@ public interface ICsv {
 
 	void initialisationSeparateurAutomatique();
 	
-
-	//public String verificationSeparateurValide(ArrayList<String[]> tableau);
-
-	String convertionTableauEnStringDelimiter(ArrayList<String[]> tableau);
-
 	void exporterCSV(String Text);
 
 	boolean verificationCheminDispo();
@@ -27,15 +22,14 @@ public interface ICsv {
 
 
 	String getNomCsv();
-
-
-	String verificationSeparateurValide(ArrayList<String[]> tableau);
-
+	
 
 	String nomCsvIncrementer();
 
-	//String nomCsvIncrementer();
 
-//	String verificationSeparateurValide(ArrayList<String[]> tableau);
+	String convertionTableauEnStringDelimiter();
+
+	String verificationSeparateurValide();
+
 
 }

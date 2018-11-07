@@ -26,12 +26,12 @@ public class Csv implements ICsv{
 	
     static Map<String, Boolean> separateurAutomatique = new HashMap<String, Boolean>();
 	
+    ArrayList<String[]> tableau;
 	
-	
-	public Csv(char delimit, String cheminCsv, String nomCsv) {
+	public Csv(char delimit, String cheminCsv, String nomCsv, ArrayList<String[]> tableau) {
 		
 
-		//V�rification si d�limitation est null
+		//V�rification si delimitation est null
 		if(delimit=='\u0000') {
 			this.delimit = ',';
 		}
@@ -39,7 +39,7 @@ public class Csv implements ICsv{
 			this.delimit = delimit;
 		}
 		
-		//V�rification si nom est null
+		//Verification si nom est null
 		if(nomCsv==null || nomCsv=="") {
 			this.nomCsv = "WikiMatrix.csv";
 		}
@@ -47,7 +47,7 @@ public class Csv implements ICsv{
 			this.nomCsv = nomCsv;
 		}
 		
-		//V�rification si cheminCsv est null
+		//Verification si cheminCsv est null
 		if(cheminCsv==null) {
 			this.cheminCsv = "";
 		}
@@ -77,7 +77,7 @@ public class Csv implements ICsv{
 	
 	/**
 	 * Initialisation du hashmap du separateur
-	 * False signifie non present dans les donn�es
+	 * False signifie non present dans les donnees
 	 * @date 25/10/2018
 	 */
 	@Override
@@ -100,14 +100,14 @@ public class Csv implements ICsv{
 	
 
 	/**
-	 * Vérifie si le séparateur de l'utilisateur n'est pas utilisé sinon choisi un autre automatiquement
+	 * Verifie si le separateur de l'utilisateur n'est pas utilise sinon choisi un autre automatiquement
 	 * @param tableau
 	 * @return le separateur choisi
 	 * @date 25/10/2018
 	 */
 	
 	@Override
-	public String verificationSeparateurValide(ArrayList<String[]> tableau) {
+	public String verificationSeparateurValide() {
 		
 		Boolean separateurUtilisateur = false;
 		
@@ -153,17 +153,17 @@ public class Csv implements ICsv{
 	}	
 	
 	/**
-	 * Convertie un ArrayList avec des tableaux en String avec s�parateur
+	 * Convertie un ArrayList avec des tableaux en String avec separateur
 	 * @param tableau
 	 * @return stringDelimiter
 	 * @date 25/10/2018
 	 */
 	@Override
-	public String convertionTableauEnStringDelimiter(ArrayList<String[]> tableau) {
+	public String convertionTableauEnStringDelimiter() {
 		
 		String stringDelimiter = "";
 		
-		 String separateur = verificationSeparateurValide(tableau);
+		 String separateur = verificationSeparateurValide();
 		for (String[] strArr : tableau) {
 			System.out.println(Arrays.toString(strArr));
 			 String nouvelleLigne = String.join(separateur, strArr);
@@ -174,7 +174,7 @@ public class Csv implements ICsv{
 	}
 	
 	/**
-	 * Cr�ation du CSV gr�ce a un String en entr�e
+	 * Cr�ation du CSV grace a un String en entree
 	 * @param Text
 	 * @throws FileNotFoundException
 	 * @date 25/10/2018
@@ -214,7 +214,7 @@ public class Csv implements ICsv{
 	}
 	
 	/**
-	 * V�rifie si le fichier existe si oui alors true
+	 * Verifie si le fichier existe si oui alors true
 	 * @return Boolean
 	 * @date 25/10/2018
 	 */
@@ -227,7 +227,7 @@ public class Csv implements ICsv{
 	}
 
 	/**
-	 * Trouve un nom de CSV non d�j� pris
+	 * Trouve un nom de CSV non deja pris
 	 * @return String nomDuFichierAl�atoire
 	 * @date 25/10/2018
 	 */

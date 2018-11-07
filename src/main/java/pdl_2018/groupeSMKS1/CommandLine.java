@@ -26,9 +26,13 @@ public class CommandLine implements ICommandLine {
      */
     public CommandLine(String commandLine){
         this.ligneDeCommande = commandLine;
-        //Constructeur vide de variables, constructeur par défaut. Les variables de la classe CommandLine sont définies au lancement de la méthode verifIntegriteCommandLine
         if(verifIntegriteCommandLine(this.ligneDeCommande)){
-            //Url monUrl = new Url(); //Quand l'user saisi une url, je transmets l'url, mais quand il saisi un fichier, je transmets quoi ? A voir ensemble, pour le moment je transmets rien.
+            if(this.url!=null && this.cheminEntree==null){
+                Url monUrl = new Url(this.url, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
+            }else if (this.url==null && this.cheminEntree!=null){
+                //Fichier monFichier = new Fichier(this.cheminEntree, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
+            }
+
         } else {
             //Demander à l'utilisateur de saisir à nouveau la ligne de commande, en prenant compte des messages d'erreurs affichés. Comment on gère ça ?
         }

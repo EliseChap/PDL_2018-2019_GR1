@@ -26,7 +26,7 @@ class TestUrl extends TestCase {
 	public void testURLNonValide() {
 		Url u = new Url("https://fr.wikipedia.",' ',"","",true,false);
 		
-	//	Assertions.assertFalse(u.verifURL());
+		Assertions.assertFalse(u.verifURL());
 		
 	}
 

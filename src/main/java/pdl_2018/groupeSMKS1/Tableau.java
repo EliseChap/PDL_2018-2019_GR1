@@ -101,12 +101,7 @@ public class Tableau implements ITableau{
 		
 		Tableau tableau2 = new Tableau(delimit, cheminCsv, nomCsv, list2);
 		System.out.println(tableau2.verificationNumberIdenticalColumn());
-		tableau2.constructorCsv();
-		
-		
-
-				
-
+		tableau2.constructorCsv();	
 
     }
 

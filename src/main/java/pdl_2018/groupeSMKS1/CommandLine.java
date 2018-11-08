@@ -163,7 +163,7 @@ public class CommandLine implements ICommandLine {
             Pattern pURL=Pattern.compile("-url\\[.*?\\]");
             Matcher mURL = pURL.matcher(this.ligneDeCommande);
             String contenuURL = mURL.group(1);
-            if((contenuURL!="https://en.wikipedia.org/") || (contenuURL!="https://fr.wikipedia.org/") || (contenuURL!="http://en.wikipedia.org/") || (contenuURL!="http://fr.wikipedia.org/")){
+            if((contenuURL.substring(0, 24)!="https://en.wikipedia.org/") || (contenuURL.substring(0, 24)!="https://fr.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://en.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://fr.wikipedia.org/")){
                 System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
                 return false;
             }

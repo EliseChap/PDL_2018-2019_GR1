@@ -7,7 +7,7 @@ public interface ICsv {
 
 	void initialisationSeparateurAutomatique();
 	
-	void exporterCSV(String Text);
+
 
 	boolean verificationCheminDispo();
 
@@ -27,9 +27,11 @@ public interface ICsv {
 	String nomCsvIncrementer();
 
 
-	String convertionTableauEnStringDelimiter();
+
 
 	String verificationSeparateurValide();
+
+	void exporterCSV();
 
 
 }

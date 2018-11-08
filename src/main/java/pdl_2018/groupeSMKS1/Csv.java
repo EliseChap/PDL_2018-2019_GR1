@@ -4,21 +4,23 @@ package src.main.java.pdl_2018.groupeSMKS1;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.opencsv.CSVWriter;;
 
 
-import src.main.java.pdl_2018.groupeSMKS1.ICsv;
 
 public class Csv implements ICsv{
+	
 	
 	static char delimit;
 	static String cheminCsv;
@@ -154,26 +156,6 @@ public class Csv implements ICsv{
 		
 	}	
 	
-	/**
-	 * Convertie un ArrayList avec des tableaux en String avec separateur
-	 * @param tableau
-	 * @return stringDelimiter
-	 * @date 25/10/2018
-	 */
-	@Override
-	public String convertionTableauEnStringDelimiter() {
-		
-		String stringDelimiter = "";
-		
-		 String separateur = verificationSeparateurValide();
-		for (String[] strArr : tableau) {
-			System.out.println(Arrays.toString(strArr));
-			 String nouvelleLigne = String.join(separateur, strArr);
-			 stringDelimiter = stringDelimiter + nouvelleLigne + "\n";
-		}
-	
-		return stringDelimiter;
-	}
 	
 	/**
 	 * Cr�ation du CSV grace a un String en entree
@@ -183,9 +165,13 @@ public class Csv implements ICsv{
 	 */
 	
 	@Override
-	public void exporterCSV(String Text) {
-		PrintWriter pw;
-		try {
+	public void exporterCSV() {
+
+
+	  
+	    try { 
+	    	String separateur = verificationSeparateurValide();
+	    	char car = separateur.charAt(0);
 			String lien;
 			
 			if (!verificationCheminDispo()) {
@@ -196,23 +182,23 @@ public class Csv implements ICsv{
 			}
 				
 			File nomFichier = new File(lien);
-			try {
-				nomFichier.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 			
-			pw = new PrintWriter(new File(lien));
-			StringBuilder sb = new StringBuilder();
-			sb.append(Text);
-			pw.write(Text);
-			pw.close();
+	        // create FileWriter object with file as parameter 
+	        FileWriter outputfile = new FileWriter(nomFichier); 
+	  
+	        // create CSVWriter with '|' as separator 
+	        CSVWriter writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
+	  
 
-			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	        writer.writeAll(tableau); 
+	  
+	        // closing writer connection 
+	        writer.close(); 
+	    } 
+	    catch (IOException e) { 
+	        // TODO Auto-generated catch block 
+	        e.printStackTrace(); 
+	    } 
 	}
 	
 	/**
@@ -293,7 +279,7 @@ public class Csv implements ICsv{
 char delimit =';';
 		String cheminCsv="";
 		//String cheminCsv="../";
-		String nomCsv=null;
+		String nomCsv="sullivantestlibrerie.csv";
 		String cheminEntree=null;
 		ArrayList<String[]> list = new ArrayList<String[]>();
 		String[] arr1 = { "a", "b", "c" };
@@ -303,7 +289,7 @@ char delimit =';';
 		
 		Csv csv = new Csv(delimit, cheminCsv,nomCsv, list);
 		
-		
+		csv.exporterCSV();
 		System.out.println(csv.verificationCheminDispo());
 		
 
@@ -312,5 +298,6 @@ char delimit =';';
 				csv.exporterCSV(text);*/
 
     }
+
    
  }

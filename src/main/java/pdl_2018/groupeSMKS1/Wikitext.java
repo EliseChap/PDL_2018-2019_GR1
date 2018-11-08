@@ -1,5 +1,9 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Wikitext extends Extracteur {
 	private String domain;
 	private String sousDomain;
@@ -8,6 +12,8 @@ public class Wikitext extends Extracteur {
 	private String nomCSV;
 	private boolean extraHTML;
 	private boolean extraWiki;
+	private ArrayList<Tableau> lesTableaux;
+	private Map<Integer,String> lesWikitab;
 
 	public Wikitext(String domain,String sousDomain,char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
 		this.domain=domain;
@@ -17,6 +23,9 @@ public class Wikitext extends Extracteur {
 		this.cheminCSV = cheminCSV;
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;
+		lesTableaux = new ArrayList<Tableau>();
+		lesWikitab = new HashMap<Integer, String>();
+		
 	}
 
 	@Override

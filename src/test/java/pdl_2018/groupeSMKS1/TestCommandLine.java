@@ -33,6 +33,7 @@ class TestCommandLine {
      */
     @Test
     public void testVerifHtmlOrWikicodeChoice(){
+
         CommandLine myCommand = new CommandLine("-html");
         Assertions.assertTrue(myCommand.verifHtmlOrWikicodeChoice());
         Assertions.assertTrue(myCommand.extraHTML);
@@ -85,6 +86,30 @@ class TestCommandLine {
         CommandLine myCommand4 = new CommandLine("-save[c:/users/admin/]");
         Assertions.assertFalse(myCommand4.verifRepertoireSortie());
         Assertions.assertEquals(myCommand4.cheminCSV, "c:/users/admin");
+
+    }
+
+    /**
+     * Test de la méthode verifNomSortie
+     */
+    @Test
+    public void testVerifNomSortie(){
+
+        CommandLine myCommand = new CommandLine("-name");
+        Assertions.assertFalse(myCommand.verifNomSortie());
+        Assertions.assertTrue(myCommand.nomCSV==null);
+
+        CommandLine myCommand2 = new CommandLine("-name[]");
+        Assertions.assertFalse(myCommand2.verifNomSortie());
+        Assertions.assertTrue(myCommand.nomCSV==null);
+
+        CommandLine myCommand3 = new CommandLine("-name[monBeauTableauWiki]");
+        Assertions.assertTrue(myCommand3.verifRepertoireSortie());
+        Assertions.assertEquals(myCommand3.nomCSV, "");
+
+        CommandLine myCommand4 = new CommandLine("-name[monBeauTableauWiki.csv]");
+        Assertions.assertFalse(myCommand4.verifRepertoireSortie());
+        Assertions.assertEquals(myCommand4.nomCSV, "monBeauTableauWiki.csv");
 
     }
 }

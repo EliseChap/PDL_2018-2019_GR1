@@ -58,6 +58,9 @@ public class CommandLine implements ICommandLine {
         if(!verifRepertoireSortie(commandLine)){
             jetonIntegrite = false;
         }
+        if(!verifNomSortie(commandLine)){
+            jetonIntegrite = false;
+        }
         if(!verifDelimiteur(commandLine)){
             jetonIntegrite = false;
         }
@@ -200,6 +203,34 @@ public class CommandLine implements ICommandLine {
         return true;
     }
 
+    /**
+     * Cette fonction prend en paramètre la ligne de commande, et vérifie que le nom de sortie, si spécifié, est valide puis renvoie vrai dans ce cas, false sinon.
+     * @author KLH
+     * @date 4 novembre 2018
+     * @param commandLine : ligne de commande saisie par l'utilisateur
+     * @return
+     */
+    @Override
+    public boolean verifNomSortie(String commandLine){
+        int nbSave = StringUtils.countMatches(commandLine, "-name");
+        String contenuName = null;
+        if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
+            Pattern pSave=Pattern.compile("-name\\[.*?\\]");
+            Matcher mSave=pSave.matcher(commandLine);
+            contenuName = mSave.group(1);
+
+            if((contenuName.substring(contenuName.length()-5)!=".csv") || (contenuName.length()<5)){ //Le fichier termine obligatoirement par .csv et fait au moins 5 caractères (le nom minimum 1 + le .csv de taille 4).
+                //TODO Eventuellement vérifier le système d'exploitation, pour analyser présence de "X:/" etc... selon l'OS
+                System.out.println("Le chemin du fichier de sortie spécifié est invalide");
+                return false;
+            }
+        } else if (nbSave > 1){
+            System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
+            return false;
+        }
+        setNomCSV(contenuName);
+        return true;
+    }
     /**
      * Cette fonction prend en paramètre la ligne de commande, et renvoie vrai si le délimiteur choisi par l'utilisateur est autorisé par l'application, et renvoie false sinon.
      * @author KLE

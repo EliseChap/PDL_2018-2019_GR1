@@ -12,6 +12,8 @@ public interface ICommandLine {
 
     boolean verifRepertoireSortie(String commandLine);
 
+    boolean verifNomSortie(String commandLine);
+
     boolean verifDelimiteur(String commandLine);
 
 }

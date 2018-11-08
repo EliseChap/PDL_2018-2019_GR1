@@ -9,9 +9,11 @@ package src.test.java.pdl_2018.groupeSMKS1;
 import java.io.BufferedReader;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
@@ -52,72 +54,71 @@ public class TestCsv extends TestCase {
 		Assertions.assertEquals(csv.getNomCsv(),"WikiMatrix.csv");
 	}
 	
+
+	
 	
 	/**
-	 * Test simple convertionTableauEnStringDelimiter
+	 * Verification de l'exportation d'un csv
 	 */
-	@Test
-	public void testConvertionTableauEnStringDelimiter() {
 	
+	@Test
+	public void testExporterCSV2() {
+		File fichier = new File("testExporterCSV2.csv");
+		fichier.delete();
+		
 		ArrayList<String[]> list = new ArrayList<String[]>();
 		String[] arr1 = { "a", "b", "c" };
 		String[] arr2 = { "1,0", "2", "3", "4" };
 		list.add(arr1);
 		list.add(arr2);
-		Csv csv = new Csv(';',"","",list);
-		/*String text = csv.convertionTableauEnStringDelimiter();
 		
-		String chaineValide = "a;b;c\n"+"1,0;2;3;4\n";
-		
-		System.out.println(text.equals(chaineValide));
-		System.out.println(chaineValide);
-		Assertions.assertEquals(chaineValide,text);*/
-	}
-	
-	/*
-	 * 
-	 * 
-	 * 
-	 * 
-	 * Ajouter d'autres Test .....
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 */
-	
-	
-	/**
-	 * Verification de l'exportation d'un txt vers un csv
-	 */
-	
-	@Test
-	public void testExporterCSV() {
-		File fichier = new File("testExporterCSV.csv");
-		fichier.delete();
-		Csv csv = new Csv(';',"","testExporterCSV.csv",null);
-		Assertions.assertFalse(csv.verificationCheminDispo());
-		csv.exporterCSV("Ceci est un test de la classe Csv avec la methode ExporterCsv");
-		Assertions.assertTrue(csv.verificationCheminDispo());
-		BufferedReader buf;
-		try {
-			buf = new BufferedReader(new FileReader("testExporterCSV.csv"));
-			String line = buf.readLine();
 
-			Assertions.assertTrue(line.toString().equals("Ceci est un test de la classe Csv avec la methode ExporterCsv"));
+		
+		
+		Csv csv = new Csv(';',"","testExporterCSV2.csv",list);
+		csv.exporterCSV();
+		
+		FileInputStream csvFile = null;
+		try {
+			csvFile = new FileInputStream("testExporterCSV2.csv");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		InputStreamReader inputreader = new InputStreamReader(csvFile);
+		BufferedReader br = new BufferedReader(inputreader);
+
+		String line;
+		try {
+			String strArray1 =String.join(";", arr1);
+			String strArray2 =String.join(";", arr2);
+			String tab[]= {strArray1,strArray2};
+			int i = 0;
+			while ((line = br.readLine()) != null) {
+				Assertions.assertTrue(tab[i].equals(line));
+			    i++;
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		}
 	
-		
-
+	
+	
+	@Test
+	public void testExporterCSV() {
+		ArrayList<String[]> list = new ArrayList<String[]>();
+		String[] arr1 = { "a", "b", "c" };
+		File fichier = new File("testExporterCSV.csv");
 		fichier.delete();
+		Csv csv = new Csv(';',"","testExporterCSV.csv",list);
+		Assertions.assertFalse(csv.verificationCheminDispo());
+		csv.exporterCSV();
+		Assertions.assertTrue(csv.verificationCheminDispo());
+
 	}
+	
 	
 	/**
 	 * V�rifiation si le hashmap est initialis� en faux
@@ -159,13 +160,19 @@ public class TestCsv extends TestCase {
 		
 		//création des fichiers
 		
-		Csv csv = new Csv(';',"","testIncrementer.csv",null);
+		ArrayList<String[]> list = new ArrayList<String[]>();
+		String[] arr1 = { "a;", "b", "c" };
+		String[] arr2 = { "1,0:-", "2", "3", "4" };
+		list.add(arr1);
+		list.add(arr2);
+		
+		Csv csv = new Csv(';',"","testIncrementer.csv",list);
 		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_1.csv");
-		csv.exporterCSV("testNomCsvIncrementer");
+		csv.exporterCSV();
 		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_2.csv");
-		csv.exporterCSV("testNomCsvIncrementer");
+		csv.exporterCSV();
 		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_3.csv");
-		csv.exporterCSV("testNomCsvIncrementer");
+		csv.exporterCSV();
 		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_4.csv");
 		
 		//supprimer les fichers
@@ -183,9 +190,16 @@ public class TestCsv extends TestCase {
 	public void testVerificationCheminDispo() {
 		File fichier = new File("testChemin.csv");
 		fichier.delete();
-		Csv csv = new Csv(';',"","testChemin.csv",null);
+		
+		ArrayList<String[]> list = new ArrayList<String[]>();
+		String[] arr1 = { "a;", "b", "c" };
+		String[] arr2 = { "1,0:-", "2", "3", "4" };
+		list.add(arr1);
+		list.add(arr2);
+		
+		Csv csv = new Csv(';',"","testChemin.csv",list);
 		Assertions.assertTrue(!csv.verificationCheminDispo());
-		csv.exporterCSV("testChemin");
+		csv.exporterCSV();
 		Assertions.assertTrue(csv.verificationCheminDispo());
 		fichier.delete();
 		Assertions.assertTrue(!csv.verificationCheminDispo());

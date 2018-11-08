@@ -2,12 +2,17 @@ package src.main.java.pdl_2018.groupeSMKS1;
 
 
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.io.Writer;
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -15,9 +20,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.opencsv.CSVWriter;;
+import com.google.common.io.Files;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 
 
+
+import java.io.Reader;
+import java.nio.file.Paths;
 
 public class Csv implements ICsv{
 	
@@ -236,68 +246,48 @@ public class Csv implements ICsv{
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// List of String arrays
-		//char delimit ='\u0000';
-	/*	File fichier = new File("testExporterCSV.csv");
+		File fichier = new File("testExporterCSV2.csv");
 		fichier.delete();
-		Csv csv = new Csv(';',"","testExporterCSV.csv");
-		//Assertions.assertFalse(csv.verificationCheminDispo());
-		csv.exporterCSV("Ceci est un test de la classe Csv avec la methode ExporterCsv");
-		//Assertions.assertTrue(csv.verificationCheminDispo());
-		BufferedReader buf;
-		try {
-			buf = new BufferedReader(new FileReader("testExporterCSV.csv"));
-			String line = buf.readLine();
-			System.out.println(line);
-			System.out.println(line.toString().equals("Ceci est un test de la classe Csv avec la methode ExporterCsv"));
-			//Assertions.assertEquals(line, "Ceci est un test de la classe Csv avec la methode ExporterCsv");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
 		
-
-		fichier.delete();*/
-		
-		
-		/*separateurAutomatique.put(";", false);
-		//separateurAutomatique.put("&", false);
-		//separateurAutomatique.put(">", false);
-		//separateurAutomatique.put("<", false);
-		separateurAutomatique.put(":", false);
-		//separateurAutomatique.put("�", false);
-		//separateurAutomatique.put("*", false);
-		//separateurAutomatique.put("�", false);
-		//separateurAutomatique.put("\\", false);
-		//separateurAutomatique.put("/", false);
-		separateurAutomatique.put("-", false);
-		separateurAutomatique.put("|", false);
-		separateurAutomatique.put(",", false);*/
-
-char delimit =';';
-		String cheminCsv="";
-		//String cheminCsv="../";
-		String nomCsv="sullivantestlibrerie.csv";
-		String cheminEntree=null;
 		ArrayList<String[]> list = new ArrayList<String[]>();
 		String[] arr1 = { "a", "b", "c" };
 		String[] arr2 = { "1,0", "2", "3", "4" };
 		list.add(arr1);
 		list.add(arr2);
 		
-		Csv csv = new Csv(delimit, cheminCsv,nomCsv, list);
-		
-		csv.exporterCSV();
-		System.out.println(csv.verificationCheminDispo());
-		
 
-				
-				/*String text = csv.convertionTableauEnStringDelimiter();
-				csv.exporterCSV(text);*/
+		
+		
+		Csv csv = new Csv(';',"","testExporterCSV2.csv",list);
+		csv.exporterCSV();
+		
+		FileInputStream csvFile = null;
+		try {
+			csvFile = new FileInputStream("testExporterCSV2.csv");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		InputStreamReader inputreader = new InputStreamReader(csvFile);
+		BufferedReader br = new BufferedReader(inputreader);
+
+		String line;
+		try {
+			String strArray1 =String.join(";", arr1)+"d";
+			String strArray2 =String.join(";", arr2);
+			String tab[]= {strArray1,strArray2};
+			int i = 0;
+			while ((line = br.readLine()) != null) {
+				System.out.println(tab[i].equals(line));
+			    i++;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
 
     }
 
    
- }
+ 

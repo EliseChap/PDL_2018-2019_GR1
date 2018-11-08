@@ -131,6 +131,26 @@ public class Url implements IUrl {
 		}
 		return false;
 	}
+	
+	/**
+	 * @return Une string avec le sous domaine de lurl
+	 */
+
+	public String GetSousDomain() {
+		String path = myUrl.getPath();
+		String[] str = url.split("/wiki/");
+		return str[1];
+	}
+	
+	/**
+	 * @return Une string avec le domaine de lurl
+	 */
+
+	public String GetDomain() {
+		String host = myUrl.getHost();
+		InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
+		return name.toString();
+	}
 
 	/**
 	 * @return true si lurl est une adresse wikipedia, false sinon 
@@ -139,23 +159,15 @@ public class Url implements IUrl {
 	@Override
 	public boolean isWikipediaURL() {
 		String domain = "wikipedia.org";
-		String host = myUrl.getHost();
-		InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
-		if (name.toString().equals(domain)) {
+		
+		if (GetDomain().equals(domain)) {
 			return true;
 		}
 		return false;
 	}
 	
-	/**
-	 * @return Une string avec le sous domaine de lurl
-	 */
-
-	public String GetSousDomaine() {
-		String path = myUrl.getPath();
-		String[] str = url.split("/wiki/");
-		return str[1];
-	}
+	
+	
 
 	
 	/**
@@ -166,7 +178,7 @@ public class Url implements IUrl {
 	public Extracteur ConstructeurExtracteur() {
 		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
-				Extracteur wiki = new Wikitext(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
+				Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				return wiki;
 			}
 			if (extraHtml) {

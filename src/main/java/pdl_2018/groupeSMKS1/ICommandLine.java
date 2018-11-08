@@ -10,7 +10,7 @@ public interface ICommandLine {
 
     boolean verifUrlOrCheminEntree(String commandLine, int nbURL, int nbImport);
 
-    boolean verifCheminSortie(String commandLine);
+    boolean verifRepertoireSortie(String commandLine);
 
     boolean verifDelimiteur(String commandLine);
 

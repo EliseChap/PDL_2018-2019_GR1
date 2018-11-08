@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.SystemUtils;
 import src.main.java.pdl_2018.groupeSMKS1.Url;
 import src.main.java.pdl_2018.groupeSMKS1.Fichier;
 
@@ -54,7 +55,7 @@ public class CommandLine implements ICommandLine {
         if(!verifUrlOrFichierChoice(commandLine)){
             jetonIntegrite = false;
         }
-        if(!verifCheminSortie(commandLine)){
+        if(!verifRepertoireSortie(commandLine)){
             jetonIntegrite = false;
         }
         if(!verifDelimiteur(commandLine)){
@@ -178,20 +179,21 @@ public class CommandLine implements ICommandLine {
      * @return
      */
     @Override
-    public boolean verifCheminSortie(String commandLine){
+    public boolean verifRepertoireSortie(String commandLine){
         int nbSave = StringUtils.countMatches(commandLine, "-save");
         String contenuSave = null;
         if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
             Pattern pSave=Pattern.compile("-save\\[.*?\\]");
             Matcher mSave=pSave.matcher(commandLine);
             contenuSave = mSave.group(1);
-            String contenuSaveExtension = contenuSave.substring(contenuSave.length() -4, contenuSave.length());
-            if((contenuSaveExtension!=".csv") || (contenuSave.length()<5)){
+
+            if((contenuSave.charAt(contenuSave.length())!='/') || (contenuSave.length()<3)){ //Le répertoire termine obligatoirement par un slash et fait au moins 3 caractères.
+                //TODO Eventuellement vérifier le système d'exploitation, pour analyser présence de "X:/" etc... selon l'OS
                 System.out.println("Le chemin du fichier de sortie spécifié est invalide");
                 return false;
             }
         } else if (nbSave > 1){
-            System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
+            System.out.println("Il est impossible de spécifier plusieurs répertoires de sortie");
             return false;
         }
         setCheminCSV(contenuSave);

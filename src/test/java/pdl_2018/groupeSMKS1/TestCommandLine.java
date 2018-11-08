@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 
 class TestCommandLine {
-
+//TODO test généralisé
     /**
      * Tests pour la méthode verifDelimiteur
      */
@@ -24,8 +24,6 @@ class TestCommandLine {
         CommandLine myCommand3 = new CommandLine("import[;]");
         Assertions.assertTrue(myCommand3.verifDelimiteur(), "false");
         Assertions.assertEquals(myCommand.delimit, null);
-
-        //ToDO Tests avec une ligne de commande entière
     }
 
     /**
@@ -111,5 +109,40 @@ class TestCommandLine {
         Assertions.assertFalse(myCommand4.verifRepertoireSortie());
         Assertions.assertEquals(myCommand4.nomCSV, "monBeauTableauWiki.csv");
 
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void testVerifUrlOrFichierChoice(){
+        CommandLine myCommand = new CommandLine("");
+        Assertions.assertFalse(myCommand.verifUrlOrFichierChoice());
+        Assertions.assertEquals(myCommand.getUrl(), "");
+        Assertions.assertEquals(myCommand.getCheminEntree(), "");
+
+        CommandLine myCommand2 = new CommandLine("-url[https://fr.wikipedia.org/rennes]"); // Test URL valide
+        Assertions.assertTrue(myCommand2.verifUrlOrFichierChoice());
+        Assertions.assertEquals(myCommand.getUrl(), "https://fr.wikipedia.org/rennes");
+        Assertions.assertEquals(myCommand.getCheminEntree(), "");
+
+        CommandLine myCommand3 = new CommandLine("-url[https://fr.wikipedia.org/rennes] -import[c:/users/admin/mesBellesUrl.txt]");
+        Assertions.assertFalse(myCommand3.verifUrlOrFichierChoice());
+        Assertions.assertEquals(myCommand.getUrl(), "");
+        Assertions.assertEquals(myCommand.getCheminEntree(), "");
+
+        CommandLine myCommand4 = new CommandLine("-import[c:/users/admin/mesBellesUrl.txt]");
+        Assertions.assertTrue(myCommand4.verifUrlOrFichierChoice());
+        Assertions.assertEquals(myCommand.getUrl(), "");
+        Assertions.assertEquals(myCommand.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
+
+        CommandLine myCommand5 = new CommandLine("-url[https://es.wikipedia.org/rennes]"); //Test URL invalide
+        Assertions.assertFalse(myCommand5.verifUrlOrFichierChoice());
+
+        CommandLine myCommand6 = new CommandLine("-import[c:/users/admin/mesBellesUrl.docx]"); //Test répertoire d'entrée invalide
+        Assertions.assertFalse(myCommand6.verifUrlOrFichierChoice());
+
+        CommandLine myCommand7 = new CommandLine("-import[c:/users/admin/mesBellesUrl.txt]"); //Test répertoire d'entrée valide
+        Assertions.assertTrue(myCommand7.verifUrlOrFichierChoice());
     }
 }

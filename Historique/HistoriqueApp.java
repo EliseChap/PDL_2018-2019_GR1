@@ -298,12 +298,15 @@ public class HistoriqueApp {
 
 			/*
 			 * Test avec la wikipédia.org
+			 * https://fr.wikipedia.org/wiki/Discussion_utilisateur:148.60.32.206?fbclid=IwAR3dxFvdL-UUMZXAS2c7KaRXoepZf8tbYR9memslXqQlwh2xgQxkz943y4c
 			 */
 
 			Wiki wikisweble = new Wiki("fr.wikipedia.org");
+			wikisweble.
+		//	https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones#/media/File:Gaztelugatxe_4199995260.jpg
 
 			//String contenu2 = wikisweble.getPageText("LostWinds");
-			String contenu2 = wikisweble.getPageText("Championnats pan-pacifiques 1989");
+			String contenu2 = wikisweble.getPageText("Discussion:Deux-points");
 			/*
 			 * Test avec la librairie sweble pour matcher wikitable
 			 */

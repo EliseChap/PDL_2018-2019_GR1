@@ -116,6 +116,7 @@ public class Url implements IUrl {
 	public static boolean isWikiURL(String url) {
 		String domain = "wikipedia.org";
 		URL u = null;
+
 		try {
 			u = new URL(url);
 		} catch (MalformedURLException e) {

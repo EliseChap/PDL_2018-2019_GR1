@@ -19,7 +19,7 @@ public interface IUrl {
   * 
   * @return Retour un object extracteur
   */
- public Extracteur ConstructeurExtracteur();
+ public void ConstructeurExtracteur();
 }
 
 

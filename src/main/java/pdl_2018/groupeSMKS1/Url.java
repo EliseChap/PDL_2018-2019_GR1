@@ -3,6 +3,7 @@ package src.main.java.pdl_2018.groupeSMKS1;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.io.IOException;
 import com.google.common.net.InternetDomainName;
 
@@ -16,6 +17,7 @@ public class Url implements IUrl {
 	private String nomCsv;
 	private boolean extraWiki;
 	private boolean extraHtml;
+	private ArrayList<Extracteur> lesExtracteurs;
 
 	public Url(String url, char delimit, String nomCsv, String cheminCsv, boolean extraWiki, boolean extraHtml) {
 		this.url = url;
@@ -24,6 +26,7 @@ public class Url implements IUrl {
 		this.extraHtml = extraHtml;
 		this.extraWiki = extraWiki;
 		this.cheminCsv = cheminCsv;
+		lesExtracteurs = new ArrayList<Extracteur>();
 
 		try {
 			myUrl = new URL(url);
@@ -175,18 +178,18 @@ public class Url implements IUrl {
 	 * @return un Extracteur wiki et/ou un Extracteur html
 	 */
 	@Override
-	public Extracteur ConstructeurExtracteur() {
+	public void ConstructeurExtracteur() {
 		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
 				Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
-				return wiki;
+				lesExtracteurs.add(wiki);
 			}
 			if (extraHtml) {
 				Extracteur html = new Html(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
-				return html;
+				lesExtracteurs.add(html);
 			}
 		}
-		return null;
+		
 
 	}
 

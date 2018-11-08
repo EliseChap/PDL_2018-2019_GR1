@@ -12,7 +12,7 @@ public class Tableau implements ITableau{
 	static String cheminCsv;
 	static String nomCsv;
 	ArrayList<String[]> tableau;
-   
+   public Tableau() {}
 	
 	
 	

@@ -1,15 +1,17 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
 public class Wikitext extends Extracteur {
-	private String url;
+	private String domain;
+	private String sousDomain;
 	private char delimit;
 	private String cheminCSV;
 	private String nomCSV;
 	private boolean extraHTML;
 	private boolean extraWiki;
 
-	public Wikitext(String url,char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
-		this.url=url;
+	public Wikitext(String domain,String sousDomain,char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
+		this.domain=domain;
+		this.sousDomain=sousDomain;
 		this.delimit = delimit;
 		this.cheminCSV = cheminCSV;
 		this.extraHTML = extraHTML;
@@ -24,6 +26,19 @@ public class Wikitext extends Extracteur {
 	public String getNomTableau() {
 		return "";
 	}
+	
+
+	public String getDomain() {
+		return domain;
+	}
+	
+
+	public String getSousDomain() {
+		return sousDomain;
+	}
+	
+	
+	
 
 	@Override
 	public void addTableau() {

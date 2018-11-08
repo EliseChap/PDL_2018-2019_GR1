@@ -13,6 +13,7 @@ public class Wikitext extends Extracteur {
 		this.domain=domain;
 		this.sousDomain=sousDomain;
 		this.delimit = delimit;
+		this.nomCSV = nomCSV;
 		this.cheminCSV = cheminCSV;
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;

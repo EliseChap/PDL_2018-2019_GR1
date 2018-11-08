@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class TestCommandLine {
 
     /**
-     * Tests pour la fonction verifDelimiteur
+     * Tests pour la méthode verifDelimiteur
      */
     @Test
     public void testVerifDelimiteur() {
@@ -29,10 +29,10 @@ class TestCommandLine {
     }
 
     /**
-     * Test pour la fonction verifHtmlOrWikicodeChoice
+     * Test pour la méthode verifHtmlOrWikicodeChoice
      */
     @Test
-    public void testverifHtmlOrWikicodeChoice(){
+    public void testVerifHtmlOrWikicodeChoice(){
         CommandLine myCommand = new CommandLine("-html");
         Assertions.assertTrue(myCommand.verifHtmlOrWikicodeChoice());
         Assertions.assertTrue(myCommand.extraHTML);
@@ -62,5 +62,29 @@ class TestCommandLine {
         Assertions.assertFalse(myCommand6.verifHtmlOrWikicodeChoice());
         Assertions.assertFalse(myCommand6.extraWiki);
         Assertions.assertFalse(myCommand6.extraHTML);
+    }
+
+    /**
+     * Test de la méthode verifCheminSortie
+     */
+    @Test
+    public void testVerifCheminSortie(){
+
+        CommandLine myCommand = new CommandLine("-save");
+        Assertions.assertFalse(myCommand.verifRepertoireSortie());
+        Assertions.assertTrue(myCommand.cheminCSV==null);
+
+        CommandLine myCommand2 = new CommandLine("-save[]");
+        Assertions.assertFalse(myCommand2.verifRepertoireSortie());
+        Assertions.assertTrue(myCommand.cheminCSV==null);
+
+        CommandLine myCommand3 = new CommandLine("-save[c:/users/admin]");
+        Assertions.assertFalse(myCommand3.verifRepertoireSortie());
+        Assertions.assertTrue(myCommand3.cheminCSV==null);
+
+        CommandLine myCommand4 = new CommandLine("-save[c:/users/admin/]");
+        Assertions.assertFalse(myCommand4.verifRepertoireSortie());
+        Assertions.assertEquals(myCommand4.cheminCSV, "c:/users/admin");
+
     }
 }

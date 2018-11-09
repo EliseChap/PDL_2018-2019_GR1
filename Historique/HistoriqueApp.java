@@ -14,8 +14,10 @@ import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,6 +36,7 @@ import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTable;
 import org.sweble.wikitext.parser.nodes.WtTableCaption;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.wikipedia.Wiki;
@@ -307,7 +310,7 @@ public class HistoriqueApp {
 		//	https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones#/media/File:Gaztelugatxe_4199995260.jpg
 
 			//String contenu2 = wikisweble.getPageText("LostWinds");
-			String contenu2 = wikisweble.getPageText("Discussion:Deux-points");
+			String contenu2 = wikisweble.getPageText("Carte_graphique");
 			/*
 			 * Test avec la librairie sweble pour matcher wikitable
 			 */
@@ -336,7 +339,7 @@ public class HistoriqueApp {
 			PageId pageId = new PageId(pageTitle, -1);
 			ExpansionCallback callback = null;
 			EngProcessedPage parse = engine.parse(pageId, contenu2, callback);
-			System.out.println(parse.toString());
+		//	System.out.println(parse.toString());
 		
 			parcourirNode(parse);
 
@@ -401,16 +404,36 @@ public class HistoriqueApp {
 	private static void parcourirNode(WtNode fils) {
 				for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
 					fils = l.next();
-					if (fils.getNodeName().toString().equals("WtTable")) {
-						System.out.println(fils.getNodeName().toString());
-						String wikitable = fils.toString();
-						//System.out.println(wikitable.indexOf("wikitable"));
-						if(wikitable.indexOf("wikitable")!=-1){
-						//Insersion dans une liste de tableau
-						System.out.println("TROUVERTOUVER");}}
+					
+					
+					if (fils.getNodeType() == WtTable.NT_TABLE) {
+						 WtTable table = (WtTable) fils;
+				
+						 
+						// System.out.println(table.getAttribute(name));
+						//  table.
+						  String wikitable = table.toString();
+					//	  System.out.println(wikitable.toString());
+						
+//						String wikitable = fils.toString();
+//						//System.out.println(wikitable.indexOf("wikitable"));
+//						if(wikitable.indexOf("wikitable")!=-1){
+//						//Insersion dans une liste de tableau
+//						System.out.println("TROUVERTOUVER");
+						}
 					parcourirNode(fils);
-				}
-	}
+					}
+					
+					
+					//					if (fils.getNodeName().toString().equals("WtTable")) {
+//						System.out.println(fils.getNodeName().toString());
+						//String wikitable = fils.toString();
+//						//System.out.println(wikitable.indexOf("wikitable"));
+//						if(wikitable.indexOf("wikitable")!=-1){
+//						//Insersion dans une liste de tableau
+//						System.out.println("TROUVERTOUVER");}}
+		
+					}
 
 	public static String convertWikiText(String title, String wikiText, int maxLineLength)
 			throws LinkTargetException, EngineException {

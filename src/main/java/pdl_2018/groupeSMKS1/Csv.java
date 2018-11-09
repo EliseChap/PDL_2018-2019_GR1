@@ -32,13 +32,13 @@ import java.nio.file.Paths;
 public class Csv implements ICsv{
 	
 	
-	static char delimit;
-	static String cheminCsv;
-	static String nomCsv;
+	private static char delimit;
+	private static String cheminCsv;
+	private static String nomCsv;
 	
-    static Map<String, Boolean> separateurAutomatique = new HashMap<String, Boolean>();
+    private static Map<String, Boolean> separateurAutomatique = new HashMap<String, Boolean>();
 	
-    ArrayList<String[]> tableau;
+    private ArrayList<String[]> tableau;
 	
 	public Csv(char delimit, String cheminCsv, String nomCsv, ArrayList<String[]> tableau) {
 		

@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.SystemUtils;
 import src.main.java.pdl_2018.groupeSMKS1.Url;
 import src.main.java.pdl_2018.groupeSMKS1.Fichier;
 
@@ -25,8 +26,10 @@ public class CommandLine implements ICommandLine {
      *
      */
     public CommandLine(String commandLine){
+
         this.ligneDeCommande = commandLine;
-        if(verifIntegriteCommandLine(this.ligneDeCommande)){
+
+        if(verifIntegriteCommandLine()){
             if(this.url!=null && this.cheminEntree==null){
                 Url monUrl = new Url(this.url, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
             }else if (this.url==null && this.cheminEntree!=null){
@@ -41,26 +44,28 @@ public class CommandLine implements ICommandLine {
     /**
      * Vérification de l'intégrité de la ligne de commande
      * @override
-     * @param commandLine : Ligne de commande saisie par l'utilisateur
      * @author KLE
      * @date 14 octobre 2018
-     * La méthode prend en paramètre une ligne de commande String, et renvoi "true" si cette ligne de commande est conforme à la charte Wikimatrix, "false" sinon.
+     * La méthode renvoie "true" si cette ligne de commande est conforme à la charte Wikimatrix, "false" sinon.
      */
     @Override
-    public boolean verifIntegriteCommandLine(String commandLine) {
+    public boolean verifIntegriteCommandLine() {
 
         boolean jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
 
-        if(!verifUrlOrFichierChoice(commandLine)){
+        if(!verifUrlOrFichierChoice()){
             jetonIntegrite = false;
         }
-        if(!verifCheminSortie(commandLine)){
+        if(!verifRepertoireSortie()){
             jetonIntegrite = false;
         }
-        if(!verifDelimiteur(commandLine)){
+        if(!verifNomSortie()){
             jetonIntegrite = false;
         }
-        if(!verifHtmlOrWikicodeChoice(commandLine)){
+        if(!verifDelimiteur()){
+            jetonIntegrite = false;
+        }
+        if(!verifHtmlOrWikicodeChoice()){
             jetonIntegrite = false;
         }
 
@@ -68,16 +73,15 @@ public class CommandLine implements ICommandLine {
     }
 
     /**
-     * Cette fonction prend en paramètre la ligne de commande et renvoie false si le choix html/wikicode n'est pas effectué ou effectué anormalement, true sinon.
+     * Cette fonction renvoie false si le choix html/wikicode n'est pas effectué ou effectué anormalement, true sinon.
      * @author KLH
      * @date 3 novembre 2018
-     * @param commandLine : ligne de commande saisie par l'utilisateur
      * @return
      */
     @Override
-    public boolean verifHtmlOrWikicodeChoice(String commandLine){
-        int nbHTML = StringUtils.countMatches(commandLine, "-html");
-        int nbWikicode = StringUtils.countMatches(commandLine, "-wikicode");
+    public boolean verifHtmlOrWikicodeChoice(){
+        int nbHTML = StringUtils.countMatches(this.ligneDeCommande, "-html");
+        int nbWikicode = StringUtils.countMatches(this.ligneDeCommande, "-wikicode");
         if ((nbHTML > 1) || (nbWikicode > 1)) {
             System.out.println("La syntaxe de la commande est erronée : un même paramètre est saisi plusieurs fois");
             return false;
@@ -101,16 +105,15 @@ public class CommandLine implements ICommandLine {
     }
 
     /**
-     * Cette fonction prend en paramètre la ligne de commande et renvoie false si aucune url ou aucun fichier d'entrée n'est indiqué, ou si l'indication n'est pas exploitable, et renvoie true sinon.
+     * Cette fonction renvoie false si aucune url ou aucun fichier d'entrée n'est indiqué, ou si l'indication n'est pas exploitable, et renvoie true sinon.
      * @author KLH
      * @date 3 novembre 2018
-     * @param commandLine
      * @return
      */
     @Override
-    public boolean verifUrlOrFichierChoice(String commandLine){
-        int nbURL = StringUtils.countMatches(commandLine, "-url");
-        int nbImport = StringUtils.countMatches(commandLine, "-import");
+    public boolean verifUrlOrFichierChoice(){
+        int nbURL = StringUtils.countMatches(this.ligneDeCommande, "-url");
+        int nbImport = StringUtils.countMatches(this.ligneDeCommande, "-import");
         boolean jetonLocal = true;
         if (nbURL > 1) {
             System.out.println(
@@ -131,7 +134,7 @@ public class CommandLine implements ICommandLine {
         }
 
         if(jetonLocal) {
-            jetonLocal = verifUrlOrCheminEntree(commandLine, nbURL, nbImport); //Lancement de l'analyse en profondeur
+            jetonLocal = verifUrlOrCheminEntree(nbURL, nbImport); //Lancement de l'analyse en profondeur
         }
         return jetonLocal;
     }
@@ -140,16 +143,15 @@ public class CommandLine implements ICommandLine {
      * Cette fonction vérifie que le chemin du fichier d'entrée ou l'url saisie par l'utilisateur est exploitable et renvoie vrai dans ce cas, et false sinon.
      * @author KLH
      * @date 3 novembre 2018
-     * @param commandLine : ligne de commande saisie par l'utilisateur
      * @param nbURL : nombre de commandes "url" dans la ligne de commande
      * @param nbImport : nombre de commandes "import" dans la ligne de commande
      * @return
      */
     @Override
-    public boolean verifUrlOrCheminEntree(String commandLine, int nbURL, int nbImport){
+    public boolean verifUrlOrCheminEntree(int nbURL, int nbImport){
         if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié est valide (on ne teste pas s'il est fonctionnel)
             Pattern pImport=Pattern.compile("-import\\[.*?\\]");
-            Matcher mImport=pImport.matcher(commandLine);
+            Matcher mImport=pImport.matcher(this.ligneDeCommande);
             String contenuImport = mImport.group(1);
             String contenuImportExtension = contenuImport.substring(contenuImport.length() -4, contenuImport.length());
             if((contenuImportExtension!=".txt") || (contenuImport.length()<5)){
@@ -159,9 +161,9 @@ public class CommandLine implements ICommandLine {
             setCheminEntree(contenuImport);
         } else if (nbURL == 1){ // On vérifie que l'URL spécifiée est valide, qu'il s'agit d'une url wiki (on ne teste pas si elle est fonctionnelle)
             Pattern pURL=Pattern.compile("-url\\[.*?\\]");
-            Matcher mURL = pURL.matcher(commandLine);
+            Matcher mURL = pURL.matcher(this.ligneDeCommande);
             String contenuURL = mURL.group(1);
-            if((contenuURL!="https://en.wikipedia.org/") || (contenuURL!="https://fr.wikipedia.org/") || (contenuURL!="http://en.wikipedia.org/") || (contenuURL!="http://fr.wikipedia.org/")){
+            if((contenuURL.substring(0, 24)!="https://en.wikipedia.org/") || (contenuURL.substring(0, 24)!="https://fr.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://en.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://fr.wikipedia.org/")){
                 System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
                 return false;
             }
@@ -171,27 +173,27 @@ public class CommandLine implements ICommandLine {
     }
 
     /**
-     * Cette fonction prend en paramètre la ligne de commande, et vérifie que le chemin de sortie, si spécifié, est valide puis renvoie vrai dans ce cas, false sinon.
+     * Cette fonction vérifie que le chemin de sortie, si spécifié, est valide puis renvoie vrai dans ce cas, false sinon.
      * @author KLH
      * @date 4 novembre 2018
-     * @param commandLine : ligne de commande saisie par l'utilisateur
      * @return
      */
     @Override
-    public boolean verifCheminSortie(String commandLine){
-        int nbSave = StringUtils.countMatches(commandLine, "-save");
+    public boolean verifRepertoireSortie(){
+        int nbSave = StringUtils.countMatches(this.ligneDeCommande, "-save");
         String contenuSave = null;
         if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
             Pattern pSave=Pattern.compile("-save\\[.*?\\]");
-            Matcher mSave=pSave.matcher(commandLine);
+            Matcher mSave=pSave.matcher(this.ligneDeCommande);
             contenuSave = mSave.group(1);
-            String contenuSaveExtension = contenuSave.substring(contenuSave.length() -4, contenuSave.length());
-            if((contenuSaveExtension!=".csv") || (contenuSave.length()<5)){
+
+            if((contenuSave.charAt(contenuSave.length())!='/') || (contenuSave.length()<3)){ //Le répertoire termine obligatoirement par un slash et fait au moins 3 caractères.
+                //TODO Eventuellement vérifier le système d'exploitation, pour analyser présence de "X:/" etc... selon l'OS
                 System.out.println("Le chemin du fichier de sortie spécifié est invalide");
                 return false;
             }
         } else if (nbSave > 1){
-            System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
+            System.out.println("Il est impossible de spécifier plusieurs répertoires de sortie");
             return false;
         }
         setCheminCSV(contenuSave);
@@ -199,22 +201,48 @@ public class CommandLine implements ICommandLine {
     }
 
     /**
-     * Cette fonction prend en paramètre la ligne de commande, et renvoie vrai si le délimiteur choisi par l'utilisateur est autorisé par l'application, et renvoie false sinon.
-     * @author KLE
+     * Cette fonction vérifie que le nom de sortie, si spécifié, est valide puis renvoie vrai dans ce cas, false sinon.
+     * @author KLH
      * @date 4 novembre 2018
-     * @param commandLine : ligne de commande saisie par l'utilisateur
      * @return
      */
     @Override
-    public boolean verifDelimiteur(String commandLine){
-        int nbDelimit = StringUtils.countMatches(commandLine, "-delimit");
+    public boolean verifNomSortie(){
+        int nbSave = StringUtils.countMatches(this.ligneDeCommande, "-name");
+        String contenuName = null;
+        if (nbSave == 1){ // On vérifie que le nom de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
+            Pattern pSave=Pattern.compile("-name\\[.*?\\]");
+            Matcher mSave=pSave.matcher(this.ligneDeCommande);
+            contenuName = mSave.group(1);
+
+            if((contenuName.substring(contenuName.length()-5)!=".csv") || (contenuName.length()<5)){ //Le fichier termine obligatoirement par .csv et fait au moins 5 caractères (le nom minimum 1 + le .csv de taille 4).
+                //TODO Eventuellement vérifier le système d'exploitation, pour analyser présence de "X:/" etc... selon l'OS
+                System.out.println("Le chemin du fichier de sortie spécifié est invalide");
+                return false;
+            }
+        } else if (nbSave > 1){
+            System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
+            return false;
+        }
+        setNomCSV(contenuName);
+        return true;
+    }
+    /**
+     * Cette fonction renvoie vrai si le délimiteur choisi par l'utilisateur est autorisé par l'application, et renvoie false sinon.
+     * @author KLE
+     * @date 4 novembre 2018
+     * @return
+     */
+    @Override
+    public boolean verifDelimiteur(){
+        int nbDelimit = StringUtils.countMatches(this.ligneDeCommande, "-delimit");
         char contenuDelimit = '\0';
         List caracteresAutorises = new ArrayList(); // Cette liste permet de modifier facilement les délimiteurs autorisés par Wikimatrix sans changer le reste de la méthode.
         caracteresAutorises.add(';');
         caracteresAutorises.add(','); // A CHANGER, C'EST PAS BEAU
         if (nbDelimit == 1) { //On vérifie l'intégrité du délimiteur : est-il autorisé par Wikimatrix ?
             Pattern pDelimit=Pattern.compile("-delimit\\[.*?\\]");
-            Matcher mDelimit = pDelimit.matcher(commandLine);
+            Matcher mDelimit = pDelimit.matcher(this.ligneDeCommande);
             contenuDelimit = mDelimit.group(1).charAt(0);
             if(!caracteresAutorises.contains(contenuDelimit)){
                 System.out.println("Le délimiteur saisi n'est pas pris en charge par Wikimatrix");

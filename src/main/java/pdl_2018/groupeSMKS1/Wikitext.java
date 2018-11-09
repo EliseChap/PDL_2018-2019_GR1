@@ -13,6 +13,7 @@ import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTable;
 import org.wikipedia.Wiki;
 
 public class Wikitext extends Extracteur {
@@ -24,66 +25,70 @@ public class Wikitext extends Extracteur {
 	private boolean extraHTML;
 	private boolean extraWiki;
 	private ArrayList<Tableau> lesTableaux;
-	private Map<Integer,String> lesWikitab;
+	private static Map<Integer, WtTable> lesWikitab;
 
-	public Wikitext(String domain,String sousDomain,char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
-		this.domain=domain;
-		this.sousDomain=sousDomain;
+	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
+			boolean extraWiki) {
+		this.domain = domain;
+		this.sousDomain = sousDomain;
 		this.delimit = delimit;
 		this.nomCSV = nomCSV;
 		this.cheminCSV = cheminCSV;
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;
 		lesTableaux = new ArrayList<Tableau>();
-		lesWikitab = new HashMap<Integer, String>();
-		
+		lesWikitab = new HashMap<Integer, WtTable>();
+
 	}
 
 	@Override
 	public void recuperationPage() {
 		try {
-		Wiki wikisweble = new Wiki("fr.wikipedia.org");
-		String contenu = wikisweble.getPageText("Discussion:Deux-points");
-	
-		wikiconfig(contenu);
+			Wiki wikisweble = new Wiki("fr.wikipedia.org");
+			String contenu = wikisweble.getPageText("Discussion:Deux-points");
+
+			wikiconfig(contenu);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void wikiconfig(String contenu) {
 		try {
-		WikiConfig config = DefaultConfigEnWp.generate();
+			WikiConfig config = DefaultConfigEnWp.generate();
 
-		WtEngineImpl engine = new WtEngineImpl(config);
-		PageTitle pageTitle = PageTitle.make(config, "title");
-		PageId pageId = new PageId(pageTitle, -1);
-		ExpansionCallback callback = null;
-		EngProcessedPage parse = engine.parse(pageId, contenu, callback);
-		parcourirNode(parse);
-			} catch (Exception e) {
+			WtEngineImpl engine = new WtEngineImpl(config);
+			PageTitle pageTitle = PageTitle.make(config, "title");
+			PageId pageId = new PageId(pageTitle, -1);
+			ExpansionCallback callback = null;
+			EngProcessedPage parse = engine.parse(pageId, contenu, callback);
+			int compteur = 0;
+			parcourirNode(parse,compteur);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
-		
-	private static void parcourirNode(WtNode fils) {
+
+	private static void parcourirNode(WtNode fils,int compteur) {
 		for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
 			fils = l.next();
-			if (fils.getNodeName().toString().equals("WtTable")) {
-				System.out.println(fils.getNodeName().toString());
-				String wikitable = fils.toString();
-				//System.out.println(wikitable.indexOf("wikitable"));
-				if(wikitable.indexOf("wikitable")!=-1){
-				//Insersion dans une liste de tableau
-				System.out.println("TROUVERTOUVER");}}
-			parcourirNode(fils);
+
+			if (fils.getNodeType() == WtTable.NT_TABLE) {
+				WtTable table = (WtTable) fils;
+		//	if(wikitable.indexOf("wikitable")!=-1){
+				compteur++;
+				lesWikitab.put(compteur, table);
+		//	}
+	
+			}
+			parcourirNode(fils,compteur);
 		}
-}
-	
-	
+
+	}
+
 	@Override
 	public void removeTableau() {
 	}
@@ -92,24 +97,19 @@ public class Wikitext extends Extracteur {
 	public String getNomTableau() {
 		return "";
 	}
-	
 
 	public String getDomain() {
 		return domain;
 	}
-	
 
 	public String getSousDomain() {
 		return sousDomain;
 	}
-	
-	
-	
 
 	@Override
 	public void addTableau(Tableau leTableau) {
-		if (!lesTableaux.contains(leTableau)){
-			lesTableaux.add(leTableau);	
+		if (!lesTableaux.contains(leTableau)) {
+			lesTableaux.add(leTableau);
 		}
 	}
 

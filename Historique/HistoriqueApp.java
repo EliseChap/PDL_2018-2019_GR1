@@ -34,6 +34,7 @@ import org.sweble.wikitext.engine.config.WikiConfig;
 import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
+import org.sweble.wikitext.parser.nodes.WtTableCaption;
 import org.sweble.wikitext.parser.parser.LinkTargetException;
 import org.wikipedia.Wiki;
 
@@ -302,7 +303,7 @@ public class HistoriqueApp {
 			 */
 
 			Wiki wikisweble = new Wiki("fr.wikipedia.org");
-			wikisweble.
+
 		//	https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones#/media/File:Gaztelugatxe_4199995260.jpg
 
 			//String contenu2 = wikisweble.getPageText("LostWinds");
@@ -336,6 +337,7 @@ public class HistoriqueApp {
 			ExpansionCallback callback = null;
 			EngProcessedPage parse = engine.parse(pageId, contenu2, callback);
 			System.out.println(parse.toString());
+		
 			parcourirNode(parse);
 
 			// Fonction qui recupere les tableaux, mettre en recursif pour que ca prenne tous les tableaux a tout niveaux. 

@@ -51,7 +51,10 @@ public class Wikitext extends Extracteur {
 	
 
 	@Override
-	public void addTableau() {
+	public void addTableau(Tableau leTableau) {
+		if (!lesTableaux.contains(leTableau)){
+			lesTableaux.add(leTableau);	
+		}
 	}
 
 	@Override
@@ -62,7 +65,7 @@ public class Wikitext extends Extracteur {
 
 	/**
 	 * 
-	 * @return le délimiteur choisit par l'utilisateur
+	 * @return le dï¿½limiteur choisit par l'utilisateur
 	 */
 	public char getDelimit() {
 		return this.delimit;
@@ -86,7 +89,7 @@ public class Wikitext extends Extracteur {
 
 	/**
 	 * 
-	 * @return un boolean qui indique si l'extraction doit étre faire en HTML (true)
+	 * @return un boolean qui indique si l'extraction doit ï¿½tre faire en HTML (true)
 	 *         ou non (false)
 	 */
 	public boolean getExtraHTML() {
@@ -95,7 +98,7 @@ public class Wikitext extends Extracteur {
 
 	/**
 	 * 
-	 * @return Un boolean qui indique si l'extraction doit étre faire en
+	 * @return Un boolean qui indique si l'extraction doit ï¿½tre faire en
 	 *         wikicode(true) ou non (false)
 	 */
 	public boolean getExtraWiki() {

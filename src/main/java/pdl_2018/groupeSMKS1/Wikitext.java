@@ -78,6 +78,7 @@ public class Wikitext extends Extracteur {
 
 			if (fils.getNodeType() == WtTable.NT_TABLE) {
 				WtTable table = (WtTable) fils;
+				//  a modifier à ce niveau pour étre sur d'avoir un wikitable
 		//	if(wikitable.indexOf("wikitable")!=-1){
 				compteur++;
 				lesWikitab.put(compteur, table);

@@ -413,7 +413,7 @@ public class HistoriqueApp {
 						// System.out.println(table.getAttribute(name));
 						//  table.
 						  String wikitable = table.toString();
-						  System.out.println(wikitable.toString());
+					//	  System.out.println(wikitable.toString());
 						
 //						String wikitable = fils.toString();
 //						//System.out.println(wikitable.indexOf("wikitable"));

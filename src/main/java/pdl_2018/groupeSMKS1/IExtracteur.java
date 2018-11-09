@@ -30,4 +30,8 @@ public interface IExtracteur {
 	 */
 	public void addTableau(Tableau leTableau);
 		
+	/**
+	 * 	Connection à la page donné en paramètre
+	 */
+	public void recuperationPage();
 }

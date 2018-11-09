@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.sweble.wikitext.engine.ExpansionCallback;
+import org.sweble.wikitext.engine.PageId;
+import org.sweble.wikitext.engine.PageTitle;
+import org.sweble.wikitext.engine.WtEngineImpl;
+import org.sweble.wikitext.engine.config.WikiConfig;
+import org.sweble.wikitext.engine.nodes.EngProcessedPage;
+import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
+import org.wikipedia.Wiki;
+
 public class Wikitext extends Extracteur {
 	private String domain;
 	private String sousDomain;
@@ -28,6 +37,35 @@ public class Wikitext extends Extracteur {
 		
 	}
 
+	@Override
+	public void recuperationPage() {
+		try {
+		Wiki wikisweble = new Wiki("fr.wikipedia.org");
+		String contenu = wikisweble.getPageText("Discussion:Deux-points");
+	
+		wikiconfig(contenu);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void wikiconfig(String contenu) {
+		try {
+		WikiConfig config = DefaultConfigEnWp.generate();
+
+		WtEngineImpl engine = new WtEngineImpl(config);
+		PageTitle pageTitle = PageTitle.make(config, "title");
+		PageId pageId = new PageId(pageTitle, -1);
+		ExpansionCallback callback = null;
+		EngProcessedPage parse = engine.parse(pageId, contenu, callback);
+			} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 	@Override
 	public void removeTableau() {
 	}

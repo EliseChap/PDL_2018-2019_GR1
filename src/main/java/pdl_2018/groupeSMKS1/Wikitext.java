@@ -1,9 +1,12 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import org.sweble.wikitext.engine.ExpansionCallback;
 import org.sweble.wikitext.engine.PageId;
@@ -53,8 +56,24 @@ public class Wikitext extends Extracteur {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	// A supp pour test
+	public static void recupPage() {
+		try {
+			Wiki wikisweble = new Wiki("fr.wikipedia.org");
+			String contenu = wikisweble.getPageText("Coupe_du_monde_de_football");
 
-	public void wikiconfig(String contenu) {
+			wikiconfig(contenu);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	// Enlever le static
+	public static void wikiconfig(String contenu) {
 		try {
 			WikiConfig config = DefaultConfigEnWp.generate();
 
@@ -86,6 +105,7 @@ public class Wikitext extends Extracteur {
 	
 			}
 			parcourirNode(fils,compteur);
+			
 		}
 
 	}
@@ -160,5 +180,18 @@ public class Wikitext extends Extracteur {
 	 */
 	public boolean getExtraWiki() {
 		return this.extraWiki;
+	}
+	
+	public static void main(String[] args) {
+		recupPage();
+		Set cles = lesWikitab.keySet();
+		Iterator <Integer>it =cles.iterator();
+		while(it.hasNext()) {
+			Integer cle = it.next();
+			WtTable ensemble = lesWikitab.get(cle);
+			//System.out.println(ensemble);
+		}
+		
+
 	}
 }

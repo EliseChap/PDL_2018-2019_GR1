@@ -49,29 +49,85 @@ public class Comparateur implements IComparateur{
 		}
 		return identique;
 	}
+	
+	public boolean  differentNombreLigneWikiHtml() {
+		
+		int nbreLigneWiki = wiki.size();
+		int nbreLigneHtml = html.size();
+		System.out.println("nombre de ligne Wiki : "+nbreLigneWiki);
+		System.out.println("nombre de ligne Html : "+nbreLigneHtml);
+		return nbreLigneWiki==nbreLigneHtml;
+	}
+	
+	public int nombreLigneWiki() {
+		return wiki.size();
+	}
+	public int nombreLigneHtml() {
+		return html.size();
+	}
+	
+	public int numberIdenticalColumnWiki() {
+		int memoire = 0;
 
+		for (String[] strArr : wiki) {
+			if(memoire==0) {
+				memoire=strArr.length;
+			}
+			else {
+				if(strArr.length!=memoire) return -1;
+			}
+		}
+		return memoire;
+	}
+	
+	public int numberIdenticalColumnHtml() {
+		int memoire = 0;
+
+		for (String[] strArr : html) {
+			if(memoire==0) {
+				memoire=strArr.length;
+			}
+			else {
+				if(strArr.length!=memoire) return -1;
+			}
+		}
+		return memoire;
+	}
+	
+	public boolean differenceNumberlColumn() {
+		int nbreWiki = numberIdenticalColumnWiki();
+		int nbreHtml = numberIdenticalColumnHtml();
+		if(nbreWiki==-1 || nbreHtml==-1 || nbreWiki!=nbreHtml) {
+			return false;
+		}
+		return true;
+	}
+	
+	
 	public static void main(String[] args) {
 		
 		
 		
 		ArrayList<String[]> list = new ArrayList<String[]>();
 		String[] arr1 = { "a2;", "b", "c", "e" };
-		String[] arr2 = { "1,0:-", "2", "3", "4" };
+		String[] arr2 = { "1,0:-", "2", "3" };
 		list.add(arr1);
 		list.add(arr2);
 		
 		
 		ArrayList<String[]> list3 = new ArrayList<String[]>();
 		String[] arr4 = { "a2;", "b", "c", "e" };
-		String[] arr5 = { "a2;" };
-		String[] arr3 = { "1,0:-", "2", "3", "4" };
+		String[] arr5 = { "1,0:-", "2", "3" };
+
 		list3.add(arr4);
 		list3.add(arr5);
-		list3.add(arr3);
+
 
 		
 		Comparateur comparateur = new Comparateur(list, list3);
-		comparateur.comparaison();
+		System.out.println("compare ligne " + comparateur.differentNombreLigneWikiHtml());
+		System.out.println("compare colonne " + comparateur.differenceNumberlColumn());
+		//comparateur.comparaison();
 	    //System.out.println(list);
 	   // System.out.println(list.equals(list3));
 	

@@ -169,8 +169,18 @@ public class Url implements IUrl {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @return true si l'url est une image 
+	 */
 	
 	
+	public boolean isAPicture() {
+		
+		
+		return url.endsWith("jpg") || url.endsWith("png") ||  url.endsWith("gif") ||  url.endsWith("tiff") ||  url.endsWith("bmp");
+	}
+
 
 	
 	/**
@@ -194,20 +204,21 @@ public class Url implements IUrl {
 	}
 
 	public static void main(String[] args) {
-		String u = "https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones#Tournage";
+		String u = "https://fr.wikipedia.org/wiki/Game_of_Thrones#/media/File:Gemma_Whelan_(cropped).jpg";
 		boolean test = isWikiURL(u);
-		System.out.println(test);
+		//System.out.println(test);
 		URL url = null;
 		try {
 			url = new URL(u);
 		} catch (MalformedURLException e) {
 
 		}
-
+        
 		String utest = url.getPath();
 		String[] str = utest.split("/wiki/");
-		System.out.println(str[1]);
-
+		//System.out.println(str[1]);
+		boolean test2 = u.endsWith("jpg")||  u.endsWith("png") ||  u.endsWith("gif") ||  u.endsWith("tiff") ||  u.endsWith("bmp") ;
+		System.out.println(test2);
 	}
 
 }

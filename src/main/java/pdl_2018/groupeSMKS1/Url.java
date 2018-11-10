@@ -181,6 +181,21 @@ public class Url implements IUrl {
 		return url.endsWith("jpg") || url.endsWith("png") ||  url.endsWith("gif") ||  url.endsWith("tiff") ||  url.endsWith("bmp");
 	}
 
+	/**
+	 * 
+	 * @return true si l'url est une discussion, une conversation en observant si il y a ':' non entouré de '-'
+	 */
+	
+	
+	public boolean isATwoPoint() {
+		CharSequence twopoint = ":";
+		CharSequence twopointbis = "_:_";
+		if(url.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un titre par exemple)
+			return !url.contains(twopointbis);
+		}
+		
+		return false;
+	}
 
 	
 	/**
@@ -204,7 +219,7 @@ public class Url implements IUrl {
 	}
 
 	public static void main(String[] args) {
-		String u = "https://fr.wikipedia.org/wiki/Game_of_Thrones#/media/File:Gemma_Whelan_(cropped).jpg";
+		String u = "https://fr.wikipedia.org/wiki/Discussion_utilisateur:148.60.32.206";
 		boolean test = isWikiURL(u);
 		//System.out.println(test);
 		URL url = null;
@@ -216,9 +231,13 @@ public class Url implements IUrl {
         
 		String utest = url.getPath();
 		String[] str = utest.split("/wiki/");
-		//System.out.println(str[1]);
-		boolean test2 = u.endsWith("jpg")||  u.endsWith("png") ||  u.endsWith("gif") ||  u.endsWith("tiff") ||  u.endsWith("bmp") ;
-		System.out.println(test2);
+		//System.out.println(utest);
+		System.out.println(str[1]);
+		//boolean test2 = u.endsWith("jpg")||  u.endsWith("png") ||  u.endsWith("gif") ||  u.endsWith("tiff") ||  u.endsWith("bmp") ;
+		//System.out.println(test2);
+		CharSequence twopoint = "_:_";
+		boolean test3 = !u.contains(twopoint);
+		System.out.println(test3);
 	}
 
 }

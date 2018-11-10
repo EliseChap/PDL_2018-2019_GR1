@@ -11,15 +11,15 @@ import src.main.java.pdl_2018.groupeSMKS1.Url;
 import src.main.java.pdl_2018.groupeSMKS1.Fichier;
 
 public class CommandLine implements ICommandLine {
-    char delimit;
-    String cheminCSV;
-    String nomCSV;
-    String cheminEntree;
-    Boolean extraHTML;
-    Boolean extraWiki;
-    String url;
+    private char delimit;
+    private String cheminCSV;
+    private String nomCSV;
+    private String cheminEntree;
+    private Boolean extraHTML;
+    private Boolean extraWiki;
+    private String url;
 
-    String ligneDeCommande;
+    private String ligneDeCommande;
 
     /**
      * Constructeur de la classe CommandLine
@@ -312,5 +312,11 @@ public class CommandLine implements ICommandLine {
         this.url = url;
     }
 
+    public String getLigneDeCommande() {
+        return ligneDeCommande;
+    }
 
+    public void setLigneDeCommande(String ligneDeCommande) {
+        this.ligneDeCommande = ligneDeCommande;
+    }
 }

@@ -1,13 +1,11 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import org.apache.log4j.Logger;
 
-import org.apache.cassandra.thrift.Cassandra.system_add_column_family_args;
 
 public class Tableau implements ITableau{
-	
+	private static Logger logger = Logger.getLogger(Csv.class);
 	static char delimit;
 	static String cheminCsv;
 	static String nomCsv;
@@ -16,11 +14,11 @@ public class Tableau implements ITableau{
 	
 	
 	
-	public Tableau(char delimit, String cheminCsv, String nomCsv, ArrayList<String[]> tableau) {
-		this.delimit = delimit;
-		this.cheminCsv = cheminCsv;
-		this.nomCsv =nomCsv;
-		this.tableau=tableau;
+	public Tableau(char pDelimit, String pCheminCsv, String pNomCsv, ArrayList<String[]> pTableau) {
+		delimit = pDelimit;
+		cheminCsv = pCheminCsv;
+		nomCsv =pNomCsv;
+		tableau=pTableau;
 		}
 
 
@@ -71,7 +69,7 @@ public class Tableau implements ITableau{
 			return true;
 		}
 		else {
-			System.out.println("Le tableau n'est pas correcte en nombre de colonne");
+			logger.info("Le tableau n'est pas correcte en nombre de colonne");
 			return false;
 		}
 	}
@@ -81,7 +79,7 @@ public class Tableau implements ITableau{
 		String cheminCsv="";
 		String nomCsv=null;
 		
-		ArrayList<String[]> list = new ArrayList<String[]>();
+		ArrayList<String[]> list = new ArrayList<>();
 		String[] arr1 = { "a", "b", "c" };
 		String[] arr2 = { "1,0", "2", "3", "4" };
 		list.add(arr1);
@@ -89,7 +87,7 @@ public class Tableau implements ITableau{
 		
 		
 		Tableau tableau = new Tableau(delimit, cheminCsv, nomCsv, list);
-		System.out.println(tableau.verificationNumberIdenticalColumn());
+		logger.info(tableau.verificationNumberIdenticalColumn());
 		tableau.constructorCsv();
 		
 		
@@ -100,7 +98,7 @@ public class Tableau implements ITableau{
 		list.add(arr2);
 		
 		Tableau tableau2 = new Tableau(delimit, cheminCsv, nomCsv, list2);
-		System.out.println(tableau2.verificationNumberIdenticalColumn());
+		logger.info(tableau2.verificationNumberIdenticalColumn());
 		tableau2.constructorCsv();	
 
     }

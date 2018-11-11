@@ -21,10 +21,10 @@ import com.opencsv.CSVWriter;
 
 public class Csv implements ICsv{
 	
-	private static Logger logger = Logger.getLogger(Csv.class);
-	private static char delimit;
-	private static String cheminCsv;
-	private static String nomCsv;
+	private Logger logger = Logger.getLogger(Csv.class);
+	private char delimit;
+	private String cheminCsv;
+	private String nomCsv;
 	
     private static Map<String, Boolean> separateurAutomatique = new HashMap<String, Boolean>();
 	
@@ -142,19 +142,13 @@ public class Csv implements ICsv{
 		//Return le separateur choisi
 		
 		if(separateurUtilisateur) {
-			Set cles = separateurAutomatique.keySet();
-			Iterator it = cles.iterator();
-			while (it.hasNext()){
-				Object cle = it.next();
-				if(separateurAutomatique.get(cle)) {	
-					logger.info(cle.toString());
-					return cle.toString();
-				}
-			}
+
 		}
 		return separateur;
 		
 	}	
+	
+
 	
 	
 	/**
@@ -268,7 +262,7 @@ public class Csv implements ICsv{
 			String[] tab= {strArray1,strArray2};
 			int i = 0;
 			while ((line = br.readLine()) != null) {
-				logger.info(tab[i].equals(line));
+				//Logger.info(tab[i].equals(line));
 			    i++;
 			}
 		} catch (IOException e) {

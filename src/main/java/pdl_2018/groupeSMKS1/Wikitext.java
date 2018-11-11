@@ -17,6 +17,8 @@ import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTable;
+import org.sweble.wikitext.parser.nodes.WtBody;
+import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.wikipedia.Wiki;
 
 public class Wikitext extends Extracteur {
@@ -28,8 +30,8 @@ public class Wikitext extends Extracteur {
 	private boolean extraHTML;
 	private boolean extraWiki;
 	private ArrayList<Tableau> lesTableaux;
-	private static Map<Integer, WtTable> lesWikitab;
-
+	private  Map<Integer, WtBody> lesWikitab;
+	private int compteur = 0;
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) {
 		this.domain = domain;
@@ -40,7 +42,7 @@ public class Wikitext extends Extracteur {
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;
 		lesTableaux = new ArrayList<Tableau>();
-		lesWikitab = new HashMap<Integer, WtTable>();
+		lesWikitab = new HashMap<Integer, WtBody>();
 
 	}
 
@@ -48,7 +50,7 @@ public class Wikitext extends Extracteur {
 	public void recuperationPage() {
 		try {
 			Wiki wikisweble = new Wiki("fr.wikipedia.org");
-			String contenu = wikisweble.getPageText("Discussion:Deux-points");
+			String contenu = wikisweble.getPageText(sousDomain);
 
 			wikiconfig(contenu);
 		} catch (Exception e) {
@@ -60,6 +62,7 @@ public class Wikitext extends Extracteur {
 		
 
 	public  void wikiconfig(String contenu) {
+
 		try {
 			WikiConfig config = DefaultConfigEnWp.generate();
 
@@ -68,8 +71,10 @@ public class Wikitext extends Extracteur {
 			PageId pageId = new PageId(pageTitle, -1);
 			ExpansionCallback callback = null;
 			EngProcessedPage parse = engine.parse(pageId, contenu, callback);
-			int compteur = 0;
-			parcourirNode(parse,compteur);
+		
+			parcourirNode(parse);
+			
+			System.out.println(lesWikitab.size());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,7 +82,7 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	private  void parcourirNode(WtNode fils,int compteur) {
+	private  void parcourirNode(WtNode fils) {
 		for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
 			fils = l.next();
 
@@ -85,12 +90,16 @@ public class Wikitext extends Extracteur {
 				WtTable table = (WtTable) fils;
 				//  a modifier à ce niveau pour étre sur d'avoir un wikitable
 		//	if(wikitable.indexOf("wikitable")!=-1){
+				//System.out.println(table.getXmlAttributes());
+				WtXmlAttributes e = table.getXmlAttributes();
+				//System.out.println(	e.getStringAttribute("wikitable"));
 				compteur++;
-				lesWikitab.put(compteur, table);
+				lesWikitab.put(compteur, table.getBody());
+			//	System.out.println("trouver");
 		//	}
 	
 			}
-			parcourirNode(fils,compteur);
+			parcourirNode(fils);
 			
 		}
 
@@ -169,17 +178,20 @@ public class Wikitext extends Extracteur {
 	}
 	
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Coupe_du_monde_de_football", ';' , "chemin", " nomCSV", false,
+		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_masculine_de_football", ';' , "chemin", " nomCSV", false,
 				true);
 		t.recuperationPage();
-		Set cles = lesWikitab.keySet();
+		
+	
+		Set cles = t.lesWikitab.keySet();
 		Iterator <Integer>it =cles.iterator();
 		while(it.hasNext()) {
 			Integer cle = it.next();
-			WtTable ensemble = lesWikitab.get(cle);
+			WtBody ensemble = t.lesWikitab.get(cle);
 			System.out.println(ensemble);
+		
 		}
 		
-
+//test
 	}
 }

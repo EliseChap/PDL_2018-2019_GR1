@@ -21,8 +21,6 @@ class TestUrl {
 	@Test
 	public void testURLstandard() {
 
-		// u = new Url("https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones", ' ',
-		// "", "", true, false);
 		u.setUrl("https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones");
 		Assertions.assertTrue(u.verifURL());
 		Assertions.assertTrue(u.isWikipediaURL());
@@ -38,7 +36,7 @@ class TestUrl {
 
 	@Test
 	public void testURLNonValide() {
-		u = new Url("https://fr.wikipedia.", ' ', "", "", true, false);
+		u.setUrl("https://fr.wikipedia.");
 		Assertions.assertFalse(u.verifURL());
 
 		u.setUrl("test");
@@ -55,7 +53,7 @@ class TestUrl {
 	@Test
 	public void testIsWikiURLFalse() {
 
-		u = new Url("https://github.com/SulliDai/PDL_2018-2019_GR1", ' ', "", "", true, false);
+		u.setUrl("https://github.com/SulliDai/PDL_2018-2019_GR1");
 		Assertions.assertFalse(u.isWikipediaURL());
 
 		u.setUrl("https://www.wikimanche.fr/Accueil");
@@ -65,7 +63,7 @@ class TestUrl {
 
 	@Test
 	public void testIsAPicture() {
-		u = new Url("https://fr.wikipedia.org/wiki/Page", ' ', "", "", true, false);
+		u.setUrl("https://fr.wikipedia.org/wiki/Page");
 		Assertions.assertFalse(u.isAPicture());
 
 		u.setUrl("https://fr.wikipedia.org/wiki/Game_of_Thrones#/media/File:George_R.R._Martin_at_Archipelacon.jpg");
@@ -90,7 +88,7 @@ class TestUrl {
 
 	@Test
 	public void testIsDiscussion() {
-		u = new Url("https://fr.wikipedia.org/wiki/Discussion_utilisateur:148.60.32.206", ' ', "", "", true, false);
+		u.setUrl("https://fr.wikipedia.org/wiki/Discussion_utilisateur:148.60.32.206");
 		Assertions.assertTrue(u.isATwoPoint());
 
 		u.setUrl("https://fr.wikipedia.org/wiki/On_est_encore_l%C3%A0_:_Bercy_2008");
@@ -100,7 +98,7 @@ class TestUrl {
 
 	@Test
 	public void testIsContributions() {
-		u = new Url("https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Contributions/86.253.41.153", ' ', "", "", true, false);
+		u.setUrl("https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Contributions/86.253.41.153");
 		Assertions.assertTrue(u.isATwoPoint());
 	}
 

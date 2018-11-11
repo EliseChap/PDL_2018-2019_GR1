@@ -12,7 +12,13 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+   <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+   <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+   <sonar.language>java</sonar.language>
+
   </properties>
+  
 
   <dependencies>
   
@@ -157,6 +163,10 @@
   <finalName>WikiMatrix</finalName>
   <plugins>
      <plugin>
+     
+
+     
+     
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
@@ -181,6 +191,12 @@
             <version>5.1.0</version>
         </dependency>
         
+<dependency>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    <version>1.2</version>
+</dependency>
+
 
 
 <dependency>
@@ -200,9 +216,20 @@
     <artifactId>sonar-maven-plugin</artifactId>
     <version>3.5.0.1254</version>
 </dependency>
+<dependency>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.8.2</version>
+</dependency>
+
 
     </dependencies>
+    
+
+    
+    
 </plugin>
+
 
 
   </plugins>

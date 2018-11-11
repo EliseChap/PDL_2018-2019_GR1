@@ -1,43 +1,45 @@
 package src.test.java.pdl_2018.groupeSMKS1;
 
-import java.net.URL;
+
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import com.sun.xml.bind.Util;
 
-import junit.framework.TestCase;
+
+
 import src.main.java.pdl_2018.groupeSMKS1.Url;
 
-class TestUrl extends TestCase {
+class TestUrl {
 	
 	private Url u;
 	
-	/*@Before 
+	@BeforeClass 
 	public void initialise() {
 		u = new Url("https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones", ' ', "", "", true, false);
-		URL myUrl =u.getmyUrl();
-	}*/
+	//	URL myUrl =u.getmyUrl();
+	}
 	
 	
 	@Test
 	public void testURLstandard() {
 		
 		
-		u = new Url("https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones", ' ', "", "", true, false);
-		Assertions.assertTrue(u.verifURL());
+		//u = new Url("https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones", ' ', "", "", true, false);
+		//u.setUrl("https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones");
+	//	Assertions.assertTrue(u.verifURL());
 		Assertions.assertTrue(u.isWikipediaURL());
 		
 		
-		u.setUrl("https://ent.univ-rennes1.fr/f/welcome/normal/render.uP");
-		Assertions.assertTrue(u.verifURL());
-		Assertions.assertFalse(u.isWikipediaURL());
-	
-		u.setUrl("https://www.wikimanche.fr/Accueil");
-		Assertions.assertTrue(u.verifURL());
-		Assertions.assertFalse(u.isWikipediaURL());
+//		u.setUrl("https://ent.univ-rennes1.fr/f/welcome/normal/render.uP");
+//		Assertions.assertTrue(u.verifURL());
+//		Assertions.assertFalse(u.isWikipediaURL());
+//	
+//		u.setUrl("https://www.wikimanche.fr/Accueil");
+//		Assertions.assertTrue(u.verifURL());
+//		Assertions.assertFalse(u.isWikipediaURL());
 	}
 
 	@Test

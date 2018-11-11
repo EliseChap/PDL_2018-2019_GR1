@@ -230,46 +230,7 @@ public class Csv implements ICsv{
 
 	public static void main(String[] args) {
 		
-		String nom = "testExporterCSV2.csv";
-		File fichier = new File(nom);
-		fichier.delete();
-		
-		ArrayList<String[]> list = new ArrayList<>();
-		String[] arr1 = { "a", "b", "c" };
-		String[] arr2 = { "1,0", "2", "3", "4" };
-		list.add(arr1);
-		list.add(arr2);
-		
-
-		
-		
-		Csv csv = new Csv(';',"",nom,list);
-		csv.exporterCSV();
-		
-		FileInputStream csvFile = null;
-		try {
-			csvFile = new FileInputStream(nom);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		InputStreamReader inputreader = new InputStreamReader(csvFile);
-		BufferedReader br = new BufferedReader(inputreader);
-
-		String line;
-		try {
-			String strArray1 =String.join(";", arr1)+"d";
-			String strArray2 =String.join(";", arr2);
-			String[] tab= {strArray1,strArray2};
-			int i = 0;
-			while ((line = br.readLine()) != null) {
-				//Logger.info(tab[i].equals(line));
-			    i++;
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		}
+	}
 
     }
 

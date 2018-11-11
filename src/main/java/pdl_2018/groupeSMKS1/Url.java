@@ -90,7 +90,7 @@ public class Url implements IUrl {
 		} catch (MalformedURLException e) {
 			// return false;
 		}
-	}
+	} 
 
 	/**
 	 * 

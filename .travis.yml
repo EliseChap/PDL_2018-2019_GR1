@@ -6,7 +6,7 @@ after_success:
 script: 
 
 - mvn sonar:sonar
-- sonar-scanner
+- mvn sonar-scanner
  
 addons:
   sonarcloud:

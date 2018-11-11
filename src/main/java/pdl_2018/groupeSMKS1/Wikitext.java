@@ -48,7 +48,7 @@ public class Wikitext extends Extracteur {
 	public void recuperationPage() {
 		try {
 			Wiki wikisweble = new Wiki("fr.wikipedia.org");
-			String contenu = wikisweble.getPageText("Discussion:Deux-points");
+			String contenu = wikisweble.getPageText(sousDomain);
 
 			wikiconfig(contenu);
 		} catch (Exception e) {
@@ -169,7 +169,7 @@ public class Wikitext extends Extracteur {
 	}
 	
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_masculine_de_football", ';' , "chemin", " nomCSV", false,
+		Wikitext t = new Wikitext("fr.wikipedia.org", "ï¿½quipe_de_France_masculine_de_football", ';' , "chemin", " nomCSV", false,
 				true);
 		t.recuperationPage();
 		Set cles = lesWikitab.keySet();

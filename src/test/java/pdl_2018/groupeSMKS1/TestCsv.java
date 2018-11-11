@@ -11,7 +11,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -23,7 +22,6 @@ import src.main.java.pdl_2018.groupeSMKS1.Csv;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import junit.framework.TestCase;
 
 public class TestCsv extends TestCase {

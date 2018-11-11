@@ -92,7 +92,7 @@ public class Wikitext extends Extracteur {
 		//	if(wikitable.indexOf("wikitable")!=-1){
 				//System.out.println(table.getXmlAttributes());
 				WtXmlAttributes e = table.getXmlAttributes();
-				System.out.println(	e.getStringAttribute("wikitable"));
+				//System.out.println(	e.getStringAttribute("wikitable"));
 				compteur++;
 				lesWikitab.put(compteur, table.getBody());
 			//	System.out.println("trouver");
@@ -188,7 +188,7 @@ public class Wikitext extends Extracteur {
 		while(it.hasNext()) {
 			Integer cle = it.next();
 			WtBody ensemble = t.lesWikitab.get(cle);
-			//System.out.println(ensemble);
+			System.out.println(ensemble);
 		
 		}
 		

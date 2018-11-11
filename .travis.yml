@@ -6,6 +6,8 @@ after_success:
 script: 
 
 - mvn sonar:sonar
+- sonar-scanner
+ 
 addons:
   sonarcloud:
     organization: "sullidai-github"

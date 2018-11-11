@@ -183,7 +183,7 @@ public class Wikitext extends Extracteur {
 	}
 	
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Coupe_du_monde_de_football", ';' , "chemin", " nomCSV", false,
+		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_masculine_de_football", ';' , "chemin", " nomCSV", false,
 				true);
 		t.recupPage();
 		Set cles = lesWikitab.keySet();

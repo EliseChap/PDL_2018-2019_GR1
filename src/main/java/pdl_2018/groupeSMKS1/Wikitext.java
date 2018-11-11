@@ -183,13 +183,15 @@ public class Wikitext extends Extracteur {
 	}
 	
 	public static void main(String[] args) {
-		recupPage();
+		Wikitext t = new Wikitext("fr.wikipedia.org", "Coupe_du_monde_de_football", ';' , "chemin", " nomCSV", false,
+				true);
+		t.recupPage();
 		Set cles = lesWikitab.keySet();
 		Iterator <Integer>it =cles.iterator();
 		while(it.hasNext()) {
 			Integer cle = it.next();
 			WtTable ensemble = lesWikitab.get(cle);
-			//System.out.println(ensemble);
+			System.out.println(ensemble);
 		}
 		
 

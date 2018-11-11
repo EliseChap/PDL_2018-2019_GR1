@@ -50,6 +50,8 @@ public class Url implements IUrl {
 		} catch (IOException e) {
 			return false;
 		}
+		
+		
 		return true;
 	}
 	
@@ -63,15 +65,34 @@ public class Url implements IUrl {
 		return url;
 	}
 
+	
+	
+	/**
+	 * 
+	 * @return myUrl : la string url sous forme URL
+	 */
+
+	public URL getmyUrl() {
+		return myUrl;
+	}
+
 	/**
 	 * 
 	 * @para Nouvelle Url
 	 * 
 	 */
+	
+	
+	
 
 	public void setUrl(String newUrl) {
 		url = newUrl;
-	}
+		try {
+			myUrl = new URL(url);
+		} catch (MalformedURLException e) {
+			// return false;
+		}
+	} 
 
 	/**
 	 * 
@@ -178,7 +199,7 @@ public class Url implements IUrl {
 	public boolean isAPicture() {
 		
 		
-		return url.endsWith("jpg") || url.endsWith("png") ||  url.endsWith("gif") ||  url.endsWith("tiff") ||  url.endsWith("bmp");
+		return url.endsWith("jpg") ||url.endsWith("JPG") ||url.endsWith("svg") || url.endsWith("png") ||  url.endsWith("gif") ||  url.endsWith("tif") ||  url.endsWith("bmp");
 	}
 
 	/**
@@ -219,9 +240,9 @@ public class Url implements IUrl {
 	}
 
 	public static void main(String[] args) {
-		String u = "https://fr.wikipedia.org/wiki/Discussion_utilisateur:148.60.32.206";
+		String u = "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP";
 		boolean test = isWikiURL(u);
-		//System.out.println(test);
+		System.out.println(test);
 		URL url = null;
 		try {
 			url = new URL(u);
@@ -229,15 +250,20 @@ public class Url implements IUrl {
 
 		}
         
-		String utest = url.getPath();
-		String[] str = utest.split("/wiki/");
+		//String utest = url.getPath();
+		//String[] str = utest.split("/wiki/");
 		//System.out.println(utest);
-		System.out.println(str[1]);
+		//System.out.println(str[1]);
 		//boolean test2 = u.endsWith("jpg")||  u.endsWith("png") ||  u.endsWith("gif") ||  u.endsWith("tiff") ||  u.endsWith("bmp") ;
 		//System.out.println(test2);
 		CharSequence twopoint = "_:_";
 		boolean test3 = !u.contains(twopoint);
 		System.out.println(test3);
+		
+		
+		
+		
+		
 	}
 
 }

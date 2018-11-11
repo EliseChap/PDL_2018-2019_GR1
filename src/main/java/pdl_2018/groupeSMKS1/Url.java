@@ -63,11 +63,25 @@ public class Url implements IUrl {
 		return url;
 	}
 
+	
+	
+	/**
+	 * 
+	 * @return myUrl : la string url sous forme URL
+	 */
+
+	public URL getmyUrl() {
+		return myUrl;
+	}
+
 	/**
 	 * 
 	 * @para Nouvelle Url
 	 * 
 	 */
+	
+	
+	
 
 	public void setUrl(String newUrl) {
 		url = newUrl;

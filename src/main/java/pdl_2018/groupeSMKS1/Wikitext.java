@@ -17,6 +17,8 @@ import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTable;
+import org.sweble.wikitext.parser.nodes.WtBody;
+import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.wikipedia.Wiki;
 
 public class Wikitext extends Extracteur {
@@ -28,7 +30,7 @@ public class Wikitext extends Extracteur {
 	private boolean extraHTML;
 	private boolean extraWiki;
 	private ArrayList<Tableau> lesTableaux;
-	private  Map<Integer, WtTable> lesWikitab;
+	private  Map<Integer, WtBody> lesWikitab;
 	private int compteur = 0;
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) {
@@ -40,7 +42,7 @@ public class Wikitext extends Extracteur {
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;
 		lesTableaux = new ArrayList<Tableau>();
-		lesWikitab = new HashMap<Integer, WtTable>();
+		lesWikitab = new HashMap<Integer, WtBody>();
 
 	}
 
@@ -88,9 +90,12 @@ public class Wikitext extends Extracteur {
 				WtTable table = (WtTable) fils;
 				//  a modifier à ce niveau pour étre sur d'avoir un wikitable
 		//	if(wikitable.indexOf("wikitable")!=-1){
+				//System.out.println(table.getXmlAttributes());
+				WtXmlAttributes e = table.getXmlAttributes();
+				//System.out.println(	e.getStringAttribute("wikitable"));
 				compteur++;
-				lesWikitab.put(compteur, table);
-				System.out.println("trouver");
+				lesWikitab.put(compteur, table.getBody());
+			//	System.out.println("trouver");
 		//	}
 	
 			}
@@ -182,7 +187,7 @@ public class Wikitext extends Extracteur {
 		Iterator <Integer>it =cles.iterator();
 		while(it.hasNext()) {
 			Integer cle = it.next();
-			WtTable ensemble = t.lesWikitab.get(cle);
+			WtBody ensemble = t.lesWikitab.get(cle);
 			System.out.println(ensemble);
 		
 		}

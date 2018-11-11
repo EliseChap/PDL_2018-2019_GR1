@@ -310,7 +310,7 @@ public class HistoriqueApp {
 		//	https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones#/media/File:Gaztelugatxe_4199995260.jpg
 
 			//String contenu2 = wikisweble.getPageText("LostWinds");
-			String contenu2 = wikisweble.getPageText("Carte_graphique");
+			String contenu2 = wikisweble.getPageText("Équipe_de_France_masculine_de_football");
 			/*
 			 * Test avec la librairie sweble pour matcher wikitable
 			 */
@@ -419,7 +419,7 @@ public class HistoriqueApp {
 //						//System.out.println(wikitable.indexOf("wikitable"));
 //						if(wikitable.indexOf("wikitable")!=-1){
 //						//Insersion dans une liste de tableau
-//						System.out.println("TROUVERTOUVER");
+						System.out.println("TROUVERTOUVER");
 						}
 					parcourirNode(fils);
 					}

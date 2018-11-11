@@ -28,8 +28,8 @@ public class Wikitext extends Extracteur {
 	private boolean extraHTML;
 	private boolean extraWiki;
 	private ArrayList<Tableau> lesTableaux;
-	private static Map<Integer, WtTable> lesWikitab;
-
+	private  Map<Integer, WtTable> lesWikitab;
+	private int compteur = 0;
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) {
 		this.domain = domain;
@@ -60,6 +60,7 @@ public class Wikitext extends Extracteur {
 		
 
 	public  void wikiconfig(String contenu) {
+
 		try {
 			WikiConfig config = DefaultConfigEnWp.generate();
 
@@ -68,8 +69,10 @@ public class Wikitext extends Extracteur {
 			PageId pageId = new PageId(pageTitle, -1);
 			ExpansionCallback callback = null;
 			EngProcessedPage parse = engine.parse(pageId, contenu, callback);
-			int compteur = 0;
-			parcourirNode(parse,compteur);
+		
+			parcourirNode(parse);
+			
+			System.out.println(lesWikitab.size());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,7 +80,7 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	private  void parcourirNode(WtNode fils,int compteur) {
+	private  void parcourirNode(WtNode fils) {
 		for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
 			fils = l.next();
 
@@ -87,10 +90,11 @@ public class Wikitext extends Extracteur {
 		//	if(wikitable.indexOf("wikitable")!=-1){
 				compteur++;
 				lesWikitab.put(compteur, table);
+				System.out.println("trouver");
 		//	}
 	
 			}
-			parcourirNode(fils,compteur);
+			parcourirNode(fils);
 			
 		}
 
@@ -172,12 +176,15 @@ public class Wikitext extends Extracteur {
 		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_masculine_de_football", ';' , "chemin", " nomCSV", false,
 				true);
 		t.recuperationPage();
-		Set cles = lesWikitab.keySet();
+		
+	
+		Set cles = t.lesWikitab.keySet();
 		Iterator <Integer>it =cles.iterator();
 		while(it.hasNext()) {
 			Integer cle = it.next();
-			WtTable ensemble = lesWikitab.get(cle);
+			WtTable ensemble = t.lesWikitab.get(cle);
 			System.out.println(ensemble);
+		
 		}
 		
 //test

@@ -11,39 +11,43 @@ import java.io.*;
 public class Fichier {
 
     private ArrayList<src.main.java.pdl_2018.groupeSMKS1.Url> lesURLs; //Le tableau qui contient toutes les URLs issues du fichier d'entrée
+    private String cheminFichierEntree;
 
     /**
      * @author KLH
      * @date 10 novembre 2018
-     * @param commandLine : Objet ligne de commande
-     * @param commandLine
+     * @param cheminEntree : Chemin où trouver le fichier contenant les URLs wikipedia
+     * @param delimit
+     * @param nomCsv
+     * @param cheminCsv
+     * @param extraWiki
+     * @param extraHtml
      */
-    public Fichier(src.main.java.pdl_2018.groupeSMKS1.CommandLine commandLine){
+    public Fichier(String cheminEntree, char delimit, String nomCsv, String cheminCsv, boolean extraWiki, boolean extraHtml){ //On fait ça ou directement commandLine ? A voir par rapport aux tests unitaires qui se compliquent.
 
         this.lesURLs = new ArrayList();
 
-        String cheminFichierEntree = commandLine.getCheminEntree();
+        this.cheminFichierEntree = cheminEntree;
 
-        ArrayList<String> lignesADecouper = traitementFichierEntree(cheminFichierEntree); //Permet de traiter un fichier d'entrée dont les URLs sont séparées par un retour chariot.
+        ArrayList<String> lignesADecouper = traitementFichierEntree(); //Permet de traiter un fichier d'entrée dont les URLs sont séparées par un retour chariot.
 
-        decoupageAndGenerationURLs(lignesADecouper, commandLine); //Permet de traiter un fichier d'entrée dont les URLs sont séparées par ";" ou ","
+        decoupageAndGenerationURLs(lignesADecouper, delimit, nomCsv, cheminCsv, extraWiki, extraHtml); //Permet de traiter un fichier d'entrée dont les URLs sont séparées par ";" ou ","
 
         //On effectue ce double traitement pour rendre Wikimatrix plus souple concernant les fichiers .txt qu'il peut accépter en entrée.
 
     }
 
     /**
-     * La méthode prend en paramètre le chamin d'accès au fichier d'entrée contenant les URLs, récupère le fichier, et retourne un ArrayList contenant toutes les lignes du fichier
+     * La méthode récupère le fichier, et retourne un ArrayList contenant toutes les lignes du fichier
      * @date 10 novembre 2018
-     * @param cheminFichierEntree : chemin d'accès au fichier d'entrée contenant les URLs, issue de l'objet ligne de commande.
      * @return
      */
-    public ArrayList<String> traitementFichierEntree(String cheminFichierEntree){
+    public ArrayList<String> traitementFichierEntree(){
 
         ArrayList<String> lignesDuFichier = new ArrayList();
 
         try{
-            File fichier = new File (cheminFichierEntree);
+            File fichier = new File (this.cheminFichierEntree);
             FileReader fichierReader = new FileReader (fichier);
             BufferedReader bufferReader = new BufferedReader (fichierReader);
             try{
@@ -69,14 +73,18 @@ public class Fichier {
      * Cette méthode prend en paramètre l'ArrayList contenant toutes les lignes du fichier d'entrée, découpe ces lignes via les délimiteurs ";" et ",", puis instancie dans un ArrayList chaque URL issue du découpage.
      * @date 11 novembre 2018
      * @param lignesADecouper : ArrayList contenant les lignes du fichier d'entrée
-     * @param commandLine : Objet ligne de commande
+     * @param delimit
+     * @param nomCsv
+     * @param cheminCsv
+     * @param extraWiki
+     * @param extraHtml
      */
-    public void decoupageAndGenerationURLs(ArrayList<String> lignesADecouper, src.main.java.pdl_2018.groupeSMKS1.CommandLine commandLine){
+    public void decoupageAndGenerationURLs(ArrayList<String> lignesADecouper, char delimit, String nomCsv, String cheminCsv, boolean extraWiki, boolean extraHtml){
 
         for(int i=0; i<lignesADecouper.size(); i++){
             String[] delimitation = lignesADecouper.get(i).split(";|,");
             for(int j=0; j<delimitation.length; j++){
-                this.lesURLs.add(new Url(delimitation[j], commandLine.getDelimit(), commandLine.getNomCSV(), commandLine.getCheminCSV(), commandLine.getExtraWiki(), commandLine.getExtraHTML()));
+                this.lesURLs.add(new Url(delimitation[j], delimit, nomCsv, cheminCsv, extraWiki, extraHtml));
                 //FAUDRA CHANGER CA, SI POSSIBLE
             }
         }

@@ -50,6 +50,8 @@ public class Url implements IUrl {
 		} catch (IOException e) {
 			return false;
 		}
+		
+		
 		return true;
 	}
 	
@@ -197,7 +199,7 @@ public class Url implements IUrl {
 	public boolean isAPicture() {
 		
 		
-		return url.endsWith("jpg") || url.endsWith("png") ||  url.endsWith("gif") ||  url.endsWith("tiff") ||  url.endsWith("bmp");
+		return url.endsWith("jpg") ||url.endsWith("JPG") || url.endsWith("png") ||  url.endsWith("gif") ||  url.endsWith("tiff") ||  url.endsWith("bmp");
 	}
 
 	/**

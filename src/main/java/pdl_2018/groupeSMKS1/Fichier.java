@@ -1,6 +1,8 @@
 package pdl_2018.groupeSMKS1;
 
 
+import src.main.java.pdl_2018.groupeSMKS1.Url;
+
 import java.util.ArrayList;
 import java.io.*;
 
@@ -16,9 +18,11 @@ public class Fichier {
 
         ArrayList<String> lignesADecouper = traitementFichierEntree(cheminFichierEntree);
 
+        decoupageAndGenerationURLs(lignesADecouper, commandLine);
+
     }
 
-    private ArrayList<String> traitementFichierEntree(String cheminFichierEntree){
+    public ArrayList<String> traitementFichierEntree(String cheminFichierEntree){
 
         ArrayList<String> lignesDuFichier = new ArrayList();
 
@@ -42,6 +46,17 @@ public class Fichier {
             System.out.println ("Le fichier d'entrée n'a pas été trouvé par Wikimatrix");
         }
         return lignesDuFichier;
+    }
+
+    public void decoupageAndGenerationURLs(ArrayList<String> lignesADecouper, src.main.java.pdl_2018.groupeSMKS1.CommandLine commandLine){
+
+        for(int i=0; i<lignesADecouper.size(); i++){
+            String[] delimitation = lignesADecouper.get(i).split(";|,");
+            for(int j=0; j<delimitation.length; j++){
+                this.lesURLs.add(new Url(delimitation[j], commandLine.getDelimit(), commandLine.getNomCSV(), commandLine.getCheminCSV(), commandLine.getExtraWiki(), commandLine.getExtraHTML()));
+                //FAUDRA CHANGER CA, SI POSSIBLE
+            }
+        }
     }
 
 }

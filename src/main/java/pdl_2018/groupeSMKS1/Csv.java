@@ -121,7 +121,7 @@ public class Csv implements ICsv{
 		for (String[] strArr : tableau) {
 			for(String cellule :strArr) {
 				if(cellule.contains(separateur)) {
-					System.out.println("un choix de seperateur va �tre effectu� par d�faut, car celui d�finit pose des incoh�rences dans le csv");
+					logger.info("un choix de seperateur va �tre effectu� par d�faut, car celui d�finit pose des incoh�rences dans le csv");
 					separateurUtilisateur=true;
 				
 				}
@@ -225,7 +225,7 @@ public class Csv implements ICsv{
 		int incrementation = 1;
 		File f = new File(cheminCsv+nomCsv);
 		String[] split = nomCsv.split("\\.");
-		System.out.println(split[0]);
+		logger.info(split[0]);
 		while(f.isFile()) {
 			incrementation++;
 			f= new File(cheminCsv+split[0]+"_"+incrementation+"."+split[1]);			

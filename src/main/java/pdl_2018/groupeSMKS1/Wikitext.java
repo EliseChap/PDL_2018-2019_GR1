@@ -180,6 +180,6 @@ public class Wikitext extends Extracteur {
 			System.out.println(ensemble);
 		}
 		
-
+//test
 	}
 }

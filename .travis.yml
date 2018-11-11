@@ -5,6 +5,13 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 script: 
 - mvn test -f pom.xml
+
+addons:
+  sonarcloud:
+    organization: "sullidai-github"
+    token:
+      secure: "87cf3a2b8e1af8330051ad6c68f919a45b676203"
+
 notifications:
   email:
     - sophie.bouvry1@gmail.com

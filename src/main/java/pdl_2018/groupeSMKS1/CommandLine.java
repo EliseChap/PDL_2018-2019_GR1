@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.SystemUtils;
 import src.main.java.pdl_2018.groupeSMKS1.Url;
-import src.main.java.pdl_2018.groupeSMKS1.Fichier;
+
 
 public class CommandLine implements ICommandLine {
     private char delimit;

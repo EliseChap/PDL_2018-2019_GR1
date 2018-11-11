@@ -57,23 +57,9 @@ public class Wikitext extends Extracteur {
 		}
 	}
 	
-	
-	// A supp pour test
-	public static void recupPage() {
-		try {
-			Wiki wikisweble = new Wiki("fr.wikipedia.org");
-			String contenu = wikisweble.getPageText("Coupe_du_monde_de_football");
+		
 
-			wikiconfig(contenu);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	
-	// Enlever le static
-	public static void wikiconfig(String contenu) {
+	public  void wikiconfig(String contenu) {
 		try {
 			WikiConfig config = DefaultConfigEnWp.generate();
 
@@ -91,7 +77,7 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	private static void parcourirNode(WtNode fils,int compteur) {
+	private  void parcourirNode(WtNode fils,int compteur) {
 		for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
 			fils = l.next();
 
@@ -161,7 +147,7 @@ public class Wikitext extends Extracteur {
 	 * @return le nom du fichier CSV choisit par l'utilisateur
 	 */
 	public String getNomCSV() {
-		return this.getNomCSV();
+		return this.nomCSV;
 	}
 
 	/**
@@ -185,7 +171,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 		Wikitext t = new Wikitext("fr.wikipedia.org", "Coupe_du_monde_de_football", ';' , "chemin", " nomCSV", false,
 				true);
-		t.recupPage();
+		t.recuperationPage();
 		Set cles = lesWikitab.keySet();
 		Iterator <Integer>it =cles.iterator();
 		while(it.hasNext()) {

@@ -186,9 +186,9 @@ public class Csv implements ICsv{
 
 	        writer.writeAll(tableau); 
 	  
-	        // closing writer connection 
+	 /*       // closing writer connection 
 	        outputfile.close();
-	        writer.close(); 
+	        writer.close(); */
 	    } 
 	    catch (IOException e) { 
 	        e.printStackTrace(); 

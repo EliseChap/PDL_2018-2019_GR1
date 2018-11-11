@@ -5,7 +5,7 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 script: 
 - mvn test -f pom.xml
-mvn sonar:sonar \
+- mvn sonar:sonar \
   -Dsonar.projectKey=SulliDai_PDL_2018-2019_GR1 \
   -Dsonar.organization=sullidai-github \
   -Dsonar.host.url=https://sonarcloud.io \

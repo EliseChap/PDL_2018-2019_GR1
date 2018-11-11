@@ -5,8 +5,8 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 script: 
 - mvn test
-- sonar-scanner
 
+- mvn sonar:sonar
 addons:
   sonarcloud:
     organization: "sullidai-github"

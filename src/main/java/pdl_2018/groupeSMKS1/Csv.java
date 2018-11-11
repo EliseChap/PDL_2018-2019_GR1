@@ -6,32 +6,22 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.google.common.io.Files;
-import com.opencsv.CSVReader;
+import org.apache.log4j.Logger;
+
 import com.opencsv.CSVWriter;
-
-
-
-import java.io.Reader;
-import java.nio.file.Paths;
 
 public class Csv implements ICsv{
 	
-	// test sullivan pour sonar 
+	private static Logger logger = Logger.getLogger(Csv.class);
 	private static char delimit;
 	private static String cheminCsv;
 	private static String nomCsv;
@@ -40,33 +30,33 @@ public class Csv implements ICsv{
 	
     private ArrayList<String[]> tableau;
 	
-	public Csv(char delimit, String cheminCsv, String nomCsv, ArrayList<String[]> tableau) {
+	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, ArrayList<String[]> ptableau) {
 		
 
 		//V�rification si delimitation est null
-		if(delimit=='\u0000') {
-			this.delimit = ',';
+		if(pdelimit=='\u0000') {
+			delimit = ',';
 		}
 		else {
-			this.delimit = delimit;
+			delimit = pdelimit;
 		}
 		
 		//Verification si nom est null
-		if(nomCsv==null || nomCsv=="") {
-			this.nomCsv = "WikiMatrix.csv";
+		if(pnomCsv==null || pnomCsv=="") {
+			nomCsv = "WikiMatrix.csv";
 		}
 		else {
-			this.nomCsv = nomCsv;
+			nomCsv = pnomCsv;
 		}
 		
 		//Verification si cheminCsv est null
-		if(cheminCsv==null) {
-			this.cheminCsv = "";
+		if(pcheminCsv==null) {
+			cheminCsv = "";
 		}
 		else {
-			this.cheminCsv= cheminCsv;
+			cheminCsv= pcheminCsv;
 		}
-		this.tableau=tableau;
+		tableau=ptableau;
 		initialisationSeparateurAutomatique();
 		
 
@@ -97,18 +87,18 @@ public class Csv implements ICsv{
 	public void initialisationSeparateurAutomatique() {
 		separateurAutomatique.clear();
 		separateurAutomatique.put(";", false);
-		//separateurAutomatique.put("&", false);
-		//separateurAutomatique.put(">", false);
-		//separateurAutomatique.put("<", false);
 		separateurAutomatique.put(":", false);
-		//separateurAutomatique.put("�", false);
-		//separateurAutomatique.put("*", false);
-		//separateurAutomatique.put("�", false);
-		//separateurAutomatique.put("\\", false);
-		//separateurAutomatique.put("/", false);
 		separateurAutomatique.put("-", false);
 		separateurAutomatique.put("|", false);
 		separateurAutomatique.put(",", false);
+		/*separateurAutomatique.put("&", false);
+		separateurAutomatique.put(">", false);
+		separateurAutomatique.put("<", false);
+		separateurAutomatique.put("�", false);
+		separateurAutomatique.put("*", false);
+		separateurAutomatique.put("�", false);
+		separateurAutomatique.put("\\", false);
+		separateurAutomatique.put("/", false);*/
 	}
 	
 
@@ -156,8 +146,8 @@ public class Csv implements ICsv{
 			Iterator it = cles.iterator();
 			while (it.hasNext()){
 				Object cle = it.next();
-				if(separateurAutomatique.get(cle)==false) {
-					System.out.println(cle.toString());
+				if(separateurAutomatique.get(cle)) {	
+					logger.info(cle.toString());
 					return cle.toString();
 				}
 			}
@@ -206,7 +196,6 @@ public class Csv implements ICsv{
 	        writer.close(); 
 	    } 
 	    catch (IOException e) { 
-	        // TODO Auto-generated catch block 
 	        e.printStackTrace(); 
 	    } 
 	}
@@ -220,7 +209,7 @@ public class Csv implements ICsv{
 	@Override
 	public boolean verificationCheminDispo() {
 		File f = new File(cheminCsv+nomCsv);
-		System.out.println("le fichier existe d�j�, un nom increment� va �tre cr��");
+		logger.info("le fichier existe d�j�, un nom increment� va �tre cr��");
 		return f.isFile();
 	}
 
@@ -246,10 +235,12 @@ public class Csv implements ICsv{
 	}
 
 	public static void main(String[] args) {
-		File fichier = new File("testExporterCSV2.csv");
+		
+		String nom = "testExporterCSV2.csv";
+		File fichier = new File(nom);
 		fichier.delete();
 		
-		ArrayList<String[]> list = new ArrayList<String[]>();
+		ArrayList<String[]> list = new ArrayList<>();
 		String[] arr1 = { "a", "b", "c" };
 		String[] arr2 = { "1,0", "2", "3", "4" };
 		list.add(arr1);
@@ -258,14 +249,13 @@ public class Csv implements ICsv{
 
 		
 		
-		Csv csv = new Csv(';',"","testExporterCSV2.csv",list);
+		Csv csv = new Csv(';',"",nom,list);
 		csv.exporterCSV();
 		
 		FileInputStream csvFile = null;
 		try {
-			csvFile = new FileInputStream("testExporterCSV2.csv");
+			csvFile = new FileInputStream(nom);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		InputStreamReader inputreader = new InputStreamReader(csvFile);
@@ -275,10 +265,10 @@ public class Csv implements ICsv{
 		try {
 			String strArray1 =String.join(";", arr1)+"d";
 			String strArray2 =String.join(";", arr2);
-			String tab[]= {strArray1,strArray2};
+			String[] tab= {strArray1,strArray2};
 			int i = 0;
 			while ((line = br.readLine()) != null) {
-				System.out.println(tab[i].equals(line));
+				logger.info(tab[i].equals(line));
 			    i++;
 			}
 		} catch (IOException e) {

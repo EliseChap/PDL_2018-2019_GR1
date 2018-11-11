@@ -17,7 +17,7 @@ class TestUrl {
 		u = new Url("https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones", ' ', "", "", true, false);
 		// URL myUrl =u.getmyUrl(); 
 	}
-
+ 
 	@Test
 	public void testURLstandard() {
 

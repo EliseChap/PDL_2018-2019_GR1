@@ -31,7 +31,7 @@ public class Url implements IUrl {
 		try {
 			myUrl = new URL(url);
 		} catch (MalformedURLException e) {
-			// return false;
+			System.out.println("error");
 		}
 	}
 
@@ -204,7 +204,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return true si l'url est une discussion, une conversation en observant si il y a ':' non entouré de '-'
+	 * @return true si l'url est une discussion, une conversation en observant si il y a ':' non entourï¿½ de '-'
 	 */
 	
 	

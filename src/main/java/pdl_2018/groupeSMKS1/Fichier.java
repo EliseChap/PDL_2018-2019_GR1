@@ -59,4 +59,11 @@ public class Fichier {
         }
     }
 
+    public ArrayList<Url> getLesURLs() {
+        return lesURLs;
+    }
+
+    public void setLesURLs(ArrayList<Url> lesURLs) {
+        this.lesURLs = lesURLs;
+    }
 }

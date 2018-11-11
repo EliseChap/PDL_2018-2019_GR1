@@ -1,10 +1,10 @@
-package pdl_2018.groupeSMKS1;
+package src.main.java.pdl_2018.groupeSMKS1;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+ 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.SystemUtils;
 import src.main.java.pdl_2018.groupeSMKS1.Url;

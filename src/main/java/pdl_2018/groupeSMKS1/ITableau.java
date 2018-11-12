@@ -10,9 +10,6 @@ public interface ITableau {
 
 	String getTableau();
 
-	boolean verificationNumberIdenticalColumn();
-
-	boolean constructorCsv();
 
 
 }

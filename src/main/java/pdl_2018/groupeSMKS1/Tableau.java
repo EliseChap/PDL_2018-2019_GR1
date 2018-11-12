@@ -6,9 +6,9 @@ import org.apache.log4j.Logger;
 
 public class Tableau implements ITableau{
 	private static Logger logger = Logger.getLogger(Csv.class);
-	static char delimit;
-	static String cheminCsv;
-	static String nomCsv;
+	char delimit;
+	String cheminCsv;
+	String nomCsv;
 	ArrayList<String[]> tableau;
    public Tableau() {}
 	

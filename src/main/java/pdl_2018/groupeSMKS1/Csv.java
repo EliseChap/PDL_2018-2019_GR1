@@ -178,33 +178,25 @@ public class Csv implements ICsv{
 		}
 	  File nomFichier = new File(lien);
 	  
-	  FileWriter outputfile = null;
+
 	  CSVWriter writer = null;			
-			
+	
 	        // create FileWriter object with file as parameter 
-	        try {
-				outputfile = new FileWriter(nomFichier);
+	        try (FileWriter outputfile = new FileWriter(nomFichier)){
+	        	   writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
+	   	        	writer.writeAll(tableau);   
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				logger.error("outputfile", e);
 			} 
 	        finally {
+	        	  FileWriter outputfile = null;
 	        	try {
-					outputfile.close();
+	        		outputfile.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					logger.error("outputfile", e);
 					
 				}
 	        }
-	  
-	        // create CSVWriter with '|' as separator 
-	        writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
-	  
-	        writer.writeAll(tableau); 
-	        
-	  
-	       // closing writer connection 
 	}
 	
 	/**

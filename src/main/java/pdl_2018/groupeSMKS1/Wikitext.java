@@ -17,6 +17,8 @@ import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTable;
+import org.sweble.wikitext.parser.nodes.WtTableCell;
+import org.sweble.wikitext.parser.nodes.WtTableRow;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
@@ -114,6 +116,48 @@ public class Wikitext extends Extracteur {
 		}
 
 	}
+	
+	
+	/**
+	 * 
+	 * @return 
+	 */
+	public void TraitementMap() {
+		
+		
+		Set cles = lesWikitab.keySet();
+		Iterator<Integer> it = cles.iterator();
+		while (it.hasNext()) {
+			Integer cle = it.next();
+			WtBody ensemble = lesWikitab.get(cle);
+			int counter = 0;
+			
+			while (ensemble.size() > counter) {
+				if(ensemble.get(counter).getNodeType() == WtTableRow.NT_TABLE_ROW) {
+									
+				WtTableRow row = (WtTableRow) ensemble.get(counter);
+				int counterrow =0;
+				while (row.size() > counterrow) {
+					System.out.println(row.get(counterrow));
+					System.out.println(row.get(counterrow).getNodeType());
+					System.out.println(WtTableCell.NT_TABLE_CELL);
+					
+					if(row.get(counterrow).getNodeType() == WtTableCell.NT_TABLE_CELL) {
+						WtTableCell cell = (WtTableCell) row.get(counterrow);
+					//	System.out.println(cell.toString());
+					}
+					counterrow++;
+				}
+			
+				}
+					//System.out.println(ensemble.get(counter).toString());
+				counter++;
+				
+				
+			}
+
+		}
+	}
 
 	@Override
 	public void removeTableau() {
@@ -186,6 +230,8 @@ public class Wikitext extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
+	
+	
 
 	public static void main(String[] args) {
 		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_masculine_de_football", ';', "chemin",
@@ -197,10 +243,10 @@ public class Wikitext extends Extracteur {
 		while (it.hasNext()) {
 			Integer cle = it.next();
 			WtBody ensemble = t.lesWikitab.get(cle);
-			// System.out.println(ensemble);
-
+			//System.out.println(ensemble);
+			t.TraitementMap();
 		}
 
-//test
+
 	}
 }

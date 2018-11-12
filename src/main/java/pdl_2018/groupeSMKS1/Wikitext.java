@@ -128,7 +128,7 @@ public class Wikitext extends Extracteur {
 		Set cles = lesWikitab.keySet();
 		Iterator<Integer> it = cles.iterator();
 		while (it.hasNext()) {
-			Integer cle = it.next();
+			Integer cle = it.next(); 
 			WtBody ensemble = lesWikitab.get(cle);
 			int counter = 0;
 			

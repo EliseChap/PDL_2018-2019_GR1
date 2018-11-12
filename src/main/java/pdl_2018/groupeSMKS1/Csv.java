@@ -2,13 +2,10 @@ package src.main.java.pdl_2018.groupeSMKS1;
 
 
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -26,7 +23,7 @@ public class Csv implements ICsv{
 	private String cheminCsv;
 	private String nomCsv;
 	
-    private static Map<String, Boolean> separateurAutomatique = new HashMap<String, Boolean>();
+    private static Map<String, Boolean> separateurAutomatique = new HashMap<>();
 	
     private ArrayList<String[]> tableau;
 	
@@ -142,7 +139,15 @@ public class Csv implements ICsv{
 		//Return le separateur choisi
 		
 		if(separateurUtilisateur) {
-
+			Set cles = separateurAutomatique.keySet();
+			Iterator it = cles.iterator();
+			while (it.hasNext()){
+				Object cle = it.next();
+				if(separateurAutomatique.get(cle)) {	
+					logger.info(cle.toString());
+					return cle.toString();
+				}
+			}
 		}
 		return separateur;
 		
@@ -174,38 +179,32 @@ public class Csv implements ICsv{
 	  File nomFichier = new File(lien);
 	  
 	  FileWriter outputfile = null;
-	  CSVWriter writer = null;
-	    try { 
-
-				
-			
+	  CSVWriter writer = null;			
 			
 	        // create FileWriter object with file as parameter 
-	        outputfile = new FileWriter(nomFichier); 
-	  
-	        // create CSVWriter with '|' as separator 
-	       writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
-	  
-
-	        writer.writeAll(tableau); 
-	  
-	       // closing writer connection 
-	        
-	      
-	    } 
-	    catch (IOException e) { 
-	        e.printStackTrace(); 
-	        
-	    } 
-	    finally {
-	    	   try {
-				writer.close();
-				outputfile.close();
+	        try {
+				outputfile = new FileWriter(nomFichier);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	      }
+				logger.error("outputfile", e);
+			} 
+	        finally {
+	        	try {
+					outputfile.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					logger.error("outputfile", e);
+					
+				}
+	        }
+	  
+	        // create CSVWriter with '|' as separator 
+	        writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
+	  
+	        writer.writeAll(tableau); 
+	        
+	  
+	       // closing writer connection 
 	}
 	
 	/**

@@ -1,21 +1,15 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.junit.jupiter.api.Assertions;
-
 import com.opencsv.CSVWriter;
 
 public class Csv implements ICsv {
@@ -234,42 +228,7 @@ public class Csv implements ICsv {
 
 	}
 	
-	public static void main(String[] args) {
-		File fichier = new File("testExporterCSV2.csv");
-		fichier.delete();
-		
-		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
-		
 
-		
-		
-		Csv csv = new Csv(';',"","testExporterCSV2.csv",tab);
-		csv.exporterCSV();
-		
-		FileInputStream csvFile = null;
-		try {
-			csvFile = new FileInputStream("testExporterCSV2.csv");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		InputStreamReader inputreader = new InputStreamReader(csvFile);
-		BufferedReader br = new BufferedReader(inputreader);
-
-		String line;
-		try {
-			String strArray1 =String.join(";", tab[0]);
-			String strArray2 =String.join(";", tab[1]);
-			String array[]= {strArray1,strArray2};
-			int i = 0;
-			while ((line = br.readLine()) != null) {
-				System.out.println(array[i].equals(line));
-			    i++;
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+	
 
 }

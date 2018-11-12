@@ -178,22 +178,23 @@ public class Csv implements ICsv{
 		}
 	  File nomFichier = new File(lien);
 	  
-
+	  FileWriter outputfile = null;
 	  CSVWriter writer = null;			
-	
-	        // create FileWriter object with file as parameter 
-	        try (FileWriter outputfile = new FileWriter(nomFichier)){
-	        	   writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
-	   	        	writer.writeAll(tableau);   
+			
+	        try {
+				outputfile = new FileWriter(nomFichier);
+		        writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
+		  
+		        writer.writeAll(tableau); 
 			} catch (IOException e) {
-				logger.error("outputfile", e);
-			} 
+				e.printStackTrace();
+			}         
 	        finally {
-	        	  FileWriter outputfile = null;
 	        	try {
-	        		outputfile.close();
+					outputfile.close();
 				} catch (IOException e) {
-					logger.error("outputfile", e);
+					// TODO Auto-generated catch block
+					logger.debug(e);
 					
 				}
 	        }
@@ -230,10 +231,6 @@ public class Csv implements ICsv{
 			f= new File(cheminCsv+split[0]+"_"+incrementation+"."+split[1]);			
 		}
 		return cheminCsv+split[0]+"_"+incrementation+"."+split[1];
-		
-	}
-
-	public static void main(String[] args) {
 		
 	}
 

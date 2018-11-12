@@ -159,40 +159,53 @@ public class Csv implements ICsv{
 	 */
 	
 	@Override
-	public void exporterCSV() {
+	public void exporterCSV(){
 
-
+    	String separateur = verificationSeparateurValide();
+    	char car = separateur.charAt(0);
+		String lien;
+		
+		if (!verificationCheminDispo()) {
+			lien = cheminCsv+nomCsv;
+					}
+		else {
+			lien = nomCsvIncrementer();
+		}
+	  File nomFichier = new File(lien);
 	  
+	  FileWriter outputfile = null;
+	  CSVWriter writer = null;
 	    try { 
-	    	String separateur = verificationSeparateurValide();
-	    	char car = separateur.charAt(0);
-			String lien;
-			
-			if (!verificationCheminDispo()) {
-				lien = cheminCsv+nomCsv;
-						}
-			else {
-				lien = nomCsvIncrementer();
-			}
+
 				
-			File nomFichier = new File(lien);
+			
 			
 	        // create FileWriter object with file as parameter 
-	        FileWriter outputfile = new FileWriter(nomFichier); 
+	        outputfile = new FileWriter(nomFichier); 
 	  
 	        // create CSVWriter with '|' as separator 
-	        CSVWriter writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
+	       writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,CSVWriter.DEFAULT_ESCAPE_CHARACTER,CSVWriter.DEFAULT_LINE_END); 
 	  
 
 	        writer.writeAll(tableau); 
 	  
 	       // closing writer connection 
 	        
-	        writer.close(); 
+	      
 	    } 
 	    catch (IOException e) { 
 	        e.printStackTrace(); 
+	        
 	    } 
+	    finally {
+	    	   try {
+				writer.close();
+				outputfile.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	      }
 	}
 	
 	/**

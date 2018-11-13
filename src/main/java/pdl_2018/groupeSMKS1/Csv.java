@@ -131,16 +131,17 @@ public class Csv implements ICsv {
 		return envoyeSeparateurValide(separateurUtilisateur, separateur);
 
 	}
-	
+
 	/**
-	 * Choix du separateur selon si le choix de l'utilisateur est dans les données si oui en choisir un autre 
+	 * Choix du separateur selon si le choix de l'utilisateur est dans les données
+	 * si oui en choisir un autre
 	 * 
 	 * @param separateurUtilisateur,separateur
 	 * @return le separateur choisi
 	 * @date 13/11/2018
 	 * 
 	 */
-	
+
 	public String envoyeSeparateurValide(boolean separateurUtilisateur, String separateur) {
 
 		if (separateurUtilisateur) {
@@ -183,32 +184,27 @@ public class Csv implements ICsv {
 		CSVWriter writer = null;
 
 		try {
-			
-				try {
-					outputfile = new FileWriter(nomFichier);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			
+
+			outputfile = new FileWriter(nomFichier);
+
 			writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER,
 					CSVWriter.DEFAULT_LINE_END);
 			for (String[] strArr : tableau) {
 				writer.writeNext(strArr);
 			}
-		} 
-		
-		 finally {
+		} catch (Exception e) {
 			
-				try {
-					writer.close();
-					outputfile.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			
+		} finally {
+
+			try {	
+				outputfile.close();
+				writer.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
+
 		}
 	}
 
@@ -247,8 +243,5 @@ public class Csv implements ICsv {
 		return cheminCsv + split[0] + "_" + incrementation + "." + split[1];
 
 	}
-	
-
-	
 
 }

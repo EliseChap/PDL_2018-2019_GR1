@@ -1,5 +1,7 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
+import java.util.ArrayList;
+
 public class Html extends Extracteur {
 	
 	private String url;
@@ -8,6 +10,8 @@ public class Html extends Extracteur {
 	private String nomCSV;
 	private boolean extraHTML;
 	private boolean extraWiki;
+	private ArrayList<Tableau> lesTableaux;
+	
 
 	public Html(String url,char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
 		this.url = url;
@@ -15,6 +19,7 @@ public class Html extends Extracteur {
 		this.cheminCSV = cheminCSV;
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;
+		lesTableaux = new ArrayList<Tableau>();
 	}
 
 	@Override
@@ -28,6 +33,9 @@ public class Html extends Extracteur {
 
 	@Override
 	public void addTableau(Tableau leTableau) {
+		if (!lesTableaux.contains(leTableau)) {
+			lesTableaux.add(leTableau);
+		}
 	}
 
 	@Override
@@ -38,7 +46,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return le dï¿½limiteur choisit par l'utilisateur
+	 * @return le delimiteur choisit par l'utilisateur
 	 */
 	public char getDelimit() {
 		return this.delimit;
@@ -62,7 +70,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return un boolean qui indique si l'extraction doit ï¿½tre faire en HTML (true)
+	 * @return un booleen qui indique si l'extraction doit ïetre faite en HTML (true)
 	 *         ou non (false)
 	 */
 	public boolean getExtraHTML() {
@@ -71,7 +79,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return Un boolean qui indique si l'extraction doit ï¿½tre faire en
+	 * @return Un booleen qui indique si l'extraction doit etre faite en
 	 *         wikicode(true) ou non (false)
 	 */
 	public boolean getExtraWiki() {

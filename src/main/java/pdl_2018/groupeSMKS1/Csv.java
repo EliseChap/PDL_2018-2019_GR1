@@ -193,16 +193,13 @@ public class Csv implements ICsv {
 			}
 		
 		} finally {
-
-
 				if (outputfile != null) {
 					outputfile.close();
 				}
 				if (writer != null) {
 					writer.close();
 				}
-
-		
+	
 			}		
 	}
 

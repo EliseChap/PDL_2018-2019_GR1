@@ -1,13 +1,15 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
+import java.util.Arrays;
+
 import org.apache.log4j.Logger;
 
 public class Tableau implements ITableau {
-	private static Logger logger = Logger.getLogger(Csv.class);
+	//private static Logger logger = Logger.getLogger(Csv.class);
 	char delimit;
 	String cheminCsv;
 	String nomCsv;
-	String tableau[][];
+	String arr[][];
 
 	public Tableau() {
 	}
@@ -16,7 +18,7 @@ public class Tableau implements ITableau {
 		delimit = pDelimit;
 		cheminCsv = pCheminCsv;
 		nomCsv = pNomCsv;
-		tableau = pTableau;
+		arr = pTableau;
 	}
 
 	@Override
@@ -36,18 +38,8 @@ public class Tableau implements ITableau {
 
 	@Override
 	public String getTableau() {
-		return tableau.toString();
+		return Arrays.toString(arr);
 	}
 
-	public static void main(String[] args) {
-		char delimit = ';';
-		String cheminCsv = "";
-		String nomCsv = null;
-
-		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
-
-		Tableau tableau = new Tableau(delimit, cheminCsv, nomCsv, tab);
-
-	}
 
 }

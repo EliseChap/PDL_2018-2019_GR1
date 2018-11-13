@@ -2,13 +2,13 @@ package src.main.java.pdl_2018.groupeSMKS1;
 
 public interface ITableau {
 
-	char getDelimit();
+public 	char getDelimit();
 
-	String getCheminCsv();
+public String getCheminCsv();
 
-	String getNomCsv();
+public String getNomCsv();
 
-	String getTableau();
+public 	String getTableau();
 
 
 

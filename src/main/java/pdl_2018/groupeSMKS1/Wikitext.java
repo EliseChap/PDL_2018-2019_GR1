@@ -84,15 +84,15 @@ public class Wikitext extends Extracteur {
 	}
 
 	private boolean findClassWikitable(WtXmlAttributes e) {
-	
+
 		int compteur = 0;
-		while ( e.size() > compteur) {
-			//System.out.println(e.get(compteur).toString());
+		while (e.size() > compteur) {
+		
 			WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
 			if (attribut.toString().contains("wikitable")) {
 				return true;
 			}
-			
+
 			compteur++;
 		}
 
@@ -106,7 +106,10 @@ public class Wikitext extends Extracteur {
 			if (fils.getNodeType() == WtTable.NT_TABLE) {
 				WtTable table = (WtTable) fils;
 				WtXmlAttributes e = table.getXmlAttributes();
-			if (findClassWikitable(e)) {
+				if (findClassWikitable(e)) {
+					
+					
+					
 					compteur++;
 					lesWikitab.put(compteur, table.getBody());
 				}
@@ -116,44 +119,78 @@ public class Wikitext extends Extracteur {
 		}
 
 	}
+
 	
 	
-	/**
-	 * 
-	 * @return 
-	 */
-	public void TraitementMap() {
-		
+	public void rechercheColRow(WtNode fils, Iterator<WtNode> it) {
+		while (it.hasNext()) {
+			WtNode node = it.next();
+
+			if (node.getNodeType() == WtTableRow.NT_TABLE_ROW) {
+				System.out.println("R");
+				
+				System.out.println(node);
+							
+			}
+			if (node.getNodeType() == WtTableRow.NT_TABLE_HEADER) {
+				System.out.println("H");
+			}
+
+			if (node.getNodeType() == WtTableRow.NT_TABLE_CELL) {
+				System.out.println("C");
+			}
+
+		}
+	}
+
+	public void traitementMap2() {
 		
 		Set cles = lesWikitab.keySet();
 		Iterator<Integer> it = cles.iterator();
 		while (it.hasNext()) {
-			Integer cle = it.next(); 
+			Integer cle = it.next();
+			WtBody ensemble = lesWikitab.get(cle);
+			System.out.println(ensemble);
+			Iterator<WtNode> it2 = ensemble.iterator();
+			rechercheColRow(ensemble, it2);
+		}
+		System.out.println(lesWikitab.size());
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public void TraitementMap() {
+
+		Set cles = lesWikitab.keySet();
+		Iterator<Integer> it = cles.iterator();
+		while (it.hasNext()) {
+			Integer cle = it.next();
 			WtBody ensemble = lesWikitab.get(cle);
 			int counter = 0;
-			
+
 			while (ensemble.size() > counter) {
-				if(ensemble.get(counter).getNodeType() == WtTableRow.NT_TABLE_ROW) {
-									
-				WtTableRow row = (WtTableRow) ensemble.get(counter);
-				int counterrow =0;
-				while (row.size() > counterrow) {
-					System.out.println(row.get(counterrow));
-					System.out.println(row.get(counterrow).getNodeType());
-					System.out.println(WtTableCell.NT_TABLE_CELL);
-					
-					if(row.get(counterrow).getNodeType() == WtTableCell.NT_TABLE_CELL) {
-						WtTableCell cell = (WtTableCell) row.get(counterrow);
-					//	System.out.println(cell.toString());
+				if (ensemble.get(counter).getNodeType() == WtTableRow.NT_TABLE_ROW) {
+
+					WtTableRow row = (WtTableRow) ensemble.get(counter);
+					int counterrow = 0;
+					while (row.size() > counterrow) {
+						System.out.println(row.get(counterrow));
+						System.out.println(row.get(counterrow));
+						// System.out.println(WtTableCell.NT_TABLE_CELL);
+
+						if (row.get(counterrow).getNodeType() == WtTableCell.NT_TABLE_CELL) {
+							WtTableCell cell = (WtTableCell) row.get(counterrow);
+							// System.out.println(cell.toString());
+						}
+						counterrow++;
 					}
-					counterrow++;
+
 				}
-			
-				}
-					//System.out.println(ensemble.get(counter).toString());
+				// System.out.println(ensemble.get(counter).toString());
 				counter++;
-				
-				
+
 			}
 
 		}
@@ -230,23 +267,20 @@ public class Wikitext extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
-	
-	
 
 	public static void main(String[] args) {
 		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_masculine_de_football", ';', "chemin",
 				" nomCSV", false, true);
 		t.recuperationPage();
-
-		Set cles = t.lesWikitab.keySet();
-		Iterator<Integer> it = cles.iterator();
-		while (it.hasNext()) {
-			Integer cle = it.next();
-			WtBody ensemble = t.lesWikitab.get(cle);
-			//System.out.println(ensemble);
-			t.TraitementMap();
-		}
-
+		t.traitementMap2();
+//		Set cles = t.lesWikitab.keySet();
+//		Iterator<Integer> it = cles.iterator();
+//		while (it.hasNext()) {
+//			Integer cle = it.next();
+//			WtBody ensemble = t.lesWikitab.get(cle);
+//			// System.out.println(ensemble);
+//			t.TraitementMap();
+//		}
 
 	}
 }

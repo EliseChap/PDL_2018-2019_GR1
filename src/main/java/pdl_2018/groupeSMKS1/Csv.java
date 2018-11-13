@@ -95,7 +95,6 @@ public class Csv implements ICsv {
 	 * Verifie si le separateur de l'utilisateur n'est pas utilise sinon choisi un
 	 * autre automatiquement
 	 * 
-	 * @param tableau
 	 * @return le separateur choisi
 	 * @date 25/10/2018
 	 * 
@@ -129,8 +128,20 @@ public class Csv implements ICsv {
 
 			}
 		}
+		return envoyeSeparateurValide(separateurUtilisateur, separateur);
 
-		// Return le separateur choisi
+	}
+	
+	/**
+	 * Choix du separateur selon si le choix de l'utilisateur est dans les données si oui en choisir un autre 
+	 * 
+	 * @param separateurUtilisateur,separateur
+	 * @return le separateur choisi
+	 * @date 13/11/2018
+	 * 
+	 */
+	
+	public String envoyeSeparateurValide(boolean separateurUtilisateur, String separateur) {
 
 		if (separateurUtilisateur) {
 			Set cles = separateurAutomatique.keySet();
@@ -144,7 +155,6 @@ public class Csv implements ICsv {
 			}
 		}
 		return separateur;
-
 	}
 
 	/**
@@ -180,12 +190,12 @@ public class Csv implements ICsv {
 				writer.writeNext(strArr);
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.debug(e);
 		} finally {
 			try {
 				outputfile.close();
+				writer.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				logger.debug(e);
 
 			}

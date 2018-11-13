@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/SulliDai/PDL_2018-2019_GR1.svg?branch=master)](https://travis-ci.org/SulliDai/PDL_2018-2019_GR1)
 
-[![Sonarcloud Status](https://sonarcloud.io/dashboard?id=PDL_2018-2019%3AGroupe1&metric=alert_status)](https://sonarcloud.io/dashboard?id=PDL_2018-2019%3AGroupe1)
+[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=PDL_2018-2019:Groupe1&metric=alert_status)](https://sonarcloud.io/dashboard?id=PDL_2018-2019%3AGroupe1)
 
 
 # PDL_2018-2019_GR1

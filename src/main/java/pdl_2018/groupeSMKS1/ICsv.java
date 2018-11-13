@@ -1,37 +1,38 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
 public interface ICsv {
 
-	void initialisationSeparateurAutomatique();
+	public void initialisationSeparateurAutomatique();
 	
 
 
-	boolean verificationCheminDispo();
+	public	boolean verificationCheminDispo();
 
 
-	Map<String, Boolean> getSeparateur();
+	public	Map<String, Boolean> getSeparateur();
 
 
-	char getDelimit();
+	public	char getDelimit();
 
 
-	String getCheminCsv();
+	public	String getCheminCsv();
 
 
-	String getNomCsv();
+	public	String getNomCsv();
 	
 
-	String nomCsvIncrementer();
+	public	String nomCsvIncrementer();
 
 
 
 
-	String verificationSeparateurValide();
+	public String verificationSeparateurValide();
 
-	void exporterCSV();
+public 	void exporterCSV() throws IOException;
 
 
 }

@@ -162,12 +162,13 @@ public class Csv implements ICsv {
 	 * Cr�ation du CSV grace a un String en entree
 	 * 
 	 * @param Text
+	 * @throws IOException 
 	 * @throws FileNotFoundException
 	 * @date 25/10/2018
 	 */
 
 	@Override
-	public void exporterCSV() {
+	public void exporterCSV() throws IOException {
 
 		String separateur = verificationSeparateurValide();
 		char car = separateur.charAt(0);
@@ -184,28 +185,25 @@ public class Csv implements ICsv {
 		CSVWriter writer = null;
 
 		try {
-
 			outputfile = new FileWriter(nomFichier);
-
 			writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER,
 					CSVWriter.DEFAULT_LINE_END);
 			for (String[] strArr : tableau) {
 				writer.writeNext(strArr);
 			}
-		} catch (Exception e) {
-			
+		
 		} finally {
 
-			try {	
-				outputfile.close();
-				writer.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		
 
-		}
+				if (outputfile != null) {
+					outputfile.close();
+				}
+				if (writer != null) {
+					writer.close();
+				}
+
+		
+			}		
 	}
 
 	/**

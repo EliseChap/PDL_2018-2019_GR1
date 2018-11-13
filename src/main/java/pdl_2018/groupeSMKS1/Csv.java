@@ -168,7 +168,7 @@ public class Csv implements ICsv {
 	 */
 
 	@Override
-	public void exporterCSV()  {
+	public void exporterCSV() {
 
 		String separateur = verificationSeparateurValide();
 		char car = separateur.charAt(0);
@@ -184,20 +184,31 @@ public class Csv implements ICsv {
 		FileWriter outputfile = null;
 		CSVWriter writer = null;
 
+		writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+				CSVWriter.DEFAULT_LINE_END);
 		try {
 			outputfile = new FileWriter(nomFichier);
-			writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-					CSVWriter.DEFAULT_LINE_END);
+
 			for (String[] strArr : tableau) {
 				writer.writeNext(strArr);
 			}
 
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} finally {
-			if (outputfile != null) {
-				outputfile.close();
-			}
-			if (writer != null) {
-				writer.close();
+
+			try {
+				if (outputfile != null) {
+					outputfile.close();
+				}
+				if (writer != null) {
+					writer.close();
+				}
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 
 		}

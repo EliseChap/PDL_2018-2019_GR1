@@ -19,6 +19,7 @@ import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTable;
 import org.sweble.wikitext.parser.nodes.WtTableCell;
 import org.sweble.wikitext.parser.nodes.WtTableRow;
+import org.sweble.wikitext.parser.nodes.WtText;
 import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
@@ -105,9 +106,10 @@ public class Wikitext extends Extracteur {
 
 			if (fils.getNodeType() == WtTable.NT_TABLE) {
 				WtTable table = (WtTable) fils;
+				
 				WtXmlAttributes e = table.getXmlAttributes();
 				if (findClassWikitable(e)) {
-							
+					
 					compteur++;
 					lesWikitab.put(compteur, table.getBody());
 				}
@@ -119,25 +121,32 @@ public class Wikitext extends Extracteur {
 	}
 
 	
-	
-	public void rechercheColRow(WtNode fils, Iterator<WtNode> it) {
-		while (it.hasNext()) {
-			WtNode node = it.next();
 
+	public void rechercheColRow(WtNode fils, String[][] tab) {
+	
+		for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
+			WtNode node = l.next();
 			if (node.getNodeType() == WtTableRow.NT_TABLE_ROW) {
-				System.out.println("R");
-				
-				System.out.println(node);
+				//System.out.println("R");
+						
 							
 			}
 			if (node.getNodeType() == WtTableRow.NT_TABLE_HEADER) {
-				System.out.println("H");
+				//System.out.println("H");
 			}
 
 			if (node.getNodeType() == WtTableRow.NT_TABLE_CELL) {
-				System.out.println("C");
+			//	System.out.println("C");
 			}
-
+			if (node.getNodeType() == WtText.NT_TEXT) {
+			
+				WtText text = 	(WtText) node;
+				System.out.println(text.getContent());
+			
+			}
+		
+				
+			rechercheColRow(node,tab);
 		}
 	}
 
@@ -148,9 +157,9 @@ public class Wikitext extends Extracteur {
 		while (it.hasNext()) {
 			Integer cle = it.next();
 			WtBody ensemble = lesWikitab.get(cle);
-			System.out.println(ensemble);
-			Iterator<WtNode> it2 = ensemble.iterator();
-			rechercheColRow(ensemble, it2);
+		//	System.out.println(ensemble);
+			String[][] tab = new String[100][100];
+			rechercheColRow(ensemble, tab);
 		}
 		System.out.println(lesWikitab.size());
 	}

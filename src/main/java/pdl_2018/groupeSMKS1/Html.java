@@ -1,5 +1,11 @@
 package src.main.java.pdl_2018.groupeSMKS1;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 public class Html extends Extracteur {
@@ -86,5 +92,47 @@ public class Html extends Extracteur {
 		return this.extraWiki;
 	}
 	
-	public void recuperationPage() {}
+	public void recuperationPage() {
+		BufferedReader reader = null;
+		try {
+			URL u = new URL(url);
+			URLConnection urlConnection = u.openConnection();
+			reader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			while ((line = reader.readLine()) != null) {
+				sb.append(line);
+				sb.append("\n");
+				System.out.println(sb.toString());
+				
+
+				
+			}
+		}
+		
+		
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				if (reader == null) {
+					reader.close();
+				}
+			} catch (IOException ex) {
+
+			}
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		Html t = new Html("https://fr.wikipedia.org/wiki/P_(lettre)", ';', "chemin",
+				"nomCSV", true, false);
+		t.recuperationPage();
+		
+	}
+	
+	
 }

@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/SulliDai/PDL_2018-2019_GR1.svg?branch=master)](https://travis-ci.org/SulliDai/PDL_2018-2019_GR1)
 
-[![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.lapots.breed.judge:judge-rule-engine&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.lapots.breed.judge:judge-rule-engine)
+[![Sonarcloud Status](https://sonarcloud.io/dashboard?id=PDL_2018-2019%3AGroupe1&metric=alert_status)](https://sonarcloud.io/dashboard?id=PDL_2018-2019%3AGroupe1)
 
 
 # PDL_2018-2019_GR1

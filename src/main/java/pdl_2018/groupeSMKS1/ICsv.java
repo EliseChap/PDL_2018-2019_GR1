@@ -32,7 +32,7 @@ public interface ICsv {
 
 	public String verificationSeparateurValide();
 
-public 	void exporterCSV() throws IOException;
+public 	void exporterCSV();
 
 
 }

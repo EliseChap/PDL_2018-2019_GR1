@@ -58,12 +58,8 @@ public class TestCsv extends TestCase {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
 		Csv csv = new Csv(';', "", "testExporterCSV2.csv", tab);
-		try {
-			csv.exporterCSV();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
+		csv.exporterCSV();
 
 		FileInputStream csvFile = null;
 		try {
@@ -98,12 +94,9 @@ public class TestCsv extends TestCase {
 		fichier.delete();
 		Csv csv = new Csv(';', "", "testExporterCSV.csv", tab);
 		Assertions.assertFalse(csv.verificationCheminDispo());
-		try {
-			csv.exporterCSV();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		csv.exporterCSV();
+
 		Assertions.assertTrue(csv.verificationCheminDispo());
 
 	}
@@ -152,26 +145,17 @@ public class TestCsv extends TestCase {
 
 		Csv csv = new Csv(';', "", "testIncrementer.csv", tab);
 		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_1.csv");
-		try {
-			csv.exporterCSV();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		csv.exporterCSV();
+
 		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_2.csv");
-		try {
-			csv.exporterCSV();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		csv.exporterCSV();
+
 		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_3.csv");
-		try {
-			csv.exporterCSV();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		csv.exporterCSV();
+
 		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_4.csv");
 
 		// supprimer les fichers
@@ -194,12 +178,9 @@ public class TestCsv extends TestCase {
 
 		Csv csv = new Csv(';', "", "testChemin.csv", tab);
 		Assertions.assertTrue(!csv.verificationCheminDispo());
-		try {
-			csv.exporterCSV();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		csv.exporterCSV();
+
 		Assertions.assertTrue(csv.verificationCheminDispo());
 		fichier.delete();
 		Assertions.assertTrue(!csv.verificationCheminDispo());
@@ -225,6 +206,5 @@ public class TestCsv extends TestCase {
 		Assertions.assertTrue(separateur != "-");
 
 	}
- 
-	
+
 }

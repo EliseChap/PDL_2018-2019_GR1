@@ -50,7 +50,7 @@ public class Html extends Extracteur {
 		return new Tableau();
 	}
 
-	/**
+	/** 
 	 * 
 	 * @return le delimiteur choisit par l'utilisateur
 	 */

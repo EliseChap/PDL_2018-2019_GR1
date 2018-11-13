@@ -183,22 +183,30 @@ public class Csv implements ICsv {
 		CSVWriter writer = null;
 
 		try {
-			outputfile = new FileWriter(nomFichier);
+			try {
+				outputfile = new FileWriter(nomFichier);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER,
 					CSVWriter.DEFAULT_LINE_END);
 			for (String[] strArr : tableau) {
 				writer.writeNext(strArr);
 			}
-		} catch (IOException e) {
-			logger.debug(e);
-		} finally {
-			try {
-				outputfile.close();
-				writer.close();
-			} catch (IOException e) {
-				logger.debug(e);
-
-			}
+		} 
+		
+		 finally {
+			
+				try {
+					writer.close();
+					outputfile.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+		
 		}
 	}
 

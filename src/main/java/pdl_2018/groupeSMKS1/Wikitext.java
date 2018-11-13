@@ -107,9 +107,7 @@ public class Wikitext extends Extracteur {
 				WtTable table = (WtTable) fils;
 				WtXmlAttributes e = table.getXmlAttributes();
 				if (findClassWikitable(e)) {
-					
-					
-					
+							
 					compteur++;
 					lesWikitab.put(compteur, table.getBody());
 				}

@@ -33,7 +33,7 @@ public class CommandLine implements ICommandLine {
             if(this.url!=null && this.cheminEntree==null){
                 Url monUrl = new Url(this.url, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
             }else if (this.url==null && this.cheminEntree!=null){
-                //Fichier monFichier = new Fichier(this.cheminEntree, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
+                //TODO Fichier
             }
 
         } else {
@@ -140,7 +140,7 @@ public class CommandLine implements ICommandLine {
     }
 
     /**
-     * Cette fonction vérifie que le chemin du fichier d'entrée ou l'url saisie par l'utilisateur est exploitable et renvoie vrai dans ce cas, et false sinon.
+     * Cette fonction vérifie que le chemin du fichier d'entrée ou l'url est renseigné et renvoie vrai dans ce cas, et false sinon.
      * @author KLH
      * @date 3 novembre 2018
      * @param nbURL : nombre de commandes "url" dans la ligne de commande
@@ -149,13 +149,12 @@ public class CommandLine implements ICommandLine {
      */
     @Override
     public boolean verifUrlOrCheminEntree(int nbURL, int nbImport){
-        if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié est valide (on ne teste pas s'il est fonctionnel)
+        if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié n'est pas vide (on ne teste pas s'il est fonctionnel)
             Pattern pImport=Pattern.compile("-import\\[.*?\\]");
             Matcher mImport=pImport.matcher(this.ligneDeCommande);
             String contenuImport = mImport.group(1);
-            String contenuImportExtension = contenuImport.substring(contenuImport.length() -4, contenuImport.length());
-            if((contenuImportExtension!=".txt") || (contenuImport.length()<5)){
-                System.out.print("Le chemin d'accès au fichier d'URLs à importer est invalide");
+            if(contenuImport=="" || contenuImport==null){
+                System.out.print("Le chemin d'accès au fichier d'URLs à importer n'est pas renseigné");
                return false;
             }
             setCheminEntree(contenuImport);
@@ -163,17 +162,31 @@ public class CommandLine implements ICommandLine {
             Pattern pURL=Pattern.compile("-url\\[.*?\\]");
             Matcher mURL = pURL.matcher(this.ligneDeCommande);
             String contenuURL = mURL.group(1);
-            if((contenuURL.substring(0, 24)!="https://en.wikipedia.org/") || (contenuURL.substring(0, 24)!="https://fr.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://en.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://fr.wikipedia.org/")){
-                System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
+            if(contenuURL=="" || contenuURL==null){
+                System.out.println("L'url n'est pas renseignée");
                 return false;
             }
             setUrl(contenuURL);
         }
+
+/* Code qui vérifie que l'url saisie est une url wikipédia. VOIR AVEC LE PROF SI ON GARDE ON PAS
+    } else if (nbURL == 1){ // On vérifie que l'URL spécifiée est valide, qu'il s'agit d'une url wiki (on ne teste pas si elle est fonctionnelle)
+        Pattern pURL=Pattern.compile("-url\\[.*?\\]");
+        Matcher mURL = pURL.matcher(this.ligneDeCommande);
+        String contenuURL = mURL.group(1);
+        if((contenuURL.substring(0, 24)!="https://en.wikipedia.org/") || (contenuURL.substring(0, 24)!="https://fr.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://en.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://fr.wikipedia.org/")){
+            System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
+            return false;
+        }
+        setUrl(contenuURL);
+    }
+    */
+
         return true;
     }
 
     /**
-     * Cette fonction vérifie que le chemin de sortie, si spécifié, est valide puis renvoie vrai dans ce cas, false sinon.
+     * Cette fonction vérifie que le chemin de sortie est renseigné puis renvoie vrai dans ce cas, false sinon.
      * @author KLH
      * @date 4 novembre 2018
      * @return
@@ -187,9 +200,8 @@ public class CommandLine implements ICommandLine {
             Matcher mSave=pSave.matcher(this.ligneDeCommande);
             contenuSave = mSave.group(1);
 
-            if((contenuSave.charAt(contenuSave.length())!='/') || (contenuSave.length()<3)){ //Le répertoire termine obligatoirement par un slash et fait au moins 3 caractères.
-                //TODO Eventuellement vérifier le système d'exploitation, pour analyser présence de "X:/" etc... selon l'OS
-                System.out.println("Le chemin du fichier de sortie spécifié est invalide");
+            if(contenuSave=="" || contenuSave==null){
+                System.out.println("Le chemin du fichier de sortie n'est pas renseigné");
                 return false;
             }
         } else if (nbSave > 1){
@@ -201,7 +213,7 @@ public class CommandLine implements ICommandLine {
     }
 
     /**
-     * Cette fonction vérifie que le nom de sortie, si spécifié, est valide puis renvoie vrai dans ce cas, false sinon.
+     * Cette fonction vérifie que le nom de sortie n'est pas vide puis renvoie vrai dans ce cas, false sinon.
      * @author KLH
      * @date 4 novembre 2018
      * @return
@@ -214,12 +226,16 @@ public class CommandLine implements ICommandLine {
             Pattern pSave=Pattern.compile("-name\\[.*?\\]");
             Matcher mSave=pSave.matcher(this.ligneDeCommande);
             contenuName = mSave.group(1);
-
-            if((contenuName.substring(contenuName.length()-5)!=".csv") || (contenuName.length()<5)){ //Le fichier termine obligatoirement par .csv et fait au moins 5 caractères (le nom minimum 1 + le .csv de taille 4).
-                //TODO Eventuellement vérifier le système d'exploitation, pour analyser présence de "X:/" etc... selon l'OS
-                System.out.println("Le chemin du fichier de sortie spécifié est invalide");
+            if(contenuName=="" || contenuName==null){
+                System.out.println("Le nom du fichier de sortie n'est pas renseigné");
                 return false;
             }
+            /*
+                if((contenuName.substring(contenuName.length()-5)!=".csv") || (contenuName.length()<5)){ //Le fichier termine obligatoirement par .csv et fait au moins 5 caractères (le nom minimum 1 + le .csv de taille 4).
+                System.out.println("Le chemin du fichier de sortie spécifié est invalide");
+                return false;
+                }
+             */
         } else if (nbSave > 1){
             System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
             return false;

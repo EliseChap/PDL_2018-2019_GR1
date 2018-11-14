@@ -33,7 +33,7 @@ public class CommandLine implements ICommandLine {
             if(this.url!=null && this.cheminEntree==null){
                 Url monUrl = new Url(this.url, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
             }else if (this.url==null && this.cheminEntree!=null){
-                //TODO Fichier
+                Fichier monFichier = new Fichier(this.cheminEntree, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
             }
 
         } else {

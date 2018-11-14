@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 
 import javax.swing.text.BadLocationException;
 
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -38,7 +39,7 @@ import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTable;
 import org.sweble.wikitext.parser.nodes.WtTableCaption;
-import org.sweble.wikitext.parser.parser.LinkTargetException;
+import org.sweble.wikitext.parser.parser.LinkTargetException; 
 import org.wikipedia.Wiki;
 
 import com.bitplan.mediawiki.japi.Mediawiki;
@@ -68,8 +69,8 @@ public class HistoriqueApp {
 		// Extraction();
 		// ConvertirAdresseWikiCode("https://en.wikipedia.org/wiki/Comparison_of_Canon_EOS_digital_cameras");
 		// exporterCSV("e");
-		// testJsoup();
-		testLibrary();
+		 testJsoup();
+		//testLibrary();
 
 	}
 

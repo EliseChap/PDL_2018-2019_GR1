@@ -2,8 +2,6 @@
  * Test de la classe Csv 
  */
 
-
-
 package src.test.java.pdl_2018.groupeSMKS1;
 
 import java.io.BufferedReader;
@@ -13,7 +11,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -26,56 +23,44 @@ import junit.framework.TestCase;
 
 public class TestCsv extends TestCase {
 
-
 	/**
 	 * Test des param�tres en entr�e et cr�ation de l'objet CVS
 	 */
 	@Test
 	public void testObjectCsvStandard() {
-		
-		
-		Csv csv = new Csv(';',"C:/Users/sullivand/Music/Desktop/Nouveau dossier/","WikiMatrix",null);
-		Assertions.assertEquals(csv.getDelimit(),';');
-		Assertions.assertEquals(csv.getCheminCsv(),"C:/Users/sullivand/Music/Desktop/Nouveau dossier/");
-		Assertions.assertEquals(csv.getNomCsv(),"WikiMatrix");
+
+		Csv csv = new Csv(';', "C:/Users/sullivand/Music/Desktop/Nouveau dossier/", "WikiMatrix", null);
+		Assertions.assertEquals(csv.getDelimit(), ';');
+		Assertions.assertEquals(csv.getCheminCsv(), "C:/Users/sullivand/Music/Desktop/Nouveau dossier/");
+		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix");
 	}
-	
-	
+
 	/**
 	 * Test des param�tres en entr�e null et cr�ation de l'objet CVS
 	 */
 	@Test
 	public void testObjectCsvNull() {
-		Csv csv = new Csv('\u0000',null,null,null);
-		Assertions.assertEquals(csv.getDelimit(),',');
-		Assertions.assertEquals(csv.getCheminCsv(),"");
-		Assertions.assertEquals(csv.getNomCsv(),"WikiMatrix.csv");
+		Csv csv = new Csv('\u0000', null, null, null);
+		Assertions.assertEquals(csv.getDelimit(), ',');
+		Assertions.assertEquals(csv.getCheminCsv(), "");
+		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
 	}
-	
 
-	
-	
 	/**
 	 * Verification de l'exportation d'un csv
 	 */
-	
+
 	@Test
 	public void testExporterCSV2() {
 		File fichier = new File("testExporterCSV2.csv");
 		fichier.delete();
-		
-		ArrayList<String[]> list = new ArrayList<String[]>();
-		String[] arr1 = { "a", "b", "c" };
-		String[] arr2 = { "1,0", "2", "3", "4" };
-		list.add(arr1);
-		list.add(arr2);
-		
 
-		
-		
-		Csv csv = new Csv(';',"","testExporterCSV2.csv",list);
+		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
+
+		Csv csv = new Csv(';', "", "testExporterCSV2.csv", tab);
+
 		csv.exporterCSV();
-		
+
 		FileInputStream csvFile = null;
 		try {
 			csvFile = new FileInputStream("testExporterCSV2.csv");
@@ -88,65 +73,63 @@ public class TestCsv extends TestCase {
 
 		String line;
 		try {
-			String strArray1 =String.join(";", arr1);
-			String strArray2 =String.join(";", arr2);
-			String tab[]= {strArray1,strArray2};
+			String strArray1 = String.join(";", tab[0]);
+			String strArray2 = String.join(";", tab[1]);
+			String array[] = { strArray1, strArray2 };
 			int i = 0;
 			while ((line = br.readLine()) != null) {
-				Assertions.assertTrue(tab[i].equals(line));
-			    i++;
+				System.out.println(array[i].equals(line));
+				i++;
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		}
-	
-	
-	
+	}
+
 	@Test
 	public void testExporterCSV() {
-		ArrayList<String[]> list = new ArrayList<String[]>();
-		String[] arr1 = { "a", "b", "c" };
+		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 		File fichier = new File("testExporterCSV.csv");
 		fichier.delete();
-		Csv csv = new Csv(';',"","testExporterCSV.csv",list);
+		Csv csv = new Csv(';', "", "testExporterCSV.csv", tab);
 		Assertions.assertFalse(csv.verificationCheminDispo());
+
 		csv.exporterCSV();
+
 		Assertions.assertTrue(csv.verificationCheminDispo());
 
 	}
-	
-	
+
 	/**
 	 * V�rifiation si le hashmap est initialis� en faux
 	 */
 	@Test
 	public void testInitialisationSeparateurAutomatique() {
-		
+
 		boolean verification = false;
-		
-		Csv csv = new Csv(';',"","",null);
+
+		Csv csv = new Csv(';', "", "", null);
 		Map<String, Boolean> separateurAutomatique = csv.getSeparateur();
 		Set cles = separateurAutomatique.keySet();
 		Iterator it = cles.iterator();
-		while (it.hasNext() && !verification){
-		   Object cle = it.next();
-		   if(separateurAutomatique.get(cle)==true) {
-			   verification = true;
+		while (it.hasNext() && !verification) {
+			Object cle = it.next();
+			if (separateurAutomatique.get(cle) == true) {
+				verification = true;
 			}
 		}
-		Assertions.assertEquals(verification,false);
-				
+		Assertions.assertEquals(verification, false);
+
 	}
-	
+
 	/*
 	 * Vérification de l'incrementation du fichier
 	 */
-	
+
 	@Test
 	public void testNomCsvIncrementer() {
-		//initialisation
+		// initialisation
 		File fichier = new File("testIncrementer.csv");
 		fichier.delete();
 		File fichier1 = new File("testIncrementer_2.csv");
@@ -155,78 +138,73 @@ public class TestCsv extends TestCase {
 		fichier2.delete();
 		File fichier3 = new File("testIncrementer_4.csv");
 		fichier3.delete();
-		
-		//création des fichiers
-		
-		ArrayList<String[]> list = new ArrayList<String[]>();
-		String[] arr1 = { "a;", "b", "c" };
-		String[] arr2 = { "1,0:-", "2", "3", "4" };
-		list.add(arr1);
-		list.add(arr2);
-		
-		Csv csv = new Csv(';',"","testIncrementer.csv",list);
-		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_1.csv");
+
+		// création des fichiers
+
+		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
+
+		Csv csv = new Csv(';', "", "testIncrementer.csv", tab);
+		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_1.csv");
+
 		csv.exporterCSV();
-		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_2.csv");
+
+		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_2.csv");
+
 		csv.exporterCSV();
-		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_3.csv");
+
+		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_3.csv");
+
 		csv.exporterCSV();
-		Assertions.assertEquals(csv.nomCsvIncrementer(),"testIncrementer_4.csv");
-		
-		//supprimer les fichers
+
+		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_4.csv");
+
+		// supprimer les fichers
 		fichier.delete();
 		fichier1.delete();
 		fichier2.delete();
 		fichier3.delete();
 	}
-	
+
 	/**
 	 * Verifie si l'emplacement est pris
 	 */
-	
+
 	@Test
 	public void testVerificationCheminDispo() {
 		File fichier = new File("testChemin.csv");
 		fichier.delete();
-		
-		ArrayList<String[]> list = new ArrayList<String[]>();
-		String[] arr1 = { "a;", "b", "c" };
-		String[] arr2 = { "1,0:-", "2", "3", "4" };
-		list.add(arr1);
-		list.add(arr2);
-		
-		Csv csv = new Csv(';',"","testChemin.csv",list);
+
+		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
+
+		Csv csv = new Csv(';', "", "testChemin.csv", tab);
 		Assertions.assertTrue(!csv.verificationCheminDispo());
+
 		csv.exporterCSV();
+
 		Assertions.assertTrue(csv.verificationCheminDispo());
 		fichier.delete();
 		Assertions.assertTrue(!csv.verificationCheminDispo());
-		
+
 	}
-	
+
 	/*
 	 * Verification du choix du délimiter
 	 */
-	
+
 	@Test
 	public void testVerificationSeparateurValide() {
-		ArrayList<String[]> list = new ArrayList<String[]>();
-		String[] arr1 = { "a;", "b", "c" };
-		String[] arr2 = { "1,0:-", "2", "3", "4" };
-		list.add(arr1);
-		list.add(arr2);
-		Csv csv = new Csv(';',"","",list);
 
-		
+		String tab[][] = { { "a;", "b", "c", "d" }, { "1,0:-", "2", "3", "4" } };
+		Csv csv = new Csv(';', "", "", tab);
+
 		csv.verificationSeparateurValide();
 		Map<String, Boolean> cle = csv.getSeparateur();
 		String separateur = cle.toString();
-		Assertions.assertTrue(separateur!=";");
-		Assertions.assertTrue(separateur!=",");
-		Assertions.assertTrue(separateur!=":");
-		Assertions.assertTrue(separateur!="-");
+		Assertions.assertTrue(separateur != ";");
+		Assertions.assertTrue(separateur != ",");
+		Assertions.assertTrue(separateur != ":");
+		Assertions.assertTrue(separateur != "-");
 
 	}
-	
-	
+
 }

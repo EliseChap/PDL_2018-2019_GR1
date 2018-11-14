@@ -2,18 +2,18 @@ package src.main.java.pdl_2018.groupeSMKS1;
  
 public interface ICommandLine {
 
-    boolean verifIntegriteCommandLine();
+  public  boolean verifIntegriteCommandLine();
 
-    boolean verifHtmlOrWikicodeChoice();
+  public  boolean verifHtmlOrWikicodeChoice();
 
-    boolean verifUrlOrFichierChoice();
+  public  boolean verifUrlOrFichierChoice();
 
-    boolean verifUrlOrCheminEntree(int nbURL, int nbImport);
+  public   boolean verifUrlOrCheminEntree(int nbURL, int nbImport);
 
-    boolean verifRepertoireSortie();
+  public  boolean verifRepertoireSortie();
 
-    boolean verifNomSortie();
+  public  boolean verifNomSortie();
 
-    boolean verifDelimiteur();
+  public  boolean verifDelimiteur();
 
 }

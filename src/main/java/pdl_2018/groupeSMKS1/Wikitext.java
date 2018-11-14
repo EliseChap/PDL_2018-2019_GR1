@@ -17,6 +17,10 @@ import org.sweble.wikitext.engine.nodes.EngProcessedPage;
 import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.WtNode;
 import org.sweble.wikitext.parser.nodes.WtTable;
+import org.sweble.wikitext.parser.nodes.WtTableCell;
+import org.sweble.wikitext.parser.nodes.WtTableRow;
+import org.sweble.wikitext.parser.nodes.WtText;
+import org.sweble.wikitext.parser.nodes.WtXmlAttribute;
 import org.sweble.wikitext.parser.nodes.WtBody;
 import org.sweble.wikitext.parser.nodes.WtXmlAttributes;
 import org.wikipedia.Wiki;
@@ -30,8 +34,9 @@ public class Wikitext extends Extracteur {
 	private boolean extraHTML;
 	private boolean extraWiki;
 	private ArrayList<Tableau> lesTableaux;
-	private  Map<Integer, WtBody> lesWikitab;
+	private Map<Integer, WtBody> lesWikitab;
 	private int compteur = 0;
+
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) {
 		this.domain = domain;
@@ -58,10 +63,8 @@ public class Wikitext extends Extracteur {
 			e.printStackTrace();
 		}
 	}
-	
-		
 
-	public  void wikiconfig(String contenu) {
+	public void wikiconfig(String contenu) {
 
 		try {
 			WikiConfig config = DefaultConfigEnWp.generate();
@@ -71,10 +74,9 @@ public class Wikitext extends Extracteur {
 			PageId pageId = new PageId(pageTitle, -1);
 			ExpansionCallback callback = null;
 			EngProcessedPage parse = engine.parse(pageId, contenu, callback);
-		
+
 			parcourirNode(parse);
-			
-			System.out.println(lesWikitab.size());
+			System.out.println(compteur);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -82,27 +84,118 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	private  void parcourirNode(WtNode fils) {
+	private boolean findClassWikitable(WtXmlAttributes e) {
+
+		int compteur = 0;
+		while (e.size() > compteur) {
+
+			WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
+			if (attribut.toString().contains("wikitable")) {
+				return true;
+			}
+
+			compteur++;
+		}
+
+		return false;
+	}
+
+	private void parcourirNode(WtNode fils) {
 		for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
 			fils = l.next();
 
 			if (fils.getNodeType() == WtTable.NT_TABLE) {
 				WtTable table = (WtTable) fils;
-				//  a modifier à ce niveau pour étre sur d'avoir un wikitable
-		//	if(wikitable.indexOf("wikitable")!=-1){
-				//System.out.println(table.getXmlAttributes());
+
 				WtXmlAttributes e = table.getXmlAttributes();
-				//System.out.println(	e.getStringAttribute("wikitable"));
-				compteur++;
-				lesWikitab.put(compteur, table.getBody());
-			//	System.out.println("trouver");
-		//	}
-	
+				if (findClassWikitable(e)) {
+
+					compteur++;
+					lesWikitab.put(compteur, table.getBody());
+				}
 			}
 			parcourirNode(fils);
-			
+
 		}
 
+	}
+
+	public void rechercheColRow(WtNode fils, String[][] tab) {
+
+		for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
+			WtNode node = l.next();
+			if (node.getNodeType() == WtTableRow.NT_TABLE_ROW) {
+				// System.out.println("R");
+
+			}
+			if (node.getNodeType() == WtTableRow.NT_TABLE_HEADER) {
+				// System.out.println("H");
+			}
+
+			if (node.getNodeType() == WtTableRow.NT_TABLE_CELL) {
+				// System.out.println("C");
+			}
+			if (node.getNodeType() == WtText.NT_TEXT) {
+
+				WtText text = (WtText) node;
+				System.out.println(text.getContent());
+			}
+
+			rechercheColRow(node, tab);
+		}
+	}
+
+	public void traitementMap2() {
+
+		Set cles = lesWikitab.keySet();
+		Iterator<Integer> it = cles.iterator();
+		while (it.hasNext()) {
+			Integer cle = it.next();
+			WtBody ensemble = lesWikitab.get(cle);
+			// System.out.println(ensemble);
+			String[][] tab = new String[100][100];
+			rechercheColRow(ensemble, tab);
+		}
+		System.out.println(lesWikitab.size());
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public void TraitementMap() {
+
+		Set cles = lesWikitab.keySet();
+		Iterator<Integer> it = cles.iterator();
+		while (it.hasNext()) {
+			Integer cle = it.next();
+			WtBody ensemble = lesWikitab.get(cle);
+			int counter = 0;
+
+			while (ensemble.size() > counter) {
+				if (ensemble.get(counter).getNodeType() == WtTableRow.NT_TABLE_ROW) {
+
+					WtTableRow row = (WtTableRow) ensemble.get(counter);
+					int counterrow = 0;
+					while (row.size() > counterrow) {
+						System.out.println(row.get(counterrow));
+						System.out.println(row.get(counterrow));
+						// System.out.println(WtTableCell.NT_TABLE_CELL);
+
+						if (row.get(counterrow).getNodeType() == WtTableCell.NT_TABLE_CELL) {
+							WtTableCell cell = (WtTableCell) row.get(counterrow);
+							// System.out.println(cell.toString());
+						}
+						counterrow++;
+					}
+
+				}
+				// System.out.println(ensemble.get(counter).toString());
+				counter++;
+
+			}
+
+		}
 	}
 
 	@Override
@@ -176,22 +269,20 @@ public class Wikitext extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
-	
+
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_masculine_de_football", ';' , "chemin", " nomCSV", false,
-				true);
+		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_masculine_de_football", ';', "chemin",
+				" nomCSV", false, true);
 		t.recuperationPage();
-		
-	
-		Set cles = t.lesWikitab.keySet();
-		Iterator <Integer>it =cles.iterator();
-		while(it.hasNext()) {
-			Integer cle = it.next();
-			WtBody ensemble = t.lesWikitab.get(cle);
-			System.out.println(ensemble);
-		
-		}
-		
-//test
+		t.traitementMap2();
+//		Set cles = t.lesWikitab.keySet();
+//		Iterator<Integer> it = cles.iterator();
+//		while (it.hasNext()) {
+//			Integer cle = it.next();
+//			WtBody ensemble = t.lesWikitab.get(cle);
+//			// System.out.println(ensemble);
+//			t.TraitementMap();
+//		}
+
 	}
 }

@@ -112,7 +112,7 @@ public class Html extends Extracteur {
 	public static void main(String[] args) {
 		Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin",
 				"nomCSV", true, false);
-		t.recuperationPage();
+		t.recuperationPage(); 
 		
 	}
 	

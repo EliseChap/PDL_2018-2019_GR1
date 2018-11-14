@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 
 import javax.swing.text.BadLocationException;
 
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -68,8 +69,8 @@ public class HistoriqueApp {
 		// Extraction();
 		// ConvertirAdresseWikiCode("https://en.wikipedia.org/wiki/Comparison_of_Canon_EOS_digital_cameras");
 		// exporterCSV("e");
-		// testJsoup();
-		testLibrary();
+		 testJsoup();
+		//testLibrary();
 
 	}
 

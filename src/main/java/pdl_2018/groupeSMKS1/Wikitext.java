@@ -88,7 +88,7 @@ public class Wikitext extends Extracteur {
 
 		int compteur = 0;
 		while (e.size() > compteur) {
-		
+
 			WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
 			if (attribut.toString().contains("wikitable")) {
 				return true;
@@ -106,10 +106,10 @@ public class Wikitext extends Extracteur {
 
 			if (fils.getNodeType() == WtTable.NT_TABLE) {
 				WtTable table = (WtTable) fils;
-				
+
 				WtXmlAttributes e = table.getXmlAttributes();
 				if (findClassWikitable(e)) {
-					
+
 					compteur++;
 					lesWikitab.put(compteur, table.getBody());
 				}
@@ -120,44 +120,39 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	
-
 	public void rechercheColRow(WtNode fils, String[][] tab) {
-	
+
 		for (Iterator<WtNode> l = fils.iterator(); l.hasNext();) {
 			WtNode node = l.next();
 			if (node.getNodeType() == WtTableRow.NT_TABLE_ROW) {
-				//System.out.println("R");
-						
-							
+				// System.out.println("R");
+
 			}
 			if (node.getNodeType() == WtTableRow.NT_TABLE_HEADER) {
-				//System.out.println("H");
+				// System.out.println("H");
 			}
 
 			if (node.getNodeType() == WtTableRow.NT_TABLE_CELL) {
-			//	System.out.println("C");
+				// System.out.println("C");
 			}
 			if (node.getNodeType() == WtText.NT_TEXT) {
-			
-				WtText text = 	(WtText) node;
+
+				WtText text = (WtText) node;
 				System.out.println(text.getContent());
-			
 			}
-		
-				
-			rechercheColRow(node,tab);
+
+			rechercheColRow(node, tab);
 		}
 	}
 
 	public void traitementMap2() {
-		
+
 		Set cles = lesWikitab.keySet();
 		Iterator<Integer> it = cles.iterator();
 		while (it.hasNext()) {
 			Integer cle = it.next();
 			WtBody ensemble = lesWikitab.get(cle);
-		//	System.out.println(ensemble);
+			// System.out.println(ensemble);
 			String[][] tab = new String[100][100];
 			rechercheColRow(ensemble, tab);
 		}

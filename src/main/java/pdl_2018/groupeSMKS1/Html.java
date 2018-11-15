@@ -18,9 +18,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.sweble.wikitext.parser.nodes.WtBody;
 
-
 public class Html extends Extracteur {
-	
+
 	private String url;
 	private char delimit;
 	private String cheminCSV;
@@ -29,9 +28,8 @@ public class Html extends Extracteur {
 	private boolean extraWiki;
 	private ArrayList<Tableau> lesTableaux;
 	private Map<String, Element> lesHtmltab;
-	
 
-	public Html(String url,char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
+	public Html(String url, char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
 		this.url = url;
 		this.delimit = delimit;
 		this.cheminCSV = cheminCSV;
@@ -63,7 +61,7 @@ public class Html extends Extracteur {
 		return new Tableau();
 	}
 
-	/** 
+	/**
 	 * 
 	 * @return le delimiteur choisit par l'utilisateur
 	 */
@@ -89,8 +87,8 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return un booleen qui indique si l'extraction doit ïetre faite en HTML (true)
-	 *         ou non (false)
+	 * @return un booleen qui indique si l'extraction doit ïetre faite en HTML
+	 *         (true) ou non (false)
 	 */
 	public boolean getExtraHTML() {
 		return this.extraHTML;
@@ -104,90 +102,85 @@ public class Html extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
-	
+
 	public void recuperationPage() {
 		try {
 			Document doc = Jsoup.connect(url).get();
-			//System.out.println(doc);
-			
+			// System.out.println(doc);
+
 			Elements table = doc.select(".wikitable");
-			for(int i =0; i<table.size();i++) {
+			for (int i = 0; i < table.size(); i++) {
 				lesHtmltab.put(table.get(i).getElementsByTag("caption").text(), table.get(i)); // cle : titre du tableau
-				
+
 			}
-			//System.out.println(table);
+			// System.out.println(table);
 			TraitementMap();
-			
+
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-			
-		}		
+
+		}
 	}
-	
+
 	public void TraitementMap() {
 		Set cles = lesHtmltab.keySet();
 		Iterator<String> it = cles.iterator();
 		int counter = 0;
-		
+
 		while (it.hasNext()) {
 			String cle = it.next();
 			Element ensemble = lesHtmltab.get(cle);
 			boolean tabcreated = false;
-			
-			Elements tr = ensemble.getElementsByTag("tr");
-			//System.out.println(tr.size());
-			
-			String [][] tab = null;
-			int i = 0;
-			
-			for(Element e : tr) {
-				if(!tabcreated) {
-					
-				tab = new String[tr.size()][e.getElementsByTag("th").size()];
-				tabcreated = true;	
-				}	
-				
-				int j = 0;
-			Elements th = e.getElementsByTag("th");
 
-			for(Element f : th) {
-				tab[i][j]=f.text();
-				j++;
+			Elements tr = ensemble.getElementsByTag("tr");
+			// System.out.println(tr.size());
+
+			String[][] tab = null;
+			int i = 0;
+
+			for (Element e : tr) {
+				if (!tabcreated) {
+
+					tab = new String[tr.size()][e.getElementsByTag("th").size()];
+					tabcreated = true;
+				}
+
+				int j = 0;
+				Elements th = e.getElementsByTag("th");
+
+				for (Element f : th) {
+					tab[i][j] = f.text();
+					j++;
+				}
+
+				Elements td = e.getElementsByTag("td");
+				for (Element g : td) {
+					tab[i][j] = g.text();
+					j++;
+
+				}
+
+				i++;
 			}
-			
-			
-			Elements td = e.getElementsByTag("td");
-			for(Element g : td) {
-				tab[i][j]=g.text();
-				j++;
-				
-			}
-			
-			i++;
-			}
-			/*for(int a=0; a<tab.length; a++) {
-				for(int b=0; b<tab[a].length; b++) {
-					System.out.println(tab[a][b]);
-			}
-			
-		
-			}*/
-			
-			
-			//System.out.println(ensemble);
-			
-			}
-		
+			/*
+			 * for(int a=0; a<tab.length; a++) { for(int b=0; b<tab[a].length; b++) {
+			 * System.out.println(tab[a][b]); }
+			 * 
+			 * 
+			 * }
+			 */
+
+			// System.out.println(ensemble);
+
+		}
+
 	}
-		
-	
-	
+
 	public static void main(String[] args) {
-		Html t = new Html("https://fr.wikipedia.org/wiki/Liste_des_lieux_patrimoniaux_de_Trinity_Royal_(Saint-Jean)", ';', "chemin",
-				"nomCSV", true, false);
-		t.recuperationPage(); 
-		
+		Html t = new Html("https://fr.wikipedia.org/wiki/Liste_des_lieux_patrimoniaux_de_Trinity_Royal_(Saint-Jean)",
+				';', "chemin", "nomCSV", true, false);
+		t.recuperationPage();
+
 	}
-	
-	
+
 }

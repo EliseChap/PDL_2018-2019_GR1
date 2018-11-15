@@ -184,6 +184,7 @@ public class Html extends Extracteur {
 
 				i++;
 				}
+			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab,cle);
 			}
 			/*
 			 * for(int a=0; a<tab.length; a++) { for(int b=0; b<tab[a].length; b++) {

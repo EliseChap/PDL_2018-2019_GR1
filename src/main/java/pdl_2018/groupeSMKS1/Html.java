@@ -8,12 +8,15 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.sweble.wikitext.parser.nodes.WtBody;
 
 
 public class Html extends Extracteur {
@@ -113,12 +116,41 @@ public class Html extends Extracteur {
 				
 			}
 			//System.out.println(table);
+			TraitementMap();
 			
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 			
 		}		
 	}
+	
+	public void TraitementMap() {
+		Set cles = lesHtmltab.keySet();
+		Iterator<String> it = cles.iterator();
+		int counter = 0;
+		while (it.hasNext()) {
+			String cle = it.next();
+			Element ensemble = lesHtmltab.get(cle);
+			
+			
+			Elements tr = ensemble.getElementsByTag("tr");
+			
+			for(Element e : tr) {
+			String th = e.getElementsByTag("th").text();
+			String td = e.getElementsByTag("td").text();
+			System.out.println(td);}
+			
+		
+			
+			
+			
+			//System.out.println(ensemble);
+			
+		}
+		
+	}
+		
+	
 	
 	public static void main(String[] args) {
 		Html t = new Html("https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_masculine_de_football", ';', "chemin",

@@ -110,7 +110,15 @@ public class Html extends Extracteur {
 
 			Elements table = doc.select(".wikitable");
 			for (int i = 0; i < table.size(); i++) {
-				lesHtmltab.put(table.get(i).getElementsByTag("caption").text(), table.get(i)); // cle : titre du tableau
+				String nom = "";
+
+				Elements caption = table.get(i).getElementsByTag("caption");
+				if (caption.isEmpty()) {
+					nom = "table" + i;
+				} else {
+					nom = caption.text();
+				}
+				lesHtmltab.put(nom, table.get(i)); // cle : titre du tableau
 
 			}
 			// System.out.println(table);
@@ -129,6 +137,7 @@ public class Html extends Extracteur {
 
 		while (it.hasNext()) {
 			String cle = it.next();
+			System.out.println(cle);
 			Element ensemble = lesHtmltab.get(cle);
 			boolean tabcreated = false;
 
@@ -137,23 +146,36 @@ public class Html extends Extracteur {
 
 			String[][] tab = null;
 			int i = 0;
-
+			System.out.println(tr.size());
 			for (Element e : tr) {
+				Elements th = e.getElementsByTag("th");
+				Elements td = e.getElementsByTag("td");
+			if (th.size() == td.size()) { //Cas tableau avec nom colonnes qui apparaissent plusieurs fois 
+				//(cf equipe de france masculine de foot,Parcours de l'équipe de France en championnat d'Europe 
+				
 				if (!tabcreated) {
 
-					tab = new String[tr.size()][e.getElementsByTag("th").size()];
+					int nbCol = 0;
+
+					if (!th.isEmpty()) {
+						nbCol = th.size();
+					} else {
+						nbCol = td.size();
+					}
+					tab = new String[tr.size()][nbCol];
+					System.out.println(th.size());
+					System.out.println(td.size());
+					System.out.println(nbCol);
 					tabcreated = true;
 				}
 
 				int j = 0;
-				Elements th = e.getElementsByTag("th");
 
 				for (Element f : th) {
 					tab[i][j] = f.text();
 					j++;
 				}
 
-				Elements td = e.getElementsByTag("td");
 				for (Element g : td) {
 					tab[i][j] = g.text();
 					j++;
@@ -161,6 +183,7 @@ public class Html extends Extracteur {
 				}
 
 				i++;
+				}
 			}
 			/*
 			 * for(int a=0; a<tab.length; a++) { for(int b=0; b<tab[a].length; b++) {
@@ -177,8 +200,8 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html t = new Html("https://fr.wikipedia.org/wiki/Liste_des_lieux_patrimoniaux_de_Trinity_Royal_(Saint-Jean)",
-				';', "chemin", "nomCSV", true, false);
+		Html t = new Html("https://fr.wikipedia.org/wiki/Josef_Newgarden", ';', "chemin",
+				"nomCSV", true, false);
 		t.recuperationPage();
 
 	}

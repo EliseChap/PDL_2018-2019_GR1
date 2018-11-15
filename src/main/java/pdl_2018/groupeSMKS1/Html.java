@@ -180,7 +180,7 @@ public class Html extends Extracteur {
 					tab[i][j] = g.text();
 					j++;
 
-				}
+				} 
 
 				i++;
 				}

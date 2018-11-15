@@ -128,32 +128,62 @@ public class Html extends Extracteur {
 		Set cles = lesHtmltab.keySet();
 		Iterator<String> it = cles.iterator();
 		int counter = 0;
+		
 		while (it.hasNext()) {
 			String cle = it.next();
 			Element ensemble = lesHtmltab.get(cle);
-			
+			boolean tabcreated = false;
 			
 			Elements tr = ensemble.getElementsByTag("tr");
+			//System.out.println(tr.size());
+			
+			String [][] tab = null;
+			int i = 0;
 			
 			for(Element e : tr) {
-			String th = e.getElementsByTag("th").text();
-			String td = e.getElementsByTag("td").text();
-			System.out.println(td);}
+				if(!tabcreated) {
+					
+				tab = new String[tr.size()][e.getElementsByTag("th").size()];
+				tabcreated = true;	
+				}	
+				
+				int j = 0;
+			Elements th = e.getElementsByTag("th");
+
+			for(Element f : th) {
+				tab[i][j]=f.text();
+				j++;
+			}
+			
+			
+			Elements td = e.getElementsByTag("td");
+			for(Element g : td) {
+				tab[i][j]=g.text();
+				j++;
+				
+			}
+			
+			i++;
+			}
+			/*for(int a=0; a<tab.length; a++) {
+				for(int b=0; b<tab[a].length; b++) {
+					System.out.println(tab[a][b]);
+			}
 			
 		
-			
+			}*/
 			
 			
 			//System.out.println(ensemble);
 			
-		}
+			}
 		
 	}
 		
 	
 	
 	public static void main(String[] args) {
-		Html t = new Html("https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_masculine_de_football", ';', "chemin",
+		Html t = new Html("https://fr.wikipedia.org/wiki/Liste_des_lieux_patrimoniaux_de_Trinity_Royal_(Saint-Jean)", ';', "chemin",
 				"nomCSV", true, false);
 		t.recuperationPage(); 
 		

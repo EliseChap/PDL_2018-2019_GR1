@@ -7,10 +7,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
 
 public class Html extends Extracteur {
 	
@@ -21,6 +25,7 @@ public class Html extends Extracteur {
 	private boolean extraHTML;
 	private boolean extraWiki;
 	private ArrayList<Tableau> lesTableaux;
+	private Map<String, Element> lesHtmltab;
 	
 
 	public Html(String url,char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
@@ -30,6 +35,7 @@ public class Html extends Extracteur {
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;
 		lesTableaux = new ArrayList<Tableau>();
+		lesHtmltab = new HashMap<String, Element>();
 	}
 
 	@Override
@@ -100,17 +106,22 @@ public class Html extends Extracteur {
 		try {
 			Document doc = Jsoup.connect(url).get();
 			//System.out.println(doc);
-			Element table = doc.select(".wikitable").get(0);
-			System.out.println(table);
+			
+			Elements table = doc.select(".wikitable");
+			for(int i =0; i<table.size();i++) {
+				lesHtmltab.put(table.get(i).getElementsByTag("caption").text(), table.get(i)); // cle : titre du tableau
+				
+			}
+			//System.out.println(table);
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			
 		}		
 	}
 	
 	public static void main(String[] args) {
-		Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin",
+		Html t = new Html("https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_masculine_de_football", ';', "chemin",
 				"nomCSV", true, false);
 		t.recuperationPage(); 
 		

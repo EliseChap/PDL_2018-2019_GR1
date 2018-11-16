@@ -18,7 +18,7 @@ public class Csv implements ICsv {
 	private char delimit;
 	private String cheminCsv;
 	private String nomCsv;
-	private String tableau[][];
+	private String[][] tableau;
 	private static Map<String, Boolean> separateurAutomatique = new HashMap<>();
 
 	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2) {
@@ -66,6 +66,11 @@ public class Csv implements ICsv {
 	@Override
 	public String getNomCsv() {
 		return nomCsv;
+	}
+	
+	@Override
+	public String[][] getTableau() {
+		return tableau;
 	}
 
 	/**

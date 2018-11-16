@@ -5,7 +5,6 @@ import java.util.Arrays;
 import org.apache.log4j.Logger;
 
 public class Tableau implements ITableau {
-	//private static Logger logger = Logger.getLogger(Csv.class);
 	private char delimit;
 	private String cheminCsv;
 	private String nomCsv;
@@ -15,7 +14,7 @@ public class Tableau implements ITableau {
 	public Tableau() {
 	}
 
-	public Tableau(char pDelimit, String pCheminCsv, String pNomCsv, String pTableau[][], String nomTab) {
+	public Tableau(char pDelimit, String pCheminCsv, String pNomCsv, String pTableau[][]) {
 		delimit = pDelimit;
 		cheminCsv = pCheminCsv;
 		nomCsv = pNomCsv;
@@ -27,7 +26,7 @@ public class Tableau implements ITableau {
 	public char getDelimit() {
 		return delimit;
 	}
-	
+
 	public String getnomTab() {
 		return nomTab;
 	}
@@ -42,9 +41,13 @@ public class Tableau implements ITableau {
 		return nomCsv;
 	}
 
-	@Override
-	public String getTableau() {
-		return Arrays.toString(arr);
+	
+	public String getTableauToString() {
+		String tableauTostring = "";
+		for (String[] strArr : arr) {
+			tableauTostring+=Arrays.toString(strArr);
+		}
+		return tableauTostring;
 	}
 
 

@@ -35,4 +35,8 @@ public interface ICsv {
 public 	void exporterCSV();
 
 
+
+String[][] getTableau();
+
+
 }

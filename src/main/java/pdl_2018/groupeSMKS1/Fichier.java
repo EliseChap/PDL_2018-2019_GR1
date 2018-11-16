@@ -97,4 +97,16 @@ public class Fichier {
     public void setLesURLs(ArrayList<Url> lesURLs) {
         this.lesURLs = lesURLs;
     }
+
+
+    /**
+     * Méthode main pour tester à la main la classe Fichier
+     * @param args
+     * @date 15 novembre 2018
+     */
+    public static void main(String[] args){
+        Fichier monFichier = new Fichier("c:/mesURLs.txt", ';', "moncsv", "monchemincsv", true, false);
+
+        System.out.println(monFichier.getLesURLs().get(2).getmyUrl());
+    }
 }

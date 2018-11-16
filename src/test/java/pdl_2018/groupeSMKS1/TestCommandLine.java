@@ -1,9 +1,8 @@
-package src.test.java.pdl_2018.groupeSMKS1;
+package pdl_2018.groupeSMKS1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
  
-import src.main.java.pdl_2018.groupeSMKS1.CommandLine;
 
 
 class TestCommandLine {

@@ -1,16 +1,15 @@
-package src.main.java.pdl_2018.groupeSMKS1;
+package pdl_2018.groupeSMKS1;
 
 
 
 
-import src.main.java.pdl_2018.groupeSMKS1.Url;
 
 import java.util.ArrayList;
 import java.io.*;
 
 public class Fichier {
 
-    private ArrayList<src.main.java.pdl_2018.groupeSMKS1.Url> lesURLs; //Le tableau qui contient toutes les URLs issues du fichier d'entrée
+    private ArrayList<Url> lesURLs; //Le tableau qui contient toutes les URLs issues du fichier d'entrée
     private String cheminFichierEntree;
 
     /**

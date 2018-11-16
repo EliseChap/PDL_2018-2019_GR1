@@ -1,4 +1,4 @@
-package src.main.java.pdl_2018.groupeSMKS1;
+package pdl_2018.groupeSMKS1;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.google.common.net.InternetDomainName;
 
-import src.main.java.pdl_2018.groupeSMKS1.IUrl;
 
 public class Url implements IUrl {
 	private URL myUrl;

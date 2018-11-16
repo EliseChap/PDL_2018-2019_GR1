@@ -2,7 +2,7 @@
  * Test de la classe Csv 
  */
 
-package src.test.java.pdl_2018.groupeSMKS1;
+package pdl_2018.groupeSMKS1;
 
 import java.io.BufferedReader;
 
@@ -14,7 +14,6 @@ import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import src.main.java.pdl_2018.groupeSMKS1.Csv;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

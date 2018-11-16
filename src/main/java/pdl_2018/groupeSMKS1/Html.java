@@ -1,6 +1,7 @@
-package src.main.java.pdl_2018.groupeSMKS1;
+package pdl_2018.groupeSMKS1;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -82,7 +83,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return un booleen qui indique si l'extraction doit ïetre faite en HTML
+	 * @return un booleen qui indique si l'extraction doit ï¿½etre faite en HTML
 	 *         (true) ou non (false)
 	 */
 	public boolean getExtraHTML() {
@@ -146,7 +147,7 @@ public class Html extends Extracteur {
 				Elements th = e.getElementsByTag("th");
 				Elements td = e.getElementsByTag("td");
 			if (th.size() == td.size()) { //Cas tableau avec nom colonnes qui apparaissent plusieurs fois 
-				//(cf equipe de france masculine de foot,Parcours de l'équipe de France en championnat d'Europe 
+				//(cf equipe de france masculine de foot,Parcours de l'ï¿½quipe de France en championnat d'Europe 
 				
 				if (!tabcreated) {
 

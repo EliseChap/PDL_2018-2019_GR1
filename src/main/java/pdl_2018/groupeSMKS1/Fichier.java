@@ -85,7 +85,6 @@ public class Fichier {
             String[] delimitation = lignesADecouper.get(i).split(";|,");
             for(int j=0; j<delimitation.length; j++){
                 this.lesURLs.add(new Url(delimitation[j], delimit, nomCsv, cheminCsv, extraWiki, extraHtml));
-                //FAUDRA CHANGER CA, SI POSSIBLE
             }
         }
     }
@@ -105,8 +104,8 @@ public class Fichier {
      * @date 15 novembre 2018
      */
     public static void main(String[] args){
-        Fichier monFichier = new Fichier("c:/mesURLs.txt", ';', "moncsv", "monchemincsv", true, false);
+        //Fichier monFichier = new Fichier("c:/mesURLs.txt", ';', "moncsv", "monchemincsv", true, false);
 
-        System.out.println(monFichier.getLesURLs().get(2).getmyUrl());
+        //System.out.println(monFichier.getLesURLs().get(2).getmyUrl());
     }
 }

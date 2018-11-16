@@ -14,15 +14,13 @@ import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-
+import pdl_2018.groupeSMKS1.Csv;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import junit.framework.TestCase;
 
-@Disabled
 public class TestCsv extends TestCase {
 
 	/**

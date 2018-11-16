@@ -10,6 +10,7 @@ import src.main.java.pdl_2018.groupeSMKS1.Fichier;
 import org.junit.jupiter.api.Test;
 
 import junit.framework.TestCase;
+import src.main.java.pdl_2018.groupeSMKS1.Url;
 
 import java.util.ArrayList;
 
@@ -48,7 +49,17 @@ public class TestFichier {
      * On teste avec différentes lectures de ligne
      */
     @Test
-    public void testVerifDelimiteur() {
+    public void testDecoupageAndGenerationURLs() {
+        f.setCheminFichierEntree("c:/mesURLs.txt");
+        ArrayList<src.main.java.pdl_2018.groupeSMKS1.Url> mesURLs = new ArrayList(); //Test avec fichier dont les lignes ont bien été récupérées
+        mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Rennes",' ', "", "", true, false));
+        mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Haute-Bretagne",' ', "", "", true, false));
+        mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Métro_de_Rennes",' ', "", "", true, false));
+        Assertions.assertEquals(f.getLesURLs(), mesURLs);
+
+        f.setCheminFichierEntree("c:/mesURL.txt"); //Test avec un fichier invalide
+        mesURLs = new ArrayList();
+        Assertions.assertEquals(f.getLesURLs(), mesURLs);
 
     }
 

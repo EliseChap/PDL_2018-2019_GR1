@@ -4,8 +4,11 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.junit.jupiter.api.Disabled;
+
 import pdl_2018.groupeSMKS1.Fichier;
 
+@Disabled
 public class SuperComparateur {
 	private Collection<Array> Stat;
 	private String cheminEntree;

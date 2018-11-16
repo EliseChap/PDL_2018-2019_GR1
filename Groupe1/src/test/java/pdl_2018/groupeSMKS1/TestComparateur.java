@@ -3,11 +3,12 @@ package pdl_2018.groupeSMKS1;
 
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import pdl_2018.groupeSMKS1.Comparateur;
 
-
+@Disabled
 class TestComparateur {
 	
 

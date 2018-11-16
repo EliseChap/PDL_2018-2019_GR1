@@ -59,7 +59,7 @@ public class Fichier {
                 }
                 bufferReader.close();
                 fichierReader.close();
-            }catch (IOException exception){
+            }catch (Exception exception){
                 System.out.println ("Erreur lors de la lecture du fichier d'entrée : " + exception.getMessage());
             }
         }catch(FileNotFoundException file_exception){
@@ -97,6 +97,13 @@ public class Fichier {
         this.lesURLs = lesURLs;
     }
 
+    public String getCheminFichierEntree() {
+        return cheminFichierEntree;
+    }
+
+    public void setCheminFichierEntree(String cheminFichierEntree) {
+        this.cheminFichierEntree = cheminFichierEntree;
+    }
 
     /**
      * Méthode main pour tester à la main la classe Fichier

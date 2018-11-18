@@ -1,6 +1,5 @@
 package pdl_2018.groupeSMKS1;
 
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +11,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 
 public class Html extends Extracteur {
 
@@ -117,7 +115,7 @@ public class Html extends Extracteur {
 				lesHtmltab.put(nom, table.get(i)); // cle : titre du tableau
 
 			}
-			// System.out.println(table);
+			//System.out.println(table);
 			TraitementMap();
 
 		} catch (IOException e) {
@@ -146,9 +144,12 @@ public class Html extends Extracteur {
 			for (Element e : tr) {
 				Elements th = e.getElementsByTag("th");
 				Elements td = e.getElementsByTag("td");
-			if (th.size() == td.size()) { //Cas tableau avec nom colonnes qui apparaissent plusieurs fois 
-				//(cf equipe de france masculine de foot,Parcours de l'�quipe de France en championnat d'Europe 
-				
+
+				// if (th.size() == td.size()) { // Cas tableau avec nom colonnes qui
+				// apparaissent plusieurs fois
+				// (cf equipe de france masculine de foot,Parcours de l'�quipe de France en
+				// championnat d'Europe
+
 				if (!tabcreated) {
 
 					int nbCol = 0;
@@ -159,8 +160,8 @@ public class Html extends Extracteur {
 						nbCol = td.size();
 					}
 					tab = new String[tr.size()][nbCol];
-					System.out.println(th.size());
-					System.out.println(td.size());
+					System.out.println("th" + th.size());
+					System.out.println("td" + td.size());
 					System.out.println(nbCol);
 					tabcreated = true;
 				}
@@ -169,36 +170,55 @@ public class Html extends Extracteur {
 
 				for (Element f : th) {
 					tab[i][j] = f.text();
+					 System.out.println(tab[i][j]);
 					j++;
 				}
 
 				for (Element g : td) {
-					tab[i][j] = g.text();
-					j++;
 
-				} 
 
-				i++;
+
+					if (g.hasText()) {
+						tab[i][j] = g.text();
+					}
+					if(getUrlImage(g)!="")
+						tab[i][j] = tab[i][j] + " " +  getUrlImage(g);
+
+				
+
+				System.out.println(tab[i][j]);
+				j++;
 				}
-			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab,cle);
+
 			}
-			/*
-			 * for(int a=0; a<tab.length; a++) { for(int b=0; b<tab[a].length; b++) {
-			 * System.out.println(tab[a][b]); }
-			 * 
-			 * 
-			 * }
-			 */
 
-			// System.out.println(ensemble);
-
+			i++;
+			// }
+			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
 		}
 
 	}
 
+	public String getUrlImage(Element g) {
+		
+
+		Elements image = g.getElementsByTag("a");
+		
+		for (Element im : image) {
+			if(im.attr("class").contains("image")) {
+				im.attr("href");
+				return im.attr("href");
+			}
+			
+			
+		}
+		return "";
+	}
+
 	public static void main(String[] args) {
-		Html t = new Html("https://fr.wikipedia.org/wiki/Josef_Newgarden", ';', "chemin",
-				"nomCSV", true, false);
+		Html t = new Html(
+				"https://fr.wikipedia.org/wiki/Liste_des_lieux_patrimoniaux_de_Trinity_Royal_(Saint-Jean)?fbclid=IwAR1WLTyOG0sgymJXPOVDn0jn0NT9DXtLbYgBChp-ZyyRHlbtm8FCGAeBWfc",
+				';', "chemin", "nomCSV", true, false);
 		t.recuperationPage();
 
 	}

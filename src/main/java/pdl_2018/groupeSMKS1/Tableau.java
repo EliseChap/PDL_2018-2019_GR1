@@ -21,6 +21,8 @@ public class Tableau implements ITableau {
 		nomCsv = pNomCsv;
 		arr = pTableau;
 		this.nomTab = nomTab;
+		getTableauToString();
+		
 	}
 
 	@Override
@@ -74,8 +76,7 @@ public class Tableau implements ITableau {
 		return count;
 	}
 	public static void main(String[] args) {
-		Html t = new Html("https://en.wikipedia.org/wiki/Infinity_on_High", ';', "chemin",
-				"nomCSV", true, false);
+		Html t = new Html("https://en.wikipedia.org/wiki/Infinity_on_High", ';', "chemin","nomCSV", true, false);
 		t.recuperationPage();
 
 	}

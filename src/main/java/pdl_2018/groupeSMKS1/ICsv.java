@@ -7,32 +7,23 @@ import java.util.Map;
 public interface ICsv {
 
 	public void initialisationSeparateurAutomatique();
-	
 
+	public boolean verificationCheminDispo();
 
-	public	boolean verificationCheminDispo();
+	public Map<String, Boolean> getSeparateur();
 
+	public char getDelimit();
 
-	public	Map<String, Boolean> getSeparateur();
+	public String getCheminCsv();
 
+	public String getNomCsv();
 
-	public	char getDelimit();
-
-
-	public	String getCheminCsv();
-
-
-	public	String getNomCsv();
-	
-
-	public	String nomCsvIncrementer();
-
-
-
+	public String nomCsvIncrementer();
 
 	public String verificationSeparateurValide();
 
-public 	void exporterCSV();
+	public void exporterCSV();
 
+	public String[][] getTableau();
 
 }

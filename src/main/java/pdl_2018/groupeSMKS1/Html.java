@@ -170,14 +170,26 @@ public class Html extends Extracteur {
 
 				for (Element f : th) {
 					tab[i][j] = f.text();
-					// System.out.println(tab[i][j]);
+					//System.out.println(tab[i][j]);
+					
 					j++;
 				}
 
 				for (Element g : td) {
 
-					System.out.println(g.attr("rowspan"));
-
+					String current = g.text();
+					
+					String cell = g.attr("rowspan");
+					
+					if(cell!="") {
+						
+					int y = Integer.parseInt(cell);
+					
+						//System.out.println("test "+ y);
+						tab = Fusion(tab, i , j, y, current, true);
+						
+					
+					}
 					if (g.hasText()) {
 						tab[i][j] = g.text();
 					}
@@ -215,9 +227,31 @@ public class Html extends Extracteur {
 		return "";
 	}
 	
-	public void cellFusionnees(Element e) {
+	public String[][]  Fusion(String[][] tab, int i , int j, int y, String current, boolean vertical) {
+		if(vertical) {
+			for(int a = 0; a<y; a++) {
+				i++;
+				tab[i][j]=current;
+				System.out.println(tab[i][j] +" " + "i : "+ i +  " j : "+ j);
+			}
 		
+		
+		}
+		
+		else {
+			for(int b = 0; b<y; b++) {
+				j++;
+				tab[i][j]=current;
+				System.out.println(tab[i][j] +" " + "i : "+ i +  " j : "+ j);
+			}
+			
+			
+			
+		}
+		return tab;
 	}
+	
+	
 
 	public static void main(String[] args) {
 		Html t = new Html(

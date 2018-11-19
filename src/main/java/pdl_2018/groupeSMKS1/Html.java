@@ -179,48 +179,45 @@ public class Html extends Extracteur {
 				for (Element g : td) {
 
 					String current = g.text();
-					//System.out.println(current);
+					// System.out.println(current);
 
 					String cell = g.attr("rowspan");
 
 					if (cell != "") {
-						
+
 						int y = Integer.parseInt(cell);
 
 						// System.out.println("test "+ y);
 						tab = Fusion(tab, i, j, y, current, true);
-						
-						
-					}
-					
 
-					if (tab[i][j]==null) {
+
+					}
+
+					if (tab[i][j] == null) {
 						if (g.hasText()) {
 							tab[i][j] = g.text();
 						}
 						if (getUrlImage(g) != "")
 							tab[i][j] = tab[i][j] + " " + getUrlImage(g);
-						//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
-						
+						System.out.println("FUSION2" + " "  + tab[i][j] + " " + "i : " + i + " j : " + j);
+
 						j++;
 					} else {
-						while(tab[i][j]!=null) {
-							
+						while (tab[i][j] != null) {
+							System.out.println("FUSION" + " "  + tab[i][j] + " " + "i : " + i + " j : " + j);
 							j++;
 						}
-						
-					
+
 					}
-					
+
 				}
 				i++;
 			}
-		
-			for(int a=0; a<tab.length; a++) {
-				for(int b = 0; b<tab[a].length; b++) {
-					System.out.println(tab[a][b] +" " + "i : " + a + " j : " + b );
-				}
-			}
+
+			/*
+			 * for(int a=0; a<tab.length; a++) { for(int b = 0; b<tab[a].length; b++) {
+			 * System.out.println(tab[a][b] +" " + "i : " + a + " j : " + b ); } }
+			 */
 
 			// }
 			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
@@ -247,10 +244,9 @@ public class Html extends Extracteur {
 			while (i < y) {
 				i++;
 				tab[i][j] = current;
-				//System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
-				//System.out.println(tab[2][0] );
+				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
 				
-				
+
 			}
 
 		}
@@ -259,7 +255,7 @@ public class Html extends Extracteur {
 			while (j < y) {
 				j++;
 				tab[i][j] = current;
-				
+
 				// System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
 			}
 

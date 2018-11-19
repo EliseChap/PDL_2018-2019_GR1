@@ -46,6 +46,8 @@ public class Tableau implements ITableau {
 	public String getTableau() {
 		return Arrays.toString(arr);
 	}
-
+	public static void main(String[] args) {
+		System.out.println("bien");
+	}
 
 }

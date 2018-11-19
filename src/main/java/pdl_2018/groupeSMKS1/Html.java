@@ -170,13 +170,13 @@ public class Html extends Extracteur {
 
 				for (Element f : th) {
 					tab[i][j] = f.text();
-					 System.out.println(tab[i][j]);
+					// System.out.println(tab[i][j]);
 					j++;
 				}
 
 				for (Element g : td) {
 
-
+					System.out.println(g.attr("rowspan"));
 
 					if (g.hasText()) {
 						tab[i][j] = g.text();
@@ -186,7 +186,7 @@ public class Html extends Extracteur {
 
 				
 
-				System.out.println(tab[i][j]);
+				//System.out.println(tab[i][j]);
 				j++;
 				}
 
@@ -214,10 +214,14 @@ public class Html extends Extracteur {
 		}
 		return "";
 	}
+	
+	public void cellFusionnees(Element e) {
+		
+	}
 
 	public static void main(String[] args) {
 		Html t = new Html(
-				"https://fr.wikipedia.org/wiki/Liste_des_lieux_patrimoniaux_de_Trinity_Royal_(Saint-Jean)?fbclid=IwAR1WLTyOG0sgymJXPOVDn0jn0NT9DXtLbYgBChp-ZyyRHlbtm8FCGAeBWfc",
+				"https://fr.wikipedia.org/wiki/Stranger_Things",
 				';', "chemin", "nomCSV", true, false);
 		t.recuperationPage();
 

@@ -115,7 +115,7 @@ public class Html extends Extracteur {
 				lesHtmltab.put(nom, table.get(i)); // cle : titre du tableau
 
 			}
-			//System.out.println(table);
+			// System.out.println(table);
 			TraitementMap();
 
 		} catch (IOException e) {
@@ -141,6 +141,7 @@ public class Html extends Extracteur {
 			String[][] tab = null;
 			int i = 0;
 			System.out.println(tr.size());
+
 			for (Element e : tr) {
 				Elements th = e.getElementsByTag("th");
 				Elements td = e.getElementsByTag("td");
@@ -170,41 +171,57 @@ public class Html extends Extracteur {
 
 				for (Element f : th) {
 					tab[i][j] = f.text();
-					//System.out.println(tab[i][j]);
-					
+					//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+
 					j++;
 				}
 
 				for (Element g : td) {
 
 					String current = g.text();
-					
+					//System.out.println(current);
+
 					String cell = g.attr("rowspan");
-					
-					if(cell!="") {
+
+					if (cell != "") {
 						
-					int y = Integer.parseInt(cell);
+						int y = Integer.parseInt(cell);
+
+						// System.out.println("test "+ y);
+						tab = Fusion(tab, i, j, y, current, true);
+						
+						
+					}
 					
-						//System.out.println("test "+ y);
-						tab = Fusion(tab, i , j, y, current, true);
+
+					if (tab[i][j]==null) {
+						if (g.hasText()) {
+							tab[i][j] = g.text();
+						}
+						if (getUrlImage(g) != "")
+							tab[i][j] = tab[i][j] + " " + getUrlImage(g);
+						//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+						
+						j++;
+					} else {
+						while(tab[i][j]!=null) {
+							
+							j++;
+						}
 						
 					
 					}
-					if (g.hasText()) {
-						tab[i][j] = g.text();
-					}
-					if(getUrlImage(g)!="")
-						tab[i][j] = tab[i][j] + " " +  getUrlImage(g);
-
-				
-
-				//System.out.println(tab[i][j]);
-				j++;
+					
 				}
-
+				i++;
+			}
+		
+			for(int a=0; a<tab.length; a++) {
+				for(int b = 0; b<tab[a].length; b++) {
+					System.out.println(tab[a][b] +" " + "i : " + a + " j : " + b );
+				}
 			}
 
-			i++;
 			// }
 			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
 		}
@@ -212,51 +229,46 @@ public class Html extends Extracteur {
 	}
 
 	public String getUrlImage(Element g) {
-		
 
 		Elements image = g.getElementsByTag("a");
-		
+
 		for (Element im : image) {
-			if(im.attr("class").contains("image")) {
+			if (im.attr("class").contains("image")) {
 				im.attr("href");
 				return im.attr("href");
 			}
-			
-			
+
 		}
 		return "";
 	}
-	
-	public String[][]  Fusion(String[][] tab, int i , int j, int y, String current, boolean vertical) {
-		if(vertical) {
-			for(int a = 0; a<y; a++) {
+
+	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
+		if (vertical) {
+			while (i < y) {
 				i++;
-				tab[i][j]=current;
-				System.out.println(tab[i][j] +" " + "i : "+ i +  " j : "+ j);
+				tab[i][j] = current;
+				//System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
+				//System.out.println(tab[2][0] );
+				
+				
 			}
-		
-		
+
 		}
-		
+
 		else {
-			for(int b = 0; b<y; b++) {
+			while (j < y) {
 				j++;
-				tab[i][j]=current;
-				System.out.println(tab[i][j] +" " + "i : "+ i +  " j : "+ j);
+				tab[i][j] = current;
+				
+				// System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
 			}
-			
-			
-			
+
 		}
 		return tab;
 	}
-	
-	
 
 	public static void main(String[] args) {
-		Html t = new Html(
-				"https://fr.wikipedia.org/wiki/Stranger_Things",
-				';', "chemin", "nomCSV", true, false);
+		Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV", true, false);
 		t.recuperationPage();
 
 	}

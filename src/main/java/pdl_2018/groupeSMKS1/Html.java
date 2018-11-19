@@ -136,6 +136,8 @@ public class Html extends Extracteur {
 			boolean tabcreated = false;
 
 			Elements tr = ensemble.getElementsByTag("tr");
+		
+			
 			// System.out.println(tr.size());
 
 			String[][] tab = null;
@@ -168,6 +170,7 @@ public class Html extends Extracteur {
 				}
 
 				int j = 0;
+				
 
 				for (Element f : th) {
 					tab[i][j] = f.text();
@@ -189,23 +192,13 @@ public class Html extends Extracteur {
 
 						// System.out.println("test "+ y);
 						tab = Fusion(tab, i, j, y, current, true);
+						System.out.println(tab[5][3]);
 						
 
 
 					}
 					
-					String cellcol = g.attr("colspan");
-					if (g.attr("colspan") != "") {
-
-						int x = Integer.parseInt(cellcol);
-						
-
-						// System.out.println("test "+ y);
-						tab = Fusion(tab, i, j, x, current, false);
-						
-
-
-					}
+					
 
 					if (tab[i][j] == null) {
 						if (g.hasText()) {
@@ -213,12 +206,12 @@ public class Html extends Extracteur {
 						}
 						if (getUrlImage(g) != "")
 							tab[i][j] = tab[i][j] + " " + getUrlImage(g);
-						System.out.println("FUSION2" + " "  + tab[i][j] + " " + "i : " + i + " j : " + j);
+						//System.out.println("FUSION2" + " "  + tab[i][j] + " " + "i : " + i + " j : " + j);
 
 						j++;
 					} else {
 						while (tab[i][j] != null) {
-							System.out.println("FUSION" + " "  + tab[i][j] + " " + "i : " + i + " j : " + j);
+							//System.out.println("FUSION" + " "  + tab[i][j] + " " + "i : " + i + " j : " + j);
 							j++;
 						}
 
@@ -256,6 +249,7 @@ public class Html extends Extracteur {
 	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
 		if (vertical) {
 			while (i < y) {
+				
 				i++;
 				tab[i][j] = current;
 				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
@@ -280,7 +274,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html t = new Html("https://fr.wikipedia.org/wiki/Vialfr%C3%A8", ';', "chemin", "nomCSV", true, false);
+		Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV", true, false);
 		t.recuperationPage();
 
 	}

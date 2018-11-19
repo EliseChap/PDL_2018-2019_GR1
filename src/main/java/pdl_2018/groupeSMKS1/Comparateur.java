@@ -14,6 +14,7 @@ public class Comparateur implements IComparateur {
 		this.html = html;
 	}
 
+	
 	/*
 	 * TRAITEMENT LIGNE
 	 */
@@ -136,7 +137,7 @@ public class Comparateur implements IComparateur {
 	 */
 
 	/**
-	 * Verification de la méthode de comparaison partiel ou complet
+	 * Verification de la mï¿½thode de comparaison partiel ou complet
 	 */
 	public void analyse() {
 		if (ratioLigne() == 100 && ratioColonne() == 100) {
@@ -146,13 +147,13 @@ public class Comparateur implements IComparateur {
 				analyseComplet();
 			}
 		} else {
-			// réflechir comment l'analysé
+			// rï¿½flechir comment l'analysï¿½
 			System.out.println("complexe insertion ???");
 		}
 	}
 
 	/**
-	 * Return le nombre de donnée a analysée
+	 * Return le nombre de donnï¿½e a analysï¿½e
 	 * 
 	 * @param taillePopulation
 	 * @return tailleEchantillon
@@ -193,8 +194,8 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Méthode qui parcourts l'ensemble des deux tableaux pour pouvoir trouver les
-	 * différences
+	 * Mï¿½thode qui parcourts l'ensemble des deux tableaux pour pouvoir trouver les
+	 * diffï¿½rences
 	 * 
 	 * @return Nombre de difference de contenu
 	 * @date 17/11/2018
@@ -240,7 +241,7 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Réalisation du pourcentage de difference de contenu entre les deux tableaux
+	 * Rï¿½alisation du pourcentage de difference de contenu entre les deux tableaux
 	 * 
 	 * @param erreurContenu
 	 * @return pourcentage de difference entre les deux type de tableau
@@ -254,7 +255,7 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Ratio generale avec tous les critères
+	 * Ratio generale avec tous les critï¿½res
 	 * 
 	 * @return pourcentage
 	 * @date 17/11/2018

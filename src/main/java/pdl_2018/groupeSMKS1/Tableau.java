@@ -46,8 +46,38 @@ public class Tableau implements ITableau {
 	public String getTableau() {
 		return Arrays.toString(arr);
 	}
+	/**
+	 * Parcourir le tableau afin de l'afficher
+	 * @return String
+	 */
+	public String getTableauToString() {
+		String tableauTostring = "";
+		for (String[] strArr : arr) {
+			tableauTostring+=Arrays.toString(strArr);
+		}
+		return tableauTostring;
+	}
+	
+	/**
+	 * Retourne le nombre de vide dans le tableau
+	 * @return countEmpty
+	 */
+	public int countEmpty() {
+		int count = 0;
+		for (String[] strArr : arr) {
+			for (String cellule : strArr) {
+				if (cellule == "") {
+					count++;
+				}
+			}
+		}
+		return count;
+	}
 	public static void main(String[] args) {
-		System.out.println("bien");
+		Html t = new Html("https://en.wikipedia.org/wiki/Infinity_on_High", ';', "chemin",
+				"nomCSV", true, false);
+		t.recuperationPage();
+
 	}
 
 }

@@ -189,6 +189,20 @@ public class Html extends Extracteur {
 
 						// System.out.println("test "+ y);
 						tab = Fusion(tab, i, j, y, current, true);
+						
+
+
+					}
+					
+					String cellcol = g.attr("colspan");
+					if (g.attr("colspan") != "") {
+
+						int x = Integer.parseInt(cellcol);
+						
+
+						// System.out.println("test "+ y);
+						tab = Fusion(tab, i, j, x, current, false);
+						
 
 
 					}
@@ -253,10 +267,12 @@ public class Html extends Extracteur {
 
 		else {
 			while (j < y) {
+				System.out.println(j);
+				
 				j++;
-				tab[i][j] = current;
-
-				// System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
+				//tab[i][j] = current;
+				
+				//System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
 			}
 
 		}
@@ -264,7 +280,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV", true, false);
+		Html t = new Html("https://fr.wikipedia.org/wiki/Vialfr%C3%A8", ';', "chemin", "nomCSV", true, false);
 		t.recuperationPage();
 
 	}

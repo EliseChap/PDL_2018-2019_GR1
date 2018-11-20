@@ -81,7 +81,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return un booleen qui indique si l'extraction doit ï¿½etre faite en HTML
+	 * @return un booleen qui indique si l'extraction doit �etre faite en HTML
 	 *         (true) ou non (false)
 	 */
 	public boolean getExtraHTML() {
@@ -278,7 +278,11 @@ public class Html extends Extracteur {
 			}
 		}
 	}
-					
+
+						// System.out.println("test "+ y);
+						tab = Fusion(tab, i, j, y, current, true);
+						System.out.println(tab[i][j]);
+						
 	/**
 	 * Remplir le tableau suivant les fusions horrizontale ou verticale
 	 * 
@@ -321,6 +325,32 @@ public class Html extends Extracteur {
 
 		}
 		return "";
+	}
+
+	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
+		if (vertical) {
+			while (i < y) {
+				
+				i++;
+				tab[i][j] = current;
+				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+				
+			}
+
+		}
+
+		else {
+			while (j < y) {
+				System.out.println(j);
+				
+				j++;
+				//tab[i][j] = current;
+				
+				//System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
+			}
+
+		}
+		return tab;
 	}
 
 	public static void main(String[] args) {

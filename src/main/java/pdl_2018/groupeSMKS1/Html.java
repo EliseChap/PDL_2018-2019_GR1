@@ -144,6 +144,7 @@ public class Html extends Extracteur {
 
 			for (Element e : tr) {
 				Elements th = e.getElementsByTag("th");
+				int nbth = countNbCol(th);
 				Elements td = e.getElementsByTag("td");
 
 				// if (th.size() == td.size()) { // Cas tableau avec nom colonnes qui
@@ -153,8 +154,8 @@ public class Html extends Extracteur {
 
 				if (!tabcreated) {
 					int nbCol = 0;
-					if (!th.isEmpty()) {
-						nbCol = th.size();
+					if (nbth>0) {
+						nbCol = nbth;
 					} else {
 						nbCol = td.size();
 					}
@@ -185,11 +186,37 @@ public class Html extends Extracteur {
 	 */
 	public String[][] headerTableau(String[][] tab, int i, int j, Elements th) {
 		for (Element f : th) {
+			String cellcol = f.attr("colspan");
+			System.out.println(cellcol);
+			String current = f.text();
+			if (f.attr("colspan") != "") {
+				int x = Integer.parseInt(cellcol);
+				//System.out.println("test " + x);
+				tab = Fusion(tab, i, j, x, current, false);
+			}
 			tab[i][j] = f.text();
-			// System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+			System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
 			j++;
 		}
 		return tab;
+	}
+	int count = 0;
+	public int countNbCol(Elements th){
+		
+		for (Element a : th) {
+			String cellcol = a.attr("colspan");
+			
+			String current = a.text();
+			if (a.attr("colspan") != "") {
+				count = count +Integer.parseInt(cellcol);
+			
+		}
+			else {
+				count++;
+			}
+		}
+		System.out.println(count + "COUNT");
+		return count; 
 	}
 
 	/**
@@ -203,7 +230,7 @@ public class Html extends Extracteur {
 	 */
 	public String[][] bodyTableau(String[][] tab, int i, int j, Elements td) {
 		for (Element g : td) {
-			
+
 			if (tab[i][j] != null) {
 				j = deplacerTableau(tab, i, j, true);
 			}
@@ -274,7 +301,8 @@ public class Html extends Extracteur {
 	public void lectureTableau(String[][] tab) {
 		for (int a = 0; a < tab.length; a++) {
 			for (int b = 0; b < tab[a].length; b++) {
-				System.out.println("i : " + a + " j : " + b + " valeur : " + tab[a][b]);
+				//System.out.println("i : " + a + " j : " + b + " valeur : " + tab[a][b]);
+				System.out.println(tab[a][b]);
 			}
 		}
 	}
@@ -354,12 +382,12 @@ public class Html extends Extracteur {
 //	}
 
 	public static void main(String[] args) {
-		Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV", true, false);
-		t.recuperationPage();
-		//Html b = new Html("https://fr.wikipedia.org/wiki/Vialfr%C3%A8", ';', "chemin", "nomCSV", true, false);
+		//Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV", true, false);
+		//t.recuperationPage();
+		Html b = new Html("https://fr.wikipedia.org/wiki/Vialfr%C3%A8", ';', "chemin", "nomCSV", true, false);
 		//Html b = new Html("https://fr.wikipedia.org/wiki/Torigny-les-Villes", ';', "chemin", "nomCSV", true, false);
 
-		//b.recuperationPage();
+		b.recuperationPage();
 
 
 	}

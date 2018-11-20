@@ -13,7 +13,7 @@ class TestUrl {
 
 	@BeforeAll
 	public static void initialise() {
-		u = new Url("https://fr.wikipedia.org/wiki/Saison_7_de_Game_of_Thrones", ' ', "", "", true, false);
+		u = new Url("https://www.facebook.com/", ' ', "", "", true, false);
 		
 	}
  
@@ -88,17 +88,17 @@ class TestUrl {
 	@Test
 	public void testIsDiscussion() {
 		u.setUrl("https://fr.wikipedia.org/wiki/Discussion_utilisateur:148.60.32.206");
-		Assertions.assertTrue(u.isATwoPoint());
+		Assertions.assertTrue(u.isAnArticle());
 
 		u.setUrl("https://fr.wikipedia.org/wiki/On_est_encore_l%C3%A0_:_Bercy_2008");
-		Assertions.assertFalse(u.isATwoPoint());
+		Assertions.assertFalse(u.isAnArticle());
 
 	}
 
 	@Test
 	public void testIsContributions() {
 		u.setUrl("https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Contributions/86.253.41.153");
-		Assertions.assertTrue(u.isATwoPoint());
+		Assertions.assertTrue(u.isAnArticle());
 	}
 
 	@Test

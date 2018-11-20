@@ -32,8 +32,7 @@ public class Url implements IUrl {
 			verifURL();
 			isWikipediaURL();
 			isAPicture();
-			isATwoPoint();
-
+			isAnArticle();
 		} catch (MalformedURLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -163,7 +162,9 @@ public class Url implements IUrl {
 		if (GetDomain().equals(domain)) {
 			return true;
 		}
+		System.out.println("L'url : " + url + " rentrée n'est pas une adresse wikipédia");
 		return false;
+		
 	}
 
 	/**
@@ -173,8 +174,10 @@ public class Url implements IUrl {
 
 	public boolean isAPicture() {
 
-		return url.endsWith("jpg") || url.endsWith("JPG") || url.endsWith("svg") || url.endsWith("png")
+		boolean picture =  url.endsWith("jpg") || url.endsWith("JPG") || url.endsWith("svg") || url.endsWith("png")
 				|| url.endsWith("gif") || url.endsWith("tif") || url.endsWith("bmp");
+		if(picture) {System.out.println("L'url : " + url +" ne peut être traitée, il s'agit d'une image");}
+		return picture;
 	}
 
 	/**
@@ -183,11 +186,13 @@ public class Url implements IUrl {
 	 *         y a ':' non entour� de '-'
 	 */
 
-	public boolean isATwoPoint() {
+	public boolean isAnArticle() {
 		CharSequence twopoint = ":";
 		CharSequence twopointbis = "_:_";
-		if (url.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un
-										// titre par exemple)
+		if (url.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un titre)
+				if(!url.contains(twopointbis))	{
+					System.out.println("L'url : " + url + " traitée n'est pas un article wikipédia");
+				}
 			return !url.contains(twopointbis);
 		}
 

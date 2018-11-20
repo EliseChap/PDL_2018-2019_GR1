@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.google.common.net.InternetDomainName;
 
-
 public class Url implements IUrl {
 	private URL myUrl;
 	private String url;
@@ -17,6 +16,7 @@ public class Url implements IUrl {
 	private boolean extraWiki;
 	private boolean extraHtml;
 	private ArrayList<Extracteur> lesExtracteurs;
+	private final String domain = "wikipedia.org"; // La mettre tout en haut en attribut final
 
 	public Url(String url, char delimit, String nomCsv, String cheminCsv, boolean extraWiki, boolean extraHtml) {
 		this.url = url;
@@ -29,10 +29,11 @@ public class Url implements IUrl {
 
 		try {
 			myUrl = new URL(url);
-			//Appeler les fonctions
-			
-			
-			
+			verifURL();
+			isWikipediaURL();
+			isAPicture();
+			isATwoPoint();
+
 		} catch (MalformedURLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -53,11 +54,9 @@ public class Url implements IUrl {
 		} catch (IOException e) {
 			return false;
 		}
-		
-		
+
 		return true;
 	}
-	
 
 	/**
 	 * 
@@ -68,8 +67,6 @@ public class Url implements IUrl {
 		return url;
 	}
 
-	
-	
 	/**
 	 * 
 	 * @return myUrl : la string url sous forme URL
@@ -84,9 +81,6 @@ public class Url implements IUrl {
 	 * @para Nouvelle Url
 	 * 
 	 */
-	
-	
-	
 
 	public void setUrl(String newUrl) {
 		url = newUrl;
@@ -95,7 +89,7 @@ public class Url implements IUrl {
 		} catch (MalformedURLException e) {
 			// return false;
 		}
-	} 
+	}
 
 	/**
 	 * 
@@ -123,8 +117,8 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return Un booleen qui indique si lextraction doit etre faite en HTML
-	 *         (true) ou non (false)
+	 * @return Un booleen qui indique si lextraction doit etre faite en HTML (true)
+	 *         ou non (false)
 	 */
 	public boolean getExtraHTML() {
 		return this.extraHtml;
@@ -139,8 +133,6 @@ public class Url implements IUrl {
 		return this.extraWiki;
 	}
 
-
-	
 	/**
 	 * @return Une string avec le sous domaine de lurl
 	 */
@@ -150,7 +142,7 @@ public class Url implements IUrl {
 		String[] str = url.split("/wiki/");
 		return str[1];
 	}
-	
+
 	/**
 	 * @return Une string avec le domaine de lurl
 	 */
@@ -162,48 +154,46 @@ public class Url implements IUrl {
 	}
 
 	/**
-	 * @return true si lurl est une adresse wikipedia, false sinon 
+	 * @return true si lurl est une adresse wikipedia, false sinon
 	 */
 
 	@Override
 	public boolean isWikipediaURL() {
-		String domain = "wikipedia.org"; // La mettre tout en haut en attribut final
-		
+
 		if (GetDomain().equals(domain)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	/**
 	 * 
-	 * @return true si l'url est une image 
+	 * @return true si l'url est une image
 	 */
-	
-	
+
 	public boolean isAPicture() {
-		
-	
-		return url.endsWith("jpg") ||url.endsWith("JPG") ||url.endsWith("svg") || url.endsWith("png") ||  url.endsWith("gif") ||  url.endsWith("tif") ||  url.endsWith("bmp");
+
+		return url.endsWith("jpg") || url.endsWith("JPG") || url.endsWith("svg") || url.endsWith("png")
+				|| url.endsWith("gif") || url.endsWith("tif") || url.endsWith("bmp");
 	}
 
 	/**
 	 * 
-	 * @return true si l'url est une discussion, une conversation en observant si il y a ':' non entour� de '-'
+	 * @return true si l'url est une discussion, une conversation en observant si il
+	 *         y a ':' non entour� de '-'
 	 */
-	
-	
+
 	public boolean isATwoPoint() {
 		CharSequence twopoint = ":";
 		CharSequence twopointbis = "_:_";
-		if(url.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un titre par exemple)
+		if (url.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un
+										// titre par exemple)
 			return !url.contains(twopointbis);
 		}
-		
+
 		return false;
 	}
 
-	
 	/**
 	 * 
 	 * @return un Extracteur wiki et/ou un Extracteur html
@@ -212,44 +202,40 @@ public class Url implements IUrl {
 	public void ConstructeurExtracteur() {
 		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
-				Wikitext wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
-				//Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
-				//lesExtracteurs.add(wiki);
+				Wikitext wiki = new Wikitext(GetDomain(), GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml,
+						extraWiki);
+				// Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit,
+				// cheminCsv, nomCsv, extraHtml, extraWiki);
+				// lesExtracteurs.add(wiki);
 			}
 			if (extraHtml) {
 				Extracteur html = new Html(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				lesExtracteurs.add(html);
 			}
 		}
-		
 
 	}
 
-	/*public static void main(String[] args) {
-		String u = "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP";
-		boolean test = isWikiURL(u);
-		System.out.println(test);
-		URL url = null;
-		try {
-			url = new URL(u);
-		} catch (MalformedURLException e) {
-
-		}
-        
-		//String utest = url.getPath();
-		//String[] str = utest.split("/wiki/");
-		//System.out.println(utest);
-		//System.out.println(str[1]);
-		//boolean test2 = u.endsWith("jpg")||  u.endsWith("png") ||  u.endsWith("gif") ||  u.endsWith("tiff") ||  u.endsWith("bmp") ;
-		//System.out.println(test2);
-		CharSequence twopoint = "_:_";
-		boolean test3 = !u.contains(twopoint);
-		System.out.println(test3);
-		
-		
-		
-		
-		
-	}*/
+	/*
+	 * public static void main(String[] args) { String u =
+	 * "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP"; boolean test =
+	 * isWikiURL(u); System.out.println(test); URL url = null; try { url = new
+	 * URL(u); } catch (MalformedURLException e) {
+	 * 
+	 * }
+	 * 
+	 * //String utest = url.getPath(); //String[] str = utest.split("/wiki/");
+	 * //System.out.println(utest); //System.out.println(str[1]); //boolean test2 =
+	 * u.endsWith("jpg")|| u.endsWith("png") || u.endsWith("gif") ||
+	 * u.endsWith("tiff") || u.endsWith("bmp") ; //System.out.println(test2);
+	 * CharSequence twopoint = "_:_"; boolean test3 = !u.contains(twopoint);
+	 * System.out.println(test3);
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
 
 }

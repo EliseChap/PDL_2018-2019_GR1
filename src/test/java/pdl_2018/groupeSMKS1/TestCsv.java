@@ -22,11 +22,11 @@ import org.junit.jupiter.api.Test;
 import junit.framework.TestCase;
 
 
-@Disabled
+
 public class TestCsv extends TestCase {
 
 	/**
-	 * Test des param�tres en entr�e et cr�ation de l'objet CVS
+	 * Test des parametres en entree et creation de l'objet CVS
 	 */
 	@Test
 	public void testObjectCsvStandard() {
@@ -38,7 +38,7 @@ public class TestCsv extends TestCase {
 	}
 
 	/**
-	 * Test des param�tres en entr�e null et cr�ation de l'objet CVS
+	 * Test des parametres en entree null et creation de l'objet CVS
 	 */
 	@Test
 	public void testObjectCsvNull() {
@@ -104,7 +104,7 @@ public class TestCsv extends TestCase {
 	}
 
 	/**
-	 * V�rifiation si le hashmap est initialis� en faux
+	 * Verifiation si le hashmap est initialise en faux
 	 */
 	@Test
 	public void testInitialisationSeparateurAutomatique() {
@@ -126,7 +126,7 @@ public class TestCsv extends TestCase {
 	}
 
 	/*
-	 * Vérification de l'incrementation du fichier
+	 * Verification de l'incrementation du fichier
 	 */
 
 	@Test
@@ -141,7 +141,7 @@ public class TestCsv extends TestCase {
 		File fichier3 = new File("testIncrementer_4.csv");
 		fichier3.delete();
 
-		// création des fichiers
+		// creation des fichiers
 
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
@@ -190,7 +190,7 @@ public class TestCsv extends TestCase {
 	}
 
 	/*
-	 * Verification du choix du délimiter
+	 * Verification du choix du delimiter
 	 */
 
 	@Test

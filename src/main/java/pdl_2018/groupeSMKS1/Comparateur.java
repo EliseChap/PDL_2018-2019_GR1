@@ -276,14 +276,14 @@ public class Comparateur implements IComparateur {
 	    String[] l1 = { "1,2,4,7,9",",35,56,58,76" };
 	    String[] l2 = { "1,2,4,76,9",",35,56,58,7" };
 
-	    
+	   /* 
 	    Diff diff = new Diff(l1,l2);
 	    Diff.change script = diff.diff_2(false);
 	    DiffPrint.Base p = new DiffPrint.UnifiedPrint(l1,l2);
 	    StringWriter wtr = new StringWriter();
 	    p.setOutput(wtr);
 	    //p.print_header("test1","test2");
-	    p.print_script(script);
+	    p.print_script(script);*/
 	}
 
 }

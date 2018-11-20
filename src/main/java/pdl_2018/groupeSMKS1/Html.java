@@ -279,9 +279,9 @@ public class Html extends Extracteur {
 		}
 	}
 
-						// System.out.println("test "+ y);
-						tab = Fusion(tab, i, j, y, current, true);
-						System.out.println(tab[i][j]);
+//						// System.out.println("test "+ y);
+//						tab = Fusion(tab, i, j, y, current, true);
+//						System.out.println(tab[i][j]);
 						
 	/**
 	 * Remplir le tableau suivant les fusions horrizontale ou verticale
@@ -327,31 +327,31 @@ public class Html extends Extracteur {
 		return "";
 	}
 
-	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
-		if (vertical) {
-			while (i < y) {
-				
-				i++;
-				tab[i][j] = current;
-				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
-				
-			}
-
-		}
-
-		else {
-			while (j < y) {
-				System.out.println(j);
-				
-				j++;
-				//tab[i][j] = current;
-				
-				//System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
-			}
-
-		}
-		return tab;
-	}
+//	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
+//		if (vertical) {
+//			while (i < y) {
+//				
+//				i++;
+//				tab[i][j] = current;
+//				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+//				
+//			}
+//
+//		}
+//
+//		else {
+//			while (j < y) {
+//				System.out.println(j);
+//				
+//				j++;
+//				//tab[i][j] = current;
+//				
+//				//System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
+//			}
+//
+//		}
+//		return tab;
+//	}
 
 	public static void main(String[] args) {
 		Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV", true, false);

@@ -12,8 +12,6 @@ public class Tableau implements ITableau {
 	private String arr[][];
 	private String nomTab;
 
-	public Tableau() {
-	}
 
 	public Tableau(char pDelimit, String pCheminCsv, String pNomCsv, String pTableau[][], String nomTab) {
 		delimit = pDelimit;
@@ -22,6 +20,7 @@ public class Tableau implements ITableau {
 		arr = pTableau;
 		this.nomTab = nomTab;
 		getTableauToString();
+		constructeurCsv();
 		
 	}
 
@@ -75,10 +74,16 @@ public class Tableau implements ITableau {
 		}
 		return count;
 	}
+	
+	public void constructeurCsv() {
+		Csv csv = new Csv(delimit, cheminCsv, nomCsv, arr);
+	}
+	
 	public static void main(String[] args) {
 		Html t = new Html("https://en.wikipedia.org/wiki/Infinity_on_High", ';', "chemin","nomCSV", true, false);
 		t.recuperationPage();
 
 	}
+	
 
 }

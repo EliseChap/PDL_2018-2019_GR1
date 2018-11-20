@@ -81,7 +81,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return un booleen qui indique si l'extraction doit �etre faite en HTML
+	 * @return un booleen qui indique si l'extraction doit ï¿½etre faite en HTML
 	 *         (true) ou non (false)
 	 */
 	public boolean getExtraHTML() {
@@ -136,8 +136,6 @@ public class Html extends Extracteur {
 			boolean tabcreated = false;
 
 			Elements tr = ensemble.getElementsByTag("tr");
-		
-			
 			// System.out.println(tr.size());
 
 			String[][] tab = null;
@@ -150,13 +148,11 @@ public class Html extends Extracteur {
 
 				// if (th.size() == td.size()) { // Cas tableau avec nom colonnes qui
 				// apparaissent plusieurs fois
-				// (cf equipe de france masculine de foot,Parcours de l'�quipe de France en
+				// (cf equipe de france masculine de foot,Parcours de l'ï¿½quipe de France en
 				// championnat d'Europe
 
 				if (!tabcreated) {
-
 					int nbCol = 0;
-
 					if (!th.isEmpty()) {
 						nbCol = th.size();
 					} else {
@@ -168,68 +164,149 @@ public class Html extends Extracteur {
 					System.out.println(nbCol);
 					tabcreated = true;
 				}
-
 				int j = 0;
-				
+				tab = headerTableau(tab, i, j, th);
+				tab = bodyTableau(tab, i, j, td);
+				i++;
+			}
+			lectureTableau(tab);
+			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
+		}
+	}
 
-				for (Element f : th) {
-					tab[i][j] = f.text();
-					//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+	/**
+	 * Analyse l'entête de tableau
+	 * 
+	 * @param tab
+	 * @param i
+	 * @param j
+	 * @param th
+	 * @return tab[][]
+	 */
+	public String[][] headerTableau(String[][] tab, int i, int j, Elements th) {
+		for (Element f : th) {
+			tab[i][j] = f.text();
+			// System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+			j++;
+		}
+		return tab;
+	}
 
-					j++;
-				}
-
-				for (Element g : td) {
-
-					String current = g.text();
-					// System.out.println(current);
-
-					String cell = g.attr("rowspan");
-
-					if (cell != "") {
-
-						int y = Integer.parseInt(cell);
-
-						// System.out.println("test "+ y);
-						tab = Fusion(tab, i, j, y, current, true);
-						System.out.println(tab[i][j]);
-						
-
-
-					}
-					
-					
-
-					if (tab[i][j] == null) {
-						if (g.hasText()) {
-							tab[i][j] = g.text();
-						}
-						if (getUrlImage(g) != "")
-							tab[i][j] = tab[i][j] + " " + getUrlImage(g);
-						//System.out.println("FUSION2" + " "  + tab[i][j] + " " + "i : " + i + " j : " + j);
-
-						j++;
-					} else {
-						while (tab[i][j] != null) {
-							//System.out.println("FUSION" + " "  + tab[i][j] + " " + "i : " + i + " j : " + j);
-							j++;
-						}
-
-					}
-
-				}
+	/**
+	 * Analyse du contenu du tableau
+	 * 
+	 * @param tab
+	 * @param i
+	 * @param j
+	 * @param td
+	 * @return tab[][]
+	 */
+	public String[][] bodyTableau(String[][] tab, int i, int j, Elements td) {
+		for (Element g : td) {
+			
+			if (tab[i][j] != null) {
+				j = deplacerTableau(tab, i, j, true);
+			}
+			String current = g.text();
+			String cell = g.attr("rowspan");
+			if (cell != "") {
+				int y = Integer.parseInt(cell);
+				// System.out.println("test "+ y);
+				tab = Fusion(tab, i, j, y, current, true);
+			}
+			String cellcol = g.attr("colspan");
+			if (g.attr("colspan") != "") {
+				int x = Integer.parseInt(cellcol);
+				//System.out.println("test " + x);
+				tab = Fusion(tab, i, j, x, current, false);
+			}
+			if (g.hasText()) {
+				tab[i][j] = g.text();
+			}
+			if (getUrlImage(g) != "") {
+				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
+			}
+			// System.out.println("FUSION2" + " " + tab[i][j] + " " + "i : " + i + " j : " +
+			// j);
+			//System.out.println("i " + i + " j " + j + " tab[i][j] " + tab[i][j]);
+			//System.out.println(tab[0].length);
+			if (j <= tab[0].length) {
+				j++;
+			} else {
+				j = 0;
 				i++;
 			}
 
-			/*
-			 * for(int a=0; a<tab.length; a++) { for(int b = 0; b<tab[a].length; b++) {
-			 * System.out.println(tab[a][b] +" " + "i : " + a + " j : " + b ); } }
-			 */
-
-			// }
-			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
 		}
+		return tab;
+	}
 
+	/**
+	 * Deplacer le curseur si la cellule est déjà pleine
+	 * 
+	 * @param tab
+	 * @param i
+	 * @param j
+	 * @param vertical
+	 * @return
+	 */
+
+	public int deplacerTableau(String[][] tab, int i, int j, boolean vertical) {
+		if (vertical) {
+
+			while (tab[i][j] != null) {
+				j++;
+			}
+			return j;
+		} else {
+			while (tab[i][j] != null) {
+				i++;
+			}
+			return i;
+		}
+	}
+
+	/**
+	 * Afficher l'intégralité du tableau
+	 * 
+	 * @param tab
+	 */
+	public void lectureTableau(String[][] tab) {
+		for (int a = 0; a < tab.length; a++) {
+			for (int b = 0; b < tab[a].length; b++) {
+				System.out.println("i : " + a + " j : " + b + " valeur : " + tab[a][b]);
+			}
+		}
+	}
+					
+	/**
+	 * Remplir le tableau suivant les fusions horrizontale ou verticale
+	 * 
+	 * @param tab
+	 * @param i
+	 * @param j
+	 * @param y
+	 * @param current
+	 * @param vertical
+	 * @return Tab[][]
+	 */
+	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
+		if (vertical) {
+
+			for (int b = 0; b < y; b++) {
+				tab[i][j] = current;
+				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+				i++;
+			}
+		} else {
+
+			for (int b = 0; b < y; b++) {
+				tab[i][j] = current;
+				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+				j++;
+			}
+		}
+		return tab;
 	}
 
 	public String getUrlImage(Element g) {
@@ -246,35 +323,14 @@ public class Html extends Extracteur {
 		return "";
 	}
 
-	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
-		if (vertical) {
-			while (i < y) {
-				
-				i++;
-				tab[i][j] = current;
-				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
-				
-			}
-
-		}
-
-		else {
-			while (j < y) {
-				System.out.println(j);
-				
-				j++;
-				//tab[i][j] = current;
-				
-				//System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
-			}
-
-		}
-		return tab;
-	}
-
 	public static void main(String[] args) {
 		Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV", true, false);
 		t.recuperationPage();
+		//Html b = new Html("https://fr.wikipedia.org/wiki/Vialfr%C3%A8", ';', "chemin", "nomCSV", true, false);
+		//Html b = new Html("https://fr.wikipedia.org/wiki/Torigny-les-Villes", ';', "chemin", "nomCSV", true, false);
+
+		//b.recuperationPage();
+
 
 	}
 

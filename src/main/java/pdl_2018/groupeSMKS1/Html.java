@@ -136,11 +136,11 @@ public class Html extends Extracteur {
 			boolean tabcreated = false;
 
 			Elements tr = ensemble.getElementsByTag("tr");
-			// System.out.println(tr.size());
+			System.out.println("tr" +tr.size());
 
 			String[][] tab = null;
 			int i = 0;
-			System.out.println(tr.size());
+			
 
 			for (Element e : tr) {
 				Elements th = e.getElementsByTag("th");
@@ -154,15 +154,15 @@ public class Html extends Extracteur {
 
 				if (!tabcreated) {
 					int nbCol = 0;
-					if (nbth>0) {
+					if (nbth > 0) {
 						nbCol = nbth;
 					} else {
 						nbCol = td.size();
 					}
 					tab = new String[tr.size()][nbCol];
-					System.out.println("th" + th.size());
+					System.out.println("th" + nbth);
 					System.out.println("td" + td.size());
-					System.out.println(nbCol);
+					//System.out.println(nbCol);
 					tabcreated = true;
 				}
 				int j = 0;
@@ -170,7 +170,7 @@ public class Html extends Extracteur {
 				tab = bodyTableau(tab, i, j, td);
 				i++;
 			}
-			lectureTableau(tab);
+			//lectureTableau(tab);
 			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
 		}
 	}
@@ -186,37 +186,40 @@ public class Html extends Extracteur {
 	 */
 	public String[][] headerTableau(String[][] tab, int i, int j, Elements th) {
 		for (Element f : th) {
+			if (tab[i][j] != null) {
+				j = deplacerTableau(tab, i, j, true);
+			}
 			String cellcol = f.attr("colspan");
-			System.out.println(cellcol);
 			String current = f.text();
 			if (f.attr("colspan") != "") {
 				int x = Integer.parseInt(cellcol);
-				//System.out.println("test " + x);
+				// System.out.println("test " + x);
 				tab = Fusion(tab, i, j, x, current, false);
+				System.out.println("i " + i + " j " + j + " tab[i][j] " + tab[i][j]);
 			}
 			tab[i][j] = f.text();
-			System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+			System.out.println("i " + i + " j " + j + " tab[i][j] " + tab[i][j]);
 			j++;
 		}
 		return tab;
 	}
+
 	int count = 0;
-	public int countNbCol(Elements th){
-		
+
+	public int countNbCol(Elements th) {
+
 		for (Element a : th) {
 			String cellcol = a.attr("colspan");
-			
+
 			String current = a.text();
 			if (a.attr("colspan") != "") {
-				count = count +Integer.parseInt(cellcol);
-			
-		}
-			else {
+				count = count + Integer.parseInt(cellcol);
+
+			} else {
 				count++;
 			}
 		}
-		System.out.println(count + "COUNT");
-		return count; 
+		return count;
 	}
 
 	/**
@@ -244,7 +247,7 @@ public class Html extends Extracteur {
 			String cellcol = g.attr("colspan");
 			if (g.attr("colspan") != "") {
 				int x = Integer.parseInt(cellcol);
-				//System.out.println("test " + x);
+				// System.out.println("test " + x);
 				tab = Fusion(tab, i, j, x, current, false);
 			}
 			if (g.hasText()) {
@@ -255,8 +258,8 @@ public class Html extends Extracteur {
 			}
 			// System.out.println("FUSION2" + " " + tab[i][j] + " " + "i : " + i + " j : " +
 			// j);
-			//System.out.println("i " + i + " j " + j + " tab[i][j] " + tab[i][j]);
-			//System.out.println(tab[0].length);
+			System.out.println("i " + i + " j " + j + " tab[i][j] " + tab[i][j]);
+			// System.out.println(tab[0].length);
 			if (j <= tab[0].length) {
 				j++;
 			} else {
@@ -269,7 +272,7 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Deplacer le curseur si la cellule est déjà pleine
+	 * Deplace le curseur si la cellule est déjà pleine
 	 * 
 	 * @param tab
 	 * @param i
@@ -301,16 +304,12 @@ public class Html extends Extracteur {
 	public void lectureTableau(String[][] tab) {
 		for (int a = 0; a < tab.length; a++) {
 			for (int b = 0; b < tab[a].length; b++) {
-				//System.out.println("i : " + a + " j : " + b + " valeur : " + tab[a][b]);
+				// System.out.println("i : " + a + " j : " + b + " valeur : " + tab[a][b]);
 				System.out.println(tab[a][b]);
 			}
 		}
 	}
 
-//						// System.out.println("test "+ y);
-//						tab = Fusion(tab, i, j, y, current, true);
-//						System.out.println(tab[i][j]);
-						
 	/**
 	 * Remplir le tableau suivant les fusions horrizontale ou verticale
 	 * 
@@ -327,14 +326,14 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+				// System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
 				i++;
 			}
 		} else {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+				// System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
 				j++;
 			}
 		}
@@ -355,40 +354,15 @@ public class Html extends Extracteur {
 		return "";
 	}
 
-//	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
-//		if (vertical) {
-//			while (i < y) {
-//				
-//				i++;
-//				tab[i][j] = current;
-//				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
-//				
-//			}
-//
-//		}
-//
-//		else {
-//			while (j < y) {
-//				System.out.println(j);
-//				
-//				j++;
-//				//tab[i][j] = current;
-//				
-//				//System.out.println(tab[i][j] +" " + "i : "+ i + " j : "+ j);
-//			}
-//
-//		}
-//		return tab;
-//	}
-
 	public static void main(String[] args) {
-		//Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV", true, false);
-		//t.recuperationPage();
-		Html b = new Html("https://fr.wikipedia.org/wiki/Vialfr%C3%A8", ';', "chemin", "nomCSV", true, false);
-		//Html b = new Html("https://fr.wikipedia.org/wiki/Torigny-les-Villes", ';', "chemin", "nomCSV", true, false);
-
+		// Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';',
+		// "chemin", "nomCSV", true, false);
+		// t.recuperationPage();
+		// Html b = new Html("https://fr.wikipedia.org/wiki/Vialfr%C3%A8", ';',
+		// "chemin", "nomCSV", true, false);
+		Html b = new Html("https://fr.wikipedia.org/wiki/Jeux_mondiaux_f%C3%A9minins_de_1934", ';', "chemin", "nomCSV", true, false);
+		
 		b.recuperationPage();
-
 
 	}
 

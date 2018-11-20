@@ -226,8 +226,9 @@ public class Url implements IUrl {
 	public void ConstructeurExtracteur() {
 		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
-				Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
-				lesExtracteurs.add(wiki);
+				Wikitext wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
+				//Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
+				//lesExtracteurs.add(wiki);
 			}
 			if (extraHtml) {
 				Extracteur html = new Html(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);

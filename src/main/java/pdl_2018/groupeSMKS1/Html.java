@@ -192,7 +192,7 @@ public class Html extends Extracteur {
 
 						// System.out.println("test "+ y);
 						tab = Fusion(tab, i, j, y, current, true);
-						System.out.println(tab[5][3]);
+						System.out.println(tab[i][j]);
 						
 
 
@@ -254,7 +254,6 @@ public class Html extends Extracteur {
 				tab[i][j] = current;
 				//System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
 				
-
 			}
 
 		}

@@ -23,7 +23,7 @@ public class Csv implements ICsv {
 
 	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2) {
 
-		// V�rification si delimitation est null
+		// Verification si delimitation est null
 		if (pdelimit == '\u0000') {
 			delimit = ',';
 		} else {
@@ -45,7 +45,8 @@ public class Csv implements ICsv {
 		}
 		tableau = tableau2;
 		initialisationSeparateurAutomatique();
-
+		exporterCSV();
+		System.out.println("fin");
 	}
 
 	@Override
@@ -138,7 +139,7 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Choix du separateur selon si le choix de l'utilisateur est dans les données
+	 * Choix du separateur selon si le choix de l'utilisateur est dans les donnees
 	 * si oui en choisir un autre
 	 * 
 	 * @param separateurUtilisateur,separateur
@@ -164,7 +165,7 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Cr�ation du CSV grace a un String en entree
+	 * Creation du CSV grace a un String en entree
 	 * 
 	 * @param Text
 	 * @throws IOException
@@ -253,9 +254,4 @@ public class Csv implements ICsv {
 		return cheminCsv + split[0] + "_" + incrementation + "." + split[1];
 
 	}
-	
-	public static void main(String [ ] args) {
-		
-	}
-
 }

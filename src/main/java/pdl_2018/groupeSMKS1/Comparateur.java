@@ -1,7 +1,10 @@
 package pdl_2018.groupeSMKS1;
 
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+
 
 import org.apache.commons.collections4.ListUtils;
 
@@ -267,6 +270,20 @@ public class Comparateur implements IComparateur {
 		System.out.println("ratiocon : " + ratioContenu(analyseComplet()));
 
 		return ratioColonne() * 0.2 + ratioLigne() * 0.2 + ratioContenu(analyseComplet()) * 0.4;
+	}
+
+	public static void main(String[] args) {
+	    String[] l1 = { "1,2,4,7,9",",35,56,58,76" };
+	    String[] l2 = { "1,2,4,76,9",",35,56,58,7" };
+
+	    
+	    Diff diff = new Diff(l1,l2);
+	    Diff.change script = diff.diff_2(false);
+	    DiffPrint.Base p = new DiffPrint.UnifiedPrint(l1,l2);
+	    StringWriter wtr = new StringWriter();
+	    p.setOutput(wtr);
+	    //p.print_header("test1","test2");
+	    p.print_script(script);
 	}
 
 }

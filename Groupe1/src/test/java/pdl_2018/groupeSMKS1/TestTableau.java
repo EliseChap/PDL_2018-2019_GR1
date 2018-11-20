@@ -14,10 +14,7 @@ import pdl_2018.groupeSMKS1.Tableau;
 @Disabled
 class TestTableau {
 	
-	
-	/**
-	 * Test parametre tableau
-	 */
+
 	@Test
 	public void testObjectTableau() {
 		

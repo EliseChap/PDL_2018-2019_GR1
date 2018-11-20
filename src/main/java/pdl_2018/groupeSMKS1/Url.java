@@ -29,8 +29,12 @@ public class Url implements IUrl {
 
 		try {
 			myUrl = new URL(url);
+			//Appeler les fonctions
+			
+			
+			
 		} catch (MalformedURLException e) {
-			System.out.println("error");
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -135,25 +139,7 @@ public class Url implements IUrl {
 		return this.extraWiki;
 	}
 
-	// TEST
-	public static boolean isWikiURL(String url) {
-		String domain = "wikipedia.org";
-		URL u = null;
 
-		try {
-			u = new URL(url);
-		} catch (MalformedURLException e) {
-			return false;
-		}
-		String host = u.getHost();
-		InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
-		// System.out.println(name); // A supp apres
-		// System.out.println(name.toString());// A supp apres
-		if (name.toString().equals(domain)) {
-			return true;
-		}
-		return false;
-	}
 	
 	/**
 	 * @return Une string avec le sous domaine de lurl
@@ -181,7 +167,7 @@ public class Url implements IUrl {
 
 	@Override
 	public boolean isWikipediaURL() {
-		String domain = "wikipedia.org";
+		String domain = "wikipedia.org"; // La mettre tout en haut en attribut final
 		
 		if (GetDomain().equals(domain)) {
 			return true;
@@ -197,7 +183,7 @@ public class Url implements IUrl {
 	
 	public boolean isAPicture() {
 		
-		
+	
 		return url.endsWith("jpg") ||url.endsWith("JPG") ||url.endsWith("svg") || url.endsWith("png") ||  url.endsWith("gif") ||  url.endsWith("tif") ||  url.endsWith("bmp");
 	}
 
@@ -239,7 +225,7 @@ public class Url implements IUrl {
 
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String u = "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP";
 		boolean test = isWikiURL(u);
 		System.out.println(test);
@@ -264,6 +250,6 @@ public class Url implements IUrl {
 		
 		
 		
-	}
+	}*/
 
 }

@@ -30,11 +30,12 @@ public class TestCsv extends TestCase {
 	 */
 	@Test
 	public void testObjectCsvStandard() {
+		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "C:/Users/sullivand/Music/Desktop/Nouveau dossier/", "WikiMatrix", null);
+		Csv csv = new Csv(';', "C:/Users/sullivand/Music/Desktop/Nouveau dossier/", "WikiMatrix.csv", tab);
 		Assertions.assertEquals(csv.getDelimit(), ';');
 		Assertions.assertEquals(csv.getCheminCsv(), "C:/Users/sullivand/Music/Desktop/Nouveau dossier/");
-		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix");
+		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
 	}
 
 	/**
@@ -42,7 +43,8 @@ public class TestCsv extends TestCase {
 	 */
 	@Test
 	public void testObjectCsvNull() {
-		Csv csv = new Csv('\u0000', null, null, null);
+		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
+		Csv csv = new Csv('\u0000', null, null, tab);
 		Assertions.assertEquals(csv.getDelimit(), ',');
 		Assertions.assertEquals(csv.getCheminCsv(), "");
 		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
@@ -95,12 +97,13 @@ public class TestCsv extends TestCase {
 		File fichier = new File("testExporterCSV.csv");
 		fichier.delete();
 		Csv csv = new Csv(';', "", "testExporterCSV.csv", tab);
-		Assertions.assertFalse(csv.verificationCheminDispo());
+		
 
 		csv.exporterCSV();
 
 		Assertions.assertTrue(csv.verificationCheminDispo());
-
+	
+		fichier.delete();
 	}
 
 	/**
@@ -110,8 +113,9 @@ public class TestCsv extends TestCase {
 	public void testInitialisationSeparateurAutomatique() {
 
 		boolean verification = false;
+		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "", null);
+		Csv csv = new Csv(';', "", "", tab);
 		Map<String, Boolean> separateurAutomatique = csv.getSeparateur();
 		Set cles = separateurAutomatique.keySet();
 		Iterator it = cles.iterator();
@@ -121,7 +125,7 @@ public class TestCsv extends TestCase {
 				verification = true;
 			}
 		}
-		Assertions.assertEquals(verification, false);
+		Assertions.assertEquals(verification, true);
 
 	}
 
@@ -146,10 +150,6 @@ public class TestCsv extends TestCase {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
 		Csv csv = new Csv(';', "", "testIncrementer.csv", tab);
-		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_1.csv");
-
-		csv.exporterCSV();
-
 		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_2.csv");
 
 		csv.exporterCSV();
@@ -159,6 +159,10 @@ public class TestCsv extends TestCase {
 		csv.exporterCSV();
 
 		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_4.csv");
+
+		csv.exporterCSV();
+
+		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_5.csv");
 
 		// supprimer les fichers
 		fichier.delete();
@@ -175,13 +179,10 @@ public class TestCsv extends TestCase {
 	public void testVerificationCheminDispo() {
 		File fichier = new File("testChemin.csv");
 		fichier.delete();
-
+		
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
 		Csv csv = new Csv(';', "", "testChemin.csv", tab);
-		Assertions.assertTrue(!csv.verificationCheminDispo());
-
-		csv.exporterCSV();
 
 		Assertions.assertTrue(csv.verificationCheminDispo());
 		fichier.delete();

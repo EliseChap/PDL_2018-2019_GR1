@@ -204,7 +204,6 @@ public class CommandLine implements ICommandLine {
             	 contenuSave = mSave.group();
             }
             
-
             if(contenuSave=="" || contenuSave==null){
                 System.out.println("Le chemin du fichier de sortie n'est pas renseigné");
                 return false;

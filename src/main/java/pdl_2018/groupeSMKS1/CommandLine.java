@@ -339,4 +339,16 @@ public class CommandLine implements ICommandLine {
     public void setLigneDeCommande(String ligneDeCommande) {
         this.ligneDeCommande = ligneDeCommande;
     }
+
+    /**
+     * Méthode main pour tester à la main la classe CommandLine
+     * @param args
+     * @date 15 novembre 2018
+     */
+    /*
+    public static void main(String[] args){
+
+        CommandLine myCommand = new CommandLine("-html -wikicode -import[c:/urlWithAllDelimiteurs.txt] -delimit[,]");
+    }
+    */
 }

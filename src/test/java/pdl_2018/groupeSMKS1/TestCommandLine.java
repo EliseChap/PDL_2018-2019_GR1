@@ -71,13 +71,13 @@ class TestCommandLine {
     @Test
     public void testVerifCheminSortie(){
 
-//        CommandLine myCommand = new CommandLine("-save");
-//        Assertions.assertFalse(myCommand.verifRepertoireSortie());
-//        Assertions.assertTrue(myCommand.getCheminCSV()==null);
+        CommandLine myCommand = new CommandLine("-save");
+        Assertions.assertFalse(myCommand.verifRepertoireSortie());
+        Assertions.assertTrue(myCommand.getCheminCSV()==null);
 
-//        CommandLine myCommand2 = new CommandLine("-save[]");
-//        Assertions.assertFalse(myCommand2.verifRepertoireSortie());
-//        Assertions.assertTrue(myCommand2.getCheminCSV()==null);
+        CommandLine myCommand2 = new CommandLine("-save[]");
+        Assertions.assertFalse(myCommand2.verifRepertoireSortie());
+        Assertions.assertTrue(myCommand2.getCheminCSV()==null);
 
         CommandLine myCommand3 = new CommandLine("-save[c:/users/admin]");
         Assertions.assertFalse(myCommand3.verifRepertoireSortie());

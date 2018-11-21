@@ -194,17 +194,16 @@ public class CommandLine implements ICommandLine {
     @Override
     public boolean verifRepertoireSortie(){
         int nbSave = StringUtils.countMatches(this.ligneDeCommande, "-save");
-        String contenuSave = null;
+        String contenuSave = "";
         if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
-           
-        	try {
-        	
+                  	
         	Pattern pSave=Pattern.compile("-save\\[.*?\\]");
             Matcher mSave=pSave.matcher(this.ligneDeCommande);
-            contenuSave = mSave.group(0);
-        	}catch(Exception e) {
-        		
-        	}
+            
+            while (mSave.find()) {
+            	 contenuSave = mSave.group();
+            }
+            
 
             if(contenuSave=="" || contenuSave==null){
                 System.out.println("Le chemin du fichier de sortie n'est pas renseigné");

@@ -1,7 +1,6 @@
 package pdl_2018.groupeSMKS1;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -9,7 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 import de.fau.cs.osr.ptk.common.AstVisitor;
 
@@ -48,8 +46,6 @@ AstVisitor<WtNode> {
 	private Map<Integer, WtBody> lesWikitab;
 	private int compteur = 0;
 
-	
-	
 	
 	//private static final Pattern ws = Pattern.compile("\\s+");
 
@@ -122,7 +118,8 @@ AstVisitor<WtNode> {
 	public void visit(WtNode n) {
 		// Fallback for all nodes that are not explicitly handled below
 		//write("<");
-		//write(n.getNodeName());
+	//	System.out.print(n.getNodeName());
+		iterate(n);
 		//write(" />");
 	}
 
@@ -143,12 +140,19 @@ AstVisitor<WtNode> {
 		iterate(item);
 	}
 
+	
+	public void visit(WtTable item) {
+		System.out.println("TABLEAU");
+		iterate(item);
+	}
+	
 	public void visit(EngPage p) {
 		iterate(p);
 	}
 
 	public void visit(WtText text) {
 		//write(text.getContent());
+		//System.out.println(text.getContent());
 	}
 
 	public void visit(WtWhitespace w) {
@@ -459,9 +463,15 @@ AstVisitor<WtNode> {
 			PageTitle pageTitle = PageTitle.make(config, "title");
 			PageId pageId = new PageId(pageTitle, -1);
 			ExpansionCallback callback = null;
-			EngProcessedPage parse = engine.parse(pageId, contenu, callback);
-			System.out.println(parse);
-			parcourirNode(parse);
+			
+		     EngProcessedPage cp = engine.postprocess(pageId, contenu, null);
+			
+			//EngProcessedPage parse = engine.parse(pageId, contenu, callback);
+		
+			this.go(cp);
+			
+			//System.out.println(parse);
+			//parcourirNode(parse);
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -685,7 +695,7 @@ AstVisitor<WtNode> {
 		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_de_football", ';', "chemin", " nomCSV", false,
 				true);
 		t.recuperationPage();
-		t.traitementMap2();
+		//t.traitementMap2();
 //		Set cles = t.lesWikitab.keySet();
 //		Iterator<Integer> it = cles.iterator();
 //		while (it.hasNext()) {

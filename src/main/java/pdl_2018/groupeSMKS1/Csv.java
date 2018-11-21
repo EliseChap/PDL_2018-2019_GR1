@@ -29,7 +29,6 @@ public class Csv implements ICsv {
 		} else {
 			delimit = pdelimit;
 		}
-
 		// Verification si nom est null
 		if (pnomCsv == null || pnomCsv == "") {
 			nomCsv = "WikiMatrix.csv";
@@ -114,17 +113,21 @@ public class Csv implements ICsv {
 		// Analyse les donn�es afin de savoir quel est le s�parateur adapt�
 
 		String separateur = "" + delimit;
+
 		for (String[] strArr : tableau) {
 			for (String cellule : strArr) {
+				if(cellule==null)cellule="";
 				if (cellule.contains(separateur)) {
 					logger.info(
 							"un choix de seperateur va �tre effectu� par d�faut, car celui d�finit pose des incoh�rences dans le csv");
 					separateurUtilisateur = true;
 
-				}
 
-				Set cles = separateurAutomatique.keySet();
-				Iterator it = cles.iterator();
+
+				}
+		Set cles = separateurAutomatique.keySet();
+		Iterator it = cles.iterator();
+
 				while (it.hasNext()) {
 					Object cle = it.next();
 					if (cellule.contains(cle.toString())) {
@@ -155,7 +158,7 @@ public class Csv implements ICsv {
 			Iterator it = cles.iterator();
 			while (it.hasNext()) {
 				Object cle = it.next();
-				if (separateurAutomatique.get(cle)) {
+				if (!separateurAutomatique.get(cle)) {
 					logger.info(cle.toString());
 					return cle.toString();
 				}
@@ -187,21 +190,22 @@ public class Csv implements ICsv {
 		}
 		File nomFichier = new File(lien);
 
-		FileWriter outputfile = null;
-		CSVWriter writer = null;
-
-		writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-				CSVWriter.DEFAULT_LINE_END);
+		FileWriter outputfile;
 		try {
-			outputfile = new FileWriter(nomFichier);
-
-			for (String[] strArr : tableau) {
+			outputfile = new FileWriter(nomFichier);	
+			CSVWriter writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+				CSVWriter.DEFAULT_LINE_END);	
+		for (String[] strArr : tableau) {
 				writer.writeNext(strArr);
 			}
-
+		writer.close();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
+		};
+
+
+		 /*finally {
 
 			try {
 				if (outputfile != null) {
@@ -216,7 +220,7 @@ public class Csv implements ICsv {
 				e.printStackTrace();
 			}
 
-		}
+		}*/
 	}
 
 	/**

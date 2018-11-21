@@ -152,7 +152,10 @@ public class CommandLine implements ICommandLine {
         if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié n'est pas vide (on ne teste pas s'il est fonctionnel)
             Pattern pImport=Pattern.compile("-import\\[.*?\\]");
             Matcher mImport=pImport.matcher(this.ligneDeCommande);
-            String contenuImport = mImport.group(1);
+            String contenuImport = "";
+            while (mImport.find()) {
+                contenuImport = mImport.group();
+            }
             if(contenuImport=="" || contenuImport==null){
                 System.out.print("Le chemin d'accès au fichier d'URLs à importer n'est pas renseigné");
                return false;
@@ -161,7 +164,10 @@ public class CommandLine implements ICommandLine {
         } else if (nbURL == 1){ // On vérifie que l'URL spécifiée est valide, qu'il s'agit d'une url wiki (on ne teste pas si elle est fonctionnelle)
             Pattern pURL=Pattern.compile("-url\\[.*?\\]");
             Matcher mURL = pURL.matcher(this.ligneDeCommande);
-            String contenuURL = mURL.group(1);
+            String contenuURL = "";
+            while (mURL.find()) {
+                contenuURL = mURL.group();
+            }
             if(contenuURL=="" || contenuURL==null){
                 System.out.println("L'url n'est pas renseignée");
                 return false;
@@ -225,11 +231,13 @@ public class CommandLine implements ICommandLine {
     @Override
     public boolean verifNomSortie(){
         int nbSave = StringUtils.countMatches(this.ligneDeCommande, "-name");
-        String contenuName = null;
+        String contenuName = "";
         if (nbSave == 1){ // On vérifie que le nom de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
-            Pattern pSave=Pattern.compile("-name\\[.*?\\]");
-            Matcher mSave=pSave.matcher(this.ligneDeCommande);
-            contenuName = mSave.group(1);
+            Pattern pName=Pattern.compile("-name\\[.*?\\]");
+            Matcher mName=pName.matcher(this.ligneDeCommande);
+            while (mName.find()) {
+                contenuName = mName.group();
+            }
             if(contenuName=="" || contenuName==null){
                 System.out.println("Le nom du fichier de sortie n'est pas renseigné");
                 return false;
@@ -263,7 +271,9 @@ public class CommandLine implements ICommandLine {
         if (nbDelimit == 1) { //On vérifie l'intégrité du délimiteur : est-il autorisé par Wikimatrix ?
             Pattern pDelimit=Pattern.compile("-delimit\\[.*?\\]");
             Matcher mDelimit = pDelimit.matcher(this.ligneDeCommande);
-            contenuDelimit = mDelimit.group(1).charAt(0);
+            while (mSave.find()) {
+                contenuDelimit = mDelimit.group().charAt(0);
+            }
             if(!caracteresAutorises.contains(contenuDelimit)){
                 System.out.println("Le délimiteur saisi n'est pas pris en charge par Wikimatrix");
                 return false;

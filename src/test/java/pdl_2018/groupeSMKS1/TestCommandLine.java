@@ -21,11 +21,11 @@ public class TestCommandLine {
 
         CommandLine myCommand2 = new CommandLine("-import[]");
         Assertions.assertTrue(myCommand2.verifDelimiteur(), "false");
-        Assertions.assertEquals(myCommand.getDelimit(), null);
+        Assertions.assertEquals(myCommand2.getDelimit(), null);
 
         CommandLine myCommand3 = new CommandLine("import[;]");
         Assertions.assertTrue(myCommand3.verifDelimiteur(), "false");
-        Assertions.assertEquals(myCommand.getDelimit(), null);
+        Assertions.assertEquals(myCommand3.getDelimit(), null);
     }
 
     /**
@@ -125,18 +125,18 @@ public class TestCommandLine {
 
         CommandLine myCommand2 = new CommandLine("-url[https://fr.wikipedia.org/rennes]"); // Test URL valide
         Assertions.assertTrue(myCommand2.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand.getUrl(), "https://fr.wikipedia.org/rennes");
-        Assertions.assertEquals(myCommand.getCheminEntree(), "");
+        Assertions.assertEquals(myCommand2.getUrl(), "https://fr.wikipedia.org/rennes");
+        Assertions.assertEquals(myCommand2.getCheminEntree(), "");
 
         CommandLine myCommand3 = new CommandLine("-url[https://fr.wikipedia.org/rennes] -import[c:/users/admin/mesBellesUrl.txt]");
         Assertions.assertFalse(myCommand3.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand.getUrl(), "");
-        Assertions.assertEquals(myCommand.getCheminEntree(), "");
+        Assertions.assertEquals(myCommand3.getUrl(), "");
+        Assertions.assertEquals(myCommand3.getCheminEntree(), "");
 
         CommandLine myCommand4 = new CommandLine("-import[c:/users/admin/mesBellesUrl.txt]");
         Assertions.assertTrue(myCommand4.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand.getUrl(), "");
-        Assertions.assertEquals(myCommand.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
+        Assertions.assertEquals(myCommand4.getUrl(), "");
+        Assertions.assertEquals(myCommand4.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
 
         CommandLine myCommand5 = new CommandLine("-url[https://es.wikipedia.org/rennes]"); //Test URL invalide
         Assertions.assertFalse(myCommand5.verifUrlOrFichierChoice());

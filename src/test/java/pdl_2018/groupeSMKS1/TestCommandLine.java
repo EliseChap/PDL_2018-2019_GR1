@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
  
 
 //@Disabled 
-class TestCommandLine {
+public class TestCommandLine {
 //TODO test généralisé
     /**
      * Tests pour la méthode verifDelimiteur

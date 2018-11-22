@@ -110,8 +110,8 @@ public class Fichier {
      * @date 15 novembre 2018
      */
     public static void main(String[] args){
-        //Fichier monFichier = new Fichier("c:/mesURLs.txt", ';', "moncsv", "monchemincsv", true, false);
+        Fichier monFichier = new Fichier("c:/urlWithAllDelimiteurs.txt", ';', "moncsv", "monchemincsv", true, false);
 
-        //System.out.println(monFichier.getLesURLs().get(2).getmyUrl());
+        System.out.println(monFichier.getLesURLs().get(2).getmyUrl());
     }
 }

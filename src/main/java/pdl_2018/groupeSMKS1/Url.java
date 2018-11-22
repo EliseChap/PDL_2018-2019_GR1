@@ -30,9 +30,11 @@ public class Url implements IUrl {
 		try {
 			myUrl = new URL(url);
 			verifURL();
-			isWikipediaURL();
+			if(isWikipediaURL()) {
 			isAPicture();
 			isAnArticle();
+			}
+			
 		} catch (MalformedURLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -137,8 +139,9 @@ public class Url implements IUrl {
 	 */
 
 	public String GetSousDomain() {
-		String path = myUrl.getPath();
+		
 		String[] str = url.split("/wiki/");
+		
 		return str[1];
 	}
 
@@ -173,7 +176,7 @@ public class Url implements IUrl {
 	 */
 
 	public boolean isAPicture() {
-
+	
 		boolean picture =  url.endsWith("jpg") || url.endsWith("JPG") || url.endsWith("svg") || url.endsWith("png")
 				|| url.endsWith("gif") || url.endsWith("tif") || url.endsWith("bmp");
 		if(picture) {System.out.println("L'url : " + url +" ne peut être traitée, il s'agit d'une image");}
@@ -188,14 +191,16 @@ public class Url implements IUrl {
 
 	public boolean isAnArticle() {
 		CharSequence twopoint = ":";
+	
 		CharSequence twopointbis = "_:_";
-		if (url.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un titre)
-				if(!url.contains(twopointbis))	{
+		String sD = GetSousDomain();
+
+		if (sD.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un titre)
+				if(!sD.contains(twopointbis))	{
 					System.out.println("L'url : " + url + " traitée n'est pas un article wikipédia");
 				}
-			return !url.contains(twopointbis);
+			return sD.contains(twopointbis);
 		}
-
 		return false;
 	}
 
@@ -221,26 +226,23 @@ public class Url implements IUrl {
 
 	}
 
-	/*
-	 * public static void main(String[] args) { String u =
-	 * "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP"; boolean test =
-	 * isWikiURL(u); System.out.println(test); URL url = null; try { url = new
-	 * URL(u); } catch (MalformedURLException e) {
-	 * 
-	 * }
-	 * 
-	 * //String utest = url.getPath(); //String[] str = utest.split("/wiki/");
-	 * //System.out.println(utest); //System.out.println(str[1]); //boolean test2 =
-	 * u.endsWith("jpg")|| u.endsWith("png") || u.endsWith("gif") ||
-	 * u.endsWith("tiff") || u.endsWith("bmp") ; //System.out.println(test2);
-	 * CharSequence twopoint = "_:_"; boolean test3 = !u.contains(twopoint);
-	 * System.out.println(test3);
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * }
-	 */
+	
+	  public static void main(String[] args) { 
+		  String u = "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP";
+	  
+	  //String utest = url.getPath(); //String[] str = utest.split("/wiki/");
+	  //System.out.println(utest); //System.out.println(str[1]); 
+	  boolean test2 = u.endsWith("jpg")|| u.endsWith("png") || u.endsWith("gif") ||
+	  u.endsWith("tiff") || u.endsWith("bmp") ; 
+	  System.out.println(test2);
+	 CharSequence twopoint = "_:_"; boolean test3 = !u.contains(twopoint);
+	  System.out.println(test3);
+	  
+	  
+	  
+	  
+	  
+	  }
+	 
 
 }

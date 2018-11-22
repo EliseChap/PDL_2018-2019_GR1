@@ -88,17 +88,17 @@ class TestUrl {
 	@Test
 	public void testIsDiscussion() {
 		u.setUrl("https://fr.wikipedia.org/wiki/Discussion_utilisateur:148.60.32.206");
-		Assertions.assertTrue(u.isAnArticle());
+		Assertions.assertFalse(u.isAnArticle());
 
 		u.setUrl("https://fr.wikipedia.org/wiki/On_est_encore_l%C3%A0_:_Bercy_2008");
-		Assertions.assertFalse(u.isAnArticle());
+		Assertions.assertTrue(u.isAnArticle());
 
 	}
 
 	@Test
 	public void testIsContributions() {
 		u.setUrl("https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Contributions/86.253.41.153");
-		Assertions.assertTrue(u.isAnArticle());
+		Assertions.assertFalse(u.isAnArticle());
 	}
 
 	@Test

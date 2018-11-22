@@ -119,7 +119,7 @@ public class Html extends Extracteur {
 			}
 			// System.out.println(table);
 			TraitementMap();
-
+			
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 
@@ -172,8 +172,10 @@ public class Html extends Extracteur {
 				tab = bodyTableau(tab, i, j, td);
 				i++;
 			}
+			
+		
 			//lectureTableau(tab);
-			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
+			//Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
 		}
 	}
 
@@ -362,7 +364,7 @@ public class Html extends Extracteur {
 		// t.recuperationPage();
 		// Html b = new Html("https://fr.wikipedia.org/wiki/Vialfr%C3%A8", ';',
 		// "chemin", "nomCSV", true, false);
-		Html b = new Html("https://fr.wikipedia.org/wiki/Jeux_mondiaux_f%C3%A9minins_de_1934", ';', "chemin", "nomCSV", true, false);
+		Html b = new Html("https://fr.wikipedia.org/wiki/James_Harden", ';', "chemin", "nomCSV", true, false);
 		
 		b.recuperationPage();
 

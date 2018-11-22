@@ -27,6 +27,12 @@ public class CommandLine implements ICommandLine {
      */
     public CommandLine(String commandLine){
 
+        this.delimit='\0';
+        this.url="";
+        this.nomCSV="";
+        this.cheminEntree="";
+        this.cheminCSV="";
+
         this.ligneDeCommande = commandLine;
 
         if(verifIntegriteCommandLine()){
@@ -155,6 +161,7 @@ public class CommandLine implements ICommandLine {
             String contenuImport = "";
             while (mImport.find()) {
                 contenuImport = mImport.group();
+                contenuImport = contenuImport.substring(8,contenuImport.length()-1);
             }
             if(contenuImport=="" || contenuImport==null){
                 System.out.print("Le chemin d'accès au fichier d'URLs à importer n'est pas renseigné");
@@ -167,6 +174,7 @@ public class CommandLine implements ICommandLine {
             String contenuURL = "";
             while (mURL.find()) {
                 contenuURL = mURL.group();
+                contenuURL = contenuURL.substring(5, contenuURL.length()-1);
             }
             if(contenuURL=="" || contenuURL==null){
                 System.out.println("L'url n'est pas renseignée");
@@ -208,6 +216,7 @@ public class CommandLine implements ICommandLine {
             
             while (mSave.find()) {
             	 contenuSave = mSave.group();
+            	 contenuSave = contenuSave.substring(6, contenuSave.length()-1);
             }
             
             if(contenuSave=="" || contenuSave==null){
@@ -237,6 +246,7 @@ public class CommandLine implements ICommandLine {
             Matcher mName=pName.matcher(this.ligneDeCommande);
             while (mName.find()) {
                 contenuName = mName.group();
+                contenuName = contenuName.substring(6, contenuName.length()-1);
             }
             if(contenuName=="" || contenuName==null){
                 System.out.println("Le nom du fichier de sortie n'est pas renseigné");
@@ -272,10 +282,15 @@ public class CommandLine implements ICommandLine {
             Pattern pDelimit=Pattern.compile("-delimit\\[.*?\\]");
             Matcher mDelimit = pDelimit.matcher(this.ligneDeCommande);
             while (mDelimit.find()) {
-                contenuDelimit = mDelimit.group().charAt(0);
+                String contenuDelimitTemp = mDelimit.group();
+                contenuDelimit = contenuDelimitTemp.substring(9, contenuDelimitTemp.length()-1).charAt(0);
             }
             if(!caracteresAutorises.contains(contenuDelimit)){
                 System.out.println("Le délimiteur saisi n'est pas pris en charge par Wikimatrix");
+                return false;
+            }
+            if(contenuDelimit=='\0'){
+                System.out.println("Le délimiteur n'a pas été renseigné");
                 return false;
             }
         } else if (nbDelimit>1){
@@ -355,10 +370,10 @@ public class CommandLine implements ICommandLine {
      * @param args
      * @date 15 novembre 2018
      */
-    /*
+
     public static void main(String[] args){
 
         CommandLine myCommand = new CommandLine("-html -wikicode -import[c:/urlWithAllDelimiteurs.txt] -delimit[,]");
     }
-    */
+
 }

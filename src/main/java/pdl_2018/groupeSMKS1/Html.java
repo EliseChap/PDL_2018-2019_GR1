@@ -29,6 +29,7 @@ public class Html extends Extracteur {
 		this.cheminCSV = cheminCSV;
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;
+		this.nomCSV = nomCSV;
 		lesTableaux = new ArrayList<Tableau>();
 		lesHtmltab = new HashMap<String, Element>();
 	}
@@ -41,6 +42,7 @@ public class Html extends Extracteur {
 	public String getNomTableau() {
 		return "";
 	}
+	
 
 	@Override
 	public void addTableau(Tableau leTableau) {

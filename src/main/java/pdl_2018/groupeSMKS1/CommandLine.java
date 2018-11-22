@@ -271,7 +271,7 @@ public class CommandLine implements ICommandLine {
         if (nbDelimit == 1) { //On vérifie l'intégrité du délimiteur : est-il autorisé par Wikimatrix ?
             Pattern pDelimit=Pattern.compile("-delimit\\[.*?\\]");
             Matcher mDelimit = pDelimit.matcher(this.ligneDeCommande);
-            while (mSave.find()) {
+            while (mDelimit.find()) {
                 contenuDelimit = mDelimit.group().charAt(0);
             }
             if(!caracteresAutorises.contains(contenuDelimit)){

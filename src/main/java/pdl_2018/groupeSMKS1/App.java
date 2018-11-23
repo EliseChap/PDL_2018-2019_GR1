@@ -5,6 +5,7 @@ public class App {
 	public static void main(String[] args) {
 	
 		
+		
 	/*	char delimit = ';';
 		String url ="https://fr.wikipedia.org/wiki/Stranger_Things";
 		String cheminCSV = "C:/Users/sullivand/Music/Desktop/";

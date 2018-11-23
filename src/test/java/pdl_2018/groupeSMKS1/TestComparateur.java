@@ -24,8 +24,7 @@ class TestComparateur {
 	
 	/*
 	 * Test nombre d erreur dans le contenu
-	 */
-	
+	 */	
 	@Test
 	public void comparaisonTest() {
 		

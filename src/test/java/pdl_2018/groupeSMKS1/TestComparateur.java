@@ -23,7 +23,7 @@ class TestComparateur {
 	}
 	
 	/*
-	 * Test nombre D'erreur dans le contenu
+	 * Test nombre d erreur dans le contenu
 	 */
 	
 	@Test
@@ -111,19 +111,5 @@ class TestComparateur {
 		Comparateur comparateur = new Comparateur(tab1, tab2);
 		Assertions.assertEquals(comparateur.ratioColonne(),100.0);
 	}
-
-	
-	/*
-	 * Test ratio nbre de colonne html
-	 */
-	@Test
-	public void ratioGeneraleTest() {
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
-		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.ratioGenerale(),35.0);
-
-	}
-
 }
 

@@ -12,7 +12,7 @@ class TestTableau {
 	
 	
 	/**
-	 * Test paramètre tableau
+	 * Test parametre tableau
 	 */
 	@Test
 	public void testObjectTableau() {

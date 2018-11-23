@@ -7,10 +7,11 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+
+
+import org.jsoup.nodes.*;
+import org.jsoup.select.*;
+import org.jsoup.parser.*;
 
 public class Html extends Extracteur {
 

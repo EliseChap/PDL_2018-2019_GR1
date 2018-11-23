@@ -6,7 +6,7 @@ after_success:
 script: 
 #- mvn install
 - mvn test
-#- mvn sonar:sonar
+- mvn sonar:sonar
 addons:
   sonarcloud:
     organization: "sullidai-github"

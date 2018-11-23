@@ -19,7 +19,6 @@ public class Comparateur implements IComparateur {
 		this.html = html;
 	}
 
-	
 	/*
 	 * TRAITEMENT LIGNE
 	 */
@@ -110,105 +109,28 @@ public class Comparateur implements IComparateur {
 	}
 
 	/*
-	 * TRAITEMENT CELLULE
-	 */
-
-	/**
-	 * Calculateur du nombre de cellule wiki
-	 * 
-	 * @return nombreCellule
-	 */
-
-	public int nombreCelluleWiki() {
-		int ligne = nombreLigneWiki();
-		int colonne = nombreColonneWiki();
-		return ligne * colonne;
-	}
-
-	/**
-	 * Calculateur du nombre de cellule wiki
-	 * 
-	 * @return nombreCellule
-	 */
-
-	public int nombreCelluleHtml() {
-		int ligne = nombreLigneHtml();
-		int colonne = nombreColonneHtml();
-		return ligne * colonne;
-	}
-
-	/*
 	 * TRAITEMENT CONTENU
 	 */
 
 	/**
 	 * Verification de la m�thode de comparaison partiel ou complet
 	 */
-	public void analyse() {
-		
+	public double analyse() {
+		double ratio;
 		if (ratioLigne() == 100 && ratioColonne() == 100) {
-				analyseComplet();
+			ratio = ratioContenu(analyseComplet());
 		} else {
-			analyseAlgoDiff();
+			ratio = -1;
 		}
-		
-		/*if (ratioLigne() == 100 && ratioColonne() == 100) {
-			if (nombreCelluleWiki() >= 100 || nombreCelluleHtml() >= 100) {
-				analysePartielle(tailleEchantillon(nombreCelluleWiki()));
-			} else {
-				analyseComplet();
-			}
-		} else {
-			analyseAlgoDiff();
-		}*/
+		return ratio;
 	}
 
-	private void analyseAlgoDiff() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	/**
-	 * Return le nombre de donn�e a analys�e
-	 * 
-	 * @param taillePopulation
-	 * @return tailleEchantillon
+	/*
+	 * if (ratioLigne() == 100 && ratioColonne() == 100) { if (nombreCelluleWiki()
+	 * >= 100 || nombreCelluleHtml() >= 100) {
+	 * analysePartielle(tailleEchantillon(nombreCelluleWiki())); } else {
+	 * analyseComplet(); } } else { analyseAlgoDiff(); } }
 	 */
-	public int tailleEchantillon(int taille) {
-		double z = Math.pow(1.96, 2); // 95%
-		double marge = Math.pow(0.05, 2);
-		double p = 0.5;
-		double numerateur = (z * p * (1 - p)) / marge;
-		double denominateur = 1 + ((z * p * (1 - p)) / (marge * taille));
-		return (int) (numerateur / denominateur);
-	}
-
-	/**
-	 * Analyse partielle du contenu cellule au hasard
-	 * 
-	 * @param i
-	 */
-	public int analysePartielle(int echantillon) {
-		int nombreDifference = 0;
-		for (int i = 0; i < echantillon; i++) {
-			int lig = aleatoire(html.length-1);
-			int col = aleatoire(html[0].length-1);
-
-			String strHtml = html[lig][col];
-			String strWiki = wiki[lig][col];
-			if (!strWiki.equals(strHtml)) {
-				nombreDifference++;
-				System.out.println("ligne :" + lig +" colonne :" +col+ " differente wiki" + " : " + strWiki);
-				System.out.println("ligne :" + lig +" colonne :" +col+ " differente wiki" + " : " + strHtml);
-			}
-		}
-		return nombreDifference;
-	}
-
-	public int aleatoire(int echantillon) {
-		return (int) (Math.random() * echantillon);
-	}
 
 	/**
 	 * M�thode qui parcourts l'ensemble des deux tableaux pour pouvoir trouver les
@@ -278,26 +200,73 @@ public class Comparateur implements IComparateur {
 	 * @date 17/11/2018
 	 */
 
-	public double ratioGenerale() {
-		System.out.println("ratiocol : " + ratioColonne());
-		System.out.println("ratiolig : " + ratioLigne());
-		System.out.println("ratiocon : " + ratioContenu(analyseComplet()));
+	/*
+	 * public double ratioGenerale() { System.out.println("ratiocol : " +
+	 * ratioColonne()); System.out.println("ratiolig : " + ratioLigne());
+	 * System.out.println("ratiocon : " + ratioContenu(analyseComplet()));
+	 * 
+	 * return ratioColonne() * 0.2 + ratioLigne() * 0.2 +
+	 * ratioContenu(analyseComplet()) * 0.4; }
+	 * 
+	 * private void analyseAlgoDiff() { // TODO Auto-generated method stub
+	 * 
+	 * }
+	 * 
+	 * 
+	 * /** Return le nombre de donn�e a analys�e
+	 * 
+	 * @param taillePopulation
+	 * 
+	 * @return tailleEchantillon
+	 */
+	/*
+	 * public int tailleEchantillon(int taille) { double z = Math.pow(1.96, 2); //
+	 * 95% double marge = Math.pow(0.05, 2); double p = 0.5; double numerateur = (z
+	 * * p * (1 - p)) / marge; double denominateur = 1 + ((z * p * (1 - p)) / (marge
+	 * * taille)); return (int) (numerateur / denominateur); }
+	 * 
+	 * /** Analyse partielle du contenu cellule au hasard
+	 * 
+	 * @param i
+	 */
+	/*
+	 * public int analysePartielle(int echantillon) { int nombreDifference = 0; for
+	 * (int i = 0; i < echantillon; i++) { int lig = aleatoire(html.length-1); int
+	 * col = aleatoire(html[0].length-1);
+	 * 
+	 * String strHtml = html[lig][col]; String strWiki = wiki[lig][col]; if
+	 * (!strWiki.equals(strHtml)) { nombreDifference++; System.out.println("ligne :"
+	 * + lig +" colonne :" +col+ " differente wiki" + " : " + strWiki);
+	 * System.out.println("ligne :" + lig +" colonne :" +col+ " differente wiki" +
+	 * " : " + strHtml); } } return nombreDifference; }
+	 * 
+	 * /*public int aleatoire(int echantillon) { return (int) (Math.random() *
+	 * echantillon); }
+	 */
 
-		return ratioColonne() * 0.2 + ratioLigne() * 0.2 + ratioContenu(analyseComplet()) * 0.4;
-	}
-	
+	/*
+	 * TRAITEMENT CELLULE
+	 */
 
+	/**
+	 * Calculateur du nombre de cellule wiki
+	 * 
+	 * @return nombreCellule
+	 */
 
-	public static void main(String[] args) {
-	    String[] l1 = { "ligne0","test"};
-	    String[] l2 = { "ligne12","test" };
+	/*
+	 * public int nombreCelluleWiki() { int ligne = nombreLigneWiki(); int colonne =
+	 * nombreColonneWiki(); return ligne * colonne; }
+	 */
 
-	   Diff diff = new Diff(l1,l2);
-	
-	   List t = diff.diff();
-	   System.out.println(t);
+	/**
+	 * Calculateur du nombre de cellule wiki
+	 * 
+	 * @return nombreCellule
+	 */
 
-
-	}
-
+	/*
+	 * public int nombreCelluleHtml() { int ligne = nombreLigneHtml(); int colonne =
+	 * nombreColonneHtml(); return ligne * colonne; }
+	 */
 }

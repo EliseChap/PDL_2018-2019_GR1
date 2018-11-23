@@ -45,6 +45,7 @@ public class CommandLine implements ICommandLine {
         } else {
             //Demander à l'utilisateur de saisir à nouveau la ligne de commande, en prenant compte des messages d'erreurs affichés. Comment on gère ça ?
         }
+        System.out.println("CommandLine");
     }
 
     /**

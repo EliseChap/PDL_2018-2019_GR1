@@ -3,10 +3,12 @@ package pdl_2018.groupeSMKS1;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.collections4.ListUtils;
+import org.incava.diff.Diff;
 
 public class Comparateur implements IComparateur {
 	private String[][] wiki;
@@ -143,17 +145,29 @@ public class Comparateur implements IComparateur {
 	 * Verification de la m�thode de comparaison partiel ou complet
 	 */
 	public void analyse() {
+		
 		if (ratioLigne() == 100 && ratioColonne() == 100) {
+				analyseComplet();
+		} else {
+			analyseAlgoDiff();
+		}
+		
+		/*if (ratioLigne() == 100 && ratioColonne() == 100) {
 			if (nombreCelluleWiki() >= 100 || nombreCelluleHtml() >= 100) {
 				analysePartielle(tailleEchantillon(nombreCelluleWiki()));
 			} else {
 				analyseComplet();
 			}
 		} else {
-			// r�flechir comment l'analys�
-			System.out.println("complexe insertion ???");
-		}
+			analyseAlgoDiff();
+		}*/
 	}
+
+	private void analyseAlgoDiff() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	/**
 	 * Return le nombre de donn�e a analys�e
@@ -271,19 +285,19 @@ public class Comparateur implements IComparateur {
 
 		return ratioColonne() * 0.2 + ratioLigne() * 0.2 + ratioContenu(analyseComplet()) * 0.4;
 	}
+	
+
 
 	public static void main(String[] args) {
-	    String[] l1 = { "1,2,4,7,9",",35,56,58,76" };
-	    String[] l2 = { "1,2,4,76,9",",35,56,58,7" };
+	    String[] l1 = { "ligne0","test"};
+	    String[] l2 = { "ligne12","test" };
 
-	   /* 
-	    Diff diff = new Diff(l1,l2);
-	    Diff.change script = diff.diff_2(false);
-	    DiffPrint.Base p = new DiffPrint.UnifiedPrint(l1,l2);
-	    StringWriter wtr = new StringWriter();
-	    p.setOutput(wtr);
-	    //p.print_header("test1","test2");
-	    p.print_script(script);*/
+	   Diff diff = new Diff(l1,l2);
+	
+	   List t = diff.diff();
+	   System.out.println(t);
+
+
 	}
 
 }

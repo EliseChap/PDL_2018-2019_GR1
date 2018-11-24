@@ -36,7 +36,6 @@ public class Wikitext extends AstVisitor<WtNode> {
 	private Map<String, WtBody> lesWikitab;
 	private int compteur = 0;
 
-	
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) {
 		this.domain = domain;
@@ -73,13 +72,8 @@ public class Wikitext extends AstVisitor<WtNode> {
 			PageId pageId = new PageId(pageTitle, -1);
 			ExpansionCallback callback = null;
 
-			// EngProcessedPage cp = engine.postprocess(pageId, contenu, null);
-
 			EngProcessedPage parse = engine.parse(pageId, contenu, callback);
 
-			// this.go(cp);
-
-			// System.out.println(parse);
 			parcourirNode(parse);
 			// testAffichage();
 		} catch (Exception e) {
@@ -105,12 +99,10 @@ public class Wikitext extends AstVisitor<WtNode> {
 
 		int compteur = 0;
 		while (e.size() > compteur) {
-
 			WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
 			if (attribut.toString().contains("wikitable")) {
 				return true;
 			}
-
 			compteur++;
 		}
 
@@ -120,31 +112,38 @@ public class Wikitext extends AstVisitor<WtNode> {
 	private String findCaption(WtTableCaption c) {
 		WtBody captionBody = c.getBody();
 		int comp = 0;
-
+		String titreCaption = "";
 		while (captionBody.size() > comp) {
 			if (captionBody.get(comp) instanceof WtText) {
 				WtText titre = (WtText) captionBody.get(comp);
-				return titre.getContent();
+				titreCaption = titreCaption + titre.getContent();
 			}
-			// ne pas oublier de mettre les textes des liens aussi
+			if (captionBody.get(comp) instanceof WtTemplate) {
+				WtTemplate titre = (WtTemplate) captionBody.get(comp);
+				titreCaption = titreCaption + getTextWtTemplate(titre);
+			}
+
 			comp++;
 		}
-		return "";
+		return titreCaption;
 	}
 
 	private String findHeader(WtTableHeader h) {
 		WtBody headerBody = h.getBody();
 		int comp = 0;
-
+		String titreHeader = "";
 		while (headerBody.size() > comp) {
 			if (headerBody.get(comp) instanceof WtText) {
 				WtText titre = (WtText) headerBody.get(comp);
-				return titre.getContent();
+				titreHeader = titreHeader + titre.getContent();
 			}
-			// ne pas oublier de mettre les textes des liens aussi
+			if (headerBody.get(comp) instanceof WtTemplate) {
+				WtTemplate titre = (WtTemplate) headerBody.get(comp);
+				titreHeader = titreHeader + getTextWtTemplate(titre);
+			}
 			comp++;
 		}
-		return "";
+		return titreHeader;
 	}
 
 	private String getTextWtTemplate(WtTemplate t) {

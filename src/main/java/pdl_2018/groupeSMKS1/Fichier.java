@@ -110,10 +110,12 @@ public class Fichier {
      * @date 15 novembre 2018
      */
     public static void main(String[] args){
-        Fichier monFichier = new Fichier("c:/urlWithAllDelimiteurs.txt", ';', "moncsv", "monchemincsv", true, false);
 
-        for(int k=0; k<monFichier.getLesURLs().length; k++){
+        Fichier monFichier = new Fichier("c:/urlProf.txt", ';', "moncsv", "monchemincsv", true, false);
+
+        for(int k=0; k<monFichier.getLesURLs().size(); k++){
             System.out.println(monFichier.getLesURLs().get(k).getmyUrl());
         }
+
     }
 }

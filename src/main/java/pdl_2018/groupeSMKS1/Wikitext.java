@@ -429,7 +429,7 @@ public class Wikitext extends AstVisitor<WtNode> {
 
 			// System.out.println(parse);
 			parcourirNode(parse);
-			//testAffichage();
+			// testAffichage();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -495,6 +495,49 @@ public class Wikitext extends AstVisitor<WtNode> {
 		return "";
 	}
 
+	private String getTextWtTemplate(WtTemplate t) {
+		Iterator<WtNode> l = t.iterator();
+		String valeur = "";
+		while (l.hasNext()) {
+			WtNode node = l.next();
+			if (node.getNodeType() == WtTemplate.NT_NAME) {
+				int comp = 0;
+
+				while (node.size() > comp) {
+					if (node.get(comp) instanceof WtText) {
+						WtText titre = (WtText) node.get(comp);
+						valeur = titre.getContent();
+					}
+					comp++;
+				}
+			}
+			getTextWtInternalLink(node);
+		}
+		return valeur;
+	}
+
+	private String getTextWtInternalLink(WtNode i) {
+		Iterator<WtNode> l = i.iterator();
+		String valeur = "";
+		while (l.hasNext()) {
+			WtNode node = l.next();
+			if (node.getNodeType() == WtInternalLink.NT_PAGE_NAME) {
+				int comp = 0;
+
+				while (node.size() > comp) {
+					if (node.get(comp) instanceof WtText) {
+						WtText titre = (WtText) node.get(comp);
+						valeur = titre.getContent();
+					}
+					comp++;
+				}
+
+			}
+			getTextWtInternalLink(node);
+		}
+		return valeur;
+	}
+
 	private void findCol(WtTableRow r, List<String> rows) {
 		WtBody row = r.getBody();
 		int comp = 0;
@@ -504,17 +547,26 @@ public class Wikitext extends AstVisitor<WtNode> {
 				WtTableCell cellule = (WtTableCell) row.get(comp);
 				WtBody celluleBody = cellule.getBody();
 				int comp2 = 0;
+				String text = "";
 				while (celluleBody.size() > comp2) {
+					String textPartiel = "";
 					if (celluleBody.get(comp2) instanceof WtText) {
 						WtText titre = (WtText) celluleBody.get(comp2);
-						rows.add(titre.getContent());
+						textPartiel = titre.getContent();
 					}
-					
-					//WtTemplate + WtInternalLink
-					
-					// ne pas oublier de mettre les textes des liens aussi
+
+					if (celluleBody.get(comp2) instanceof WtTemplate) {
+						WtTemplate titre = (WtTemplate) celluleBody.get(comp2);
+						textPartiel = getTextWtTemplate(titre);
+					}
+					if (celluleBody.get(comp2) instanceof WtInternalLink) {
+						WtInternalLink titre = (WtInternalLink) celluleBody.get(comp2);
+						textPartiel = getTextWtInternalLink(titre);
+					}
+					text = text + textPartiel;
 					comp2++;
 				}
+				rows.add(text);
 			}
 			// ne pas oublier de mettre les textes des liens aussi
 			comp++;
@@ -557,19 +609,19 @@ public class Wikitext extends AstVisitor<WtNode> {
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							// remplir list
 							WtTableRow row = (WtTableRow) node;
-							findCol(row,  rowsList);
+							findCol(row, rowsList);
 						}
 						// creer tableau avec liste
 					}
 
 					String[][] tab = new String[rowsList.size()][headerList.size()];
-					
-					System.out.println("***55****");
-					
-					headerList.forEach(item->System.out.println(item));
-					rowsList.forEach(item->System.out.println(item));
-					
-					System.out.println("****55***");
+
+					System.out.println("*******");
+
+					headerList.forEach(item -> System.out.println(item));
+					rowsList.forEach(item -> System.out.println(item));
+
+					System.out.println("*******");
 					// System.out.println(table.getBody());
 					lesWikitab.put(titre, table.getBody());
 					comp++;
@@ -734,8 +786,7 @@ public class Wikitext extends AstVisitor<WtNode> {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Josef_Newgarden", ';', "chemin", " nomCSV", false,
-				true);
+		Wikitext t = new Wikitext("fr.wikipedia.org", "Josef_Newgarden", ';', "chemin", " nomCSV", false, true);
 		t.recuperationPage();
 		// t.traitementMap2();
 //		Set cles = t.lesWikitab.keySet();

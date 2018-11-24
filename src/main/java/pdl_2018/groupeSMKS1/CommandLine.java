@@ -60,6 +60,11 @@ public class CommandLine implements ICommandLine {
 
         boolean jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
 
+        if(this.ligneDeCommande.substring(0, 9)!="wikimatrix"){
+            jetonIntegrite = false;
+            System.out.println("La commande saisie n'est pas une commande Wikimatrix");
+        }
+
         if(!verifUrlOrFichierChoice()){
             jetonIntegrite = false;
         }
@@ -93,8 +98,7 @@ public class CommandLine implements ICommandLine {
             System.out.println("La syntaxe de la commande est erronée : un même paramètre est saisi plusieurs fois");
             return false;
         } else if ((nbHTML < 1) && (nbWikicode < 1)) {
-            System.out.println(
-                    "Vous devez obligatoirement indiquer une méthode d'extraction, en ajoutant -html ou -wikicode");
+            System.out.println("Vous devez obligatoirement indiquer une méthode d'extraction, en ajoutant -html ou -wikicode");
             return false;
         }else{
             if(nbHTML==1 && nbWikicode==1){
@@ -123,8 +127,7 @@ public class CommandLine implements ICommandLine {
         int nbImport = StringUtils.countMatches(this.ligneDeCommande, "-import");
         boolean jetonLocal = true;
         if (nbURL > 1) {
-            System.out.println(
-                    "Pour lancer l'extraction à partir de plusieurs URLs, veuillez utiliser la commande -import");
+            System.out.println("Pour lancer l'extraction à partir de plusieurs URLs, veuillez utiliser la commande -import");
             jetonLocal = false;
         }
         if (nbImport > 1) {

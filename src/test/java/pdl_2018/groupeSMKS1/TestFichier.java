@@ -23,7 +23,7 @@ public class TestFichier {
     @BeforeAll
     public static void initialise() {
 
-        f = new Fichier("c:/mesURLs.txt", ' ', "", "", true, false);
+        f = new Fichier("c:/urlWithAllDelimiteurs.txt", ' ', "", "", true, false);
 
     }
 
@@ -35,15 +35,35 @@ public class TestFichier {
     public void testTraitementFichierEntree() {
 
         ArrayList<String> monTableauDeLignes = new ArrayList();
-        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes;https://fr.wikipedia.org/wiki/Haute-Bretagne");
-        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Métro_de_Rennes");
-        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, 2 url sur premiere ligne et 1 url sur 2e ligne
+        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes,https://fr.wikipedia.org/wiki/Soleil;https://fr.wikipedia.org/wiki/Neoval");
+        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/VAL_208");
+        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, tous types de délimiteurs
 
         monTableauDeLignes = new ArrayList();
-        f.setCheminFichierEntree("c:/mesURL.txt");
-        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier invalide
+        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes;https://fr.wikipedia.org/wiki/Soleil;https://fr.wikipedia.org/wiki/Neoval;https://fr.wikipedia.org/wiki/VAL_208");
+        f.setCheminFichierEntree("c:/urlWithDelimitPointVirgule.txt");
+        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, uniquement point virgule
 
-        //ça marche mais y'a un problème d'encodage visiblement
+        monTableauDeLignes = new ArrayList();
+        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes,https://fr.wikipedia.org/wiki/Soleil,https://fr.wikipedia.org/wiki/Neoval,https://fr.wikipedia.org/wiki/VAL_208");
+        f.setCheminFichierEntree("c:/urlWithDelimitVirgule.txt");
+        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, uniquement virgule
+
+        monTableauDeLignes = new ArrayList();
+        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes");
+        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Soleil");
+        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Neoval");
+        monTableauDeLignes.add("https://fr.wikipedia.org/wiki/VAL_208");
+        f.setCheminFichierEntree("c:/urlWithDelimitRetourLigne.txt");
+        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, retours à la ligne uniquement
+
+        monTableauDeLignes = new ArrayList();
+        f.setCheminFichierEntree("c:/urlVide.txt");
+        Assertions.assertTrue(f.traitementFichierEntree().length==0); //Test avec fichier valide, mais vide
+
+        monTableauDeLignes = new ArrayList();
+        f.setCheminFichierEntree("c:/urlVide.docx");
+        Assertions.assertTrue(f.traitementFichierEntree().length==0); //Test avec fichier invalide
     }
 
     /**
@@ -52,16 +72,17 @@ public class TestFichier {
      */
     @Test
     public void testDecoupageAndGenerationURLs() {
-        f.setCheminFichierEntree("c:/mesURLs.txt");
+        f.setCheminFichierEntree("c:/urlWithAllDelimiteurs.txt");
         ArrayList<Url> mesURLs = new ArrayList(); //Test avec fichier dont les lignes ont bien été récupérées
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Rennes",' ', "", "", true, false));
-        mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Haute-Bretagne",' ', "", "", true, false));
-        mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Métro_de_Rennes",' ', "", "", true, false));
+        mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Soleil",' ', "", "", true, false));
+        mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Neoval",' ', "", "", true, false));
+        mesURLs.add(new Url("https://fr.wikipedia.org/wiki/VAL_208",' ', "", "", true, false));
         Assertions.assertEquals(f.getLesURLs(), mesURLs);
 
-        f.setCheminFichierEntree("c:/mesURL.txt"); //Test avec un fichier invalide
+        f.setCheminFichierEntree("c:/mesURL.docx"); //Test avec un fichier invalide
         mesURLs = new ArrayList();
-        Assertions.assertEquals(f.getLesURLs(), mesURLs);
+        Assertions.assertTrue(f.getLesURLs().length==0);
 
     }
 

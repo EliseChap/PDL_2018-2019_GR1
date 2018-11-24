@@ -36,9 +36,9 @@ public class CommandLine implements ICommandLine {
         this.ligneDeCommande = commandLine;
 
         if(verifIntegriteCommandLine()){
-            if(this.url!=null && this.cheminEntree==null){
+            if(this.url!="" && this.cheminEntree==""){
                 Url monUrl = new Url(this.url, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
-            }else if (this.url==null && this.cheminEntree!=null){
+            }else if (this.url=="" && this.cheminEntree!=""){
                 Fichier monFichier = new Fichier(this.cheminEntree, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
             }
 

@@ -131,8 +131,8 @@ public class TestCommandLine {
 
         myCommand.setLigneDeCommande("-import[c:/users/admin/mesBellesUrl.txt]");
         Assertions.assertTrue(myCommand4.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand4.getUrl(), "");
-        Assertions.assertEquals(myCommand4.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
+        Assertions.assertEquals(myCommand.getUrl(), "");
+        Assertions.assertEquals(myCommand.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
 
     }
 }

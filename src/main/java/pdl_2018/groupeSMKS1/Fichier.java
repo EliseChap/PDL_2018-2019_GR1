@@ -112,6 +112,8 @@ public class Fichier {
     public static void main(String[] args){
         Fichier monFichier = new Fichier("c:/urlWithAllDelimiteurs.txt", ';', "moncsv", "monchemincsv", true, false);
 
-        System.out.println(monFichier.getLesURLs().get(2).getmyUrl());
+        for(int k=0; k<monFichier.getLesURLs().length; k++){
+            System.out.println(monFichier.getLesURLs().get(k).getmyUrl());
+        }
     }
 }

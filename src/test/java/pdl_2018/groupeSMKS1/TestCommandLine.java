@@ -14,18 +14,22 @@ public class TestCommandLine {
     @Test
     public void testVerifDelimiteur() {
 
-        //Tests de la commande -import uniquement
-        CommandLine myCommand = new CommandLine("-import[;]");
+        //Tests de la commande -delimit uniquement
+        CommandLine myCommand = new CommandLine("-delimit[;]");
         Assertions.assertTrue(myCommand.verifDelimiteur(), "true");
         Assertions.assertEquals(myCommand.getDelimit(), ';');
 
-        CommandLine myCommand2 = new CommandLine("-import[]");
-        Assertions.assertTrue(myCommand2.verifDelimiteur(), "false");
-        Assertions.assertEquals(myCommand2.getDelimit(), null);
+        myCommand.setLigneDeCommande("-delimit[]");
+        Assertions.assertTrue(myCommand.verifDelimiteur(), "false");
+        Assertions.assertEquals(myCommand.getDelimit(), '\0');
 
-        CommandLine myCommand3 = new CommandLine("import[;]");
-        Assertions.assertTrue(myCommand3.verifDelimiteur(), "false");
-        Assertions.assertEquals(myCommand3.getDelimit(), null);
+        myCommand.setLigneDeCommande("");
+        Assertions.assertTrue(myCommand.verifDelimiteur(), "true");
+        Assertions.assertEquals(myCommand.getDelimit(), '\0');
+
+        myCommand.setLigneDeCommande("delimit[unMotQuelconque]");
+        Assertions.assertTrue(myCommand.verifDelimiteur(), "false");
+        Assertions.assertEquals(myCommand.getDelimit(), '\0');
     }
 
     /**
@@ -39,30 +43,30 @@ public class TestCommandLine {
         Assertions.assertTrue(myCommand.getExtraHTML());
         Assertions.assertFalse(myCommand.getExtraWiki());
 
-        CommandLine myCommand2 = new CommandLine("-wiki");
-        Assertions.assertTrue(myCommand2.verifHtmlOrWikicodeChoice());
-        Assertions.assertTrue(myCommand2.getExtraWiki());
-        Assertions.assertFalse(myCommand2.getExtraHTML());
+        myCommand.setLigneDeCommande("-wiki");
+        Assertions.assertTrue(myCommand.verifHtmlOrWikicodeChoice());
+        Assertions.assertTrue(myCommand.getExtraWiki());
+        Assertions.assertFalse(myCommand.getExtraHTML());
 
-        CommandLine myCommand3 = new CommandLine("-wiki -html");
-        Assertions.assertTrue(myCommand3.verifHtmlOrWikicodeChoice());
-        Assertions.assertTrue(myCommand3.getExtraWiki());
-        Assertions.assertTrue(myCommand3.getExtraHTML());
+        myCommand.setLigneDeCommande("-wiki -html");
+        Assertions.assertTrue(myCommand.verifHtmlOrWikicodeChoice());
+        Assertions.assertTrue(myCommand.getExtraWiki());
+        Assertions.assertTrue(myCommand.getExtraHTML());
 
-        CommandLine myCommand4 = new CommandLine("");
-        Assertions.assertFalse(myCommand4.verifHtmlOrWikicodeChoice());
-        Assertions.assertFalse(myCommand4.getExtraWiki());
-        Assertions.assertFalse(myCommand4.getExtraHTML());
+        myCommand.setLigneDeCommande("");
+        Assertions.assertFalse(myCommand.verifHtmlOrWikicodeChoice());
+        Assertions.assertFalse(myCommand.getExtraWiki());
+        Assertions.assertFalse(myCommand.getExtraHTML());
 
-        CommandLine myCommand5 = new CommandLine("html");
-        Assertions.assertFalse(myCommand5.verifHtmlOrWikicodeChoice());
-        Assertions.assertFalse(myCommand5.getExtraHTML());
-        Assertions.assertFalse(myCommand5.getExtraWiki());
+        myCommand.setLigneDeCommande("html");
+        Assertions.assertFalse(myCommand.verifHtmlOrWikicodeChoice());
+        Assertions.assertFalse(myCommand.getExtraHTML());
+        Assertions.assertFalse(myCommand.getExtraWiki());
 
-        CommandLine myCommand6 = new CommandLine("wiki");
-        Assertions.assertFalse(myCommand6.verifHtmlOrWikicodeChoice());
-        Assertions.assertFalse(myCommand6.getExtraWiki());
-        Assertions.assertFalse(myCommand6.getExtraHTML());
+        myCommand.setLigneDeCommande("wiki");
+        Assertions.assertFalse(myCommand.verifHtmlOrWikicodeChoice());
+        Assertions.assertFalse(myCommand.getExtraWiki());
+        Assertions.assertFalse(myCommand.getExtraHTML());
     }
 
     /**
@@ -73,19 +77,15 @@ public class TestCommandLine {
 
         CommandLine myCommand = new CommandLine("-save");
         Assertions.assertFalse(myCommand.verifRepertoireSortie());
-        Assertions.assertTrue(myCommand.getCheminCSV()==null);
+        Assertions.assertTrue(myCommand.getCheminCSV()=="");
 
-        CommandLine myCommand2 = new CommandLine("-save[]");
-        Assertions.assertFalse(myCommand2.verifRepertoireSortie());
-        Assertions.assertTrue(myCommand2.getCheminCSV()==null);
+        myCommand.setLigneDeCommande("-save[]");
+        Assertions.assertFalse(myCommand.verifRepertoireSortie());
+        Assertions.assertTrue(myCommand.getCheminCSV()=="");
 
-        CommandLine myCommand3 = new CommandLine("-save[c:/users/admin]");
-        Assertions.assertFalse(myCommand3.verifRepertoireSortie());
-        Assertions.assertTrue(myCommand3.getCheminCSV()==null);
-
-        CommandLine myCommand4 = new CommandLine("-save[c:/users/admin/]");
-        Assertions.assertFalse(myCommand4.verifRepertoireSortie());
-        Assertions.assertEquals(myCommand4.getCheminCSV(), "c:/users/admin");
+        myCommand.setLigneDeCommande("-save[c:/users/admin]");
+        Assertions.assertTrue(myCommand.verifRepertoireSortie());
+        Assertions.assertEquals(myCommand.getCheminCSV(), "c:/users/admin");
 
     }
 
@@ -97,19 +97,15 @@ public class TestCommandLine {
 
         CommandLine myCommand = new CommandLine("-name");
         Assertions.assertFalse(myCommand.verifNomSortie());
-        Assertions.assertTrue(myCommand.getNomCSV()==null);
+        Assertions.assertTrue(myCommand.getNomCSV()=="");
 
-        CommandLine myCommand2 = new CommandLine("-name[]");
-        Assertions.assertFalse(myCommand2.verifNomSortie());
-        Assertions.assertTrue(myCommand2.getNomCSV()==null);
+        myCommand.setLigneDeCommande("-name[]");
+        Assertions.assertFalse(myCommand.verifNomSortie());
+        Assertions.assertTrue(myCommand.getNomCSV()=="");
 
-        CommandLine myCommand3 = new CommandLine("-name[monBeauTableauWiki]");
-        Assertions.assertTrue(myCommand3.verifRepertoireSortie());
-        Assertions.assertEquals(myCommand3.getNomCSV(), "");
-
-        CommandLine myCommand4 = new CommandLine("-name[monBeauTableauWiki.csv]");
-        Assertions.assertFalse(myCommand4.verifRepertoireSortie());
-        Assertions.assertEquals(myCommand4.getNomCSV(), "monBeauTableauWiki.csv");
+        myCommand.setLigneDeCommande("-name[monBeauTableauWiki.csv]");
+        Assertions.assertFalse(myCommand.verifRepertoireSortie());
+        Assertions.assertEquals(myCommand.getNomCSV(), "monBeauTableauWiki.csv");
 
     }
 
@@ -123,28 +119,20 @@ public class TestCommandLine {
         Assertions.assertEquals(myCommand.getUrl(), "");
         Assertions.assertEquals(myCommand.getCheminEntree(), "");
 
-        CommandLine myCommand2 = new CommandLine("-url[https://fr.wikipedia.org/rennes]"); // Test URL valide
-        Assertions.assertTrue(myCommand2.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand2.getUrl(), "https://fr.wikipedia.org/rennes");
-        Assertions.assertEquals(myCommand2.getCheminEntree(), "");
+        myCommand.setLigneDeCommande("-url[https://fr.wikipedia.org/rennes]"); // Test URL valide
+        Assertions.assertTrue(myCommand.verifUrlOrFichierChoice());
+        Assertions.assertEquals(myCommand.getUrl(), "https://fr.wikipedia.org/rennes");
+        Assertions.assertEquals(myCommand.getCheminEntree(), "");
 
-        CommandLine myCommand3 = new CommandLine("-url[https://fr.wikipedia.org/rennes] -import[c:/users/admin/mesBellesUrl.txt]");
-        Assertions.assertFalse(myCommand3.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand3.getUrl(), "");
-        Assertions.assertEquals(myCommand3.getCheminEntree(), "");
+        myCommand.setLigneDeCommande("-url[https://fr.wikipedia.org/rennes] -import[c:/users/admin/mesBellesUrl.txt]");
+        Assertions.assertFalse(myCommand.verifUrlOrFichierChoice());
+        Assertions.assertEquals(myCommand.getUrl(), "");
+        Assertions.assertEquals(myCommand.getCheminEntree(), "");
 
-        CommandLine myCommand4 = new CommandLine("-import[c:/users/admin/mesBellesUrl.txt]");
+        myCommand.setLigneDeCommande("-import[c:/users/admin/mesBellesUrl.txt]");
         Assertions.assertTrue(myCommand4.verifUrlOrFichierChoice());
         Assertions.assertEquals(myCommand4.getUrl(), "");
         Assertions.assertEquals(myCommand4.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
 
-        CommandLine myCommand5 = new CommandLine("-url[https://es.wikipedia.org/rennes]"); //Test URL invalide
-        Assertions.assertFalse(myCommand5.verifUrlOrFichierChoice());
-
-        CommandLine myCommand6 = new CommandLine("-import[c:/users/admin/mesBellesUrl.docx]"); //Test répertoire d'entrée invalide
-        Assertions.assertFalse(myCommand6.verifUrlOrFichierChoice());
-
-        CommandLine myCommand7 = new CommandLine("-import[c:/users/admin/mesBellesUrl.txt]"); //Test répertoire d'entrée valide
-        Assertions.assertTrue(myCommand7.verifUrlOrFichierChoice());
     }
 }

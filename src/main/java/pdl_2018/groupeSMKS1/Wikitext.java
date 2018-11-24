@@ -429,7 +429,7 @@ public class Wikitext extends AstVisitor<WtNode> {
 
 			// System.out.println(parse);
 			parcourirNode(parse);
-			testAffichage();
+			//testAffichage();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -506,9 +506,12 @@ public class Wikitext extends AstVisitor<WtNode> {
 				int comp2 = 0;
 				while (celluleBody.size() > comp2) {
 					if (celluleBody.get(comp2) instanceof WtText) {
-						WtText titre = (WtText) celluleBody.get(comp);
-						rows.add(titre.toString());
+						WtText titre = (WtText) celluleBody.get(comp2);
+						rows.add(titre.getContent());
 					}
+					
+					//WtTemplate + WtInternalLink
+					
 					// ne pas oublier de mettre les textes des liens aussi
 					comp2++;
 				}
@@ -561,7 +564,12 @@ public class Wikitext extends AstVisitor<WtNode> {
 
 					String[][] tab = new String[rowsList.size()][headerList.size()];
 					
+					System.out.println("***55****");
 					
+					headerList.forEach(item->System.out.println(item));
+					rowsList.forEach(item->System.out.println(item));
+					
+					System.out.println("****55***");
 					// System.out.println(table.getBody());
 					lesWikitab.put(titre, table.getBody());
 					comp++;
@@ -726,7 +734,7 @@ public class Wikitext extends AstVisitor<WtNode> {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_de_football", ';', "chemin", " nomCSV", false,
+		Wikitext t = new Wikitext("fr.wikipedia.org", "Josef_Newgarden", ';', "chemin", " nomCSV", false,
 				true);
 		t.recuperationPage();
 		// t.traitementMap2();

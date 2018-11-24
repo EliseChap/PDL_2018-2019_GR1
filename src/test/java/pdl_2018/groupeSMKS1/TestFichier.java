@@ -72,19 +72,20 @@ public class TestFichier {
      */
     @Test
     public void testDecoupageAndGenerationURLs() {
-        f.setCheminFichierEntree("c:/urlWithAllDelimiteurs.txt");
+        f = new Fichier("c:/urlWithAllDelimiteurs.txt", ' ', "", "", true, false);
+
         ArrayList<Url> mesURLs = new ArrayList(); //Test avec fichier dont les lignes ont bien été récupérées
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Rennes",' ', "", "", true, false));
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Soleil",' ', "", "", true, false));
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Neoval",' ', "", "", true, false));
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/VAL_208",' ', "", "", true, false));
         for(int i=0; i<mesURLs.size(); i++){
-            Assertions.assertEquals(f.getLesURLs().get(i).getmyUrl(), mesURLs.get(i).getmyUrl());
+            Assertions.assertEquals(f.getLesURLs().get(i).getUrl(), mesURLs.get(i).getUrl());
         }
 
+        f = new Fichier("c:/urlWithAllDelimiteurs.docx", ' ', "", "", true, false);
 
-        f.setCheminFichierEntree("c:/mesURL.docx"); //Test avec un fichier invalide
-        mesURLs = new ArrayList();
+        //f.setCheminFichierEntree("c:/mesURL.docx"); //Test avec un fichier invalide
         Assertions.assertTrue(f.getLesURLs().size()==0);
 
     }

@@ -114,7 +114,7 @@ public class TestCommandLine {
      */
     @Test
     public void testVerifUrlOrFichierChoice(){
-        CommandLine myCommand = new CommandLine("");
+        CommandLine myCommand = new CommandLine("-url[]");
         Assertions.assertFalse(myCommand.verifUrlOrFichierChoice());
         Assertions.assertEquals(myCommand.getUrl(), "");
         Assertions.assertEquals(myCommand.getCheminEntree(), "");
@@ -130,7 +130,7 @@ public class TestCommandLine {
         Assertions.assertEquals(myCommand.getCheminEntree(), "");
 
         myCommand.setLigneDeCommande("-import[c:/users/admin/mesBellesUrl.txt]");
-        Assertions.assertTrue(myCommand4.verifUrlOrFichierChoice());
+        Assertions.assertTrue(myCommand.verifUrlOrFichierChoice());
         Assertions.assertEquals(myCommand.getUrl(), "");
         Assertions.assertEquals(myCommand.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
 

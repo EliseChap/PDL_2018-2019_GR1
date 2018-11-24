@@ -59,11 +59,11 @@ public class TestFichier {
 
         monTableauDeLignes = new ArrayList();
         f.setCheminFichierEntree("c:/urlVide.txt");
-        Assertions.assertTrue(f.traitementFichierEntree().length==0); //Test avec fichier valide, mais vide
+        Assertions.assertTrue(f.traitementFichierEntree().size()==0); //Test avec fichier valide, mais vide
 
         monTableauDeLignes = new ArrayList();
         f.setCheminFichierEntree("c:/urlVide.docx");
-        Assertions.assertTrue(f.traitementFichierEntree().length==0); //Test avec fichier invalide
+        Assertions.assertTrue(f.traitementFichierEntree().size()==0); //Test avec fichier invalide
     }
 
     /**
@@ -78,11 +78,14 @@ public class TestFichier {
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Soleil",' ', "", "", true, false));
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Neoval",' ', "", "", true, false));
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/VAL_208",' ', "", "", true, false));
-        Assertions.assertEquals(f.getLesURLs(), mesURLs);
+        for(int i=0; i<mesURLs.size(); i++){
+            Assertions.assertEquals(f.getLesURLs().get(i).getmyUrl(), mesURLs.get(i).getmyUrl());
+        }
+
 
         f.setCheminFichierEntree("c:/mesURL.docx"); //Test avec un fichier invalide
         mesURLs = new ArrayList();
-        Assertions.assertTrue(f.getLesURLs().length==0);
+        Assertions.assertTrue(f.getLesURLs().size()==0);
 
     }
 

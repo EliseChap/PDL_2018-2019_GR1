@@ -19,9 +19,10 @@ public class Csv implements ICsv {
 	private String cheminCsv;
 	private String nomCsv;
 	private String[][] tableau;
+	private String nomTab;
 	private static Map<String, Boolean> separateurAutomatique = new HashMap<>();
 
-	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2) {
+	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2, String nomTab) {
 
 		// Verification si delimitation est null
 		if (pdelimit == '\u0000') {
@@ -30,12 +31,10 @@ public class Csv implements ICsv {
 			delimit = pdelimit;
 		}
 		// Verification si nom est null
-		if (pnomCsv == null || pnomCsv == "") {
-			nomCsv = "WikiMatrix.csv";
-		} else {
-			nomCsv = pnomCsv;
-		}
-
+		this.nomTab=nomTab;
+		nomCsv = pnomCsv;
+		nomCsv = choixNomCsv();
+	
 		// Verification si cheminCsv est null
 		if (pcheminCsv == null) {
 			cheminCsv = "";
@@ -46,6 +45,24 @@ public class Csv implements ICsv {
 		initialisationSeparateurAutomatique();
 		exporterCSV();
 		System.out.println("fin");
+	}
+
+	private String choixNomCsv() {
+		if (nomCsv == null || nomCsv == "") {
+			if(nomTab == null || nomTab == "") {
+				nomCsv = "WikiMatrix.csv";
+			}
+			else {
+				nomCsv=nomTab+".csv";
+			}
+			
+		} else {
+			nomCsv = nomCsv;
+		}
+		return nomCsv;
+
+		
+		
 	}
 
 	@Override

@@ -43,10 +43,11 @@ public class SuperComparateur {
 		ArrayList<Url> c = monFichier.getLesURLs();
 	 
 		Iterator<Url> it = c.iterator();
-		 
+		String url = new String();
+		Url s = new Url(null, ';', null, null, false, false);
 		while (it.hasNext()) {
-		       Url s = it.next();
-		       String url = s.getUrl();
+		       s = it.next();
+		       url = s.getUrl();
 		       parcourirUrl(s, url);
 		}
 	}

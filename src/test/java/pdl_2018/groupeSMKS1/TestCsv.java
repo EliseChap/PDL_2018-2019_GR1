@@ -32,9 +32,9 @@ public class TestCsv extends TestCase {
 	public void testObjectCsvStandard() {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "C:/Users/sullivand/Music/Desktop/Nouveau dossier/", "WikiMatrix.csv", tab,"nomTab");
+		Csv csv = new Csv(';', "", "WikiMatrix.csv", tab,"nomTab");
 		Assertions.assertEquals(csv.getDelimit(), ';');
-		Assertions.assertEquals(csv.getCheminCsv(), "C:/Users/sullivand/Music/Desktop/Nouveau dossier/");
+		Assertions.assertEquals(csv.getCheminCsv(), "");
 		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
 	}
 

@@ -55,7 +55,7 @@ public class SuperComparateur {
 		ArrayList<Extracteur> c = s.getExtracteur();
 		 
 		Iterator<Extracteur> it = c.iterator();
-		 System.out.println(it);
+	
 		while (it.hasNext()) {
 			
 		       Extracteur e = it.next();

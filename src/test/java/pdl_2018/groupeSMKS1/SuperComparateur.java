@@ -44,12 +44,12 @@ public class SuperComparateur {
 		 
 		while (it.hasNext()) {
 		       Url s = it.next();
-		       URL url = s.getmyUrl();
+		       String url = s.getUrl();
 		       parcourirUrl(s, url);
 		}
 	}
 
-	private static void parcourirUrl(Url url, URL strUrl) {
+	private static void parcourirUrl(Url url, String strUrl) {
 		
 	
 		ArrayList<Extracteur> c = url.getExtracteur();
@@ -66,7 +66,7 @@ public class SuperComparateur {
 		
 	}
 
-	private static void parcourirLesTableaux(ArrayList<Tableau> html, ArrayList<Tableau> wiki, URL strUrl) {
+	private static void parcourirLesTableaux(ArrayList<Tableau> html, ArrayList<Tableau> wiki, String strUrl) {
 		
 		int i = 0;
 		Iterator<Tableau> itHtml = html.iterator();

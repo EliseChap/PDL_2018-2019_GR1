@@ -53,12 +53,12 @@ public class SuperComparateur {
 
 	private static void parcourirUrl(Url url, String strUrl) {
 		
-	/*
+	
 		ArrayList<Extracteur> c = url.getExtracteur();
 		 
 		Iterator<Extracteur> it = c.iterator();
 	
-		while (it.hasNext()) {
+	/*	while (it.hasNext()) {
 			
 		       Extracteur extra = it.next();
 		       ArrayList<Tableau> html = extra.getLesTableaux();

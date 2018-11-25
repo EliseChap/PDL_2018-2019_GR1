@@ -118,12 +118,12 @@
 		</dependency>
 
 
-		<!-- Non Utilisé <dependency> <groupId>org.incava</groupId> <artifactId>java-diff</artifactId> 
+		 <dependency> <groupId>org.incava</groupId> <artifactId>java-diff</artifactId> 
 			<version>1.1.2</version> </dependency> <dependency> <groupId>com.bitplan</groupId><artifactId>mediawiki-japi</artifactId> 
 			<version>0.1.02</version> </dependency> <dependency> <groupId>net.sourceforge</groupId> 
 			<artifactId>jwbf</artifactId> <version>3.1.1</version> </dependency> <dependency> 
 			<groupId>ch.qos.logback</groupId> <artifactId>logback-classic</artifactId> 
-			<version>1.2.3</version> <scope>test</scope> </dependency> -->
+			<version>1.2.3</version> <scope>test</scope> </dependency>
 
 	</dependencies>
 	<ciManagement>

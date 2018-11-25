@@ -9,6 +9,9 @@ import org.junit.jupiter.api.Disabled;
 
 import pdl_2018.groupeSMKS1.Fichier;
 import pdl_2018.groupeSMKS1.Url;
+import pdl_2018.groupeSMKS1.Extracteur;
+import pdl_2018.groupeSMKS1.Tableau;
+
 
 @Disabled
 public class SuperComparateur {

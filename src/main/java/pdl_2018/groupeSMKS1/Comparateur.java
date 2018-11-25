@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.collections4.ListUtils;
-import org.incava.diff.Diff;
 
 public class Comparateur implements IComparateur {
 	private String[][] wiki;

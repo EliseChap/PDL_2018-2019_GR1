@@ -86,7 +86,7 @@ public class SuperComparateur {
 	
 	
 	/**
-	 * Afficher l'intÃ©gralitÃ© du tableau
+	 * Afficher l'integralite du tableau
 	 * 
 	 * @param tab
 	 */

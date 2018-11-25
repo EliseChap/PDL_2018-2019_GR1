@@ -32,7 +32,7 @@ public class TestCsv extends TestCase {
 	public void testObjectCsvStandard() {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "C:/Users/sullivand/Music/Desktop/Nouveau dossier/", "WikiMatrix.csv", tab);
+		Csv csv = new Csv(';', "C:/Users/sullivand/Music/Desktop/Nouveau dossier/", "WikiMatrix.csv", tab,"nomTab");
 		Assertions.assertEquals(csv.getDelimit(), ';');
 		Assertions.assertEquals(csv.getCheminCsv(), "C:/Users/sullivand/Music/Desktop/Nouveau dossier/");
 		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
@@ -44,7 +44,7 @@ public class TestCsv extends TestCase {
 	@Test
 	public void testObjectCsvNull() {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
-		Csv csv = new Csv('\u0000', null, null, tab);
+		Csv csv = new Csv('\u0000', null, null, tab,"nomTab");
 		Assertions.assertEquals(csv.getDelimit(), ',');
 		Assertions.assertEquals(csv.getCheminCsv(), "");
 		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
@@ -61,7 +61,7 @@ public class TestCsv extends TestCase {
 
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "testExporterCSV2.csv", tab);
+		Csv csv = new Csv(';', "", "testExporterCSV2.csv", tab, "nomTab");
 
 		csv.exporterCSV();
 
@@ -96,7 +96,7 @@ public class TestCsv extends TestCase {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 		File fichier = new File("testExporterCSV.csv");
 		fichier.delete();
-		Csv csv = new Csv(';', "", "testExporterCSV.csv", tab);
+		Csv csv = new Csv(';', "", "testExporterCSV.csv", tab, "nomTab");
 		
 
 		csv.exporterCSV();
@@ -115,7 +115,7 @@ public class TestCsv extends TestCase {
 		boolean verification = false;
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "", tab);
+		Csv csv = new Csv(';', "", "", tab, "nomTab");
 		Map<String, Boolean> separateurAutomatique = csv.getSeparateur();
 		Set cles = separateurAutomatique.keySet();
 		Iterator it = cles.iterator();
@@ -149,7 +149,7 @@ public class TestCsv extends TestCase {
 
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "testIncrementer.csv", tab);
+		Csv csv = new Csv(';', "", "testIncrementer.csv", tab, "nomTab");
 		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_2.csv");
 
 		csv.exporterCSV();
@@ -182,7 +182,7 @@ public class TestCsv extends TestCase {
 		
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "testChemin.csv", tab);
+		Csv csv = new Csv(';', "", "testChemin.csv", tab, "nomTab");
 
 		Assertions.assertTrue(csv.verificationCheminDispo());
 		fichier.delete();
@@ -198,7 +198,7 @@ public class TestCsv extends TestCase {
 	public void testVerificationSeparateurValide() {
 
 		String tab[][] = { { "a;", "b", "c", "d" }, { "1,0:-", "2", "3", "4" } };
-		Csv csv = new Csv(';', "", "", tab);
+		Csv csv = new Csv(';', "", "", tab, "nomTab");
 
 		csv.verificationSeparateurValide();
 		Map<String, Boolean> cle = csv.getSeparateur();

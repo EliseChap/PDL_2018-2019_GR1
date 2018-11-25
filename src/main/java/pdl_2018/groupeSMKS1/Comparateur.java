@@ -13,15 +13,25 @@ import org.incava.diff.Diff;
 public class Comparateur implements IComparateur {
 	private String[][] wiki;
 	private String[][] html;
+	private Double ratio;
 
 	public Comparateur(String[][] wiki, String[][] html) {
 		this.wiki = wiki;
 		this.html = html;
+		analyse();
 	}
 
 	/*
 	 * TRAITEMENT LIGNE
 	 */
+	
+	/**
+	 * Afficher ratio
+	 * @return
+	 */
+	public Double getRatio() {
+		return ratio;
+	}
 
 	/**
 	 * Nombre de ligne Wikicode
@@ -116,13 +126,14 @@ public class Comparateur implements IComparateur {
 	 * Verification de la m�thode de comparaison partiel ou complet
 	 */
 	public double analyse() {
-		double ratio;
+		double ratioC;
 		if (ratioLigne() == 100 && ratioColonne() == 100) {
-			ratio = ratioContenu(analyseComplet());
+			ratioC = ratioContenu(analyseComplet());
 		} else {
-			ratio = -1;
+			ratioC = -1;
 		}
-		return ratio;
+		this.ratio=ratioC;
+		return ratioC;
 	}
 
 	/*

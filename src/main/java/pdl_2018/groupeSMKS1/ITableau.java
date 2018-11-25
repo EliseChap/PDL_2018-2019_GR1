@@ -8,7 +8,7 @@ public String getCheminCsv();
 
 public String getNomCsv();
 
-public 	String getTableau();
+public 	String[][] getTableau();
 
 
 

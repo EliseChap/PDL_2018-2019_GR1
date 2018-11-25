@@ -12,9 +12,7 @@ public class Tableau implements ITableau {
 	private String arr[][];
 	private String nomTab;
 
-public Tableau () {
-	
-}
+
 	public Tableau(char pDelimit, String pCheminCsv, String pNomCsv, String pTableau[][], String nomTab) {
 		delimit = pDelimit;
 		cheminCsv = pCheminCsv;
@@ -25,6 +23,8 @@ public Tableau () {
 		constructeurCsv();
 		
 	}
+	
+
 
 	@Override
 	public char getDelimit() {
@@ -46,8 +46,8 @@ public Tableau () {
 	}
 
 	@Override
-	public String getTableau() {
-		return Arrays.toString(arr);
+	public String[][] getTableau() {
+		return arr;
 	}
 	/**
 	 * Parcourir le tableau afin de l'afficher

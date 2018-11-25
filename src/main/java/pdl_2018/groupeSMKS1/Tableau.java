@@ -13,6 +13,7 @@ public class Tableau implements ITableau {
 	private String nomTab;
 
 	public Tableau() {}
+	
 	public Tableau(char pDelimit, String pCheminCsv, String pNomCsv, String pTableau[][], String nomTab) {
 		delimit = pDelimit;
 		cheminCsv = pCheminCsv;
@@ -21,7 +22,6 @@ public class Tableau implements ITableau {
 		this.nomTab = nomTab;
 		getTableauToString();
 		constructeurCsv();
-		
 	}
 	
 
@@ -78,7 +78,7 @@ public class Tableau implements ITableau {
 	}
 	
 	public void constructeurCsv() {
-		Csv csv = new Csv(delimit, cheminCsv, nomCsv, arr);
+		Csv csv = new Csv(delimit, cheminCsv, nomCsv, arr, nomTab);
 	}
 	
 	public static void main(String[] args) {

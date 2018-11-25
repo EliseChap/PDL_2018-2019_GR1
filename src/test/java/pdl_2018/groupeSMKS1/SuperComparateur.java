@@ -1,15 +1,14 @@
 package pdl_2018.groupeSMKS1;
 
-import java.lang.reflect.Array;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 import org.junit.jupiter.api.Disabled;
 
 import pdl_2018.groupeSMKS1.Fichier;
+import pdl_2018.groupeSMKS1.Url;
 
 @Disabled
 public class SuperComparateur {

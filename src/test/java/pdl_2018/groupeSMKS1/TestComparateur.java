@@ -96,7 +96,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.nombreColonneHtml(),1);
+		Assertions.assertEquals(comparateur.nombreColonneHtml(),4);
 	}
 	
 	/*

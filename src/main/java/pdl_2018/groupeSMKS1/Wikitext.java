@@ -189,18 +189,18 @@ public class Wikitext extends AstVisitor<WtNode> {
 		return valeur;
 	}
 
-	private void findCol(WtTableRow r, List<String> rows) {
+	private int findCol(WtTableRow r, List<String> rows) {
 		WtBody row = r.getBody();
 		int comp = 0;
-
+		int nbCol = 0;
 		while (row.size() > comp) {
-			
+
 			String text = "";
 			if (row.get(comp) instanceof WtTableCell) {
 				WtTableCell cellule = (WtTableCell) row.get(comp);
 				WtBody celluleBody = cellule.getBody();
 				int comp2 = 0;
-						while (celluleBody.size() > comp2) {
+				while (celluleBody.size() > comp2) {
 					String textPartiel = "";
 					if (celluleBody.get(comp2) instanceof WtText) {
 						WtText titre = (WtText) celluleBody.get(comp2);
@@ -215,19 +215,22 @@ public class Wikitext extends AstVisitor<WtNode> {
 						WtInternalLink titre = (WtInternalLink) celluleBody.get(comp2);
 						textPartiel = getTextWtInternalLink(titre);
 					}
-				
+
 					text = text + textPartiel;
 					comp2++;
 				}
 				rows.add(text);
-			}else  if (row.get(comp) instanceof WtTableHeader) {
+				nbCol++;
+			} else if (row.get(comp) instanceof WtTableHeader) {
 				WtTableHeader cellule = (WtTableHeader) row.get(comp);
 				text = findHeader(cellule);
 				rows.add(text);
+				nbCol++;
 			}
 			// ne pas oublier de mettre les textes des liens aussi
 			comp++;
 		}
+		return nbCol;
 	}
 
 	int comp = 0;
@@ -235,12 +238,12 @@ public class Wikitext extends AstVisitor<WtNode> {
 	private void parcourirNode(WtNode fils) {
 
 		Iterator<WtNode> l = fils.iterator();
-		while (l.hasNext())
-		{
-			fils = l.next();	
+		while (l.hasNext()) {
+			fils = l.next();
 			if (fils.getNodeType() == WtTable.NT_TABLE) {
-				
+
 				WtTable table = (WtTable) fils;
+				System.out.println(table);
 				WtXmlAttributes e = table.getXmlAttributes();
 				if (findClassWikitable(e)) {
 					List<String> headerList = new ArrayList<String>();
@@ -248,7 +251,7 @@ public class Wikitext extends AstVisitor<WtNode> {
 					String titre = "" + comp;
 					int compteRows = 0;
 					Iterator<WtNode> it = table.getBody().iterator();
-
+					int nbCol = 0;
 					while (it.hasNext()) {
 						WtNode node = it.next();
 						if (node.getNodeType() == WtTable.NT_TABLE_CAPTION) {
@@ -259,43 +262,55 @@ public class Wikitext extends AstVisitor<WtNode> {
 						if (node.getNodeType() == WtTable.NT_TABLE_HEADER) {
 							WtTableHeader header = (WtTableHeader) node;
 							headerList.add(findHeader(header));
-						
+
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
-							findCol(row, rowsList);
+							nbCol = findCol(row, rowsList);
 							compteRows++;
 						}
-				
+
+					}
+					boolean premiereLinge= false;
+					if (headerList.size() != 0) {
+						compteRows = compteRows +1;
+						nbCol = headerList.size();
+						premiereLinge= true;
 					}
 
-					String[][] tab = new String[compteRows + 1][headerList.size()];
+					String[][] tab = new String[compteRows][nbCol];
 
 					int colonnes = 0;
 					int lig = 0;
 					int compteur = 0;
+					
+					
 					for (String item : headerList) {
 						tab[lig][colonnes] = item;
 						colonnes++;
 					}
+					
 
 					for (String item : rowsList) {
-						if (compteur == headerList.size() && headerList.size()!=0 ) {
+						if (compteur == nbCol) {
 							compteur = 0;
 						}
 						if (compteur == 0) {
-							lig++;
+							if (premiereLinge) {
+								lig++;
+							}
+							premiereLinge = true;
 							colonnes = 0;
 
 						} else {
 							colonnes++;
 						}
 
-						tab[lig][colonnes] = item;
+						 tab[lig][colonnes] = item;
 						compteur++;
 					}
 
-					lesWikitab.put(titre, table.getBody());
+				//	lesWikitab.put(titre, tab);
 					Tableau t = new Tableau();
 					comp++;
 
@@ -380,7 +395,7 @@ public class Wikitext extends AstVisitor<WtNode> {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Josef_Newgarden", ';', "chemin", " nomCSV", false, true);
+		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_de_football", ';', "chemin", " nomCSV", false, true);
 		t.recuperationPage();
 		// t.traitementMap2();
 //		Set cles = t.lesWikitab.keySet();

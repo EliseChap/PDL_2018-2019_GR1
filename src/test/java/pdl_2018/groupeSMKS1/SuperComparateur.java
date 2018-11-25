@@ -54,7 +54,7 @@ public class SuperComparateur {
 
 	private static void parcourirUrl(Url url, String strUrl) {
 		
-		Extracteur extra = new Html(null, ';', null, null, false, false);
+	/*	Extracteur extra = new Html(null, ';', null, null, false, false);
 		Wikitext extra2 = new Wikitext(null, null, ';', null, null, false, false);
 		
 		ArrayList<Extracteur> c = url.getExtracteur();
@@ -69,7 +69,7 @@ public class SuperComparateur {
 		       ArrayList<Tableau> html = extra.getLesTableaux();
 		       ArrayList<Tableau> wiki = extra.getLesTableaux(); //voir sophie
 		       parcourirLesTableaux(html, wiki, strUrl);
-		}
+		}*/
 		
 	}
 

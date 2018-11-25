@@ -49,24 +49,24 @@ public class SuperComparateur {
 		}
 	}
 
-	private static void parcourirUrl(Url s, URL url) {
+	private static void parcourirUrl(Url url, URL strUrl) {
 		
 	
-		ArrayList<Extracteur> c = s.getExtracteur();
+		ArrayList<Extracteur> c = url.getExtracteur();
 		 
 		Iterator<Extracteur> it = c.iterator();
 	
 		while (it.hasNext()) {
 			
-		       Extracteur e = it.next();
-		       ArrayList<Tableau> html = e.getLesTableaux();
-		       ArrayList<Tableau> wiki = e.getLesTableaux(); //voir sophie
-		       parcourirLesTableaux(html, wiki, url);
+		       Extracteur extra = it.next();
+		       ArrayList<Tableau> html = extra.getLesTableaux();
+		       ArrayList<Tableau> wiki = extra.getLesTableaux(); //voir sophie
+		       parcourirLesTableaux(html, wiki, strUrl);
 		}
 		
 	}
 
-	private static void parcourirLesTableaux(ArrayList<Tableau> html, ArrayList<Tableau> wiki, URL url) {
+	private static void parcourirLesTableaux(ArrayList<Tableau> html, ArrayList<Tableau> wiki, URL strUrl) {
 		
 		int i = 0;
 		Iterator<Tableau> itHtml = html.iterator();
@@ -79,7 +79,7 @@ public class SuperComparateur {
 		       String[][] arrW = w.getTableau();
 		       Comparateur comparateur = new Comparateur(arrH, arrW);
 			//lectureTableau(arrH);
-				hashMapStat.put(url+" Tableau : "+i,comparateur.analyse());
+				hashMapStat.put(strUrl+" Tableau : "+i,comparateur.analyse());
 			}
 			
 		}

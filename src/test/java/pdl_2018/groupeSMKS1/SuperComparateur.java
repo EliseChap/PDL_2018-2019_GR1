@@ -28,7 +28,7 @@ public class SuperComparateur {
 	
 	public static void main(String[] args) {
 		
-		Fichier monFichier = new Fichier("C:/Users/sullivand/Music/Desktop/mesBellesUrl.txt", ';', "moncsv.csv", "C:/Users/sullivand/Music/Desktop/", false, true);
+		Fichier monFichier = new Fichier("C:/Users/sullivand/Music/Desktop/mesBellesUrl.txt", ';', "", "C:/Users/sullivand/Music/Desktop/", false, true);
 		
 		SuperComparateur superComparateur = new SuperComparateur(monFichier);
 		
@@ -78,11 +78,25 @@ public class SuperComparateur {
 		       String[][] arrH = h.getTableau();
 		       String[][] arrW = w.getTableau();
 		       Comparateur comparateur = new Comparateur(arrH, arrW);
-			
-				hashMapStat.put(url+"/"+i,comparateur.analyse());
+			//lectureTableau(arrH);
+				hashMapStat.put(url+" Tableau : "+i,comparateur.analyse());
 			}
 			
 		}
+	
+	
+	/**
+	 * Afficher l'intÃ©gralitÃ© du tableau
+	 * 
+	 * @param tab
+	 */
+	public static void lectureTableau(String[][] tab) {
+		for (int a = 0; a < tab.length; a++) {
+			for (int b = 0; b < tab[a].length; b++) {
+				System.out.println("test i : " + a + " j : " + b + " valeur : " + tab[a][b]);
+			}
+		}
+	}
 		
 		public static void parcourirResultat() {
 			

@@ -312,6 +312,7 @@ public class Wikitext extends Extracteur {
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
 							WtTableCell cell = (WtTableCell) node;
 							rowsList.add(findCellText(cell.getBody()));
+						// ce n'est pas un ajour de rows mais ce sont des cellule, qui font formé une rows entre elles
 							compteRows++;
 						}
 

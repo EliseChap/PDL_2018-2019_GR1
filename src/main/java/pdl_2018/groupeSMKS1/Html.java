@@ -31,6 +31,11 @@ public class Html extends Extracteur {
 		this.nomCSV = nomCSV;
 		lesTableaux = new ArrayList<Tableau>();
 		lesHtmltab = new HashMap<String, Element>();
+		recuperationPage();
+	}
+	
+	public ArrayList<Tableau> getLesTableau(){
+		return lesTableaux; 
 	}
 
 	@Override
@@ -172,7 +177,8 @@ public class Html extends Extracteur {
 			}
 
 			lectureTableau(tab);
-			// Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
+			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
+			lesTableaux.add(t);
 		}
 	}
 
@@ -416,14 +422,13 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		// Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';',
+		//Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';',
 		// "chemin", "nomCSV", true, false);
 		// t.recuperationPage();
-		Html b = new Html("https://fr.wikipedia.org/wiki/Jeux_mondiaux_f%C3%A9minins_de_1934", ';', "chemin", "nomCSV",
-				true, false);
-		// Html b = new
-		// Html("https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_football", ';',
-		// "chemin", "nomCSV", true, false);
+		//Html b = new Html("https://fr.wikipedia.org/wiki/Jeux_mondiaux_f%C3%A9minins_de_1934", ';', "chemin", "nomCSV",
+		//true, false);
+		Html b = new Html("https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_football", ';',
+		 "chemin", "nomCSV", true, false);
 		// Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things",
 		// ';',"chemin", "nomCSV", true, false);
 		// Html b = new

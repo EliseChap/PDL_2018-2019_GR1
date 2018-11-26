@@ -1,19 +1,12 @@
 package pdl_2018.groupeSMKS1;
 
 import java.util.ArrayList;
-
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 
-import org.junit.jupiter.api.Disabled;
+import org.junit.Ignore;
 
-import pdl_2018.groupeSMKS1.Fichier;
-import pdl_2018.groupeSMKS1.Url;
-import pdl_2018.groupeSMKS1.Extracteur;
-import pdl_2018.groupeSMKS1.Tableau;
-
-
-@Disabled
+@Ignore
 public class SuperComparateur {
 
 	private static LinkedHashMap<String,Double> hashMapStat;

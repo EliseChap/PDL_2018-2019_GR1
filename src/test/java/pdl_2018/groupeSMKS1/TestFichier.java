@@ -1,21 +1,21 @@
 package pdl_2018.groupeSMKS1;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Assertions;
-
-
-
-
 import java.util.ArrayList;
 
-@Disabled 
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+
+
+@Ignore
 public class TestFichier {
 
     private static Fichier f;
 
-    @BeforeAll
+    @BeforeClass
     public static void initialise() {
 
         f = new Fichier("c:/urlWithAllDelimiteurs.txt", ' ', "", "", true, false);
@@ -32,17 +32,17 @@ public class TestFichier {
         ArrayList<String> monTableauDeLignes = new ArrayList();
         monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes,https://fr.wikipedia.org/wiki/Soleil;https://fr.wikipedia.org/wiki/Neoval");
         monTableauDeLignes.add("https://fr.wikipedia.org/wiki/VAL_208");
-        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, tous types de délimiteurs
+        assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, tous types de délimiteurs
 
         monTableauDeLignes = new ArrayList();
         monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes;https://fr.wikipedia.org/wiki/Soleil;https://fr.wikipedia.org/wiki/Neoval;https://fr.wikipedia.org/wiki/VAL_208");
         f.setCheminFichierEntree("c:/urlWithDelimitPointVirgule.txt");
-        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, uniquement point virgule
+        assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, uniquement point virgule
 
         monTableauDeLignes = new ArrayList();
         monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes,https://fr.wikipedia.org/wiki/Soleil,https://fr.wikipedia.org/wiki/Neoval,https://fr.wikipedia.org/wiki/VAL_208");
         f.setCheminFichierEntree("c:/urlWithDelimitVirgule.txt");
-        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, uniquement virgule
+        assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, uniquement virgule
 
         monTableauDeLignes = new ArrayList();
         monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Rennes");
@@ -50,15 +50,15 @@ public class TestFichier {
         monTableauDeLignes.add("https://fr.wikipedia.org/wiki/Neoval");
         monTableauDeLignes.add("https://fr.wikipedia.org/wiki/VAL_208");
         f.setCheminFichierEntree("c:/urlWithDelimitRetourLigne.txt");
-        Assertions.assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, retours à la ligne uniquement
+        assertEquals(f.traitementFichierEntree(), monTableauDeLignes); //Test avec fichier valide, retours à la ligne uniquement
 
         monTableauDeLignes = new ArrayList();
         f.setCheminFichierEntree("c:/urlVide.txt");
-        Assertions.assertTrue(f.traitementFichierEntree().size()==0); //Test avec fichier valide, mais vide
+        assertTrue(f.traitementFichierEntree().size()==0); //Test avec fichier valide, mais vide
 
         monTableauDeLignes = new ArrayList();
         f.setCheminFichierEntree("c:/urlVide.docx");
-        Assertions.assertTrue(f.traitementFichierEntree().size()==0); //Test avec fichier invalide
+        assertTrue(f.traitementFichierEntree().size()==0); //Test avec fichier invalide
     }
 
     /**
@@ -75,13 +75,13 @@ public class TestFichier {
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/Neoval",' ', "", "", true, false));
         mesURLs.add(new Url("https://fr.wikipedia.org/wiki/VAL_208",' ', "", "", true, false));
         for(int i=0; i<mesURLs.size(); i++){
-            Assertions.assertEquals(f.getLesURLs().get(i).getUrl(), mesURLs.get(i).getUrl());
+            assertEquals(f.getLesURLs().get(i).getUrl(), mesURLs.get(i).getUrl());
         }
 
         f = new Fichier("c:/urlWithAllDelimiteurs.docx", ' ', "", "", true, false);
 
         //f.setCheminFichierEntree("c:/mesURL.docx"); //Test avec un fichier invalide
-        Assertions.assertTrue(f.getLesURLs().size()==0);
+        assertTrue(f.getLesURLs().size()==0);
 
     }
 

@@ -1,13 +1,11 @@
 package pdl_2018.groupeSMKS1;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
 
 
-class TestComparateur {
+public class TestComparateur {
 	
 
 	
@@ -19,7 +17,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.ratioContenu(3),25.0);
+		assertEquals(comparateur.ratioContenu(3),25.0, 0.0);
 	}
 	
 	/*
@@ -31,7 +29,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.analyseComplet(),3);
+		assertEquals(comparateur.analyseComplet(),3);
 		
 	}
 	
@@ -43,7 +41,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.differentNombreLigneWikiHtml(),false);
+		assertEquals(comparateur.differentNombreLigneWikiHtml(),false);
 	}
 
 	/*
@@ -54,7 +52,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.nombreLigneWiki(),4);
+		assertEquals(comparateur.nombreLigneWiki(),4);
 	}
 
 	/*
@@ -65,7 +63,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.nombreLigneHtml(),1);
+		assertEquals(comparateur.nombreLigneHtml(),1);
 	}
 	/*
 	 * Test ratio nbre de ligne html
@@ -75,7 +73,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.ratioLigne(),25.0);
+		assertEquals(comparateur.ratioLigne(),25.0, 0.0);
 	}
 	/*
 	 * Test nbre de colonne wiki
@@ -85,7 +83,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.nombreColonneWiki(),4);
+		assertEquals(comparateur.nombreColonneWiki(),4);
 	}
 	
 	/*
@@ -96,7 +94,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.nombreColonneHtml(),4);
+		assertEquals(comparateur.nombreColonneHtml(),4);
 	}
 	
 	/*
@@ -108,7 +106,7 @@ class TestComparateur {
 		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
 		String tab2[][] = { { "a", "b", "c", "d" } };
 		Comparateur comparateur = new Comparateur(tab1, tab2);
-		Assertions.assertEquals(comparateur.ratioColonne(),100.0);
+		assertEquals(comparateur.ratioColonne(), 100.0, 0.0);
 	}
 }
 

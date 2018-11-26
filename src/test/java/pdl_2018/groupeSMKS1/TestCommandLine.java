@@ -1,11 +1,10 @@
 package pdl_2018.groupeSMKS1;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
- 
+import org.junit.Test;
+import org.junit.Ignore;
+import static org.junit.Assert.*;
 
-@Disabled 
+@Ignore
 public class TestCommandLine {
 //TODO test généralisé
     /**
@@ -16,20 +15,20 @@ public class TestCommandLine {
 
         //Tests de la commande -delimit uniquement
         CommandLine myCommand = new CommandLine("-delimit[;]");
-        Assertions.assertTrue(myCommand.verifDelimiteur(), "true");
-        Assertions.assertEquals(myCommand.getDelimit(), ';');
+        assertTrue(myCommand.verifDelimiteur());
+        assertEquals(myCommand.getDelimit(), ';');
 
         myCommand.setLigneDeCommande("-delimit[]");
-        Assertions.assertTrue(myCommand.verifDelimiteur(), "false");
-        Assertions.assertEquals(myCommand.getDelimit(), '\0');
+        assertFalse(myCommand.verifDelimiteur());
+        assertEquals(myCommand.getDelimit(), '\0');
 
         myCommand.setLigneDeCommande("");
-        Assertions.assertTrue(myCommand.verifDelimiteur(), "true");
-        Assertions.assertEquals(myCommand.getDelimit(), '\0');
+        assertTrue(myCommand.verifDelimiteur());
+        assertEquals(myCommand.getDelimit(), '\0');
 
         myCommand.setLigneDeCommande("delimit[unMotQuelconque]");
-        Assertions.assertTrue(myCommand.verifDelimiteur(), "false");
-        Assertions.assertEquals(myCommand.getDelimit(), '\0');
+        assertFalse(myCommand.verifDelimiteur());
+        assertEquals(myCommand.getDelimit(), '\0');
     }
 
     /**
@@ -39,34 +38,34 @@ public class TestCommandLine {
     public void testVerifHtmlOrWikicodeChoice(){
 
         CommandLine myCommand = new CommandLine("-html");
-        Assertions.assertTrue(myCommand.verifHtmlOrWikicodeChoice());
-        Assertions.assertTrue(myCommand.getExtraHTML());
-        Assertions.assertFalse(myCommand.getExtraWiki());
+        assertTrue(myCommand.verifHtmlOrWikicodeChoice());
+        assertTrue(myCommand.getExtraHTML());
+        assertFalse(myCommand.getExtraWiki());
 
         myCommand.setLigneDeCommande("-wiki");
-        Assertions.assertTrue(myCommand.verifHtmlOrWikicodeChoice());
-        Assertions.assertTrue(myCommand.getExtraWiki());
-        Assertions.assertFalse(myCommand.getExtraHTML());
+        assertTrue(myCommand.verifHtmlOrWikicodeChoice());
+        assertTrue(myCommand.getExtraWiki());
+        assertFalse(myCommand.getExtraHTML());
 
         myCommand.setLigneDeCommande("-wiki -html");
-        Assertions.assertTrue(myCommand.verifHtmlOrWikicodeChoice());
-        Assertions.assertTrue(myCommand.getExtraWiki());
-        Assertions.assertTrue(myCommand.getExtraHTML());
+        assertTrue(myCommand.verifHtmlOrWikicodeChoice());
+        assertTrue(myCommand.getExtraWiki());
+        assertTrue(myCommand.getExtraHTML());
 
         myCommand.setLigneDeCommande("");
-        Assertions.assertFalse(myCommand.verifHtmlOrWikicodeChoice());
-        Assertions.assertFalse(myCommand.getExtraWiki());
-        Assertions.assertFalse(myCommand.getExtraHTML());
+        assertFalse(myCommand.verifHtmlOrWikicodeChoice());
+        assertFalse(myCommand.getExtraWiki());
+        assertFalse(myCommand.getExtraHTML());
 
         myCommand.setLigneDeCommande("html");
-        Assertions.assertFalse(myCommand.verifHtmlOrWikicodeChoice());
-        Assertions.assertFalse(myCommand.getExtraHTML());
-        Assertions.assertFalse(myCommand.getExtraWiki());
+        assertFalse(myCommand.verifHtmlOrWikicodeChoice());
+        assertFalse(myCommand.getExtraHTML());
+        assertFalse(myCommand.getExtraWiki());
 
         myCommand.setLigneDeCommande("wiki");
-        Assertions.assertFalse(myCommand.verifHtmlOrWikicodeChoice());
-        Assertions.assertFalse(myCommand.getExtraWiki());
-        Assertions.assertFalse(myCommand.getExtraHTML());
+        assertFalse(myCommand.verifHtmlOrWikicodeChoice());
+        assertFalse(myCommand.getExtraWiki());
+        assertFalse(myCommand.getExtraHTML());
     }
 
     /**
@@ -76,16 +75,16 @@ public class TestCommandLine {
     public void testVerifCheminSortie(){
 
         CommandLine myCommand = new CommandLine("-save");
-        Assertions.assertFalse(myCommand.verifRepertoireSortie());
-        Assertions.assertTrue(myCommand.getCheminCSV()=="");
+        assertFalse(myCommand.verifRepertoireSortie());
+        assertTrue(myCommand.getCheminCSV()=="");
 
         myCommand.setLigneDeCommande("-save[]");
-        Assertions.assertFalse(myCommand.verifRepertoireSortie());
-        Assertions.assertTrue(myCommand.getCheminCSV()=="");
+        assertFalse(myCommand.verifRepertoireSortie());
+        assertTrue(myCommand.getCheminCSV()=="");
 
         myCommand.setLigneDeCommande("-save[c:/users/admin]");
-        Assertions.assertTrue(myCommand.verifRepertoireSortie());
-        Assertions.assertEquals(myCommand.getCheminCSV(), "c:/users/admin");
+        assertTrue(myCommand.verifRepertoireSortie());
+        assertEquals(myCommand.getCheminCSV(), "c:/users/admin");
 
     }
 
@@ -96,16 +95,16 @@ public class TestCommandLine {
     public void testVerifNomSortie(){
 
         CommandLine myCommand = new CommandLine("-name");
-        Assertions.assertFalse(myCommand.verifNomSortie());
-        Assertions.assertTrue(myCommand.getNomCSV()=="");
+        assertFalse(myCommand.verifNomSortie());
+        assertTrue(myCommand.getNomCSV()=="");
 
         myCommand.setLigneDeCommande("-name[]");
-        Assertions.assertFalse(myCommand.verifNomSortie());
-        Assertions.assertTrue(myCommand.getNomCSV()=="");
+        assertFalse(myCommand.verifNomSortie());
+        assertTrue(myCommand.getNomCSV()=="");
 
         myCommand.setLigneDeCommande("-name[monBeauTableauWiki.csv]");
-        Assertions.assertFalse(myCommand.verifRepertoireSortie());
-        Assertions.assertEquals(myCommand.getNomCSV(), "monBeauTableauWiki.csv");
+        assertFalse(myCommand.verifRepertoireSortie());
+        assertEquals(myCommand.getNomCSV(), "monBeauTableauWiki.csv");
 
     }
 
@@ -115,24 +114,24 @@ public class TestCommandLine {
     @Test
     public void testVerifUrlOrFichierChoice(){
         CommandLine myCommand = new CommandLine("-url[]");
-        Assertions.assertFalse(myCommand.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand.getUrl(), "");
-        Assertions.assertEquals(myCommand.getCheminEntree(), "");
+        assertFalse(myCommand.verifUrlOrFichierChoice());
+        assertEquals(myCommand.getUrl(), "");
+        assertEquals(myCommand.getCheminEntree(), "");
 
         myCommand.setLigneDeCommande("-url[https://fr.wikipedia.org/rennes]"); // Test URL valide
-        Assertions.assertTrue(myCommand.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand.getUrl(), "https://fr.wikipedia.org/rennes");
-        Assertions.assertEquals(myCommand.getCheminEntree(), "");
+        assertTrue(myCommand.verifUrlOrFichierChoice());
+        assertEquals(myCommand.getUrl(), "https://fr.wikipedia.org/rennes");
+        assertEquals(myCommand.getCheminEntree(), "");
 
         myCommand.setLigneDeCommande("-url[https://fr.wikipedia.org/rennes] -import[c:/users/admin/mesBellesUrl.txt]");
-        Assertions.assertFalse(myCommand.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand.getUrl(), "");
-        Assertions.assertEquals(myCommand.getCheminEntree(), "");
+        assertFalse(myCommand.verifUrlOrFichierChoice());
+        assertEquals(myCommand.getUrl(), "");
+        assertEquals(myCommand.getCheminEntree(), "");
 
         myCommand.setLigneDeCommande("-import[c:/users/admin/mesBellesUrl.txt]");
-        Assertions.assertTrue(myCommand.verifUrlOrFichierChoice());
-        Assertions.assertEquals(myCommand.getUrl(), "");
-        Assertions.assertEquals(myCommand.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
+        assertTrue(myCommand.verifUrlOrFichierChoice());
+        assertEquals(myCommand.getUrl(), "");
+        assertEquals(myCommand.getCheminEntree(), "c:/users/admin/mesBellesUrl.txt");
 
     }
 }

@@ -1,11 +1,10 @@
 /*
- * Test de la classe Csv 
+O * Test de la classe Csv 
  */
 
 package pdl_2018.groupeSMKS1;
 
 import java.io.BufferedReader;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,8 +14,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 
 
@@ -31,9 +31,9 @@ public class TestCsv {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
 		Csv csv = new Csv(';', "", "WikiMatrix.csv", tab,"nomTab");
-		Assertions.assertEquals(csv.getDelimit(), ';');
-		Assertions.assertEquals(csv.getCheminCsv(), "");
-		Assertions.assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
+		assertEquals(csv.getDelimit(), ';');
+		assertEquals(csv.getCheminCsv(), "");
+		assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
 	}
 
 	/**
@@ -43,9 +43,9 @@ public class TestCsv {
 	public void testObjectCsvNull() {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 		Csv csv = new Csv('\u0000', null, null, tab,"nomTab");
-		Assertions.assertEquals(csv.getDelimit(), ',');
-		Assertions.assertEquals(csv.getCheminCsv(), "");
-		Assertions.assertEquals(csv.getNomCsv(), "nomTab.csv");
+		assertEquals(csv.getDelimit(), ',');
+		assertEquals(csv.getCheminCsv(), "");
+		assertEquals(csv.getNomCsv(), "nomTab.csv");
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class TestCsv {
 
 		csv.exporterCSV();
 
-		Assertions.assertTrue(csv.verificationCheminDispo());
+		assertTrue(csv.verificationCheminDispo());
 	
 		fichier.delete();
 	}
@@ -123,7 +123,7 @@ public class TestCsv {
 				verification = true;
 			}
 		}
-		Assertions.assertEquals(verification, true);
+		assertEquals(verification, true);
 
 	}
 
@@ -148,19 +148,19 @@ public class TestCsv {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
 		Csv csv = new Csv(';', "", "testIncrementer.csv", tab, "nomTab");
-		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_2.csv");
+		assertEquals(csv.nomCsvIncrementer(), "testIncrementer_2.csv");
 
 		csv.exporterCSV();
 
-		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_3.csv");
+		assertEquals(csv.nomCsvIncrementer(), "testIncrementer_3.csv");
 
 		csv.exporterCSV();
 
-		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_4.csv");
+		assertEquals(csv.nomCsvIncrementer(), "testIncrementer_4.csv");
 
 		csv.exporterCSV();
 
-		Assertions.assertEquals(csv.nomCsvIncrementer(), "testIncrementer_5.csv");
+		assertEquals(csv.nomCsvIncrementer(), "testIncrementer_5.csv");
 
 		// supprimer les fichers
 		fichier.delete();
@@ -182,9 +182,9 @@ public class TestCsv {
 
 		Csv csv = new Csv(';', "", "testChemin.csv", tab, "nomTab");
 
-		Assertions.assertTrue(csv.verificationCheminDispo());
+		assertTrue(csv.verificationCheminDispo());
 		fichier.delete();
-		Assertions.assertTrue(!csv.verificationCheminDispo());
+		assertTrue(!csv.verificationCheminDispo());
 
 	}
 
@@ -201,10 +201,10 @@ public class TestCsv {
 		csv.verificationSeparateurValide();
 		Map<String, Boolean> cle = csv.getSeparateur();
 		String separateur = cle.toString();
-		Assertions.assertTrue(separateur != ";");
-		Assertions.assertTrue(separateur != ",");
-		Assertions.assertTrue(separateur != ":");
-		Assertions.assertTrue(separateur != "-");
+		assertTrue(separateur != ";");
+		assertTrue(separateur != ",");
+		assertTrue(separateur != ":");
+		assertTrue(separateur != "-");
 
 	}
 

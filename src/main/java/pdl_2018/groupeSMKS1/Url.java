@@ -33,6 +33,7 @@ public class Url implements IUrl {
 			if(isWikipediaURL()) {
 			isAPicture();
 			isAnArticle();
+			ConstructeurExtracteur();
 			}
 			
 		} catch (MalformedURLException e) {
@@ -75,6 +76,11 @@ public class Url implements IUrl {
 
 	public URL getmyUrl() {
 		return myUrl;
+	}
+	
+	
+	public ArrayList<Extracteur> getExtracteur(){
+		return lesExtracteurs;
 	}
 
 	/**
@@ -212,11 +218,11 @@ public class Url implements IUrl {
 	public void ConstructeurExtracteur() {
 		if (verifURL() && isWikipediaURL()) {
 			if (extraWiki) {
-				Wikitext wiki = new Wikitext(GetDomain(), GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml,
-						extraWiki);
-				// Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit,
-				// cheminCsv, nomCsv, extraHtml, extraWiki);
-				// lesExtracteurs.add(wiki);
+				//Wikitext wiki = new Wikitext(GetDomain(), GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml,
+					//	extraWiki);
+				 Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit,
+				 cheminCsv, nomCsv, extraHtml, extraWiki);
+				lesExtracteurs.add(wiki);
 			}
 			if (extraHtml) {
 				Extracteur html = new Html(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);

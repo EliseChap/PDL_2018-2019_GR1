@@ -22,7 +22,7 @@ import org.sweble.wikitext.engine.utils.DefaultConfigEnWp;
 import org.sweble.wikitext.parser.nodes.*;
 import org.wikipedia.Wiki;
 
-public class Wikitext extends AstVisitor<WtNode> {
+public class Wikitext extends Extracteur {
 	private String domain;
 	private String sousDomain;
 	private char delimit;

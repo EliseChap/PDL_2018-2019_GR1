@@ -1,16 +1,11 @@
 package pdl_2018.groupeSMKS1;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Assertions;
 
 
-
-
-import junit.framework.TestCase;
 
 
 import java.util.ArrayList;

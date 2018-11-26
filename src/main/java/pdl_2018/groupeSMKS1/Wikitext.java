@@ -170,8 +170,8 @@ public class Wikitext extends Extracteur {
 		}
 		return valeur;
 	}
-	
-	private String getTextWtUnorderedList(WtUnorderedList i) {
+
+	private String getTextWtUnorderedList(WtNode i) {
 		Iterator<WtNode> l = i.iterator();
 		String valeur = "";
 		while (l.hasNext()) {
@@ -185,15 +185,14 @@ public class Wikitext extends Extracteur {
 					}
 					if (node.get(comp) instanceof WtText) {
 						WtText titre = (WtText) node.get(comp);
-						valeur =valeur + titre.getContent();
+						valeur = valeur + titre.getContent();
 					}
-					
-					
+
 					comp++;
 				}
 
 			}
-			getTextWtInternalLink(node);
+			getTextWtUnorderedList(node);
 		}
 		return valeur;
 	}
@@ -220,6 +219,35 @@ public class Wikitext extends Extracteur {
 		return valeur;
 	}
 
+	private String findCellText(WtBody celluleBody) {
+		int comp2 = 0;
+		String text = "";
+		while (celluleBody.size() > comp2) {
+			String textPartiel = "";
+			if (celluleBody.get(comp2) instanceof WtText) {
+				WtText titre = (WtText) celluleBody.get(comp2);
+				textPartiel = titre.getContent();
+			}
+
+			if (celluleBody.get(comp2) instanceof WtTemplate) {
+				WtTemplate titre = (WtTemplate) celluleBody.get(comp2);
+				textPartiel = getTextWtTemplate(titre);
+			}
+			if (celluleBody.get(comp2) instanceof WtInternalLink) {
+				WtInternalLink titre = (WtInternalLink) celluleBody.get(comp2);
+				textPartiel = getTextWtInternalLink(titre);
+			}
+			if (celluleBody.get(comp2) instanceof WtUnorderedList) {
+				WtUnorderedList titre = (WtUnorderedList) celluleBody.get(comp2);
+				textPartiel = getTextWtUnorderedList(titre);
+			}
+
+			text = text + textPartiel;
+			comp2++;
+		}
+		return text;
+	}
+
 	private int findCol(WtTableRow r, List<String> rows) {
 		WtBody row = r.getBody();
 		int comp = 0;
@@ -230,34 +258,7 @@ public class Wikitext extends Extracteur {
 			if (row.get(comp) instanceof WtTableCell) {
 				WtTableCell cellule = (WtTableCell) row.get(comp);
 				WtBody celluleBody = cellule.getBody();
-				int comp2 = 0;
-				while (celluleBody.size() > comp2) {
-					String textPartiel = "";
-					if (celluleBody.get(comp2) instanceof WtText) {
-						WtText titre = (WtText) celluleBody.get(comp2);
-						textPartiel = titre.getContent();
-					}
-
-					if (celluleBody.get(comp2) instanceof WtTemplate) {
-						WtTemplate titre = (WtTemplate) celluleBody.get(comp2);
-						textPartiel = getTextWtTemplate(titre);
-					}
-					if (celluleBody.get(comp2) instanceof WtInternalLink) {
-						WtInternalLink titre = (WtInternalLink) celluleBody.get(comp2);
-						textPartiel = getTextWtInternalLink(titre);
-					}
-					if (celluleBody.get(comp2) instanceof WtUnorderedList) {
-						WtUnorderedList titre = (WtUnorderedList) celluleBody.get(comp2);
-						textPartiel = getTextWtUnorderedList(titre);
-					}
-					
-					
-				
-
-					text = text + textPartiel;
-					comp2++;
-				}
-				rows.add(text);
+				rows.add(findCellText(celluleBody));
 				nbCol++;
 			} else if (row.get(comp) instanceof WtTableHeader) {
 				WtTableHeader cellule = (WtTableHeader) row.get(comp);
@@ -306,6 +307,11 @@ public class Wikitext extends Extracteur {
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
 							nbCol = findCol(row, rowsList);
+							compteRows++;
+						}
+						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
+							WtTableCell cell = (WtTableCell) node;
+							rowsList.add(findCellText(cell.getBody()));
 							compteRows++;
 						}
 

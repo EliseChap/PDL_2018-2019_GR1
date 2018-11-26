@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Element;
+import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 import org.jsoup.parser.*;
 

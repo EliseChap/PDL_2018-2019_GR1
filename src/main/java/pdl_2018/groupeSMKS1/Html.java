@@ -1,3 +1,5 @@
+package pdl_2018.groupeSMKS1;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.*;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.*;
 import org.jsoup.parser.*;
 

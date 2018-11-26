@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
  
 
-//@Disabled 
+@Disabled 
 public class TestCommandLine {
 //TODO test généralisé
     /**

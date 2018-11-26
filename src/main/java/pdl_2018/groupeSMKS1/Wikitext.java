@@ -122,6 +122,10 @@ public class Wikitext extends Extracteur {
 				WtTemplate titre = (WtTemplate) captionBody.get(comp);
 				titreCaption = titreCaption + getTextWtTemplate(titre);
 			}
+			if (captionBody.get(comp) instanceof WtInternalLink) {
+				WtInternalLink titre = (WtInternalLink) captionBody.get(comp);
+				titreCaption = titreCaption + getTextWtInternalLink(titre);
+			}
 
 			comp++;
 		}
@@ -166,13 +170,40 @@ public class Wikitext extends Extracteur {
 		}
 		return valeur;
 	}
+	
+	private String getTextWtUnorderedList(WtUnorderedList i) {
+		Iterator<WtNode> l = i.iterator();
+		String valeur = "";
+		while (l.hasNext()) {
+			WtNode node = l.next();
+			if (node.getNodeType() == WtUnorderedList.NT_LIST_ITEM) {
+				int comp = 0;
+				while (node.size() > comp) {
+					if (node.get(comp) instanceof WtInternalLink) {
+						WtInternalLink titre = (WtInternalLink) node.get(comp);
+						valeur = valeur + getTextWtInternalLink(titre);
+					}
+					if (node.get(comp) instanceof WtText) {
+						WtText titre = (WtText) node.get(comp);
+						valeur =valeur + titre.getContent();
+					}
+					
+					
+					comp++;
+				}
+
+			}
+			getTextWtInternalLink(node);
+		}
+		return valeur;
+	}
 
 	private String getTextWtInternalLink(WtNode i) {
 		Iterator<WtNode> l = i.iterator();
 		String valeur = "";
 		while (l.hasNext()) {
 			WtNode node = l.next();
-			if (node.getNodeType() == WtInternalLink.NT_PAGE_NAME) {
+			if (node.getNodeType() == WtInternalLink.NT_LINK_TITLE) {
 				int comp = 0;
 
 				while (node.size() > comp) {
@@ -215,6 +246,13 @@ public class Wikitext extends Extracteur {
 						WtInternalLink titre = (WtInternalLink) celluleBody.get(comp2);
 						textPartiel = getTextWtInternalLink(titre);
 					}
+					if (celluleBody.get(comp2) instanceof WtUnorderedList) {
+						WtUnorderedList titre = (WtUnorderedList) celluleBody.get(comp2);
+						textPartiel = getTextWtUnorderedList(titre);
+					}
+					
+					
+				
 
 					text = text + textPartiel;
 					comp2++;
@@ -258,6 +296,7 @@ public class Wikitext extends Extracteur {
 
 							WtTableCaption caption = (WtTableCaption) node;
 							titre = findCaption(caption);
+							System.out.println(titre);
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_HEADER) {
 							WtTableHeader header = (WtTableHeader) node;
@@ -271,11 +310,11 @@ public class Wikitext extends Extracteur {
 						}
 
 					}
-					boolean premiereLinge= false;
+					boolean premiereLinge = false;
 					if (headerList.size() != 0) {
-						compteRows = compteRows +1;
+						compteRows = compteRows + 1;
 						nbCol = headerList.size();
-						premiereLinge= true;
+						premiereLinge = true;
 					}
 
 					String[][] tab = new String[compteRows][nbCol];
@@ -283,13 +322,11 @@ public class Wikitext extends Extracteur {
 					int colonnes = 0;
 					int lig = 0;
 					int compteur = 0;
-					
-					
+
 					for (String item : headerList) {
 						tab[lig][colonnes] = item;
 						colonnes++;
 					}
-					
 
 					for (String item : rowsList) {
 						if (compteur == nbCol) {
@@ -306,11 +343,11 @@ public class Wikitext extends Extracteur {
 							colonnes++;
 						}
 
-						 tab[lig][colonnes] = item;
+						tab[lig][colonnes] = item;
 						compteur++;
 					}
 
-				//	lesWikitab.put(titre, tab);
+					// lesWikitab.put(titre, tab);
 					Tableau t = new Tableau();
 					comp++;
 
@@ -395,7 +432,8 @@ public class Wikitext extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_de_football", ';', "chemin", " nomCSV", false, true);
+		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_de_football", ';', "chemin", " nomCSV", false,
+				true);
 		t.recuperationPage();
 		// t.traitementMap2();
 //		Set cles = t.lesWikitab.keySet();

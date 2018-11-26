@@ -1,3 +1,5 @@
+package pdl_2018.groupeSMKS1;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -170,15 +172,15 @@ public class Html extends Extracteur {
 					tabcreated = true;
 				}
 				int j = 0;
-				tab = headerTableau(tab, 0, 0, first, th);
+				tab = bodyTableau(tab, 0, 0, th);
 				tab = bodyTableau(tab, i, j, td);
 
 				i++;
 			}
 
 			lectureTableau(tab);
-			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
-			lesTableaux.add(t);
+			//Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
+			//lesTableaux.add(t);
 		}
 	}
 
@@ -191,9 +193,20 @@ public class Html extends Extracteur {
 	 * @param th
 	 * @return tab[][]
 	 */
-	public String[][] headerTableau(String[][] tab, int i, int j, Element first, Elements th) {
-		Elements td = first.getElementsByTag("td");
-		int compteur = 0;
+	/*public String[][] headerTableau(String[][] tab, Elements th) {
+		 int j = 0;
+		 int i =0;
+		 for (Element f : th) {
+				tab[i][j] = f.text();
+				// System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
+				j++;
+			}
+		 
+		 
+		 
+		 
+		 
+		 
 		while (j < tab[i].length) {
 			Element value = first.child(compteur);
 
@@ -235,7 +248,7 @@ public class Html extends Extracteur {
 		}
 
 		return tab;
-	}
+	}*/
 
 	public int countNbCol(Element first) {
 		int count = 0;
@@ -422,8 +435,8 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		//Html t = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';',
-		// "chemin", "nomCSV", true, false);
+		//Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';',
+		//"chemin", "nomCSV", true, false);
 		// t.recuperationPage();
 		//Html b = new Html("https://fr.wikipedia.org/wiki/Jeux_mondiaux_f%C3%A9minins_de_1934", ';', "chemin", "nomCSV",
 		//true, false);

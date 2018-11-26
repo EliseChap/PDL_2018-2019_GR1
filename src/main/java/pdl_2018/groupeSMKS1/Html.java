@@ -88,7 +88,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return un booleen qui indique si l'extraction doit ï¿½etre faite en HTML
+	 * @return un booleen qui indique si l'extraction doit etre faite en HTML
 	 *         (true) ou non (false)
 	 */
 	public boolean getExtraHTML() {

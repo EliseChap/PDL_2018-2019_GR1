@@ -356,6 +356,7 @@ public class Wikitext extends Extracteur {
 
 					// lesWikitab.put(titre, tab);
 					Tableau t = new Tableau();
+					addTableau(t);
 					comp++;
 
 				}
@@ -436,6 +437,10 @@ public class Wikitext extends Extracteur {
 	 */
 	public boolean getExtraWiki() {
 		return this.extraWiki;
+	}
+	
+	public ArrayList<Tableau> getLesTableaux(){
+		return lesTableaux;
 	}
 
 	public static void main(String[] args) {

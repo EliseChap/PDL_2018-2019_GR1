@@ -53,7 +53,7 @@ public class Wikitext extends Extracteur {
 	// @Override
 	public void recuperationPage() {
 		try {
-			Wiki wikisweble = new Wiki("fr.wikipedia.org");
+			Wiki wikisweble = new Wiki(domain);
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
 		} catch (Exception e) {
@@ -145,6 +145,11 @@ public class Wikitext extends Extracteur {
 				WtTemplate titre = (WtTemplate) headerBody.get(comp);
 				titreHeader = titreHeader + getTextWtTemplate(titre);
 			}
+			
+			if (headerBody.get(comp) instanceof WtInternalLink) {
+				WtInternalLink titre = (WtInternalLink) headerBody.get(comp);
+				titreHeader = titreHeader + getTextWtInternalLink(titre);
+			}
 			comp++;
 		}
 		return titreHeader;
@@ -199,6 +204,7 @@ public class Wikitext extends Extracteur {
 
 	private String getTextWtInternalLink(WtNode i) {
 		Iterator<WtNode> l = i.iterator();
+		String valeurTitle = "";
 		String valeur = "";
 		while (l.hasNext()) {
 			WtNode node = l.next();
@@ -208,15 +214,32 @@ public class Wikitext extends Extracteur {
 				while (node.size() > comp) {
 					if (node.get(comp) instanceof WtText) {
 						WtText titre = (WtText) node.get(comp);
-						valeur = titre.getContent();
+						valeurTitle = titre.getContent();
 					}
 					comp++;
 				}
 
 			}
+			if (node.getNodeType() == WtInternalLink.NT_PAGE_NAME) {
+				int comp = 0;
+				while (node.size() > comp) {
+					if (node.get(comp) instanceof WtText) {
+						WtText titre = (WtText) node.get(comp);
+						valeur = titre.getContent();
+					}
+					comp++;
+				}
+			}
+			
 			getTextWtInternalLink(node);
 		}
-		return valeur;
+		
+		if (valeurTitle != "") {
+			return valeurTitle;
+		}else {
+			return valeur;
+		}
+		
 	}
 
 	private String findCellText(WtBody celluleBody) {
@@ -444,7 +467,7 @@ public class Wikitext extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_de_football", ';', "chemin", " nomCSV", false,
+		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Esperanto_and_Novial", ';', "chemin", " nomCSV", false,
 				true);
 		t.recuperationPage();
 		// t.traitementMap2();

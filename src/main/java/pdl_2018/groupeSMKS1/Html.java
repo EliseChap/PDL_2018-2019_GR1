@@ -1,4 +1,3 @@
-package pdl_2018.groupeSMKS1;
 
 
 import java.io.IOException;
@@ -103,7 +102,8 @@ public class Html extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
-
+	
+	
 	public void recuperationPage() {
 		try {
 			Document doc = Jsoup.connect(url).get();
@@ -184,71 +184,6 @@ public class Html extends Extracteur {
 		}
 	}
 
-	/**
-	 * Analyse l'entÃªte de tableau
-	 * 
-	 * @param tab
-	 * @param i
-	 * @param j
-	 * @param th
-	 * @return tab[][]
-	 */
-	/*public String[][] headerTableau(String[][] tab, Elements th) {
-		 int j = 0;
-		 int i =0;
-		 for (Element f : th) {
-				tab[i][j] = f.text();
-				// System.out.println(tab[i][j] + " " + "i : " + i + " j : " + j);
-				j++;
-			}
-		 
-		 
-		 
-		 
-		 
-		 
-		while (j < tab[i].length) {
-			Element value = first.child(compteur);
-
-			String current = value.text();
-			String colspan = value.attr("colspan");
-
-			String rowspan = value.attr("rowspan");
-
-			if (colspan != "") {
-				int x = Integer.parseInt(colspan);
-				tab = Fusion(tab, i, j, x, current, false);
-				// System.out.println("i " + i + " j " + j + tab[i][j] + "FUSION1");
-				j = j + x;
-				System.out.println(j + "jjjjj");
-
-			} else if (rowspan != "") {
-				int y = Integer.parseInt(rowspan);
-				if (y > tab.length) {
-					// System.out.println(y+"rowspan");
-					y = tab.length;
-					// System.out.println(y+"rowspan2");
-
-				}
-
-				tab = Fusion(tab, i, j, y, current, true);
-				// System.out.println("i " + i + " j " + j + tab[i][j] + "FUSION2");
-				j++;
-
-			} else {
-
-				tab[i][j] = value.text();
-				// System.out.println("i " + i + " j " + j + tab[i][j] + "");
-
-				j++;
-
-			}
-			compteur++;
-
-		}
-
-		return tab;
-	}*/
 
 	public int countNbCol(Element first) {
 		int count = 0;

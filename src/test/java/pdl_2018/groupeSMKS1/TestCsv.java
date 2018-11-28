@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import org.junit.After;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -34,6 +35,9 @@ public class TestCsv {
 		assertEquals(csv.getDelimit(), ';');
 		assertEquals(csv.getCheminCsv(), "src/test/java/Fichiers_Sortie/html/");
 		assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
+		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/WikiMatrix-1.csv");
+		fichier1.delete();
+		
 	}
 
 	/**
@@ -45,7 +49,9 @@ public class TestCsv {
 		Csv csv = new Csv('\u0000', null, null, tab,"nomTab",false);
 		assertEquals(csv.getDelimit(), ',');
 		assertEquals(csv.getCheminCsv(), "/html/");
-		assertEquals(csv.getNomCsv(), "nomTab.csv");
+		assertEquals(csv.getNomCsv(), "nomTab-1.csv");
+		File fichier1 = new File("/html/nomTab-1.csv");
+		fichier1.delete();
 	}
 
 	/**
@@ -54,8 +60,7 @@ public class TestCsv {
 
 	@Test
 	public void testExporterCSV2() {
-		File fichier = new File("testExporterCSV2.csv");
-		fichier.delete();
+
 
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
@@ -83,6 +88,9 @@ public class TestCsv {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 		}
+		
+		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/testExporterCSV2-1.csv");
+		fichier1.delete();
 
 
 
@@ -91,8 +99,6 @@ public class TestCsv {
 	@Test
 	public void testExporterCSV() {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
-		File fichier = new File("testExporterCSV.csv");
-		fichier.delete();
 		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie/", "testExporterCSV.csv", tab, "nomTab", false);
 		
 
@@ -100,7 +106,8 @@ public class TestCsv {
 
 		assertTrue(csv.verificationCheminDispo());
 	
-		fichier.delete();
+		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/testExporterCSV-1.csv");
+		fichier1.delete();
 	}
 
 	/**
@@ -123,6 +130,9 @@ public class TestCsv {
 			}
 		}
 		assertEquals(verification, true);
+		
+		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/nomTab-1.csv");
+		fichier1.delete();
 
 	}
 
@@ -141,6 +151,8 @@ public class TestCsv {
 		fichier2.delete();
 		File fichier3 = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-4.csv");
 		fichier3.delete();
+		File fichier4 = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-5.csv");
+		fichier4.delete();
 
 		// creation des fichiers
 
@@ -166,6 +178,7 @@ public class TestCsv {
 		fichier1.delete();
 		fichier2.delete();
 		fichier3.delete();
+		fichier4.delete();
 	}
 
 	/**
@@ -184,6 +197,9 @@ public class TestCsv {
 		assertTrue(csv.verificationCheminDispo());
 		fichier.delete();
 		assertTrue(!csv.verificationCheminDispo());
+		
+		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/testChemin-1.csv");
+		fichier1.delete();
 
 	}
 
@@ -204,7 +220,12 @@ public class TestCsv {
 		assertTrue(separateur != ",");
 		assertTrue(separateur != ":");
 		assertTrue(separateur != "-");
+		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/nomTab-1.csv");
+		fichier1.delete();
 
 	}
+	
+	
+	
 
 }

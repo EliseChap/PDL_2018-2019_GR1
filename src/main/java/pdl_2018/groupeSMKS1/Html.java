@@ -35,9 +35,9 @@ public class Html extends Extracteur {
 		lesHtmltab = new HashMap<String, Element>();
 		recuperationPage();
 	}
-	
-	public ArrayList<Tableau> getLesTableau(){
-		return lesTableaux; 
+
+	public ArrayList<Tableau> getLesTableau() {
+		return lesTableaux;
 	}
 
 	@Override
@@ -88,8 +88,8 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return un booleen qui indique si l'extraction doit etre faite en HTML
-	 *         (true) ou non (false)
+	 * @return un booleen qui indique si l'extraction doit etre faite en HTML (true)
+	 *         ou non (false)
 	 */
 	public boolean getExtraHTML() {
 		return this.extraHTML;
@@ -103,8 +103,7 @@ public class Html extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
-	
-	
+
 	public void recuperationPage() {
 		try {
 			Document doc = Jsoup.connect(url).get();
@@ -178,13 +177,13 @@ public class Html extends Extracteur {
 
 				i++;
 			}
+			tab = TraitementColonnesVides(tab);
 
 			lectureTableau(tab);
-			//Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
-			//lesTableaux.add(t);
+			// Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
+			// lesTableaux.add(t);
 		}
 	}
-
 
 	public int countNbCol(Element first) {
 		int count = 0;
@@ -281,6 +280,52 @@ public class Html extends Extracteur {
 		return tab;
 	}
 
+	public String[][] SuppressionColVides(String[][] tab, int j) {
+		String[][] tab1 = new String[tab.length][j];
+		if (j == tab[0].length - 1) {
+			for (int a = 0; a < tab1.length; a++) {
+				for (int b = 0; b < tab1[a].length; b++) {
+					tab1[a][b] = tab[a][b];
+				}
+			}
+		} else {
+			for (int a = 0; a < tab1.length; a++) {
+				for (int b = 0; b < tab1[a].length; b++) {
+					if (b != j) {
+						//System.out.println(tab[a][b] + "b"+ b + "j"+ j);
+						tab1[a][b] = tab[a][b];
+
+					} else {
+						tab1[a][b] = tab[a][b + 1];
+					}
+				}
+			}
+		}
+		return tab1;
+	}
+
+	public String[][] TraitementColonnesVides(String[][] tab) {
+		boolean vide = true;
+		int i = 0;
+		String test = "test";
+		for (int j = 0; j < tab[i].length; j++) {
+			while (i < tab.length) {
+				
+				if (!((tab[i][j] + test).equalsIgnoreCase(test))) {
+					vide = false;
+				}
+				i++;
+			}
+			i = 0;
+
+			if (vide) {
+				tab = SuppressionColVides(tab, j);
+			}
+			vide = true;
+		}
+		return tab;
+	}
+
 	/**
 	 * Deplace le curseur si la cellule est dÃ©jÃ  pleine
 	 * 
@@ -340,7 +385,7 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "VERTICAL");
+				// System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "VERTICAL");
 				i++;
 
 			}
@@ -349,7 +394,8 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "HORIZONTAL");
+				// System.out.println("i : " + i + " j : " + j + " " + tab[i][j] +
+				// "HORIZONTAL");
 				j++;
 			}
 		}
@@ -371,13 +417,15 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		//Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';',
-		//"chemin", "nomCSV", true, false);
+		// Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';',
+		// "chemin", "nomCSV", true, false);
 		// t.recuperationPage();
-		//Html b = new Html("https://fr.wikipedia.org/wiki/Jeux_mondiaux_f%C3%A9minins_de_1934", ';', "chemin", "nomCSV",
-		//true, false);
-		Html b = new Html("https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_football", ';',
-		 "chemin", "nomCSV", true, false);
+		// Html b = new
+		// Html("https://fr.wikipedia.org/wiki/Jeux_mondiaux_f%C3%A9minins_de_1934",
+		// ';', "chemin", "nomCSV",
+		// true, false);
+		Html b = new Html("https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_football", ';', "chemin", "nomCSV",
+				true, false);
 		// Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things",
 		// ';',"chemin", "nomCSV", true, false);
 		// Html b = new

@@ -65,7 +65,7 @@ public class Tableau implements ITableau {
 	 * Retourne le nombre de vide dans le tableau
 	 * @return countEmpty
 	 */
-	public int countEmpty() {
+	/*public int countEmpty() {
 		int count = 0;
 		for (String[] strArr : arr) {
 			for (String cellule : strArr) {
@@ -75,17 +75,17 @@ public class Tableau implements ITableau {
 			}
 		}
 		return count;
-	}
+	}*/
 	
 	public void constructeurCsv() {
 		Csv csv = new Csv(delimit, cheminCsv, nomCsv, arr, nomTab);
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Html t = new Html("https://en.wikipedia.org/wiki/Infinity_on_High", ';', "chemin","nomCSV", true, false);
 		t.recuperationPage();
 
-	}
+	}*/
 	
 
 }

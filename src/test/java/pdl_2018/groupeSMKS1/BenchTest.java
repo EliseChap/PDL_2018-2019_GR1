@@ -28,6 +28,7 @@ public class BenchTest {
 	public void testBenchExtractors() throws Exception {
 		
 		/*
+		 * GROUPE 1
 		 * Liste de l'ensemble des erreurs trouve
 		 */
 		
@@ -65,8 +66,8 @@ public class BenchTest {
 
 	       
 	       /**
-	        * 
-	        * Fonction rajouter par le groupe 1
+	        * GROUPE 1
+	        * Parcourt les urls et ajoute a la liste si il y a une erreur
 	        */
 	       try {
 	    	   Url url2= new Url(wurl, ';', url+".csv", "output/", false, true);
@@ -98,7 +99,7 @@ public class BenchTest {
 	    
 	    
 	    /**
-	     * 
+	     * GROUPE 1
 	     * Parcourir la liste pour l'ecrire dans le csv
 	     * dans la racine
 	     * 

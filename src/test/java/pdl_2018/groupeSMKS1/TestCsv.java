@@ -34,7 +34,7 @@ public class TestCsv {
 		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie", "WikiMatrix.csv", tab,"nomTab",false);
 		assertEquals(csv.getDelimit(), ';');
 		assertEquals(csv.getCheminCsv(), "src/test/java/Fichiers_Sortie/html/");
-		assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
+		assertEquals(csv.getNomCsv(), "WikiMatrix-1.csv");
 		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/WikiMatrix-1.csv");
 		fichier1.delete();
 		
@@ -50,7 +50,7 @@ public class TestCsv {
 		assertEquals(csv.getDelimit(), ',');
 		assertEquals(csv.getCheminCsv(), "src/test/java/Fichiers_Sortie/html/");
 		assertEquals(csv.getNomCsv(), "nomTab-1.csv");
-		File fichier1 = new File("/html/nomTab-1.csv");
+		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/nomTab-1.csv");
 		fichier1.delete();
 	}
 
@@ -94,20 +94,6 @@ public class TestCsv {
 
 
 
-	}
-
-	@Test
-	public void testExporterCSV() {
-		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
-		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie/", "testExporterCSV.csv", tab, "nomTab", false);
-		
-
-		csv.exporterCSV();
-
-		assertTrue(csv.verificationCheminDispo());
-	
-		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/testExporterCSV-1.csv");
-		fichier1.delete();
 	}
 
 	/**

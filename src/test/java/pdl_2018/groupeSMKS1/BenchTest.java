@@ -5,10 +5,18 @@ import static org.junit.Assert.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
+import com.opencsv.CSVWriter;
+
+
 public class BenchTest {
+	
+	private List<String> listException;
 	
 	/*
 	*  the challenge is to extract as many relevant tables as possible
@@ -18,6 +26,8 @@ public class BenchTest {
 	**/
 	@Test
 	public void testBenchExtractors() throws Exception {
+		
+		List<String> listException = new ArrayList<>();
 		
 		String BASE_WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/";
 		// directory where CSV files are exported (HTML extractor) 
@@ -34,16 +44,30 @@ public class BenchTest {
 	    while ((url = br.readLine()) != null) {
 	       String wurl = BASE_WIKIPEDIA_URL + url; 
 	       System.out.println("Wikipedia url: " + wurl);
+	       
+	       
 	       // TODO: do something with the Wikipedia URL 
 	       // (ie extract relevant tables for correct URL, with the two extractors)
-		    
 	       
 	       // for exporting to CSV files, we will use mkCSVFileName 
 	       // example: for https://en.wikipedia.org/wiki/Comparison_of_operating_system_kernels
 	       // the *first* extracted table will be exported to a CSV file called 
 	       // "Comparison_of_operating_system_kernels-1.csv"
 	       String csvFileName = mkCSVFileName(url, 1);
-	       System.out.println("CSV file name: " + csvFileName);
+
+	       System.out.println("CSV file name: " + url);
+
+	       try {
+	    	   Url url2= new Url(wurl, ';', url+".csv", "output/", false, true);
+	       }
+	       catch(Exception e) {
+	    	   listException.add(wurl);
+	       }
+	       
+	       
+	       // attention false boolean a modifier
+	       
+	       
 	       // the *second* (if any) will be exported to a CSV file called
 	       // "Comparison_of_operating_system_kernels-2.csv"
 
@@ -61,8 +85,13 @@ public class BenchTest {
 	    br.close();	    
 	    assertEquals(nurl, 336);
 	    
-
-
+	       String csv = "MargauxErreur.csv";
+	        CSVWriter writer = new CSVWriter(new FileWriter(csv));
+	        for (String i : listException) {
+	            writer.writeNext(new String[]{i.toString()});
+	        }
+	        System.out.println("CSV File written successfully All at a time");
+	        writer.close();
 
 	}
 

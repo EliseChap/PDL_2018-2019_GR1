@@ -180,7 +180,7 @@ public class Html extends Extracteur {
 			tab = TraitementColonnesVides(tab);
 
 			lectureTableau(tab);
-			// Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle);
+			// Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle,false);
 			// lesTableaux.add(t);
 		}
 	}

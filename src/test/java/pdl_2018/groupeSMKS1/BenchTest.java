@@ -27,7 +27,13 @@ public class BenchTest {
 	@Test
 	public void testBenchExtractors() throws Exception {
 		
+		/*
+		 * Liste de l'ensemble des erreurs trouve
+		 */
+		
 		List<String> listException = new ArrayList<>();
+		
+		
 		
 		String BASE_WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/";
 		// directory where CSV files are exported (HTML extractor) 
@@ -57,6 +63,11 @@ public class BenchTest {
 
 	       System.out.println("CSV file name: " + url);
 
+	       
+	       /**
+	        * 
+	        * Fonction rajouter par le groupe 1
+	        */
 	       try {
 	    	   Url url2= new Url(wurl, ';', url+".csv", "output/", false, true);
 	       }
@@ -84,6 +95,15 @@ public class BenchTest {
 	    
 	    br.close();	    
 	    assertEquals(nurl, 336);
+	    
+	    
+	    /**
+	     * 
+	     * Parcourir la liste pour l'ecrire dans le csv
+	     * dans la racine
+	     * 
+	     * 
+	     */
 	    
 	       String csv = "MargauxErreur.csv";
 	        CSVWriter writer = new CSVWriter(new FileWriter(csv));

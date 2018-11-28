@@ -108,6 +108,24 @@ public class Wikitext extends Extracteur {
 
 		return false;
 	}
+	
+	
+	private int findColspan(WtXmlAttributes e) {
+		int nbSpan = 0;
+		int compteur = 0;
+		while (e.size() > compteur) {
+			WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
+			if (attribut.toString().contains("colspan")) {
+					String test = attribut.toString();
+					String test2 = attribut.getAttribute("WtValue").toString();
+					
+			}
+			compteur++;
+		}
+
+		return nbSpan;
+	}
+	
 
 	private String findCaption(WtTableCaption c) {
 		WtBody captionBody = c.getBody();
@@ -285,6 +303,7 @@ public class Wikitext extends Extracteur {
 				nbCol++;
 			} else if (row.get(comp) instanceof WtTableHeader) {
 				WtTableHeader cellule = (WtTableHeader) row.get(comp);
+				int i = findColspan(cellule.getXmlAttributes());
 				text = findHeader(cellule);
 				rows.add(text);
 				nbCol++;
@@ -314,6 +333,7 @@ public class Wikitext extends Extracteur {
 					int compteRows = 0;
 					Iterator<WtNode> it = table.getBody().iterator();
 					int nbCol = 0;
+					int nbCell = 0;
 					while (it.hasNext()) {
 						WtNode node = it.next();
 						if (node.getNodeType() == WtTable.NT_TABLE_CAPTION) {
@@ -323,12 +343,17 @@ public class Wikitext extends Extracteur {
 							System.out.println(titre);
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_HEADER) {
+							
+			
 							WtTableHeader header = (WtTableHeader) node;
+						
+								int i = findColspan(header.getXmlAttributes());
 							headerList.add(findHeader(header));
 
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
+							int i = findColspan(row.getXmlAttributes());
 							nbCol = findCol(row, rowsList);
 							compteRows++;
 						}
@@ -336,7 +361,7 @@ public class Wikitext extends Extracteur {
 							WtTableCell cell = (WtTableCell) node;
 							rowsList.add(findCellText(cell.getBody()));
 						// ce n'est pas un ajour de rows mais ce sont des cellule, qui font formé une rows entre elles
-							compteRows++;
+							nbCell++;
 						}
 
 					}
@@ -346,8 +371,11 @@ public class Wikitext extends Extracteur {
 						nbCol = headerList.size();
 						premiereLinge = true;
 					}
+					if (nbCell !=0) {
+					//	nbCol += + Math.abs(nbCell/compteRows);
+					}
 
-					String[][] tab = new String[compteRows][nbCol];
+					String[][] tab = new String[compteRows ][nbCol];
 
 					int colonnes = 0;
 					int lig = 0;
@@ -467,7 +495,7 @@ public class Wikitext extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Esperanto_and_Novial", ';', "chemin", " nomCSV", false,
+		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_machine_translation_applications", ';', "chemin", " nomCSV", false,
 				true);
 		t.recuperationPage();
 		// t.traitementMap2();

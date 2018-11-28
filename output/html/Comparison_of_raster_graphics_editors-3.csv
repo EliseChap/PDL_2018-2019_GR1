@@ -1,0 +1,91 @@
+Ability Photopaint;Windows;macOS;Linux;iOS;BSD;Unix;AmigaOS;Other
+Yes;No;No;ACD Canvas;No;No;No;No;ACDSee
+Yes;Dropped[7];No;Acorn Image Editor;No;No;No;No;Adobe Fireworks*
+Yes;Yes;No;Adobe Photoshop;No;No;No;No;Adobe Photoshop Lightroom
+No;Yes;No;Affinity Photo;No;No;No;No;Aperture
+Yes;Yes;No;Autodesk SketchBook Pro;No;No;No;No;Artipic
+Yes;Yes;No;Yes (iPad);No;No;No;No;ArtRage
+Yes;Yes;No;Artweaver;No;No;No;No;Bibble*
+Yes;Yes;No;Yes (iPad);No;No;No;No;Bloom Image Editor
+No;Yes;No;Brush Strokes Image Editor;No;No;No;No;Capture One
+Yes;Yes;No;Yes;No;No;No;Android;Chasys Draw IES
+Yes;Yes;No;CinePaint;No;No;No;No;CodedColor PhotoStudio Pro
+Yes;Yes;No;Yes;No;No;No;Android;Corel PaintShop Pro
+Yes;No;No;Corel Painter;No;No;No;No;Corel Photo-Paint
+Yes;Yes;Yes;darktable;No;No;No;No;Deluxe Paint*
+Yes;Yes;Yes;DigiKam;No;No;No;No;Erdas Imagine
+Yes;No;No;Fatpaint;No;No;No;No;Fotografix
+Yes;Yes;No;F-Spot;No;No;No;No;G'MIC
+Yes;No;No;GIMP;No;No;No;No;GimPhoto
+Version 0.17 only;Yes;Yes;GIMPshop;Yes;Yes;No;No;GNU Paint
+Yes;No;No;GrafX2;No;No;No;No;GraphicConverter
+Yes;No;No;GraphicsMagick;No;No;No;No;gThumb
+Yes;Yes;No;HDR PhotoStudio;No;No;No;No;Helicon Filter
+Yes;No;No;ImageJ;No;No;No;No;ImageMagick
+Yes;Yes;Yes;iPhoto*;Yes;No;No;Solaris;IrfanView
+No;No;No;Iridient Developer;No;No;Yes;Atari ST, DOS[8];Kolourpaint
+Yes;Yes;Yes;Krita;Yes;Yes;No;No;LazPaint
+Yes;No;No;MacPaint*;No;Yes;No;No;Microsoft Office Picture Manager*
+Yes;Yes;Yes;Microsoft Paint;No;No;No;No;Microsoft Photo Editor*
+Yes;No;No;MyPaint;No;No;No;No;OpenCanvas
+No;No;Yes;Paint.NET;Yes;No;No;No;PC Paintbrush*
+Yes;Yes;Yes;Pencil2D;Yes;Yes;No;No;Phatch
+Yes;Yes;Yes;Photofinish*;Yes;Yes;Needs X11 Cygnix;SkyOS;Photogenics
+Yes;Yes;Yes;PhotoLine;No;No;No;No;PhotoPerfect*
+Yes;Yes;Yes;Photos;Yes;Yes;No;No;Photo Raster
+No;No;Yes;Picasa*;Yes;No;No;No;PicMaster
+Yes;Yes;Yes;Pinta;Yes;Yes;Yes;Haiku, MiNT, DOS;PixBuilder Photo Editor
+No;Yes;No;Pixelmator;No;No;No;No;Pixen
+Yes;Yes;Yes;Pixia;Yes;No;No;No;PMview
+No;No;Yes;Project Dogwaffle;Yes;No;No;No;QFX
+Yes;Yes;No;Rawstudio;No;No;No;No;RawTherapee
+Yes;No;No;Seashore;No;No;No;No;Serif PhotoPlus
+Yes;Yes;Yes;Shotwell;Yes;No;No;No;Tux Paint
+Yes;Yes;Yes;TVPaint;Yes;No;No;No;UFRaw
+No;Yes;No;Ulead PhotoImpact*;No;No;No;No;Ultimate Paint*
+Yes;No;No;WinImages;No;No;No;No;Xara Photo & Graphic Designer
+No;Yes;No;XnView;No;No;No;No;XPaint
+Yes;No;Yes;Zoner Photo Studio;Yes;Yes;No;No;
+Yes;Yes;Yes;;Yes;Yes;No;No;
+Yes;Partial[9];Yes;;No;No;No;No;
+No;No;No;;No;No;No;Mac OS[10];
+Yes;Yes;No;;No;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;Yes;Yes;;Yes;Yes;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;No;Partial[11];;No;No;No;No;
+No;No;No;;No;No;No;DOS[12];
+Yes;Yes;Yes;;Yes;No;No;No;
+Yes;Yes;Yes;;Yes;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;No;Yes;;No;No;Up to version 5;Pocket PC;
+Yes;Yes;No;;No;No;No;ATARI ST;
+Yes;No;No;;No;No;No;No;
+No;Yes;No;;No;No;No;No;
+Yes;Yes;Yes;;Yes;Yes;No;No;
+Yes;Yes;Up to version 3.0;;No;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;Yes;Yes;;Yes;Yes;No;No;
+Yes;No;No;;No;No;No;No;
+No;Yes;No;;No;No;No;No;
+No;Yes;No;;No;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;No;No;;No;No;No;OS/2;
+Yes;No;No;;No;No;No;No;
+Yes;No;No;;No;No;No;DOS 3.3 and up;
+No;Yes;Yes;;Yes;No;No;No;
+Yes;Yes;Yes;;No;No;No;No;
+No;Yes;No;;No;No;No;No;
+Yes;No;No;;No;No;No;No;
+No;No;Yes;;Yes;No;No;No;
+Yes;Yes;Yes;;Yes;Yes;No;No;
+Yes;Yes;Yes;;No;No;Up to version 3.59[13];No;
+Yes;Yes;Yes;;Yes;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;No;No;;No;No;No;No;
+Yes;Yes;Yes;;No;No;No;varying[14];
+No;Yes;Yes;;Yes;Yes;No;IBM AIX;
+Yes;No;No;;No;No;No;No;

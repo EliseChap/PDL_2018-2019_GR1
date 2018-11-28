@@ -1,0 +1,27 @@
+Analyze This;Creator;Latest release;User interface;Software license;Cost
+Comoe Networks;Cain and Abel;Web GUI;N/A;?;Capsa
+Massimiliano Montoro;4.9.56 / April 7, 2014;GUI;Freeware;Free;Carnivore
+Colasoft;11.1 / April 24, 2018 (2018-04-24)[1];GUI;Proprietary;$0-$995, depending on version[2];Charles Web Debugging Proxy
+Federal Bureau of Investigation;?;?;N/A;?;Clarified Analyzer
+Karl van Randow;4.1.4 / July 10, 2017;GUI;?;$30-$50 (Free Trial);Clusterpoint Network Traffic Surveillance System
+Clarified Networks;CommView;GUI;Proprietary;Non-free;dSniff
+Clusterpoint;EtherApe;web GUI;Proprietary;?;Ettercap
+TamoSoft;6.5;GUI;Proprietary;$299-$599, $149 1 year subscription;Fiddler
+Dug Song;2.3 / December 17, 2000[3];CLI;BSD License;Free;justniffer
+Juan Toledo;0.9.14 / February 6, 2016[4];GUI;GNU General Public License;Free;Kismet
+ALoR and NaGA;0.8.2-Ferri / March 14, 2015[5];Both;GNU General Public License;Free;Microsoft Message Analyzer
+Eric Lawrence;5.0.20182 / 28 June 2018;GUI;Freeware;Free;Microsoft Network Monitor
+The Justniffer team;0.5.15 / March 21, 2016[6];CLI;GNU General Public License;Free;netsniff-ng
+Mike Kershaw (dragorn);2016-01-R1 / January 31, 2016[7];CLI;GNU General Public License;Free;ngrep
+Microsoft;1.4 / October 28, 2016 [8];GUI;Proprietary;Free;Observer
+Microsoft;3.4 / June 24, 2010;GUI;Proprietary;Free;OmniPeek (formerly AiroPeek, EtherPeek)
+Daniel Borkmann;0.6.2 / November 7, 2016;CLI;GNU General Public License;Free;SteelCentral Transaction Analyzer
+Jordan Ritter;1.45 (11/18/06);CLI;BSD-style;Free;snoop
+Viavi Solutions (formerly Network Instruments);tcpdump;GUI;Proprietary;Price on request;Tranalyzer
+Savvius (formerly WildPackets);11.1 / November, 2017;GUI;Proprietary;$1194-$5994, depending on version[9];Wireshark (formerly Ethereal)
+OPNET Technologies/Riverbed Technology;17.0.T-PL1 / June 9, 2014[10];GUI;Proprietary;Non-free;Xplico
+Sun Microsystems;Solaris 10 / December 11, 2006;CLI;CDDL;Free;
+The Tcpdump team;4.8.1 / October 25, 2016[11];CLI;BSD License;Free;
+The Tranalyzer team;0.7.5 / February 10, 2018[12];CLI;GNU General Public License;Free;
+The Wireshark team;2.4.5 / February 23, 2018[13];Both;GNU General Public License;Free;
+The Xplico team;1.2.0 / February 1, 2017 (2017-02-01)[14];Both;GNU General Public License;Free;

@@ -1,0 +1,16 @@
+Client name;Development status;Open source client;End-to-end authentication[a];Encryption protocols;Encryption protocols;Encryption protocols;Encryption protocols;Forward secrecy;Multiple encryption;Encrypted group calling;Proxy, Tor
+Client name;Development status;Open source client;End-to-end authentication[a];ZRTP;ECDH;DTLS;SRTP;Forward secrecy;Multiple encryption;Encrypted group calling;Proxy, Tor
+FaceTime;Active;No[67];No[67];?;?;?;?;Yes[67];?;No;No
+Google Duo;Active;No;No;?;?;?;?;?;?;No;No
+Jitsi[b];Active;Yes;Yes[67];Yes;No;Yes;Yes;Yes[67];Yes;Yes;?
+Line[68][69];Active;No;?;?;?;?;?;?;?;No[68];No
+Linphone[b];Active;Yes;Yes;Yes;?;Yes;Yes;Yes;Yes;?;No
+PGPfone;Abandonware;Viewable source[70];Yes;?;?;?;?;?;?;?;?
+Signal;Active;Yes;Yes[67];No;Yes;No;Yes;Yes[67];Yes;No;Depends[71]
+Silent Phone;Active;Viewable source[72];Yes[67];Yes;?;?;Yes;Yes[67];Yes;Yes;No
+Telegram;Active;Yes;Yes[73];No;No;No;No;Yes;?;No;No
+Threema;Active;Partially[c][74];Yes[75];No;Yes[75];Yes[75];Yes[75];Partially[d][75];Yes;No;No
+Viber[36];Active;No;?;?;?;?;?;?;?;?;No
+WhatsApp;Active;Partially[c][76];Yes[76];No;Yes[76];No;Yes[76];Yes[76];Yes[76];No;No
+Wire;Active;Yes;Yes[77];No;?;Yes[41];Yes[41];?;Yes;Yes;No
+Zfone;Abandonware;Viewable source[78];Yes;Yes;Optional[79];?;Yes[80];Yes;Yes;?;?

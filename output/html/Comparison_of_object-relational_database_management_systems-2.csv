@@ -1,0 +1,7 @@
+CUBRID;Type;Method;Type inheritance;Table inheritance
+Yes;Yes;Yes;Yes;Oracle
+Yes;Yes[Note 1];Yes;Yes;OpenLink Virtuoso
+Yes;Yes;Yes;Yes;PostgreSQL
+Yes;Yes;Yes;Yes;Informix
+Yes;Yes;Yes;Yes;WakandaDB
+Yes;Yes;Yes;Yes;

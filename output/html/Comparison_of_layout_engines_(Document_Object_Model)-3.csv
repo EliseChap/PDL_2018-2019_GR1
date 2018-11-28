@@ -1,0 +1,360 @@
+;;Trident;Tasman;Gecko;WebKit;KHTML;Presto
+Interface HTMLCollection;Interface HTMLCollection;Interface HTMLCollection;Interface HTMLCollection;Interface HTMLCollection;Interface HTMLCollection;Interface HTMLCollection;Interface HTMLCollection
+length;DOM1;7.0;?;1.0;?;?;1.0
+item();DOM1;7.0;?;1.0;?;?;1.0
+namedItem();DOM1;7.0;?;1.0;?;?;1.0
+Interface HTMLOptionsCollection;Interface HTMLOptionsCollection;Interface HTMLOptionsCollection;Interface HTMLOptionsCollection;Interface HTMLOptionsCollection;Interface HTMLOptionsCollection;Interface HTMLOptionsCollection;Interface HTMLOptionsCollection
+length;DOM2;?;?;1.0;?;?;2.0
+item();DOM2;?;?;1.0;?;?;2.0
+namedItem();DOM2;?;?;1.0;?;?;2.0
+Interface HTMLDocument;Interface HTMLDocument;Interface HTMLDocument;Interface HTMLDocument;Interface HTMLDocument;Interface HTMLDocument;Interface HTMLDocument;Interface HTMLDocument
+domain;DOM1;4.0;Yes;1.0;Yes;?;1.0
+URL;DOM1;4.0;Yes;1.0;Yes;?;1.0
+body;DOM1;4.0;Yes;1.0;Yes;?;1.0
+images;DOM1;4.0;Yes;1.0;Yes;?;1.0
+applets;DOM1;4.0;Yes;1.0;Yes;?;1.0
+title;DOM1;3.0;Yes;1.0;Yes;?;1.0
+referrer;DOM1;3.0;Yes;1.0;Yes;?;1.0
+links;DOM1;3.0;Yes;1.0;Yes;?;1.0
+forms;DOM1;3.0;Yes;1.0;Yes;?;1.0
+anchors;DOM1;3.0;Yes;1.0;Yes;?;1.0
+cookie;DOM1;3.0;Yes;1.0;Yes;?;1.0
+open();DOM1;3.0;Yes;1.0;Yes;?;1.0
+close();DOM1;3.0;Yes;1.0;Yes;?;1.0
+write();DOM1;3.0;Yes;1.0;Yes;?;1.0
+writeln();DOM1;3.0;Yes;1.0;Yes;?;1.0
+getElementsByName();DOM1;Yes;?;1.0;Yes;?;1.0
+Interface HTMLElement;Interface HTMLElement;Interface HTMLElement;Interface HTMLElement;Interface HTMLElement;Interface HTMLElement;Interface HTMLElement;Interface HTMLElement
+id;DOM1;4.0;Yes;1.0;?;?;1.0
+title;DOM1;4.0;Yes;1.0;?;?;1.0
+lang;DOM1;4.0;Yes;1.0;?;?;1.0
+className;DOM1;4.0;Yes;1.0;?;?;1.0
+dir;DOM1;5.0;Yes;1.0;?;?;1.0
+Interface HTMLHtmlElement;Interface HTMLHtmlElement;Interface HTMLHtmlElement;Interface HTMLHtmlElement;Interface HTMLHtmlElement;Interface HTMLHtmlElement;Interface HTMLHtmlElement;Interface HTMLHtmlElement
+version;DOM1;6.0;?;1.0;?;?;2.0
+Interface HTMLHeadElement;Interface HTMLHeadElement;Interface HTMLHeadElement;Interface HTMLHeadElement;Interface HTMLHeadElement;Interface HTMLHeadElement;Interface HTMLHeadElement;Interface HTMLHeadElement
+profile;DOM1;8.0;?;1.0;?;?;1.0
+Interface HTMLLinkElement;Interface HTMLLinkElement;Interface HTMLLinkElement;Interface HTMLLinkElement;Interface HTMLLinkElement;Interface HTMLLinkElement;Interface HTMLLinkElement;Interface HTMLLinkElement
+disabled;DOM1;4.0;Yes;1.0;?;?;1.0
+charset;DOM1;4.0;Yes;1.0;?;?;1.0
+href;DOM1;8.0;Yes;1.0;?;?;1.0
+hreflang;DOM1;4.0;Yes;1.0;?;?;1.0
+media;DOM1;4.0;Yes;1.0;?;?;1.0
+rel;DOM1;4.0;Yes;1.0;?;?;1.0
+rev;DOM1;4.0;Yes;1.0;?;?;1.0
+target;DOM1;4.0;Yes;1.0;?;?;1.0
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLTitleElement;Interface HTMLTitleElement;Interface HTMLTitleElement;Interface HTMLTitleElement;Interface HTMLTitleElement;Interface HTMLTitleElement;Interface HTMLTitleElement;Interface HTMLTitleElement
+text;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLMetaElement;Interface HTMLMetaElement;Interface HTMLMetaElement;Interface HTMLMetaElement;Interface HTMLMetaElement;Interface HTMLMetaElement;Interface HTMLMetaElement;Interface HTMLMetaElement
+content;DOM1;4.0;Yes;1.0;?;?;1.0
+httpEquiv;DOM1;4.0;Yes;1.0;?;?;1.0
+name;DOM1;4.0;Yes;1.0;?;?;1.0
+scheme;DOM1;6.0;?;1.0;?;?;2.0
+Interface HTMLBaseElement;Interface HTMLBaseElement;Interface HTMLBaseElement;Interface HTMLBaseElement;Interface HTMLBaseElement;Interface HTMLBaseElement;Interface HTMLBaseElement;Interface HTMLBaseElement
+href;DOM1;8.0;Yes;1.0;?;?;2.0
+target;DOM1;4.0;Yes;1.0;?;?;2.0
+Interface HTMLStyleElement;Interface HTMLStyleElement;Interface HTMLStyleElement;Interface HTMLStyleElement;Interface HTMLStyleElement;Interface HTMLStyleElement;Interface HTMLStyleElement;Interface HTMLStyleElement
+disabled;DOM2;?;?;1.0;?;?;1.0
+media;DOM2;4.0;Yes;1.0;?;?;1.0
+type;DOM2;4.0;Yes;1.0;?;?;1.0
+Interface HTMLBodyElement;Interface HTMLBodyElement;Interface HTMLBodyElement;Interface HTMLBodyElement;Interface HTMLBodyElement;Interface HTMLBodyElement;Interface HTMLBodyElement;Interface HTMLBodyElement
+aLink;DOM1;4.0;Yes;1.0;?;?;1.0
+background;DOM1;8.0;Yes;1.0;?;?;1.0
+bgColor;DOM1;4.0;Yes;1.0;?;?;1.0
+link;DOM1;4.0;Yes;1.0;?;?;1.0
+text;DOM1;4.0;Yes;1.0;?;?;1.0
+vLink;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLFormElement;Interface HTMLFormElement;Interface HTMLFormElement;Interface HTMLFormElement;Interface HTMLFormElement;Interface HTMLFormElement;Interface HTMLFormElement;Interface HTMLFormElement
+action;DOM1;8.0;Yes;1.9;?;?;1.0
+acceptEncoding;DOM1;?;?;1.0;?;?;1.0
+elements;DOM1;3.0;Yes;1.0;?;?;1.0
+length;DOM1;3.0;Yes;1.0;?;?;1.0
+name;DOM1;3.0;Yes;1.0;?;?;1.0
+enctype;DOM1;4.0;Yes;1.0;?;?;1.0
+method;DOM1;3.0;Yes;1.0;?;?;1.0
+target;DOM1;3.0;Yes;1.0;?;?;1.0
+submit();DOM1;3.0;Yes;1.0;?;?;1.0
+reset();DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLSelectElement;Interface HTMLSelectElement;Interface HTMLSelectElement;Interface HTMLSelectElement;Interface HTMLSelectElement;Interface HTMLSelectElement;Interface HTMLSelectElement;Interface HTMLSelectElement
+selectedIndex;DOM1;3.0;Yes;1.0;?;?;1.0
+length;DOM1;3.0;Yes;1.0;?;?;1.0
+options;DOM1;3.0;Yes;1.0;?;?;1.0
+name;DOM1;3.0;Yes;1.0;?;?;1.0
+size;DOM1;4.0;Yes;1.0;?;?;1.0
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+value;DOM1;4.0;Yes;1.0;?;?;1.0
+disabled;DOM1;5.0;Yes;1.0;?;?;1.0
+multiple;DOM1;5.0;Yes;1.0;?;?;1.0
+form;DOM1;?;?;1.0;?;?;1.0
+tabIndex;DOM1;?;?;1.0;?;?;1.0
+add();DOM1;?;?;1.0;?;?;1.0
+remove();DOM1;?;?;1.0;?;?;1.0
+blur();DOM1;3.0;Yes;1.0;?;?;1.0
+focus();DOM1;3.0;Yes;1.0;?;?;1.0
+Interface HTMLOptGroupElement;Interface HTMLOptGroupElement;Interface HTMLOptGroupElement;Interface HTMLOptGroupElement;Interface HTMLOptGroupElement;Interface HTMLOptGroupElement;Interface HTMLOptGroupElement;Interface HTMLOptGroupElement
+disabled;DOM1;?;?;1.0;?;?;2.0
+label;DOM1;No;Yes;1.0;?;?;2.0
+Interface HTMLOptionElement;Interface HTMLOptionElement;Interface HTMLOptionElement;Interface HTMLOptionElement;Interface HTMLOptionElement;Interface HTMLOptionElement;Interface HTMLOptionElement;Interface HTMLOptionElement
+form;DOM1;4.0;Yes;1.0;?;?;1.0
+defaultSelected;DOM1;4.0;Yes;1.0;?;?;1.0
+text;DOM1;4.0;Yes;1.0;?;?;1.0
+index;DOM1;?;?;1.0;?;?;1.0
+disabled;DOM1;?;?;1.0;?;?;1.0
+label;DOM1;6.0;Yes;1.0;?;?;2.0
+selected;DOM1;4.0;Yes;1.0;?;?;1.0
+value;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLInputElement;Interface HTMLInputElement;Interface HTMLInputElement;Interface HTMLInputElement;Interface HTMLInputElement;Interface HTMLInputElement;Interface HTMLInputElement;Interface HTMLInputElement
+defaultValue;DOM1;3.0;Yes;1.0;?;?;1.0
+defaultChecked;DOM1;3.0;Yes;1.0;?;?;1.0
+form;DOM1;3.0;Yes;1.0;?;?;1.0
+accept;DOM1;?;?;1.0;?;?;1.0
+accesskey;DOM1;?;?;1.0;?;?;1.0
+align;DOM1;?;?;1.0;?;?;1.0
+alt;DOM1;?;?;1.0;?;?;1.0
+checked;DOM1;3.0;Yes;1.0;?;?;1.0
+disabled;DOM1;5.0;Yes;1.0;?;?;1.0
+maxLength;DOM1;4.0;Yes;1.0;?;?;2.0
+name;DOM1;3.0;Yes;1.0;?;?;1.0
+readOnly;DOM1;4.0;Yes;1.0;?;?;1.0
+size;DOM1;4.0;Yes;1.0;?;?;1.0
+src;DOM1;4.0;Yes;1.9;?;?;1.0
+tabIndex;DOM1;?;?;1.0;?;?;1.0
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+useMap;DOM1;?;?;1.0;?;?;1.0
+value;DOM1;3.0;Yes;1.0;?;?;1.0
+blur();DOM1;3.0;Yes;1.0;?;?;1.0
+focus();DOM1;3.0;Yes;1.0;?;?;1.0
+select();DOM1;3.0;Yes;1.0;?;?;1.0
+click();DOM1;3.0;Yes;1.0;?;?;1.0
+Interface HTMLTextAreaElement;Interface HTMLTextAreaElement;Interface HTMLTextAreaElement;Interface HTMLTextAreaElement;Interface HTMLTextAreaElement;Interface HTMLTextAreaElement;Interface HTMLTextAreaElement;Interface HTMLTextAreaElement
+defaultValue;DOM1;3.0;Yes;1.0;?;?;1.0
+form;DOM1;3.0;Yes;1.0;?;?;1.0
+accesskey;DOM1;?;?;1.0;?;?;1.0
+cols;DOM1;4.0;Yes;1.0;?;?;1.0
+disabled;DOM1;5.0;Yes;1.0;?;?;1.0
+name;DOM1;3.0;Yes;1.0;?;?;1.0
+readOnly;DOM1;4.0;Yes;1.0;?;?;1.0
+rows;DOM1;4.0;Yes;1.0;?;?;1.0
+tabIndex;DOM1;?;?;1.0;?;?;1.0
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+value;DOM1;3.0;Yes;1.0;?;?;1.0
+blur();DOM1;3.0;Yes;1.0;?;?;1.0
+focus();DOM1;3.0;Yes;1.0;?;?;1.0
+select();DOM1;3.0;Yes;1.0;?;?;1.0
+Interface HTMLButtonElement;Interface HTMLButtonElement;Interface HTMLButtonElement;Interface HTMLButtonElement;Interface HTMLButtonElement;Interface HTMLButtonElement;Interface HTMLButtonElement;Interface HTMLButtonElement
+form;DOM1;3.0;Yes;1.0;?;?;1.0
+accesskey;DOM1;?;?;1.0;?;?;1.0
+disabled;DOM1;5.0;Yes;1.0;?;?;1.0
+name;DOM1;3.0;Yes;1.0;?;?;1.0
+tabIndex;DOM1;?;?;1.0;?;?;1.0
+type;DOM1;3.0;Yes;1.0;?;?;1.0
+value;DOM1;3.0;Yes;1.0;?;?;1.0
+Interface HTMLLabelElement;Interface HTMLLabelElement;Interface HTMLLabelElement;Interface HTMLLabelElement;Interface HTMLLabelElement;Interface HTMLLabelElement;Interface HTMLLabelElement;Interface HTMLLabelElement
+form;DOM1;6.0;Yes;1.0;?;?;1.0
+accesskey;DOM1;5.0;Yes;1.0;?;?;1.0
+htmlFor;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLFieldSetElement;Interface HTMLFieldSetElement;Interface HTMLFieldSetElement;Interface HTMLFieldSetElement;Interface HTMLFieldSetElement;Interface HTMLFieldSetElement;Interface HTMLFieldSetElement;Interface HTMLFieldSetElement
+form;DOM1;5.0;Yes;1.0;?;?;1.0
+Interface HTMLLegendElement;Interface HTMLLegendElement;Interface HTMLLegendElement;Interface HTMLLegendElement;Interface HTMLLegendElement;Interface HTMLLegendElement;Interface HTMLLegendElement;Interface HTMLLegendElement
+form;DOM1;5.0;Yes;1.0;?;?;1.0
+accesskey;DOM1;?;?;1.0;?;?;1.0
+align;DOM1;5.0;Yes;1.0;?;?;1.0
+Interface HTMLUListElement;Interface HTMLUListElement;Interface HTMLUListElement;Interface HTMLUListElement;Interface HTMLUListElement;Interface HTMLUListElement;Interface HTMLUListElement;Interface HTMLUListElement
+compact;DOM1;4.0;Yes;1.0;?;?;1.0
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLOListElement;Interface HTMLOListElement;Interface HTMLOListElement;Interface HTMLOListElement;Interface HTMLOListElement;Interface HTMLOListElement;Interface HTMLOListElement;Interface HTMLOListElement
+compact;DOM1;4.0;Yes;1.0;?;?;1.0
+start;DOM1;4.0;Yes;1.0;?;?;1.0
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLDListElement;Interface HTMLDListElement;Interface HTMLDListElement;Interface HTMLDListElement;Interface HTMLDListElement;Interface HTMLDListElement;Interface HTMLDListElement;Interface HTMLDListElement
+compact;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLLIElement;Interface HTMLLIElement;Interface HTMLLIElement;Interface HTMLLIElement;Interface HTMLLIElement;Interface HTMLLIElement;Interface HTMLLIElement;Interface HTMLLIElement
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+value;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLDivElement;Interface HTMLDivElement;Interface HTMLDivElement;Interface HTMLDivElement;Interface HTMLDivElement;Interface HTMLDivElement;Interface HTMLDivElement;Interface HTMLDivElement
+align;DOM1;?;?;1.0;?;?;1.0
+Interface HTMLParagraphElement;Interface HTMLParagraphElement;Interface HTMLParagraphElement;Interface HTMLParagraphElement;Interface HTMLParagraphElement;Interface HTMLParagraphElement;Interface HTMLParagraphElement;Interface HTMLParagraphElement
+align;DOM1;?;?;1.0;?;?;1.0
+Interface HTMLHeadingElement;Interface HTMLHeadingElement;Interface HTMLHeadingElement;Interface HTMLHeadingElement;Interface HTMLHeadingElement;Interface HTMLHeadingElement;Interface HTMLHeadingElement;Interface HTMLHeadingElement
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLQuoteElement;Interface HTMLQuoteElement;Interface HTMLQuoteElement;Interface HTMLQuoteElement;Interface HTMLQuoteElement;Interface HTMLQuoteElement;Interface HTMLQuoteElement;Interface HTMLQuoteElement
+cite;DOM1;8.0;Yes;1.0;?;?;1.0
+Interface HTMLPreElement;Interface HTMLPreElement;Interface HTMLPreElement;Interface HTMLPreElement;Interface HTMLPreElement;Interface HTMLPreElement;Interface HTMLPreElement;Interface HTMLPreElement
+width;DOM1;?;?;1.0;?;?;1.0
+Interface HTMLBRElement;Interface HTMLBRElement;Interface HTMLBRElement;Interface HTMLBRElement;Interface HTMLBRElement;Interface HTMLBRElement;Interface HTMLBRElement;Interface HTMLBRElement
+clear;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLHRElement;Interface HTMLHRElement;Interface HTMLHRElement;Interface HTMLHRElement;Interface HTMLHRElement;Interface HTMLHRElement;Interface HTMLHRElement;Interface HTMLHRElement
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+noShade;DOM1;4.0;Yes;1.0;?;?;1.0
+size;DOM1;4.0;Yes;1.0;?;?;1.0
+width;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLModElement;Interface HTMLModElement;Interface HTMLModElement;Interface HTMLModElement;Interface HTMLModElement;Interface HTMLModElement;Interface HTMLModElement;Interface HTMLModElement
+cite;DOM1;8.0;?;1.9;?;?;1.0
+dateTime;DOM1;?;?;1.0;?;?;1.0
+Interface HTMLAnchorElement;Interface HTMLAnchorElement;Interface HTMLAnchorElement;Interface HTMLAnchorElement;Interface HTMLAnchorElement;Interface HTMLAnchorElement;Interface HTMLAnchorElement;Interface HTMLAnchorElement
+accesskey;DOM1;?;?;1.0;?;?;1.0
+charset;DOM1;6.0;Yes;1.0;?;?;1.0
+coords;DOM1;6.0;Yes;1.0;?;?;1.0
+href;DOM1;3.0;Yes;1.0;?;?;1.0
+hreflang;DOM1;6.0;Yes;1.0;?;?;1.0
+name;DOM1;4.0;Yes;1.0;?;?;1.0
+rel;DOM1;4.0;Yes;1.0;?;?;1.0
+rev;DOM1;4.0;Yes;1.0;?;?;1.0
+shape;DOM1;6.0;Yes;1.0;?;?;1.0
+tabIndex;DOM1;?;?;1.0;?;?;1.0
+target;DOM1;3.0;Yes;1.0;?;?;1.0
+type;DOM1;6.0;Yes;1.0;?;?;1.0
+blur();DOM1;?;?;1.0;?;?;1.0
+focus();DOM1;?;?;1.0;?;?;1.0
+Interface HTMLImageElement;Interface HTMLImageElement;Interface HTMLImageElement;Interface HTMLImageElement;Interface HTMLImageElement;Interface HTMLImageElement;Interface HTMLImageElement;Interface HTMLImageElement
+name;DOM1;4.0;Yes;1.0;?;?;1.0
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+alt;DOM1;4.0;Yes;1.0;?;?;1.0
+border;DOM1;4.0;Yes;1.0;?;?;1.0
+height;DOM1;4.0;Yes;1.0;?;?;1.0
+hspace;DOM1;4.0;Yes;1.0;?;?;1.0
+isMap;DOM1;4.0;Yes;1.0;?;?;1.0
+longDesc;DOM1;8.0;?;1.0;?;?;2.0
+src;DOM1;4.0;Yes;1.0;?;?;1.0
+useMap;DOM1;4.0;Yes;1.0;?;?;1.0
+vspace;DOM1;4.0;Yes;1.0;?;?;1.0
+width;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLObjectElement;Interface HTMLObjectElement;Interface HTMLObjectElement;Interface HTMLObjectElement;Interface HTMLObjectElement;Interface HTMLObjectElement;Interface HTMLObjectElement;Interface HTMLObjectElement
+form;DOM1;?;?;1.0;?;?;1.0
+code;DOM1;4.0;Yes;1.0;?;?;1.0
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+archive;DOM1;?;?;1.0;?;?;1.0
+border;DOM1;?;?;1.0;?;?;1.0
+codeBase;DOM1;8.0;Yes;1.0;?;?;1.0
+codeType;DOM1;4.0;Yes;1.0;?;?;1.0
+data;DOM1;8.0;Yes;1.0;?;?;1.0
+declare;DOM1;?;?;1.0;?;?;2.0
+height;DOM1;4.0;Yes;1.0;?;?;1.0
+hspace;DOM1;4.0;Yes;1.0;?;?;1.0
+name;DOM1;4.0;Yes;1.0;?;?;1.0
+standby;DOM1;?;?;1.0;?;?;1.0
+tabIndex;DOM1;?;?;1.0;?;?;1.0
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+useMap;DOM1;?;?;1.0;?;?;1.0
+vspace;DOM1;4.0;Yes;1.0;?;?;1.0
+width;DOM1;4.0;Yes;1.0;?;?;1.0
+contentDocument;DOM2;No;Yes;1.0;?;?;2.0
+Interface HTMLParamElement;Interface HTMLParamElement;Interface HTMLParamElement;Interface HTMLParamElement;Interface HTMLParamElement;Interface HTMLParamElement;Interface HTMLParamElement;Interface HTMLParamElement
+name;DOM1;?;?;1.0;?;?;1.0
+type;DOM1;?;?;1.0;?;?;1.0
+value;DOM1;?;?;1.0;?;?;1.0
+valueType;DOM1;No;?;1.0;?;?;1.0
+Interface HTMLMapElement;Interface HTMLMapElement;Interface HTMLMapElement;Interface HTMLMapElement;Interface HTMLMapElement;Interface HTMLMapElement;Interface HTMLMapElement;Interface HTMLMapElement
+areas;DOM1;4.0;Yes;1.0;?;?;1.0
+name;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLAreaElement;Interface HTMLAreaElement;Interface HTMLAreaElement;Interface HTMLAreaElement;Interface HTMLAreaElement;Interface HTMLAreaElement;Interface HTMLAreaElement;Interface HTMLAreaElement
+accesskey;DOM1;?;?;1.0;?;?;1.0
+alt;DOM1;4.0;Yes;1.0;?;?;1.0
+coords;DOM1;4.0;Yes;1.0;?;?;1.0
+hrefs;DOM1;?;?;1.0;?;?;1.0
+noHrefs;DOM1;?;?;1.0;?;?;1.0
+shape;DOM1;4.0;Yes;1.0;?;?;1.0
+tabIndex;DOM1;?;?;1.0;?;?;1.0
+target;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLScriptElement;Interface HTMLScriptElement;Interface HTMLScriptElement;Interface HTMLScriptElement;Interface HTMLScriptElement;Interface HTMLScriptElement;Interface HTMLScriptElement;Interface HTMLScriptElement
+text;DOM1;4.0;0;1.0;?;?;1.0
+htmlFor (reserved for future use);DOM1;4.0;Yes;1.0;?;?;No
+event (reserved for future use);DOM1;4.0;Yes;1.0;?;?;2.0
+charset;DOM1;?;?;1.0;?;?;1.0
+defer;DOM1;4.0;Yes;1.0;?;?;1.0
+src;DOM1;8.0;Yes;1.0;?;?;1.0
+type;DOM1;4.0;Yes;1.0;?;?;1.0
+target;DOM1;?;?;1.0;?;?;1.0
+Interface HTMLTableElement;Interface HTMLTableElement;Interface HTMLTableElement;Interface HTMLTableElement;Interface HTMLTableElement;Interface HTMLTableElement;Interface HTMLTableElement;Interface HTMLTableElement
+caption;DOM1;4.0;Yes;1.0;?;?;1.0
+tHead;DOM1;4.0;Yes;1.0;?;?;1.0
+tFoot;DOM1;4.0;Yes;1.0;?;?;1.0
+rows;DOM1;4.0;Yes;1.0;?;?;1.0
+tBodies;DOM1;4.0;Yes;1.0;?;?;1.0
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+bgColor;DOM1;4.0;Yes;1.0;?;?;1.0
+border;DOM1;4.0;Yes;1.0;?;?;1.0
+cellPadding;DOM1;4.0;Yes;1.0;No;?;1.0
+cellSpacing;DOM1;4.0;Yes;1.0;?;?;1.0
+frame;DOM1;4.0;Yes;1.0;?;?;1.0
+rules;DOM1;4.0;No;1.0;?;?;1.0
+summary;DOM1;6.0;No;1.0;?;?;1.0
+width;DOM1;4.0;Yes;1.0;?;?;1.0
+createTHead();DOM1;4.0;Yes;1.0;?;?;1.0
+deleteTHead();DOM1;4.0;Yes;1.0;?;?;1.0
+createTFoot();DOM1;4.0;Yes;1.0;?;?;1.0
+deleteTFoot();DOM1;4.0;Yes;1.0;?;?;1.0
+createCaption();DOM1;4.0;Yes;1.0;?;?;1.0
+deleteCaption();DOM1;4.0;Yes;1.0;?;?;1.0
+insertRow();DOM1;4.0;Yes;1.0;?;?;1.0
+deleteRow();DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLTableCaptionElement;Interface HTMLTableCaptionElement;Interface HTMLTableCaptionElement;Interface HTMLTableCaptionElement;Interface HTMLTableCaptionElement;Interface HTMLTableCaptionElement;Interface HTMLTableCaptionElement;Interface HTMLTableCaptionElement
+align;DOM1;5.0;Yes;1.0;?;?;1.0
+Interface HTMLTableColElement;Interface HTMLTableColElement;Interface HTMLTableColElement;Interface HTMLTableColElement;Interface HTMLTableColElement;Interface HTMLTableColElement;Interface HTMLTableColElement;Interface HTMLTableColElement
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+ch;DOM1;6.0;No;1.0;?;?;2.0
+chOff;DOM1;6.0;No;1.0;?;?;2.0
+span;DOM1;5.0;Yes;1.0;?;?;1.0
+vAlign;DOM1;4.0;Yes;1.0;?;?;1.0
+width;DOM1;5.0;0;1.0;?;?;1.0
+Interface HTMLTableSectionElement;Interface HTMLTableSectionElement;Interface HTMLTableSectionElement;Interface HTMLTableSectionElement;Interface HTMLTableSectionElement;Interface HTMLTableSectionElement;Interface HTMLTableSectionElement;Interface HTMLTableSectionElement
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+ch;DOM1;6.0;No;1.0;?;?;2.0
+chOff;DOM1;6.0;No;1.0;?;?;2.0
+vAlign;DOM1;4.0;Yes;1.0;?;?;1.0
+rows;DOM1;4.0;Yes;1.0;?;?;1.0
+insertRow();DOM1;4.0;Yes;1.0;?;?;1.0
+deleteRow();DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLTableRowElement;Interface HTMLTableRowElement;Interface HTMLTableRowElement;Interface HTMLTableRowElement;Interface HTMLTableRowElement;Interface HTMLTableRowElement;Interface HTMLTableRowElement;Interface HTMLTableRowElement
+rowIndex;DOM1;4.0;Yes;1.0;?;?;1.0
+sectionRowIndex;DOM1;4.0;Yes;1.0;?;?;1.0
+cells;DOM1;4.0;Yes;1.0;?;?;1.0
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+bgColor;DOM1;4.0;Yes;1.0;?;?;1.0
+ch;DOM1;6.0;No;1.0;?;?;2.0
+chOff;DOM1;6.0;No;1.0;?;?;2.0
+vAlign;DOM1;4.0;Yes;1.0;?;?;1.0
+insertCell();DOM1;4.0;Yes;1.0;?;?;1.0
+deleteCell();DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLTableCellElement;Interface HTMLTableCellElement;Interface HTMLTableCellElement;Interface HTMLTableCellElement;Interface HTMLTableCellElement;Interface HTMLTableCellElement;Interface HTMLTableCellElement;Interface HTMLTableCellElement
+cellIndex;DOM1;4.0;Yes;1.0;Incorrect;?;1.0
+abbr;DOM1;6.0;Yes;1.0;?;?;2.0
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+axis;DOM1;6.0;Yes;1.0;?;?;1.0
+bgColor;DOM1;4.0;Yes;1.0;?;?;1.0
+ch;DOM1;6.0;No;1.0;?;?;2.0
+chOff;DOM1;6.0;No;1.0;?;?;2.0
+colSpan;DOM1;4.0;Yes;1.0;?;?;1.0
+headers;DOM1;6.0;Yes;1.0;?;?;1.0
+height;DOM1;4.0;Yes;1.0;?;?;1.0
+noWrap;DOM1;4.0;Yes;1.0;?;?;1.0
+rowSpan;DOM1;4.0;Yes;1.0;?;?;1.0
+scope;DOM1;?;?;1.0;?;?;1.0
+vAlign;DOM1;4.0;Yes;1.0;?;?;1.0
+width;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLFrameSetElement;Interface HTMLFrameSetElement;Interface HTMLFrameSetElement;Interface HTMLFrameSetElement;Interface HTMLFrameSetElement;Interface HTMLFrameSetElement;Interface HTMLFrameSetElement;Interface HTMLFrameSetElement
+cols;DOM1;4.0;Yes;1.0;?;?;1.0
+rows;DOM1;4.0;Yes;1.0;?;?;1.0
+Interface HTMLFrameElement;Interface HTMLFrameElement;Interface HTMLFrameElement;Interface HTMLFrameElement;Interface HTMLFrameElement;Interface HTMLFrameElement;Interface HTMLFrameElement;Interface HTMLFrameElement
+frameBorder;DOM1;4.0;Yes;1.0;?;?;1.0
+longDesc;DOM1;8.0;Yes;1.0;?;?;1.0
+marginHeight;DOM1;6.0;Yes;1.0;?;?;1.0
+marginWidth;DOM1;6.0;Yes;1.0;?;?;1.0
+name;DOM1;4.0;Yes;1.0;?;?;1.0
+noResize;DOM1;4.0;Yes;1.0;?;?;1.0
+scrolling;DOM1;4.0;Yes;1.0;?;?;1.0
+src;DOM1;8.0;Yes;1.0;?;?;1.0
+contentDocument;DOM2;No;Yes;1.0;?;?;1.0
+Interface HTMLIFrameSetElement;Interface HTMLIFrameSetElement;Interface HTMLIFrameSetElement;Interface HTMLIFrameSetElement;Interface HTMLIFrameSetElement;Interface HTMLIFrameSetElement;Interface HTMLIFrameSetElement;Interface HTMLIFrameSetElement
+align;DOM1;4.0;Yes;1.0;?;?;1.0
+frameBorder;DOM1;?;?;1.0;?;?;1.0
+height;DOM1;4.0;Yes;1.0;?;?;1.0
+longDesc;DOM1;8.0;Yes;1.0;?;?;1.0
+marginHeight;DOM1;4.0;Yes;1.0;?;?;1.0
+marginWidth;DOM1;4.0;Yes;1.0;?;?;1.0
+name;DOM1;4.0;Yes;1.0;?;?;1.0
+scrolling;DOM1;4.0;Yes;1.0;?;?;1.0
+src;DOM1;8.0;Yes;1.0;?;?;1.0
+width;DOM1;4.0;Yes;1.0;?;?;1.0
+contentDocument;DOM2;No;Yes;1.0;?;?;1.0

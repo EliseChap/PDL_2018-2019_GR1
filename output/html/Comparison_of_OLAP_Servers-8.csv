@@ -1,0 +1,16 @@
+OLAP Server;Windows;Linux;UNIX;z/OS;AIX
+Apache Kylin;No;Yes;Yes;No;No
+Druid;No;Yes;Yes;Essbase;IBM Cognos TM1
+Yes;Yes;Yes;No;icCube;Infor BI OLAP Server
+Yes;Yes;Yes;No;Yes;Jedox OLAP Server
+Yes;Yes;Yes;Yes;Yes;Kyligence
+Yes;No;No;No;Kyvos BI on Big Data;Microsoft Analysis Services
+Yes;Yes;Yes;No;MicroStrategy Intelligence Server;Mondrian OLAP server
+No;Yes;Yes;No;No;Oracle Database OLAP Option
+No;Yes;Yes;No;No;SAP NetWeaver BW
+Yes;No;No;No;SAS OLAP Server;
+Yes;Yes;Yes;No;;
+Yes;Yes;Yes;Yes;;
+Yes;Yes;Yes;Yes;;
+Yes;Yes;Yes;Yes;;
+Yes;Yes;Yes;Yes;;

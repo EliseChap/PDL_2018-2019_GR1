@@ -1,0 +1,30 @@
+Card Slot;CF;CF;CFast;SM;MMC;MMC;Memory Stick;Memory Stick;Memory Stick;Memory Stick;SDSC;SDSC;SDSC;SDHC;SDHC;SDHC;SDXC;SDXC;xD;xD;xD;XQD
+Card Slot;I;II;ExpressCard;PCI Express Mini Card;MMC;RS-MMC, MMCmobile;Std;PRO;PRO Duo;Micro;SDSC;miniSD;microSD;SDHC;miniSDHC;microSDHC;SDXC;microSDXC;Std;M;H;mSATA
+E[34];E[34];PC Card;PCMCIA;E[35];CF I;E[36];E[36];E[35];CF II;E[35];E[35];E[37];CFast;SM;xD;XQD;MMC;E[35];E[35];E[35];EM;MS
+SDSC;miniSD;microSD;SDHC;miniSDHC;microSDHC;SDXC;microSDXC;IDE PATA;Serial ATA;PCI Express;USB;Floppy;Nintendo DS Slot-1;Nintendo DS Slot-2;;;;;;;EM;
+;;XM;;;;;;;;;;;;;;;;;;;;
+EM[38];EM[38];;E[39];E[40];;E[40];E[40];;;E[40];;;;;;;;;;;;
+EM[38];EM[38];;E[39];E[40];;E[40];E[40];;;E[40];;;;;;;;;;;;
++;+;;E;E[41];;E[42];E[42];E[43];;E[41];;;;;;;;E[44];E[44];E[44];;
+;+;;E;E[41];;E[42];E[42];;;E[41];;;;;;;;E[44];E[44];E[44];;
+;;+;;;;;;;;;;;;;;;;;;;;
+;;;+;;;;;;;;;;;;;;;X[45];X[45];X[45];;
+;;;;;;;;;;;;E[46];;;;;;+;+;+;;
+;;;;;;;;;;;;;;;;;;;;;+;
+;;;;+;M;;;;;D[47];;;;;;;;;;;;
+;;;;X[48];;+;+;M;M;X[48];X[48];E[49];;;;;;;;;;
+;;;;D;M;;;;;+;EM;EM;;;;;;;;;;
+;;;;;;;;;;;+;EM;;;;;;;;;;
+;;;;;;;;;;;;+;;;;;;;;;;
+;;;;;;;;;;D[50];EM;EM;+;EM;EM;;;;;;;
+;;;;;;;;;;;D[50];EM;;+;EM;;;;;;;
+;;;;;;;;;;;;D[50];;;+;;;;;;;
+;uscb;;;;;;;;;D[51];EM;EM;D[51];EM;EM;+;EM;;;;;
+;;;;;;;;;;;;D[51];;;D[51];;+;;;;;
+EM[52];EM[52];;;;;;;;;E[53][54];;;;;;;;;;;;
+E[55];E[55];EM;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;EM;
+X[56];X[56];;X[56];X[56];;X[56];X[56];E[57];E[57];E[58];;E[59];;;;;;X[56];X[56];X[56];X;
+;;;E[60];E;E + M;E;E;;;;;;;;;;;;;;;
+;;;;;;;;;;;;E[61];;;;;;;;;;
+;;;;;;;;;;E[62];E[62];E[62];;;;;;;;;;

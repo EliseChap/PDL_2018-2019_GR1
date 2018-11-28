@@ -1,0 +1,77 @@
+;;Trident;Tasman;Gecko;WebKit;KHTML;Presto
+Interface EventTarget;Interface EventTarget;Interface EventTarget;Interface EventTarget;Interface EventTarget;Interface EventTarget;Interface EventTarget;Interface EventTarget
+addEventListener();DOM2;5.0[t 6];No;1.0;Yes;Yes;1.0
+removeEventListener();DOM2;5.0[t 6];No;1.0;Yes;Yes;1.0
+dispatchEvent();DOM2;5.0[t 6];No;1.0;?;?;1.0
+Interface EventListener;Interface EventListener;Interface EventListener;Interface EventListener;Interface EventListener;Interface EventListener;Interface EventListener;Interface EventListener
+handleEvent();DOM2;?;?;?;?;?;1.0
+Interface Event;Interface Event;Interface Event;Interface Event;Interface Event;Interface Event;Interface Event;Interface Event
+type;DOM2;4.0;Yes;1.0;?;?;1.0
+target;DOM2;No;Yes;1.3;Incorrect;?;1.0
+currentTarget;DOM2;No;No;1.0;?;?;1.0
+eventPhase;DOM2;No;No;1.0;?;?;1.0
+bubbles;DOM2;No;No;1.0;?;?;1.0
+cancelable;DOM2;No;No;1.0;?;?;1.0
+timeStamp;DOM2;No;No;Yes;?;?;1.0
+stopPropagation();DOM2;No;No;1.0;?;?;1.0
+preventDefault();DOM2;No;No;1.0;?;?;1.0
+initEvent();DOM2;No;No;1.0;?;?;1.0
+Exception EventException;Exception EventException;Exception EventException;Exception EventException;Exception EventException;Exception EventException;Exception EventException;Exception EventException
+code;DOM2;No;No;1.0;?;?;1.0
+Interface DocumentEvent;Interface DocumentEvent;Interface DocumentEvent;Interface DocumentEvent;Interface DocumentEvent;Interface DocumentEvent;Interface DocumentEvent;Interface DocumentEvent
+createEvent();DOM2;No;No;1.0;?;?;1.0
+Interface UIEvent;Interface UIEvent;Interface UIEvent;Interface UIEvent;Interface UIEvent;Interface UIEvent;Interface UIEvent;Interface UIEvent
+view;DOM2;No;No;No[g 10];?;?;1.0
+detail;DOM2;No;No;No[g 10];?;?;1.0
+initUIEvent();DOM2;No;No;No[g 10];?;?;1.0
+Events for interface UIEvent;Events for interface UIEvent;Events for interface UIEvent;Events for interface UIEvent;Events for interface UIEvent;Events for interface UIEvent;Events for interface UIEvent;Events for interface UIEvent
+DOMFocusIn;DOM2;No;No;No[g 10];?;?;1.0
+DOMFocusOut;DOM2;No;No;No[g 10];?;?;1.0
+DOMActivate;DOM2;No;No;No[g 10];?;?;1.0
+Interface MouseEvent;Interface MouseEvent;Interface MouseEvent;Interface MouseEvent;Interface MouseEvent;Interface MouseEvent;Interface MouseEvent;Interface MouseEvent
+screenX;DOM2;4.0;Yes;1.0;Yes;?;1.0
+screenY;DOM2;4.0;Yes;1.0;Yes;?;1.0
+clientX;DOM2;4.0;Yes;1.0;Incorrect;?;1.0
+clientY;DOM2;4.0;Yes;1.0;Incorrect;?;1.0
+ctrlKey;DOM2;4.0;Yes;1.0;Yes;?;1.0
+shiftKey;DOM2;4.0;Yes;1.0;Yes;?;1.0
+altKey;DOM2;4.0;Yes;1.0;Yes;?;1.0
+metaKey;DOM2;No;No;1.0;Yes;?;1.0
+button;DOM2;Incorrect;Incorrect;1.0;Incorrect;?;1.0
+relatedTarget;DOM2;No;No;1.0;Yes;?;1.0
+initMouseEvent();DOM2;?;?;1.0;?;?;1.0
+Events for interface MouseEvent;Events for interface MouseEvent;Events for interface MouseEvent;Events for interface MouseEvent;Events for interface MouseEvent;Events for interface MouseEvent;Events for interface MouseEvent;Events for interface MouseEvent
+click;DOM2;4.0;Yes;1.0;?;?;1.0
+mousedown;DOM2;4.0;Yes;1.0;?;?;1.0
+mouseup;DOM2;4.0;Yes;1.0;?;?;1.0
+mouseover;DOM2;4.0;Yes;1.0;?;?;1.0
+mousemove;DOM2;4.0;Yes;1.0;?;?;1.0
+mouseout;DOM2;4.0;Yes;1.0;?;?;1.0
+Interface MutationEvent;Interface MutationEvent;Interface MutationEvent;Interface MutationEvent;Interface MutationEvent;Interface MutationEvent;Interface MutationEvent;Interface MutationEvent
+relatedNode;DOM2;No;No;1.0;?;?;1.0
+prevValue;DOM2;No;No;1.0;?;?;1.0
+newValue;DOM2;No;No;1.0;?;?;1.0
+attrName;DOM2;No;No;1.0;?;?;1.0
+attrChange;DOM2;No;No;1.0;?;?;1.0
+initMutationEvent;DOM2;No;No;1.0;?;?;1.0
+Events for interface MutationEvent;Events for interface MutationEvent;Events for interface MutationEvent;Events for interface MutationEvent;Events for interface MutationEvent;Events for interface MutationEvent;Events for interface MutationEvent;Events for interface MutationEvent
+DOMSubtreeModified;DOM2;5.0[t 7];No;1.9;Yes;Partial;No
+DOMNodeInserted;DOM2;5.0[t 7];No;1.0;Yes;No;1.0
+DOMNodeRemoved;DOM2;5.0[t 7];No;1.0;Yes;No;1.0
+DOMNodeRemovedFromDocument;DOM2;5.0[t 7];No;No[g 11];Yes;No;1.0
+DOMNodeInsertedIntoDocument;DOM2;5.0[t 7];No;No[g 11];Yes;Yes;1.0
+DOMAttrModified;DOM2;5.0[t 7];No;1.0;No;No;1.0
+DOMCharacterDataModified;DOM2;5.0[t 7];No;1.0;Yes;No;1.0
+Events for HTML;Events for HTML;Events for HTML;Events for HTML;Events for HTML;Events for HTML;Events for HTML;Events for HTML
+load;DOM2;4.0;Yes;1.0;?;?;2.0
+unload;DOM2;4.0;Yes;1.0;?;?;2.0
+abort;DOM2;4.0;Yes;1.0;?;?;No
+error;DOM2;4.0;Yes;1.0;?;?;2.0
+select;DOM2;4.0;Yes;1.0;?;?;2.0
+change;DOM2;4.0;Yes;1.0;?;?;2.0
+submit;DOM2;4.0;Yes;1.0;?;?;2.0
+reset;DOM2;4.0;Yes;1.0;?;?;2.0
+focus;DOM2;4.0;Yes;1.0;?;?;2.0
+blur;DOM2;4.0;Yes;1.0;?;?;2.0
+resize;DOM2;4.0;Yes;1.0;?;?;2.0
+scroll;DOM2;4.0;Yes;1.0;?;?;2.0

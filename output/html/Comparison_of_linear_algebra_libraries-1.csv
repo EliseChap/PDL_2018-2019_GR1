@@ -1,0 +1,14 @@
+ALGLIB;Real;Complex;SPD;HPD;SY;HE;BND;TF;OF;EVD;SVD;GEVD;GSVD
+ATLAS;Yes;Yes;Yes;Yes;No;No;No;Yes;Yes;Yes;Yes;Yes;No
+Dlib;Yes;Yes;Yes;Yes;No;No;No;Yes;No;No;No;No;No
+GNU Scientific Library;Yes;Yes;Yes;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes;No;No
+ILNumerics.Net;Yes;Yes;Yes;Yes;No;No;No;Yes;Yes;Yes;Yes;Yes;No
+IMSL Numerical Libraries;Yes;Yes;Yes;Yes;No;No;No;Yes;Yes;Yes;Yes;No;No
+LAPACK;Yes;Yes;Yes;Yes;No;No;Yes;Yes;No;Yes;Yes;Yes;No
+MKL;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+NAG Numerical Library;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+NMath;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+SciPy (Python packages);Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;No;No
+Eigen;Yes;Yes;Yes;Yes;No;No;No;Yes;Yes;Yes;Yes;No;No
+Armadillo;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;No
+;Yes;Yes;Yes;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes;Yes;No

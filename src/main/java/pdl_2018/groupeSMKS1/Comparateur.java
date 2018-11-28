@@ -1,13 +1,8 @@
 package pdl_2018.groupeSMKS1;
 
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
-import org.apache.commons.collections4.ListUtils;
+import java.util.Arrays;
+
 
 public class Comparateur implements IComparateur {
 	private String[][] wiki;
@@ -62,8 +57,6 @@ public class Comparateur implements IComparateur {
 	public boolean differentNombreLigneWikiHtml() {
 		int nbreLigneWiki = wiki.length;
 		int nbreLigneHtml = html.length;
-		System.out.println("nombre de ligne Wiki : " + nbreLigneWiki);
-		System.out.println("nombre de ligne Html : " + nbreLigneHtml);
 		return nbreLigneWiki == nbreLigneHtml;
 	}
 
@@ -122,7 +115,7 @@ public class Comparateur implements IComparateur {
 	 */
 
 	/**
-	 * Verification de la m�thode de comparaison partiel ou complet
+	 * Verification de la methode de comparaison partiel ou complet
 	 */
 	public double analyse() {
 		double ratioC;
@@ -143,8 +136,8 @@ public class Comparateur implements IComparateur {
 	 */
 
 	/**
-	 * M�thode qui parcourts l'ensemble des deux tableaux pour pouvoir trouver les
-	 * diff�rences
+	 * Methode qui parcourts l'ensemble des deux tableaux pour pouvoir trouver les
+	 * differences
 	 * 
 	 * @return Nombre de difference de contenu
 	 * @date 17/11/2018
@@ -190,7 +183,7 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * R�alisation du pourcentage de difference de contenu entre les deux tableaux
+	 * Realisation du pourcentage de difference de contenu entre les deux tableaux
 	 * 
 	 * @param erreurContenu
 	 * @return pourcentage de difference entre les deux type de tableau

@@ -34,6 +34,8 @@ public class Csv implements ICsv {
 		this.nomTab = nomTab;
 		nomCsv = pnomCsv;
 		nomCsv = choixNomCsv();
+		String[] split = nomCsv.split("\\.");
+		nomCsv = split[0] + "-1." + split[1];
 
 		// Verification si cheminCsv est null
 		if (pcheminCsv == null) {
@@ -44,10 +46,10 @@ public class Csv implements ICsv {
 		
 		
 		if(extraHtmlWiki) {
-			cheminCsv = cheminCsv+"/html/";
+			cheminCsv = cheminCsv+"/wikitext/";
 		}
 		else {
-			cheminCsv = cheminCsv+"/wikitext/";
+			cheminCsv = cheminCsv+"/html/";
 		}
 		
 		tableau = tableau2;
@@ -274,13 +276,13 @@ public class Csv implements ICsv {
 
 		int incrementation = 1;
 		File f = new File(cheminCsv + nomCsv);
+		nomCsv =nomCsv.replaceAll("-1", "");
 		String[] split = nomCsv.split("\\.");
-		logger.info(split[0]);
 		while (f.isFile()) {
 			incrementation++;
-			f = new File(cheminCsv + split[0] + "_" + incrementation + "." + split[1]);
+			f = new File(cheminCsv + split[0] + "-" + incrementation + "." + split[1]);
 		}
-		return cheminCsv + split[0] + "_" + incrementation + "." + split[1];
+		return cheminCsv + split[0] + "-" + incrementation + "." + split[1];
 
 	}
 }

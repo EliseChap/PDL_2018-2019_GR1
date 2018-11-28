@@ -129,7 +129,7 @@ public class TestCsv {
 	@Test
 	public void testNomCsvIncrementer() {
 		// initialisation
-		File fichier = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-1.csv");
+		/*File fichier = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-1.csv");
 		fichier.delete();
 		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-2.csv");
 		fichier1.delete();
@@ -164,7 +164,7 @@ public class TestCsv {
 		fichier1.delete();
 		fichier2.delete();
 		fichier3.delete();
-		fichier4.delete();
+		fichier4.delete();*/
 	}
 
 	/**

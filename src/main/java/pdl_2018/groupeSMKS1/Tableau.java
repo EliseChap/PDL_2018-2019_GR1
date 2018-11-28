@@ -11,15 +11,17 @@ public class Tableau implements ITableau {
 	private String nomCsv;
 	private String arr[][];
 	private String nomTab;
+	private boolean extraHtmlWiki;
 
 	public Tableau() {}
 	
-	public Tableau(char pDelimit, String pCheminCsv, String pNomCsv, String pTableau[][], String nomTab) {
+	public Tableau(char pDelimit, String pCheminCsv, String pNomCsv, String pTableau[][], String nomTab, boolean extraHtmlWiki) {
 		delimit = pDelimit;
 		cheminCsv = pCheminCsv;
 		nomCsv = pNomCsv;
 		arr = pTableau;
 		this.nomTab = nomTab;
+		this.extraHtmlWiki=extraHtmlWiki;
 		getTableauToString();
 		constructeurCsv();
 	}
@@ -78,7 +80,7 @@ public class Tableau implements ITableau {
 	}*/
 	
 	public void constructeurCsv() {
-		Csv csv = new Csv(delimit, cheminCsv, nomCsv, arr, nomTab);
+		Csv csv = new Csv(delimit, cheminCsv, nomCsv, arr, nomTab,extraHtmlWiki);
 	}
 	
 	/*public static void main(String[] args) {

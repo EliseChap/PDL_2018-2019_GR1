@@ -22,7 +22,7 @@ public class Csv implements ICsv {
 	private String nomTab;
 	private static Map<String, Boolean> separateurAutomatique = new HashMap<>();
 
-	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2, String nomTab) {
+	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2, String nomTab, boolean extraHtmlWiki) {
 
 		// Verification si delimitation est null
 		if (pdelimit == '\u0000') {
@@ -31,16 +31,25 @@ public class Csv implements ICsv {
 			delimit = pdelimit;
 		}
 		// Verification si nom est null
-		this.nomTab=nomTab;
+		this.nomTab = nomTab;
 		nomCsv = pnomCsv;
 		nomCsv = choixNomCsv();
-	
+
 		// Verification si cheminCsv est null
 		if (pcheminCsv == null) {
 			cheminCsv = "";
 		} else {
 			cheminCsv = pcheminCsv;
 		}
+		
+		
+		if(extraHtmlWiki) {
+			cheminCsv = cheminCsv+"/html/";
+		}
+		else {
+			cheminCsv = cheminCsv+"/wikitext/";
+		}
+		
 		tableau = tableau2;
 		initialisationSeparateurAutomatique();
 		exporterCSV();
@@ -49,20 +58,17 @@ public class Csv implements ICsv {
 
 	private String choixNomCsv() {
 		if (nomCsv == null || nomCsv == "") {
-			if(nomTab == null || nomTab == "") {
+			if (nomTab == null || nomTab == "") {
 				nomCsv = "WikiMatrix.csv";
+			} else {
+				nomCsv = nomTab + ".csv";
 			}
-			else {
-				nomCsv=nomTab+".csv";
-			}
-			
+
 		} else {
 			nomCsv = nomCsv;
 		}
 		return nomCsv;
 
-		
-		
 	}
 
 	@Override
@@ -84,7 +90,7 @@ public class Csv implements ICsv {
 	public String getNomCsv() {
 		return nomCsv;
 	}
-	
+
 	@Override
 	public String[][] getTableau() {
 		return tableau;
@@ -106,8 +112,9 @@ public class Csv implements ICsv {
 		separateurAutomatique.put(",", false);
 		/*
 		 * separateurAutomatique.put("&", false); separateurAutomatique.put(">", false);
-		 * separateurAutomatique.put("<", false); separateurAutomatique.put("ï¿½", false);
-		 * separateurAutomatique.put("*", false); separateurAutomatique.put("ï¿½", false);
+		 * separateurAutomatique.put("<", false); separateurAutomatique.put("ï¿½",
+		 * false); separateurAutomatique.put("*", false);
+		 * separateurAutomatique.put("ï¿½", false);
 		 * separateurAutomatique.put("\\", false); separateurAutomatique.put("/",
 		 * false);
 		 */
@@ -127,23 +134,22 @@ public class Csv implements ICsv {
 
 		Boolean separateurUtilisateur = false;
 
-		// Analyse les donnï¿½es afin de savoir quel est le sï¿½parateur adaptï¿½
+		// Analyse les donnees afin de savoir quel est le separateur adapte
 
 		String separateur = "" + delimit;
 
 		for (String[] strArr : tableau) {
 			for (String cellule : strArr) {
-				if(cellule==null)cellule="";
+				if (cellule == null)
+					cellule = "";
 				if (cellule.contains(separateur)) {
 					logger.info(
 							"un choix de seperateur va ï¿½tre effectuï¿½ par dï¿½faut, car celui dï¿½finit pose des incohï¿½rences dans le csv");
 					separateurUtilisateur = true;
 
-
-
 				}
-		Set cles = separateurAutomatique.keySet();
-		Iterator it = cles.iterator();
+				Set cles = separateurAutomatique.keySet();
+				Iterator it = cles.iterator();
 
 				while (it.hasNext()) {
 					Object cle = it.next();
@@ -209,35 +215,31 @@ public class Csv implements ICsv {
 
 		FileWriter outputfile;
 		try {
-			outputfile = new FileWriter(nomFichier);	
-			CSVWriter writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-				CSVWriter.DEFAULT_LINE_END);	
-		for (String[] strArr : tableau) {
+			outputfile = new FileWriter(nomFichier);
+
+			CSVWriter writer = new CSVWriter(outputfile, car, CSVWriter.NO_QUOTE_CHARACTER,
+					CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END);
+			for (String[] strArr : tableau) {
 				writer.writeNext(strArr);
 			}
-		writer.close();
+			writer.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		};
+		}
+		;
 
-
-		 /*finally {
-
-			try {
-				if (outputfile != null) {
-					outputfile.close();
-				}
-				if (writer != null) {
-					writer.close();
-				}
-
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		}*/
+		/*
+		 * finally {
+		 * 
+		 * try { if (outputfile != null) { outputfile.close(); } if (writer != null) {
+		 * writer.close(); }
+		 * 
+		 * } catch (IOException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); }
+		 * 
+		 * }
+		 */
 	}
 
 	/**
@@ -249,15 +251,21 @@ public class Csv implements ICsv {
 
 	@Override
 	public boolean verificationCheminDispo() {
+
+		File dir = new File(cheminCsv);
+
+		if (!dir.exists() || !dir.isDirectory()) {
+			dir.mkdirs();
+		}
 		File f = new File(cheminCsv + nomCsv);
-		logger.info("le fichier existe dï¿½jï¿½, un nom incrementï¿½ va ï¿½tre crï¿½ï¿½");
+		logger.info("le fichier existe deja, un nom incremente va etre creer");
 		return f.isFile();
 	}
 
 	/**
 	 * Trouve un nom de CSV non deja pris
 	 * 
-	 * @return String nomDuFichierAlï¿½atoire
+	 * @return String nomDuFichierAléatoire
 	 * @date 25/10/2018
 	 */
 

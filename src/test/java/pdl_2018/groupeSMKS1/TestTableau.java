@@ -17,7 +17,7 @@ public class TestTableau {
 		
 		String tab[][] = { { "0", "2a", "4h", "6", "fds8" }, { "sQ1", "3", "GRE5", "7", "D9" } };
 
-		Tableau csv = new Tableau(';', "", "WikiMatrix.csv", tab,"tableau");
+		Tableau csv = new Tableau(';', "", "WikiMatrix.csv", tab,"tableau",false);
 		assertEquals(csv.getDelimit(), ';');
 		assertEquals(csv.getCheminCsv(), "");
 		assertEquals(csv.getNomCsv(), "WikiMatrix.csv");

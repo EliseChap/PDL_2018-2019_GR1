@@ -53,7 +53,7 @@ public class Wikitext extends Extracteur {
 	// @Override
 	public void recuperationPage() {
 		try {
-			Wiki wikisweble = new Wiki("fr.wikipedia.org");
+			Wiki wikisweble = new Wiki(domain);
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
 		} catch (Exception e) {
@@ -108,6 +108,24 @@ public class Wikitext extends Extracteur {
 
 		return false;
 	}
+	
+	
+	private int findColspan(WtXmlAttributes e) {
+		int nbSpan = 0;
+		int compteur = 0;
+		while (e.size() > compteur) {
+			WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
+			if (attribut.toString().contains("colspan")) {
+					String test = attribut.toString();
+					String test2 = attribut.getAttribute("WtValue").toString();
+					
+			}
+			compteur++;
+		}
+
+		return nbSpan;
+	}
+	
 
 	private String findCaption(WtTableCaption c) {
 		WtBody captionBody = c.getBody();
@@ -144,6 +162,11 @@ public class Wikitext extends Extracteur {
 			if (headerBody.get(comp) instanceof WtTemplate) {
 				WtTemplate titre = (WtTemplate) headerBody.get(comp);
 				titreHeader = titreHeader + getTextWtTemplate(titre);
+			}
+			
+			if (headerBody.get(comp) instanceof WtInternalLink) {
+				WtInternalLink titre = (WtInternalLink) headerBody.get(comp);
+				titreHeader = titreHeader + getTextWtInternalLink(titre);
 			}
 			comp++;
 		}
@@ -199,6 +222,7 @@ public class Wikitext extends Extracteur {
 
 	private String getTextWtInternalLink(WtNode i) {
 		Iterator<WtNode> l = i.iterator();
+		String valeurTitle = "";
 		String valeur = "";
 		while (l.hasNext()) {
 			WtNode node = l.next();
@@ -208,15 +232,32 @@ public class Wikitext extends Extracteur {
 				while (node.size() > comp) {
 					if (node.get(comp) instanceof WtText) {
 						WtText titre = (WtText) node.get(comp);
-						valeur = titre.getContent();
+						valeurTitle = titre.getContent();
 					}
 					comp++;
 				}
 
 			}
+			if (node.getNodeType() == WtInternalLink.NT_PAGE_NAME) {
+				int comp = 0;
+				while (node.size() > comp) {
+					if (node.get(comp) instanceof WtText) {
+						WtText titre = (WtText) node.get(comp);
+						valeur = titre.getContent();
+					}
+					comp++;
+				}
+			}
+			
 			getTextWtInternalLink(node);
 		}
-		return valeur;
+		
+		if (valeurTitle != "") {
+			return valeurTitle;
+		}else {
+			return valeur;
+		}
+		
 	}
 
 	private String findCellText(WtBody celluleBody) {
@@ -262,6 +303,7 @@ public class Wikitext extends Extracteur {
 				nbCol++;
 			} else if (row.get(comp) instanceof WtTableHeader) {
 				WtTableHeader cellule = (WtTableHeader) row.get(comp);
+				int i = findColspan(cellule.getXmlAttributes());
 				text = findHeader(cellule);
 				rows.add(text);
 				nbCol++;
@@ -291,6 +333,7 @@ public class Wikitext extends Extracteur {
 					int compteRows = 0;
 					Iterator<WtNode> it = table.getBody().iterator();
 					int nbCol = 0;
+					int nbCell = 0;
 					while (it.hasNext()) {
 						WtNode node = it.next();
 						if (node.getNodeType() == WtTable.NT_TABLE_CAPTION) {
@@ -300,12 +343,17 @@ public class Wikitext extends Extracteur {
 							System.out.println(titre);
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_HEADER) {
+							
+			
 							WtTableHeader header = (WtTableHeader) node;
+						
+								int i = findColspan(header.getXmlAttributes());
 							headerList.add(findHeader(header));
 
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
+							int i = findColspan(row.getXmlAttributes());
 							nbCol = findCol(row, rowsList);
 							compteRows++;
 						}
@@ -313,7 +361,7 @@ public class Wikitext extends Extracteur {
 							WtTableCell cell = (WtTableCell) node;
 							rowsList.add(findCellText(cell.getBody()));
 						// ce n'est pas un ajour de rows mais ce sont des cellule, qui font formé une rows entre elles
-							compteRows++;
+							nbCell++;
 						}
 
 					}
@@ -323,8 +371,11 @@ public class Wikitext extends Extracteur {
 						nbCol = headerList.size();
 						premiereLinge = true;
 					}
+					if (nbCell !=0) {
+					//	nbCol += + Math.abs(nbCell/compteRows);
+					}
 
-					String[][] tab = new String[compteRows][nbCol];
+					String[][] tab = new String[compteRows ][nbCol];
 
 					int colonnes = 0;
 					int lig = 0;
@@ -444,7 +495,7 @@ public class Wikitext extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("fr.wikipedia.org", "Équipe_de_France_de_football", ';', "chemin", " nomCSV", false,
+		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_machine_translation_applications", ';', "chemin", " nomCSV", false,
 				true);
 		t.recuperationPage();
 		// t.traitementMap2();

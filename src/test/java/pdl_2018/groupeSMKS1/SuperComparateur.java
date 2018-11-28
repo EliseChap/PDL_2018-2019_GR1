@@ -23,7 +23,7 @@ public class SuperComparateur {
 	
 	public static void main(String[] args) {
 		
-		Fichier monFichier = new Fichier("C:/Users/sullivand/Music/Desktop/mesBellesUrl.txt", ';', "", "C:/Users/sullivand/Music/Desktop/", false, true);
+		Fichier monFichier = new Fichier("C:/Users/sullivand/Music/Desktop/mesBellesUrl.txt", ';', "", "output", false, true);
 		
 		SuperComparateur superComparateur = new SuperComparateur(monFichier);
 		

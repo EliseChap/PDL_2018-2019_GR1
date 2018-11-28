@@ -30,9 +30,9 @@ public class TestCsv {
 	public void testObjectCsvStandard() {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "WikiMatrix.csv", tab,"nomTab",false);
+		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie", "WikiMatrix.csv", tab,"nomTab",false);
 		assertEquals(csv.getDelimit(), ';');
-		assertEquals(csv.getCheminCsv(), "");
+		assertEquals(csv.getCheminCsv(), "src/test/java/Fichiers_Sortie/html/");
 		assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
 	}
 
@@ -44,7 +44,7 @@ public class TestCsv {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 		Csv csv = new Csv('\u0000', null, null, tab,"nomTab",false);
 		assertEquals(csv.getDelimit(), ',');
-		assertEquals(csv.getCheminCsv(), "");
+		assertEquals(csv.getCheminCsv(), "/html/");
 		assertEquals(csv.getNomCsv(), "nomTab.csv");
 	}
 
@@ -59,34 +59,33 @@ public class TestCsv {
 
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "testExporterCSV2.csv", tab, "nomTab", false);
+		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie/", "testExporterCSV2.csv", tab, "nomTab", false);
 
 		csv.exporterCSV();
 
 		FileInputStream csvFile = null;
 		try {
-			csvFile = new FileInputStream("testExporterCSV2.csv");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		InputStreamReader inputreader = new InputStreamReader(csvFile);
-		BufferedReader br = new BufferedReader(inputreader);
+			csvFile = new FileInputStream("testExporterCSV2.csv");		
+			InputStreamReader inputreader = new InputStreamReader(csvFile);
+			BufferedReader br = new BufferedReader(inputreader);
+			String line;
 
-		String line;
-		try {
-			String strArray1 = String.join(";", tab[0]);
-			String strArray2 = String.join(";", tab[1]);
-			String array[] = { strArray1, strArray2 };
-			int i = 0;
-			while ((line = br.readLine()) != null) {
-				System.out.println(array[i].equals(line));
-				i++;
-			}
-		} catch (IOException e) {
+				String strArray1 = String.join(";", tab[0]);
+				String strArray2 = String.join(";", tab[1]);
+				String array[] = { strArray1, strArray2 };
+				int i = 0;
+				while ((line = br.readLine()) != null) {
+					System.out.println(array[i].equals(line));
+					i++;
+				}
+		
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
+
+
+
 	}
 
 	@Test
@@ -94,7 +93,7 @@ public class TestCsv {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 		File fichier = new File("testExporterCSV.csv");
 		fichier.delete();
-		Csv csv = new Csv(';', "", "testExporterCSV.csv", tab, "nomTab", false);
+		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie/", "testExporterCSV.csv", tab, "nomTab", false);
 		
 
 		csv.exporterCSV();
@@ -113,7 +112,7 @@ public class TestCsv {
 		boolean verification = false;
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "", tab, "nomTab", false);
+		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie/", "", tab, "nomTab", false);
 		Map<String, Boolean> separateurAutomatique = csv.getSeparateur();
 		Set cles = separateurAutomatique.keySet();
 		Iterator it = cles.iterator();
@@ -134,33 +133,33 @@ public class TestCsv {
 	@Test
 	public void testNomCsvIncrementer() {
 		// initialisation
-		File fichier = new File("testIncrementer.csv");
+		File fichier = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-1.csv");
 		fichier.delete();
-		File fichier1 = new File("testIncrementer_2.csv");
+		File fichier1 = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-2.csv");
 		fichier1.delete();
-		File fichier2 = new File("testIncrementer_3.csv");
+		File fichier2 = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-3.csv");
 		fichier2.delete();
-		File fichier3 = new File("testIncrementer_4.csv");
+		File fichier3 = new File("src/test/java/Fichiers_Sortie/html/testIncrementer-4.csv");
 		fichier3.delete();
 
 		// creation des fichiers
 
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "testIncrementer.csv", tab, "nomTab", false);
-		assertEquals(csv.nomCsvIncrementer(), "testIncrementer_2.csv");
+		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie", "testIncrementer.csv", tab, "nomTab", false);
+		assertEquals(csv.nomCsvIncrementer(), "src/test/java/Fichiers_Sortie/html/testIncrementer-2.csv");
 
 		csv.exporterCSV();
 
-		assertEquals(csv.nomCsvIncrementer(), "testIncrementer_3.csv");
+		assertEquals(csv.nomCsvIncrementer(), "src/test/java/Fichiers_Sortie/html/testIncrementer-3.csv");
 
 		csv.exporterCSV();
 
-		assertEquals(csv.nomCsvIncrementer(), "testIncrementer_4.csv");
+		assertEquals(csv.nomCsvIncrementer(), "src/test/java/Fichiers_Sortie/html/testIncrementer-4.csv");
 
 		csv.exporterCSV();
 
-		assertEquals(csv.nomCsvIncrementer(), "testIncrementer_5.csv");
+		assertEquals(csv.nomCsvIncrementer(), "src/test/java/Fichiers_Sortie/html/testIncrementer-5.csv");
 
 		// supprimer les fichers
 		fichier.delete();
@@ -175,12 +174,12 @@ public class TestCsv {
 
 	@Test
 	public void testVerificationCheminDispo() {
-		File fichier = new File("testChemin.csv");
+		File fichier = new File("src/test/java/Fichiers_Sortie/html/testChemin-1.csv");
 		fichier.delete();
 		
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
 
-		Csv csv = new Csv(';', "", "testChemin.csv", tab, "nomTab",false);
+		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie/", "testChemin.csv", tab, "nomTab",false);
 
 		assertTrue(csv.verificationCheminDispo());
 		fichier.delete();
@@ -196,7 +195,7 @@ public class TestCsv {
 	public void testVerificationSeparateurValide() {
 
 		String tab[][] = { { "a;", "b", "c", "d" }, { "1,0:-", "2", "3", "4" } };
-		Csv csv = new Csv(';', "", "", tab, "nomTab",false);
+		Csv csv = new Csv(';', "src/test/java/Fichiers_Sortie/", "", tab, "nomTab",false);
 
 		csv.verificationSeparateurValide();
 		Map<String, Boolean> cle = csv.getSeparateur();

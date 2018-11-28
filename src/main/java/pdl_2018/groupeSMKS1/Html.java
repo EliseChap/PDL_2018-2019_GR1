@@ -33,7 +33,7 @@ public class Html extends Extracteur {
 		this.nomCSV = nomCSV;
 		lesTableaux = new ArrayList<Tableau>();
 		lesHtmltab = new HashMap<String, Element>();
-		recuperationPage();
+		//recuperationPage();
 	}
 
 	public ArrayList<Tableau> getLesTableau() {
@@ -107,7 +107,6 @@ public class Html extends Extracteur {
 	public void recuperationPage() {
 		try {
 			Document doc = Jsoup.connect(url).get();
-			// System.out.println(doc);
 
 			Elements table = doc.select(".wikitable");
 			for (int i = 0; i < table.size(); i++) {
@@ -118,16 +117,16 @@ public class Html extends Extracteur {
 					nom = "table" + i;
 				} else {
 					nom = caption.text();
+
 				}
 				lesHtmltab.put(nom, table.get(i)); // cle : titre du tableau
 
 			}
-			// System.out.println(table);
 			TraitementMap();
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-
+		
 		}
 	}
 
@@ -138,7 +137,7 @@ public class Html extends Extracteur {
 
 		while (it.hasNext()) {
 			String cle = it.next();
-			System.out.println(cle);
+			System.out.println(cle + "cle");
 			Element ensemble = lesHtmltab.get(cle);
 			boolean tabcreated = false;
 
@@ -177,8 +176,7 @@ public class Html extends Extracteur {
 
 				i++;
 			}
-			tab = TraitementColonnesVides(tab);
-
+			//tab = TraitementColonnesVides(tab);
 			lectureTableau(tab);
 			// Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle,false);
 			// lesTableaux.add(t);
@@ -417,20 +415,9 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		// Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';',
-		// "chemin", "nomCSV", true, false);
-		// t.recuperationPage();
-		// Html b = new
-		// Html("https://fr.wikipedia.org/wiki/Jeux_mondiaux_f%C3%A9minins_de_1934",
-		// ';', "chemin", "nomCSV",
-		// true, false);
-		Html b = new Html("https://fr.wikipedia.org/wiki/%C3%89quipe_de_France_de_football", ';', "chemin", "nomCSV",
+		Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV",
 				true, false);
-		// Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things",
-		// ';',"chemin", "nomCSV", true, false);
-		// Html b = new
-		// Html("https://fr.wikipedia.org/wiki/%C3%89lections_f%C3%A9d%C3%A9rales_suisses_de_1943",
-		// ';',"chemin", "nomCSV", true, false);
+		
 		b.recuperationPage();
 
 	}

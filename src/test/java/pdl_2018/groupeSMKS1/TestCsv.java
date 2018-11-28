@@ -46,9 +46,9 @@ public class TestCsv {
 	@Test
 	public void testObjectCsvNull() {
 		String tab[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" } };
-		Csv csv = new Csv('\u0000', null, null, tab,"nomTab",false);
+		Csv csv = new Csv('\u0000', "src/test/java/Fichiers_Sortie", null, tab,"nomTab",false);
 		assertEquals(csv.getDelimit(), ',');
-		assertEquals(csv.getCheminCsv(), "/html/");
+		assertEquals(csv.getCheminCsv(), "src/test/java/Fichiers_Sortie/html/");
 		assertEquals(csv.getNomCsv(), "nomTab-1.csv");
 		File fichier1 = new File("/html/nomTab-1.csv");
 		fichier1.delete();

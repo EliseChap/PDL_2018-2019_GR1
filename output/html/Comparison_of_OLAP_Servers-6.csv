@@ -1,17 +1,17 @@
 OLAP Server;MOLAP;ROLAP;HOLAP;Offline
 Apache Kylin;Yes;No;No;Yes
 Druid;Yes;Yes;Yes;Yes
-Essbase;Yes;No;No;IBM Cognos BI
-Yes;Yes;Yes;IBM Cognos TM1;icCube
-Yes;No;No;Cognos Insight Distributed mode;Infor BI OLAP Server
-Yes;No;No;Offline Cubes;Jedox OLAP Server
-Yes;No;No;Local cubes;Kyligence
-Yes;No;No;No;Kyvos BI on Big Data
-Yes;Yes;Yes;No;Microsoft Analysis Services
-Yes;Yes;No;Yes;MicroStrategy Intelligence Server
-Yes;Yes;Yes;Local cubes, PowerPivot for Excel, Power BI Desktop;Mondrian OLAP server
-Yes;Yes;Yes;MicroStrategy Office, Dynamic Dashboards;Oracle Database OLAP Option
-No;Yes;No;SAP NetWeaver BW;SAS OLAP Server
-No;Yes;No;;
-Yes;Yes;No;;
-Yes;Yes;Yes;;
+Essbase;Yes;No;No;
+IBM Cognos BI;Yes;Yes;Yes;
+IBM Cognos TM1;Yes;No;No;Cognos Insight Distributed mode
+icCube;Yes;No;No;Offline Cubes
+Infor BI OLAP Server;Yes;No;No;Local cubes
+Jedox OLAP Server;Yes;No;No;No
+Kyligence;Yes;Yes;Yes;No
+Kyvos BI on Big Data;Yes;Yes;No;Yes
+Microsoft Analysis Services;Yes;Yes;Yes;Local cubes, PowerPivot for Excel, Power BI Desktop
+MicroStrategy Intelligence Server;Yes;Yes;Yes;MicroStrategy Office, Dynamic Dashboards
+Mondrian OLAP server;No;Yes;No;
+Oracle Database OLAP Option;No;Yes;No;
+SAP NetWeaver BW;Yes;Yes;No;
+SAS OLAP Server;Yes;Yes;Yes;

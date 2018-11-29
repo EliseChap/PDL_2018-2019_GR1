@@ -1,16 +1,16 @@
 OLAP Server;Issue Tracking System;Forum/Blog;Roadmap;Source code
-Apache Kylin;Jira;[40];Druid;Open
-Druid – Github Issues;[41];Essbase;Open;IBM Cognos TM1
-myOracle Support;[6];[7];Closed;icCube
-IBM Service Request;[8];Infor BI OLAP Server;Closed;Jedox OLAP Server
-YouTrack;[9];Kyligence;Closed;Kyvos BI on Big Data
-Infor Xtreme;Microsoft Analysis Services;Available upon request;Closed;MicroStrategy Intelligence Server
-Mantis;[10];Available upon request;Open;Mondrian OLAP server
-Zendesk;[42];Oracle Database OLAP Option;Closed;SAP NetWeaver BW
-Zendesk;SAS OLAP Server;Available upon request;Open;
-Connect;[11];-;Closed;
-MicroStrategy Resource Center;[12];-;Closed;
-Jira;[13];[14];Open;
-myOracle Support;[15];;Closed;
-OSS;[16];[17];Closed;
-Support;[18];;Closed;
+Apache Kylin;Jira;[40];;Open
+Druid;Druid – Github Issues;[41];;Open
+Essbase;myOracle Support;[6];[7];Closed
+IBM Cognos TM1;IBM Service Request;[8];;Closed
+icCube;YouTrack;[9];;Closed
+Infor BI OLAP Server;Infor Xtreme;;Available upon request;Closed
+Jedox OLAP Server;Mantis;[10];Available upon request;Open
+Kyligence;Zendesk;[42];;Closed
+Kyvos BI on Big Data;Zendesk;;Available upon request;Open
+Microsoft Analysis Services;Connect;[11];-;Closed
+MicroStrategy Intelligence Server;MicroStrategy Resource Center;[12];-;Closed
+Mondrian OLAP server;Jira;[13];[14];Open
+Oracle Database OLAP Option;myOracle Support;[15];;Closed
+SAP NetWeaver BW;OSS;[16];[17];Closed
+SAS OLAP Server;Support;[18];;Closed

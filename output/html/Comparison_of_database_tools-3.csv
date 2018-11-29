@@ -1,16 +1,16 @@
-Adminer:user manager:Plugin:Compare:Import:Export:Debugger:Source control:Spatial Visualization
-Yes:Yes:Yes:SQL script, CSV, TSV or the above in zip (as a plugin); imports of server-site file in SQL or SQL in zip, gzip or bzip2:SQL script, CSV, TSV or the above in zip, gzip, bzip2; XML (as a plugin):No:Git:Altova DatabaseSpy:DaDaBIK
-No:No:Yes:CSV, XML:XML, XML Structure, CSV, HTML, MS Excel:No:?:Database Workbench:DataGrip
-Some[9]:No:No:No:CSV:Yes:No:DBeaver:DBEdit
-Yes:No:Yes:Yes:Yes:Yes:?:Epictetus:ER/Builder Data Modeler
-No:Yes:Yes:Yes:TXT, CSV, HTML, XML, DBF, SQL script, RTF, MS Word, MS Excel, MS Access, MS Windows Clipboard, Paradox file, WK1, WQ1, SLK, DIF, LDIF:No:Yes:ModelRight:Navicat
-Yes:Yes:Yes:Yes:Yes:No:With Eclipse plugins:Navicat Data Modeler:MySQL Workbench
-No:No:No:No:MS Excel, PDF, Text, SQL script:No:?:Oracle SQL Developer:Orbada
-No:Yes:No:No:Excel:No:?:pgAdmin III:phpMyAdmin
-No:No:No:Yes - from MySQL, MariaDB, FireBird, Interbase and Postgres databases:Yes - Export DDL SQL and databases (MySQL, MariaDB, FireBird, Interbase and Postgres):No:No:SQL Database Studio:SQLyog
-Some:Yes:Yes:Yes - from supported databases using native interfaces, or from any ODBC source:SQL; XML; DTD; Diagram as BMP, JPEG:No:?:SQL Server Management Studio:SQuirreL SQL
-Yes:No:Yes:Yes - TXT, CSV, DBF, HTML, MS Excel, MS Access, Paradox file, WK1, WQ1, XML, or from any ODBC source (See link for limitations[10]):Yes - TXT, CSV, HTML, XML, DBF, SQL script, RTF, MS Word, MS Excel, MS Access, MS Windows Clipboard, Paradox file, WK1, WQ1, SLK, DIF, LDIF (See link for limitations[10]):Yes:No:Toad:Toad Data Modeler
-No:No:Yes:Yes - Import Database from server/ODBC:Yes - Export SQL:No:No:TOra:
+:user manager:Plugin:Compare:Import:Export:Debugger:Source control:Spatial Visualization
+Adminer:Yes:Yes:Yes:SQL script, CSV, TSV or the above in zip (as a plugin); imports of server-site file in SQL or SQL in zip, gzip or bzip2:SQL script, CSV, TSV or the above in zip, gzip, bzip2; XML (as a plugin):No:Git:Altova DatabaseSpy
+No:No:Yes:CSV, XML:XML, XML Structure, CSV, HTML, MS Excel:No:?:DaDaBIK:Database Workbench
+Some[9]:No:No:No:CSV:Yes:No:DataGrip:DBeaver
+Yes:No:Yes:Yes:Yes:Yes:?:DBEdit:Epictetus
+No:Yes:Yes:Yes:TXT, CSV, HTML, XML, DBF, SQL script, RTF, MS Word, MS Excel, MS Access, MS Windows Clipboard, Paradox file, WK1, WQ1, SLK, DIF, LDIF:No:Yes:ER/Builder Data Modeler:ModelRight
+Yes:Yes:Yes:Yes:Yes:No:With Eclipse plugins:Navicat:Navicat Data Modeler
+No:No:No:No:MS Excel, PDF, Text, SQL script:No:?:MySQL Workbench:Oracle SQL Developer
+No:Yes:No:No:Excel:No:?:Orbada:pgAdmin III
+No:No:No:Yes - from MySQL, MariaDB, FireBird, Interbase and Postgres databases:Yes - Export DDL SQL and databases (MySQL, MariaDB, FireBird, Interbase and Postgres):No:No:phpMyAdmin:SQL Database Studio
+Some:Yes:Yes:Yes - from supported databases using native interfaces, or from any ODBC source:SQL; XML; DTD; Diagram as BMP, JPEG:No:?:SQLyog:SQL Server Management Studio
+Yes:No:Yes:Yes - TXT, CSV, DBF, HTML, MS Excel, MS Access, Paradox file, WK1, WQ1, XML, or from any ODBC source (See link for limitations[10]):Yes - TXT, CSV, HTML, XML, DBF, SQL script, RTF, MS Word, MS Excel, MS Access, MS Windows Clipboard, Paradox file, WK1, WQ1, SLK, DIF, LDIF (See link for limitations[10]):Yes:No:SQuirreL SQL:Toad
+No:No:Yes:Yes - Import Database from server/ODBC:Yes - Export SQL:No:No:Toad Data Modeler:TOra
 Yes:Yes:Yes:Yes - CSV, HTML, JSON, MS Excel, SQL INSERTS, Tab-separated, XML:Yes - CSV, HTML, JSON, MS Excel, SQL INSERTS, Tab-separated, XML:Yes:No::
 Yes:?:?:Yes:Yes:Yes:?::
 No:Yes:Yes:SQL script:SQL script, CSV, XML, HTML, PDF, Excel, DBF, DataText:No:No::

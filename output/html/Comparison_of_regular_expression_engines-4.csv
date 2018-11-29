@@ -1,4 +1,4 @@
-.NET;""+"" quantifier;Negated character classes;Non-greedy quantifiers[Note 1];Shy groups[Note 2];Recursion;Look-ahead;Look-behind;Backreferences[Note 3];>9 indexable captures
+;""+"" quantifier;Negated character classes;Non-greedy quantifiers[Note 1];Shy groups[Note 2];Recursion;Look-ahead;Look-behind;Backreferences[Note 3];>9 indexable captures
 Boost.Regex;Yes;Yes;Yes;Yes;Yes[Note 4];Yes;Yes;Yes;Yes
 Boost.Xpressive;Yes;Yes;Yes;Yes;Yes[Note 5];Yes;Yes;Yes;Yes
 CL-PPCRE;Yes;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes
@@ -13,7 +13,7 @@ Java;Yes;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes
 JavaScript (ECMAScript);Yes;Yes;Yes;Yes;No;Yes;No;Yes;Yes
 JGsoft;Yes;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes
 Lua;Yes;Yes;Some[Note 7];No;No;No;No;Yes;No
-Yes;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes;
+.NET;Yes;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes
 OCaml;Yes;Yes;No;No;No;No;No;Yes;No
 OmniOutliner 3.6.2;Yes;Yes;Yes;No;No;No;No;?;?
 PCRE;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes

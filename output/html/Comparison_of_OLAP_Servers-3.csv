@@ -7,11 +7,11 @@ IBM Cognos TM1;Yes;Yes;Yes;?;?;?;?;?;?
 icCube;Yes[31];Yes[32];Yes;Yes;?;Yes;Yes;?;?
 Infor BI OLAP Server;Yes;?;Yes;?;Yes;?;?;?;?
 Jedox OLAP Server;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;?
-Kyligence;Yes;No;No;No;Yes;Yes;Kyvos BI on Big Data;Yes;Microsoft Analysis Services
-Yes;Yes;Yes;No;Yes;Yes;Yes;Yes;No;MicroStrategy Intelligence Server
-Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Mondrian OLAP server
-Yes;?;?;?;?;?;?;?;?;Oracle Database OLAP Option
-Yes[33];?;?;?;?;?;?;?;?;SAP NetWeaver BW
-Yes;?;?;?;?;?;?;?;?;SAS OLAP Server
-Yes;?;?;?;?;?;?;?;?;
-Yes;?;?;?;?;?;?;?;?;
+Kyligence;Yes;No;No;No;Yes;Yes;;Yes;
+Kyvos BI on Big Data;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes;No
+Microsoft Analysis Services;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+MicroStrategy Intelligence Server;Yes;?;?;?;?;?;?;?;?
+Mondrian OLAP server;Yes[33];?;?;?;?;?;?;?;?
+Oracle Database OLAP Option;Yes;?;?;?;?;?;?;?;?
+SAP NetWeaver BW;Yes;?;?;?;?;?;?;?;?
+SAS OLAP Server;Yes;?;?;?;?;?;?;?;?

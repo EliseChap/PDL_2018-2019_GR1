@@ -1,69 +1,69 @@
-Ability Photopaint;sRGB;Adobe RGB;Indexed;Grayscale;CMYK;LAB;HSV
-Yes;?;Yes;Yes;Import only;ACD Canvas;ACDSee (Win);Acorn Image Editor
-Yes;?;Yes;Yes;Yes;Adobe Fireworks*;Adobe Photoshop;Adobe Photoshop Lightroom
-Yes;Yes;Yes;Yes;No;No;No;Affinity Photo
-Yes;Yes;Import only;Import only;Yes;Import only;Import only;Autodesk SketchBook Pro
-Yes;Yes;Yes;Yes;Yes;No;Yes;Artipic
-Yes;Yes;Yes;Yes;Yes;Yes;Yes;ArtRage
-Yes;Yes;?;Yes;Import only;?;?;Artweaver
-Yes;Yes;Yes;Yes;Yes;Yes;Yes;Bibble*
-Yes;?;Yes;No;No;Brush Strokes Image Editor;Capture One;Chasys Draw IES
-Yes;Yes;Yes;Import only;Import only;Import only;Import only;CinePaint
-Yes;?;No;No;No;CodedColor PhotoStudio Pro;Corel PaintShop Pro;Corel Painter
-Yes;?;?;?;?;Corel Photo-Paint;darktable;Deluxe Paint*
-Yes;Yes;?;Yes;?;?;?;Erdas Imagine
-Yes;?;?;?;?;Fatpaint;Fotografix;GIMP
-Yes;Yes;Yes;Yes;Yes;Yes;Yes;GIMPshop
-Yes;No;Yes;Yes;Partial;No;Partial;GrafX2
-Yes;Yes;No;Yes;Yes;Yes;GraphicConverter;Helicon Filter
-Yes;Yes;Yes;Yes;Yes;iPhoto*;IrfanView;Iridient Developer
-Yes;Yes;Yes;Yes;Yes;Partial[27];Partial[27];Kolourpaint
-Yes;?;No;No;Yes;Krita;MacPaint*;Microsoft Office Picture Manager*
-Yes;Yes;Yes;Yes;Yes;Yes;Microsoft Paint;Microsoft Photo Editor*
-Yes;Yes;?;?;?;Yes;?;OpenCanvas
-Yes;?;Yes;Yes;No;Paint.NET;Yes;PC Paintbrush*
-Yes;Yes;Yes;Yes;Yes;No;Yes;Photofinish*
-Yes;No;Partial;Partial;Partial;No;Partial;Photogenics
-Yes;No;Import only;Import only;Import only;No;No;PhotoLine
-Yes;Yes;Yes;Yes;Partial[28];Partial[27];Yes;PhotoPerfect*
-Yes;Yes;Yes;Yes;Partial[28];No;Yes;Photos
-No;No;Yes;No;No;No;No;Photo Raster
-Yes;Yes;Yes;Yes;Yes;Picasa*;PicMaster;PixBuilder Photo Editor
-Yes;Yes;?;Yes;Yes;Pixelmator;Pixia;Project Dogwaffle
-Yes;Yes;No;Yes;Yes;Yes;Yes;QFX
-Yes;?;Yes;Yes;No;RawTherapee;Seashore;Serif PhotoPlus
-Yes;Yes;Yes;Yes;Yes;Yes;Yes;Tux Paint
-Yes;?;No;Yes;No;TVPaint;Ulead PhotoImpact*;Ultimate Paint*
-Yes;Yes;No;Yes;Yes;Yes;Yes;WinImages
-No;No;No;Yes;No;Xara Photo & Graphic Designer;XnView;XPaint
-Yes;?;?;?;No;Zoner Photo Studio;;
-Yes;?;Import only;No;No;No;No;
-Yes;?;Yes;Yes;No;;;
-Yes;?;?;Yes;No;;;
-Yes;No;Partial;Partial;Partial;No;Partial;
-No;?;Yes;No;No;;;
-Yes;Yes;Yes;Yes;No;;;
-Yes;Yes;Yes;Yes;Yes;;;
-Yes;Yes;Yes;Yes;Yes;Yes;Yes;
-Yes;Import only;No;Yes;Import only;Curve editing only;No;
-Yes;Yes;No;Yes;Yes;Yes;Yes;
-Yes;No;No;Partial;No;No;No;
-Yes;?;Partial;Partial;No;;;
-Yes;No;No;Yes;Yes;Yes;Yes;
-Yes;Yes;Yes;Yes;No;;;
-Yes;Yes;Yes;No;No;No;No;
-Yes;?;No;No;No;;;
-Yes;?;No;No;No;;;
-Yes;Yes;Yes;Yes;Yes;;;
-Yes;Yes;No;Yes;No;Yes;Yes;
-?;?;?;?;?;?;?;
-Yes;Yes;?;Yes;Yes;?;?;
-Yes;No;No;No;No;No;No;
-Yes;?;No;No;No;;;
-Yes;Yes;Yes;Yes;Import only;No;Yes;
-Yes;?;Yes;Yes;No;;;
-Yes;?;?;?;Yes;;Yes;
-Yes;Partial;Partial;Partial;Partial;No;Partial;
-Yes;?;Yes;Yes;Partial;No;Partial;
-Yes;No;Partial;Yes;No;No;No;
-Yes;Yes;Yes;Yes;Partial;Partial;No;
+;sRGB;Adobe RGB;Indexed;Grayscale;CMYK;LAB;HSV
+Ability Photopaint;Yes;?;Yes;Yes;Import only;;
+ACD Canvas;Yes;?;Yes;Yes;Yes;;
+ACDSee (Win);Yes;Yes;Yes;Yes;No;No;No
+Acorn Image Editor;Yes;Yes;Import only;Import only;Yes;Import only;Import only
+Adobe Fireworks*;Yes;Yes;Yes;Yes;Yes;No;Yes
+Adobe Photoshop;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Adobe Photoshop Lightroom;Yes;Yes;?;Yes;Import only;?;?
+Affinity Photo;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Autodesk SketchBook Pro;Yes;?;Yes;No;No;;
+Artipic;Yes;Yes;Yes;Import only;Import only;Import only;Import only
+ArtRage;Yes;?;No;No;No;;
+Artweaver;Yes;?;?;?;?;;
+Bibble*;Yes;Yes;?;Yes;?;?;?
+Brush Strokes Image Editor;Yes;?;?;?;?;;
+Capture One;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Chasys Draw IES;Yes;No;Yes;Yes;Partial;No;Partial
+CinePaint;Yes;Yes;No;Yes;Yes;Yes;
+CodedColor PhotoStudio Pro;Yes;Yes;Yes;Yes;Yes;;
+Corel PaintShop Pro;Yes;Yes;Yes;Yes;Yes;Partial[27];Partial[27]
+Corel Painter;Yes;?;No;No;Yes;;
+Corel Photo-Paint;Yes;Yes;Yes;Yes;Yes;Yes;
+darktable;Yes;Yes;?;?;?;Yes;?
+Deluxe Paint*;Yes;?;Yes;Yes;No;;Yes
+Erdas Imagine;Yes;Yes;Yes;Yes;Yes;No;Yes
+Fatpaint;Yes;No;Partial;Partial;Partial;No;Partial
+Fotografix;Yes;No;Import only;Import only;Import only;No;No
+GIMP;Yes;Yes;Yes;Yes;Partial[28];Partial[27];Yes
+GIMPshop;Yes;Yes;Yes;Yes;Partial[28];No;Yes
+GrafX2;No;No;Yes;No;No;No;No
+GraphicConverter;Yes;Yes;Yes;Yes;Yes;;
+Helicon Filter;Yes;Yes;?;Yes;Yes;;
+iPhoto*;Yes;Yes;No;Yes;Yes;Yes;Yes
+IrfanView;Yes;?;Yes;Yes;No;;
+Iridient Developer;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Kolourpaint;Yes;?;No;Yes;No;;
+Krita;Yes;Yes;No;Yes;Yes;Yes;Yes
+MacPaint*;No;No;No;Yes;No;;
+Microsoft Office Picture Manager*;Yes;?;?;?;No;;
+Microsoft Paint;Yes;?;Import only;No;No;No;No
+Microsoft Photo Editor*;Yes;?;Yes;Yes;No;;
+OpenCanvas;Yes;?;?;Yes;No;;
+Paint.NET;Yes;No;Partial;Partial;Partial;No;Partial
+PC Paintbrush*;No;?;Yes;No;No;;
+Photofinish*;Yes;Yes;Yes;Yes;No;;
+Photogenics;Yes;Yes;Yes;Yes;Yes;;
+PhotoLine;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+PhotoPerfect*;Yes;Import only;No;Yes;Import only;Curve editing only;No
+Photos;Yes;Yes;No;Yes;Yes;Yes;Yes
+Photo Raster;Yes;No;No;Partial;No;No;No
+Picasa*;Yes;?;Partial;Partial;No;;
+PicMaster;Yes;No;No;Yes;Yes;Yes;Yes
+PixBuilder Photo Editor;Yes;Yes;Yes;Yes;No;;
+Pixelmator;Yes;Yes;Yes;No;No;No;No
+Pixia;Yes;?;No;No;No;;
+Project Dogwaffle;Yes;?;No;No;No;;
+QFX;Yes;Yes;Yes;Yes;Yes;;
+RawTherapee;Yes;Yes;No;Yes;No;Yes;Yes
+Seashore;?;?;?;?;?;?;?
+Serif PhotoPlus;Yes;Yes;?;Yes;Yes;?;?
+Tux Paint;Yes;No;No;No;No;No;No
+TVPaint;Yes;?;No;No;No;;
+Ulead PhotoImpact*;Yes;Yes;Yes;Yes;Import only;No;Yes
+Ultimate Paint*;Yes;?;Yes;Yes;No;;
+WinImages;Yes;?;?;?;Yes;;Yes
+Xara Photo & Graphic Designer;Yes;Partial;Partial;Partial;Partial;No;Partial
+XnView;Yes;?;Yes;Yes;Partial;No;Partial
+XPaint;Yes;No;Partial;Yes;No;No;No
+Zoner Photo Studio;Yes;Yes;Yes;Yes;Partial;Partial;No

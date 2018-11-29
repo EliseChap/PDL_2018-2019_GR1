@@ -6,13 +6,13 @@ Geany;GPL;No;Yes;Yes;Yes;FreeBSD, AIX, OpenBSD, Solaris, other Unix;No
 Greenfoot;GPL;Yes;Yes;Yes;Yes;Solaris;No
 IntelliJ IDEA;Community Edition: Apache License v2.0, Ultimate Edition: proprietary;Yes;Yes;Yes;Yes;FreeBSD, OpenBSD, Solaris;Yes
 JBuilder;Proprietary;Yes;Yes;Yes;Yes;Solaris;Yes
-JCreator;Proprietary;No;Yes;No;No;JDeveloper;No
-Proprietary (freeware);Yes;Yes;Yes;Yes;generic JVM;Yes;jGRASP
-Proprietary (freeware);Yes;Yes;Yes;Yes;MyEclipse;No;NetBeans
-Proprietary;Yes;Yes;Yes;Yes;FreeBSD, JVM, Solaris;Yes;Rational Application Developer
-CDDL, GPL2;Yes;Yes;Yes;Yes;OpenBSD, Solaris;Yes;Servoy
-Proprietary;Yes;Yes;Yes;No;AIX, Solaris;Yes;SlickEdit
-Proprietary;Yes;Yes;Yes;Yes;Solaris;Yes;Understand
-Proprietary;No;Yes;Yes;Yes;Solaris, Solaris SPARC, AIX, HP-UX;No;Xcode (Apple)
-Proprietary;No;Yes;Yes;Yes;Solaris;Yes;
-Proprietary;No;No;No;Yes;;Yes;
+JCreator;Proprietary;No;Yes;No;No;;No
+JDeveloper;Proprietary (freeware);Yes;Yes;Yes;Yes;generic JVM;Yes
+jGRASP;Proprietary (freeware);Yes;Yes;Yes;Yes;;No
+MyEclipse;Proprietary;Yes;Yes;Yes;Yes;FreeBSD, JVM, Solaris;Yes
+NetBeans;CDDL, GPL2;Yes;Yes;Yes;Yes;OpenBSD, Solaris;Yes
+Rational Application Developer;Proprietary;Yes;Yes;Yes;No;AIX, Solaris;Yes
+Servoy;Proprietary;Yes;Yes;Yes;Yes;Solaris;Yes
+SlickEdit;Proprietary;No;Yes;Yes;Yes;Solaris, Solaris SPARC, AIX, HP-UX;No
+Understand;Proprietary;No;Yes;Yes;Yes;Solaris;Yes
+Xcode (Apple);Proprietary;No;No;No;Yes;;Yes

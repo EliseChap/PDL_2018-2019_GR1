@@ -33,7 +33,7 @@ public class Html extends Extracteur {
 		this.nomCSV = nomCSV;
 		lesTableaux = new ArrayList<Tableau>();
 		lesHtmltab = new HashMap<String, Element>();
-		//recuperationPage();
+		recuperationPage();
 	}
 
 	public ArrayList<Tableau> getLesTableau() {
@@ -126,7 +126,7 @@ public class Html extends Extracteur {
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-		
+
 		}
 	}
 
@@ -143,12 +143,17 @@ public class Html extends Extracteur {
 
 			Elements tr = ensemble.getElementsByTag("tr");
 			Element first = tr.first();
+			Element last = tr.last();
+			// System.out.println(last.toString());
+			Elements thlast = last.getElementsByTag("th");
+
 			System.out.println("tr" + tr.size());
 
 			String[][] tab = null;
 			int i = 0;
 
 			for (Element e : tr) {
+				// System.out.println(e);
 
 				Elements th = e.getElementsByTag("th");
 
@@ -172,14 +177,21 @@ public class Html extends Extracteur {
 				}
 				int j = 0;
 				tab = bodyTableau(tab, 0, 0, th);
+				// System.out.println(thlast.size() + "taille des th dans last tr");
+
 				tab = bodyTableau(tab, i, j, td);
 
 				i++;
 			}
-			//tab = TraitementColonnesVides(tab);
+			//if (thlast.size() > 1) {
+				//tab = bodyTableau(tab, tab.length - 1, 0, thlast);
+			//}
+
+			tab = TraitementColonnesVides(tab);
 			lectureTableau(tab);
-			 Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle,false);
-			 lesTableaux.add(t);
+			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab,
+			cle,false);
+			lesTableaux.add(t);
 		}
 	}
 
@@ -219,8 +231,7 @@ public class Html extends Extracteur {
 	public String[][] bodyTableau(String[][] tab, int i, int j, Elements td) {
 
 		for (Element g : td) {
-
-			if (tab[i][j] != null) {
+			if (tab[i][j]!=null) {
 
 				i = deplacerTableau(tab, i, j, false);
 				j = deplacerTableau(tab, i, j, true);
@@ -248,21 +259,20 @@ public class Html extends Extracteur {
 				int x = Integer.parseInt(cellcol);
 				// System.out.println("test " + x);
 				tab = Fusion(tab, i, j, x, current, false);
-				// System.out.println("i : " + i + " j : " + j + " " + tab[i][j] );
+				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j] );
 			}
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
 			}
 
-			if (g.hasText()) {
-				tab[i][j] = g.text();
-			}
-
+				tab[i][j] = g.text() + "";
+			//System.out.println(tab[i][j]);
+			
 			if (getUrlImage(g) != "") {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
-			// System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] );
+			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] );
 			// System.out.println( tab[2][1] + "Tab( 2 ]1");
 			if (j <= tab[i].length) {
 
@@ -290,7 +300,7 @@ public class Html extends Extracteur {
 			for (int a = 0; a < tab1.length; a++) {
 				for (int b = 0; b < tab1[a].length; b++) {
 					if (b != j) {
-						//System.out.println(tab[a][b] + "b"+ b + "j"+ j);
+						// System.out.println(tab[a][b] + "b"+ b + "j"+ j);
 						tab1[a][b] = tab[a][b];
 
 					} else {
@@ -308,7 +318,7 @@ public class Html extends Extracteur {
 		String test = "test";
 		for (int j = 0; j < tab[i].length; j++) {
 			while (i < tab.length) {
-				
+
 				if (!((tab[i][j] + test).equalsIgnoreCase(test))) {
 					vide = false;
 				}
@@ -368,7 +378,7 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Remplir le tableau suivant les fusions horrizontale ou verticale
+	 * Remplir le tableau suivant les fusions horizontale ou verticale
 	 * 
 	 * @param tab
 	 * @param i
@@ -383,7 +393,7 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				// System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "VERTICAL");
+				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "VERTICAL");
 				i++;
 
 			}
@@ -392,8 +402,7 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				// System.out.println("i : " + i + " j : " + j + " " + tab[i][j] +
-				// "HORIZONTAL");
+				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j]);
 				j++;
 			}
 		}
@@ -415,9 +424,9 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "chemin", "nomCSV",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions", ';', "", "nomCSV.csv",
 				true, false);
-		
+
 		b.recuperationPage();
 
 	}

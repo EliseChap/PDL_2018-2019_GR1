@@ -147,7 +147,7 @@ public class Html extends Extracteur {
 			// System.out.println(last.toString());
 			Elements thlast = last.getElementsByTag("th");
 
-			System.out.println("tr" + tr.size());
+			//System.out.println("tr" + tr.size());
 
 			String[][] tab = null;
 			int i = 0;
@@ -183,12 +183,9 @@ public class Html extends Extracteur {
 
 				i++;
 			}
-			//if (thlast.size() > 1) {
-				//tab = bodyTableau(tab, tab.length - 1, 0, thlast);
-			//}
 
 			tab = TraitementColonnesVides(tab);
-			lectureTableau(tab);
+			//lectureTableau(tab);
 			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab,
 			cle,false);
 			lesTableaux.add(t);
@@ -229,8 +226,14 @@ public class Html extends Extracteur {
 	 * @return tab[][]
 	 */
 	public String[][] bodyTableau(String[][] tab, int i, int j, Elements td) {
+		int manquant = 0;
+		if(td.size()<tab[0].length) {
+			manquant = td.size();
+		}
+		System.out.println(td.size() + "size");
 
 		for (Element g : td) {
+			
 			if (tab[i][j]!=null) {
 
 				i = deplacerTableau(tab, i, j, false);
@@ -266,14 +269,15 @@ public class Html extends Extracteur {
 			}
 
 				tab[i][j] = g.text() + "";
-			//System.out.println(tab[i][j]);
+				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j] );
 			
 			if (getUrlImage(g) != "") {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
-			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] );
+			System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] );
 			// System.out.println( tab[2][1] + "Tab( 2 ]1");
+		
 			if (j <= tab[i].length) {
 
 				j++;

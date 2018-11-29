@@ -233,22 +233,15 @@ public class Url implements IUrl {
 	}
 
 	
-	  public static void main(String[] args) { 
-		  String u = "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP";
-	  
-	  //String utest = url.getPath(); //String[] str = utest.split("/wiki/");
-	  //System.out.println(utest); //System.out.println(str[1]); 
-	  boolean test2 = u.endsWith("jpg")|| u.endsWith("png") || u.endsWith("gif") ||
-	  u.endsWith("tiff") || u.endsWith("bmp") ; 
-	  System.out.println(test2);
-	 CharSequence twopoint = "_:_"; boolean test3 = !u.contains(twopoint);
-	  System.out.println(test3);
-	  
-	  
-	  
-	  
-	  
-	  }
-	 
+	public static void main(String[] args) {
+		String u = "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP";
+		//String utest = url.getPath(); //String[] str = utest.split("/wiki/");
+		//System.out.println(utest); //System.out.println(str[1]);
+		boolean testEndWith = u.endsWith("jpg") || u.endsWith("png") || u.endsWith("gif") || u.endsWith("tiff") || u.endsWith("bmp");
+		System.out.println(testEndWith);
+		CharSequence twoPoint = "_:_";
+		boolean testTwoPoint = !u.contains(twoPoint);
+		System.out.println(testTwoPoint);
+	}
 
 }

@@ -15,7 +15,7 @@ public class App {
 		/*Html html = new Html(url, delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
 		html.recuperationPage();*/
 		
-		CommandLine commandLine = new CommandLine("-delimit[;] -wikicode -save[C:/Users/sullivand/Music/Desktop/] -name[monBeauTableauWiki.csv] -url[https://fr.wikipedia.org/wiki/Stranger_Things]");
+		CommandLine commandLine = new CommandLine("-delimit[;] -wikicode -save[C:/Users/Margaux/Music/Desktop/] -name[monBeauTableauWiki.csv] -url[https://fr.wikipedia.org/wiki/Stranger_Things]");
 		System.out.println("app");
 	}
 

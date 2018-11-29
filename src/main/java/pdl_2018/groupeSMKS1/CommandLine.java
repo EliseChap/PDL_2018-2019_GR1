@@ -51,7 +51,6 @@ public class CommandLine implements ICommandLine {
     /**
      * Vérification de l'intégrité de la ligne de commande
      * @override
-     * @author KLE
      * @date 14 octobre 2018
      * La méthode renvoie "true" si cette ligne de commande est conforme à la charte Wikimatrix, "false" sinon.
      */
@@ -86,7 +85,6 @@ public class CommandLine implements ICommandLine {
 
     /**
      * Cette fonction renvoie false si le choix html/wikicode n'est pas effectué ou effectué anormalement, true sinon.
-     * @author KLH
      * @date 3 novembre 2018
      * @return
      */
@@ -117,7 +115,6 @@ public class CommandLine implements ICommandLine {
 
     /**
      * Cette fonction renvoie false si aucune url ou aucun fichier d'entrée n'est indiqué, ou si l'indication n'est pas exploitable, et renvoie true sinon.
-     * @author KLH
      * @date 3 novembre 2018
      * @return
      */
@@ -151,7 +148,6 @@ public class CommandLine implements ICommandLine {
 
     /**
      * Cette fonction vérifie que le chemin du fichier d'entrée ou l'url est renseigné et renvoie vrai dans ce cas, et false sinon.
-     * @author KLH
      * @date 3 novembre 2018
      * @param nbURL : nombre de commandes "url" dans la ligne de commande
      * @param nbImport : nombre de commandes "import" dans la ligne de commande
@@ -205,7 +201,6 @@ public class CommandLine implements ICommandLine {
 
     /**
      * Cette fonction vérifie que le chemin de sortie est renseigné puis renvoie vrai dans ce cas, false sinon.
-     * @author KLH
      * @date 4 novembre 2018
      * @return
      */
@@ -237,7 +232,6 @@ public class CommandLine implements ICommandLine {
 
     /**
      * Cette fonction vérifie que le nom de sortie n'est pas vide puis renvoie vrai dans ce cas, false sinon.
-     * @author KLH
      * @date 4 novembre 2018
      * @return
      */
@@ -271,7 +265,6 @@ public class CommandLine implements ICommandLine {
     }
     /**
      * Cette fonction renvoie vrai si le délimiteur choisi par l'utilisateur est autorisé par l'application, et renvoie false sinon.
-     * @author KLE
      * @date 4 novembre 2018
      * @return
      */

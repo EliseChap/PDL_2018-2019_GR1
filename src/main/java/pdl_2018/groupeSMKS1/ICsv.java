@@ -26,4 +26,6 @@ public interface ICsv {
 
 	public String[][] getTableau();
 
+	public String envoyeSeparateurValide(boolean separateurUtilisateur, String separateur);
+
 }

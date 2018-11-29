@@ -103,6 +103,7 @@ public class Csv implements ICsv {
 	 * donnees
 	 * 
 	 * @date 25/10/2018
+	 * @return Boolean signification de présence
 	 */
 	@Override
 	public void initialisationSeparateurAutomatique() {
@@ -130,7 +131,6 @@ public class Csv implements ICsv {
 	 * @date 25/10/2018
 	 * 
 	 */
-
 	@Override
 	public String verificationSeparateurValide() {
 
@@ -163,7 +163,6 @@ public class Csv implements ICsv {
 			}
 		}
 		return envoyeSeparateurValide(separateurUtilisateur, separateur);
-
 	}
 
 	/**
@@ -175,7 +174,7 @@ public class Csv implements ICsv {
 	 * @date 13/11/2018
 	 * 
 	 */
-
+	@Override
 	public String envoyeSeparateurValide(boolean separateurUtilisateur, String separateur) {
 
 		if (separateurUtilisateur) {
@@ -194,13 +193,11 @@ public class Csv implements ICsv {
 
 	/**
 	 * Creation du CSV grace a un String en entree
-	 * 
-	 * @param Text
+	 *
 	 * @throws IOException
 	 * @throws FileNotFoundException
 	 * @date 25/10/2018
 	 */
-
 	@Override
 	public void exporterCSV() {
 
@@ -250,7 +247,6 @@ public class Csv implements ICsv {
 	 * @return Boolean
 	 * @date 25/10/2018
 	 */
-
 	@Override
 	public boolean verificationCheminDispo() {
 
@@ -270,7 +266,6 @@ public class Csv implements ICsv {
 	 * @return String nomDuFichierAleatoire
 	 * @date 25/10/2018
 	 */
-
 	@Override
 	public String nomCsvIncrementer() {
 

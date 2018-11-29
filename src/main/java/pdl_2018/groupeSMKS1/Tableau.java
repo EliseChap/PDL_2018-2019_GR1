@@ -51,6 +51,8 @@ public class Tableau implements ITableau {
 	public String[][] getTableau() {
 		return arr;
 	}
+
+
 	/**
 	 * Parcourir le tableau afin de l'afficher
 	 * @return String

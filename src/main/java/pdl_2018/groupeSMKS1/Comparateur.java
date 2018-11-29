@@ -116,6 +116,7 @@ public class Comparateur implements IComparateur {
 
 	/**
 	 * Verification de la methode de comparaison partiel ou complet
+	 * @return
 	 */
 	public double analyse() {
 		double ratioC;

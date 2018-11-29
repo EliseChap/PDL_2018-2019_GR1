@@ -50,7 +50,7 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	// @Override
+
 	public void recuperationPage() {
 		try {
 			Wiki wikisweble = new Wiki(domain);
@@ -446,11 +446,9 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	// @Override
 	public void removeTableau() {
 	}
 
-	// @Override
 	public String getNomTableau() {
 		return "";
 	}
@@ -463,14 +461,12 @@ public class Wikitext extends Extracteur {
 		return sousDomain;
 	}
 
-	// @Override
 	public void addTableau(Tableau leTableau) {
 		if (!lesTableaux.contains(leTableau)) {
 			lesTableaux.add(leTableau);
 		}
 	}
 
-	// @Override
 	public Tableau constructeurTableau(char delimit, String cheminCSV, String NomCSV, boolean extraHTML,
 			boolean extraWiki) {
 		return new Tableau();

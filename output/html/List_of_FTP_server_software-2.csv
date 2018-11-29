@@ -1,0 +1,26 @@
+;;ALFTP;Cerberus;Complete;CrushFTP Server;FileZilla;IIS;Multi Server;SFTPPlus;WS FTP;Robo-FTP Server
+;License type;proprietary;proprietary;proprietary;proprietary;FLOSS/GPL2;proprietary;proprietary;proprietary;proprietary;proprietary
+OS;Linux;No;No;No;Yes;No;No;Yes;Yes;No;No
+OS;Mac OS X;No;No;No;Yes;No;No;No;Yes;No;No
+OS;Unix;No;No;?;Yes;No;No;No;Yes;No;No
+OS;Windows;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+User Interface;CLI;?;?;?;Yes;?;Yes, via PowerShell[4];?;Yes;?;No
+User Interface;GUI integrated;?;Yes;?;Yes;Yes;Yes;?;Yes;Yes;Yes
+User Interface;GUI(s) separately;?;Yes;?;?;?;?;?;Yes;?;Yes
+User Interface;Web-based GUI;?;Yes;Yes;Yes;No;No;?;?;?;No
+Services;FTP;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Services;SFTP;Yes;Yes;Yes;Yes;No;No;Yes;Yes;Yes;Yes
+Services;FTPS;?;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Services;SCP;?;No;Yes;Yes;No;No;Yes;Yes;Yes;No
+Services;WebDAV;?;No;No;Yes;No;Yes;No;No;No;Yes
+Services;HTTP/HTTPS;?;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes;Yes
+Services;AS2;No;No;No;Yes;No;No;No;No;No;No
+Authentication;LDAP;?;Yes;Yes;Yes;No;No;No;No;Yes;No
+Authentication;Active Directory;?;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes;Yes
+Authentication;Local;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+Authentication;Database;?;No;Yes;Yes;No;No;Yes;Yes;Yes;Yes
+High Availability;Failover Cluster (active/passive);No;Yes;No;Yes;No;Yes;No;No;Yes;Yes
+High Availability;Load Balancing (active/active);No;Yes;?;Yes;No;Yes;?;No;Yes;Yes
+Automation;Event-handling;?;Yes;Yes;Yes;No;No;?;?;?;Yes
+Automation;Scripting;?;No;Yes;Yes;No;No;?;?;?;Yes
+;;ALFTP;Cerberus;Complete;CrushFTP Server;FileZilla;IIS;Multi Server;SFTPPlus;WS FTP;Robo-FTP Server

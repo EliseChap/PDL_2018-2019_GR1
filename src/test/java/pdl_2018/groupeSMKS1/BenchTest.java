@@ -9,11 +9,12 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.opencsv.CSVWriter;
 
-
+@Ignore
 public class BenchTest {
 	
 	private List<String> listException;
@@ -73,9 +74,14 @@ public class BenchTest {
 	    	   Url url2= new Url(wurl, ';', url+".csv", "output/", false, true);
 	       }
 	       catch(Exception e) {
-	    	   listException.add(wurl);
+	    	   listException.add(wurl+";"+e+";html");
 	       }
-	       
+	       try {
+	    	   Url url3= new Url(wurl, ';', url+".csv", "output/", true, false);
+	       }
+	       catch(Exception e) {
+	    	   listException.add(wurl+";"+e+";wiki");
+	       }
 	       
 	       // attention false boolean a modifier
 	       
@@ -106,7 +112,9 @@ public class BenchTest {
 	     * 
 	     */
 	    
-	       String csv = "MargauxErreur.csv";
+		File fichier1 = new File("ErreurHtml.csv");
+		fichier1.delete();
+	       String csv = "ErreurHtml.csv";
 	        CSVWriter writer = new CSVWriter(new FileWriter(csv));
 	        for (String i : listException) {
 	            writer.writeNext(new String[]{i.toString()});

@@ -147,7 +147,7 @@ public class Html extends Extracteur {
 			// System.out.println(last.toString());
 			Elements thlast = last.getElementsByTag("th");
 
-			//System.out.println("tr" + tr.size());
+			// System.out.println("tr" + tr.size());
 
 			String[][] tab = null;
 			int i = 0;
@@ -155,7 +155,7 @@ public class Html extends Extracteur {
 
 			for (Element e : tr) {
 				// System.out.println(e);
-				compteur ++;
+				compteur++;
 				Elements th = e.getElementsByTag("th");
 
 				int nbth = countNbCol(first);
@@ -171,28 +171,26 @@ public class Html extends Extracteur {
 					tab = new String[tr.size()][nbCol];
 					System.out.println("th" + nbth);
 					System.out.println("nbcol" + nbCol);
-					System.out.println("td" + td.size());
+					System.out.println("tr" + tr.size());
 					System.out.println("thsize" + th.size());
 					System.out.println(nbCol);
 					tabcreated = true;
 				}
 				int j = 0;
 				tab = bodyTableau(tab, i, 0, th);
-				 System.out.println(th.text() + i + j);
 
 				tab = bodyTableau(tab, i, j, td);
-				
+
 				i++;
 			}
 
 			tab = TraitementColonnesVides(tab);
-			lectureTableau(tab);
-			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab,
-			cle,false);
+			 lectureTableau(tab);
+			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle, false);
 			lesTableaux.add(t);
 		}
 	}
-   
+
 	public int countNbCol(Element first) {
 		int count = 0;
 		Elements th = first.getElementsByTag("th");
@@ -228,21 +226,19 @@ public class Html extends Extracteur {
 	 */
 	public String[][] bodyTableau(String[][] tab, int i, int j, Elements td) {
 		int manquant = 0;
-		if(td.size()<tab[0].length && td.size()>1) {
-			//System.out.println("test");
+		if (td.size() < tab[0].length && td.size() > 1) {
+			// System.out.println("test");
 			manquant = td.size();
 		}
-		//System.out.println(td.size() + "size" + td.text());
+		// System.out.println(td.size() + "size" + td.text());
 
 		for (Element g : td) {
-			//System.out.println(g);
-			
-			if (tab[i][j]!=null) {
-				
+			// System.out.println(g);
+			System.out.println(i + "i" + " " + j + "j" + " " + "debutboucle");
+			if (tab[i][j] != null) {
 
 				i = deplacerTableau(tab, i, j, false);
 				j = deplacerTableau(tab, i, j, true);
-				
 
 			}
 			String current = g.text();
@@ -267,29 +263,28 @@ public class Html extends Extracteur {
 				int x = Integer.parseInt(cellcol);
 				// System.out.println("test " + x);
 				tab = Fusion(tab, i, j, x, current, false);
-				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j] );
+				// System.out.println("i : " + i + " j : " + j + " " + tab[i][j] );
 			}
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
 			}
 
-				tab[i][j] = g.text() + "";
-				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j] );
-			
+			tab[i][j] = g.text() + "";
+
 			if (getUrlImage(g) != "") {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
-			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] );
-			// System.out.println( tab[2][1] + "Tab( 2 ]1");
-		
-			if (j <= tab[i].length) {
+			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
 
+			if (j < tab[i].length-1) {
 				j++;
+				
 
 			} else {
 				j = 0;
 				i++;
+				
 
 			}
 
@@ -433,8 +428,8 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions", ';', "", "nomCSV.csv",
-				true, false);
+		Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "",
+				"nomCSV.csv", true, false);
 
 		b.recuperationPage();
 

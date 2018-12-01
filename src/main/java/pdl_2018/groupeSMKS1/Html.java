@@ -206,7 +206,6 @@ public class Html extends Extracteur {
 
 		for (Element a : th) {
 			String cellcol = a.attr("colspan");
-			String cellcolrow = a.attr("rowspan");
 			String current = a.text();
 			if (a.attr("colspan") != "") {
 				count = count + Integer.parseInt(cellcol);
@@ -217,7 +216,16 @@ public class Html extends Extracteur {
 			}
 		}
 		for (Element b : td) {
-			count++;
+			String cellcol = b.attr("colspan");
+			String current = b.text();
+			
+			if (b.attr("colspan") != "") {
+				count = count + Integer.parseInt(cellcol);
+
+			} else {
+				count++;
+
+			}
 		}
 		return count;
 	}
@@ -444,7 +452,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_layout_engines_(Cascading_Style_Sheets)", ';', "",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_the_2008_United_States_presidential_candidates", ';', "",
 				"nomCSV.csv", true, false);
 
 		b.recuperationPage();

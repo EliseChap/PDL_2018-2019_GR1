@@ -23,7 +23,7 @@ public class SuperComparateur {
 	
 	public static void main(String[] args) {
 		
-		Fichier monFichier = new Fichier("C:/Users/sullivand/Music/Desktop/mesBellesUrl.txt", ';', "", "output", false, true);
+		Fichier monFichier = new Fichier("C:/Users/sullivand/Music/Desktop/mesBellesUrl.txt", ';', "", "output", true, true);
 		SuperComparateur superComparateur = new SuperComparateur(monFichier);
 		
 	}
@@ -45,28 +45,36 @@ public class SuperComparateur {
 
 	private static void parcourirUrl(Url url, String strUrl) {
 		
-	/*	Extracteur extra = new Html(null, ';', null, null, false, false);
-		Wikitext extra2 = new Wikitext(null, null, ';', null, null, false, false);
+
 		
 		ArrayList<Extracteur> c = url.getExtracteur();
 		 
 		Iterator<Extracteur> it = c.iterator();
 		
 		
-	
+
 		while (it.hasNext()) {
 			
-		       extra = it.next();
+		       Extracteur extra = it.next();
 		       ArrayList<Tableau> html = extra.getLesTableaux();
-		       ArrayList<Tableau> wiki = extra.getLesTableaux(); //voir sophie
-		       parcourirLesTableaux(html, wiki, strUrl);
-		}*/
-		
+
+		   if(it.hasNext()) {   
+			   
+			   extra = it.next();
+		       ArrayList<Tableau> wiki = extra.getLesTableaux();
+		       parcourirLesTableaux(html, wiki, strUrl);}
+		}
+		 
 	}
 
 	private static void parcourirLesTableaux(ArrayList<Tableau> html, ArrayList<Tableau> wiki, String strUrl) {
 		
 		int i = 0;
+		System.out.println("margaux");
+		System.out.println(html);
+		System.out.println("sophie");
+		System.out.println(wiki);
+		
 		Iterator<Tableau> itHtml = html.iterator();
 		Iterator<Tableau> itWiki = wiki.iterator();
 		while (itHtml.hasNext() && itWiki.hasNext()) {

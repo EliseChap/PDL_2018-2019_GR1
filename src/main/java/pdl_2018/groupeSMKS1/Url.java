@@ -29,8 +29,11 @@ public class Url implements IUrl {
 
 		try {
 			myUrl = new URL(url);
+			
+		
 			verifURL();
 			if(isWikipediaURL()) {
+				System.out.println("teste");
 			isAPicture();
 			isAnArticle();
 			ConstructeurExtracteur();
@@ -145,9 +148,9 @@ public class Url implements IUrl {
 	 */
 
 	public String GetSousDomain() {
-		
+		System.out.println("passers");
 		String[] str = url.split("/wiki/");
-		
+		System.out.println(str[1].toString());
 		return str[1];
 	}
 
@@ -156,9 +159,13 @@ public class Url implements IUrl {
 	 */
 
 	public String GetDomain() {
-		String host = myUrl.getHost();
+		/*String host = myUrl.getHost();
 		InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
-		return name.toString();
+		return name.toString();*/
+		String[] str = url.split("/wiki/");
+		System.out.println(str[0].replaceAll("https://", ""));
+		return str[0].replaceAll("https://", "");
+
 	}
 
 	/**
@@ -167,8 +174,9 @@ public class Url implements IUrl {
 
 	@Override
 	public boolean isWikipediaURL() {
-
-		if (GetDomain().equals(domain)) {
+		System.out.println("1"+GetDomain());
+		System.out.println("2"+domain);
+		if (GetDomain().contains(domain)) {
 			return true;
 		}
 		System.out.println("L'url : " + url + " rentrée n'est pas une adresse wikipédia");
@@ -216,17 +224,26 @@ public class Url implements IUrl {
 	 */
 	@Override
 	public void ConstructeurExtracteur() {
+
 		if (verifURL() && isWikipediaURL()) {
+		
 			if (extraWiki) {
 				//Wikitext wiki = new Wikitext(GetDomain(), GetSousDomain(), delimit, cheminCsv, nomCsv, extraHtml,
 					//	extraWiki);
+				String domaine = GetDomain();
+				String sousDomaine = GetSousDomain();
+				System.out.println("test1"+domaine);
+				System.out.println("test2"+sousDomaine);
+				
 				 Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit,
 				 cheminCsv, nomCsv, extraHtml, extraWiki);
 				lesExtracteurs.add(wiki);
+				System.out.println("wiki : "+wiki.getLesTableaux());
 			}
 			if (extraHtml) {
 				Extracteur html = new Html(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				lesExtracteurs.add(html);
+	//			System.out.println("html : "+html.getLesTableaux());
 			}
 		}
 
@@ -237,11 +254,17 @@ public class Url implements IUrl {
 		String u = "https://ent.univ-rennes1.fr/f/welcome/normal/render.uP";
 		//String utest = url.getPath(); //String[] str = utest.split("/wiki/");
 		//System.out.println(utest); //System.out.println(str[1]);
+	
 		boolean testEndWith = u.endsWith("jpg") || u.endsWith("png") || u.endsWith("gif") || u.endsWith("tiff") || u.endsWith("bmp");
 		System.out.println(testEndWith);
 		CharSequence twoPoint = "_:_";
 		boolean testTwoPoint = !u.contains(twoPoint);
 		System.out.println(testTwoPoint);
-	}
+		
+		Url url = new Url("https://en.wikipedia.org/wiki/UEFA_Euro_2016", ';', "",
+				"nomCSV.csv", true, false);	
+
+		System.out.println(url.getExtracteur());
+		}
 
 }

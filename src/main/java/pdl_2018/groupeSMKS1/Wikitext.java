@@ -27,7 +27,7 @@ public class Wikitext extends Extracteur {
 	private int compteur = 0;
 
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
-			boolean extraWiki) {
+			boolean extraWiki) throws Exception {
 		this.domain = domain;
 		this.sousDomain = sousDomain;
 		this.delimit = delimit;
@@ -41,36 +41,32 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	public void recuperationPage() {
+	public void recuperationPage()  {
 		try {
 			Wiki wikisweble = new Wiki(domain);
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
 
-		} catch (IOException e) {
+		} catch ( Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+		//	e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
-	public void wikiconfig(String contenu) {
+	public void wikiconfig(String contenu) throws Exception {
 
-		try {
-			WikiConfig config = DefaultConfigEnWp.generate();
+		WikiConfig config = DefaultConfigEnWp.generate();
 
-			WtEngineImpl engine = new WtEngineImpl(config);
-			PageTitle pageTitle = PageTitle.make(config, "title");
-			PageId pageId = new PageId(pageTitle, -1);
-			ExpansionCallback callback = null;
+		WtEngineImpl engine = new WtEngineImpl(config);
+		PageTitle pageTitle = PageTitle.make(config, "title");
+		PageId pageId = new PageId(pageTitle, -1);
+		ExpansionCallback callback = null;
 
-			EngProcessedPage parse = engine.parse(pageId, contenu, callback);
+		EngProcessedPage parse = engine.parse(pageId, contenu, callback);
 
-			parcourirNode(parse);
-			// testAffichage();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		parcourirNode(parse);
+		// testAffichage();
 
 	}
 
@@ -594,8 +590,13 @@ public class Wikitext extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Ido_and_Novial", ';', "chemin", " nomCSV.csv",
-				false, true);
+		
+		try {
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Ido_and_Novial", ';', "chemin", " nomCSV.csv",false, true);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// t.recuperationPage();
 		// t.traitementMap2();
 //		Set cles = t.lesWikitab.keySet();

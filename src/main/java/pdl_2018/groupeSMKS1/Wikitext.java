@@ -436,7 +436,7 @@ public class Wikitext extends Extracteur {
 					}
 
 					// lesWikitab.put(titre, tab);
-					Tableau t = new Tableau();
+					Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, titre, true );
 					addTableau(t);
 					comp++;
 

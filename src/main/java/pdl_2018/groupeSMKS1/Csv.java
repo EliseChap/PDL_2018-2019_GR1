@@ -34,8 +34,8 @@ public class Csv implements ICsv {
 		this.nomTab = nomTab;
 		nomCsv = pnomCsv;
 		nomCsv = choixNomCsv();
-		String[] split = nomCsv.split("\\.");
-		nomCsv = split[0] + "-1." + split[1];
+		nomCsv= nomCsv.replaceAll(".csv","");
+		nomCsv = nomCsv + "-1.csv";
 
 		// Verification si cheminCsv est null
 		if (pcheminCsv == null) {
@@ -271,13 +271,12 @@ public class Csv implements ICsv {
 
 		int incrementation = 1;
 		File f = new File(cheminCsv + nomCsv);
-		nomCsv =nomCsv.replaceAll("-1", "");
-		String[] split = nomCsv.split("\\.");
+		nomCsv= nomCsv.replaceAll("-1.csv","");
 		while (f.isFile()) {
 			incrementation++;
-			f = new File(cheminCsv + split[0] + "-" + incrementation + "." + split[1]);
+			f = new File(cheminCsv + nomCsv + "-" + incrementation + ".csv");
 		}
-		return cheminCsv + split[0] + "-" + incrementation + "." + split[1];
+		return cheminCsv + nomCsv + "-" + incrementation + ".csv";
 
 	}
 }

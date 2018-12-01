@@ -1,5 +1,7 @@
 package pdl_2018.groupeSMKS1;
 
+import java.util.ArrayList;
+
 public interface IExtracteur {
 
 /**
@@ -34,4 +36,10 @@ public interface IExtracteur {
 	 * 	Connection à la page donné en paramètre
 	 */
 	public void recuperationPage();
+	
+	/**
+	 * 
+	 * @return une liste d'objet tableau contruits pour chaque tableau extrait du wiki ou html
+	 */
+	public ArrayList<Tableau> getLesTableaux();
 }

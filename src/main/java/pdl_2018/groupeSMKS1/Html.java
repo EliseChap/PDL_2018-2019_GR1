@@ -143,6 +143,14 @@ public class Html extends Extracteur {
 
 			Elements tr = ensemble.getElementsByTag("tr");
 			Element first = tr.first();
+			while(!first.hasText()) {
+				
+				tr.remove(0);
+				first = tr.first();
+			}
+			
+			System.out.println(first.hasText());
+			
 			
 			// System.out.println(last.toString());
 			
@@ -262,9 +270,9 @@ public class Html extends Extracteur {
 
 			if (g.attr("colspan") != "") {
 				int x = Integer.parseInt(cellcol);
-				// System.out.println("test " + x);
+				//System.out.println("test " + x);
 				tab = Fusion(tab, i, j, x, current, false);
-				//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test1");
+				System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test1");
 			}
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
@@ -276,7 +284,7 @@ public class Html extends Extracteur {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
-			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test2");
+			System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test2");
 
 			if (j < tab[i].length-1) {
 				j++;
@@ -400,7 +408,7 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "VERTICAL");
+				System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "VERTICAL");
 				i++;
 
 			}
@@ -409,7 +417,7 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j]+"HORIZONTAL" );
+				System.out.println("i : " + i + " j : " + j + " " + tab[i][j]+"HORIZONTAL" );
 				j++;
 			}
 		}
@@ -431,7 +439,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(basic_instructions)?fbclid=IwAR0RuJan3Qjnw6yG5UCQkAEj3gzXHtkAnGhgAJB8Zk17Xf74nipdqTeaMCs", ';', "",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_US_and_Chinese_Military_Armed_Forces", ';', "",
 				"nomCSV.csv", true, false);
 
 		b.recuperationPage();

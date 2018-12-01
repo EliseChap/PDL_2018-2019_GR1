@@ -14,7 +14,7 @@ import org.junit.Test;
 
 import com.opencsv.CSVWriter;
 
-@Ignore
+//@Ignore
 public class BenchTest {
 	
 	private List<String> listException;
@@ -24,7 +24,9 @@ public class BenchTest {
 	*  and save them into CSV files  
 	*  from the 300+ Wikipedia URLs given
 	*  see below for more details
+	*  
 	**/
+	
 	@Test
 	public void testBenchExtractors() throws Exception {
 		
@@ -70,13 +72,13 @@ public class BenchTest {
 	        * GROUPE 1
 	        * Parcourt les urls et ajoute a la liste si il y a une erreur
 	        */
-	       try {
+	       /*try {
 	    	   Url url2= new Url(wurl, ';', url+".csv", "output/", false, true);
 	       }
 	       catch(Exception e) {
 	    	   listException.add(wurl+";"+e+";html");
 	       }
-	       try {
+	     */  try {
 	    	   Url url3= new Url(wurl, ';', url+".csv", "output/", true, false);
 	       }
 	       catch(Exception e) {
@@ -101,7 +103,7 @@ public class BenchTest {
 	    }
 	    
 	    br.close();	    
-	    assertEquals(nurl, 336);
+	    assertEquals(nurl, 8);
 	    
 	    
 	    /**

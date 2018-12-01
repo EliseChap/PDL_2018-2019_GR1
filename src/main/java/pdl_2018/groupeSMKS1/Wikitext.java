@@ -27,7 +27,7 @@ public class Wikitext extends Extracteur {
 	private int compteur = 0;
 
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
-			boolean extraWiki) {
+			boolean extraWiki) throws Exception {
 		this.domain = domain;
 		this.sousDomain = sousDomain;
 		this.delimit = delimit;
@@ -41,36 +41,32 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	public void recuperationPage() {
+	public void recuperationPage()  {
 		try {
 			Wiki wikisweble = new Wiki(domain);
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
 
-		} catch (IOException e) {
+		} catch ( Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+		//	e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
 	}
 
-	public void wikiconfig(String contenu) {
+	public void wikiconfig(String contenu) throws Exception {
 
-		try {
-			WikiConfig config = DefaultConfigEnWp.generate();
+		WikiConfig config = DefaultConfigEnWp.generate();
 
-			WtEngineImpl engine = new WtEngineImpl(config);
-			PageTitle pageTitle = PageTitle.make(config, "title");
-			PageId pageId = new PageId(pageTitle, -1);
-			ExpansionCallback callback = null;
+		WtEngineImpl engine = new WtEngineImpl(config);
+		PageTitle pageTitle = PageTitle.make(config, "title");
+		PageId pageId = new PageId(pageTitle, -1);
+		ExpansionCallback callback = null;
 
-			EngProcessedPage parse = engine.parse(pageId, contenu, callback);
+		EngProcessedPage parse = engine.parse(pageId, contenu, callback);
 
-			parcourirNode(parse);
-			// testAffichage();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		parcourirNode(parse);
+		// testAffichage();
 
 	}
 
@@ -125,7 +121,6 @@ public class Wikitext extends Extracteur {
 					WtValue valeur = attribut.getValue();
 					return Integer.parseInt(getTextWtValue(valeur));
 				}
-
 			}
 			compteur++;
 		}
@@ -300,13 +295,12 @@ public class Wikitext extends Extracteur {
 		return text;
 	}
 
-	private int findCol(WtTableRow r, List<String> rows) {
+	private int findCol(WtTableRow r, List<String> rows, int nbRow) {
 		WtBody row = r.getBody();
 		int comp = 0;
 		int nbCol = 0;
 		while (row.size() > comp) {
 
-			String text = "";
 			if (row.get(comp) instanceof WtTableCell) {
 				WtTableCell cellule = (WtTableCell) row.get(comp);
 				WtBody celluleBody = cellule.getBody();
@@ -314,8 +308,8 @@ public class Wikitext extends Extracteur {
 				int i = findColspanRowSpan(cellule.getXmlAttributes(), colspan);
 				int k = findColspanRowSpan(cellule.getXmlAttributes(), rowspan);
 				String textCell = findCellText(celluleBody);
-			
-				for (int j = 1; j <= i; j++) {	
+				addRowSpan(nbRow, nbCol, k, textCell);
+				for (int j = 1; j <= i; j++) {
 					rows.add(textCell);
 					nbCol++;
 
@@ -324,20 +318,32 @@ public class Wikitext extends Extracteur {
 				WtTableHeader cellule = (WtTableHeader) row.get(comp);
 				int i = findColspanRowSpan(cellule.getXmlAttributes(), colspan);
 				int k = findColspanRowSpan(cellule.getXmlAttributes(), rowspan);
-				text = findHeader(cellule);
+				String text = findHeader(cellule);
+				addRowSpan(nbRow, nbCol, k, text);
 				for (int j = 1; j <= i; j++) {
 					rows.add(text);
 					nbCol++;
 
 				}
 			}
-			// ne pas oublier de mettre les textes des liens aussi
 			comp++;
 		}
 		return nbCol;
 	}
 
 	int comp = 0;
+	List<String[][]> rowspanList = new ArrayList<String[][]>();
+
+	private void addRowSpan(int compteRows, int nbCol, int k, String text) {
+		if (k > 1) {
+			String[][] tabRow = new String[1][4];
+			tabRow[0][0] = String.valueOf(compteRows);
+			tabRow[0][1] = String.valueOf(nbCol);
+			tabRow[0][2] = String.valueOf(k - 1);
+			tabRow[0][3] = text;
+			rowspanList.add(tabRow);
+		}
+	}
 
 	private void parcourirNode(WtNode fils) {
 
@@ -345,7 +351,7 @@ public class Wikitext extends Extracteur {
 		while (l.hasNext()) {
 			fils = l.next();
 			if (fils.getNodeType() == WtTable.NT_TABLE) {
-
+				rowspanList.clear();
 				WtTable table = (WtTable) fils;
 				System.out.println(table);
 				WtXmlAttributes e = table.getXmlAttributes();
@@ -356,7 +362,6 @@ public class Wikitext extends Extracteur {
 					int compteRows = 0;
 					Iterator<WtNode> it = table.getBody().iterator();
 					int nbCol = 0;
-				//	Map<Integer, String> rowspanMap = new HashMap<Integer, String>();
 
 					while (it.hasNext()) {
 						WtNode node = it.next();
@@ -372,7 +377,8 @@ public class Wikitext extends Extracteur {
 
 							int i = findColspanRowSpan(header.getXmlAttributes(), colspan);
 							int k = findColspanRowSpan(header.getXmlAttributes(), rowspan);
-							String textHeader = findHeader(header);					
+							String textHeader = findHeader(header);
+							addRowSpan(compteRows, nbCol, k, textHeader);
 							for (int j = 1; j <= i; j++) {
 								headerList.add(textHeader);
 								nbCol++;
@@ -380,7 +386,7 @@ public class Wikitext extends Extracteur {
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
-							nbCol = findCol(row, rowsList);
+							nbCol = findCol(row, rowsList, compteRows);
 
 							compteRows++;
 						}
@@ -388,8 +394,10 @@ public class Wikitext extends Extracteur {
 							WtTableCell cell = (WtTableCell) node;
 							int i = findColspanRowSpan(cell.getXmlAttributes(), colspan);
 							int k = findColspanRowSpan(cell.getXmlAttributes(), rowspan);
+							String textCell = findCellText(cell.getBody());
+							addRowSpan(compteRows, nbCol, k, textCell);
 							for (int j = 1; j <= i; j++) {
-								rowsList.add(findCellText(cell.getBody()));
+								rowsList.add(textCell);
 								nbCol++;
 							}
 
@@ -414,6 +422,20 @@ public class Wikitext extends Extracteur {
 
 					for (String item : headerList) {
 						tab[lig][colonnes] = item;
+						int index = 0;
+						boolean find = false;
+						while (rowspanList.size() > index && !find) {
+							String[][] tableau = rowspanList.get(index);
+							if (Integer.parseInt(tableau[0][0]) == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
+								find = true;
+								int Newligne = lig + 1;
+								for (int i = 0; i < Integer.parseInt(tableau[0][2]); i++) {
+									tab[Newligne][colonnes] = tableau[0][3];
+									Newligne += 1;
+								}
+							}
+							index++;
+						}
 						colonnes++;
 					}
 
@@ -427,12 +449,56 @@ public class Wikitext extends Extracteur {
 							}
 							premiereLinge = true;
 							colonnes = 0;
+							while (tab[lig][colonnes] != null && compteur < nbCol -1) {
+								colonnes++;
+								compteur++;
+							}
+							if (colonnes > nbCol-1) {
+								compteur = 0;
+
+								lig++;
+
+								colonnes = 0;
+							}
 
 						} else {
+
 							colonnes++;
+							while (tab[lig][colonnes] != null && compteur < nbCol-1 ) {
+								colonnes++;
+								compteur++;
+							}
+							if (colonnes > nbCol-1) {
+								compteur = 0;
+
+								lig++;
+								colonnes = 0;
+							}
 						}
 
 						tab[lig][colonnes] = item;
+						int index = 0;
+						boolean find = false;
+						while (rowspanList.size() > index && !find) {
+							String[][] tableau = rowspanList.get(index);
+							int ligneTab;
+
+							if (headerList.size() != 0) {
+								ligneTab = Integer.parseInt(tableau[0][0]) + 1;
+							} else {
+								ligneTab = Integer.parseInt(tableau[0][0]);
+							}
+							if (ligneTab == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
+								find = true;
+								int Newligne = lig + 1;
+								for (int i = 0; i < Integer.parseInt(tableau[0][2]) + 1; i++) {
+									tab[Newligne][colonnes] = tableau[0][3];
+									Newligne += 1;
+								}
+							}
+							index++;
+						}
+
 						compteur++;
 					}
 
@@ -524,9 +590,23 @@ public class Wikitext extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Ido_and_Novial", ';', "chemin", " nomCSV.csv",
-				false, true);
-	
+		
+		try {
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Ido_and_Novial", ';', "chemin", " nomCSV.csv",false, true);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// t.recuperationPage();
+		// t.traitementMap2();
+//		Set cles = t.lesWikitab.keySet();
+//		Iterator<Integer> it = cles.iterator();
+//		while (it.hasNext()) {
+//			Integer cle = it.next();
+//			WtBody ensemble = t.lesWikitab.get(cle);
+//			// System.out.println(ensemble);
+//			t.TraitementMap();
+//		}
 
 	}
 }

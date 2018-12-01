@@ -24,6 +24,7 @@ L’utilisateur sera informé de la non prise en compte de sa demande par un mes
       
 - L’utilisateur obtiendra en sortie un fichier CSV pour chaque tableau présent dans l’URL. Si il sélectionne les deux formats, il obtiendra un CSV pour chaque tableau extrait. Des messages pourront être affichés à l’utilisateur au cours de l’extraction ( Ex : Cellules fusionnées supprimées …).
 
+
 L’application se devra d’être :      
 
 -      Fonctionnelle : Traiter un maximum de données tabulaires           

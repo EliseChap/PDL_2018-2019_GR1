@@ -14,7 +14,7 @@ import org.junit.Test;
 
 import com.opencsv.CSVWriter;
 
-//@Ignore
+@Ignore
 public class BenchTest {
 	
 	private List<String> listException;
@@ -72,18 +72,18 @@ public class BenchTest {
 	        * GROUPE 1
 	        * Parcourt les urls et ajoute a la liste si il y a une erreur
 	        */
-	       /*try {
+	       try {
 	    	   Url url2= new Url(wurl, ';', url+".csv", "output/", false, true);
 	       }
 	       catch(Exception e) {
 	    	   listException.add(wurl+";"+e+";html");
 	       }
-	     */  try {
+	     /* try {
 	    	   Url url3= new Url(wurl, ';', url+".csv", "output/", true, false);
 	       }
 	       catch(Exception e) {
 	    	   listException.add(wurl+";"+e+";wiki");
-	       }
+	       }*/
 	       
 	       // attention false boolean a modifier
 	       
@@ -103,7 +103,7 @@ public class BenchTest {
 	    }
 	    
 	    br.close();	    
-	    assertEquals(nurl, 8);
+	    assertEquals(nurl, 336);
 	    
 	    
 	    /**

@@ -143,19 +143,18 @@ public class Html extends Extracteur {
 
 			Elements tr = ensemble.getElementsByTag("tr");
 			Element first = tr.first();
-			Element last = tr.last();
+			
 			// System.out.println(last.toString());
-			Elements thlast = last.getElementsByTag("th");
+			
 
 			// System.out.println("tr" + tr.size());
 
 			String[][] tab = null;
 			int i = 0;
-			int compteur = 0;
 
 			for (Element e : tr) {
 				// System.out.println(e);
-				compteur++;
+				//System.out.println(e);
 				Elements th = e.getElementsByTag("th");
 
 				int nbth = countNbCol(first);
@@ -225,21 +224,23 @@ public class Html extends Extracteur {
 	 * @return tab[][]
 	 */
 	public String[][] bodyTableau(String[][] tab, int i, int j, Elements td) {
-		int manquant = 0;
-		if (td.size() < tab[0].length && td.size() > 1) {
-			// System.out.println("test");
-			manquant = td.size();
-		}
-		// System.out.println(td.size() + "size" + td.text());
+		
+		
+
+		 
+		 if(td.size()>tab[0].length) { // cas de cellules hors du tableau 
+			 td.remove(td.size()-1);
+			 
+		 }
 
 		for (Element g : td) {
 			// System.out.println(g);
-			System.out.println(i + "i" + " " + j + "j" + " " + "debutboucle");
 			if (tab[i][j] != null) {
-
+				
 				i = deplacerTableau(tab, i, j, false);
+			
 				j = deplacerTableau(tab, i, j, true);
-
+				
 			}
 			String current = g.text();
 
@@ -263,7 +264,7 @@ public class Html extends Extracteur {
 				int x = Integer.parseInt(cellcol);
 				// System.out.println("test " + x);
 				tab = Fusion(tab, i, j, x, current, false);
-				// System.out.println("i : " + i + " j : " + j + " " + tab[i][j] );
+				//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test1");
 			}
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
@@ -275,7 +276,7 @@ public class Html extends Extracteur {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
-			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
+			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test2");
 
 			if (j < tab[i].length-1) {
 				j++;
@@ -351,11 +352,13 @@ public class Html extends Extracteur {
 	public int deplacerTableau(String[][] tab, int i, int j, boolean vertical) {
 
 		while (tab[i][j] != null) {
-			if (j < tab[i].length - 1) {
+			if (j < tab[i].length-1) {
+				
 				j++;
 			} else if (i < tab.length - 1) {
 				j = 0;
 				i++;
+				
 
 			}
 
@@ -406,7 +409,7 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j]);
+				//System.out.println("i : " + i + " j : " + j + " " + tab[i][j]+"HORIZONTAL" );
 				j++;
 			}
 		}
@@ -428,7 +431,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://fr.wikipedia.org/wiki/Stranger_Things", ';', "",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(basic_instructions)?fbclid=IwAR0RuJan3Qjnw6yG5UCQkAEj3gzXHtkAnGhgAJB8Zk17Xf74nipdqTeaMCs", ';', "",
 				"nomCSV.csv", true, false);
 
 		b.recuperationPage();

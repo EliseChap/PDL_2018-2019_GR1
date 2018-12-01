@@ -2,10 +2,8 @@ package pdl_2018.groupeSMKS1;
 
 import java.util.Arrays;
 
-import org.apache.log4j.Logger;
 
 public class Tableau implements ITableau {
-	//private static Logger logger = Logger.getLogger(Csv.class);
 	private char delimit;
 	private String cheminCsv;
 	private String nomCsv;

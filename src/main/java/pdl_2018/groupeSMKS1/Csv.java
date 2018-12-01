@@ -9,12 +9,10 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
 import com.opencsv.CSVWriter;
 
 public class Csv implements ICsv {
 
-	private Logger logger = Logger.getLogger(Csv.class);
 	private char delimit;
 	private String cheminCsv;
 	private String nomCsv;
@@ -22,7 +20,8 @@ public class Csv implements ICsv {
 	private String nomTab;
 	private static Map<String, Boolean> separateurAutomatique = new HashMap<>();
 
-	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2, String nomTab, boolean extraHtmlWiki) {
+	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2, String nomTab,
+			boolean extraHtmlWiki) {
 
 		// Verification si delimitation est null
 		if (pdelimit == '\u0000') {
@@ -34,7 +33,7 @@ public class Csv implements ICsv {
 		this.nomTab = nomTab;
 		nomCsv = pnomCsv;
 		nomCsv = choixNomCsv();
-		nomCsv= nomCsv.replaceAll(".csv","");
+		nomCsv = nomCsv.replaceAll(".csv", "");
 		nomCsv = nomCsv + "-1.csv";
 
 		// Verification si cheminCsv est null
@@ -43,15 +42,13 @@ public class Csv implements ICsv {
 		} else {
 			cheminCsv = pcheminCsv;
 		}
-		
-		
-		if(extraHtmlWiki) {
-			cheminCsv = cheminCsv+"/wikitext/";
+
+		if (extraHtmlWiki) {
+			cheminCsv = cheminCsv + "/wikitext/";
+		} else {
+			cheminCsv = cheminCsv + "/html/";
 		}
-		else {
-			cheminCsv = cheminCsv+"/html/";
-		}
-		
+
 		tableau = tableau2;
 		initialisationSeparateurAutomatique();
 		exporterCSV();
@@ -145,8 +142,6 @@ public class Csv implements ICsv {
 				if (cellule == null)
 					cellule = "";
 				if (cellule.contains(separateur)) {
-					logger.info(
-							"un choix de seperateur va �tre effectu� par d�faut, car celui d�finit pose des incoh�rences dans le csv");
 					separateurUtilisateur = true;
 
 				}
@@ -183,7 +178,7 @@ public class Csv implements ICsv {
 			while (it.hasNext()) {
 				Object cle = it.next();
 				if (!separateurAutomatique.get(cle)) {
-					logger.info(cle.toString());
+
 					return cle.toString();
 				}
 			}
@@ -256,7 +251,7 @@ public class Csv implements ICsv {
 			dir.mkdirs();
 		}
 		File f = new File(cheminCsv + nomCsv);
-		logger.info("le fichier existe deja, un nom incremente va etre creer");
+	
 		return f.isFile();
 	}
 
@@ -271,7 +266,7 @@ public class Csv implements ICsv {
 
 		int incrementation = 1;
 		File f = new File(cheminCsv + nomCsv);
-		nomCsv= nomCsv.replaceAll("-1.csv","");
+		nomCsv = nomCsv.replaceAll("-1.csv", "");
 		while (f.isFile()) {
 			incrementation++;
 			f = new File(cheminCsv + nomCsv + "-" + incrementation + ".csv");

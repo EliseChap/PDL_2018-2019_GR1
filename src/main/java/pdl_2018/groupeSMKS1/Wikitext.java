@@ -52,13 +52,12 @@ public class Wikitext extends Extracteur {
 
 	}
 
-
 	public void recuperationPage() {
 		try {
 			Wiki wikisweble = new Wiki(domain);
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,9 +101,11 @@ public class Wikitext extends Extracteur {
 
 		int compteur = 0;
 		while (e.size() > compteur) {
-			WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
-			if (attribut.toString().contains("wikitable")) {
-				return true;
+			if (e.get(compteur) instanceof WtXmlAttribute) {
+				WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
+				if (attribut.toString().contains("wikitable")) {
+					return true;
+				}
 			}
 			compteur++;
 		}
@@ -132,10 +133,8 @@ public class Wikitext extends Extracteur {
 			if (e.get(compteur) instanceof WtXmlAttribute) {
 				WtXmlAttribute attribut = (WtXmlAttribute) e.get(compteur);
 				if (attribut.toString().contains("colspan")) {
-
 					WtValue valeur = attribut.getValue();
 					return Integer.parseInt(getTextWtValue(valeur));
-
 				}
 
 			}
@@ -323,7 +322,7 @@ public class Wikitext extends Extracteur {
 				for (int j = 1; j <= i; j++) {
 					rows.add(textCell);
 					nbCol++;
-				
+
 				}
 			} else if (row.get(comp) instanceof WtTableHeader) {
 				WtTableHeader cellule = (WtTableHeader) row.get(comp);
@@ -332,7 +331,7 @@ public class Wikitext extends Extracteur {
 				for (int j = 1; j <= i; j++) {
 					rows.add(text);
 					nbCol++;
-				
+
 				}
 			}
 			// ne pas oublier de mettre les textes des liens aussi
@@ -378,7 +377,7 @@ public class Wikitext extends Extracteur {
 							for (int j = 1; j <= i; j++) {
 								headerList.add(textHeader);
 								nbCol++;
-													}
+							}
 
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
@@ -437,7 +436,9 @@ public class Wikitext extends Extracteur {
 					}
 
 					// lesWikitab.put(titre, tab);
-					Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, titre, true );
+					Tableau t = new Tableau();
+					// Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab,
+					// titre, true );
 					addTableau(t);
 					comp++;
 
@@ -522,9 +523,9 @@ public class Wikitext extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Ido_and_Novial", ';', "chemin", " nomCSV",
+		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Ido_and_Novial", ';', "chemin", " nomCSV.csv",
 				false, true);
-		t.recuperationPage();
+		// t.recuperationPage();
 		// t.traitementMap2();
 //		Set cles = t.lesWikitab.keySet();
 //		Iterator<Integer> it = cles.iterator();

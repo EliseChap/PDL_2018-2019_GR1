@@ -47,6 +47,7 @@ public class Wikitext extends Extracteur {
 		this.extraWiki = extraWiki;
 		lesTableaux = new ArrayList<Tableau>();
 		lesWikitab = new HashMap<String, WtBody>();
+		recuperationPage();
 
 	}
 
@@ -56,6 +57,7 @@ public class Wikitext extends Extracteur {
 			Wiki wikisweble = new Wiki(domain);
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

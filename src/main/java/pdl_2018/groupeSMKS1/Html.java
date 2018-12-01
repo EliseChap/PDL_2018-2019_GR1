@@ -35,8 +35,8 @@ public class Html extends Extracteur {
 		lesHtmltab = new HashMap<String, Element>();
 		recuperationPage();
 	}
-
-	public ArrayList<Tableau> getLesTableau() {
+	@Override
+	public ArrayList<Tableau> getLesTableaux() {
 		return lesTableaux;
 	}
 

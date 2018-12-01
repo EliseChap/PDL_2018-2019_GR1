@@ -42,6 +42,7 @@ public class Html extends Extracteur {
 
 	@Override
 	public void removeTableau() {
+		
 	}
 
 	@Override

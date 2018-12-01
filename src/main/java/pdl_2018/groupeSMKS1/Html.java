@@ -257,9 +257,9 @@ public class Html extends Extracteur {
 			if (cell != "") {
 				int y = Integer.parseInt(cell);
 
-				if (y > tab.length) {
+				if (y >= tab.length) {
 
-					y = tab.length;
+					y = tab.length-1;
 
 				}
 
@@ -270,7 +270,11 @@ public class Html extends Extracteur {
 
 			if (g.attr("colspan") != "") {
 				int x = Integer.parseInt(cellcol);
-				//System.out.println("test " + x);
+				if (x >= tab[0].length) {
+
+					x = tab[0].length-1;
+
+				}
 				tab = Fusion(tab, i, j, x, current, false);
 				System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test1");
 			}
@@ -419,6 +423,7 @@ public class Html extends Extracteur {
 				tab[i][j] = current;
 				System.out.println("i : " + i + " j : " + j + " " + tab[i][j]+"HORIZONTAL" );
 				j++;
+				System.out.println(j);
 			}
 		}
 		return tab;
@@ -439,7 +444,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_US_and_Chinese_Military_Armed_Forces", ';', "",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_layout_engines_(Cascading_Style_Sheets)", ';', "",
 				"nomCSV.csv", true, false);
 
 		b.recuperationPage();

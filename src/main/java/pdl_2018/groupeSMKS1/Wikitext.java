@@ -183,13 +183,18 @@ public class Wikitext extends Extracteur {
 		String valeur = "";
 		while (l.hasNext()) {
 			WtNode node = l.next();
-			if (node.getNodeType() == WtTemplate.NT_NAME) {
+			if (node.getNodeType() == WtTemplate.NT_TEMPLATE_ARGUMENTS) {
 				int comp = 0;
 
 				while (node.size() > comp) {
-					if (node.get(comp) instanceof WtText) {
-						WtText titre = (WtText) node.get(comp);
-						valeur = titre.getContent();
+					int comp2 = 0;
+					WtNode node2 = node.get(comp);
+					while (node2.size() > comp2) {
+						if (node2.get(comp2) instanceof WtValue) {
+							WtValue titre = (WtValue) node2.get(comp2);
+							valeur = getTextWtValue(titre);
+						}
+						comp2++;
 					}
 					comp++;
 				}
@@ -305,7 +310,7 @@ public class Wikitext extends Extracteur {
 				WtTableCell cellule = (WtTableCell) row.get(comp);
 				WtBody celluleBody = cellule.getBody();
 
-				int i = findColspanRowSpan(cellule.getXmlAttributes(),colspan);
+				int i = findColspanRowSpan(cellule.getXmlAttributes(), colspan);
 				String textCell = findCellText(celluleBody);
 				for (int j = 1; j <= i; j++) {
 					rows.add(textCell);
@@ -347,7 +352,7 @@ public class Wikitext extends Extracteur {
 					int compteRows = 0;
 					Iterator<WtNode> it = table.getBody().iterator();
 					int nbCol = 0;
-		
+
 					while (it.hasNext()) {
 						WtNode node = it.next();
 						if (node.getNodeType() == WtTable.NT_TABLE_CAPTION) {
@@ -371,7 +376,7 @@ public class Wikitext extends Extracteur {
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
 							nbCol = findCol(row, rowsList);
-							
+
 							compteRows++;
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
@@ -381,11 +386,10 @@ public class Wikitext extends Extracteur {
 								rowsList.add(findCellText(cell.getBody()));
 								nbCol++;
 							}
-											
-							
+
 							// ce n'est pas un ajour de rows mais ce sont des cellule, qui font formé une
 							// rows entre elles
-						
+
 						}
 
 					}
@@ -395,7 +399,6 @@ public class Wikitext extends Extracteur {
 						nbCol = headerList.size();
 						premiereLinge = true;
 					}
-					
 
 					String[][] tab = new String[compteRows][nbCol];
 
@@ -428,9 +431,8 @@ public class Wikitext extends Extracteur {
 					}
 
 					// lesWikitab.put(titre, tab);
-					//Tableau t = new Tableau();
-					Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab,
-					 titre, true );
+					// Tableau t = new Tableau();
+					Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, titre, true);
 					addTableau(t);
 					comp++;
 
@@ -509,7 +511,8 @@ public class Wikitext extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
-@Override
+
+	@Override
 	public ArrayList<Tableau> getLesTableaux() {
 		return lesTableaux;
 	}

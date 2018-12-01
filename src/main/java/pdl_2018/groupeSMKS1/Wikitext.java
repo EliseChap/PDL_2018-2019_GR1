@@ -1,5 +1,6 @@
 package pdl_2018.groupeSMKS1;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -58,7 +59,7 @@ public class Wikitext extends Extracteur {
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
 			
-		} catch (Exception e) {
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

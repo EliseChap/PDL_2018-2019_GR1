@@ -22,6 +22,7 @@ public class Wikitext extends Extracteur {
 	private ArrayList<Tableau> lesTableaux;
 	private Map<Integer, String[][]> tab;
 	private String colspan = "colspan";
+	private String rowspan = "rowspan";
 	private Map<String, WtBody> lesWikitab;
 	private int compteur = 0;
 
@@ -311,8 +312,10 @@ public class Wikitext extends Extracteur {
 				WtBody celluleBody = cellule.getBody();
 
 				int i = findColspanRowSpan(cellule.getXmlAttributes(), colspan);
+				int k = findColspanRowSpan(cellule.getXmlAttributes(), rowspan);
 				String textCell = findCellText(celluleBody);
-				for (int j = 1; j <= i; j++) {
+			
+				for (int j = 1; j <= i; j++) {	
 					rows.add(textCell);
 					nbCol++;
 
@@ -320,6 +323,7 @@ public class Wikitext extends Extracteur {
 			} else if (row.get(comp) instanceof WtTableHeader) {
 				WtTableHeader cellule = (WtTableHeader) row.get(comp);
 				int i = findColspanRowSpan(cellule.getXmlAttributes(), colspan);
+				int k = findColspanRowSpan(cellule.getXmlAttributes(), rowspan);
 				text = findHeader(cellule);
 				for (int j = 1; j <= i; j++) {
 					rows.add(text);
@@ -352,6 +356,7 @@ public class Wikitext extends Extracteur {
 					int compteRows = 0;
 					Iterator<WtNode> it = table.getBody().iterator();
 					int nbCol = 0;
+				//	Map<Integer, String> rowspanMap = new HashMap<Integer, String>();
 
 					while (it.hasNext()) {
 						WtNode node = it.next();
@@ -366,12 +371,12 @@ public class Wikitext extends Extracteur {
 							WtTableHeader header = (WtTableHeader) node;
 
 							int i = findColspanRowSpan(header.getXmlAttributes(), colspan);
-							String textHeader = findHeader(header);
+							int k = findColspanRowSpan(header.getXmlAttributes(), rowspan);
+							String textHeader = findHeader(header);					
 							for (int j = 1; j <= i; j++) {
 								headerList.add(textHeader);
 								nbCol++;
 							}
-
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
@@ -381,7 +386,8 @@ public class Wikitext extends Extracteur {
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
 							WtTableCell cell = (WtTableCell) node;
-							int i = findColspanRowSpan(cell.getXmlAttributes(), "Colspan");
+							int i = findColspanRowSpan(cell.getXmlAttributes(), colspan);
+							int k = findColspanRowSpan(cell.getXmlAttributes(), rowspan);
 							for (int j = 1; j <= i; j++) {
 								rowsList.add(findCellText(cell.getBody()));
 								nbCol++;
@@ -430,8 +436,6 @@ public class Wikitext extends Extracteur {
 						compteur++;
 					}
 
-					// lesWikitab.put(titre, tab);
-					// Tableau t = new Tableau();
 					Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, titre, true);
 					addTableau(t);
 					comp++;
@@ -444,9 +448,11 @@ public class Wikitext extends Extracteur {
 
 	}
 
+	@Override
 	public void removeTableau() {
 	}
 
+	@Override
 	public String getNomTableau() {
 		return "";
 	}
@@ -520,16 +526,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 		Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Ido_and_Novial", ';', "chemin", " nomCSV.csv",
 				false, true);
-		// t.recuperationPage();
-		// t.traitementMap2();
-//		Set cles = t.lesWikitab.keySet();
-//		Iterator<Integer> it = cles.iterator();
-//		while (it.hasNext()) {
-//			Integer cle = it.next();
-//			WtBody ensemble = t.lesWikitab.get(cle);
-//			// System.out.println(ensemble);
-//			t.TraitementMap();
-//		}
+	
 
 	}
 }

@@ -25,7 +25,6 @@ public class Wikitext extends Extracteur {
 	private String rowspan = "rowspan";
 	private Map<String, WtBody> lesWikitab;
 
-
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) throws Exception {
 		this.domain = domain;
@@ -49,8 +48,8 @@ public class Wikitext extends Extracteur {
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			 e.printStackTrace();
-			//System.out.println(e.getMessage());
+			e.printStackTrace();
+			// System.out.println(e.getMessage());
 		}
 	}
 
@@ -181,6 +180,7 @@ public class Wikitext extends Extracteur {
 	private String getTextWtTemplate(WtTemplate t) {
 		Iterator<WtNode> l = t.iterator();
 		String valeur = "";
+		String valeur2 = "";
 		while (l.hasNext()) {
 			WtNode node = l.next();
 			if (node.getNodeType() == WtTemplate.NT_TEMPLATE_ARGUMENTS) {
@@ -199,9 +199,24 @@ public class Wikitext extends Extracteur {
 					comp++;
 				}
 			}
+			if (node.getNodeType() == WtTemplate.NT_NAME) {
+				int comp = 0;
+				while (node.size() > comp) {
+					if (node.get(comp) instanceof WtText) {
+						WtText titre = (WtText) node.get(comp);
+						valeur2 = titre.getContent();
+					}
+					comp++;
+				}
+			}
 			getTextWtInternalLink(node);
 		}
-		return valeur;
+
+		if (valeur != "") {
+			return valeur;
+		} else {
+			return valeur2;
+		}
 	}
 
 	private String getTextWtUnorderedList(WtNode i) {
@@ -391,8 +406,8 @@ public class Wikitext extends Extracteur {
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
 							if (!row.getBody().isEmpty()) {
-							nbCol = findCol(row, rowsList, compteRows);
-							compteRows++;
+								nbCol = findCol(row, rowsList, compteRows);
+								compteRows++;
 							}
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
@@ -458,7 +473,7 @@ public class Wikitext extends Extracteur {
 								colonnes++;
 								compteur++;
 							}
-							if (compteur > nbCol -1 ) {
+							if (compteur > nbCol - 1) {
 								compteur = 0;
 								lig++;
 								colonnes = 0;
@@ -475,7 +490,7 @@ public class Wikitext extends Extracteur {
 								colonnes++;
 								compteur++;
 							}
-							if (compteur > nbCol -1 ) {
+							if (compteur > nbCol - 1) {
 								compteur = 0;
 								lig++;
 								colonnes = 0;
@@ -512,7 +527,7 @@ public class Wikitext extends Extracteur {
 						compteur++;
 					}
 
-					addTableau(constructeurTableau( tab, titre,true));
+					addTableau(constructeurTableau(tab, titre, true));
 					comp++;
 
 				}
@@ -528,20 +543,21 @@ public class Wikitext extends Extracteur {
 		if (lesTableaux.contains(leTableau)) {
 			lesTableaux.remove(leTableau);
 		}
-		
+
 	}
 
-/**
- * 
- * @return Le domaine du lien URL pour lequel on cherche des tableaux
- */
+	/**
+	 * 
+	 * @return Le domaine du lien URL pour lequel on cherche des tableaux
+	 */
 	public String getDomain() {
 		return domain;
 	}
-/**
- * 
- * @return le sous domaine du lien url pour lequel on cherche des tableaux
- */
+
+	/**
+	 * 
+	 * @return le sous domaine du lien url pour lequel on cherche des tableaux
+	 */
 	public String getSousDomain() {
 		return sousDomain;
 	}
@@ -551,15 +567,18 @@ public class Wikitext extends Extracteur {
 			lesTableaux.add(leTableau);
 		}
 	}
-/**
- * 
- * @param tab Un tableau de string comportant les valeurs d'un tableau extrait de wikipédio
- * @param nomTab Le nom du tableau wikipédia
- * @param wikiHtml true pour indiquer que les données on était extraites avec wikicode
- * @return Un objet tableau 
- */
-	public Tableau constructeurTableau( String[][] tab, String nomTab, boolean wikiHtml) {
-		return new Tableau( delimit, cheminCSV,  nomCSV,  tab, nomTab,wikiHtml);
+
+	/**
+	 * 
+	 * @param tab      Un tableau de string comportant les valeurs d'un tableau
+	 *                 extrait de wikipédio
+	 * @param nomTab   Le nom du tableau wikipédia
+	 * @param wikiHtml true pour indiquer que les données on était extraites avec
+	 *                 wikicode
+	 * @return Un objet tableau
+	 */
+	public Tableau constructeurTableau(String[][] tab, String nomTab, boolean wikiHtml) {
+		return new Tableau(delimit, cheminCSV, nomCSV, tab, nomTab, wikiHtml);
 	}
 
 	/**
@@ -621,13 +640,12 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_network_diagram_software", ';', "chemin",
-					" nomCSV.csv", false, true);
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_archive_formats", ';', "chemin", " nomCSV.csv",
+					false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 
 	}
 }

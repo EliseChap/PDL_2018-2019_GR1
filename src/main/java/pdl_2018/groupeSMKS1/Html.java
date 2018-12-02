@@ -164,21 +164,24 @@ public class Html extends Extracteur {
 			boolean tabcreated = false;
 
 			Elements tr = ensemble.getElementsByTag("tr");
+				 int taille =getMax(tr);
+				 System.out.println(taille + "taille");
+				
 			Element first = tr.first();
-			Element second = tr.get(1);
+			//Element second = tr.get(1);
 
 			Elements th = first.getElementsByTag("th");
-			Elements th2 = second.getElementsByTag("th");
+			//Elements th2 = second.getElementsByTag("th");
 
 			while (!first.hasText()) {
 
 				tr.remove(0);
 				first = tr.first();
 			}
-			int nbth = countNbCol(first);
-			if (th2.size() > th.size()) {
-				nbth = countNbCol(second);
-			}
+			//int nbth = countNbCol(first);
+			//if (th2.size() > th.size()) {
+				//nbth = countNbCol(second);
+			//}
 
 			String[][] tab = null;
 			int i = 0;
@@ -190,13 +193,13 @@ public class Html extends Extracteur {
 				Elements td = e.getElementsByTag("td");
 
 				if (!tabcreated) {
-					int nbCol = 0;
+					/*int nbCol = 0;
 					if (nbth > 0) {
 						nbCol = nbth;
 					} else {
 						nbCol = td.size();
-					}
-					tab = new String[tr.size()][nbCol];
+					}*/
+					tab = new String[tr.size()][taille];
 					tabcreated = true;
 				}
 				int j = 0;
@@ -214,6 +217,9 @@ public class Html extends Extracteur {
 		}
 	}
 
+	
+	
+	//a degager
 	/**
 	 * Compte le nombre de colonnes du tableau
 	 * 
@@ -494,9 +500,21 @@ public class Html extends Extracteur {
 		}
 		return "";
 	}
+	public int getMax(Elements tr) {
+		int max = 0;
+		for (Element e : tr) {
+			Elements th = e.getElementsByTag("th");
+			Elements td = e.getElementsByTag("td");
+				if(max<th.size()+td.size()) {
+					max = th.size()+td.size();
+				}
+
+		}
+		return max;
+	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software", ';', "", "nomCSV.csv",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_cognitive_architectures", ';', "", "nomCSV.csv",
 				true, false);
 
 		b.recuperationPage();

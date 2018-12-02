@@ -24,6 +24,7 @@ public class Wikitext extends Extracteur {
 	private String colspan = "colspan";
 	private String rowspan = "rowspan";
 	private Map<String, WtBody> lesWikitab;
+	private Wiki wikisweble;
 
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) throws Exception {
@@ -42,7 +43,7 @@ public class Wikitext extends Extracteur {
 
 	public void recuperationPage() {
 		try {
-			Wiki wikisweble = new Wiki(domain);
+			wikisweble = new Wiki(domain);
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
 
@@ -538,11 +539,34 @@ public class Wikitext extends Extracteur {
 					comp++;
 
 				}
+			} else if (fils.getNodeType() == WtRedirect.NT_REDIRECT) {
+				String contenu;
+				try {
+
+					String valeur = "";
+					int comp = 0;
+					while (fils.size() > comp) {
+						if (fils.get(comp) instanceof WtPageName) {
+							WtPageName titre = (WtPageName) fils.get(comp);
+							valeur = titre.getAsString();
+						}
+						comp++;
+					}
+
+					if (valeur != "") {
+						sousDomain = valeur;
+						contenu = wikisweble.getPageText(sousDomain);
+						wikiconfig(contenu);
+					}
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			} else {
+				parcourirNode(fils);
 			}
-			else if() {
-				
-			}
-			parcourirNode(fils);
+			
 
 		}
 
@@ -650,7 +674,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_e-book_formats", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_Android_e-book_reader_software", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

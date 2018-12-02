@@ -327,7 +327,7 @@ public class Wikitext extends Extracteur {
 				int i = findColspanRowSpan(cellule.getXmlAttributes(), colspan);
 				int k = findColspanRowSpan(cellule.getXmlAttributes(), rowspan);
 				String textCell = findCellText(celluleBody);
-				addRowSpan(nbRow, nbCol, k, textCell);
+				addRowSpan(nbRow, nbCol, k, textCell, false);
 				for (int j = 1; j <= i; j++) {
 					rows.add(textCell);
 					nbCol++;
@@ -338,7 +338,7 @@ public class Wikitext extends Extracteur {
 				int i = findColspanRowSpan(cellule.getXmlAttributes(), colspan);
 				int k = findColspanRowSpan(cellule.getXmlAttributes(), rowspan);
 				String text = findHeader(cellule);
-				addRowSpan(nbRow, nbCol, k, text);
+				addRowSpan(nbRow, nbCol, k, text, false);
 				for (int j = 1; j <= i; j++) {
 					rows.add(text);
 					nbCol++;
@@ -352,15 +352,21 @@ public class Wikitext extends Extracteur {
 
 	int comp = 0;
 	List<String[][]> rowspanList = new ArrayList<String[][]>();
+	List<String[][]> rowspanHeaderList = new ArrayList<String[][]>();
 
-	private void addRowSpan(int compteRows, int nbCol, int k, String text) {
+	private void addRowSpan(int compteRows, int nbCol, int k, String text, boolean header) {
 		if (k > 1) {
 			String[][] tabRow = new String[1][4];
 			tabRow[0][0] = String.valueOf(compteRows);
 			tabRow[0][1] = String.valueOf(nbCol);
 			tabRow[0][2] = String.valueOf(k - 1);
 			tabRow[0][3] = text;
-			rowspanList.add(tabRow);
+			if (header) {
+				rowspanHeaderList.add(tabRow);
+			} else {
+				rowspanList.add(tabRow);
+			}
+
 		}
 	}
 
@@ -371,6 +377,7 @@ public class Wikitext extends Extracteur {
 			fils = l.next();
 			if (fils.getNodeType() == WtTable.NT_TABLE) {
 				rowspanList.clear();
+				rowspanHeaderList.clear();
 				WtTable table = (WtTable) fils;
 				System.out.println(table);
 				WtXmlAttributes e = table.getXmlAttributes();
@@ -397,7 +404,7 @@ public class Wikitext extends Extracteur {
 							int i = findColspanRowSpan(header.getXmlAttributes(), colspan);
 							int k = findColspanRowSpan(header.getXmlAttributes(), rowspan);
 							String textHeader = findHeader(header);
-							addRowSpan(compteRows, nbCol, k, textHeader);
+							addRowSpan(compteRows, nbCol, k, textHeader, true);
 							for (int j = 1; j <= i; j++) {
 								headerList.add(textHeader);
 								nbCol++;
@@ -415,7 +422,7 @@ public class Wikitext extends Extracteur {
 							int i = findColspanRowSpan(cell.getXmlAttributes(), colspan);
 							int k = findColspanRowSpan(cell.getXmlAttributes(), rowspan);
 							String textCell = findCellText(cell.getBody());
-							addRowSpan(compteRows, nbCol, k, textCell);
+							addRowSpan(compteRows, nbCol, k, textCell, false);
 							for (int j = 1; j <= i; j++) {
 								rowsList.add(textCell);
 								nbCol++;
@@ -444,8 +451,8 @@ public class Wikitext extends Extracteur {
 						tab[lig][colonnes] = item;
 						int index = 0;
 						boolean find = false;
-						while (rowspanList.size() > index && !find) {
-							String[][] tableau = rowspanList.get(index);
+						while (rowspanHeaderList.size() > index && !find) {
+							String[][] tableau = rowspanHeaderList.get(index);
 							if (Integer.parseInt(tableau[0][0]) == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
 								find = true;
 								int Newligne = lig + 1;
@@ -531,6 +538,9 @@ public class Wikitext extends Extracteur {
 					comp++;
 
 				}
+			}
+			else if() {
+				
 			}
 			parcourirNode(fils);
 
@@ -640,8 +650,8 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_archive_formats", ';', "chemin", " nomCSV.csv",
-					false, true);
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_e-book_formats", ';', "chemin",
+					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

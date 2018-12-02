@@ -425,7 +425,7 @@ public class Wikitext extends Extracteur {
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
-							if (!row.getBody().isEmpty() && sautDeLigne(row.getBody())) {
+							if (!row.getBody().isEmpty() && !sautDeLigne(row.getBody())) {
 								nbCol = findCol(row, rowsList, compteRows);
 								compteRows++;
 							}
@@ -470,7 +470,7 @@ public class Wikitext extends Extracteur {
 								find = true;
 								int Newligne = lig + 1;
 								for (int i = 0; i < Integer.parseInt(tableau[0][2]); i++) {
-									tab[Newligne][colonnes] = tableau[0][3];
+									tab[Newligne][colonnes] = tableau[0][3].trim();
 									Newligne += 1;
 								}
 							}
@@ -521,7 +521,7 @@ public class Wikitext extends Extracteur {
 							}
 						}
 
-						tab[lig][colonnes] = item;
+						tab[lig][colonnes] = item.trim();
 						int index = 0;
 						boolean find = false;
 						while (rowspanList.size() > index && !find) {
@@ -537,7 +537,7 @@ public class Wikitext extends Extracteur {
 								find = true;
 								int Newligne = lig + 1;
 								for (int i = 0; i < Integer.parseInt(tableau[0][2]) ; i++) {
-									tab[Newligne][colonnes] = tableau[0][3];
+									tab[Newligne][colonnes] = tableau[0][3].trim();
 									Newligne += 1;
 								}
 							}
@@ -686,7 +686,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_audio_formats", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Esperanto_and_Novial", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

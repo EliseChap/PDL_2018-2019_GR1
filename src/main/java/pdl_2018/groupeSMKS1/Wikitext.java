@@ -597,22 +597,13 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_MD_and_DO_in_the_United_States", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Esperanto_and_Novial", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// t.recuperationPage();
-		// t.traitementMap2();
-//		Set cles = t.lesWikitab.keySet();
-//		Iterator<Integer> it = cles.iterator();
-//		while (it.hasNext()) {
-//			Integer cle = it.next();
-//			WtBody ensemble = t.lesWikitab.get(cle);
-//			// System.out.println(ensemble);
-//			t.TraitementMap();
-//		}
+
 
 	}
 }

@@ -235,10 +235,17 @@ public class Url implements IUrl {
 				System.out.println("test1"+domaine);
 				System.out.println("test2"+sousDomaine);
 				
-				 Extracteur wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit,
-				 cheminCsv, nomCsv, extraHtml, extraWiki);
-				lesExtracteurs.add(wiki);
-				System.out.println("wiki : "+wiki.getLesTableaux());
+				 Extracteur wiki;
+				try {
+					wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit,
+					 cheminCsv, nomCsv, extraHtml, extraWiki);
+					lesExtracteurs.add(wiki);
+					System.out.println("wiki : "+wiki.getLesTableaux());
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 			}
 			if (extraHtml) {
 				Extracteur html = new Html(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);

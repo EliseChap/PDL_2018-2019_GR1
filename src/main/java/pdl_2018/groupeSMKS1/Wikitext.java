@@ -24,7 +24,7 @@ public class Wikitext extends Extracteur {
 	private String colspan = "colspan";
 	private String rowspan = "rowspan";
 	private Map<String, WtBody> lesWikitab;
-	private int compteur = 0;
+
 
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) throws Exception {
@@ -168,6 +168,10 @@ public class Wikitext extends Extracteur {
 			if (headerBody.get(comp) instanceof WtInternalLink) {
 				WtInternalLink titre = (WtInternalLink) headerBody.get(comp);
 				titreHeader = titreHeader + getTextWtInternalLink(titre);
+			}
+			if (headerBody.get(comp) instanceof WtUnorderedList) {
+				WtUnorderedList titre = (WtUnorderedList) headerBody.get(comp);
+				titreHeader = getTextWtUnorderedList(titre);
 			}
 			comp++;
 		}
@@ -386,9 +390,10 @@ public class Wikitext extends Extracteur {
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
+							if (!row.getBody().isEmpty()) {
 							nbCol = findCol(row, rowsList, compteRows);
-
 							compteRows++;
+							}
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
 							WtTableCell cell = (WtTableCell) node;
@@ -616,7 +621,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Esperanto_and_Novial", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_network_diagram_software", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

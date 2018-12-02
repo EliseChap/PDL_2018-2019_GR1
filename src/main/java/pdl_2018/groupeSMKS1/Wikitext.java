@@ -370,6 +370,18 @@ public class Wikitext extends Extracteur {
 
 		}
 	}
+	private boolean sautDeLigne(WtBody b) {
+		int comp = 0;
+
+		while ( b.size() > comp) {
+			if ( b.get(comp) instanceof WtText) {
+				WtText titre = (WtText)  b.get(comp);
+				return  titre.getContent() == "/n";
+			}
+			comp++;
+		}
+		return false;
+	}
 
 	private void parcourirNode(WtNode fils) {
 
@@ -413,7 +425,7 @@ public class Wikitext extends Extracteur {
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_ROW) {
 							WtTableRow row = (WtTableRow) node;
-							if (!row.getBody().isEmpty()) {
+							if (!row.getBody().isEmpty() && sautDeLigne(row.getBody())) {
 								nbCol = findCol(row, rowsList, compteRows);
 								compteRows++;
 							}
@@ -524,7 +536,7 @@ public class Wikitext extends Extracteur {
 							if (ligneTab == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
 								find = true;
 								int Newligne = lig + 1;
-								for (int i = 0; i < Integer.parseInt(tableau[0][2]) + 1; i++) {
+								for (int i = 0; i < Integer.parseInt(tableau[0][2]) ; i++) {
 									tab[Newligne][colonnes] = tableau[0][3];
 									Newligne += 1;
 								}
@@ -674,7 +686,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_high_definition_optical_disc_formats", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_audio_formats", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

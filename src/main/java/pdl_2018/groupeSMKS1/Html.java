@@ -70,11 +70,16 @@ public class Html extends Extracteur {
 			lesTableaux.add(leTableau);
 		}
 	}
-
+	/**
+	 * 
+	 * @param tab Un tableau de string comportant les valeurs d'un tableau extrait de wikipédio
+	 * @param nomTab Le nom du tableau wikipédia
+	 * @param wikiHtml true pour indiquer que les données on était extraites avec wikicode
+	 * @return Un objet tableau 
+	 */
 	@Override
-	public Tableau constructeurTableau(char delimit, String cheminCSV, String NomCSV, boolean extraHTML,
-			boolean extraWiki) {
-		return new Tableau();
+	public Tableau constructeurTableau(String[][] tab, String cle, boolean wikiHtml) {
+		return new Tableau(delimit, cheminCSV, nomCSV, tab, cle, false);
 	}
 
 	/**
@@ -214,8 +219,7 @@ public class Html extends Extracteur {
 
 			tab = TraitementColonnesVides(tab);
 			lectureTableau(tab);
-			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle, false);
-			lesTableaux.add(t);
+			lesTableaux.add(constructeurTableau(tab, cle, false));
 		}
 	}
 

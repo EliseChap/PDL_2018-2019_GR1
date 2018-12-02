@@ -244,8 +244,8 @@ public class Html extends Extracteur {
 		
 		
 
-		 
 		 if(td.size()>tab[0].length) { // cas de cellules hors du tableau 
+			 
 			 td.remove(td.size()-1);
 			 
 		 }
@@ -279,13 +279,18 @@ public class Html extends Extracteur {
 
 			if (g.attr("colspan") != "") {
 				int x = Integer.parseInt(cellcol);
-				if (x >= tab[0].length) {
+				System.out.println("x" + x);
+				if (x >= tab[0].length ) {
 
 					x = tab[0].length-1;
 
 				}
+				
+				if(x+j >= tab[0].length) {
+					x = tab[0].length-1 -j;
+				}
 				tab = Fusion(tab, i, j, x, current, false);
-				System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test1");
+				System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] );
 			}
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
@@ -297,7 +302,7 @@ public class Html extends Extracteur {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
-			System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] + "test2");
+			System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
 
 			if (j < tab[i].length-1) {
 				j++;
@@ -453,7 +458,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_the_2008_United_States_presidential_candidates", ';', "",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_research_networking_tools_and_research_profiling_systems", ';', "",
 				"nomCSV.csv", true, false);
 
 		b.recuperationPage();

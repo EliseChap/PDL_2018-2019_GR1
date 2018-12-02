@@ -525,16 +525,24 @@ public class Wikitext extends Extracteur {
 		}
 		
 	}
-
+/**
+ * 
+ */
 	@Override
 	public String getNomTableau() {
 		return "";
 	}
-
+/**
+ * 
+ * @return Le domaine du lien URL pour lequel on cherche des tableaux
+ */
 	public String getDomain() {
 		return domain;
 	}
-
+/**
+ * 
+ * @return le sous domaine du lien url pour lequel on cherche des tableaux
+ */
 	public String getSousDomain() {
 		return sousDomain;
 	}

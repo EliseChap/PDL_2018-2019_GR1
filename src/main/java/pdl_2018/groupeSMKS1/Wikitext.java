@@ -525,14 +525,7 @@ public class Wikitext extends Extracteur {
 		}
 		
 	}
-/**
- * 
- * @return le nom du tableau
- */
-	@Override
-	public String getNomTableau(Tableau leTableau) {
-		return leTableau.getnomTab();
-	}
+
 /**
  * 
  * @return Le domaine du lien URL pour lequel on cherche des tableaux
@@ -609,6 +602,15 @@ public class Wikitext extends Extracteur {
 	@Override
 	public ArrayList<Tableau> getLesTableaux() {
 		return lesTableaux;
+	}
+
+	/**
+	 * 
+	 * @return le nom du Tableau
+	 */
+	@Override
+	public String getNomTableau(Tableau leTableau) {
+		return leTableau.getnomTab();
 	}
 
 	public static void main(String[] args) {

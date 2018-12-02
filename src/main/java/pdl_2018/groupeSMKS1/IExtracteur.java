@@ -6,14 +6,12 @@ public interface IExtracteur {
 
 /**
  * 
- * @param delimit d�limiteur choisit par l'utilisateur
- * @param cheminCSV Chemin de sauvegarde du CSV final choisit par l'utilisateur
- * @param NomCSV Nom duy fichier CSV choisit par l'utilisateur
- * @param extraHTML Boolean � true si l'extraction doit �tre fait en HTML, false sinon
- * @param extraWiki Boolean � true si l'extraction doit �tre fait AVEC LE WIKICODE, false sinon
+ * @param tab tableau de string contenant les donnees extraites d'un tableau wikipedia
+ * @param nomTab nom du tableau tab
+ * @param wikiHtml True si les données on était extraites avec wikicode, false sinon
  * @return un objet tableau
  */
-	public Tableau constructeurTableau(char delimit, String cheminCSV,String NomCSV, boolean extraHTML, boolean extraWiki);
+	public Tableau constructeurTableau( String[][] tab, String nomTab, boolean wikiHtml);
 	
 	/**
 	 * 
@@ -24,7 +22,7 @@ public interface IExtracteur {
 	/**
 	 * Supprime le tableau
 	 */
-	public void removeTableau();
+	public void removeTableau(Tableau leTableau);
 	
 	/**
 	 * @param Un object de type tableau
@@ -39,7 +37,7 @@ public interface IExtracteur {
 	
 	/**
 	 * 
-	 * @return une liste d'objet tableau contruits pour chaque tableau extrait du wiki ou html
+	 * @return une liste d'objet tableau construis pour chaque tableau extrait du wiki ou html
 	 */
 	public ArrayList<Tableau> getLesTableaux();
 }

@@ -507,8 +507,7 @@ public class Wikitext extends Extracteur {
 						compteur++;
 					}
 
-					Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, titre, true);
-					addTableau(t);
+					addTableau(constructeurTableau( tab, titre,true));
 					comp++;
 
 				}
@@ -520,7 +519,11 @@ public class Wikitext extends Extracteur {
 	}
 
 	@Override
-	public void removeTableau() {
+	public void removeTableau(Tableau leTableau) {
+		if (lesTableaux.contains(leTableau)) {
+			lesTableaux.remove(leTableau);
+		}
+		
 	}
 
 	@Override
@@ -541,10 +544,15 @@ public class Wikitext extends Extracteur {
 			lesTableaux.add(leTableau);
 		}
 	}
-
-	public Tableau constructeurTableau(char delimit, String cheminCSV, String NomCSV, boolean extraHTML,
-			boolean extraWiki) {
-		return new Tableau();
+/**
+ * 
+ * @param tab Un tableau de string comportant les valeurs d'un tableau extrait de wikipédio
+ * @param nomTab Le nom du tableau wikipédia
+ * @param wikiHtml true pour indiquer que les données on était extraites avec wikicode
+ * @return Un objet tableau 
+ */
+	public Tableau constructeurTableau( String[][] tab, String nomTab, boolean wikiHtml) {
+		return new Tableau( delimit, cheminCSV,  nomCSV,  tab, nomTab,wikiHtml);
 	}
 
 	/**

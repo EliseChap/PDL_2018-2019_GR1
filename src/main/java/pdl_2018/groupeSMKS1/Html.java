@@ -144,19 +144,22 @@ public class Html extends Extracteur {
 
 			Elements tr = ensemble.getElementsByTag("tr");
 			Element first = tr.first();
+			Element second = tr.get(1);
+			System.out.println(second);
+			System.out.println(first.text() + "first");
+			Elements th = first.getElementsByTag("th");
+			Elements th2 = second.getElementsByTag("th");
+			
 			while(!first.hasText()) {
 				
 				tr.remove(0);
 				first = tr.first();
 			}
+			int nbth = countNbCol(first);
+			if(th2.size()>th.size()) {
+				 nbth = countNbCol(second);
+			}
 			
-			System.out.println(first.hasText());
-			
-			
-			// System.out.println(last.toString());
-			
-
-			// System.out.println("tr" + tr.size());
 
 			String[][] tab = null;
 			int i = 0;
@@ -164,9 +167,9 @@ public class Html extends Extracteur {
 			for (Element e : tr) {
 				// System.out.println(e);
 				//System.out.println(e);
-				Elements th = e.getElementsByTag("th");
+				Elements thdetr = e.getElementsByTag("th");
 
-				int nbth = countNbCol(first);
+				
 				Elements td = e.getElementsByTag("td");
 
 				if (!tabcreated) {
@@ -185,7 +188,7 @@ public class Html extends Extracteur {
 					tabcreated = true;
 				}
 				int j = 0;
-				tab = bodyTableau(tab, i, 0, th);
+				tab = bodyTableau(tab, i, 0, thdetr);
 
 				tab = bodyTableau(tab, i, j, td);
 
@@ -251,7 +254,7 @@ public class Html extends Extracteur {
 		 }
 
 		for (Element g : td) {
-			// System.out.println(g);
+			//System.out.println(g);
 			if (tab[i][j] != null) {
 				
 				i = deplacerTableau(tab, i, j, false);
@@ -458,7 +461,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_research_networking_tools_and_research_profiling_systems", ';', "",
+		Html b = new Html("https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units", ';', "",
 				"nomCSV.csv", true, false);
 
 		b.recuperationPage();

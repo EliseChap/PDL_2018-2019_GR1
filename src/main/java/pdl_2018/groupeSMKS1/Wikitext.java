@@ -674,7 +674,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_Android_e-book_reader_software", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_high_definition_optical_disc_formats", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

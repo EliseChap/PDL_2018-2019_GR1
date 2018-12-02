@@ -41,16 +41,16 @@ public class Wikitext extends Extracteur {
 
 	}
 
-	public void recuperationPage()  {
+	public void recuperationPage() {
 		try {
 			Wiki wikisweble = new Wiki(domain);
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
 
-		} catch ( Exception e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-		//	e.printStackTrace();
-			System.out.println(e.getMessage());
+			 e.printStackTrace();
+			//System.out.println(e.getMessage());
 		}
 	}
 
@@ -449,30 +449,35 @@ public class Wikitext extends Extracteur {
 							}
 							premiereLinge = true;
 							colonnes = 0;
-							while (tab[lig][colonnes] != null && compteur < nbCol -1) {
+							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
 								colonnes++;
 								compteur++;
 							}
-							if (colonnes > nbCol-1) {
+							if (compteur > nbCol -1 ) {
 								compteur = 0;
-
 								lig++;
-
 								colonnes = 0;
+							}
+							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
+								colonnes++;
+								compteur++;
 							}
 
 						} else {
 
 							colonnes++;
-							while (tab[lig][colonnes] != null && compteur < nbCol-1 ) {
+							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
 								colonnes++;
 								compteur++;
 							}
-							if (colonnes > nbCol-1) {
+							if (compteur > nbCol -1 ) {
 								compteur = 0;
-
 								lig++;
 								colonnes = 0;
+							}
+							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
+								colonnes++;
+								compteur++;
 							}
 						}
 
@@ -590,9 +595,10 @@ public class Wikitext extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		
+
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Ido_and_Novial", ';', "chemin", " nomCSV.csv",false, true);
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_MD_and_DO_in_the_United_States", ';', "chemin",
+					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

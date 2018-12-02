@@ -35,6 +35,11 @@ public class Html extends Extracteur {
 		lesHtmltab = new HashMap<String, Element>();
 		recuperationPage();
 	}
+	
+	/**
+	 * 
+	 * @return la liste LesTableaux
+	 */
 	@Override
 	public ArrayList<Tableau> getLesTableaux() {
 		return lesTableaux;
@@ -42,15 +47,22 @@ public class Html extends Extracteur {
 
 	@Override
 	public void removeTableau() {
-		
-	}
 
+	}
+	/**
+	 * 
+	 * @return le nom du Tableau
+	 */
 	@Override
 	public String getNomTableau() {
 		return "";
 	}
 
 	@Override
+	/**
+	 * Ajoute le Tableau a la liste lesTableaux si il n'est pas déjà présents
+	 * @param leTableau
+	 */
 	public void addTableau(Tableau leTableau) {
 		if (!lesTableaux.contains(leTableau)) {
 			lesTableaux.add(leTableau);
@@ -104,6 +116,12 @@ public class Html extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
+	
+	/**
+	 * Récupère la page et chaque tableau de cette page est mis dans une map avec pour cle son nom
+	 * ou par defaut table + son numero de table 
+	 * 
+	 */
 
 	public void recuperationPage() {
 		try {
@@ -131,45 +149,44 @@ public class Html extends Extracteur {
 		}
 	}
 
+	/**
+	 * Pour chaque tableau de la Map, on fait les traitements nécessaires
+	 * 
+	 */
+
 	public void TraitementMap() {
 		Set cles = lesHtmltab.keySet();
 		Iterator<String> it = cles.iterator();
-		int counter = 0;
 
 		while (it.hasNext()) {
 			String cle = it.next();
-			System.out.println(cle + "cle");
 			Element ensemble = lesHtmltab.get(cle);
 			boolean tabcreated = false;
 
 			Elements tr = ensemble.getElementsByTag("tr");
 			Element first = tr.first();
 			Element second = tr.get(1);
-			System.out.println(second);
-			System.out.println(first.text() + "first");
+
 			Elements th = first.getElementsByTag("th");
 			Elements th2 = second.getElementsByTag("th");
-			
-			while(!first.hasText()) {
-				
+
+			while (!first.hasText()) {
+
 				tr.remove(0);
 				first = tr.first();
 			}
 			int nbth = countNbCol(first);
-			if(th2.size()>th.size()) {
-				 nbth = countNbCol(second);
+			if (th2.size() > th.size()) {
+				nbth = countNbCol(second);
 			}
-			
 
 			String[][] tab = null;
 			int i = 0;
 
 			for (Element e : tr) {
-				// System.out.println(e);
-				//System.out.println(e);
+
 				Elements thdetr = e.getElementsByTag("th");
 
-				
 				Elements td = e.getElementsByTag("td");
 
 				if (!tabcreated) {
@@ -180,11 +197,6 @@ public class Html extends Extracteur {
 						nbCol = td.size();
 					}
 					tab = new String[tr.size()][nbCol];
-					System.out.println("th" + nbth);
-					System.out.println("nbcol" + nbCol);
-					System.out.println("tr" + tr.size());
-					System.out.println("thsize" + th.size());
-					System.out.println(nbCol);
 					tabcreated = true;
 				}
 				int j = 0;
@@ -196,11 +208,18 @@ public class Html extends Extracteur {
 			}
 
 			tab = TraitementColonnesVides(tab);
-			 lectureTableau(tab);
+			lectureTableau(tab);
 			Tableau t = new Tableau(this.delimit, this.cheminCSV, this.nomCSV, tab, cle, false);
 			lesTableaux.add(t);
 		}
 	}
+
+	/**
+	 * Compte le nombre de colonnes du tableau
+	 * 
+	 * @param first
+	 * @return int, le nombre de colonnes du tableau
+	 */
 
 	public int countNbCol(Element first) {
 		int count = 0;
@@ -222,7 +241,7 @@ public class Html extends Extracteur {
 		for (Element b : td) {
 			String cellcol = b.attr("colspan");
 			String current = b.text();
-			
+
 			if (b.attr("colspan") != "") {
 				count = count + Integer.parseInt(cellcol);
 
@@ -244,23 +263,21 @@ public class Html extends Extracteur {
 	 * @return tab[][]
 	 */
 	public String[][] bodyTableau(String[][] tab, int i, int j, Elements td) {
-		
-		
 
-		 if(td.size()>tab[0].length) { // cas de cellules hors du tableau 
-			 
-			 td.remove(td.size()-1);
-			 
-		 }
+		if (td.size() > tab[0].length) { // cas de cellules hors du tableau
+
+			td.remove(td.size() - 1);
+
+		}
 
 		for (Element g : td) {
-			//System.out.println(g);
+			// System.out.println(g);
 			if (tab[i][j] != null) {
-				
+
 				i = deplacerTableau(tab, i, j, false);
-			
+
 				j = deplacerTableau(tab, i, j, true);
-				
+
 			}
 			String current = g.text();
 
@@ -271,7 +288,7 @@ public class Html extends Extracteur {
 
 				if (y >= tab.length) {
 
-					y = tab.length-1;
+					y = tab.length - 1;
 
 				}
 
@@ -282,18 +299,17 @@ public class Html extends Extracteur {
 
 			if (g.attr("colspan") != "") {
 				int x = Integer.parseInt(cellcol);
-				System.out.println("x" + x);
-				if (x >= tab[0].length ) {
+				if (x >= tab[0].length) {
 
-					x = tab[0].length-1;
+					x = tab[0].length - 1;
 
 				}
-				
-				if(x+j >= tab[0].length) {
-					x = tab[0].length-1 -j;
+
+				if (x + j >= tab[0].length) {
+					x = tab[0].length - 1 - j;
 				}
 				tab = Fusion(tab, i, j, x, current, false);
-				System.out.println("i : test " + i + " j : " + j + " " + tab[i][j] );
+				System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
 			}
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
@@ -307,14 +323,12 @@ public class Html extends Extracteur {
 
 			System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
 
-			if (j < tab[i].length-1) {
+			if (j < tab[i].length - 1) {
 				j++;
-				
 
 			} else {
 				j = 0;
 				i++;
-				
 
 			}
 
@@ -322,30 +336,12 @@ public class Html extends Extracteur {
 		return tab;
 	}
 
-	public String[][] SuppressionColVides(String[][] tab, int j) {
-		String[][] tab1 = new String[tab.length][j];
-		if (j == tab[0].length - 1) {
-			for (int a = 0; a < tab1.length; a++) {
-				for (int b = 0; b < tab1[a].length; b++) {
-					tab1[a][b] = tab[a][b];
-				}
-			}
-		} else {
-			for (int a = 0; a < tab1.length; a++) {
-				for (int b = 0; b < tab1[a].length; b++) {
-					if (b != j) {
-						// System.out.println(tab[a][b] + "b"+ b + "j"+ j);
-						tab1[a][b] = tab[a][b];
-
-					} else {
-						tab1[a][b] = tab[a][b + 1];
-					}
-				}
-			}
-		}
-		return tab1;
-	}
-
+	/**
+	 * Traitement du tableau si il existe des colonnes vides dans le tableau
+	 * 
+	 * @param tab
+	 * @return String[][] tab, sans les colonnes vides
+	 */
 	public String[][] TraitementColonnesVides(String[][] tab) {
 		boolean vide = true;
 		int i = 0;
@@ -369,25 +365,55 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Deplace le curseur si la cellule est dÃ©jÃ  pleine
+	 * Suppression des colonnes vides
+	 * 
+	 * @param tab
+	 * @param j
+	 * @return String[][] tab, sans les colonnes vides
+	 */
+
+	public String[][] SuppressionColVides(String[][] tab, int j) {
+		String[][] tab1 = new String[tab.length][j];
+		if (j == tab[0].length - 1) {
+			for (int a = 0; a < tab1.length; a++) {
+				for (int b = 0; b < tab1[a].length; b++) {
+					tab1[a][b] = tab[a][b];
+				}
+			}
+		} else {
+			for (int a = 0; a < tab1.length; a++) {
+				for (int b = 0; b < tab1[a].length; b++) {
+					if (b != j) {
+						tab1[a][b] = tab[a][b];
+
+					} else {
+						tab1[a][b] = tab[a][b + 1];
+					}
+				}
+			}
+		}
+		return tab1;
+	}
+
+	/**
+	 * Deplace le curseur si la cellule est deja  pleine
 	 * 
 	 * @param tab
 	 * @param i
 	 * @param j
 	 * @param vertical
-	 * @return
+	 * @return int, i si vertical j sinon
 	 */
 
 	public int deplacerTableau(String[][] tab, int i, int j, boolean vertical) {
 
 		while (tab[i][j] != null) {
-			if (j < tab[i].length-1) {
-				
+			if (j < tab[i].length - 1) {
+
 				j++;
 			} else if (i < tab.length - 1) {
 				j = 0;
 				i++;
-				
 
 			}
 
@@ -400,7 +426,7 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Afficher l'intÃ©gralitÃ© du tableau
+	 * Afficher l'integralite du tableau
 	 * 
 	 * @param tab
 	 */
@@ -414,7 +440,7 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Remplir le tableau suivant les fusions horizontale ou verticale
+	 * Remplir le tableau suivant les fusions horizontales ou verticales
 	 * 
 	 * @param tab
 	 * @param i
@@ -430,21 +456,30 @@ public class Html extends Extracteur {
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
 				System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "VERTICAL");
-				i++;
-
+				if (i < tab.length - 1) {
+					i++;
+				}
 			}
 
 		} else {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				System.out.println("i : " + i + " j : " + j + " " + tab[i][j]+"HORIZONTAL" );
-				j++;
-				System.out.println(j);
+				if (j < tab[i].length - 1) {
+					j++;
+				}
+
 			}
 		}
 		return tab;
 	}
+
+	/**
+	 * Recuperer l'url dune image contenu dans une cellule
+	 * 
+	 * @param Element g
+	 * @return String de l'url
+	 */
 
 	public String getUrlImage(Element g) {
 
@@ -461,8 +496,8 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units", ';', "",
-				"nomCSV.csv", true, false);
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software", ';', "", "nomCSV.csv",
+				true, false);
 
 		b.recuperationPage();
 

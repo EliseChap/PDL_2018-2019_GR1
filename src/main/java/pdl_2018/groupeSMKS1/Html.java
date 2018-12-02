@@ -46,8 +46,10 @@ public class Html extends Extracteur {
 	}
 
 	@Override
-	public void removeTableau() {
-
+	public void removeTableau(Tableau leTableau) {
+		if (lesTableaux.contains(leTableau)) {
+			lesTableaux.remove(leTableau);
+		}
 	}
 	/**
 	 * 

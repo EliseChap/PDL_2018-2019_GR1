@@ -17,7 +17,7 @@ public interface IExtracteur {
 	 * 
 	 * @return Retourne le nom du tableau
 	 */
-	public String getNomTableau();
+	public String getNomTableau(Tableau leTableau);
 	
 	/**
 	 * Supprime le tableau

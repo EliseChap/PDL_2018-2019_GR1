@@ -527,10 +527,11 @@ public class Wikitext extends Extracteur {
 	}
 /**
  * 
+ * @return le nom du tableau
  */
 	@Override
-	public String getNomTableau() {
-		return "";
+	public String getNomTableau(Tableau leTableau) {
+		return leTableau.getnomTab();
 	}
 /**
  * 

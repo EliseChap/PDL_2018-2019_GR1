@@ -56,8 +56,8 @@ public class Html extends Extracteur {
 	 * @return le nom du Tableau
 	 */
 	@Override
-	public String getNomTableau() {
-		return "";
+	public String getNomTableau(Tableau leTableau) {
+		return leTableau.getnomTab();
 	}
 
 	@Override

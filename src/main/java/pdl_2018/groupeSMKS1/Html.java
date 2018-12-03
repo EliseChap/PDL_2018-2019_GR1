@@ -138,16 +138,18 @@ public class Html extends Extracteur {
 	public void recuperationPage() {
 		try {
 			Document doc = Jsoup.connect(url).get();
-
+			
 			Elements table = doc.select(".wikitable");
+			System.out.println(table.size());
 			for (int i = 0; i < table.size(); i++) {
 				String nom = "";
 
 				Elements caption = table.get(i).getElementsByTag("caption");
-				if (caption.isEmpty()) {
+				if (caption.isEmpty()|| !caption.hasText()) {
 					nom = "table" + i;
 				} else {
 					nom = caption.text();
+					
 
 				}
 				lesHtmltab.put(nom, table.get(i)); // cle : titre du tableau
@@ -539,10 +541,10 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units", ';', "",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_desktop_publishing_software?fbclid=IwAR3sRDKOY4trlIWL2_uRprTVYx3oNc0SulAsvPG5uQmeW0eyY3Zwo85DzzU", ';', "",
 				"nomCSV.csv", true, false);
 
-		b.recuperationPage();
+		//b.recuperationPage();
 
 	}
 

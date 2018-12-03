@@ -152,6 +152,9 @@ public class Html extends Extracteur {
 					
 
 				}
+				if(lesHtmltab.containsKey(nom)) {
+					nom = nom + i;
+				}
 				lesHtmltab.put(nom, table.get(i)); // cle : titre du tableau
 
 			}
@@ -541,7 +544,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_desktop_publishing_software?fbclid=IwAR3sRDKOY4trlIWL2_uRprTVYx3oNc0SulAsvPG5uQmeW0eyY3Zwo85DzzU", ';', "",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_netbooks", ';', "",
 				"nomCSV.csv", true, false);
 
 		//b.recuperationPage();

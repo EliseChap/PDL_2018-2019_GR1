@@ -35,7 +35,7 @@ public class Html extends Extracteur {
 		lesHtmltab = new HashMap<String, Element>();
 		recuperationPage();
 	}
-	
+
 	/**
 	 * 
 	 * @return la liste LesTableaux
@@ -51,6 +51,7 @@ public class Html extends Extracteur {
 			lesTableaux.remove(leTableau);
 		}
 	}
+
 	/**
 	 * 
 	 * @return le nom du Tableau
@@ -63,6 +64,7 @@ public class Html extends Extracteur {
 	@Override
 	/**
 	 * Ajoute le Tableau a la liste lesTableaux si il n'est pas déjà présents
+	 * 
 	 * @param leTableau
 	 */
 	public void addTableau(Tableau leTableau) {
@@ -70,12 +72,15 @@ public class Html extends Extracteur {
 			lesTableaux.add(leTableau);
 		}
 	}
+
 	/**
 	 * 
-	 * @param tab Un tableau de string comportant les valeurs d'un tableau extrait de wikipédio
-	 * @param nomTab Le nom du tableau wikipédia
-	 * @param wikiHtml true pour indiquer que les données on était extraites avec wikicode
-	 * @return Un objet tableau 
+	 * @param tab      Un tableau de string comportant les valeurs d'un tableau
+	 *                 extrait de wikipédio
+	 * @param nomTab   Le nom du tableau wikipédia
+	 * @param wikiHtml true pour indiquer que les données on était extraites avec
+	 *                 wikicode
+	 * @return Un objet tableau
 	 */
 	@Override
 	public Tableau constructeurTableau(String[][] tab, String cle, boolean wikiHtml) {
@@ -123,10 +128,10 @@ public class Html extends Extracteur {
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
-	
+
 	/**
-	 * Récupère la page et chaque tableau de cette page est mis dans une map avec pour cle son nom
-	 * ou par defaut table + son numero de table 
+	 * Récupère la page et chaque tableau de cette page est mis dans une map avec
+	 * pour cle son nom ou par defaut table + son numero de table
 	 * 
 	 */
 
@@ -171,24 +176,23 @@ public class Html extends Extracteur {
 			boolean tabcreated = false;
 
 			Elements tr = ensemble.getElementsByTag("tr");
-				 int taille =getMax(tr);
-				 System.out.println(taille + "taille");
-				
+			int taille = getMax(tr);
+
 			Element first = tr.first();
-			//Element second = tr.get(1);
+			// Element second = tr.get(1);
 
 			Elements th = first.getElementsByTag("th");
-			//Elements th2 = second.getElementsByTag("th");
+			// Elements th2 = second.getElementsByTag("th");
 
 			while (!first.hasText()) {
 
 				tr.remove(0);
 				first = tr.first();
 			}
-			//int nbth = countNbCol(first);
-			//if (th2.size() > th.size()) {
-				//nbth = countNbCol(second);
-			//}
+			// int nbth = countNbCol(first);
+			// if (th2.size() > th.size()) {
+			// nbth = countNbCol(second);
+			// }
 
 			String[][] tab = null;
 			int i = 0;
@@ -200,12 +204,9 @@ public class Html extends Extracteur {
 				Elements td = e.getElementsByTag("td");
 
 				if (!tabcreated) {
-					/*int nbCol = 0;
-					if (nbth > 0) {
-						nbCol = nbth;
-					} else {
-						nbCol = td.size();
-					}*/
+					/*
+					 * int nbCol = 0; if (nbth > 0) { nbCol = nbth; } else { nbCol = td.size(); }
+					 */
 					tab = new String[tr.size()][taille];
 					tabcreated = true;
 				}
@@ -223,9 +224,7 @@ public class Html extends Extracteur {
 		}
 	}
 
-	
-	
-	//a degager
+	// a degager
 	/**
 	 * Compte le nombre de colonnes du tableau
 	 * 
@@ -283,18 +282,17 @@ public class Html extends Extracteur {
 		}
 
 		for (Element g : td) {
-			// System.out.println(g);
+		
 			if (tab[i][j] != null) {
 
 				i = deplacerTableau(tab, i, j, false);
-
 				j = deplacerTableau(tab, i, j, true);
 
 			}
 			String current = g.text();
 
 			String cell = g.attr("rowspan");
-			// System.out.println("current" + current);
+		
 			if (cell != "") {
 				int y = Integer.parseInt(cell);
 
@@ -321,7 +319,7 @@ public class Html extends Extracteur {
 					x = tab[0].length - 1 - j;
 				}
 				tab = Fusion(tab, i, j, x, current, false);
-				System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
+				//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
 			}
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
@@ -333,7 +331,7 @@ public class Html extends Extracteur {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
-			System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
+			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
 
 			if (j < tab[i].length - 1) {
 				j++;
@@ -506,22 +504,43 @@ public class Html extends Extracteur {
 		}
 		return "";
 	}
+
 	public int getMax(Elements tr) {
 		int max = 0;
+
 		for (Element e : tr) {
+			int counttd = 0;
+			int countth = 0;
 			Elements th = e.getElementsByTag("th");
 			Elements td = e.getElementsByTag("td");
-				if(max<th.size()+td.size()) {
-					max = th.size()+td.size();
+			for (Element a : th) {
+				String cellcol = a.attr("colspan");
+				if (a.attr("colspan") != "") {
+					countth = countth +Integer.parseInt(cellcol)-1;
+
+				}
+			}
+			
+			for (Element b : td) {
+				String cellcol = b.attr("colspan");
+
+
+				if (b.attr("colspan") != "") {
+					counttd = counttd +Integer.parseInt(cellcol)-1;
+
 				}
 
+			}
+			if (max < th.size() + td.size() + counttd + countth ) {
+				max = th.size() + td.size() + countth+ counttd;
+			}
 		}
 		return max;
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_cognitive_architectures", ';', "", "nomCSV.csv",
-				true, false);
+		Html b = new Html("https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units", ';', "",
+				"nomCSV.csv", true, false);
 
 		b.recuperationPage();
 

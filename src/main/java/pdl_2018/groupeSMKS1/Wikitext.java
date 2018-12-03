@@ -464,7 +464,8 @@ public class Wikitext extends Extracteur {
 						tab[lig][colonnes] = item;
 						int index = 0;
 						boolean find = false;
-						while (rowspanHeaderList.size() > index && !find) {
+						//&& !find
+						while (rowspanHeaderList.size() > index ) {
 							String[][] tableau = rowspanHeaderList.get(index);
 							if (Integer.parseInt(tableau[0][0]) == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
 								find = true;
@@ -686,7 +687,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Esperanto_and_Novial", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_Malaysian_and_Indonesian", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

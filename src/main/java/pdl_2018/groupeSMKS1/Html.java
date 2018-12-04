@@ -11,7 +11,6 @@ import java.util.Set;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.*;
-import org.jsoup.parser.*;
 
 public class Html extends Extracteur {
 
@@ -45,6 +44,10 @@ public class Html extends Extracteur {
 		return lesTableaux;
 	}
 
+	/**
+	 * 
+	 * Supprime le Tableau
+	 */
 	@Override
 	public void removeTableau(Tableau leTableau) {
 		if (lesTableaux.contains(leTableau)) {
@@ -54,7 +57,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return le nom du Tableau
+	 * @return Le nom du Tableau
 	 */
 	@Override
 	public String getNomTableau(Tableau leTableau) {
@@ -76,7 +79,7 @@ public class Html extends Extracteur {
 	/**
 	 * 
 	 * @param tab      Un tableau de string comportant les valeurs d'un tableau
-	 *                 extrait de wikipédio
+	 *                 extrait de wikipédia
 	 * @param nomTab   Le nom du tableau wikipédia
 	 * @param wikiHtml true pour indiquer que les données on était extraites avec
 	 *                 wikicode
@@ -89,7 +92,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return le delimiteur choisit par l'utilisateur
+	 * @return Le delimiteur choisit par l'utilisateur
 	 */
 	public char getDelimit() {
 		return this.delimit;
@@ -97,7 +100,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return le chemin de sauvegarde du fichier choisit par l'utilisateur
+	 * @return Le chemin de sauvegarde du fichier choisit par l'utilisateur
 	 */
 	public String getCheminCSV() {
 		return this.cheminCSV;
@@ -105,7 +108,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return le nom du fichier CSV choisit par l'utilisateur
+	 * @return Le nom du fichier CSV choisit par l'utilisateur
 	 */
 	public String getNomCSV() {
 		return this.getNomCSV();
@@ -113,8 +116,8 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return un booleen qui indique si l'extraction doit etre faite en HTML (true)
-	 *         ou non (false)
+	 * @return Un booleen qui indique si l'extraction est faite en HTML (true) ou
+	 *         non (false)
 	 */
 	public boolean getExtraHTML() {
 		return this.extraHTML;
@@ -122,7 +125,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return Un booleen qui indique si l'extraction doit etre faite en
+	 * @return Un booleen qui indique si l'extraction doit est faite en
 	 *         wikicode(true) ou non (false)
 	 */
 	public boolean getExtraWiki() {
@@ -134,25 +137,23 @@ public class Html extends Extracteur {
 	 * pour cle son nom ou par defaut table + son numero de table
 	 * 
 	 */
-
+	@Override
 	public void recuperationPage() {
 		try {
 			Document doc = Jsoup.connect(url).get();
-			
 			Elements table = doc.select(".wikitable");
-			System.out.println(table.size());
+
 			for (int i = 0; i < table.size(); i++) {
 				String nom = "";
 
 				Elements caption = table.get(i).getElementsByTag("caption");
-				if (caption.isEmpty()|| !caption.hasText()) {
+				if (caption.isEmpty() || !caption.hasText()) {
 					nom = "table" + i;
 				} else {
 					nom = caption.text();
-					
 
 				}
-				if(lesHtmltab.containsKey(nom)) {
+				if (lesHtmltab.containsKey(nom)) {
 					nom = nom + i;
 				}
 				lesHtmltab.put(nom, table.get(i)); // cle : titre du tableau
@@ -184,20 +185,12 @@ public class Html extends Extracteur {
 			int taille = getMax(tr);
 
 			Element first = tr.first();
-			// Element second = tr.get(1);
-
-			Elements th = first.getElementsByTag("th");
-			// Elements th2 = second.getElementsByTag("th");
 
 			while (!first.hasText()) {
 
 				tr.remove(0);
 				first = tr.first();
 			}
-			// int nbth = countNbCol(first);
-			// if (th2.size() > th.size()) {
-			// nbth = countNbCol(second);
-			// }
 
 			String[][] tab = null;
 			int i = 0;
@@ -209,9 +202,6 @@ public class Html extends Extracteur {
 				Elements td = e.getElementsByTag("td");
 
 				if (!tabcreated) {
-					/*
-					 * int nbCol = 0; if (nbth > 0) { nbCol = nbth; } else { nbCol = td.size(); }
-					 */
 					tab = new String[tr.size()][taille];
 					tabcreated = true;
 				}
@@ -224,55 +214,16 @@ public class Html extends Extracteur {
 			}
 
 			tab = TraitementColonnesVides(tab);
-			lectureTableau(tab);
+			//lectureTableau(tab);
 			lesTableaux.add(constructeurTableau(tab, cle, false));
 		}
 	}
 
-	// a degager
-	/**
-	 * Compte le nombre de colonnes du tableau
-	 * 
-	 * @param first
-	 * @return int, le nombre de colonnes du tableau
-	 */
-
-	public int countNbCol(Element first) {
-		int count = 0;
-		Elements th = first.getElementsByTag("th");
-
-		Elements td = first.getElementsByTag("td");
-
-		for (Element a : th) {
-			String cellcol = a.attr("colspan");
-			String current = a.text();
-			if (a.attr("colspan") != "") {
-				count = count + Integer.parseInt(cellcol);
-
-			} else {
-				count++;
-
-			}
-		}
-		for (Element b : td) {
-			String cellcol = b.attr("colspan");
-			String current = b.text();
-
-			if (b.attr("colspan") != "") {
-				count = count + Integer.parseInt(cellcol);
-
-			} else {
-				count++;
-
-			}
-		}
-		return count;
-	}
-
+	
 	/**
 	 * Analyse du contenu du tableau
 	 * 
-	 * @param tab
+	 * @param tab, un tableau dimensionnel de string
 	 * @param i
 	 * @param j
 	 * @param td
@@ -287,7 +238,7 @@ public class Html extends Extracteur {
 		}
 
 		for (Element g : td) {
-		
+
 			if (tab[i][j] != null) {
 
 				i = deplacerTableau(tab, i, j, false);
@@ -297,7 +248,7 @@ public class Html extends Extracteur {
 			String current = g.text();
 
 			String cell = g.attr("rowspan");
-		
+
 			if (cell != "") {
 				int y = Integer.parseInt(cell);
 
@@ -324,7 +275,7 @@ public class Html extends Extracteur {
 					x = tab[0].length - 1 - j;
 				}
 				tab = Fusion(tab, i, j, x, current, false);
-				//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
+
 			}
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
@@ -335,8 +286,6 @@ public class Html extends Extracteur {
 			if (getUrlImage(g) != "") {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
-
-			//System.out.println("i : test " + i + " j : " + j + " " + tab[i][j]);
 
 			if (j < tab[i].length - 1) {
 				j++;
@@ -449,7 +398,6 @@ public class Html extends Extracteur {
 		for (int a = 0; a < tab.length; a++) {
 			for (int b = 0; b < tab[a].length; b++) {
 				System.out.println("i : " + a + " j : " + b + " valeur : " + tab[a][b]);
-				// System.out.println(tab[a][b]);
 			}
 		}
 	}
@@ -470,7 +418,6 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				System.out.println("i : " + i + " j : " + j + " " + tab[i][j] + "VERTICAL");
 				if (i < tab.length - 1) {
 					i++;
 				}
@@ -509,6 +456,14 @@ public class Html extends Extracteur {
 		}
 		return "";
 	}
+	
+	/**
+	 * Recupère le nombre de colonnes maximum du tableau 
+	 * 
+	 * @param Elements tr
+	 * @return int qui est le maximum
+	 */
+
 
 	public int getMax(Elements tr) {
 		int max = 0;
@@ -521,33 +476,32 @@ public class Html extends Extracteur {
 			for (Element a : th) {
 				String cellcol = a.attr("colspan");
 				if (a.attr("colspan") != "") {
-					countth = countth +Integer.parseInt(cellcol)-1;
+					countth = countth + Integer.parseInt(cellcol) - 1;
 
 				}
 			}
-			
+
 			for (Element b : td) {
 				String cellcol = b.attr("colspan");
 
-
 				if (b.attr("colspan") != "") {
-					counttd = counttd +Integer.parseInt(cellcol)-1;
+					counttd = counttd + Integer.parseInt(cellcol) - 1;
 
 				}
 
 			}
-			if (max < th.size() + td.size() + counttd + countth ) {
-				max = th.size() + td.size() + countth+ counttd;
+			if (max < th.size() + td.size() + counttd + countth) {
+				max = th.size() + td.size() + countth + counttd;
 			}
 		}
 		return max;
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_netbooks", ';', "",
-				"nomCSV.csv", true, false);
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_European_road_signs", ';', "", "nomCSV.csv",
+				true, false);
 
-		//b.recuperationPage();
+		// b.recuperationPage();
 
 	}
 

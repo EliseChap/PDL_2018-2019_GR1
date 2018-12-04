@@ -282,7 +282,6 @@ public class Html extends Extracteur {
 			}
 
 			tab[i][j] = g.text() + "";
-			//System.out.println(tab[i][j]+ "i" + i +"j"+ j);
 
 			if (getUrlImage(g) != "") {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
@@ -418,31 +417,22 @@ public class Html extends Extracteur {
 		if (vertical) {
 
 			for (int b = 0; b < y; b++) {
-				
 				tab[i][j] = current;
-				//System.out.println(tab[i][j]+ "i" + i +"j"+ j);
 				if (i < tab.length - 1) {
 					i++;
 				}
+
 			}
 
 		} else {
 
-			for (int b = 0; b <= y; b++) {
-				//System.out.println(y + "y");
-				//System.out.println(b+"b");
+			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				//System.out.println(tab[i][j]+ "i" + i +"j"+ j);
 				if (j < tab[i].length - 1) {
-					
 					j++;
-					//System.out.println(j+"j");
 				}
-				if(j==tab[0].length) {
-					j=0;
-					if(i<tab.length-1) {
-					i ++;
-					}
+				if(j+y==tab[i].length) {
+					tab[i][tab[i].length-1] = current;
 				}
 
 			}

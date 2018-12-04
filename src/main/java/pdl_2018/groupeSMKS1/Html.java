@@ -246,7 +246,7 @@ public class Html extends Extracteur {
 
 			}
 			String current = g.text();
-
+			
 			String cell = g.attr("rowspan");
 
 			if (cell != "") {
@@ -257,13 +257,15 @@ public class Html extends Extracteur {
 					y = tab.length - 1;
 
 				}
-
+				
 				tab = Fusion(tab, i, j, y, current, true);
 
 			}
+			
 			String cellcol = g.attr("colspan");
 
 			if (g.attr("colspan") != "") {
+	
 				int x = Integer.parseInt(cellcol);
 				if (x >= tab[0].length) {
 
@@ -277,6 +279,8 @@ public class Html extends Extracteur {
 				tab = Fusion(tab, i, j, x, current, false);
 
 			}
+		
+
 			if (g.attr("bgcolor") != "") {
 				tab[i][j] = g.attr("bgcolor");
 			}
@@ -287,6 +291,7 @@ public class Html extends Extracteur {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
+			//System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
 			if (j < tab[i].length - 1) {
 				j++;
 
@@ -373,7 +378,7 @@ public class Html extends Extracteur {
 
 		while (tab[i][j] != null) {
 			if (j < tab[i].length - 1) {
-
+				
 				j++;
 			} else if (i < tab.length - 1) {
 				j = 0;
@@ -418,6 +423,7 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
+				//System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
 				if (i < tab.length - 1) {
 					i++;
 				}
@@ -425,15 +431,17 @@ public class Html extends Extracteur {
 			}
 
 		} else {
-
+			System.out.println("j" + j + "y" + y);
+			if(j+y +1>=tab[i].length) {
+				tab[i][tab[i].length-1] = current;
+			}
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
+				//System.out.println("i : " + i + " j : " + j + "y" + y);
 				if (j < tab[i].length - 1) {
 					j++;
 				}
-				if(j+y==tab[i].length) {
-					tab[i][tab[i].length-1] = current;
-				}
+				
 
 			}
 		}
@@ -502,7 +510,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines_(CSS_support)", ';', "", "nomCSV.csv",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_business_integration_software", ';', "", "nomCSV.csv",
 				true, false);
 
 		// b.recuperationPage();

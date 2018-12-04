@@ -487,6 +487,8 @@ public class Wikitext extends Extracteur {
 					}
 
 					for (String item : rowsList) {
+						int colDeacalle =0;
+						int LigDeacalle =0;
 						if (colonnes == nbCol - 1) {
 							colonnes = 0;
 							lig++;
@@ -497,15 +499,16 @@ public class Wikitext extends Extracteur {
 						if (tab[lig][colonnes] != null) {
 							while (tab[lig][colonnes] != null && colonnes < nbCol -1) {
 								colonnes++;
-								
+								colDeacalle++;
 							}
 							if (colonnes >= nbCol - 1) {
 									lig++;
+									LigDeacalle=0;
 								colonnes = 0;
 						}
 							while (tab[lig][colonnes] != null && colonnes < nbCol -1) {
 							colonnes++;
-								
+							colDeacalle++;
 							}
 						}
 						tab[lig][colonnes] = item.trim();
@@ -520,7 +523,15 @@ public class Wikitext extends Extracteur {
 							} else {
 								ligneTab = Integer.parseInt(tableau[0][0]);
 							}
-							if (ligneTab == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
+							
+							int col = Integer.parseInt(tableau[0][1])+colDeacalle;
+							if(LigDeacalle!= 0) {
+								
+								col = colDeacalle;
+								
+							}
+							
+							if (ligneTab+LigDeacalle == lig && col == colonnes) {
 								find = true;
 								int Newligne = lig + 1;
 								for (int i = 0; i < Integer.parseInt(tableau[0][2]); i++) {

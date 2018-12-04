@@ -214,7 +214,7 @@ public class Html extends Extracteur {
 			}
 
 			tab = TraitementColonnesVides(tab);
-			//lectureTableau(tab);
+			lectureTableau(tab);
 			lesTableaux.add(constructeurTableau(tab, cle, false));
 		}
 	}
@@ -282,6 +282,7 @@ public class Html extends Extracteur {
 			}
 
 			tab[i][j] = g.text() + "";
+			//System.out.println(tab[i][j]+ "i" + i +"j"+ j);
 
 			if (getUrlImage(g) != "") {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
@@ -360,7 +361,7 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Deplace le curseur si la cellule est deja  pleine
+	 * Deplace le curseur si la cellule est deja  pleine
 	 * 
 	 * @param tab
 	 * @param i
@@ -417,7 +418,9 @@ public class Html extends Extracteur {
 		if (vertical) {
 
 			for (int b = 0; b < y; b++) {
+				
 				tab[i][j] = current;
+				//System.out.println(tab[i][j]+ "i" + i +"j"+ j);
 				if (i < tab.length - 1) {
 					i++;
 				}
@@ -425,10 +428,21 @@ public class Html extends Extracteur {
 
 		} else {
 
-			for (int b = 0; b < y; b++) {
+			for (int b = 0; b <= y; b++) {
+				//System.out.println(y + "y");
+				//System.out.println(b+"b");
 				tab[i][j] = current;
+				//System.out.println(tab[i][j]+ "i" + i +"j"+ j);
 				if (j < tab[i].length - 1) {
+					
 					j++;
+					//System.out.println(j+"j");
+				}
+				if(j==tab[0].length) {
+					j=0;
+					if(i<tab.length-1) {
+					i ++;
+					}
 				}
 
 			}
@@ -498,7 +512,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_European_road_signs", ';', "", "nomCSV.csv",
+		Html b = new Html("https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines_(CSS_support)", ';', "", "nomCSV.csv",
 				true, false);
 
 		// b.recuperationPage();

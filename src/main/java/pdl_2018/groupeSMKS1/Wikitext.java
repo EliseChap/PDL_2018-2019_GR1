@@ -480,10 +480,9 @@ public class Wikitext extends Extracteur {
 						}
 						colonnes++;
 					}
-					colonnes = 0;
+					colonnes =  -1;
 					if (headerList.size() != 0) {
 						lig = 1;
-						colonnes = -1;
 					}
 
 					for (String item : rowsList) {
@@ -747,7 +746,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Esperanto_and_Novial", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_Malaysian_and_Indonesian", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -370,13 +370,14 @@ public class Wikitext extends Extracteur {
 
 		}
 	}
+
 	private boolean sautDeLigne(WtBody b) {
 		int comp = 0;
 
-		while ( b.size() > comp) {
-			if ( b.get(comp) instanceof WtText) {
-				WtText titre = (WtText)  b.get(comp);
-				return  titre.getContent() == "/n";
+		while (b.size() > comp) {
+			if (b.get(comp) instanceof WtText) {
+				WtText titre = (WtText) b.get(comp);
+				return titre.getContent() == "/n";
 			}
 			comp++;
 		}
@@ -397,7 +398,7 @@ public class Wikitext extends Extracteur {
 				if (findClassWikitable(e)) {
 					List<String> headerList = new ArrayList<String>();
 					List<String> rowsList = new ArrayList<String>();
-					String titre = "" + comp;
+					String titre = "withoutTitle" + comp;
 					int compteRows = 0;
 					Iterator<WtNode> it = table.getBody().iterator();
 					int nbCol = 0;
@@ -447,25 +448,25 @@ public class Wikitext extends Extracteur {
 						}
 
 					}
-					boolean premiereLinge = false;
+					// boolean premiereLinge = false;
 					if (headerList.size() != 0) {
 						compteRows = compteRows + 1;
 						nbCol = headerList.size();
-						premiereLinge = true;
+						// premiereLinge = true;
 					}
 
 					String[][] tab = new String[compteRows][nbCol];
 
 					int colonnes = 0;
 					int lig = 0;
-					int compteur = 0;
+					// int compteur = 0;
 
 					for (String item : headerList) {
 						tab[lig][colonnes] = item;
 						int index = 0;
 						boolean find = false;
-						//&& !find
-						while (rowspanHeaderList.size() > index ) {
+						// && !find
+						while (rowspanHeaderList.size() > index) {
 							String[][] tableau = rowspanHeaderList.get(index);
 							if (Integer.parseInt(tableau[0][0]) == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
 								find = true;
@@ -479,49 +480,34 @@ public class Wikitext extends Extracteur {
 						}
 						colonnes++;
 					}
+					colonnes = 0;
+					if (headerList.size() != 0) {
+						lig = 1;
+						colonnes = -1;
+					}
 
 					for (String item : rowsList) {
-						if (compteur == nbCol) {
-							compteur = 0;
-						}
-						if (compteur == 0) {
-							if (premiereLinge) {
-								lig++;
-							}
-							premiereLinge = true;
+						if (colonnes == nbCol - 1) {
 							colonnes = 0;
-							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
-								colonnes++;
-								compteur++;
-							}
-							if (compteur > nbCol - 1) {
-								compteur = 0;
-								lig++;
-								colonnes = 0;
-							}
-							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
-								colonnes++;
-								compteur++;
-							}
-
+							lig++;
 						} else {
-
 							colonnes++;
-							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
-								colonnes++;
-								compteur++;
-							}
-							if (compteur > nbCol - 1) {
-								compteur = 0;
-								lig++;
-								colonnes = 0;
-							}
-							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
-								colonnes++;
-								compteur++;
-							}
 						}
 
+						if (tab[lig][colonnes] != null) {
+							while (tab[lig][colonnes] != null && colonnes < nbCol -1) {
+								colonnes++;
+								
+							}
+							if (colonnes >= nbCol - 1) {
+									lig++;
+								colonnes = 0;
+						}
+							while (tab[lig][colonnes] != null && colonnes < nbCol -1) {
+							colonnes++;
+								
+							}
+						}
 						tab[lig][colonnes] = item.trim();
 						int index = 0;
 						boolean find = false;
@@ -537,7 +523,7 @@ public class Wikitext extends Extracteur {
 							if (ligneTab == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
 								find = true;
 								int Newligne = lig + 1;
-								for (int i = 0; i < Integer.parseInt(tableau[0][2]) ; i++) {
+								for (int i = 0; i < Integer.parseInt(tableau[0][2]); i++) {
 									tab[Newligne][colonnes] = tableau[0][3].trim();
 									Newligne += 1;
 								}
@@ -545,7 +531,71 @@ public class Wikitext extends Extracteur {
 							index++;
 						}
 
-						compteur++;
+//						if (compteur == nbCol) {
+//							compteur = 0;
+//						}
+//						if (compteur == 0) {
+//							if (premiereLinge) {
+//								lig++;
+//							}
+//							premiereLinge = true;
+//							colonnes = 0;
+//							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
+//								colonnes++;
+//								compteur++;
+//							}
+//							if (compteur > nbCol - 1) {
+//								compteur = 0;
+//								lig++;
+//								colonnes = 0;
+//							}
+//							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
+//								colonnes++;
+//								compteur++;
+//							}
+//
+//						} else {
+//
+//							colonnes++;
+//							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
+//								colonnes++;
+//								compteur++;
+//							}
+//							if (compteur > nbCol - 1) {
+//								compteur = 0;
+//								lig++;
+//								colonnes = 0;
+//							}
+//							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
+//								colonnes++;
+//								compteur++;
+//							}
+//						}
+//
+//						tab[lig][colonnes] = item.trim();
+//						int index = 0;
+//						boolean find = false;
+//						while (rowspanList.size() > index && !find) {
+//							String[][] tableau = rowspanList.get(index);
+//							int ligneTab;
+//
+//							if (headerList.size() != 0) {
+//								ligneTab = Integer.parseInt(tableau[0][0]) + 1;
+//							} else {
+//								ligneTab = Integer.parseInt(tableau[0][0]);
+//							}
+//							if (ligneTab == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
+//								find = true;
+//								int Newligne = lig + 1;
+//								for (int i = 0; i < Integer.parseInt(tableau[0][2]) ; i++) {
+//									tab[Newligne][colonnes] = tableau[0][3].trim();
+//									Newligne += 1;
+//								}
+//							}
+//							index++;
+//						}
+//
+//						compteur++;
 					}
 
 					addTableau(constructeurTableau(tab, titre, true));
@@ -579,7 +629,6 @@ public class Wikitext extends Extracteur {
 			} else {
 				parcourirNode(fils);
 			}
-			
 
 		}
 
@@ -687,7 +736,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_Malaysian_and_Indonesian", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_between_Esperanto_and_Novial", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

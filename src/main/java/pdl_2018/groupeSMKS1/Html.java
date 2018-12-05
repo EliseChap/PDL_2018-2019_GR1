@@ -214,7 +214,7 @@ public class Html extends Extracteur {
 			}
 
 			tab = TraitementColonnesVides(tab);
-			//lectureTableau(tab);
+			lectureTableau(tab);
 			lesTableaux.add(constructeurTableau(tab, cle, false));
 		}
 	}
@@ -243,6 +243,7 @@ public class Html extends Extracteur {
 
 				i = deplacerTableau(tab, i, j, false);
 				j = deplacerTableau(tab, i, j, true);
+				//System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
 
 			}
 			String current = g.text();
@@ -252,13 +253,14 @@ public class Html extends Extracteur {
 			if (cell != "") {
 				int y = Integer.parseInt(cell);
 
-				if (y >= tab.length) {
+				if (y + i > tab.length) {
 
-					y = tab.length - 1;
+					y = tab.length - i ;
 
 				}
 				
 				tab = Fusion(tab, i, j, y, current, true);
+				//System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
 
 			}
 			
@@ -267,16 +269,12 @@ public class Html extends Extracteur {
 			if (g.attr("colspan") != "") {
 	
 				int x = Integer.parseInt(cellcol);
-				if (x >= tab[0].length) {
 
-					x = tab[0].length - 1;
-
-				}
-
-				if (x + j >= tab[0].length) {
-					x = tab[0].length - 1 - j;
+				if (x + j > tab[0].length) {
+					x = tab[0].length - j;
 				}
 				tab = Fusion(tab, i, j, x, current, false);
+				//System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
 
 			}
 		
@@ -291,7 +289,7 @@ public class Html extends Extracteur {
 				tab[i][j] = tab[i][j] + " " + getUrlImage(g);
 			}
 
-			System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
+			//System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
 			if (j < tab[i].length - 1) {
 				j++;
 
@@ -377,6 +375,7 @@ public class Html extends Extracteur {
 	public int deplacerTableau(String[][] tab, int i, int j, boolean vertical) {
 
 		while (tab[i][j] != null) {
+			//System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
 			if (j < tab[i].length - 1) {
 				
 				j++;
@@ -423,7 +422,7 @@ public class Html extends Extracteur {
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
+				//System.out.println("i : " + i + " j : " + j + " valeur : " + tab[i][j]);
 				if (i < tab.length - 1) {
 					i++;
 				}
@@ -432,12 +431,12 @@ public class Html extends Extracteur {
 
 		} else {
 			System.out.println("j" + j + "y" + y);
-			if(j+y +1>tab[i].length) {
+			/*if(j+y +1>tab[i].length) {
 				tab[i][tab[i].length-1] = current;
-			}
+			}*/
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
-				System.out.println("i : " + i + " j : " + j + "y" + y);
+				//System.out.println("i : " + i + " j : " + j + "y" + y);
 				if (j < tab[i].length - 1) {
 					j++;
 				}
@@ -510,7 +509,7 @@ public class Html extends Extracteur {
 	}
 
 	public static void main(String[] args) {
-		Html b = new Html("https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines_(CSS_support)?fbclid=IwAR3i1J-JVTjDZltN9OofDYg-lU83bVN3Xi4HPVSEbcoBwfq4xms3vcw8s_8", ';', "", "nomCSV.csv",
+		Html b = new Html("https://en.wikipedia.org/wiki/Comparison_of_business_integration_software", ';', "", "nomCSV.csv",
 				true, false);
 
 		// b.recuperationPage();

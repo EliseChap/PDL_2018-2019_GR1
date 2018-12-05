@@ -431,8 +431,8 @@ public class Wikitext extends Extracteur {
 								nbCol = findCol(row, rowsList, compteRows);
 								compteRows++;
 							}
-							if (nbCol < nbColTemp) {
-								for (int j = 1; j <= nbColTemp - nbCol; j++) {
+							if (nbCol < nbColTemp && nbCol != 0) {
+							for (int j = 1; j <= nbColTemp - nbCol; j++) {
 									rowsList.add("");
 								}
 							}
@@ -462,7 +462,7 @@ public class Wikitext extends Extracteur {
 						nbCol = headerList.size();
 						// premiereLinge = true;
 					}
-
+					nbCol = nbColTemp;
 					String[][] tab = new String[compteRows][nbCol];
 
 					int colonnes = 0;
@@ -754,7 +754,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_X_window_managers", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "List_of_Intel_graphics_processing_units", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

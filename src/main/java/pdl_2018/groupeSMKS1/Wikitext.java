@@ -402,9 +402,10 @@ public class Wikitext extends Extracteur {
 					int compteRows = 0;
 					Iterator<WtNode> it = table.getBody().iterator();
 					int nbCol = 0;
-
+					int nbColTemp = 0;
 					while (it.hasNext()) {
 						WtNode node = it.next();
+
 						if (node.getNodeType() == WtTable.NT_TABLE_CAPTION) {
 
 							WtTableCaption caption = (WtTableCaption) node;
@@ -430,6 +431,11 @@ public class Wikitext extends Extracteur {
 								nbCol = findCol(row, rowsList, compteRows);
 								compteRows++;
 							}
+							if (nbCol < nbColTemp) {
+								for (int j = 1; j <= nbColTemp - nbCol; j++) {
+									rowsList.add("");
+								}
+							}
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
 							WtTableCell cell = (WtTableCell) node;
@@ -446,7 +452,9 @@ public class Wikitext extends Extracteur {
 							// rows entre elles
 
 						}
-
+						if (nbCol > nbColTemp) {
+						nbColTemp = nbCol;
+						}
 					}
 					// boolean premiereLinge = false;
 					if (headerList.size() != 0) {
@@ -480,14 +488,14 @@ public class Wikitext extends Extracteur {
 						}
 						colonnes++;
 					}
-					colonnes =  -1;
+					colonnes = -1;
 					if (headerList.size() != 0) {
 						lig = 1;
 					}
 
 					for (String item : rowsList) {
-						int colDeacalle =0;
-						int LigDeacalle =0;
+						int colDeacalle = 0;
+						int LigDeacalle = 0;
 						if (colonnes == nbCol - 1) {
 							colonnes = 0;
 							lig++;
@@ -496,18 +504,18 @@ public class Wikitext extends Extracteur {
 						}
 
 						if (tab[lig][colonnes] != null) {
-							while (tab[lig][colonnes] != null && colonnes < nbCol -1) {
+							while (tab[lig][colonnes] != null && colonnes < nbCol - 1) {
 								colonnes++;
 								colDeacalle++;
 							}
 							if (colonnes >= nbCol - 1) {
-									lig++;
-									LigDeacalle=0;
+								lig++;
+								LigDeacalle = 0;
 								colonnes = 0;
-						}
-							while (tab[lig][colonnes] != null && colonnes < nbCol -1) {
-							colonnes++;
-							colDeacalle++;
+							}
+							while (tab[lig][colonnes] != null && colonnes < nbCol - 1) {
+								colonnes++;
+								colDeacalle++;
 							}
 						}
 						tab[lig][colonnes] = item.trim();
@@ -522,15 +530,15 @@ public class Wikitext extends Extracteur {
 							} else {
 								ligneTab = Integer.parseInt(tableau[0][0]);
 							}
-							
-							int col = Integer.parseInt(tableau[0][1])+colDeacalle;
-							if(LigDeacalle!= 0) {
-								
+
+							int col = Integer.parseInt(tableau[0][1]) + colDeacalle;
+							if (LigDeacalle != 0) {
+
 								col = colDeacalle;
-								
+
 							}
-							
-							if (ligneTab+LigDeacalle == lig && col == colonnes) {
+
+							if (ligneTab + LigDeacalle == lig && col == colonnes) {
 								find = true;
 								int Newligne = lig + 1;
 								for (int i = 0; i < Integer.parseInt(tableau[0][2]); i++) {
@@ -746,7 +754,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_Malaysian_and_Indonesian", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_X_window_managers", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

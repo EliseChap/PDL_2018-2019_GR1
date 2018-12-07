@@ -1,5 +1,0 @@
-;;Trident;Tasman;Gecko;WebKit;KHTML;Presto
-Interface AbstractView;Interface AbstractView;Interface AbstractView;Interface AbstractView;Interface AbstractView;Interface AbstractView;Interface AbstractView;Interface AbstractView
-document;DOM2;6.0;?;1.0;?;?;1.0
-Interface DocumentView;Interface DocumentView;Interface DocumentView;Interface DocumentView;Interface DocumentView;Interface DocumentView;Interface DocumentView;Interface DocumentView
-defaultView;DOM2;No;?;1.0;?;?;1.0

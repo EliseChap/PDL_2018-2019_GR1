@@ -14,8 +14,8 @@ public class TestComparateur {
  */
 	@Test
 	public void ratioContenuTest() {
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
+		String tab1[] = { "a,b,c,d" ,  "1,0,2,3,4" ,  "a,b,c,d" ,"1,0,2,3,4"  };
+		String tab2[] = { "a,b,c,d" } ;
 		Comparateur comparateur = new Comparateur(tab1, tab2);
 		assertEquals(comparateur.ratioContenu(3),25.0, 0.0);
 	}
@@ -26,8 +26,8 @@ public class TestComparateur {
 	@Test
 	public void comparaisonTest() {
 		
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
+		String tab1[] = { "a,b,c,d" ,  "1,0,2,3,4" ,  "a,b,c,d" ,"1,0,2,3,4"  };
+		String tab2[] = { "a,b,c,d" } ;
 		Comparateur comparateur = new Comparateur(tab1, tab2);
 		assertEquals(comparateur.analyseComplet(),3);
 		
@@ -38,8 +38,8 @@ public class TestComparateur {
 	 */
 	@Test
 	public void differentNombreLigneWikiHtmlTest() {
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
+		String tab1[] = { "a,b,c,d" ,  "1,0,2,3,4" ,  "a,b,c,d" ,"1,0,2,3,4"  };
+		String tab2[] = { "a,b,c,d" } ;
 		Comparateur comparateur = new Comparateur(tab1, tab2);
 		assertEquals(comparateur.differentNombreLigneWikiHtml(),false);
 	}
@@ -49,8 +49,8 @@ public class TestComparateur {
 	 */
 	@Test
 	public void nombreLigneWikiTest() {
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
+		String tab1[] = { "a,b,c,d" ,  "1,0,2,3,4" ,  "a,b,c,d" ,"1,0,2,3,4"  };
+		String tab2[] = { "a,b,c,d" } ;
 		Comparateur comparateur = new Comparateur(tab1, tab2);
 		assertEquals(comparateur.nombreLigneWiki(),4);
 	}
@@ -60,8 +60,8 @@ public class TestComparateur {
 	 */
 	@Test
 	public void nombreLigneHtmlTest() {
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
+		String tab1[] = { "a,b,c,d" ,  "1,0,2,3,4" ,  "a,b,c,d" ,"1,0,2,3,4"  };
+		String tab2[] = { "a,b,c,d" } ;
 		Comparateur comparateur = new Comparateur(tab1, tab2);
 		assertEquals(comparateur.nombreLigneHtml(),1);
 	}
@@ -70,43 +70,10 @@ public class TestComparateur {
 	 */
 	@Test
 	public void ratioLigneTest() {
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
+		String tab1[] = { "a,b,c,d" ,  "1,0,2,3,4" ,  "a,b,c,d" ,"1,0,2,3,4"  };
+		String tab2[] = { "a,b,c,d" } ;
 		Comparateur comparateur = new Comparateur(tab1, tab2);
 		assertEquals(comparateur.ratioLigne(),25.0, 0.0);
-	}
-	/*
-	 * Test nbre de colonne wiki
-	 */
-	@Test
-	public void nombreColonneWikiTest() {
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
-		Comparateur comparateur = new Comparateur(tab1, tab2);
-		assertEquals(comparateur.nombreColonneWiki(),4);
-	}
-	
-	/*
-	 * Test nbre de colonne html
-	 */
-	@Test
-	public void nombreColonneHtmlTest() {
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
-		Comparateur comparateur = new Comparateur(tab1, tab2);
-		assertEquals(comparateur.nombreColonneHtml(),4);
-	}
-	
-	/*
-	 * Test nbre de colonne html
-	 */
-	@Test
-	public void ratioColonneTest() {
-		
-		String tab1[][] = { { "a", "b", "c", "d" }, { "1,0", "2", "3", "4" }, { "a", "b", "c", "d" },{ "1,0", "2", "3", "4" } };
-		String tab2[][] = { { "a", "b", "c", "d" } };
-		Comparateur comparateur = new Comparateur(tab1, tab2);
-		assertEquals(comparateur.ratioColonne(), 100.0, 0.0);
 	}
 }
 

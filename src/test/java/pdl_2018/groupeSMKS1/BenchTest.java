@@ -78,7 +78,7 @@ public class BenchTest {
 	public void testFichierUrl() throws Exception {
 		this.stat = new LinkedHashMap<String, Double>();
 		this.listException = new ArrayList();
-		Fichier monFichier = new Fichier("src/test/java/Fichiers_entree/mesUrl.txt", ';', "ds.csv", "output/", true,
+		Fichier monFichier = new Fichier("src/test/java/Fichiers_entree/mesUrl.txt", ';', "WikiMatrix.csv", "output/", true,
 				true);
 		run();
 	}

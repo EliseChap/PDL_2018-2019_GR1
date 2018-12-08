@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 
 public class Comparateur implements IComparateur {
-	private String[][] wiki;
-	private String[][] html;
+	private String[] wiki;
+	private String[] html;
 	private Double ratio;
 
-	public Comparateur(String[][] wiki, String[][] html) {
+	public Comparateur(String[] wiki, String[] html) {
 		this.wiki = wiki;
 		this.html = html;
 		analyse();
@@ -74,43 +74,6 @@ public class Comparateur implements IComparateur {
 	}
 
 	/*
-	 * TRAITEMENT COLONNE
-	 */
-
-	/**
-	 * Nombre de colonne Wiki
-	 * 
-	 * @return nombre de colonne
-	 * @date 17/11/2018
-	 */
-	public int nombreColonneWiki() {
-		return wiki[0].length;
-	}
-
-	/**
-	 * Nombre de colonne Html
-	 * 
-	 * @return nombre de colonne
-	 * @date 17/11/2018
-	 */
-	public int nombreColonneHtml() {
-		return html[0].length;
-	}
-
-	/**
-	 * Ratio du nombre de colonne Wiki
-	 * 
-	 * @return pourcentage
-	 * @date 17/11/2018
-	 */
-	public double ratioColonne() {
-		double V1 = wiki[0].length;
-		double V2 = html[0].length;
-		double V3 = 100 - (Math.abs(V2 - V1) / V1 * 100);
-		return V3;
-	}
-
-	/*
 	 * TRAITEMENT CONTENU
 	 */
 
@@ -120,21 +83,13 @@ public class Comparateur implements IComparateur {
 	 */
 	public double analyse() {
 		double ratioC;
-		if (ratioLigne() == 100 && ratioColonne() == 100) {
 			ratioC = ratioContenu(analyseComplet());
-		} else {
-			ratioC = -1;
-		}
-		this.ratio=ratioC;
+			if(ratioC<0 || ratioC>100) {
+				this.ratio=(double) 0;
+			}else {
+		this.ratio=ratioC;}
 		return ratioC;
 	}
-
-	/*
-	 * if (ratioLigne() == 100 && ratioColonne() == 100) { if (nombreCelluleWiki()
-	 * >= 100 || nombreCelluleHtml() >= 100) {
-	 * analysePartielle(tailleEchantillon(nombreCelluleWiki())); } else {
-	 * analyseComplet(); } } else { analyseAlgoDiff(); } }
-	 */
 
 	/**
 	 * Methode qui parcourts l'ensemble des deux tableaux pour pouvoir trouver les
@@ -149,34 +104,29 @@ public class Comparateur implements IComparateur {
 
 		int nbLigneWiki = wiki.length;
 		int nbLigneHtml = html.length;
-		String[] tabWiki;
-		String[] tabHtml;
 
 		int i = 0;
 		while (i < nbLigneWiki || i < nbLigneHtml) {
 			if (i >= nbLigneWiki) {
 				nombreDifference++;
-				tabHtml = html[i];
-				System.out.println("ligne " + i + " differente html" + " : " + Arrays.asList(tabHtml).toString());
+				System.out.println("ligne " + i + " differente html" + " : " + html[i]);
 				System.out.println("ligne " + i + " differente wiki" + " : ");
 			}
 			if (i >= nbLigneHtml) {
 				nombreDifference++;
-				tabWiki = wiki[i];
-				System.out.println("ligne " + i + " differente wiki" + " : " + Arrays.asList(tabWiki).toString());
+				System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
 				System.out.println("ligne " + i + " differente html" + " : ");
 			}
 
 			if (i < nbLigneWiki && i < nbLigneHtml) {
-				tabHtml = html[i];
-				tabWiki = wiki[i];
-				if (!Arrays.equals(tabWiki, tabHtml)) {
+				if(wiki[i]!=null) {
+				if (!wiki[i].equals(html[i])) {
 					nombreDifference++;
 					System.out.println("diffrérence entre les deux fichiers :");
-					System.out.println("ligne " + i + " differente wiki" + " : " + Arrays.asList(tabWiki).toString());
-					System.out.println("ligne " + i + " differente html" + " : " + Arrays.asList(tabHtml).toString());
+					System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
+					System.out.println("ligne " + i + " differente html" + " : " + html[i]);
 				}
-			}
+			}}
 			i++;
 		}
 

@@ -150,7 +150,6 @@ public class Url implements IUrl {
 	public String GetSousDomain() {
 		System.out.println("passers");
 		String[] str = url.split("/wiki/");
-		System.out.println(str[1].toString());
 		return str[1];
 	}
 
@@ -163,7 +162,6 @@ public class Url implements IUrl {
 		InternetDomainName name = InternetDomainName.from(host).topPrivateDomain();
 		return name.toString();*/
 		String[] str = url.split("/wiki/");
-		System.out.println(str[0].replaceAll("https://", ""));
 		return str[0].replaceAll("https://", "");
 
 	}
@@ -179,7 +177,7 @@ public class Url implements IUrl {
 		if (GetDomain().contains(domain)) {
 			return true;
 		}
-		System.out.println("L'url : " + url + " rentrée n'est pas une adresse wikipédia");
+		System.out.println("L'url : " + url + " rentree n'est pas une adresse wikipedia");
 		return false;
 		
 	}
@@ -193,7 +191,7 @@ public class Url implements IUrl {
 	
 		boolean picture =  url.endsWith("jpg") || url.endsWith("JPG") || url.endsWith("svg") || url.endsWith("png")
 				|| url.endsWith("gif") || url.endsWith("tif") || url.endsWith("bmp");
-		if(picture) {System.out.println("L'url : " + url +" ne peut être traitée, il s'agit d'une image");}
+		if(picture) {System.out.println("L'url : " + url +" ne peut etre traitee, il s'agit d'une image");}
 		return picture;
 	}
 
@@ -211,7 +209,7 @@ public class Url implements IUrl {
 
 		if (sD.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un titre)
 				if(!sD.contains(twopointbis))	{
-					System.out.println("L'url : " + url + " traitée n'est pas un article wikipédia");
+					System.out.println("L'url : " + url + " traitee n'est pas un article wikipedia");
 				}
 			return sD.contains(twopointbis);
 		}
@@ -232,9 +230,7 @@ public class Url implements IUrl {
 					//	extraWiki);
 				String domaine = GetDomain();
 				String sousDomaine = GetSousDomain();
-				System.out.println("test1"+domaine);
-				System.out.println("test2"+sousDomaine);
-				
+
 				 Extracteur wiki;
 				try {
 					wiki = new Wikitext(GetDomain(),GetSousDomain(), delimit,

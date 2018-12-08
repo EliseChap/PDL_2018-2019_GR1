@@ -145,7 +145,7 @@ public class BenchTest {
 	}
 
 	/**
-	 * lecture du csv et recupère son tableau de ligne
+	 * lecture du csv et recupere son tableau de ligne
 	 * 
 	 * @param cheminWiki
 	 * @return
@@ -175,7 +175,7 @@ public class BenchTest {
 				System.out.println("Erreur lors de la lecture : " + exception.getMessage());
 			}
 		} catch (FileNotFoundException exception) {
-			System.out.println("Le fichier n'a pas été trouvé");
+			System.out.println("Le fichier n a pas ete trouve");
 		}
 		return null;
 	}

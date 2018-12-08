@@ -55,6 +55,11 @@ public class Csv implements ICsv {
 		System.out.println("fin");
 	}
 
+	/**
+	 * Choix du nom du csv entre l'utilisateur et automatique
+	 * si non renseigner prendre nom tableau si vide prendre WikiMatrix
+	 * @return
+	 */
 	private String choixNomCsv() {
 		if (nomCsv == null || nomCsv == "") {
 			if (nomTab == null || nomTab == "") {
@@ -223,17 +228,7 @@ public class Csv implements ICsv {
 		}
 		;
 
-		/*
-		 * finally {
-		 * 
-		 * try { if (outputfile != null) { outputfile.close(); } if (writer != null) {
-		 * writer.close(); }
-		 * 
-		 * } catch (IOException e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); }
-		 * 
-		 * }
-		 */
+
 	}
 
 	/**
@@ -251,7 +246,7 @@ public class Csv implements ICsv {
 			dir.mkdirs();
 		}
 		File f = new File(cheminCsv + nomCsv);
-	
+
 		return f.isFile();
 	}
 

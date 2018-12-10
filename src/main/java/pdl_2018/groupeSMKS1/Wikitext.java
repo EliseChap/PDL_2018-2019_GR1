@@ -44,9 +44,12 @@ public class Wikitext extends Extracteur {
 	public void recuperationPage() {
 		try {
 			wikisweble = new Wiki(domain);
+			String[] tableau = {sousDomain};
+			boolean[] tab = wikisweble.exists(tableau);
+			if(tab[0]) {
 			String contenu = wikisweble.getPageText(sousDomain);
 			wikiconfig(contenu);
-
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -754,7 +757,7 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "List_of_Intel_graphics_processing_units", ';', "chemin",
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_Internet_Relay_Chat_services", ';', "chemin",
 					" nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

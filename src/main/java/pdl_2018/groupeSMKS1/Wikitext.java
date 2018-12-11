@@ -44,11 +44,11 @@ public class Wikitext extends Extracteur {
 	public void recuperationPage() {
 		try {
 			wikisweble = new Wiki(domain);
-			String[] tableau = {sousDomain};
+			String[] tableau = { sousDomain };
 			boolean[] tab = wikisweble.exists(tableau);
-			if(tab[0]) {
-			String contenu = wikisweble.getPageText(sousDomain);
-			wikiconfig(contenu);
+			if (tab[0]) {
+				String contenu = wikisweble.getPageText(sousDomain);
+				wikiconfig(contenu);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -434,11 +434,11 @@ public class Wikitext extends Extracteur {
 								nbCol = findCol(row, rowsList, compteRows);
 								compteRows++;
 							}
-							if (nbCol < nbColTemp && nbCol != 0) {
-							for (int j = 1; j <= nbColTemp - nbCol; j++) {
-									rowsList.add("");
-								}
-							}
+//							if (nbCol < nbColTemp && nbCol != 0) {
+//								for (int j = 1; j <= nbColTemp - nbCol; j++) {
+//									rowsList.add("");
+//								}
+//							}
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
 							WtTableCell cell = (WtTableCell) node;
@@ -451,12 +451,10 @@ public class Wikitext extends Extracteur {
 								nbCol++;
 							}
 
-							// ce n'est pas un ajour de rows mais ce sont des cellule, qui font formé une
-							// rows entre elles
 
 						}
 						if (nbCol > nbColTemp) {
-						nbColTemp = nbCol;
+							nbColTemp = nbCol;
 						}
 					}
 					// boolean premiereLinge = false;
@@ -470,7 +468,7 @@ public class Wikitext extends Extracteur {
 
 					int colonnes = 0;
 					int lig = 0;
-					// int compteur = 0;
+				
 
 					for (String item : headerList) {
 						tab[lig][colonnes] = item;
@@ -483,7 +481,7 @@ public class Wikitext extends Extracteur {
 								find = true;
 								int Newligne = lig + 1;
 								for (int i = 0; i < Integer.parseInt(tableau[0][2]); i++) {
-									tab[Newligne][colonnes] = tableau[0][3].trim();
+									tab[Newligne][colonnes] = checkString(tableau[0][3]);
 									Newligne += 1;
 								}
 							}
@@ -521,7 +519,8 @@ public class Wikitext extends Extracteur {
 								colDeacalle++;
 							}
 						}
-						tab[lig][colonnes] = item.trim();
+
+						tab[lig][colonnes] = checkString(item);
 						int index = 0;
 						boolean find = false;
 						while (rowspanList.size() > index && !find) {
@@ -545,78 +544,12 @@ public class Wikitext extends Extracteur {
 								find = true;
 								int Newligne = lig + 1;
 								for (int i = 0; i < Integer.parseInt(tableau[0][2]); i++) {
-									tab[Newligne][colonnes] = tableau[0][3].trim();
+									tab[Newligne][colonnes] = checkString(tableau[0][3]);
 									Newligne += 1;
 								}
 							}
 							index++;
 						}
-
-//						if (compteur == nbCol) {
-//							compteur = 0;
-//						}
-//						if (compteur == 0) {
-//							if (premiereLinge) {
-//								lig++;
-//							}
-//							premiereLinge = true;
-//							colonnes = 0;
-//							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
-//								colonnes++;
-//								compteur++;
-//							}
-//							if (compteur > nbCol - 1) {
-//								compteur = 0;
-//								lig++;
-//								colonnes = 0;
-//							}
-//							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
-//								colonnes++;
-//								compteur++;
-//							}
-//
-//						} else {
-//
-//							colonnes++;
-//							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
-//								colonnes++;
-//								compteur++;
-//							}
-//							if (compteur > nbCol - 1) {
-//								compteur = 0;
-//								lig++;
-//								colonnes = 0;
-//							}
-//							while (tab[lig][colonnes] != null && compteur < nbCol - 1) {
-//								colonnes++;
-//								compteur++;
-//							}
-//						}
-//
-//						tab[lig][colonnes] = item.trim();
-//						int index = 0;
-//						boolean find = false;
-//						while (rowspanList.size() > index && !find) {
-//							String[][] tableau = rowspanList.get(index);
-//							int ligneTab;
-//
-//							if (headerList.size() != 0) {
-//								ligneTab = Integer.parseInt(tableau[0][0]) + 1;
-//							} else {
-//								ligneTab = Integer.parseInt(tableau[0][0]);
-//							}
-//							if (ligneTab == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
-//								find = true;
-//								int Newligne = lig + 1;
-//								for (int i = 0; i < Integer.parseInt(tableau[0][2]) ; i++) {
-//									tab[Newligne][colonnes] = tableau[0][3].trim();
-//									Newligne += 1;
-//								}
-//							}
-//							index++;
-//						}
-//
-//						compteur++;
 					}
 
 					addTableau(constructeurTableau(tab, titre, true));
@@ -653,6 +586,14 @@ public class Wikitext extends Extracteur {
 
 		}
 
+	}
+
+	private String checkString(String valeur) {
+		if (!" ".equals(valeur)) {
+			return valeur.trim();
+		} else {
+			return valeur;
+		}
 	}
 
 	@Override
@@ -757,8 +698,8 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_of_Internet_Relay_Chat_services", ';', "chemin",
-					" nomCSV.csv", false, true);
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_(grammar)", ';',
+					"chemin", " nomCSV.csv", false, true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -1,0 +1,11 @@
+Graphics;Launch;Market;Processor;Code name;Device id.;Core clock (MHz);Execution units;API support;API support;API support;Memory bandwidth(GB/s);DVMT (MB);CVT HD
+Graphics;Launch;Market;Processor;Code name;Device id.;Core clock (MHz);Execution units;Direct3D;OpenGL;OpenCL;Memory bandwidth(GB/s);DVMT (MB);CVT HD
+HD Graphics;2010;Desktop;Celeron G1101PentiumG69xx;Ironlake (Clarkdale);0042;533;12;10.1  FL10_0;2.1  ES2.0Linux;No;17;1720;No
+Core i3-5x0Core i5-6x0Core i5-655K;2010;Desktop;733;Ironlake (Clarkdale);0042;21.3;12;10.1  FL10_0;2.1  ES2.0Linux;No;Yes;1720;
+Core i5-661;2010;Desktop;900;Ironlake (Clarkdale);0042;Mobile;12;10.1  FL10_0;2.1  ES2.0Linux;No;Celeron U3xxxPentium U5xxx;1720;
+Ironlake (Arrandale);2010;0046;166–500;12.8;No;Core i3-3x0UMCore i5-5x0UMCore i7-6x0UECore i7-6x0UM;12;10.1  FL10_0;2.1  ES2.0Linux;No;Yes;1720;
+Core i7-620LECore i7-6x0LM;2010;266–566;0046;166–500;12.8;17.1;12;10.1  FL10_0;2.1  ES2.0Linux;No;Celeron P4xxxPentium P6xxx;1720;
+500–667;2010;Yes;0046;No;Core i3-330ECore i3-3x0M;Yes;12;10.1  FL10_0;2.1  ES2.0Linux;No;Core i5-4x0MCore i5-520ECore i5-5x0MCore i7-610ECore i7-6x0M;1720;
+500–766;2010;;0046;;;;12;10.1  FL10_0;2.1  ES2.0Linux;No;;1720;
+;2010;;0046;;;;12;10.1  FL10_0;2.1  ES2.0Linux;No;;1720;
+;2010;;0046;;;;12;10.1  FL10_0;2.1  ES2.0Linux;No;;1720;

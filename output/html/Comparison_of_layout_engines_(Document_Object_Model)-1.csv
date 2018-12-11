@@ -1,0 +1,41 @@
+;;Trident;Tasman;Gecko;WebKit;KHTML;Presto
+Exception ExceptionVAL;Exception ExceptionVAL;Exception ExceptionVAL;Exception ExceptionVAL;Exception ExceptionVAL;Exception ExceptionVAL;Exception ExceptionVAL;Exception ExceptionVAL
+code;DOM3;No;No;No;No;No;No
+Interface DocumentEditVAL;Interface DocumentEditVAL;Interface DocumentEditVAL;Interface DocumentEditVAL;Interface DocumentEditVAL;Interface DocumentEditVAL;Interface DocumentEditVAL;Interface DocumentEditVAL
+continuousValidityChecking;DOM3;No;No;No;No;No;No
+domConfig;DOM3;No;No;No;No;No;No
+getDefinedElements();DOM3;No;No;No;No;No;No
+validateDocument();DOM3;No;No;No;No;No;No
+Interface NodeEditVAL;Interface NodeEditVAL;Interface NodeEditVAL;Interface NodeEditVAL;Interface NodeEditVAL;Interface NodeEditVAL;Interface NodeEditVAL;Interface NodeEditVAL
+defaultValue;DOM3;No;No;No;No;No;No
+enumeratedValues;DOM3;No;No;No;No;No;No
+canInsertBefore();DOM3;No;No;No;No;No;No
+canRemoveChild();DOM3;No;No;No;No;No;No
+canReplaceChild();DOM3;No;No;No;No;No;No
+canAppendChild();DOM3;No;No;No;No;No;No
+nodeValidity();DOM3;No;No;No;No;No;No
+Interface ElementEditVAL;Interface ElementEditVAL;Interface ElementEditVAL;Interface ElementEditVAL;Interface ElementEditVAL;Interface ElementEditVAL;Interface ElementEditVAL;Interface ElementEditVAL
+allowedChildren;DOM3;No;No;No;No;No;No
+allowedFirstChildren;DOM3;No;No;No;No;No;No
+allowedParents;DOM3;No;No;No;No;No;No
+allowedNextSiblings;DOM3;No;No;No;No;No;No
+allowedPreviousSiblings;DOM3;No;No;No;No;No;No
+allowedAttributes;DOM3;No;No;No;No;No;No
+requiredAttributes;DOM3;No;No;No;No;No;No
+contentType;DOM3;No;No;No;No;No;No
+canSetTextContent;DOM3;No;No;No;No;No;No
+canSetAttribute;DOM3;No;No;No;No;No;No
+canSetAttributeNode;DOM3;No;No;No;No;No;No
+canSetAttributeNS;DOM3;No;No;No;No;No;No
+canRemoveAttribute;DOM3;No;No;No;No;No;No
+canRemoveAttributeNS;DOM3;No;No;No;No;No;No
+canRemoveAttributeNode;DOM3;No;No;No;No;No;No
+isElementDefined;DOM3;No;No;No;No;No;No
+isElementDefinedNS;DOM3;No;No;No;No;No;No
+Interface CharacterDataEditVAL;Interface CharacterDataEditVAL;Interface CharacterDataEditVAL;Interface CharacterDataEditVAL;Interface CharacterDataEditVAL;Interface CharacterDataEditVAL;Interface CharacterDataEditVAL;Interface CharacterDataEditVAL
+isWhitespaceOnly();DOM3;No;No;No;No;No;No
+canSetData();DOM3;No;No;No;No;No;No
+canAppendData();DOM3;No;No;No;No;No;No
+canReplaceData();DOM3;No;No;No;No;No;No
+canInsertData();DOM3;No;No;No;No;No;No
+canDeleteData();DOM3;No;No;No;No;No;No

@@ -1,0 +1,33 @@
+;; Trident; EdgeHTML; Gecko; WebKit; KHTML; Presto
+@counter-style;@counter-style;@counter-style;@counter-style;@counter-style;@counter-style;@counter-style;@counter-style
+ ;additive-symbols;rowspan=""10"" no;rowspan=""10"" no;rowspan=""10"" no;rowspan=""10"" no;rowspan=""10"" no;rowspan=""10"" no
+ ;fallback;negative;pad;prefix;range;speak-as;suffix
+ ;symbols;system;@font-face;@font-face;@font-face;@font-face;@font-face
+ ;@font-face;@font-face;@font-face; ;font-family;rowspan=""8"" yes;rowspan=""8"" 12
+ ;rowspan=""5"" yes;rowspan=""2"" yes;rowspan=""2"" yes;rowspan=""2"" yes;font-feature-settings;font-stretch;no
+ ;no;no;font-style;rowspan=""2"" yes;rowspan=""4"" yes;rowspan=""2"" yes;font-variant
+ ;font-weight;Partial;Partial;Incorrect;src;yes;yes
+ ;yes;unicode-range;36.0;no;no;no;@viewport
+ ;@viewport;@viewport;@viewport;@viewport;@viewport;@viewport;@viewport
+ ; ;height;10.0;12;rowspan=""11"" no;rowspan=""11"" no;rowspan=""11"" no
+2.7;max-height;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no;min-height;width;10.0
+12;2.7;max-width;rowspan=""7"" no;rowspan=""7"" no;rowspan=""2"" no;min-width;zoom
+ ;rowspan=""4"" 2.7;max-zoom;min-zoom;user-zoom;orientation;no;
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;

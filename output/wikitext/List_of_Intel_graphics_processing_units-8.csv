@@ -1,0 +1,43 @@
+Graphics;Launch;Market;Processor;Code name;Device ID;Clock rate  (MHz);Core config1;API support;API support;API support;API support;eDRAM  (MiB);bandwidth(GB/s)
+Graphics;Launch;Market;Processor;Code name;Device ID;Clock rate  (MHz);Core config1;Direct3D;OpenGL;OpenCL;Vulkan;eDRAM  (MiB);bandwidth(GB/s)
+HD Graphics;2015;Ultramobile;Atom x5-Z8300;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;200-500;96:12:2;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;12.8
+Atom x5-Z8500;2015;Ultramobile;200-600;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;25.6;96:12:2;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+Celeron N3000Celeron N3050;2015;Ultramobile;320-600;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;Celeron N3150;96:12:2;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+320-640;2015;Ultramobile;Atom x7-Z8700;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;200-600;96:12:2;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+128:16:2;2015;Ultramobile;Pentium N3700;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;400-700;HD Graphics 400;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+2016;2015;Ultramobile;Atom x5-Z8350;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;200-500;96:12:2;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+Celeron N3010Celeron N3060;320-600;Ultramobile;Celeron N3160;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;320-640;Celeron J3060Celeron J3160;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+320-700;2016;Ultramobile;HD Graphics 405;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;96:12:2;Pentium N3710;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+400-700;2016;Ultramobile;128:16:2;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;96:12:2;Pentium J3710;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+400-740;2016;Ultramobile;144:18:2;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;96:12:2;HD Graphics;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+2015;2016;Ultramobile;Mobile;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;Celeron 3205U  Celeron 3755U  Pentium 3805U;Broadwell  (Gen8);11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+1606;2016;Ultramobile;100–800;Braswell  (Gen8LP);22B0 22B1 22B2 22B3;96:12:2  (GT1);12  FL11_1;11.2;4.3Windows  4.5Linux  ES3.2Linux;2.0Windows  1.2Linux;1.1Linux;-;
+4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6;Celeron3215U Celeron 3765UPentium 3825U;300–850;HD Graphics 5300;2014;Ultramobile;Core M-5Y10Core M-5Y10a;161E;100–800;192:24:3(GT2)
+Core M-5Y10c;2015;Mobile;300–800;Broadwell  (Gen8);1606;Core M-5Y70;96:12:2  (GT1);12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+100–850;Core M-5Y31;300–850;Core M-5Y51Core M-5Y71;Broadwell  (Gen8);300–900;HD Graphics 5500;2015;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Mobile;2014;Ultramobile;Core i3-5005UCore i3-5015U;Broadwell  (Gen8);161E;192:24:3(GT2);1616;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+300–850;2014;Ultramobile;184:23:3(GT2);Broadwell  (Gen8);161E;192:24:3(GT2);Core i3-5010UCore i3-5020U;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+300–900;2014;Ultramobile;Core i5-5200UCore i5-5300U;Broadwell  (Gen8);161E;192:24:3(GT2);192:24:3(GT2);12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Core i7-5500UCore i7-5600U;2014;Ultramobile;300–950;Broadwell  (Gen8);161E;192:24:3(GT2);HD Graphics 5600;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Mobile;Core i7-5700EQ;1612;300–1000;Broadwell  (Gen8);Core i7-5700HQ;300–1050;HD Graphics P5700;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Mobile;2015;Mobile;Xeon E3-1258L v4;Broadwell  (Gen8);1616;184:23:3(GT2);?;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+700-1000;2015;Mobile;300–900;Broadwell  (Gen8);1616;HD Graphics 6000;Mobile;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Core i5-5250U;2015;Mobile;1626;Broadwell  (Gen8);1616;192:24:3(GT2);300–950;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+384:48:6  (GT3);2015;Core i5-5350UCore i7-5550UCore i7-5650U;300–1000;Broadwell  (Gen8);Iris Graphics 6100;192:24:3(GT2);Mobile;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Core i3-5157U;2015;Mobile;1612;Broadwell  (Gen8);162B;192:24:3(GT2);300–1000;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Core i5-5257U;2015;300–1050;Core i5-5287U Core i7-5557U;Broadwell  (Gen8);300–1100;192:24:3(GT2);Iris Pro Graphics 6200;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Desktop;2015;Core i5-5575R;1622;Broadwell  (Gen8);300–1050;128;Core i5-5675C Core i5-5675R;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+300–1100;2015;Mobile;1626;Broadwell  (Gen8);Core i7-5775C Core i7-5775R;300–1150;Mobile;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Corei7-5850EQ;2015;300–1000;Corei5-5350H;Broadwell  (Gen8);300–1050;Corei7-5750HQ Core i7-5850HQ;300–1100;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Corei7-5950HQ;2015;Mobile;162B;Broadwell  (Gen8);300–1150;Iris Pro Graphics P6300;Workstation;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+Xeon E3-1278L v4;2015;Mobile;162B;Broadwell  (Gen8);162A;800–1000;Xeon E3-1265L v4;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;-;25.6
+300–1050;2015;Xeon E3-1285 v4 Xeon E3-1285L v4;300–1150;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;Desktop;1622;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;Desktop;1622;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;;1622;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;;1622;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;;1622;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;;1622;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;;;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;;;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6
+;2015;;;Broadwell  (Gen8);;;;12  FL11_1;4.4Windows  4.1macOS  4.5Linux  ES3.2Linux;2.0Windows  1.2macOS  2.0Linux;1.1Linux;;25.6

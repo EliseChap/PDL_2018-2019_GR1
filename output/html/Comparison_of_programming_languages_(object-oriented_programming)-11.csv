@@ -1,0 +1,19 @@
+downcast|upcast|
+ABAP Objects|N/A|N/A
+C++ (STL)||operator returntype() { instructions }
+C#|static explicit operator returntype(type operand) { instructions }|static implicit operator returntype(type operand) { instructions }
+D||T opCast(T)() if (is(T == type)) { instructions }
+eC||property T { get { return «conversion code»; } }
+Java|N/A|N/A
+Objective-C|N/A|
+Eiffel[35]|N/A|
+Python|N/A|
+Visual Basic .NET|Shared Narrowing Operator CType(operand As type) As returntype instructions End Operator|Shared Widening Operator CType(operand As type) As returntype instructions End Operator
+Perl 6||multi method type«($self:)» is export { instructions }
+PHP|N/A|N/A
+Perl|N/A|
+Ruby|N/A|
+Windows PowerShell|N/A|
+OCaml|N/A|
+F#||
+COBOL|N/A|N/A

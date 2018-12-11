@@ -1,0 +1,25 @@
+;; Trident; Tasman; Gecko; WebKit; KHTML; Presto
+Interface CDATASection;Interface CDATASection;Interface CDATASection;Interface CDATASection;Interface CDATASection;Interface CDATASection;Interface CDATASection;Interface CDATASection
+DOM1;(no properties);no;no;1.0;yes;?;2.0
+Interface DocumentType;Interface DocumentType;Interface DocumentType;Interface DocumentType;Interface DocumentType;Interface DocumentType;Interface DocumentType;Interface DocumentType
+DOM1;name;rowspan=""3"" no;rowspan=""3"" no;1.0;rowspan=""3"" yes;?;rowspan=""3"" 1.0
+DOM1;entities;rowspan=""2"" no;?;notations;?;DOM2;publicId
+DOM1;rowspan=""3"" no;rowspan=""3"" no;rowspan=""3"" 1.0;rowspan=""3"" yes;?;rowspan=""3"" 1.0;systemId
+?;internalSubset;?;Interface Notation;Interface Notation;Interface Notation;Interface Notation;Interface Notation
+DOM2;Interface Notation;Interface Notation;Interface Notation;DOM1;publicId;rowspan=""2"" no;rowspan=""2"" no
+DOM2;rowspan=""2"" 1.0;rowspan=""2"" yes;?;rowspan=""2"" 2.0;systemId;?;Interface Entity
+Interface Entity;Interface Entity;Interface Entity;Interface Entity;Interface Entity;Interface Entity;Interface Entity;DOM1
+publicId;rowspan=""3"" no;rowspan=""3"" no;rowspan=""3"" 1.0;rowspan=""3"" yes;?;rowspan=""3"" no;systemId
+DOM1;?;notationName;?;DOM3;inputEncoding;rowspan=""3"" no;rowspan=""3"" no
+rowspan=""3"" no;rowspan=""3"" no;?;rowspan=""3"" no;xmlEncoding;?;xmlVersion;?
+Interface EntityReference;Interface EntityReference;Interface EntityReference;Interface EntityReference;Interface EntityReference;Interface EntityReference;Interface EntityReference;Interface EntityReference
+DOM1;DOM1;(no properties);no;no;1.0;yes;?
+DOM1;no;Interface ProcessingInstruction;Interface ProcessingInstruction;Interface ProcessingInstruction;Interface ProcessingInstruction;Interface ProcessingInstruction;Interface ProcessingInstruction
+Interface ProcessingInstruction;Interface ProcessingInstruction;DOM1;target;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" 1.0;rowspan=""2"" yes
+DOM3;?;rowspan=""2"" 2.0;data;?;;;
+DOM3;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;

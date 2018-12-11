@@ -1,0 +1,23 @@
+Language|Official website|Software license|Remarks
+ActionScript 3| |free|
+C++11 (C++)| |dunno|Since ISO14822:2011(e)
+D| |[[Boost Software License]]| 
+Go| |[http://golang.org/LICENSE BSD-style]| 
+Haskell| |BSD3|Omitted in the language report, and in GHC's Hierarchical Libraries
+Java| |[[GNU General Public License]]|REs are written as strings in source code: all backslashes must be doubled, harming readability.
+JavaScript (ECMAScript)| |BSD3|Limited but REs are first-class citizens of the language with a specific /.../mod syntax.
+Julia| |[[MIT License]]|REs are part of the language core library using PCRE built-in and an optional wrapper for (C code) ICU is available.
+Lua| |[[MIT License]]|Uses simplified, limited dialect; can be bound to more powerful library, like PCRE or an alternative parser like LPeg.
+Mathematica| |Proprietary|
+.NET| |[[MIT License]]| 
+Nim| |[[MIT License]]|Standard library includes PCRE-based  and  modules, as well as various alternatives (ex. ,  (Parsing Expression Grammar matching), , , etc).
+Free Pascal (Object Pascal)| |[[LGPL]] with static linking exception|Free Pascal 2.6+ ships with TRegExpr from Sorokin and two other regular expression libraries; See .
+OCaml| |[[LGPL]]|2010, the standard module is generally regarded as deprecated; often recommended libraries are  (with full support for PCRE) and  (which is not as complete but claims better performance and provides frontends to popular syntaxes: PCRE, Perl, Posix, Emacs, shell globbing).
+Perl| |[[Artistic License]], or [[GNU General Public License]]|Full, central part of the language
+PHP| |[[PHP License]]|Has two implementations, with PCRE being the more efficient in speed, functions
+POSIX C (C)| |BSD|According to , available from at least 4.4BSD (if not earlier)
+Python| |[[Python Software Foundation License]]|Python has two major implementations, the built in  and the  library.
+Ruby| |[[GNU Library General Public License]]|Ruby 1.8 and 1.9 use different engines; 1.9 integrates Oniguruma.
+SAP ABAP| |proprietary| 
+Tcl| |[http://www.tcl.tk/software/tcltk/license.html Tcl/Tk License]<br>(BSD-style)|Tcl library doubles as a regular expression library.
+Wolfram Language| |Proprietary; usable for free on a limited scale on the Wolfram Development platform.|Clear

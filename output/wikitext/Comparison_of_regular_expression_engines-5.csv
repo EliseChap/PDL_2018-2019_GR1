@@ -1,0 +1,14 @@
+;Native UTF-16 supportunicode_native;Native UTF-8 supportunicode_native;Multi-line matching;Partial matchpartial_match_explanation
+Boost.Regex;No;No;yes;yes
+GLib/GRegex;yes;yes;yes;yes
+ ;yes;yes;No;yes
+ICU Regex;yes;No;yes;dunno
+Java;No;PartialPartial_Uni4;yes;yes
+.NET;NoUCS2;yes;yes;dunno
+PCRE;Yes8.30;yes;yes;yes
+Qt/QRegExp;yes;No;No;dunno
+Tcl;Yes;YesConversion;Yes;dunno
+TRE;No;dunno;yes;dunno
+RGX;No;No;yes;dunno
+wxWdigets::wxRegEx;yes;yes;yes;dunno
+XRegExp;yes;dunno;yes;dunno

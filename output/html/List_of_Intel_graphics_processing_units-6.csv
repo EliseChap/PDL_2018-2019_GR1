@@ -1,0 +1,119 @@
+Graphics;Launch;Market;Processor;Code name;Device ID;Clock rate;Clock rate;Core config1;API support[59][12][31][47];API support[59][12][31][47];API support[59][12][31][47];API support[59][12][31][47];eDRAM (MiB);Memory bandwidth (GB/s)
+Graphics;Launch;Market;Processor;Code name;Device ID;Min (MHz);Max (MHz);Core config1;Direct3D;OpenGL;OpenCL;Vulkan;eDRAM (MiB);Memory bandwidth (GB/s)
+HD Graphics 500;2016;??;Atom x5-E3930;Apollo Lake (Gen9LP);5A85;400;550;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;68.2
+HD Graphics 500;2016;??;Atom x5-E3940;Apollo Lake (Gen9LP);5A85;400;600;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;68.2
+HD Graphics 500;2016;Mobile;Celeron N3350;Apollo Lake (Gen9LP);5A85;200;650;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 500;2016;Mobile;Celeron N3450;Apollo Lake (Gen9LP);5A85;200;700;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 500;2016;Desktop;Celeron J3355;Apollo Lake (Gen9LP);5A85;250;700;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 500;2016;Desktop;Celeron J3455;Apollo Lake (Gen9LP);5A85;250;750;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 505;2016;??;Atom x7-E3950;Apollo Lake (Gen9LP);5A84;500;650;144:18:3;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;76.8
+HD Graphics 505;2016;Mobile;Pentium N4200;Apollo Lake (Gen9LP);5A84;200;750;144:18:3;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 505;2016;Desktop;Pentium J4205;Apollo Lake (Gen9LP);5A84;250;800;144:18:3;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 510;2015;Mobile;Celeron 3855U Celeron 3955U;Skylake (Gen9);1906;300;900;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 510;2015;Mobile;Pentium 4405U;Skylake (Gen9);1906;300;950;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 510;2015;Desktop;Celeron G3900TE Celeron G3900E Celeron G3900T Celeron G3900 Celeron G3902E Celeron G3920 Pentium G4400TE Pentium G4400T Core i5-6402P;Skylake (Gen9);1902;350;950;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 510;2015;Desktop;Pentium G4400;Skylake (Gen9);1902;350;1000;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 510;2015;Desktop;Core i3-6098P;Skylake (Gen9);1902;350;1050;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 515;2015;Mobile;Pentium 4405Y;Skylake (Gen9);191E;300;800;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;29.8
+HD Graphics 515;2015;Mobile;Core m3-6Y30;Skylake (Gen9);191E;300;850;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;29.8
+HD Graphics 515;2015;Mobile;Core m5-6Y54 Core m5-6Y57;Skylake (Gen9);191E;300;900;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;29.8
+HD Graphics 515;2015;Mobile;Core m7-6Y75;Skylake (Gen9);191E;300;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;29.8
+HD Graphics 520;2015;Mobile;Core i3-6006U;Skylake (Gen9);1916;300;900;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 520;2015;Mobile;Core i3-6100U Core i5-6200U Core i5-6300U;Skylake (Gen9);1916;300;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 520;2015;Mobile;Core i7-6500U Core i7-6600U;Skylake (Gen9);1916;300;1050;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Mobile;Core i3-6100H;Skylake (Gen9);191B;350;900;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Mobile;Core i3-6100E Core i3-6102E Core i5-6300HQ Core i5-6440HQ;Skylake (Gen9);191B;350;950;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Mobile;Core i5-6440EQ Core i5-6442EQ Core i7-6820EQ Core i7-6822EQ;Skylake (Gen9);191B;350;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Mobile;Core i7-6700HQ Core i7-6820HK Core i7-6820HQ Core i7-6920HQ;Skylake (Gen9);191B;350;1050;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Desktop;Pentium G4500T Core i3-6100T Core i3-6300T Core i5-6400T Core i5-6400;Skylake (Gen9);1912;350;950;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Desktop;Core i3-6100TE Core i5-6500TE Core i7-6700TE Core i7-6700T;Skylake (Gen9);1912;350;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Desktop;Pentium G4500 Pentium G4520 Core i3-6100 Core i5-6500;Skylake (Gen9);1912;350;1050;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Desktop;Core i5-6500T Core i5-6600T Core i7-6700;Skylake (Gen9);1912;350;1100;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 530;2015;Desktop;Core i3-6300 Core i3-6320 Core i5-6600 Core i5-6600K Core i7-6700K;Skylake (Gen9);1912;350;1150;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics P530;2015;Workstation;Xeon E3-1268L v5;Skylake (Gen9);191D;350;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics P530;2015;Mobile Workstation;Xeon E3-1505L v5;Skylake (Gen9);191D;350;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics P530;2015;Mobile Workstation;Xeon E3-1505M v5 Xeon E3-1535M v5;Skylake (Gen9);191D;350;1050;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics P530;2015;Workstation;Xeon E3-1225 v5;Skylake (Gen9);191D;400;1150;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics P530;2015;Workstation;Xeon E3-1235L v5;Skylake (Gen9);191D;400;?;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics P530;2015;Workstation;Xeon E3-1245 v5 Xeon E3-1275 v5;Skylake (Gen9);191D;400;1150;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+Iris Graphics 540;2015;Mobile;Core i5-6260U;Skylake (Gen9);1926;300;950;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Graphics 540;2015;Mobile;Core i5-6360U;Skylake (Gen9);1926;300;1000;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Graphics 540;2015;Mobile;Core i7-6560U Core i7-6650U Core i7-6660U;Skylake (Gen9);1926;300;1050;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Graphics 550;2015;Mobile;Core i3-6157U Core i3-6167U;Skylake (Gen9);1927;300;1000;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Graphics 550;2015;Mobile;Core i5-6267U;Skylake (Gen9);1927;300;1050;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Graphics 550;2015;Mobile;Core i5-6287U Core i7-6567U;Skylake (Gen9);1927;300;1100;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Pro Graphics P555;2016;Workstation;Xeon E3-1558L v5;Skylake (Gen9);192D;650;1000;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics 580;2016;Mobile;Core i5-6350HQ;Skylake (Gen9);193B;350;900;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics 580;2016;Mobile;Core i7-6770HQ;Skylake (Gen9);193B;350;950;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics 580;2016;Mobile;Core i7-6870HQ;Skylake (Gen9);193B;350;1000;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics 580;2016;Mobile;Core i7-6970HQ;Skylake (Gen9);193B;350;1050;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics 580;2016;Desktop;Core i5-6585R;Skylake (Gen9);193B;350;1100;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics 580;2016;Desktop;Core i5-6685R Core i7-6785R;Skylake (Gen9);193B;350;1150;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics P580;2016;Workstation;Xeon E3-1578L v5;Skylake (Gen9);193D;700;1000;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics P580;2016;Mobile Workstation;Xeon E3-1515M v5;Skylake (Gen9);193D;350;1000;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics P580;2016;Mobile Workstation;Xeon E3-1545M v5;Skylake (Gen9);193D;350;1050;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics P580;2016;Mobile Workstation;Xeon E3-1575M v5;Skylake (Gen9);193D;350;1100;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics P580;2016;Workstation;Xeon E3-1565L v5;Skylake (Gen9);193A;350;1050;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+Iris Pro Graphics P580;2016;Workstation;Xeon E3-1585L v5 Xeon E3-1585 v5;Skylake (Gen9);193A;350;1150;576:72:9 (GT4);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.0Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;128;34.1
+UHD Graphics 600;2017;Mobile;Celeron N4000;Gemini Lake (Gen9LP);3185;200;650;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 600;2017;Mobile;Celeron N4100;Gemini Lake (Gen9LP);3185;200;700;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 600;2017;Desktop;Celeron J4005;Gemini Lake (Gen9LP);3185;250;700;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 600;2017;Desktop;Celeron J4105;Gemini Lake (Gen9LP);3185;250;750;96:12:2;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 605;2017;Mobile;Pentium Silver N5000;Gemini Lake (Gen9LP);3184;200;750;144:18:3;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 605;2017;Desktop;Pentium Silver J5005;Gemini Lake (Gen9LP);3184;250;800;144:18:3;12;4.5Windows 4.5Linux ES 3.2Linux;1.2Windows 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 610;2017;Mobile;Celeron 3865U Celeron 3965U;Kaby Lake (Gen9p5);5906;300;900;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 610;2017;Mobile;Pentium 4415U;Kaby Lake (Gen9p5);5906;300;950;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 610;2017;Desktop;Celeron G3930TE;Kaby Lake (Gen9p5);5902;350;950;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 610;2017;Desktop;Celeron G3930E Celeron G3930T;Kaby Lake (Gen9p5);5902;350;1000;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 610;2017;Desktop;Celeron G3930 Celeron G3950;Kaby Lake (Gen9p5);5902;350;1050;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 610;2017;Desktop;Pentium G4560T Pentium G4560;Kaby Lake (Gen9p5);5902;350;1050;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 610;2017;Desktop;Core i3-7101TE Core i3-7101E;Kaby Lake (Gen9p5);5902;350;1100;96:12:2 (GT1);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 615;2017;Mobile;Celeron 3965Y Pentium 4410Y Pentium 4415Y;Kaby Lake (Gen9p5);591E;300;850;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;29.8
+HD Graphics 615;2017;Mobile;Core m3-7Y30 Core m3-7Y32;Kaby Lake (Gen9p5);591E;300;900;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;29.8
+HD Graphics 615;2017;Mobile;Core i5-7Y54 Core i5-7Y57;Kaby Lake (Gen9p5);591E;300;950;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;29.8
+HD Graphics 615;2017;Mobile;Core i7-7Y75;Kaby Lake (Gen9p5);591E;300;1050;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;29.8
+HD Graphics 620;2017;Mobile;Core i3-7020U Core i3-7100U Core i3-7130U Core i5-7200U;Kaby Lake (Gen9p5);5916;300;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 620;2017;Mobile;Core i7-7500U;Kaby Lake (Gen9p5);5916;300;1050;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 620;2017;Mobile;Core i5-7300U;Kaby Lake (Gen9p5);5916;300;1100;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+HD Graphics 620;2017;Mobile;Core i7-7600U;Kaby Lake (Gen9p5);5916;300;1150;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;34.1
+UHD Graphics 620;2017;Mobile;Core i3-8130U;Kaby Lake (Gen9p5);5917;300;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 620;2017;Mobile;Core i5-8250U Core i5-8350U;Kaby Lake (Gen9p5);5917;300;1100;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 620;2017;Mobile;Core i7-8550U Core i7-8650U;Kaby Lake (Gen9p5);5917;300;1150;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Desktop;Core i5-7400T Core i5-7400;Kaby Lake (Gen9p5);5912;350;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Desktop;Pentium G4600T;Kaby Lake (Gen9p5);5912;350;1050;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Desktop;Pentium G4600 Pentium G4620 Core i3-7100T Core i3-7100 Core i3-7300T Core i5-7500T Core i5-7500 Core i5-7600T;Kaby Lake (Gen9p5);5912;350;1100;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Desktop;Core i3-7300 Core i3-7320 Core i3-7350K Core i5-7600 Core i5-7600K Core i7-7700T Core i7-7700 Core i7-7700K;Kaby Lake (Gen9p5);5912;350;1150;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Mobile;Core i3-7100E Core i3-7100H Core i3-7102E;Kaby Lake (Gen9p5);591B;350;950;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Mobile;Core i5-7300HQ Core i5-7440EQ Core i5-7440HQ Core i5-7442EQ Core i7-7820EQ;Kaby Lake (Gen9p5);591B;350;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Mobile;Core i7-7700HQ Core i7-7820HK Core i7-7820HQ Core i7-7920HQ;Kaby Lake (Gen9p5);591B;350;1100;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Mobile;Core i5-8305G;Kaby Lake (Gen9p5);?;350;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics 630;2017;Mobile;Core i7-8705G Core i7-8706G Core i7-8709G Core i7-8809G;Kaby Lake (Gen9p5);?;350;1100;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics P630;2017;Mobile Workstation;Xeon E3-1501L v6 Xeon E3-1501M v6 Xeon E3-1505L v6;Kaby Lake (Gen9p5);591D;350;1000;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics P630;2017;Mobile Workstation;Xeon E3-1505M v6 Xeon E3-1535M v6;Kaby Lake (Gen9p5);591D;350;1100;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+HD Graphics P630;2017;Workstation;Xeon E3-1225 v6 Xeon E3-1245 v6 Xeon E3-1275 v6 Xeon E3-1285 v6;Kaby Lake (Gen9p5);591D;350;1150;192:24:3 (GT2);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;-;38.4
+Iris Plus Graphics 640;2017;Mobile;Core i5-7260U;Kaby Lake (Gen9p5);5926;300;950;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Plus Graphics 640;2017;Mobile;Core i5-7360U;Kaby Lake (Gen9p5);5926;300;1000;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Plus Graphics 640;2017;Mobile;Core i7-7560U;Kaby Lake (Gen9p5);5926;300;1050;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Plus Graphics 640;2017;Mobile;Core i7-7660U;Kaby Lake (Gen9p5);5926;300;1100;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Plus Graphics 650;2017;Mobile;Core i3-7167U;Kaby Lake (Gen9p5);5927;300;1000;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Plus Graphics 650;2017;Mobile;Core i5-7267U;Kaby Lake (Gen9p5);5927;300;1050;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Plus Graphics 650;2017;Mobile;Core i5-7287U;Kaby Lake (Gen9p5);5927;300;1100;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+Iris Plus Graphics 650;2017;Mobile;Core i7-7567U;Kaby Lake (Gen9p5);5927;300;1150;384:48:6 (GT3);12 FL12_1;4.5Windows 4.1macOS 4.5Linux ES 3.2Linux;2.1Windows 1.2macOS 2.0Linux;1.1Windows 1.1Linux;64;34.1
+UHD Graphics 610;2017;Desktop;Celeron G4900T;Coffee Lake;3E93;350;1000;96:12:2 (GT1);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 610;2017;Desktop;Celeron G4900 Celeron G4920 Pentium Gold G5400T Pentium Gold G5400;Coffee Lake;3E93;350;1050;96:12:2 (GT1);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 630;2017;Desktop;Pentium Gold G5500T;Coffee Lake;3E91;350;1050;184:23:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 630;2017;Desktop;Pentium Gold G5500 Pentium Gold G5600 Core i3-8100T Core i3-8100 Core i3-8300T;Coffee Lake;3E91;350;1100;184:23:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 630;2017;Desktop;Core i3-8300 Core i3-8350K;Coffee Lake;3E91;350;1150;184:23:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;38.4
+UHD Graphics 630;2017;Desktop;Core i5-8400T Core i5-8400 Core i5+8400;Coffee Lake;3E92;350;1050;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Desktop;Core i5-8500T Core i5-8500 Core i5+8500;Coffee Lake;3E92;350;1100;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Desktop;Core i5-8600T Core i5-8600 Core i5-8600K;Coffee Lake;3E92;350;1150;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Desktop;Core i7-8700T Core i7-8700 Core i7+8700 Core i7-8700K Core i7-8086K;Coffee Lake;3E92;350;1200;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Mobile;Core i5-8300H;Coffee Lake;3E9B;350;1000;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Mobile;Core i5-8400B;Coffee Lake;3E9B;350;1050;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Mobile;Core i5-8400H Core i7-8750H;Coffee Lake;3E9B;350;1100;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Mobile;Core i5-8500B Core i7-8850H;Coffee Lake;3E9B;350;1150;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Mobile;Core i7-8700B Core i9-8950HK;Coffee Lake;3E9B;350;1200;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+UHD Graphics 630;2017;Mobile Workstation;Xeon E-2176M Xeon E-2186M;Coffee Lake;3E9B;350;1200;192:24:3 (GT2);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;-;42.7
+Iris Plus Graphics 655;2017;Mobile;Core i3-8109U Core i5-8259U;Coffee Lake;3EA5;300;1050;384:48:6 (GT3);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;128;38.4
+Iris Plus Graphics 655;2017;Mobile;Core i5-8259U;Coffee Lake;3EA5;300;1100;384:48:6 (GT3);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;128;38.4
+Iris Plus Graphics 655;2017;Mobile;Core i7-8559U;Coffee Lake;3EA5;300;1200;384:48:6 (GT3);12;4.5Windows;2.1Windows;1.1Windows 1.1Linux;128;38.4

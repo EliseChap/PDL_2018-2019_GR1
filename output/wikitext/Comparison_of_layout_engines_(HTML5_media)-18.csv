@@ -1,0 +1,30 @@
+;Trident;EdgeHTML;Gecko;WebKit;Presto
+section;rowspan=""7"" 5.0;rowspan=""7"" 12;rowspan=""7"" 2.0;rowspan=""7"" 533;rowspan=""7"" 2.7.70
+nav;article;aside;hgroup;header;footer
+ping;no;no;Disabled;yes;no
+time;no;no;22.0;no;2.8.146
+mark;5.0;12;2.0;yes;2.7.70
+ruby, rt, rp;3.1;12;38.0;533;No
+dialog;no;no;no;Only in Chrome;no
+figure;rowspan=""2"" 5.0;rowspan=""2"" 12;rowspan=""2"" 2.0;rowspan=""2"" Yes;rowspan=""2"" 2.7.70
+figcaption;embed;3.0;12;1.7;85
+1.0;video;rowspan=""4"" 5.0 (Partial);rowspan=""3"" 12;rowspan=""3"" 15.0;rowspan=""3"" 525
+rowspan=""3"" 2.5 several experimental builds have been released with [[Ogg]] [[Theora]] support. Full support for the video element is included in Presto 2.5. Full support for the audio element with the [[Ogg]] [[Vorbis]] and WAV codecs is included in Presto 2.5.;audio;source;canvas;Partial;1.9.2
+Partial;2.0;Inline MathML;No;No;rowspan=""2"" 2.0
+No;2.1MathML for CSS, XHTML only;Inline SVG;5.0;12;yes
+2.9.220;details;rowspan=""5"" No;rowspan=""5"" No;rowspan=""2"" 47;yes
+rowspan=""3"" No;summary;yes;command;No;No
+menu;8.0;No;2.8;bdi;10.0
+528;No;data;no;no;22.0
+no;no;picture;no;13;38.0
+no;no;;Trident;EdgeHTML;Gecko
+WebKit;Presto;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;
+;;;;;

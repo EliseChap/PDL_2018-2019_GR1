@@ -1,0 +1,19 @@
+Implementation;PKCS #11 device;Intel AES-NI;VIA PadLock;ARMv8-A;Intel SGX; 
+BearSSL;no;yes;no;no;no;no
+Botan;yes;yes;no;yes;no;no
+CryptoComply;yes;yes;yes;yes;;yes
+cryptlib;yes;yes;yes;no;;no
+GnuTLS;yes;yes;yes;yes;no;no
+JSSE;yes;yes;no;no;;no
+LibreSSL;no;yes;yes;no;;no
+MatrixSSL;yes;yes;no;yes;;no
+mbed TLS;yes;yes;yes;no;;no
+NSS;yes;yes;no;no;;no
+OpenSSL;yes;yes;yes;yes;;no
+RomSTL;no;yes;no;no;no;no
+RSA BSAFE;yes;yes;no;;;no
+rustls;no;yes;no;no;no;no
+SChannel;no;yes;no;no;;no
+ ;no;Yes;no;Yes;;no
+wolfSSL;no;yes;no;yes;yes;yes
+Implementation;PKCS #11 device;Intel AES-NI;VIA PadLock;ARMv8-A;Intel SGX;Intel QAT

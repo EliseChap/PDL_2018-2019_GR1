@@ -1,0 +1,18 @@
+; Trident; EdgeHTML; Gecko; WebKit; Presto
+main element;no;12;21.0;yes;no
+template element;no;13;no;yes;no
+Selectors API;4.0;12;1.9.1;525;2.2
+Web Storage;4.0;12;1.9.1;525;2.5
+Indexed Database API;5.0;12;16.0;Partial;no
+Web SQL Database (obsolete);no;no;no;yes;2.5
+File API;5.0;12;yes;yes;2.8
+File API: Writer;5.0;no;no;Partial;rowspan=""2"" no
+File API: Directories and System;rowspan=""3"" no;rowspan=""3"" no;no;yes;Media Capture API
+2.0Currently partially supported in nightly builds for the Linux platform.;no;2.10;Server-sent events;6.0;yes
+2.7;WebSocket;6.0;12;11.0;533
+2.11 which resolved security issue.;Web Workers;6.0;12;1.9.1;yes
+2.6;Geolocation API;5.0;12;1.9.1;533
+2.6Geolocation support was added in Presto 2.5, but was not enabled by default until 2.6.;Offline Web applications;6.0;12;1.9.1;yes
+2.6;Web Notifications;no;no;22.0;only in Chrome
+25;;Trident;EdgeHTML;Gecko;WebKit
+Presto;;;;;

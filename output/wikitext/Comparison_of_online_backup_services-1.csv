@@ -1,0 +1,50 @@
+Provider;Win.1;Linux1;Mac1;Android1;iOS1;Encrypted storage;Zero knowledge2;Secure Key Management3;Limited MB plan4;Unlimited MB plan4;$/MB plan4;Unlimited BW 16;Provider;Cloud hosted Net Drive5;Sync7;Autodetect changes12;Public file hosting8;physical media restore9;Server location(s)10;Free online storage (non-trial)13;Maximum per-file size;External hard drive support14;Hybrid Option15;Green Hosting
+Acronis;yes;Enterprise only, with limited data;yes;yes;yes;yes;Optional;yes;optional (Enterprise);yes (Only win/mac);no;yes;Acronis;no;yes;;;;USA, EUR;no;No limit;yes;;
+Backblaze;yes;no;yes;yes;yes;yes;no Company must be given passphrase (to private key) to restore any data.;No;no;yes;no;yes;Backblaze; ;;yes;yes;yes;USA;no;No limit;yes;no;
+Barracuda Backup Service;yes;yes;yes;;;yes;no;?;no fee per computer;no;yes;;Barracuda Backup Service;yesJune 2014;yes;;no;yes;USA, Canada, APAC, EUR;no;;;dunno;
+Baidu Cloud;yes;no;yes;yes;yes;yes;no;?;no;no;yes;;Baidu; ;yes;yes;yes; ;CHN;2 GB;4 GB (Non-member) 10 GB (Member) 20 GB (Super Member).;;dunno;
+Box;yes;Partial (no offline sync, access through DAV server);yes;yes;yes;yes;no;?;yes;no; ; ;Box;yes;yes;yes; ; ;USA;10 GB;250 MB (Free) 5 GB (Paid);; ;
+Carbonite;yes;no;yes;yes;yes;yes;partial, optional for Windows only;?;yes (Business only);yes (Home only);no;yes;Carbonite;;yes;yes;yes;;USA;no;4 GB;yes;yes;
+Provider;Win.1;Linux1;Mac1;Android1;iOS1;Encrypted storage;Zero knowledge2;Secure Key Management3;Limited MB plan4;Unlimited MB plan4;$/MB plan4;Unlimited BW 16;Provider;Cloud hosted Net Drive5;Sync7;Autodetect changes12;Public file hosting8;physical media restore9;Server location10;Free online storage (non-trial)13;Maximum per-file size;External hard drive support14;Hybrid Option15;Green Hosting
+CloudBerry Backup;yes;yes;yes;no;no;yes;yesAugust 2018;yes;;;;yes;CloudBerry Backup;yes;yes;yes;;yes;Global;no;No limit;yes;yes;
+CloudMe;yes;yes;yes;yes;yes;no, but 3rd party apps availableJuly 2014; ;?; ;no;;yes;CloudMe;yes;yes;yes; ;;SWE;3 GB;150 MB (Free Accounts) No limit (Premium Accounts);No Limit;No;
+Comodo Backup;yes;no;no;;;yes;no;?;yes;no;yes (5);;Comodo Backup;no;no;;no; ;USA;no; ; ;;
+CrashPlan;yes;yes;yes;yes;yes;yes;yes, except for web restore;yes;no;yes;no;yes;CrashPlan;no;no;yes;no;yes;USA, AUS;no;No Limit;yes;no;
+Dropbox;yes;yes;yes;yes;yes;yes;no;?; ; ;yes;;Dropbox;no;yes;yes;yes; ; ;2 GB; ; ; ; 
+Dropmysite;yes;yes;yes;;;yes;no;?;yes;no;no;yes;Dropmysite; ;yes;yes;yes; ;Global;2 GB;No limit; ;dunno;
+Provider;Win.1;Linux1;Mac1;Android1;iOS1;Encrypted storage;Zero knowledge2;Secure Key Management3;Limited MB plan4;Unlimited MB plan4;$/MB plan4;Unlimited BW 16;Provider;Cloud hosted Net Drive5;Sync7;Autodetect changes12;Public file hosting8;physical media restore9;Server location10;Free online storage (non-trial)13;Maximum per-file size;External hard drive support14;Hybrid Option15;Green Hosting
+Egnyte;yes;yes;yes;;;optional;optional;?; ; ;;;Egnyte;yes;yes;yes;yes; ;USA;no;No limit;;?;
+ElephantDrive;yes;yes;yes;yes;;yes;optional (off by default);?;yes;no; ;;ElephantDrive;yes;yes;yes;yes; ;USA;2 GB;;yes;?;no, Amazon AWS
+FilesAnywhere;yes;partial;yes;yes, via Storage Made Easy client;yes, via Storage Made Easy client;optional;no;?;yes;no;yes;yes;FilesAnywhere;yes;yes;yes;yes;yes;USA;1 GB;No limit;yes;;
+Google Drive;yes;no, no provider-sanctioned Linux support.;yes;yes;yes;yes;no;?; ;yes (Enterprise Only);yes;yes;Google Drive;no;yes;yes;yes;;USA, Worldwide;15 GB;5 TB;;;partial: 34%
+IASO Backup;yes;yes;yes;;yes;yes;yes;?;yes;no;yes; ;IASO Backup;no;no;no;yes;;USA, Worldwide;no;No limit;yes;yes;
+iCloud;yes;yes, via Storage Made Easy client;yes;yes, via Storage Made Easy client;yes;yes;no;?;no;no;yes;;iCloud;dunno;yes;dunno;dunno; ;unknown;1 GB (everyone) <ref ...<b> if they don't have access to an Apple device </b> ... <b>1 GB of free storage</b> for any notes and documents you create. https://support.apple.com/en-us/HT204174</ref> 5 GB (Apple users only); ;;;yes, 94%
+iDrive;yes;yes, but you have to manually run perl scripts.;yes;yes;yes;yes;no;;no;no;yes;;iDrive;;yes;yes;yes;yes;unknown;5 GB;;yes;;
+Infrascale;yes;yes;yes;yes;yes;yes;optional;optional;yes;yes;no;yes;Infrascale;no;yes;yes;yes;yes;USA, CAN, UK, ZAF, AUS, NZ, JAM;no;No limit;yes;optional; 
+Iperius Online Storage;yes;no;no;;;yes;Optional;?;50, 100, 200, 500 GB;no;no;yes;Iperius Online Storage; ;yes;yes;no;Iperius Online Storage; ; ;No limit; ; ;
+Intronis;yes;no;yes;yes;yes;yes;yes;configurable;yes;no;yes;yes;Intronis;yes;yes;yes;no;yes;USA, CAN;no;No limit;yes;optional;yes
+Jumpshare;yes;no;yes;no;yes;yes; ; ;yes;no;no;yes;Jumpshare; ;yes;yes;yes;no;USA, EUR;2 GB;250 MB on free, Unlimited on Jumpshare Plus;;;yes
+Provider;Win.1;Linux1;Mac1;Android1;iOS1;Encrypted storage;Zero knowledge2;Secure Key Management3;Limited MB plan4;Unlimited MB plan4;$/MB plan4;Unlimited BW 16;Provider;Cloud hosted Net Drive5;Sync7;Autodetect changes12;Public file hosting8;Physical media restore9;Server location10;Free online storage (non-trial)13;Maximum per-file size;External hard drive support14;Hybrid Option15;Green Hosting
+Jungle Disk;yes;yes;yes;yes;yes;yes;yes;yes; ; ;yes;yes;Jungle Disk;yes;yes;yes;yes; ;USA, EUR;no;No limit in Backup Vault;yes;;partial, Amazon AWS or Rackspace Cloud Files.
+KeepVault;yes;no;no;;;yes;yes;?;yes;no;yes;;KeepVault; ;;yes; ; ;USA;;20 GB;;;
+Livedrive;yes;no;yes;yes;yes;no;no;?;yes;Online Backup only;no;yes;Livedrive;yes (paid-only);yes;yes;yes;yes;UK;no;No limit;yes;; 
+MediaFire;yes;Upload only [http://www.omgubuntu.co.uk/2012/04/mediafire-jump-on-cloud-storage-bandwagon-offer-linux-uploader];yes;yes;yes;no;no;?;yes;no;yes;yes;MediaFire;no;yes;yes;yes; ;USA;10 GB;No Limit;no;no;
+Mega;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;Mega Ltd.;no;yes;yes, using MEGAsync client;yes;no;EUR, NZ;15 GB + 35 GB first 30 days;No limit;no;no;
+Memopal;yes;yes;yes;yes;yes;yes;no;?; ; ;yes;;Memopal; ;yes;;yes;yes;USA, EUR, Asia;3 GB;5 GB;;;
+MiMedia;Yes;No;No; ;;Yes;no;?;Yes;No;Yes;Yes;MiMedia;No;No;Yes;No;No;USA;7 GB;3 GB;Yes;;
+Mozy;yes;yes;yes;yes;yes;yes;optional;?;yes;no; ;;Mozy; ;yes;yes;;yes;USA, EUR;2 GB;No limit;yes;No;
+OneDrive;yes;no, see note;yes;yes;yes;no;no;?;yes;no;;;OneDrive;no;yes;;;;;5 GB for new users, 25 GB for older users;10 GB;;;partial, 29%
+SpiderOak;yes;yes;yes;Download Only;Download Only;yes;yes;?;yes;Business only (min 10 users);yes;yes;SpiderOak;no;yes;yes;yes; ; ;(2 GB free for 60 days only);No limit;yes;yes;
+Provider;Win.1;Linux1;Mac1;Android1;iOS1;Encrypted storage;Zero knowledge2;Secure Key Management3;Limited MB plan4;Unlimited MB plan4;$/MB plan4;Unlimited BW 16;Provider;Cloud hosted Net Drive5;Sync7;Autodetect changes12;Public file hosting8;physical media restore9;Server location10;Free online storage (non-trial)13;Maximum per-file size;External hard drive support14;Hybrid Option15;Green Hosting
+SugarSync;yes;no;yes;yes;yes;yes;no;?;yes;no;no;;SugarSync;;yes;yes;yes (SugarSync account needed for folders);;;no;100 MB (web) No limit (client app);;;
+Syncplicity;Yes;No;Yes;Yes;Yes;yes;no;?;;;Yes;;Syncplicity;;Yes;Yes;Yes;;USA;10 GB;;;;
+Tarsnap;Yes via Cygwin;yes;yes;no;no;Yes;yes;?;no;no;yes; ;Tarsnap;no; ; ; ; ; ;no; ; ; ;no, Amazon AWS
+Tencent Weiyun;yes;no;yes;yes;yes;yes;no;?;no;no;yes;;Tencent; ;yes;yes;yes; ;CHN;10 GB;1 GB (free), 20 GB (paid);;dunno;
+Trend Micro SafeSync;yes;partial;yes;yes, via Storage Made Easy client;yes, via Storage Made Easy client;;no;?; ; ;yes;;Trend Micro SafeSync;yesJune 2014;yes;;yes; ;UK; ;;;;
+Tresorit;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;Tresorit;yes;yes;yes;yes;no;EUR;3 GB;0.5 GB (free), 10 GB (paid);yes;no;
+Unitrends Vault2Cloud;yes;yes;yes;;;yes;no;?;no;yes;yes;;Unitrends Vault2Cloud;yesJune 2014;yes;;no;yes;USA;no;;;;
+UpdateStar Online Backup;yes;no;no;;;yes;no;?;yes;yes;;;UpdateStar Online Backup;;;;;;EUR;;;;;
+Yandex.Disk;yes;yes;yes;yes;yes;no;no;?;yes; ;;;Yandex.Disk;yes;yes;yes;yes;;RUS;10 GB;50 GB;;;
+Zetta.net;yes;yes;yes;;;yes;no;?;yes;no;yes;yes;Zetta.net;yes;yes;yes;no;yes;USA;no;No limit;yes;yes;
+Zmanda Cloud Backup;yes;no;no;;;optional;optional;?; ; ;yes;;Zmanda Cloud Backup;yesJune 2014; ;; ;yes;USA, EUR, SIN, JPN; ;No limit;yes;yes;partial, Amazon AWS or Google Cloud Storage
+Provider;Win.1;Linux1;Mac1;Android1;iOS1;Encrypted storage;Zero knowledge2;Secure Key Management3;Limited MB plan4;Unlimited MB plan4;$/MB plan4;Unlimited BW 16;Provider;Cloud hosted Net Drive5;Sync7;Autodetect changes12;Public file hosting8;physical media restore9;Server location10;Free online storage (non-trial)13;Maximum per-file size;External hard drive support14;Hybrid Option15;Green Hosting

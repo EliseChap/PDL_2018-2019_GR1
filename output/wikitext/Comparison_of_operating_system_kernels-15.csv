@@ -1,0 +1,5 @@
+ Kernel name; Asynchronous connection-oriented; Synchronous connection-oriented; Link management protocol; Host/controller interface; Logical link control and adaptation protocol; Bluetooth network encapsulation protocol; Radio frequency communication; Service discovery protocol; Telephony control protocol; Audio/visual control transport protocol; Audio/visual data transport protocol; Object exchange; CMTP; HIDP; HCRP; CAPI; PPP
+FreeBSD kernel;dunno;dunno;dunno;yes;yes;dunno;yes;yes;dunno;dunno;dunno;no;dunno;dunno;dunno;dunno;dunno
+Linux;dunno;yes;dunno;yes;yes;yes;yes;dunno;dunno;dunno;dunno;dunno;yes;yes;dunno;dunno;dunno
+macOS XNU Kernel;dunno;dunno;dunno;dunno;yes;dunno;yes;yes;dunno;dunno;dunno;no;dunno;dunno;dunno;dunno;dunno
+Kernel name;ACL;SCO;LMP;HCI;L2CAP;BNEP;RFComm.;SDP;TCP;AVTCP;AVDTP;OBEX;CMTP;HIDP;HCRP;CAPI;PPP

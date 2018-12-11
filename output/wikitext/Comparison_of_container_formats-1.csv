@@ -1,0 +1,50 @@
+Name and file extension;Proprietor / developer;License;Variable bit rate audio;Variable frame rate;Chapters;Captions / subtitles;Video coding format;Audio coding format;Metadata / tags;Menus;Streaming;Attachment support;3D, codecs;3D, container;Hardware players
+3GP;3GPP;dunno;yes;yes;dunno;[[3GPP Timed Text]];[[H.263]], [[MPEG-4 Part 2]] and [[H.264/MPEG-4 AVC]];[[Adaptive Multi-Rate|AMR-NB]], [[AMR-WB]], [[AMR-WB+]], [[Advanced Audio Coding|AAC]], [[HE-AAC]] and HE-AAC v2;dunno;no;yes;dunno;dunno;dunno;dunno
+3G2;3GPP2;dunno;yes;yes;dunno;[[3GPP Timed Text]];[[H.263]], [[MPEG-4 Part 2]] and [[H.264/MPEG-4 AVC]];[[Adaptive Multi-Rate|AMR-NB]], [[AMR-WB]], [[Advanced Audio Coding|AAC]], [[HE-AAC]], [[EVRC]], [[EVRC-B]], EVRC-WB, 13K&nbsp";([[QCELP]]), [[Selectable Mode Vocoder|SMV]] or [[VMR-WB]];dunno;no;yes;dunno;dunno;dunno;dunno
+Advanced Systems Format (.asf, .wma, .wmv);Microsoft;Proprietary, patent encumbered;yes;yes;yes;yes;Almost anything through [[Video for Windows|VFW]] or [[DirectX Media Objects|DMO]]"; [[H.264/AVC]] is problematic;Almost anything through [[Audio Compression Manager|ACM]] or [[DirectX Media Objects|DMO]]"; [[Vorbis]] is problematic;yes;no;yes;dunno;dunno;dunno;yes
+AVI;Microsoft;dunno;Yes;Yes;Yes, via third party modifications;Yes, via third party modifications;Almost anything through [[Video for Windows|VFW]];Almost anything through [[Audio Compression Manager|ACM]]"; [[Vorbis]] is problematic;yes through RIFF chunks;no;no;no;dunno;no;yes
+DivX Media Format (.divx);DivX, Inc.;dunno;yes;yes;yes;yes;[[MPEG-4 Part 2]] video encoded to meet DivX profiles;[[MP3]], [[Pulse-code modulation|PCM]], [[Dolby Digital|AC-3]];dunno;yes;yes;dunno;dunno;dunno;yes
+EVO;DVD Form;Patent encumbered;yes;yes;yes;yes;[[MPEG-2 Part 2]], [[H.264/MPEG-4 AVC]], [[VC-1]];[[Dolby Digital|AC-3]], [[Dolby Digital Plus|E-AC-3]], [[Dolby TrueHD]], [[LPCM]], [[DTS Coherent Acoustics|DTS]], [[Digital Theatre Systems|DTS]]-HD, [[MPEG-2]] Part 3;dunno;yes;dunno;dunno;dunno;dunno;dunno
+F4V (Flash Video);Adobe Systems;Patent encumbered;dunno;yes;dunno;dunno;[[H.264/MPEG-4 AVC]];[[MP3]], [[Advanced Audio Coding|AAC]], [[HE-AAC]];yes;no;yes;dunno;dunno;dunno;dunno
+FLV (Flash Video);Adobe Systems;Patent encumbered;dunno;yes;no;no;[[Sorenson codec|Sorenson]], [[VP6]], Screen Video, [[H.264/MPEG-4 AVC]];[[Speex]];yes;no;yes;dunno;dunno;dunno;dunno
+Matroska (.mkv, .mk3d, .mka, .mks, .webm);CoreCodec, Inc.;Freely licensed;yes;yes;yes;yes;yes2Virtually anything (.webm restricts to VP8 and VP9);yes2Virtually anything (.webm restricts to Vorbis and Opus);yes;pending;yes;yes;yes;yes;yes
+MCF; ;BSD-style license for specs, GNU for tools;yes;yes;yes;yes;Not fully specified;Not fully specified;yes;Possible;yes;yes;dunno;dunno;no
+MP4;MPEG;Patent encumbered;yes;yes;In specially formatted text track ([[QuickTime]])"; 2) In userdata atom (started by [[Nero Digital]]) can't interact with the sceneDescription, or via segmentDescriptor;[[MPEG-4 Part 17|ttxt]], [[VobSub]]s with private objectTypeIndication not usable with the sceneDescription (started by [[Nero AG|Nero]]), [[BIFS]];[[High_Efficiency_Video_Coding|HEVC/MPEG-H Part 2/H.265]], [[MPEG-2 Part 2]], [[MPEG-4_Part_2#Advanced_Simple_Profile_.28ASP.29|MPEG-4 ASP]], [[H.264/MPEG-4 AVC]], [[H.263]], [[VC-1]], [[Dirac_(video_compression_format)|Dirac]], others;MPEG-2/4 (HE)-AAC, MPEG-1/2 Layers I, II, III (MP3), [[Dolby Digital|AC-3]], Apple Lossless, [[Audio Lossless Coding|ALS]], [[MPEG-4 SLS|SLS]], Vorbis(with private objectTypeIndication), others;yes;yes;yes;yes;yes;dunno;yes
+MPEG Video File (.mpg, .mpeg);MPEG;Patent encumbered;yes;yes;no;no;[[MPEG-1]], [[MPEG-2]];MPEG-1 Layers I, II, III (mp3), other formats only in private streams: [[LPCM]];no;no;yes;dunno;dunno;dunno;yes
+MPEG program stream PS (.m2p, .ps);MPEG;Patent encumbered;yes;dunno;Only in private streams — used in [[VOB]] files on [[DVD]]s;Only in private streams — used in [[VOB]] files on [[DVD]]s;[[VC-1]], [[H.264]];MPEG-1 Layers I, II, III (mp3), other formats only in private streams: [[Advanced Audio Coding|AAC]], [[Dolby Digital|AC-3]], [[LPCM]], [[DTS Coherent Acoustics|DTS]];no;Only in private streams — used in [[VOB]] files on [[DVD]]s;dunno;dunno;dunno;dunno;yes
+MPEG transport stream TS (.ts);MPEG;Patent encumbered;yes;yes;no;possible via ETSI EN 300 743;[[MPEG-1]], [[MPEG-2 Part 2]], [[MPEG-4_Part_2#Advanced_Simple_Profile_.28ASP.29|MPEG-4 ASP]], [[H.264]], [[JPEG 2000]], [[TICO (codec)|TICO]], other formats in private streams: [[VC-1]], [[Dirac_(video_compression_format)|Dirac]];MPEG-1 Layers I, II, III (mp3), [[Advanced Audio Coding|AAC]], other formats in private streams: [[Dolby Digital|AC-3]], [[LPCM]], [[DTS Coherent Acoustics|DTS]];no;no;yes;dunno;dunno;dunno;yes
+BDAV MPEG-2 transport stream (.m2ts);Blu-ray Disc Association;Proprietary;yes;yes;yes;yes;[[MPEG-2 Part 2]], [[H.264]], [[VC-1]];[[Dolby Digital|AC-3]], [[Digital Theatre System|DTS]], [[LPCM]], Dolby Digital Plus, DTS HD, Dolby Lossless;yes;yes;yes;yes;yes;yes;yes
+MXF;SMPTE;dunno;yes;yes;dunno;yes;yes2 Virtually anything;yes2 Virtually anything;yes;no;dunno;dunno;dunno;dunno;no
+Ogg;Xiph.org;Patent-free, [[Free software]] implementations available;yes;yes;yes;[[Ogg Writ]], [[Ogg Kate]];and almost anything else via [[Video for Windows|VFW]];and almost anything else via [[Audio Compression Manager|ACM]];[[Continuous Media Markup Language|CMML]], [[Ogg Skeleton]], [[Vorbis comment]];no;yes;dunno;dunno;dunno;yes
+QuickTime (.mov, .qt);Apple;Proprietary;yes;yes;yes;yes;[[MPEG-2]] (OS X Lion or later),"
+[[MPEG-4 Part 2]],"
+[[H.264]],"
+[[H.263]],"
+[[H.261]],"
+[[Apple ProRes]],"
+Apple Pixlet,"
+Cinepak,"
+Component Video,"
+DV,"
+DVC Pro 50,"
+Graphics,"
+Motion JPEG,"
+Photo JPEG,"
+[[QuickTime Animation]],"
+Sorenson Video 2,"
+Sorenson Video 3;AAC (MPEG-4 Audio),"
+HE-AAC,"
+Apple Lossless,"
+MP3,"
+AMR Narrowband,"
+MS ADPCM,"
+QDesign Music 2,"
+Qualcomm PureVoice (QCELP),"
+IMA 4:1,"
+MACE 3:1 (Mac OS X v10.6.x only),"
+MACE 6:1 (Mac OS X v10.6.x only),"
+ALaw 2:1,"
+ULaw 2:1;yes;yes;yes;yes;yes;yes;yes
+RMVB;RealNetworks;Proprietary;dunno;yes;dunno;yes;[[RealVideo]] 8, 9, 10;[[Advanced Audio Coding|(HE)-AAC]], [[Cook Codec]], [[Vorbis]], [[RealAudio]] Lossless;dunno;no;yes;dunno;dunno;dunno;dunno
+VOB+IFO;DVD Forum;Proprietary;yes;yes;yes;yes;[[MPEG-2 Part 2]], [[MPEG-1 Part 2]];[[Dolby Digital|AC-3]], [[LPCM]], [[DTS Coherent Acoustics|DTS]], MPEG-2 Part 3, [[MPEG-1 Layer II]];no;yes;no;no;no;no;yes
+Name and file extension;Proprietor / developer;License;Variable bit rate audio;Variable frame rate;Chapters;Captions / subtitles;Video coding format;Audio coding format;Metadata / tags;Menus;Streaming;Attachment support;3D, codecs;3D, container;Hardware players

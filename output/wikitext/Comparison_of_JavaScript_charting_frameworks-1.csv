@@ -1,0 +1,59 @@
+Library Name;;;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Other Features;Interactivity;Interactivity;Rendering Technologies;Rendering Technologies;Rendering Technologies;Databinding
+Library Name;License;Free;Line;Timeline;Scatter;Area;Pie;Donut;Bullet;Radar;Funnel;Gantt;Network;Grouped;Stacked;Negative;Discrete;Horizontal;3D;Legends;Mouse Over;onClick;HTML5 Canvas;SVG;VML;AxisXY
+ ;proprietary;or commercial;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;If empty
+ ;proprietary;Paid for commercial applications.;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes
+ ;MIT;yes;yes;yes;yes;yes;yes;yes;no;no;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;no;If empty
+ ;MIT;yes;yes;yes;yes;yes;yes;yes;no;no;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;no;yes
+ ;proprietary;no;yes;yes;yes;yes;yes;yes;no;no;yes;no;no;no;yes;yes;yes;yes;If empty;yes;yes;yes;yes;no;no;yes
+ ;GPLv3, name/email required for source link;yes;yes;no;yes;yes;yes;no;no;no;no;no;yes;yes;yes;no;no;yes;If empty;yes;yes;yes;yes;no;yes;If empty
+ ;or MIT;yes;yes;no;yes;yes;yes;yes;no;no;no;no;no;yes;yes;yes;yes;yes;If empty;no;yes;yes;no;yes;no;If empty
+ ;MIT;yes;yes;yes;yes;yes;yes;yes;no;yes;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;no;no;no
+ ;free;yes;yes;no;no;yes;yes;yes;no;yes;no;no;no;no;yes;yes;no;yes;If empty;yes;yes;yes;yes;no;no;If empty
+ ;proprietary;Free basic edition;no;no;yes;yes;yes;no;no;no;no;no;no;yes;no;no;yes;If empty;yes;yes;yes;yes;no;no;If empty;If empty
+ ;MIT;yes;no;no;no;no;no;no;no;no;no;no;yes;no;no;no;no;no;If empty;no;yes;yes;yes;no;no;yes
+D3.js, formerly Protovis;[[BSD Licenses|BSD-3]];yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;yes;no;yes
+dc;Apache 2.0;yes;yes;no;yes;yes;yes;yes;yes;no;no;no;no;yes;yes;no;no;no;If empty;no;yes;yes;no;yes;no;If empty
+DevExtreme;proprietary;Non-commercial or commercial;no;yes;yes;yes;yes;yes;yes;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;no;If empty;If empty
+DHTMLX Charts;GPL;yes;yes;no;yes;yes;yes;yes;no;yes;no;yes;no;yes;yes;yes;no;yes;If empty;yes;yes;yes;yes;no;yes;If empty
+dimple;MIT;yes;yes;no;yes;yes;yes;yes;no;no;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;no;yes
+Dojo Charting;BSD or AFL;yes;yes;no;yes;yes;yes;no;no;no;no;no;no;yes;yes;yes;no;yes;If empty;yes;yes;yes;yes;yes;yes;If empty
+Dygraphs;MIT;yes;yes;yes;no;yes;no;no;no;no;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;no;no;If empty
+Echarts;[[BSD Licenses|BSD-3]];yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;no;yes;yes;yes;no;yes;yes;yes;yes;yes;yes;no;no;yes
+Factmint Charts;proprietary;Non-commercial or commercial;no;yes;yes;yes;yes;no;no;no;no;no;no;no;yes;yes;yes;If empty;yes;yes;yes;no;yes;no;If empty;If empty
+Flot Charts;MIT;yes;yes;yes;yes;yes;yes;yes;no;no;no;no;no;no;yes;no;no;no;If empty;yes;yes;yes;yes;no;no;If empty
+FusionCharts;proprietary;Paid for commercial applications.;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;yes;If empty;If empty
+Flotr2;MIT;yes;yes;no;yes;no;yes;no;no;yes;no;no;no;yes;yes;yes;no;yes;If empty;yes;yes;yes;yes;no;no;If empty
+;MIT;yes;no;yes;yes;yes;yes;no;no;no;no;no;no;yes;yes;yes;yes;yes;yes;yes;no;yes;no;yes;Google Charts;free
+yes;yes;yes;yes;yes;yes;yes;no;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;gRaphael;MIT
+yes;yes;no;yes;no;yes;no;no;no;no;no;no;yes;yes;no;no;yes;If empty;yes;yes;no;no;yes;no;If empty;Highcharts, Highstock;proprietary
+Paid for commercial applications.;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;Yes;yes;yes;Yes;Yes;Yes;Yes;No;Yes;Yes;Yes;Library Name;
+;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Other Features;Interactivity;Interactivity;Rendering Technologies;Rendering Technologies;Rendering Technologies;Databinding;License;
+Library Name;Line;Timeline;Scatter;Area;Pie;Donut;Bullet;Radar;Funnel;Gantt;Network;Grouped;Stacked;Negative;Discrete;Horizontal;3D;Legends;Mouse Over;onClick;HTML5 Canvas;SVG;VML;AxisXY;JenScript;[[BSD Licenses|BSD-3]]
+yes;yes;yes;yes;yes;yes;yes;no;no;no;yes;yes;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;no;yes;jqPlot;MIT or GPLv2
+yes;yes;no;yes;yes;yes;yes;no;no;no;no;no;yes;yes;yes;no;yes;If empty;yes;yes;yes;yes;no;no;If empty; ;proprietary
+or commercial;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;no;yes;yes;yes;yes;yes;no;yes;yes;yes;yes;yes;yes;If empty; ;proprietary
+no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes;yes;yes;no;yes;yes;yes;no;yes;no;If empty; ;proprietary
+or commercial;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;MetricsGraphics;Mozilla Public License Version 2.0
+yes;yes;no;yes;yes;no;no;no;no;no;no;no;yes;yes;no;yes;yes;If empty;yes;yes;yes;no;yes;yes;If empty;NextCharts;Apache 2.0
+yes;yes;no;no;yes;yes;no;no;no;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;no;no;yes;NVD3;Apache 2.0
+yes;yes;no;yes;yes;yes;yes;yes;no;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;no;If empty;OLAPCharts;proprietary
+Free basic edition;no;yes;yes;yes;yes;yes;yes;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;no;no;If empty;If empty;plotly.js;MIT
+yes;yes;Yes;yes;yes;yes;yes;via Bars&Scatter;yes;via Python;via Python;via Python;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;no;If empty;PlusCharts;Free
+yes;yes;no;no;yes;yes;no;no;no;no;no;no;yes;yes;no;no;yes;If empty;yes;yes;yes;no;yes;yes;If empty;ReactiveChart;MIT
+yes;yes;yes;yes;yes;yes;yes;no;no;no;no;yes;yes;yes;yes;yes;no;yes;yes;yes;yes;yes;no;yes;If empty;RGraph;MIT
+yes;yes;no;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes;no;yes;yes;yes;yes;yes;yes;yes;no;If empty;rickshaw;MIT
+yes;yes;no;yes;yes;no;no;no;no;no;no;no;yes;yes;no;no;no;If empty;yes;yes;no;no;yes;no;If empty;Shield UI;proprietary
+Non-commercial or commercial;no;yes;yes;yes;yes;no;yes;no;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;yes;If empty;If empty;Syncfusion;proprietary
+or commercial;yes;yes;yes;yes;yes;Yes;yes;yes;Yes;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;yes;yes;yes;If empty;TeeChart JS;MIT
+yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;If empty;Vaadin Charts;proprietary
+no;yes;yes;yes;yes;yes;no;yes;yes;no;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;no;yes;yes;If empty;If empty;VanCharts;proprietary
+or commercial;yes;yes;yes;yes;yes;yes;yes;no;yes;no;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;no;yes;If empty;If empty;VisJS;Apache 2.0 and MIT
+yes;yes;yes;yes;yes;no;no;no;no;no;yes;yes;yes;yes;yes;no;no;yes;yes;yes;yes;yes;no;no;If empty;Webcharts;MIT
+yes;yes;yes;yes;no;no;no;yes;no;no;no;no;yes;yes;no;no;yes;If empty;yes;yes;yes;no;yes;no;If empty;Webix UI;GPL
+yes;yes;no;yes;yes;yes;yes;no;yes;no;no;no;yes;yes;yes;no;yes;If empty;yes;yes;yes;yes;no;yes;yes;xcharts;MIT
+yes;yes;no;no;no;no;no;no;no;no;no;no;yes;no;no;no;no;If empty;no;yes;yes;no;yes;no;If empty;YUI Charts;[[BSD Licenses|BSD-3]]
+yes;yes;no;no;yes;yes;no;no;no;no;no;no;yes;yes;no;no;no;If empty;yes;yes;no;yes;yes;yes;If empty;ZingChart;proprietary
+or commercial;no;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;yes;yes;yes;If empty;ZoomCharts;proprietary
+Non-commercial or commercial;yes;yes;yes;yes;yes;yes;no;no;no;yes;yes;yes;yes;yes;yes;If empty;yes;yes;yes;yes;yes;no;If empty;If empty;Library Name;License
+Free;Line;Timeline;Scatter;Area;Pie;Donut;Bullet;Radar;Funnel;Gantt;Network;Grouped;Stacked;Negative;Discrete;Horizontal;3D;Legends;Mouse Over;onClick;HTML5 Canvas;SVG;VML;AxisXY;;
+Library Name;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Supported Bar Chart Types;Other Features;Interactivity;Interactivity;Rendering Technologies;Rendering Technologies;Rendering Technologies;Databinding;;

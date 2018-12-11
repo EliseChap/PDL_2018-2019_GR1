@@ -1,0 +1,48 @@
+; Austria; Belgium; CzechRepublic; Denmark; Estonia; Finland; France; Germany; Greece; Hungary; Iceland; Ireland; Italy; Luxembourg; Netherlands; Norway; Poland; Portugal; Romania; Russia&Belarus; Slovakia; Slovenia; Spain; Sweden; Switzerland&Liechtenstein; Turkey; Ukraine; UnitedKingdom
+Give Way ahead; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;; ; ; 
+Stop ahead; ; ; ; ; ; ; ; ; ; ;; ; ; ; ; ; ; ; ; ; ; ; ;; ; ; ; 
+Traffic signals ahead; ; ; ; ; ; ; ; ; ; ; ; ;or; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Roundabout ahead; ;NOTUSED; ; ; ; ; ;NOTUSED; ; ; ;or; ; ; ; ; ; ; ; ; ; ; ; ;REPLACEDby signno. 4.54; ; ; 
+Two-way traffic ahead; ; ; ; ;or; ; ; ; ; ; ;or; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;or
+Traffic queues likely ahead; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Level crossing without barriers ahead; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Level crossing with barriers ahead; ; ; ; ; ; ; ; ; ; ;NOTUSED;or; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Level crossing; ; ; ; ; ; ; ; ; ; ;NOTUSED;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;(no gates)
+Level crossing (multiple tracks); ; ; ; ; ; ; ;NOTUSED; ; ;NOTUSED;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ;DEPRE-CATED; ; ;NOTUSED
+;Austria;Belgium;CzechRepublic;Denmark;Estonia;Finland;France;Germany;Greece;Hungary;Iceland;Ireland;Italy;Luxembourg;Netherlands;Norway;Poland;Portugal;Romania;Russia&Belarus;Slovakia;Slovenia;Spain;Sweden;Switzerland&Liechtenstein;Turkey;Ukraine;UnitedKingdom
+Tram crossing; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Crossroads with priority to the right; ; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ;; ; ; ; ; ; ; ; ; ; ; ; ;NOTUSED
+Crossroads with a minor road; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Junction with a minor side road; ; ; ;; ; ;NOTUSED;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;DISUSED; ; ; 
+Merging traffic;NOTUSED;NOTUSED;NOTUSED;NOTUSED;NOTUSED; ;NOTUSED;NOTUSED; ; ; ; ; ; ;NOTUSED;NOTUSED; ; ;NOTUSED; ;NOTUSED; ; ; ;DISUSED;NOTUSED;NOTUSED; 
+Road narrows on both sides; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Road narrows on right (left); ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Dangerous crosswinds; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;or; ; ;DEPRE-CATED; ; ; 
+Low-flying aircraft; ; ; ;or; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;or;DEPRE-CATED; ; ;or
+Steep descent; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Steep ascent; ; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+;Austria;Belgium;CzechRepublic;Denmark;Estonia;Finland;France;Germany;Greece;Hungary;Iceland;Ireland;Italy;Luxembourg;Netherlands;Norway;Poland;Portugal;Romania;Russia&Belarus;Slovakia;Slovenia;Spain;Sweden;Switzerland&Liechtenstein;Turkey;Ukraine;UnitedKingdom
+Road bump ahead; ; ; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Uneven road ahead; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Curve; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Double curve; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Slippery road surface; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Loose road surface; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Soft verges or dangerous shoulder; ;NOTUSED; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ; 
+Children; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Pedestrian crossing ahead; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Cyclists; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Falling rocks or debris; ; ; ; ; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; 
+;Austria;Belgium;CzechRepublic;Denmark;Estonia;Finland;France;Germany;Greece;Hungary;Iceland;Ireland;Italy;Luxembourg;Netherlands;Norway;Poland;Portugal;Romania;Russia&Belarus;Slovakia;Slovenia;Spain;Sweden;Switzerland&Liechtenstein;Turkey;Ukraine;UnitedKingdom
+Caution, snow or ice; ;; ; ; ;NOTUSED;NOTUSED;or; ;; ; ; ; ; ; ; ; ;;(Belarus); ; ; ; ; ; ;; 
+Caution, fog likely; ; ; ; ; ;NOTUSED;NOTUSED; ; ; ; ; ; ; ; ; ;NOTUSED; ; ;NOTUSED; ; ; ; ; ; ; ;NOTUSED
+Opening or swing bridge; ; ; ; ;NOTUSED; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ; 
+Unprotected quayside or riverbank; ; ;NOTUSED; ; ; ; ; ; ;or; ; ; ; ; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ;or
+Domestic animals; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Wild animals; ; ; ; ; ;or; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Tunnel ahead;NOTUSED;NOTUSED; ; ;NOTUSED;NOTUSED;NOTUSED;NOTUSED; ; ; ; ;NOTUSED;NOTUSED;NOTUSED; ;NOTUSED; ; ; ; ; ;NOTUSED; ;REPLACEDby signno. 4.07a; ; ; 
+Accident area / accident ahead;NOTUSED;NOTUSED; ;NOTUSED; ;NOTUSED; ; ;NOTUSED; ;NOTUSED; ; ; ; ; ; ; ; ;(Belarus); ; ; ; ; ;NOTUSED; ; 
+Roadworks ahead; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Other danger; ; ; ; ; ;or (Åland); ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Other danger (temporary);NOTUSED;NOTUSED;NOTUSED;NOTUSED; ;NOTUSED; ;NOTUSED; ;NOTUSED;NOTUSED;NOTUSED; ;NOTUSED;NOTUSED; ;NOTUSED;NOTUSED;NOTUSED;NOTUSED; ;NOTUSED; ;NOTUSED;NOTUSED; ;NOTUSED;NOTUSED
+;Austria;Belgium;CzechRepublic;Denmark;Estonia;Finland;France;Germany;Greece;Hungary;Iceland;Ireland;Italy;Luxembourg;Netherlands;Norway;Poland;Portugal;Romania;Russia&Belarus;Slovakia;Slovenia;Spain;Sweden;Switzerland&Liechtenstein;Turkey;Ukraine;UnitedKingdom

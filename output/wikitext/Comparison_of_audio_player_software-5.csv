@@ -1,0 +1,32 @@
+Audio player;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossless compression;Lossless compression;Lossless compression;Lossless compression;Lossless compression;Lossless compression
+Audio player;MP3;WMA;RealAudio;Vorbis;Musepack;AAC;Dolby AC-3;VQF;Opus;APE;FLAC;ALAC;SHN;WV;WMA L
+AIMP;yes;yes;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes
+Amarok;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes;yes;yes
+Audacious;yes;yes;no;yes;yes;yes;yes;dunno;yes;yes;yes;yes;no;yes;dunno
+Audion;yes;no;no;yes;no;no;no;dunno;dunno;no;no;no;no;no;dunno
+Banshee;yes;dunno;dunno;yes;dunno;dunno;dunno;dunno;dunno;no;dunno;dunno;dunno;dunno;dunno
+cmus;yes;yes;no;yes;yes;yes;yes;dunno;yes;yes;yes;yes;yes;yes;dunno
+Cog;yes;no;no;yes;yes;yes;no;dunno;dunno;yes;yes;yes;yes;yes;dunno
+Exaile;yes;yes;yes;yes;yes;yes;yes;dunno;yes;yes;yes;yes;yes;yes;dunno
+foobar2000;yes;yes;no;yes;yes;yes;partial;no;yes;yes;yes;yes;yes;yes;yes
+Groove Music;Yes;Yes;No;No;;Yes;Yes;;;;Yes;;;;
+JRiver Media Center;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes
+JuK;yes;no;no;yes;yes;no;no;dunno;dunno;yes;yes;no;yes;no;dunno
+Media Jukebox;yes;yes;yes;yes;yes;yes;yes;dunno;dunno;yes;yes;yes;yes;yes;dunno
+MediaMonkey;yes;yes;no;yes;yes;partial;partial;dunno;no;yes;yes;yes;partial;partial;dunno
+MPXPLAY;yes;yes;no;yes;yes;yes;yes;dunno;partial;yes;yes;no;no;yes;dunno
+Music Player Daemon;yes;yes;partial;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;dunno
+MusicBee;yes;yes;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes
+Musicmatch Jukebox;yes;yes;no;no;no;no;no;dunno;dunno;no;no;no;no;no;dunno
+musikCube;yes;partial;no;yes;partial;partial;partial;dunno;dunno;yes;yes;no;no;partial;dunno
+Quod Libet;yes;yes;yes;yes;yes;yes;yes;dunno;yes;yes;yes;yes;yes;yes;dunno
+Rhapsody;yes;yes;yes;no;no;yes;no;dunno;dunno;no;no;no;no;no;dunno
+Rhythmbox;yes;yes;yes;yes;yes;yes;yes;dunno;yes;yes;yes;yes;yes;yes;dunno
+Sonique;yes;yes;no;yes;partial;partial;no;dunno;dunno;no;no;no;no;no;dunno
+Spotify;yes;no;no;no;no;no;no;no;no;no;no;no;no;no;no
+Style Jukebox;yes;yes;no;no;no;yes;no;no;no;no;yes;yes;no;no;yes
+Winamp;yes;yes;yes;yes;yes;yes;dunno;dunno;dunno;dunno;yes;dunno;dunno;yes;dunno
+XMMS;yes;partial;partial;partial;yes;yes;no;yes;dunno;partial;yes;no;partial;yes;dunno
+XMPlay;yes;yes;yes;yes;yes;yes;yes;dunno;yes;yes;yes;yes;yes;yes;dunno
+Zinf;yes;no;no;yes;no;no;no;dunno;dunno;no;no;no;no;no;dunno
+Audio player;MP3;WMA;RealAudio;Vorbis;Musepack;AAC;Dolby AC-3;VQF;Opus;APE;FLAC;ALAC;SHN;WV;WMA L

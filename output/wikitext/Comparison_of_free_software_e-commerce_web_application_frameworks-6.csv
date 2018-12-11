@@ -1,0 +1,19 @@
+;Coupons;Gift certificates;Membership discounts;Membership-only categories;Membership-only products;Reward points;Special offers
+Apache OFBiz;yes;yes;yes;no;yes;no;yes
+Batavi;no;no;yes;no;no;no;yes
+Bigcommerce;yes;yes;yes;yes;yes;3rd party module;yes
+Drupal Commerce;yes;yes;yes;yes;yes;no;yes
+KonaKart;yes;yes;yes;yes;yes;yes;yes
+LemonStand;yes;3rd party module;yes;yes;yes;no;yes
+Magento;yes;yes;yes;yes;yes;yes (Enterprise Edition);yes
+nopCommerce;yes;yes;yes;yes;yes;yes;yes
+osCommerce;Add-on;Add-on;no;no;no;no;yes
+pimcore;yes;yes;yes;yes;yes;yes;yes
+PrestaShop;yes;yes;yes;yes;yes;yes;yes
+Sana Commerce;yes;no;yes;yes;yes;no;yes
+Shopify;yes;yes;yes;yes;yes;yes;yes
+SupaDupa;yes;yes;no;no;no;no;yes
+Virto Commerce;yes;no;yes;yes;yes;no;yes
+WooCommerce;yes;yes;yes;yes;yes;yes;yes
+Zen Cart;yes;yes;yes;Add-on;Add-on;yes;yes
+;Coupons;Gift certificates;Membership discounts;Membership-only categories;Membership-only products;Reward points;Special offers

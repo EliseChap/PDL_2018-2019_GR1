@@ -1,0 +1,39 @@
+ Chart type / Framework; Chart type / Framework; Adobe Flex built-in charts; ; ; ; ; IBM ILOG Elixir; ; ; ; ; 
+Cost;Cost;free;free;free;free;nonfreecontact vendor for prices;nonfree £556 (for EULA),contact vendor for OEM;free for non-commercial,€2'500 (VAT excluded) forfull 1-developer package;nonfreecontact vendor for prices;free (with link to amCharts) link-free from €85};free (with link to AnyChart) Team license available};free
+License;License;[[Mozilla Public License|MPL]];[[MIT license|MIT]];[[MIT license|MIT]];[[BSD License|BSD]];proprietary;proprietary;proprietary;proprietary;proprietary;proprietary;free
+Open source;Open source;yes;yes;yes;yes;no;no;no;no;yes;yes;no
+Bar/Column charts;Simple;yes;yes;yes;yes;yes;yes;no;no;yes;yes;yes
+Bar/Column charts;Stacked;yes;yes;yes;yes;no;yes;no;no;yes;yes;yes
+Bar/Column charts;Floating (Range);yes;yes;no;no;no;no;no;no;yes;yes;yes
+Bar/Column charts;Waterfall;yes;yes;no;no;no;no;no;no;yes;yes;no
+Bar/Column charts;Layered;no;yes;yes;no;no;yes;no;no;yes;yes;no
+Line charts;Simple;yes;yes;yes;yes;yes;yes;no;no;yes;yes;yes
+Line charts;Spline (Curve);yes;yes;yes;no;no;no;no;no;yes;yes;yes
+Line charts;Step;yes;no;no;no;no;yes;no;no;yes;yes;yes
+Pie charts;Simple;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes
+Pie charts;Doughnut (Ring);yes;yes;yes;yes;no;yes;yes;no;yes;yes;yes
+Pie charts;Exploded;yes;no;no;no;no;yes;yes;no;no;yes;no
+Pie charts;Stacked;no;yes;yes;no;no;yes;yes;no;no;yes;no
+Area charts;Simple;yes;yes;yes;yes;no;yes;no;no;yes;yes;yes
+Area charts;Spline (Curve);yes;yes;yes;yes;no;no;no;no;yes;yes;yes
+Area charts;Stacked;yes;yes;yes;yes;no;yes;no;no;yes;yes;yes
+Area charts;Floating (Range);no;yes;yes;no;no;no;no;no;yes;yes;yes
+Area charts;Histogram (Step);yes;no;no;no;no;yes;no;no;yes;yes;no
+Scatter plot charts;Simple;yes;yes;yes;yes;no;no;no;no;yes;yes;no
+Scatter plot charts;Bubble;yes;yes;yes;no;no;no;no;no;yes;yes;no
+Circular charts;Radar;no;no;yes;no;no;yes;yes;no;yes;yes;yes
+Circular charts;Polar;no;no;yes;no;no;no;no;no;yes;yes;yes
+Accumulation charts;Pyramid;no;no;no;no;no;no;no;no;no;yes;no
+Accumulation charts;Funnel;no;no;no;no;no;no;no;no;no;yes;no
+Tree/Heat map charts;Tree map;no;yes;yes;yes;no;yes;yes;no;no;no;no
+Tree/Heat map charts;Heat map;no;no;no;no;no;yes;no;no;no;no;no
+Finance charts;OHLC;yes;no;no;no;no;no;no;no;yes;no;no
+Finance charts;Candlestick;yes;no;no;no;no;no;no;no;yes;no;no
+Finance charts;Kagi;no;no;no;no;no;no;no;no;no;no;no
+Gauge charts;Gauge charts;no;no;no;no;no;yes;no;no;no;yes;no
+Cartogram charts;Cartogram charts;no;no;yes;no;no;yes;no;no;no;no;no
+Gantt chart;Gantt chart;no;no;no;no;no;yes;no;no;no;yes;no
+Dependency graphs;Dependency graphs;no;no;yes;yes;no;yes;yes;yes;no;no;no
+Nomograms;Smith chart;no;yes;no;no;no;no;no;no;no;no;no
+Organizational chart;Organizational chart;no;no;no;no;no;yes;yes;yes;no;no;no
+Flow chart;Flow chart;no;no;no;no;no;yes;yes;yes;no;no;no

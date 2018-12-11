@@ -1,0 +1,20 @@
+Name;CVS;Git;Hg;SVN;BZR;TFVC;Arch;Perforce;Fossil
+Assembla;no;yes;no;yes;no;no;no;yes;no
+Betavine;yes;no;no;yes;no;no;no;unk;unk
+Bitbucket;no;yes;Yes;no;no;no;no;no;no
+Buddy;no;yes;no;no;no;no;no;no;no
+CloudForge;no;yes;no;yes;no;no;no;no;no
+GitHub;no;yes;no;partial;no;no;no;no;no
+GitLab;no;yes;no;no;no;no;no;no;no
+GNU Savannah;yes;yes;yes;yes;yes;no;yes;no;no
+Helix TeamHub;no;yes;yes;yes;no;no;no;yes;no
+java.net;no;yes;yes;yes;no;no;no;no;no
+Kallithea;no;yes;yes;no;no;no;no;no;no
+Launchpad;Import only;yes;Import only;Import only;yes;no;no;no;unk
+OSDN;yes;yes;yes;yes;yes;no;no;unk;unk
+Ourproject.org;yes;no;no;yes;no;no;no;unk;unk
+OW2 Consortium;yes;no;no;yes;no;no;no;unk;unk
+Phabricator;no;yes;yes;yes;no;no;no;no;no
+SEUL.org;yes;no;no;yes;no;no;no;unk;unk
+SourceForge;Dropped;yes;yes;yes;Dropped;no;no;unk;yes
+Name;CVS;Git;Hg;SVN;BZR;TFVC;Arch;Perforce;Fossil

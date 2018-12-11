@@ -1,0 +1,17 @@
+OLAP Server;Semi-additive measures;Many-to-Many;Multi-Cube Model;Perspectives;KPI;Multilingual;Named Sets;Multi-attribute Hierarchies;Actions
+Apache Kylin;No;No;Yes;No;Yes;Yes;No;Yes;Yes
+Druid;Yes;Yes;Yes;dunno;No;Yes;dunno;Yes;Yes
+Essbase;Yes;dunno;dunno;dunno;Yes;Yes;Yes;Yes;dunno
+IBM Cognos BI;Yes;Yes;dunno;dunno;dunno;dunno;Yes;Yes;dunno
+IBM Cognos TM1;Yes;Yes;Yes;dunno;dunno;dunno;dunno;dunno;dunno
+icCube;Yes;Yes;Yes;Yes;dunno;Yes;Yes;dunno;dunno
+Infor BI OLAP Server;Yes;dunno;Yes;dunno;Yes;dunno;dunno;dunno;dunno
+Jedox OLAP Server;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;dunno
+Kyligence;Yes;No;No;No;Yes;Yes;;Yes;
+Kyvos BI on Big Data;Yes;Yes;Yes;No;Yes;Yes;Yes;Yes;No
+Microsoft Analysis Services;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes
+MicroStrategy Intelligence Server;Yes;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno
+Mondrian OLAP server;Yes;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno
+Oracle Database OLAP Option;Yes;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno
+SAP NetWeaver BW;Yes;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno
+SAS OLAP Server;Yes;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno

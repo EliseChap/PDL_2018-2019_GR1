@@ -1,0 +1,155 @@
+Architecture;Family;Code Name;Model Group;Speed (MHz);Socket;Process (nm);Cores;FSB/HT(MHz);Cache (KiB);Cache (KiB);Cache (KiB);Memory Controller;Features;Features;Features
+Architecture;Family;Code Name;Model Group;Speed (MHz);Socket;Process (nm);Cores;FSB/HT(MHz);L1;L2;L3;Memory Controller;SIMD;Speed/Power;Other
+Am386;Am386;Sx/SxL/SxLV;;25-40;100 PQFP;;1;;;;;;;;
+Am486;Am486;25-120;168 pin PGA208 SQFP;;;500, 350;1;;8;;;;;;
+Am486;Enhanced Am486;;;66-120;168 pin PGA208 SQFP;500, 350;1;;8, 8/16;;;;;;
+Am5x86;Am5x86;X5-133;;133;Socket 3Socket 2Socket 1168 pin;350;1;33;16;;;;;;
+K5;AMD K5;SSA/5, 5k86;;75–133;Socket 5Socket 7;500, 350;1;50, 60, 66;8+16;0;;;;;
+K6;AMD K6;Model 6, Littlefoot;;166-300;Socket 7;350, 250;1;50, 60, 66;32+32;0;;;MMX;;
+K6;AMD K6-2;Chomper, Chomper Extended, mobile;;166-550;Super Socket 7;250, 180;1;66, 95, 97, 100;32+32;0, 128;;;MMX, 3DNow!;;
+K6;K6-3;Sharptooth;;400-550;Super Socket 7;250, 180;1;66, 95, 96.2, 100;32+32;MMX, 3DNow!;;;;256;512, 1024
+K7;Athlon;Argon;;500-700;Slot A;250;1;100;64+64;MMX, 3DNow!;;;;512;
+K7;Athlon;Pluto/Orion;;550-1000;Slot A;180;1;100;512;MMX, 3DNow!;;;;;Thunderbird
+K7;Athlon;;180;1000-1400;Slot ASocket A;256;1;100;;MMX, 3DNow!;;;;Athlon XP/MP;Palomino
+K7;1500+ - 2100+;1333-1733;Socket A;180;133;;1;MMX, 3DNow!+, SSE;;;Thoroughbred;;1600+ - 2800+;1400-2250;130
+K7;Athlon XP/MP;133, 166, 200;;Socket A;Thorton;2000+ - 3100+;1;1667-2200;;;;;Barton;2500+ - 3200+;1833-2333
+K7;Athlon XP/MP;512;130;Socket A;133, 166, 200;;1;Duron;;;Spitfire;;;600-950;180
+K7;Athlon XP/MP;100;130;Socket A;133, 166, 200;64;1;;;;Morgan;;;900-1300;64
+K7;;Applebred;;Socket A;1400, 1600, 1800;130;1;133;;;64;;;Athlon 4;Corvette
+K7;Duron;;850-1400;Socket A;180;180;1;100;;;256;;;Athlon XP-M;Thoroughbred
+K7;Duron;;1400-2133;Socket A;130;100, 133;1;;;;Barton;;;1667-2200;133
+K7;512;;Mobile Duron;Socket A;Spitfire;;1;600, 700;;;180;;100;64;
+K7;Camaro;;800-1300;Socket A;64;256;1;;;;Sempron;;Thoroughbred-B;;1500-2000
+K7;Athlon XP-M;130;166;Socket A;130;256;1;;;;Thorton;;;1500-2000;
+K7;Barton;;2000–2200;Socket A;166, 200;512;1;;;;K8;;Opteron;Sledgehammer;100
+K7;Mobile Duron;1400-2400;Socket 940;Socket A;180;800;1;1024;;;;;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!
+K7;AMD64, ccNUMA;200;;Socket A;800;;1;Venus;;;100;;1600-3000;Socket 939;90
+K7;Sempron;;Troy;Socket A;130;256;1;200;;;Socket 940;;;Athens;800
+K7;Sempron;;Denmark;Socket A;130;100;1;1600-3200;;;Socket 939;;2;1000;
+AMD64, NX Bit;Italy;200;1600-3200;Socket 940;130;;1;AMD64, NX Bit, ccNUMA;Egypt;800;1600-3200;;Santa Ana;1200;1800-3200
+K8;Opteron;Sledgehammer;Socket AM2;1400-2400;130;Socket 940;1;1024;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!;AMD64, ccNUMA;;DDR2;AMD64, NX Bit
+K8;Opteron;Sledgehammer;Santa Rosa;1400-2400;130;Socket 940;1;1024;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!;AMD64, ccNUMA;2200;1800-3200;Socket F
+K8;Opteron;;8200;2000-3000;;Athlon 64 FX;1;1024;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!;AMD64, ccNUMA;Sledgehammer;FX-51, FX-53;2200, 2400
+K8;Opteron;Socket 940;130;90;1;800;1;1024;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!;AMD64, ccNUMA;;DDR;MMX, 3DNow!+, SSE, SSE2, SSE3
+K8;Opteron;Cool'n'Quiet;AMD64, NX Bit;90;Clawhammer;FX-53, FX-55;1;1024;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!;AMD64, ccNUMA;2400, 2400;Socket 939;1000
+K8;Opteron;;San Diego;90;FX-55, FX-57;2600, 2800;90;1024;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!;;Toledo;FX-62;2800
+K8;Opteron;2;;90;2;Windsor;FX-60;1024;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!;2600;Socket AM2;;DDR2
+K8;Opteron;AMD64, NX Bit, AMD-V;Socket 940;90;2;FX-70, FX-72, FX-74;2600, 2800, 3000;1024;DDR;MMX, 3DNow!+, SSE, SSE2;PowerNow!;Socket F;;Athlon 64;Clawhammer
+K8;Opteron;;2000-2600;90;2;Socket 754;130;1024;1;MMX, 3DNow!+, SSE, SSE2;PowerNow!;800;1024;;DDR
+K8;Opteron;MMX, 3DNow!+, SSE, SSE2;Cool'n'Quiet;90;2;AMD64, NX Bit (not in CG stepping);;1024;Socket 939;MMX, 3DNow!+, SSE, SSE2;PowerNow!;1000;;Newcastle;
+K8;Opteron;Santa Rosa;Socket F;90;2;1800-2400;Socket 754;1024;800;MMX, 3DNow!+, SSE, SSE2;PowerNow!;512;;AMD64, NX Bit;
+K8;Socket 939;1000;;Winchester;;1800-2200;Socket 939;1024;90;;Venice;;1800-2400;Socket 754;800
+K8;Athlon 64 FX;;DDR2;MMX, 3DNow!+, SSE, SSE2, SSE3;130;1;;1024;Socket 939;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;AMD64, NX Bit;1000;;San Diego
+K8;Athlon 64 FX;;Socket 939;1000;2200-2600;1;Socket 939;1024;1024;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;AMD64, NX Bit;;Orleans;
+K8;Athlon 64 FX;1800-2600;Socket 939;1000;90;Socket AM2;512;1024;;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;AMD64, NX Bit;AMD64, NX Bit, AMD-V;Lima;
+K8;Athlon 64 FX;2000-2800;65;1000;90;2;;1024;Athlon 64 X2;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;Manchester;3600+;2000;Socket 939
+K8;Athlon 64 FX;Windsor;90;1000;90;2;2;1024;256 PC, FS;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;;DDR;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet
+K8;AMD64, NX Bit;3800+, 4200+, 4600+;2000, 2200, 2400;512 PC, FS;;Toledo;3800+, 4200+, 4600+;2000, 2200, 2400;;4400+, 4800+;2200, 2400;1024 PC, FS;;Windsor;3600+
+K8;Athlon 64;2000;2000-2600;Socket AM2;130;1;256 PC, FS;1024;;DDR;MMX, 3DNow!+, SSE, SSE2;Cool'n'Quiet;AMD64, NX Bit (not in CG stepping);DDR2;AMD64, NX Bit, AMD-V
+K8;Athlon 64;3800+, 4200+, 4600+, 5000+, 5400+;2000, 2200, 2400, 2600, 2800;512 PC, FS;130;1;;4000+, 4400+, 4800+, 5200+, 5600+, 6000+, 6400+;2000, 2200, 2400, 2600, 2800, 3000, 3200;DDR;MMX, 3DNow!+, SSE, SSE2;Cool'n'Quiet;1024 PC, FS;;Brisbane
+K8;Athlon 64;Newcastle;3600+, 3800+, 4000+, 4200+, 4400+, 4600+, 4800+, 5000+, 5200+, 5400+, 5600+, 5800+, 6000+;1900, 2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 2800, 2900, 3000, 3100;130;1;512;65;512 PC, FS;DDR;MMX, 3DNow!+, SSE, SSE2;Cool'n'Quiet;;Sempron;Paris
+K8;Athlon 64;3000+;1800;Socket 754;130;1;512;1;800;DDR;MMX, 3DNow!+, SSE, SSE2;Cool'n'Quiet;64+64;128;
+K8;Athlon 64;;MMX, 3DNow!+, SSE, SSE2, SSE3;90;Cool'n'Quiet;1;512;NX Bit;3100+;1800;256;Cool'n'Quiet;;;Palermo
+K8;Athlon 64;Venice;2500+;90;1400;1;512;DDR2;90;256;;Cool'n'Quiet;;MMX, 3DNow!+, SSE, SSE2, SSE3;
+K8;Athlon 64;AMD64, NX Bit;2600+;90;1600;1;128;DDR2;;;2800+;Cool'n'Quiet;256;;
+K8;Athlon 64;3000+;1800;90;128;1;;DDR2;;Cool'n'Quiet;3100+;Cool'n'Quiet;256;;
+K8;Athlon 64;3300+;Socket AM2;2000;512;1;AMD64, NX Bit, AMD-V;DDR2;128;;;Cool'n'Quiet;3400+;256;
+K8;;3000+;1800;Socket 939;128;;;MMX, 3DNow!+, SSE, SSE2, SSE3;;3200+;256;;;3400+;2000
+K8;Athlon 64 X2;128;;Socket 939;90;2;;3500+;DDR;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;AMD64, NX Bit;256;;
+K8;Athlon 64 X2;Manila;2800+, 3200+, 3500+;Socket 939;90;2;1600, 1800, 2000;Socket AM2;DDR;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;AMD64, NX Bit;128;;
+K8;Athlon 64 X2;Toledo;Cool'n'Quiet;Socket 939;90;2;AMD64, NX bit;3000+, 3400+, 3600+, 3800+;DDR;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;AMD64, NX Bit;1600, 1800, 2000, 2200;256;
+K8;Athlon 64 X2;;Sparta;LE-1100, LE-1150;90;2;1900, 2000;65;;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;;LE-1200, LE-1250, LE-1300;2100, 2200, 2300;512
+K8;Athlon 64 X2;Windsor;Socket AM2;;90;2;;Mobile Athlon 64;Clawhammer;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;2700+;1600;Socket 754;130
+K8;Athlon 64 X2;Windsor;Socket AM2;512;90;2;;;MMX, 3DNow!+, SSE, SSE2;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;;2800+, 3000+, 3200+, 3400+, 3700+;1600, 1800, 2000, 2200, 2400;1024
+K8;Athlon 64 X2;;Socket AM2;;Odessa;2;2700+, 2800+, 3000+;1600, 1800, 2000;512;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;;;Oakville;2700+, 2800+, 3000+
+K8;1600, 1800, 2000;90;512;;;Newark;3000+, 3200+, 3400+, 3700+, 4000+;1800, 2000, 2200, 2400, 2600;1024;;;Mobile Sempron;Dublin;;1600, 1800
+K8;Sempron;130;128;Socket 754;130;1;800;64+64;;;MMX, 3DNow!+, SSE, SSE2;MMX, 3DNow!+, SSE, SSE2, SSE3;Cool'n'Quiet;NX Bit;
+K8;Sempron;;AMD64, NX bit;Socket 754;;1;800;64+64;1600;256;;;Georgetown;;1600, 1800, 2000
+K8;Sempron;90;90;Socket 754;128;1;800;64+64;;;;1600, 1800;256;;
+K8;Sempron;Sonora;90;Socket 754;;1;800;64+64;1600, 1800;128;;;;1600, 1800;256
+K8;Sempron;;90;Socket 754;;1;800;64+64;Albany;;1800, 2000, 2200;128;;;MMX, 3DNow!+, SSE, SSE2, SSE3
+K8;Sempron;;90;Socket 754;;1;800;64+64;1800, 2000;256;;;Roma;;1800, 2000
+K8;Sempron;128;90;Socket 754;;1;800;64+64;;;1600, 1800, 2000;256;;;Keene
+K8;Sempron;;90;Socket 754;1800, 2000;1;800;64+64;Socket S1;256;;;PowerNow!;;1600, 1800, 2000
+K8;Sempron;512;90;;;1;800;64+64;Turion 64;Lancaster;MT-28, MT-32, ML-42;1600 1800, 2400;Socket 754;512;
+K8;Sempron;;90;MMX, 3DNow!+, SSE, SSE2, SSE3;;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;AMD64, NX bit;MT-30, MT-34, MT-37, MT-40, ML-44;1600, 1800, 2000, 2200, 2400;1024;;
+K8;Sempron;Richmond;90;MK-36, MK-38;2000, 2200;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;512;;;Turion 64 X2;Taylor;TL-50
+K8;Sempron;1600;90;Socket S1;2;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;256;;;MMX, 3DNow!+, SSE, SSE2, SSE3;;AMD64NX bit
+K8;Sempron;Trinidad;90;TL-52, TL-56, TL-60, TL-64;1600, 1800, 2000, 2200;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;512;;;Tyler;TK-53, TK-55, TK-57;1700, 1800, 1900
+K8;Sempron;Manila;90;Socket AM2;65;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;256;;;TL-56, TL-58, TL-60, TL-62, TL-64, TL-66, TL-68;1800, 1900, 2000, 2100, 2200, 2300, 2400;512
+K8;Sempron;;;Socket AM2;K10;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;Opteron;Barcelona;;1700-2500;Socket F;65
+K8;Sempron;Sparta;65;Socket AM2;4;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;1000;64+64;256, 512;2048;;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!
+K8;PowerNow!;AMD64, NX bit, AMD-V, ccNUMA;Budapest;;1700-2500;1;800;64+64;Socket AM2;4;1000;256, 512;2048;;AMD64, NX bit, AMD-V
+K8;Mobile Athlon 64;Phenom;Agena;Socket 754;130;1;800;64+64;9100e,9150e, 9350e, 9450e, 9500, 9550, 9600, 9600B, 9600BE, 9650, 9670, 9750, 9750B, 9850, 9850B 9850BE, 9950BE;;1800-2600;Socket AM2+;4;1600, 1800, 2000;512
+K8;Mobile Athlon 64;2048;;Socket 754;130;1;800;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;;Cool'n'Quiet;AMD64, NX bit, AMD-V;Toliman;8250e, 8400, 8450, 8450e, 8550, 8600, 8600B, 8650, 8750, 8750B, 8750BE, 8850;1900-2500
+K8;Mobile Athlon 64;3;1600, 1800;Socket 754;512;1;800;64+64;2048;;;Athlon X2;Kuma;6500BE;2300
+K8;Mobile Athlon 64;2;90;Socket 754;1600, 1800;1;800;64+64;1024;;;;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;Cool'n'Quiet;AMD64, NX bit, AMD-V
+K8;7450, 7550, 7750BE, 7850BE;2400-2800;1600, 1800;Socket 754;2048;1;800;64+64;;Athlon;Lima;;2400–2700;1;1600, 1800
+K8;Mobile Sempron;512, 1024;;Socket 754;130;1;800;64+64;;AMD64, NX bit;Sempron;Sparta;;2700;1
+K8;Mobile Sempron;1600;512;Socket 754;;1;800;64+64;;AMD64, NX bit;K10.5;Phenom II;Thuban;1100T, 1090T, 1075T, 1055T, 1045T;2600-3300
+K8;Mobile Sempron;Georgetown;90;Socket 754;Socket AM2+Socket AM3;1;800;64+64;45;AMD64, NX bit;6/6;1800, 2000;64+64;512;6144
+K8;Mobile Sempron;DDR2DDR3;90;Socket 754;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;1;800;64+64;Cool'n'Quiet;AMD64, NX bit;AMD64, NX bit, AMD-V;Zosma;840T, 960T, 970(E0 stepping);3000-3400;4/6
+K8;Mobile Sempron;Sonora;90;Socket 754;1800, 2000;1;800;64+64;512;AMD64, NX bit;6144;DDR2DDR3;Deneb;980, 975, 970, 965, 955, 945, 940, 925, 920, 910e, 905e, 830, 820, 810, 805;2500-3700
+K8;Mobile Sempron;4/4;90;Socket 754;1800, 2000;1;800;64+64;512;AMD64, NX bit;6144 (805-820 only 4096);DDR2DDR3;Heka;740, 720, 705e;2500–2800
+K8;Mobile Sempron;Albany;90;Socket 754;3/4;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;AMD64, NX bit;2000;512;6144;DDR2DDR3;Callisto
+K8;Mobile Sempron;570, 565, 560, 555, 550, 545;90;Socket 754;3000-3400;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;AMD64, NX bit;2/4;2000;512;6144;DDR2DDR3
+K8;Mobile Sempron;Roma;90;Socket 754;Athlon II;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;AMD64, NX bit;Propus;;2200–2800;4;2000
+K8;Mobile Sempron;512;90;;DDR2DDR3;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;AMD64, NX bit;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;Cool'n'Quiet;AMD64, NX bit, AMD-V;Rana;
+K8;Mobile Sempron;Keene;90;Socket S1;2200–3100;1;800;64+64;MMX, 3DNow!+, SSE, SSE2, SSE3;AMD64, NX bit;3;2000;512;;DDR2DDR3
+K8;Regor;;90;1600-3600;2;1;800;64+64;2000;512, 1024;;DDR2DDR3;Sempron;Sargas;130
+K8;Turion 64;2600;90;1;2000;1;800;64+64;512;AMD64, NX bit;;DDR2DDR3;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;PowerNow!;AMD64, NX bit, AMD-V
+K8;Turion 64;140;90;2700;1024;1;800;64+64;145;AMD64, NX bit;2800;150;2900;Turion II;Caspian
+K8;;2000-2700;90;Socket S1G3;2;1800, 1600;800;64+64;512, 1024;;DDR2;Llano;Llano;E2-3200, A4-3300, A4-3420, A6-3500, A6-3600, A6-3620, A6-3650, A6-3670K, A8-3800, A8-3820, A8-3850, A8-3870K;2100-3000
+K8;Turion 64 X2;Socket FM1;90;32;2;2/3/4;800;64+64; ;;AMD64NX bit;1024, 3072, 4096; ;DDR3;Bobcat
+K8;Turion 64 X2;Bobcat;Desna,Ontario,Zacate;C-series,E-series,G-series,Z-series;2;1000 - 1750;800;64+64;FT1;;AMD64NX bit;40;1/2;;32 + 32
+K8;Turion 64 X2;Tyler;65;512 KB (per core);2;;800;64+64;DDR3;;AMD64NX bit;MMX, SSE, SSE2, SSE3, SSE3s, SSE4a;PowerNow!;AMD64, NX bit, AMD-V;Bulldozer
+Bulldozer;Zambezi;FX-4100 series (4100, 4120, 4130, 4150, 4170);3600-4200 (3700-4300 boost);Socket AM3+Socket AM3;32;4;2600;2 x 16 KB (data) + 64 KB (instruction)(per module);4x2;8;DDR3;MMX, SSE, SSE2, SSE3, SSE3s, SSE4a, SSE4.1, SSE4.2, AVX;Cool'n'Quiet, PowerNow!, Turbo Core 2.0;AMD64, NX bit, AMD-V, IOMMU, AES, CLMUL, XOP, FMA4, CVT16/F16C, ABM, ECC;FX-6100 series (6100, 6120, 6130, 6200)
+K10;Opteron;3300-3800 (3600-4200 boost);6;FX-8100 series (8100, 8120, 8140, 8150, 8170);2800-3900 (3100-4500 boost);65;8;Zurich;64+64;Opteron 3200 series (3250HE, 3260HE, 3280);2400-2700 (2700-3700 boost);4/8;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;PowerNow!;
+K10;Valencia;Opteron 4200 series (42DX, 42MX, 4226, 4228HE, 4230HE, 4234, 4238, 4240, 4256EE,4274HE, 4276HE, 4280, 4284);1600-3400 (1900-3800 boost);Socket C32;4/6/8;65;Interlagos;Opteron 6200 series (6204, 6212, 6220, 6230HE, 6234, 6238, 6262HE, 6272, 6274, 6276, 6278, 6282SE, 6284SE);64+64;1600-3300 (2100-3600 boost);Socket G34;4/8/12/16;Piledriver;Trinity;SempronX2 240, AthlonX2 340, AthlonX4 740, AthlonX4 750K, FirePro A300, FirePro A320, A4-4300M, A4-4355M, A4-5300, A4-5300B, A6-4400M, A6-4455M, A6-5400K, A6-5400B, A8-5500, A8-4500M, A8-4555M, A8-5500B, A8-5600K, A10-4600M, A10-4655M, A10-5700, A10-5800K, A10-5800B
+K10;1600-3800 (2400-4200 boost);Socket FM2FS1r2FP2;2/4;Socket AM2+;2600;65;2 x 16 KB (data) + 64 KB (instruction)(per module);4x2, 3x2, 2x2, 1;64+64;8, 4;Cool'n'Quiet;AMD64, NX bit, AMD-V;MMX, SSE, SSE2, SSE3, SSE3s, SSE4a, SSE4.1, SSE4.2, AVX, AVX1.1;Cool'n'Quiet, PowerNow!, Turbo Core 3.0;AMD64, NX bit, AMD-V, IOMMU,AES, CLMUL, XOP,FMA3, FMA4, CVT16/F16C, ABM, BMI1,TBM,ECC, EVP.
+K10;Richland;SempronX2 250, AthlonX2 350, AthlonX2 370K, AthlonX2 750, AthlonX2 760K, FX-670K, A4-4000, A4-4320, A4-5145M, A4-5150M, A4-6300, A4-6300B, A4-6320, A4-6320B, A4-7300, A4PRO-7300B, A6-5345M, A6-5350M, A6-5357M, A6-6400B , A6-6400K, A6-6420B, A6-6420K, A8-5345M, A8-5350M, A8-5357M, A8-6500, A8-6500T, A8-6500B, A8-6600, A10-5745M, A10-5750M, A10-5757M, A10-6700, A10-6700T, A10-6790B , A10-6790K , A10-6800B , A10-6800K;1700-4100 (2600-4400 boost);Socket AM2+;2/4;65;Vishera;FX-4300 series (4300, 4320, 4350);64+64;3800-4200 (4000-4300 boost);Socket AM3+;4;FX-6300 series (6300, 6350);3500-3900 (4100-4200 boost);6
+K10;Athlon X2;FX-8300 series (8300, 8310, 8320, 8320E, 8350, 8370, 8370E, 9370, 9590);3300-4700 (4000-5000 boost);Socket AM2+;2;65;1024;8;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V;Delhi;Opteron 3300 series (3320EE, 3350HE, 3365, 3380);1900-2800 (2100-3800 boost);4/8
+K10;Seoul;Opteron 4300 series (43CXEE, 43GKHE, 4310EE, 4332HE, 4334, 4340, 4365EE, 4376HE, 4386);2000-3500 (2300-3800 boost);Socket AM2+;Socket C32;65;4/6/8;Abu Dhabi;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V;Opteron 6300 series (6308, 6320, 6328, 6338P, 6344, 6348, 6366HE, 6370P, 6376, 6378, 6380, 6386SE);1800-3500 (2300-3800 boost);Socket G34;4/8/12/16
+K10;Steamroller;Kaveri;AthlonX2 450, AthlonX4 840, AthlonX4 860K, AthlonX4 870K, AthlonX4 880K, FX-770K, FX-7500, FX-7600P, A4PRO-7350B, A6-7000, A6Pro-7050B, A6-7400K, A6PRO-7400B, A6-7470K, A8-7100, A8Pro-7150B, A8-7200P, A8-7600, A8PRO-7600B, A8-7650K, A8-7670K, A10-7300, A10Pro-7350B, A10-7400P, A10-7700K, A10-7800, A10PRO-7800B, A10-7850K, A10-7850B, A10-7860K, A10-7870K, A10-7890K;Socket AM2+;1800-4100 (3000-4300 boost);65;Socket FM2+ Socket FP3;28;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V;2/4; ;2 x 16 KB (data) + 96 KB (instruction)(per module);2x2, 1
+ ;Excavator;Carrizo;AthlonX4 835, AthlonX4 845, FX-8800P, A6-8500P, A6Pro-8500B, A8-8600P, A8Pro-8600B, A10-8700P, A10Pro-8700B, A10-8780P, A12Pro-8800B;1600-3500 (3000-3800 boost);Socket FM2+ Socket FP4;2/4; ;2 x 32 KB (data) + 96 KB (instruction)(per module);2x1; ;MMX, SSE, SSE2, SSE3, SSE3s, SSE4a, SSE4.1, SSE4.2, AVX, AVX1.1, AVX2;AMD64, NX bit, AMD-V, IOMMU,AES, CLMUL, XOP,FMA3, FMA4, CVT16/F16C, ABM, BMI1, BMI2,TBM,ECC, EVP.;Bristol Ridge;AthlonX4 940, AthlonX4 950, AthlonX4 970, FX-9800P, FX-9830P, A6-9500, A6PRO-9500, A6Pro-9500B, A6-9500E, A6PRO-9500E, A6-9550, A8-9600, A8PRO-9600, A8Pro-9600B, A8Pro-9630B, A10-9600P, A10-9620P, A10-9630P, A10-9700, A10PRO-9700, A10Pro-9700B, A10-9700E, A10PRO-9700E, A10Pro-9730B, A12-9700P, A12-9720P, A12-9730P, A12-9800, A12PRO-9800, A12Pro-9800B, A12-9800E, A12PRO-9800E, A12Pro-9830B;2300-3800 (3200-4200 boost)
+K10.5;Phenom II;Socket AM4 Socket FP4;2/4; ;Socket AM2+Socket AM3;45;1x1, 2x1;;64+64;DDR4;Jaguar;Jaguar;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;Cool'n'Quiet;AMD64, NX bit, AMD-V
+K10.5;Phenom II;Kabini,Temash,Kyoto;;1000 - 2200;Socket AM2+Socket AM3;45;Socket AM1,Socket FT3;28;64+64;2/4;;32 kB + 32 kB (per core);MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;Cool'n'Quiet;AMD64, NX bit, AMD-V
+K10.5;Phenom II;512 KB (per core);;DDR3;Socket AM2+Socket AM3;45;MMX, SSE, SSE2, SSE3, SSE3s, SSE4a, SSE4.1, SSE4.2, AVX;PowerNow!;64+64;AMD64, NX bit, AMD-V,AES, CLMUL,CVT16/F16C,BMI1;Puma;Beema,Mullins,Stepped Eagle,Crowned Eagle,Carrizo-L,LX-Family,;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;Cool'n'Quiet;AMD64, NX bit, AMD-V
+K10.5;Phenom II;;800 - 2400;Socket FT3b;Socket AM2+Socket AM3;45;;;64+64;Zen;Ryzen;Whitehaven;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;Cool'n'Quiet;AMD64, NX bit, AMD-V
+K10.5;Threadripper (1900, 1920, 1920X, 1950X);3200-3800 (3800-4000 boost);Socket TR4;14;Socket AM2+Socket AM3;45;8/12/16 (16/24/32 threads);;64+64;;;16-32 MB;Quad-channel DDR4;MMX, SSE, SSE2, SSE3, SSE3s, SSE4a, SSE4.1, SSE4.2, AVX, AVX2;
+K10.5;AMD64, AES,CLMUL, FMA3,CVT16/F16C, ABM,BMI1, BMI2,SHA;Summit Ridge;Ryzen 7 (Pro 1700, 1700, Pro 1700X, 1700X, 1800X);3000-3600 (3700-4000 boost);Socket AM2+Socket AM3;45;Socket AM4;8 (16 threads);64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V; ;64 kB + 32 kB (per core);512 kB (per core);16 MB
+K10.5;Dual-channel DDR4;Ryzen 5 (1400, Pro 1500, 1500X, Pro 1600, 1600, 1600X);3200-3600 (3400-4000 boost);4/6 (8/12 threads);Socket AM2+Socket AM3;45;;8-16 MB;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V;Ryzen 3 (Pro 1200, 1200, Pro 1300, 1300X);3100-3500 (3400-3700 boost);4 (4 threads);
+K10.5;8 MB;APU;Raven Ridge;Ryzen 5 (2500U), Ryzen 7 (2900U);Socket AM2+Socket AM3;45;2000-2200 (3600-3800 boost);4 (8 threads);64+64;;;4 MB;EPYC;Naples;7000 series
+K10.5;Sempron;2550-2900;Socket SP3;1;Socket AM2+Socket AM3;45;2000;DDR2DDR3;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V;8/16/24/32; ; ; 
+K10.5;Sempron;32-64 MB;DDR4;1;Socket AM2+Socket AM3;45;2000;DDR2DDR3;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V; ; ; ;Architecture
+K10.5;Sempron;Family;Code Name;1;Socket AM2+Socket AM3;45;2000;DDR2DDR3;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V;Model Group;Speed (MHz);Socket;Process (nm)
+K10.5;Cores;FSB/HT(MHz);Cache (MB);Cache (MB);Cache (MB);45;Memory Controller;Features;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V;Features;Features;L1;L2
+K10.5;L3;SIMD;Speed/Power;Other;;;;;64+64;MMX, SSE, SSE2, SSE3, SSE4a, Enhanced 3DNow!;AMD64, NX bit, AMD-V;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;

@@ -1,0 +1,33 @@
+Card family;Standards organizations;Varieties;Entry date;Maximum commercially available capacity;Picture;Main features
+CompactFlash;SanDisk;I;1994;512GB (CF5 128*2<sup>50</sup> bytes);;Thinner (3.3mm), flash only, now up to 512GB, although standard goes up to 128PB since CF 5.0
+CompactFlash;SanDisk;II;1994;512GB (CF5 128*2<sup>50</sup> bytes);;
+Thicker (5.0mm), older flash, but usually Microdrive, up to 128 PiB;CFexpress;CompactFlash Association;1.0;2017;1TB;
+XQD form factor (38.5 mm × 29.8 mm), PCIe 3.0 x2 (2,0 GB/s), NVMe;CompactFlash Association;-;-;-;-;PCIe 3.0 x8 (8,0 GB/s), NVMe
+SmartMedia;Toshiba;3.3/5V;1995;128MB;;Very slim (45.0×37.0×0.76mm), no wear leveling controller, up to 128MB. This particular example shows the write protect sticker (the silver disc).
+MultiMediaCard;Siemens AG, SanDisk;MMC;1997;16GB;;Slim and small (24×32×1.4mm), up to 16GB
+MultiMediaCard;Siemens AG, SanDisk;RS-MMC/MMC Mobile;2003/2005;16GB;;Compact (24×18×1.4mm), up to 16GB
+MultiMediaCard;Siemens AG, SanDisk;MMCplus;2005;16GB;;Compact (24×32×1.4mm), swifter, optional DRM, up to 16GB
+MultiMediaCard;Siemens AG, SanDisk;MMCmicro;2005;4GB;;Subcompact (14×12×1.1mm), optional DRM, 16MB to 4GB
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;SD;1999;4GB;;Small (32×24×2.1mm), DRM, up to 4GB. (2GB and 4GB cards use larger block sizes and may not be compatible with some host devices. See Article)
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;miniSD;2003;4GB;;Compact (21.5×20×1.4mm), DRM, up to 4GB. (2GB and 4GB cards use larger block sizes and may not be compatible with some host devices. See Article)
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;microSD;2005;4GB;;Subcompact (15×11×1mm), DRM, up to 4GB. (2GB and 4GB cards use larger block sizes and may not be compatible with some host devices. See Article)
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;SDHC;2006;32GB;;Same build as SD but greater capacity and transfer speed, 4GB to 32GB (not compatible with older host devices).
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;miniSDHC;2008;32GB;;Same build as miniSD but greater capacity and transfer speed, 4GB to 32GB. 8GB is largest in early-2011 (not compatible with older host devices).
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;microSDHC;2007;32GB;;Same build as microSD but greater capacity and transfer speed, 4GB to 32GB.(not compatible with older host devices)
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;SDXC;2009;512GB;;Same build as SD/SDHC, but greater capacity and transfer speed, 32GB and higher. Standard goes up to 2TB (not compatible with older host devices).
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;microSDXC;2009;512 GB;;Same build as microSD/microSDHC, but greater capacity and transfer speed, 32GB and higher. Standard goes up to 2TB (not compatible with older host devices).
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;SDUC;2018;64 GB; ;Same build as SD/SDHC/SDXC, but greater capacity and transfer speed. Standard goes up to 128 TB (not compatible with older host devices).
+Secure Digital;Panasonic, SanDisk, Toshiba, Kodak;microSDUC;2018;?;;Same build as microSD/microSDHC/microSDXC, but greater capacity and transfer speed. Standard goes up to 128 TB (not compatible with older host devices)
+Memory Stick;Sony/SanDisk;Standard;1998;128MB;;Slim and narrow (50×21.5×2.8mm), optional DRM, up to 128MB
+Memory Stick;Sony/SanDisk;PRO;2003;4GB;(not to scale);Slim and narrow (50×21.5×2.8mm), swifter, optional DRM, up to 4GB
+Memory Stick;Sony/SanDisk;Duo;2003;128MB; ;Compact (31×20×1.6mm), optional DRM, up to 128MB
+Memory Stick;Sony/SanDisk;PRO Duo;2002-2006;32GB;;Compact (31×20×1.6mm), optional DRM, up to 32GB
+Memory Stick;Sony/SanDisk;PRO-HG Duo;2007-2008;32GB;;Compact (31×20×1.6mm), swifter, optional DRM, up to 32GB
+Memory Stick;Sony/SanDisk;Micro (M2);2006;16GB;;Subcompact (15×12.5×1.2mm), optional DRM, up to 16GB
+Memory Stick;Sony;PS Vita Memory Card;2012;64GB;;Subcompact (15×12.5×1.6mm), compulsory DRM, up to 64GB, proprietary (can be used on PS Vita only)
+XQD;Sandisk, Sony, Nikon, CompactFlash Association;Standard;2011-2012;>2 TB;;High-capacity, high-speed standard using PCIe as interface
+xD;Olympus, Fujifilm;Standard;2002-2007;512MB;;Slim and small (20×25×1.78mm), electrically identical to SmartMedia, no wear-leveling controller, up to 512MB
+xD;Olympus, Fujifilm;Type M;2005;2GB;;Slim and small (20×25×1.78mm) but slower read/write, no wear-leveling controller, up to 2GB
+xD;Olympus, Fujifilm;Type H;2005;2GB;;Slim and small (20×25×1.78mm) and swifter, no wear-leveling controller, up to 2GB
+Universal Flash Storage Card Extensions;Samsung;UFS Card;2016;>256GB;;Packages the flash memory, currently soldered in shipping smartphones, into a removable card form factor.  Uses the SCSI command set including queuing. The electrical interface makes use of differential signaling, which enables high bus speeds and robustness under noisy conditions and reduced pin count (compared to parallel bus alternatives such as UHS-I).
+USB flash drive;Various;USB 1.1/2.0/3.0/3.1;2000/2001;1TB+;(not to scale);Universally compatible across most non-mobile computer platforms, their greater size suits them better to file transfer/storage instead of use in portable devices

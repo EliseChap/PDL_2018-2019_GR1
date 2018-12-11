@@ -1,0 +1,26 @@
+File system;Host OS;Online grow;Offline grow;Online shrink;Offline shrink
+Btrfs;Linux;yes;yes;yes;yes
+ext2;Linux;no;yes;no;yes
+ext3;Linux;yes;yes;no;yes
+ext4;Linux;yes;yes;no;yes
+NOVA;Linux;no;no;no;no
+FAT16/ FAT16B/ FAT16X;misc.;no;yes;no;yes
+FAT32/ FAT32X;misc.;no;yes;no;yes
+F2FS;Linux;no;yes;no;no
+HFS+;Linux;no;no;no;no
+HFS+;macOS;yes;no;yes;no
+JFS;Linux;no;yes;no;no
+JFS2;AIX;yes;dunno;yes;dunno
+Lustre;Linux;yes;dunno;no;no
+NILFS;Linux;yes;no;yes;no
+NTFS;Linux;no;yes;no;yes
+NTFS;Windows;yes;yes;yes;yes
+APFS;macOS;dunno;dunno;dunno;dunno
+ZFS;misc.;yes;no;no;no
+Reiser4;Linux;yes;yes;no;yes
+ReiserFS;Linux;yes;yes;no;yes
+XFS;Linux;yes;no;no;no
+ReFS;Windows;yes;dunno;no;dunno
+UFS2;FreeBSD;yes (FreeBSD 10.0-RELEASE or later);yes;no;no
+HAMMER;DragonflyBSD;dunno;dunno;dunno;dunno
+SquashFS;Linux;no;no;no;no

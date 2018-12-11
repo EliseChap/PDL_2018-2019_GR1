@@ -1,0 +1,39 @@
+;Main processor;Clock speed;Main memory;Storage;Video memory
+Game Boy Micro;Sharp ARM7TDMI;16.78MHz;32KB (32 KiB), 256KB external;None;96KB
+GPD Win;64-bit Intel Atom x7-Z8750;1.60–2.56GHz max (with Turbo Boost);4GB LPDDR3 RAM;64GB eMMC ROMMicroSD;Intel HD 405 integrated
+GPD Win 2;64-bit Intel Core M3-7Y30;1.00 GHz/2.60 GHz max (with Turbo Boost);8GB LPDDR3 RAM;128GB M.2 SSDMicroSD;Intel HD 615 integrated
+Gizmondo;32-bit ARM9 / 128-bit Nvidia GPU;400MHz;64MB (64MiB);64MB flash (shared with program stack), SD slot;1204 KB
+PlayStation Portable;MIPS R4000 32-bit RISC;1 – 333MHz (variable clock speed);32MB EDRAM (8MB reserved for kernel);Memory Stick Duo slot, Universal Media Disc;2MB EDRAM
+GCW Zero;32-bit Ingenic JZ4770 (MIPS);1000MHz;512MB DDR2;internal 16GB microSD (replaceable), external microSD slot;?
+Nintendo DS;ARM9 and ARM7TDMI;67MHz and 33MHz;4MB SRAM;None;656KB
+N-Gage QD;ARM9;104MHz;3.4 MB;4MB flash, MMC slot;N/A
+2;65C02;6MHz;Unknown;None;N/A
+GP2X;ARM920T(host) and ARM940T(video);200MHz default, overclockable in software (maximum varies);64MB SDRAM, 64MB NAND flash memory;SD memory cards, NAND flash (SDHC supported in F200 model);Depends on program used, no dedicated 3D
+GP32;ARM920T;22–133MHz default, overclockable in software (maximum varies);8MB SDRAM;SmartMedia 8–128 MB;?
+Dingoo A320;32-bit Ingenic jz4740 (MIPS R3000 Clone) with XBurst SIMD;336MHz (Reliably clocks to 430MHz);32MB (32 MiB);4GB flash, miniSD slot;N/A
+Pandora;ARM Cortex-A8;600MHz + 430MHz TMS320C64x+ Core (can be reliably overclocked to 900MHz), 1GHz model goes to 1.2GHz;256MB / Rebirth edition: 512MB;512MB onboard Flash, 2 SDHC cards: up to 2 times 512GB (SDXC cards work, but only at SDHC speed , so 1TB is possible);?
+Tapwave Zodiac;Motorola i. Mxi ARM9;200MHz;32MB or 128MB;32MB or 128MB (shared with program stack), 2 SD slots;8MB
+N-Gage;ARM9;104MHz;3.4MB, 32–128 MB external;4 MB flash, MMC slot;N/A
+Game Boy Advance SP;Sharp ARM7TDMI and Z80;16.78MHz and 4.194MHz;32KB, 256KB external;None;96KB
+Game Boy Advance;Sharp ARM7TDMI and Z80;16.78MHz and 4.194MHz;32KB, 256KB external;None;96KB
+Swan Crystal;SPGY-1002;3.072MHz;512KB;None;?
+WonderSwan Color;SPGY-1002;3.072MHz;512KB;None;?
+WonderSwan;SPGY-1002;3.072MHz;512KB;None;?
+Game Boy Color;LR35902;4MHz (single), 8MHz (double);32KB, 128KB external;None;16KB
+Neo Geo Pocket Color;Toshiba TLCS900H;6.144MHz;64KB;None;12KB
+Neo Geo Pocket;Toshiba TLCS900H;6.144MHz;64KB;None;12KB
+Game.com;Sharp 8-bit CPU;?;?;None;?
+Game Boy Light;LR35902;4.194MHz;8KB;None;8KB
+Game Boy Pocket;LR35902;4.194MHz;8KB;None;8KB
+Sega Nomad;Motorola M68000 & Zilog Z80;7.67MHz & 4MHz;64KB;None;64KB
+Mega Duck/Cougar Boy;unknown VLSI processor;4.194304MHz;16KB;?;?
+Watara Supervision;8-bit 65C02 or M65C02 VLSI processor;4MHz;Varied by model;?;?
+Atari Lynx II;Mikey & Suzy (2 16-bit custom CMOS chips);16MHz & 16MHz;64KB DRAM, 128–512 KB external;None;(uses main memory)
+Game Gear;Zilog Z80 (8-bit);3.58MHz;8KB;;16KB
+TurboExpress;Hudson HuC6280 (8-bit);7.159090MHz;8KB;None;64KB
+Game Boy;LR35902;4.194304MHz;8KB internal, 256KB – 8MB external;None;8KB
+Atari Lynx;Mikey & Suzy (2 16-bit custom CMOS chips);16MHz & 16MHz;64KB DRAM, 128–512 KB External;None;(uses main memory)
+Game Pocket Computer;N/A;N/A;N/A;N/A;N/A
+Microvision;Intel 8021/TI TMS1100 (on cartridge);100kHz;16 bytes, integrated into CPU;N/A;N/A
+Mi2;unknown 32-bit MIPS-based CPU;unknown;unknown;16GB of Flash + SD-card slot;unknown
+Xperia PLAY;Qualcomm Snapdragon S2 MSM8255;1 GHz;512 MB;400 MB + microSD card slot;Adreno 205

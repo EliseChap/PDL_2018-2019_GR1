@@ -1,0 +1,32 @@
+;Trident;Gecko;WebKit;Presto
+Error state;Error state;Error state;Error state;Error state
+MediaError;5.0;1.9.1;?;2.5
+Network state;Network state;Network state;Network state;Network state
+src;rowspan=""7"" 5.0;rowspan=""3"" 1.9.1;?;rowspan=""3"" 2.5
+currentSrc;networkState;preload;?;
+2.0;rowspan=""2"" no;buffered;?;
+2.0;load();rowspan=""2"" 1.9.1;?;
+rowspan=""2"" 2.5;canPlayType();533;?;
+Ready state;Ready state;Ready state;?;
+Ready state;Ready state;readyState;rowspan=""2"" 5.0;rowspan=""2"" 1.9.1
+?;rowspan=""2"" 2.5;seeking;Playback state;Playback state
+Playback state;Playback state;Playback state;currentTime;rowspan=""13"" 5.0
+1.9.1;?;rowspan=""4"" 2.5;?;
+startTime;no;duration;rowspan=""2"" 1.9.1;paused
+defaultPlaybackRate;rowspan=""2"" 20.0;rowspan=""4"" no;playbackRate;played
+15.0;seekable;8.0;?;
+ended;rowspan=""2"" 1.9.1;rowspan=""5"" 2.5;?;
+autoplay;loop;11.0;?;
+play();rowspan=""2"" 1.9.1;pause();?;
+Controls;Controls;Controls;?;
+Controls;Controls;controls;?;
+rowspan=""3"" 5.0;rowspan=""3"" 1.9.1;?;?;
+rowspan=""3"" 2.5;volume;muted;?;
+;;;?;
+;;;?;
+;;;?;
+;;;?;
+;;;;
+;;;;
+;;;;
+;;;;

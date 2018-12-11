@@ -1,0 +1,25 @@
+ Client; Client; Play While Downloading; ; Dynamic Upload; ; SubChunk Transfer; Drop Sources; ; ; AntiLeech; IPFilter; Slot Control
+aMule;aMule;yes;yes;UBT;no;no;yes;no;no;no;yes;yes
+eMule;Official;no;no;USS;no;no;no;no;no;no;yes;no
+eMule;Osp;yes;no;USS;no;no;no;no;no;no;yes;no
+eMule;AnalyZZUL;no;yes;USS;yes;no;no;no;fixed 1:3 Ratio;Client Analyzer;yes;ZZ Slot Focus
+eMule;beba;no;Release Priority;USS;yes;no;yes;no;no;Client Analyzer;yes;Slot Focus, Upload Slot Control
+eMule;Magic Angel;no;yes;SUC, USS;yes;no;no;yes;yes;ARGOS;yes;SlotFocus, trickleSlots
+eMule;Mephisto;no;PS & PowerRelease;NAFC;yes;no;yes;yes;optional: 1:3 ratio or source limits or enforced with chooseable ratio or dynamic by friendslot;DLP;yes;Slotfocus
+eMule;MorphXT;no;PowerShare & Release Priority;SUC, USS;yes;no;no;yes;optional: dynamic 1:3 Ratio;Stringlist, Stricter protocol checks;yes;SlotFocus, trickleSlots
+eMule;NeoMule;no;PowerShare & Release Priority;USS, NAFC, NeoBC;yes;yes;yes (including IpBlock);custom;optional 1:4 Ratio;ARGOS (including DLP support);yes;SlotFocus, trickleSlots, Badwolf, manuel
+eMule;ScarAngel;no;PS & PowerRelease;NAFC;yes;no;yes;yes;optional: 1:3 ratio or source limits or enforced with chooseable ratio;DLP;yes;Xtreme Upload System
+eMule;SharkX;no;Power Release;no;yes;no;yes;Only incomplete;taz dynamic ratio;Client Analyzer;yes;Slot Focus
+eMule;Sivka;no;Release priority;USS;no;no;Yes (incl. List);yes;no;no;yes;yes
+eMule;Spike2;no;yes;USS;no;no;Yes (incl. List);no;no;Stringlist + Client Analyzer;yes;Slotfocus, Min/Max. Slots
+eMule;StulleMule;no;yes;SUC, USS;yes;no;Yes (incl. List);yes;dynamic 1:3 Ratio or enforced choosable ratio;DLP methods;yes;USC, Slotfocus
+eMule;Xtreme;no;PowerRelease;NAFC;no;no;yes;yes;optional: 1:3 ratio or source limits;DLP;yes;Xtreme Upload System
+eMule;X-Ray;no;yes;USS;yes;no;List+Variable Blocktime;no;no;Argos (with own DLP);yes;Slotspeed
+eMule;ZZUL;no;yes;USS;no;no;no;no;fixed 1:3 Ratio;no;yes;SlotFocus
+eMule;ZZUL BastarD;no;PowerShare, SuperRelease;USS;yes;no;no;yes;fixed 1:3 Ratio;Stringlist + Client Analyzer for Armadillo;yes;SlotFocus
+eMule Plus;eMule Plus;no;Release priority, JumpStart;no;no;no;no;yes;1:3 < 4KB/s, 1:4 < 10KB/s;yes;yes;trickleSlots
+Lphant;Lphant;no;dunno;no;dunno;Basic Support for Crumbs;dunno;dunno;no;no;yes;dunno
+MLDonkey;MLDonkey;no;Folder reserved slot + release file slot;yes;no (No queue);no;Uses a very low priority list instead;Similar Feature;About 1:4 below 10KB/s;no;yes;yes (user selects number of slots)
+Shareaza;Shareaza;yes;yes;yes;yes;yes;yes;yes;no;Reward uploaders;yes;yes
+xMule;xMule;no;no;no;no;no;no;no;no;no;yes;no
+Client;Client;Play While Downloading;PowerShare;Dynamic Upload; ;SubChunk Transfer;Drop Sources;Push Small files; ;AntiLeech;IPFilter;Slot Control

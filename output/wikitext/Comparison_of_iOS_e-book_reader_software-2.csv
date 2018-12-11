@@ -1,0 +1,22 @@
+Product|Multi-column mode|Styles (bold/italic/etc.)|Page Turn Effects|Themes|Day/Night mode|Enable/Disable sleep mode|Brightness Control|Indent paragraph|Enable/Disable CSS|Enable/Disable hyphenation|Customize margins|Customize text alignment|Customize font|Customize spacing: line/paragraph
+Apabi Reader|yes|yes|Configurable|yes|yes|yes|Vertical swipe|yes|yes|yes|no|yes|yes|yes
+Blio|yes|yes|yes|no|yes|no|yes|no|no|no|no|Justification only|yes|no
+Bluefire Reader|no|yes|yes|yes|yes|no|Vertical swipe|no|yes|no|Pre-set choices only|Justification only|yes|Line only
+DL Reader|yes|yes|yes|yes|yes|no|yes|no|yes|no|Pre-set choices only|Justification only|yes|no
+eBookMobi|yes|yes|no|yes|no|no|yes|no|no|no|no|no|yes|no
+Ebook Reader|no|yes|yes|no|yes|(Disabled by default)|yes|no|no|no|no|no|yes|no
+i2Reader|yes|Buggy|yes|yes|Using styles|yes|yes|no|no|yes|yes|yes|yes|yes
+iBooks|yes|yes|yes|yes|yes|no|yes|no|no|yes|no|yes|yes|no
+Kindle|yes|yes|yes|yes|yes|no|yes|no|no|no|Pre-set choices only|yes|yes|Line; pre-set choices only
+Kobo Reading App|no|yes|yes|no|yes|no|Vertical swipe|no|yes|no|no|yes|yes|no
+KyBook|yes|yes|yes|yes|Using themes|no|yes|yes|Configurable|yes|yes|yes|yes|yes
+KyBook 2|yes|yes|yes|Using themes|yes|yes|yes|Configurable|yes|yes|yes|yes|yes|yes
+MapleRead|Configurable|yes|Configurable|Configurable|Configurable|yes|Vertical swipe|Configurable|yes|yes|yes|yes|yes|yes
+Marvin|Configurable|yes|Configurable|yes|yes|yes|Vertical swipe|yes|Configurable|yes|yes|yes|yes|yes
+MegaReader|Configurable|Buggy|Configurable|yes|Using themes|yes|Vertical swipe|no|no|no|yes|yes|yes|Line only
+PocketBook reader|yes|yes|yes|yes|yes|no|yes|no|no|no|yes|no|yes|no
+ShuBook|no|Buggy|Configurable|yes|yes|yes|Vertical swipe|Configurable|no|yes|None, small, large|yes|yes|yes
+Stanza|no|yes|Configurable|yes|yes|yes|Vertical swipe|yes|yes|yes|yes|yes|yes|yes
+uBooks XL|no|Buggy|yes|no|yes|no|yes|no|yes|yes|yes|yes|yes|yes
+iBouquiniste|yes|yes|yes|yes|yes|yes|yes|yes|no|no|yes|no|yes|yes
+Product|Multi-column mode|Styles (bold/italic/etc.)|Page Turn Effects|Themes|Day/Night mode|Enable/Disable sleep mode|Brightness Control|Indent paragraph|Enable/Disable CSS|Enable/Disable hyphenation|Customize margins|Customize text alignment|Customize font|Customize spacing: line/paragraph

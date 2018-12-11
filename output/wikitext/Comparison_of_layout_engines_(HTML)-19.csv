@@ -1,0 +1,11 @@
+ Attribute; Element; Trident; EdgeHTML; Gecko; WebKit; Presto
+manifest;html;6.0;12;1.9;Yes;2.6
+sizes;link;No;13;8.0 (only mobile);Yes;No
+charset;meta;4.0;12;1.9.2;Yes;2.5.24
+scoped;style;No;No;21.0;No;rowspan=""6"" No
+async;script;6.0;12;1.9.2;Yes;reversed
+ol;No;No;18.0;Yes;downloadDecember 2014;a,area
+No;13;20.0;yes;sandbox;iframe;6.0
+12;17.0;533;seamless;iframe;no;no
+no;no;Attribute;Element;Trident;EdgeHTML;Gecko
+WebKit;Presto;;;;;

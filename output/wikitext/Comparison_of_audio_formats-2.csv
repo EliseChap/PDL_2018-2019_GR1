@@ -1,0 +1,19 @@
+ Codec; Windows; Mac OS X; Linux; BSD; Unix; Palm OS; Symbian OS; Rockbox; iOS; Android; Chromium
+AAC;yes;yes;yes;yes;yes;yes;yes;yes;Yes;yes;yes
+AC-3;yes;Dunno;yes;Dunno;Dunno;Dunno;Dunno;Dunno;Yes;Dunno;Dunno
+ALAC;yes;yes;yes;yes;yes;no;no;yes;Yes;no;no
+ALS;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno
+aptX;yes;yes;yesJanuary 2014;yesJanuary 2014;yes;no;no;no;No;no;no
+CELT;yes;yes;yes;yes;yes;yes;no;Yes;No;no;no
+E-AC3;yes;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Yes;Dunno;Dunno
+FLAC;yes;yes;yes;yes;yes;yes;yes;yes;Yes;yes;yes
+Monkey's Audio;yes;yes;yes;yes;yes;no;no;yes;No;no;no
+MP3;yes;yes;yes;yes;yes;yes;yes;yes;Yes;yes;yes
+Musepack;yes;yes;yes;yes;yes;yes;yes;yes;No;no;no
+Opus;yes;yes;yes;yes;yes;no;no;yes;Yes;yes;yes
+RealAudio;yes;yes;yes;yes;yes;yes;yes;yes;No;no;no
+Speex;yes;yes;yes;yes;yes;yes;yes;yes;No;no;no
+Vorbis;yes;yes;yes;yes;yes;yes;yes;yes;Dunno;yes;yes
+True Audio (TTA);yes;yes;yes;yes;yes;yes;yes;yes;Dunno;yes;yes
+WavPack;yes;yes;yes;yes;yes;yes;yes;yes;Dunno;no;no
+WMA;yes;yes;yes;yes;yes;yes;yes;yes;Dunno;yes;no

@@ -1,0 +1,403 @@
+;; Trident; EdgeHTML; Gecko; WebKit; KHTML; Presto
+Cascading and Inheritance;Cascading and Inheritance;Cascading and Inheritance;Cascading and Inheritance;Cascading and Inheritance;Cascading and Inheritance;Cascading and Inheritance;Cascading and Inheritance
+ ;all;no;no;27.0;no;no;no
+Display;Display;Display;Display;Display;Display;Display;Display
+CSS2;display;[[#trident display|8.0]];12;[[#gecko display|1.9]];85;yes;1.0
+Earlierdraft of;display-inside;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no
+Earlierdraft of;display-outside;display-list; ;box-suppress;Box Model;Box Model;Box Model
+Earlierdraft of;Box Model;Box Model;Box Model;Box Model;Box Model;CSS2;margin
+[[#trident margin|9.0]];rowspan=""11"" 12;1.0;85;yes;rowspan=""10"" 1.0;padding;4.0
+1.0;85;yes;width;4.0;1.0;85;yes
+height;4.0;1.0;85;yes;float;5.0;1.0
+CSS2;85;yes;clear;5.0;1.0;85;yes
+CSS2;min-width;7.0;1.0;[[#webcore_max-width|Partial]];yes;max-width;7.0
+CSS2;1.0;[[#webcore_max-width|Partial]];yes;min-height;7.0;1.7;[[#webcore_max-width|Partial]]
+CSS2;3.3.2;max-height;7.0;1.7;[[#webcore_max-width|Partial]];3.3.2;visibility
+CSS2;[[#trident visibility|9.0]];[[#gecko visibility|1.8]];[[#webcore visibility|Partial]];[[#khtml visibility|Partial]];[[#presto visibility|2.5]];Overflow;Overflow
+CSS2;Overflow;Overflow;Overflow;Overflow;Overflow;Overflow;CSS2
+CSS2;overflow;9.0;12;1.0;85;3.2;1.0
+CSS2; ;overflow-x;rowspan=""2"" 9.0;rowspan=""2"" 12;rowspan=""2"" 1.8;rowspan=""2"" 525;rowspan=""2"" 3.5.6
+CSS2;rowspan=""2"" 2.1;overflow-y;max-lines;no;no;no;no
+CSS2;no;no;Borders;Borders;Borders;Borders;Borders
+Borders;Borders;Borders;CSS2;border;4.0;rowspan=""8"" 12;rowspan=""8"" 1.0
+rowspan=""8"" 85;rowspan=""8"" yes;rowspan=""8"" 1.0;border-color;[[#trident border-color|7.0]];border-style;[[#trident border-style|8.0]];border-width
+4.0;border-top;rowspan=""4"" 5.5;border-right;border-bottom;border-left; ;border-radius
+ ;9.0;rowspan=""8"" 12;2.0;533;[[#khtml -khtml-|Experimental]];2.5;border-image
+ ;rowspan=""6"" 11.0;15.0;table-experimental;rowspan=""6"" no;2.5;border-image-source;rowspan=""5"" 15.0
+rowspan=""5"" no;rowspan=""5"" no;border-image-slice;border-image-width;border-image-outset;border-image-repeat;box-shadow;9.0
+2.0;yes;no;2.5;box-decoration-break;no;no;32.0
+CSS2;no;no;2.7;;;Trident;EdgeHTML
+CSS2;Gecko;WebKit;KHTML;Presto;Line Layout;Line Layout;Line Layout
+CSS2;Line Layout;Line Layout;Line Layout;Line Layout;Line Layout;CSS2;line-height
+CSS2;4.0;rowspan=""2"" 12;1.0;85;yes;rowspan=""2"" 1.0;vertical-align
+CSS2;8.0;1.0;85;yes;Positioning;Positioning;Positioning
+CSS2;Positioning;Positioning;Positioning;Positioning;Positioning;CSS2;position
+CSS2;[[#trident position|7.0]];rowspan=""6"" 12;1.0;85;yes;rowspan=""6"" 1.0;top
+8.0;1.0;85;yes;right;8.0;1.0;85
+ ;yes;bottom;8.0;1.0;85;yes;left
+ ;8.0;1.0;85;yes;z-index;[[#trident z-index|8.0]];[[#gecko z-index|1.9]]
+ ;85;yes;Box Alignment Module;Box Alignment Module;Box Alignment Module;Box Alignment Module;Box Alignment Module
+ ;Box Alignment Module;Box Alignment Module;Box Alignment Module; ;align-content;rowspan=""4"" 11.0;rowspan=""6"" 12
+ ;28.0;rowspan=""4"" table-experimental;rowspan=""6"" no;rowspan=""6"" no;align-items;rowspan=""3"" 20.0;align-self
+ ;justify-content;justify-items;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no;justify-self;Generated and Replaced Content
+ ;Generated and Replaced Content;Generated and Replaced Content;Generated and Replaced Content;Generated and Replaced Content;Generated and Replaced Content;Generated and Replaced Content;Generated and Replaced Content
+ ;CSS2;quotes;8.0;rowspan=""4"" 12;yes;412;3.4
+1.0;content;[[#trident_content|9.0]];[[#gecko content|1.9]];[[#webkit content|Partial]];yes;[[#presto content|2.7]];counter-increment
+8.0;1.8;525;3.4;rowspan=""2"" [[#presto counter|1.0]];counter-reset;8.0;1.8
+525;3.4;Lists;Lists;Lists;Lists;Lists;Lists
+CSS2;Lists;Lists;CSS2;list-style;4.0;rowspan=""4"" 12;1.0
+85;yes;rowspan=""4"" 1.0;list-style-image;4.0;1.0;85;yes
+list-style-position;4.0;1.0;85;yes;list-style-type;[[#trident list-style-type|8.0]];1.0
+CSS2;85;3.4;Colors;Colors;Colors;Colors;Colors
+CSS2;Colors;Colors;Colors;CSS2;color;3.0;12
+CSS2;1.0;85;yes;1.0; ;opacity;[[#trident_opacity|9.0]]
+CSS2;12;1.7;125;4.0;2.0;;
+CSS2;Trident;EdgeHTML;Gecko;WebKit;KHTML;Presto;Backgrounds
+Backgrounds;Backgrounds;Backgrounds;Backgrounds;Backgrounds;Backgrounds;Backgrounds;CSS2
+background;4.0;rowspan=""6"" 12;rowspan=""6"" 1.0;rowspan=""6"" 85;rowspan=""6"" yes;rowspan=""6"" 1.0;background-attachment
+ ;[[#trident background-attachment|7.0]];background-color;4.0;background-image;[[#trident background-image|8.0]];background-position;[[#trident background-position|8.0]]
+ ;background-repeat;4.0; ;background (multiple);rowspan=""4"" 9.0;rowspan=""4"" 12;1.9.2
+ ;312;3.5;rowspan=""4"" 2.5;background-clip;rowspan=""3"" 2.0;rowspan=""2"" yes;rowspan=""3"" [[#khtml -khtml-|Experimental]]
+ ;background-origin;background-size;yes; ;background-position-x;rowspan=""2"" 8.0;rowspan=""2"" 12
+ ;rowspan=""2"" no;rowspan=""2"" [[#webkit -webkit-|Experimental]];rowspan=""2"" no;rowspan=""2"" no;background-position-y;Fonts;Fonts
+ ;Fonts;Fonts;Fonts;Fonts;Fonts;Fonts;CSS2
+font;4.0;rowspan=""6"" 12;1.0;85;yes;[[#presto_font|Incorrect]];font-family
+4.0;1.0;85;yes;rowspan=""4"" 1.0;font-size;3.0;1.0
+CSS2;85;yes;font-style;4.0;1.0;85;yes
+CSS2;font-variant;4.0;1.0;125;yes;font-weight;[[#trident font-weight|8.0]]
+CSS2;[[#gecko font-weight|Partial]];[[#webcore font-weight|Partial]];yes;[[#presto font-weight|Incorrect]]; ;font-size-adjust;10.0
+rowspan=""3"" 12;[[#gecko font-size-adjust|1.9]];no;no;no;font-stretch;9.0;9.0
+no;no;no;font-feature-settings;10.0;rowspan=""10"" 34.0;no;no
+CSS2;no;font-kerning;no;rowspan=""9"" no;no;no;no
+CSS2;font-language-override;no;no;no;no;font-synthesis;no
+CSS2;no;no;no;font-variant-alternates;rowspan=""6"" no;rowspan=""6"" no;rowspan=""6"" no
+rowspan=""6"" no;font-variant-caps;font-variant-east-asian;font-variant-ligatures;font-variant-numeric;font-variant-position;unicode-range;9.0
+12;38.0;no;no;no;Text-section Text;Text-section Text;Text-section Text
+Text-section Text;Text-section Text;Text-section Text;Text-section Text;Text-section Text;CSS2;text-align;[[#trident text-align|4.0]]
+rowspan=""7"" 12;1.0;85;yes;rowspan=""6"" 1.0;text-decoration;yes;1.0
+85;yes;text-indent;3.0;1.0;85;yes;text-transform
+4.0;1.0;85;yes;letter-spacing;4.0;1.0;85
+CSS2;yes;word-spacing;8.0;1.0;85;yes;white-space
+CSS2;[[#trident white-space|8.0]];[[#gecko white-space|1.9.1]];[[#webcore_white-space|522]];yes;2.1; ;word-break
+CSS2;Partial;Partial;15.0;no;no;no;line-break
+CSS2;11.0;12;no;no;no;no;hyphens
+CSS2;10.0;12;6.0;table-experimental;no;no;word-wrap
+5.0;12;1.9.1;85;4.3;2.5;overflow-wrap;no
+ ;no;no;no;no;no;text-align-last;Partial
+ ;Partial;12.0;no;no;no;text-justify;5.5
+ ;12;no;no;no;no;text-emphasis;no
+no;no;no;no;no;hanging-punctuation;no;no
+ ;no;no;no;no; ;hyphenate-character;no
+no;rowspan=""8"" no;rowspan=""8"" no;rowspan=""8"" no;rowspan=""8"" no;hyphenate-limit-zone;10.0;12
+hyphenate-limit-chars;10.0;12;hyphenate-limit-lines;10.0;12;hyphenate-limit-last;rowspan=""4"" no
+CSS2;rowspan=""4"" no;text-space-collapse;text-spacing;text-wrap;Text Decoration;Text Decoration;Text Decoration
+CSS2;Text Decoration;Text Decoration;Text Decoration;Text Decoration;Text Decoration; ;text-shadow
+CSS2;10.0;12;1.9.1;yes;3.4;2.1;text-decoration-style
+CSS2;no;no;rowspan=""3"" 36.0;rowspan=""4"" no;no;no;text-decoration-color
+CSS2;no;no;no;no;text-decoration-line;no;no
+no;no;text-decoration-skip;no;no;no;no;no
+ ;text-underline-position;11.0;12;no;no;no;no
+ ;text-emphasis-style;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no
+ ;text-emphasis-color;text-emphasis;text-emphasis-position;;;Trident;EdgeHTML
+ ;Gecko;WebKit;KHTML;Presto;Writing Modes;Writing Modes;Writing Modes
+ ;Writing Modes;Writing Modes;Writing Modes;Writing Modes;Writing Modes;CSS2;direction
+ ;5.0;rowspan=""2"" 12;1.0;85;yes;rowspan=""2"" 1.0;unicode-bidi
+ ;5.0;1.0;525;yes; ;writing-mode;7.0
+ ;12;no;[[#webcore -webkit-|Nightly Build]];no;no;text-combine-horizontal;11.0
+ ;12.0;no;no;no;no;text-orientation;no
+ ;no;no;no;no;no;Tables;Tables
+ ;Tables;Tables;Tables;Tables;Tables;Tables;CSS2
+ ;border-collapse;8.0;rowspan=""5"" 12;1.0;125;yes;rowspan=""5"" 1.0
+border-spacing;8.0;1.0;125;yes;caption-side;8.0;1.4
+85;yes;empty-cells;8.0;1.0;125;yes;table-layout
+CSS2;5.0;1.0;85;yes;User interface;User interface;User interface
+CSS2;User interface;User interface;User interface;User interface;User interface;CSS2;cursor
+CSS2;[[#trident cursor|5.5]];rowspan=""5"" 12;[[#trident cursor|1.8]];125;yes;[[#presto cursor|Partial]];outline
+CSS2;8.0;1.8;125;yes;rowspan=""4"" 1.0;outline-color;8.0
+CSS2;1.8;125;yes;outline-style;8.0;1.8;125
+CSS2;yes;outline-width;8.0;1.8;125;yes; 
+outline-offset;no;no;1.8;125;3.5;2.1;box-sizing
+ ;8.0;12;29.0;yes;3.3.2;1.0;resize
+ ;no;no;2.0;525;no;no;appearance
+ ;no;12;[[#gecko -moz-|Experimental]];[[#webcore -webkit-|Experimental]];no;no;icon
+ ;no;rowspan=""6"" no;no;no;no;no;nav-index
+ ;no;no;no;no;rowspan=""5"" 2.1;nav-up;no
+ ;no;no;no;nav-right;no;no;no
+ ;no;nav-down;no;no;no;no;nav-left
+ ;no;no;no;no;text-overflow;Partial;Partial
+7.0;Partial;3.5.6;Experimental (Nightly);Paged media;Paged media;Paged media;Paged media
+ ;Paged media;Paged media;Paged media;Paged media;CSS2;page-break-before;rowspan=""2"" 4.0
+ ;rowspan=""5"" 12;rowspan=""2"" [[#gecko page-break-before-after|Partial]];rowspan=""2"" [[#webcore page-break-before-after|Partial]];rowspan=""5"" 3.5;rowspan=""5"" 1.0;page-break-after;page-break-inside
+ ;rowspan=""3"" 8.0;19.0;rowspan=""3"" 312;orphans;rowspan=""2"" no;widows; 
+ ;page;no;rowspan=""5"" no;no;no;no;no
+ ;size;no;no;no;no;1.0;image-orientation
+ ;no;26.0;no;no;no;object-fit;no
+ ;rowspan=""2"" 36.0;no;no;rowspan=""2"" 2.7;object-position;no;no
+no;Speech;Speech;Speech;Speech;Speech;Speech;Speech
+Speech; ;cue;rowspan=""23"" no;rowspan=""23"" no;rowspan=""23"" no;rowspan=""6"" no;rowspan=""23"" no
+ ;rowspan=""8"" 1.0;cue-after;cue-before;pause;pause-after;pause-before;speak
+ ;nightly;voice-family;rowspan=""16"" no;voice-balance;rowspan=""9"" [[#presto -xv-|Experimental]];voice-duration;voice-pitch
+ ;voice-pitch-range;voice-rate;voice-stress;voice-volume;interpret-as;phonemes;rest
+ ;rowspan=""6"" no;rest-after;rest-before;mark;mark-after;mark-before;
+ ;;Trident;EdgeHTML;Gecko;WebKit;KHTML;Presto
+ ;Media Queries;Media Queries;Media Queries;Media Queries;Media Queries;Media Queries;Media Queries
+ ;Media Queries; ;width;rowspan=""11"" 9.0;rowspan=""13"" 12;rowspan=""11"" 1.9.1;rowspan=""8"" 525
+ ;rowspan=""9"" 4.1;rowspan=""5"" 2.0;height;device-width;device-height;device-aspect-ratio;color
+ ;rowspan=""4"" 2.5;color-index;monochrome;resolution;rowspan=""5"" no;orientation;rowspan=""2"" 4.2.1
+no;aspect-ratio;2.1;grid;rowspan=""2"" 11.0;rowspan=""2"" yes;rowspan=""2"" 4.1;rowspan=""2"" 2.5
+scan;Ruby characters;Ruby characters;Ruby characters;Ruby characters;Ruby characters;Ruby characters;Ruby characters
+Ruby characters; ;ruby-position;rowspan=""3"" no;rowspan=""3"" no;rowspan=""2"" 38.0;rowspan=""3"" no;rowspan=""3"" no
+CSS2;rowspan=""3"" no;ruby-align;ruby-merge;no;Multi-column Layout;Multi-column Layout;Multi-column Layout
+Multi-column Layout;Multi-column Layout;Multi-column Layout;Multi-column Layout;Multi-column Layout; ;column-count;rowspan=""10"" 10.0
+ ;rowspan=""10"" 12;rowspan=""4"" [[#gecko -moz-|Experimental]];rowspan=""5"" [[#webcore -webkit-|Experimental]];rowspan=""10"" no;rowspan=""10"" 2.8;column-width;column-gap
+ ;column-rule;columns;9.0;break-before;rowspan=""3"" no;rowspan=""2"" [[#webcore -webkit-|Experimental]];break-after
+break-inside;rowspan=""1"" no;column-fill;14.0;no;column-span;no;[[#webcore -webkit-|Experimental]]
+Grid layout;Grid layout;Grid layout;Grid layout;Grid layout;Grid layout;Grid layout;Grid layout
+CSS2; ;grid;rowspan=""9"" no;rowspan=""9"" no;rowspan=""16"" table-experimental;rowspan=""16"" table-experimental;rowspan=""16"" no
+CSS2;rowspan=""16"" no;grid-template;grid-template-columns;grid-template-rows;grid-template-areas;grid-auto-columns;grid-auto-rows
+CSS2;grid-auto-flow;grid-auto-position;grid-columns;10.0;12;grid-columns-start;rowspan=""2"" no
+CSS2;rowspan=""2"" no;grid-columns-end;grid-row;10.0;12;grid-row-start;rowspan=""3"" no
+rowspan=""3"" no;grid-row-end;grid-area;Animation;Animation;Animation;Animation;Animation
+Animation;Animation;Animation; ;animation;rowspan=""9"" 10.0;rowspan=""9"" 12;rowspan=""9"" 16.0
+CSS2;rowspan=""9"" [[#webcore -webkit-|Experimental]];rowspan=""9"" no;rowspan=""9"" 2.12;animation-delay;animation-direction;animation-duration;animation-iteration-count
+CSS2;animation-name;animation-play-state;animation-timing-function;animation-fill-mode;Transforms;Transforms;Transforms
+CSS2;Transforms;Transforms;Transforms;Transforms;Transforms; ;transform
+CSS2;rowspan=""6"" 10.0;rowspan=""6"" 12;rowspan=""6"" 16.0;rowspan=""6"" [[#webcore -webkit-|Experimental]];rowspan=""6"" no;rowspan=""2"" 2.12;transform-origin
+transform-style;rowspan=""4"" no;perspective;perspective-origin;backface-visibility;Transitions;Transitions;Transitions
+ ;Transitions;Transitions;Transitions;Transitions;Transitions; ;transition-property
+ ;rowspan=""5"" 10.0;rowspan=""5"" 12;rowspan=""5"" 16.0;rowspan=""5"" [[#webcore -webkit-|Experimental]];rowspan=""5"" no;rowspan=""5"" table-experimental;transition-duration
+ ;transition-timing-function;transition-delay;transition;Flexible Box Layout;Flexible Box Layout;Flexible Box Layout;Flexible Box Layout
+ ;Flexible Box Layout;Flexible Box Layout;Flexible Box Layout;Flexible Box Layout; ;flex;rowspan=""8"" [[#trident flexbox|11.0]]
+ ;rowspan=""8"" 12;rowspan=""3"" 22.0;rowspan=""8"" 9.0;rowspan=""8"" no;2.12;flex-basis;no
+ ;flex-direction;2.12;flex-flow;28.0;no;flex-grow;rowspan=""2"" 22.0
+ ;2.12;flex-shrink;no;flex-wrap;28.0;no;order
+ ;22.0;2.12;;;Trident;EdgeHTML;Gecko
+ ;WebKit;KHTML;Presto;Regions;Regions;Regions;Regions
+ ;Regions;Regions;Regions;Regions; ;flow-into;rowspan=""2"" 10.0
+rowspan=""2"" 12;rowspan=""6"" no;rowspan=""6"" nightly;rowspan=""6"" no;rowspan=""6"" no;flow-from;region-fragment;no
+no;break-before;rowspan=""3"" [[#trident region-break|No]];rowspan=""3"" no;break-after;break-inside;Exclusions;Exclusions
+CSS2;Exclusions;Exclusions;Exclusions;Exclusions;Exclusions;Exclusions; 
+CSS2;wrap-flow;rowspan=""2"" 10.0;rowspan=""2"" 12;rowspan=""2"" no;rowspan=""2"" nightly;rowspan=""2"" no;rowspan=""2"" no
+CSS2;wrap-through;Shapes;Shapes;Shapes;Shapes;Shapes;Shapes
+CSS2;Shapes;Shapes; ;shape-margin;rowspan=""3"" no;rowspan=""3"" no;rowspan=""3"" no
+nightly;rowspan=""3"" no;rowspan=""3"" no;shape-outside;rowspan=""2"" no;shape-image-threshold;Masking;Masking
+Masking;Masking;Masking;Masking;Masking;Masking;CSS2;clip
+ ;[[#trident rect|8.0]];12;1.0;85;yes;1.0; 
+ ;clip-path;rowspan=""2"" no;rowspan=""2"" no;1.9.1;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no
+ ;clip-rule;no;mask;no;no;partial;partial
+ ;partial;partial;mask-box-image;rowspan=""6"" no;rowspan=""6"" no;rowspan=""6"" no;table-experimental
+rowspan=""6"" no;rowspan=""6"" no;mask-box-image-outset;rowspan=""5"" no;mask-box-image-repeat;mask-box-image-slice;mask-box-image-source;mask-box-image-width
+mask-clip;rowspan=""7"" no;rowspan=""7"" no;rowspan=""6"" no;rowspan=""6"" table-experimental;rowspan=""7"" no;rowspan=""7"" no;mask-image
+ ;mask-origin;mask-position;mask-repeat;mask-size;mask-type;20.0;no
+ ;Compositing and Blending;Compositing and Blending;Compositing and Blending;Compositing and Blending;Compositing and Blending;Compositing and Blending;Compositing and Blending
+ ;Compositing and Blending; ;mix-blend-mode;rowspan=""3"" no;rowspan=""3"" no;32.0;rowspan=""3"" no
+ ;rowspan=""3"" no;rowspan=""3"" no;isolation;36.0;background-blend-mode;30.0;Filter Effects
+ ;Filter Effects;Filter Effects;Filter Effects;Filter Effects;Filter Effects;Filter Effects;Filter Effects
+ ; ;filter;rowspan=""5"" no;13;35.0;18.0;rowspan=""5"" no
+ ;rowspan=""5"" no;flood-color;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;flood-opacity;color-interpolation-filters
+ ;lighting-color;Pointer events;Pointer events;Pointer events;Pointer events;Pointer events;Pointer events
+ ;Pointer events;Pointer events;andearlierdraft ofcss3-ui;pointer-events;11.0;12.0;1.9.2
+ ;530;no;2.0; ;touch-action;11.0;12.0
+ ;29.0;no;no;no;Line Grid;Line Grid;Line Grid
+ ;Line Grid;Line Grid;Line Grid;Line Grid;Line Grid; ;box-snap
+ ;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;rowspan=""4"" no;line-grid
+ ;line-slack;line-snap;;;Trident;EdgeHTML;Gecko
+ ;WebKit;KHTML;Presto;Logical Properties;Logical Properties;Logical Properties;Logical Properties
+ ;Logical Properties;Logical Properties;Logical Properties;Logical Properties; ;block-size;rowspan=""36"" no
+ ;rowspan=""36"" no;rowspan=""34"" 41.0;rowspan=""36"" no;rowspan=""36"" no;rowspan=""36"" no;inline-size;min-block-size
+ ;min-inline-size;max-block-size;max-inline-size;margin-block-start;margin-block-end;margin-inline-start;margin-inline-end
+ ;offset-block-start;offset-block-end;offset-inline-start;offset-inline-end;padding-block-start;padding-block-end;padding-inline-start
+ ;padding-inline-end;border-block-start-width;border-block-end-width;border-inline-start-width;border-inline-end-width;border-block-start-style;border-block-end-style
+ ;border-inline-start-style;border-inline-end-style;border-block-start-color;border-block-end-color;border-inline-start-color;border-inline-end-color;border-block-start
+ ;border-block-end;border-inline-start;border-inline-end;background-image-transform;rowspan=""2"" no;border-image-transform;Will Change
+Will Change;Will Change;Will Change;Will Change;Will Change;Will Change;Will Change; 
+will-change;no;no;36.0;no;no;no;CSSOM View
+CSSOM View;CSSOM View;CSSOM View;CSSOM View;CSSOM View;CSSOM View;CSSOM View; 
+ ;scroll-behavior (optional);no;no;36.0;no;no;no
+ ;Scroll Snap Points;Scroll Snap Points;Scroll Snap Points;Scroll Snap Points;Scroll Snap Points;Scroll Snap Points;Scroll Snap Points
+ ;Scroll Snap Points; ;scroll-snap-type;rowspan=""5"" 10.0;rowspan=""5"" 12;rowspan=""5"" 39.0;rowspan=""5"" no
+ ;rowspan=""5"" no;rowspan=""5"" no;scroll-snap-points-x;scroll-snap-points-y;scroll-snap-destination;scroll-snap-coordinate;
+ ;;Trident;EdgeHTML;Gecko;WebKit;KHTML;Presto
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+ ;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;
+;;;;;;;

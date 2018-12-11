@@ -1,0 +1,30 @@
+Driver;802.11;Bus interface;WEP;WPA;WPA2;Monitor mode;Master mode;Ad-Hoc mode
+ ;802.11a, 802.11b, 802.11g;Cardbus, PCI;Yes;No;No;Yes;Yes;Yes
+ ;802.11b;PC Card, PCI, ISA;Yes;No;No;Yes;No;Yes
+ ;802.11a, 802.11b, 802.11g;Cardbus, PCI;Yes;Yes;Yes;Yes;Yes;Yes
+ ;802.11a, 802.11b, 802.11g, 802.11n;Cardbus, PCI-E, Mini PCIE;Yes;Yes;Yes;Yes;Yes;No
+ ;802.11b;USB;Yes;No;No;No;No;Yes
+ ;802.11b;Cardbus, PCI;No;No;No;No;No;Yes
+ ;802.11b, 802.11g;Cardbus, PCI;Yes;Yes;Yes;Yes;No;No
+ ;N/A;PC Card;No;No;No;No;No;No
+ ;802.11b;PCI;Yes;Yes;Yes;Yes;No;Yes
+ ;802.11a, 802.11b, 802.11g;PCI;Yes;Yes;Yes;Yes;No;Yes
+ ;802.11a, 802.11b, 802.11g, 802.11n;PCI-E, Mini PCIE;Yes;Yes;Yes;Yes;No;No
+ ;802.11a, 802.11b, 802.11g, 802.11n;PCI-E, Mini PCIE;Yes;Yes;Yes;Yes;No;No
+ ;802.11b, 802.11g;Cardbus, PC Card, PCI;Yes;Yes;Yes;Yes;No;No
+ ;802.11a, 802.11b, 802.11g;USB;Yes;Yes;Yes;Yes;No;No
+ ;802.11a, 802.11b, 802.11g;Cardbus, PCI;Yes;No;No;Yes;Yes;Yes
+ ;802.11a, 802.11b, 802.11g;Cardbus, PCI, Mini PCI;Yes;Yes;Yes;Yes;Yes;Yes
+ ;N/A;PC Card;No;No;No;No;No;Yes
+ ;802.11b;Cardbus, PCI;Yes;No;No;Yes;Yes;Yes
+ ;802.11b, 802.11g;Mini PCIE;Yes;Yes;Yes;Yes;No;No
+ ;802.11a, 802.11b, 802.11g;USB;Yes;Yes;Yes;Yes;Yes;Yes
+ ;802.11a, 802.11b, 802.11g;USB;Yes;Yes;Yes;Yes;No;No
+ ;802.11a, 802.11b, 802.11g;USB;Yes;No;No;Yes;No;No
+ ;802.11b, 802.11g;USB;Yes;Yes;Yes;Yes;No;No
+ ;802.11b, 802.11g;USB;Yes;Yes;Yes;Yes;Yes;Yes
+ ;802.11b, 802.11g;USB;Yes;Yes;Yes;Yes;No;No
+ ;802.11b, 802.11g;USB;Yes;Yes;Yes;Yes;No;No
+ ;802.11b;PC Card, PCI, USB;Yes;No;No;No;Yes;Yes
+ ;802.11a, 802.11b, 802.11g;PCI;Yes;Yes;Yes;Yes;No;No
+ ;802.11b, 802.11g;USB;Yes;Yes;Yes;Yes;No;No

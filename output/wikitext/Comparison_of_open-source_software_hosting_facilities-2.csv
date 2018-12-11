@@ -1,0 +1,20 @@
+Name;Code review;Bug tracking;Web hosting;Wiki;Translation system;Shell server;Mailing List;Forum;Personal branch;Private branch;Announce;Build system;Team;Release Binaries;Self-hosting
+Assembla;yes;yes;yes;yes;yes;no;no;no;yes;yes;yes;yes;yes;unk;no
+Bitbucket;yes;yesAnyone can submit Bug Reports without logging in.;yes;yes;no;no;no;no;yes;Yesprivate branch limited to 5 users on free plan, see [http://www.bitbucket.org/plans/ Pricing and plans — bitbucket.org];no;yes;yes;no;Commercially (BitBucket Server formerly Stash)
+Buddy;yes;yes;no;no;no;no;yes;yes;yes;yes;yes;yesBuilds are run in Docker containers;yes;yes;yes
+CloudForge;unk;yes;yes;yes;no;no;no;no;unk;unk;unk;unk;unk;unk;no
+GitHub;yes;YesRequires one to log in to report a Bug.;yes;yes;no;no;no;no;yes;Yes;yes;3rd-party (e.g. Travis CI, Appveyor and others);yes;yes;Commercially (GitHub Enterprise)
+GitLab;yes;yes;yes;yes;no;no;no;no;yes;yes;yes;yes;yes;yes;Yes
+GNU Savannah;yes;yes;yes;no;no;yes;yes;no;no;no;yes;no;yes;unk;yes
+Helix TeamHub;yes;yes;no;yes;no;no;yes;yes;yes;yes;no;Yes, with hooks. Jenkins, TeamCity, etc.;no;yes;yes
+java.net/Project Kenai;unk;yes;yes;yes;no;no;yes;yes;yes;yes;yes;yes;yes;unk;no
+Kallithea;yes;no;yes;no;no;unk;no;no;yes;yes;no;no;yes;yes;yes
+Launchpad;yes;yes;no;no;yes;no;yes;no;yes;YesCurrently only available for security vulnerability updates;yes;yesUbuntu;yes;unk;yes
+OSDN;yes;yes;yes;yes;no;yes;yes;yes;yes;no;yes;no;yes;yes;no
+Ourproject.org;unk;yes;yes;yes;no;unk;yes;yes;unk;unk;unk;unk;unk;unk;yes
+Phabricator;yes;yes;yes;yes;unk;yes;unk;yes;unk;unk;unk;unk;unk;unk;yes
+RhodeCode;yes;no;yes;no;no;unk;no;no;yes;yes;yes;no;yes;yes;yes
+SourceForge;yes;yes;yes;yes;no;yes;yes;yes;yes;YesPrivate repositories can be used to set up a project before going live. However, SourceForge requires that the project remains open source. See [https://sourceforge.net/p/forge/site-support/7229/#e95c SourceForge Support].;yes;no;yes;yes;yes
+Team Foundation Server;yes;yes;no;yes;no;no;yes;yes;yes;yes;yes;yes;yes;yes;yes
+Visual Studio Team Services;yes;yes;yes;yes;no;no;yes;yes;yes;yes;yes;yes;yes;yes;no
+Name;Code review;Bug tracking;Web hosting;Wiki;Translation system;Shell server;Mailing List;Forum;Personal branch;Private branch;Announce;Build system;Team;Release Binaries;Self-hosting

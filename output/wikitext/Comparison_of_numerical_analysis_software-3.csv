@@ -1,0 +1,18 @@
+:Standalone executable creation support:Symbolic computation support:OOP support:GUI creation support:Multi-dimensional arrays as primitive data type:Centralized extension library website:Can call code in other languages:Can be called from other languages
+Analytica:no:no:yes:yes:yes:yes:1COM, Excel:1Excel, COM, .NET
+Dyalog APL:yes:yes:yes:1Win32, .NET, WPF, HTML/JS:yes:yes:1COM, .NET, WebServices, Shared Libraries, DLL, NAG, R, JavaScript:1COM, .NET, WebServices
+GNU Data Language:no:no:yes:1 GUI Widgets since v.0.9 but still incomplete:yes:no:1C, Python:1Python
+GNU MCSim:yes:no:no:1 XMCSim with TCL/TK and wish:no:no:1C:1R
+GNU Octave:Yes with mkoctfile:1 only with GiNaC extension:yes:''GUI Octave'' code can be used:Yes:Yes:1C++, Fortran, Perl, Tcl:1Java, Perl, C++
+J:no:yes:yes:yes:yes:yes:1JavaScript:1JavaScript
+Julia:no:no:yes:yes:yes:yes::1C/C++
+LabVIEW::No::Yes:Yes:Yes::Yes
+Maple:no:yes:yes:yes:yes:yes:1C, C#, Fortran:1 MATLAB, Excel, VisualBasic, Java, and C
+Mathematica:yes:yes:yes:yes:yes:yes:1Java, .NET, C++, Fortran, CUDA, OpenCL, R, Python:
+MATLAB:with extension:1with extension library:yes:yes:yes:yes::1.NET, Java, Excel
+MLAB:no:yes:no:yes:yes:no:no:no
+PDL:yes:no:yes:yes:yes:yes:1C via perlXS; C, Python, F77, etc. via Inline:1Perl, C
+R:No:Yes and extended via Ryacas package:yes:1 Via the tcltk library:yes:yes::
+SageMath:no:yes:yes:no:yes:yes:1 Many languages:yes (any language that can call Python)
+SAS:no:no:1DS2 and SCL:yes:no:no: :no
+TK Solver:with extension:no:yes:with extension:yes:yes:1.NET Excel:1Unknown

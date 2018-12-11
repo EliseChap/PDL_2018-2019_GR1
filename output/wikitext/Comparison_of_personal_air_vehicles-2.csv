@@ -1,0 +1,30 @@
+Model;Type;Capacity;Speed;Range;Door-to-doorcapable;Price
+A³ Vahana;?;?;?;? km;?;? €
+Aeris Naviter AeroQuad;?;?;unflown;? km;?;? €
+Milner Motors Aircar;Roadable aircraft;4;unflown;?;?;$450,000 US
+Attila Melkuti AMV 211;?;?;unflown;? km;?;? €
+Carter PAV;Autogyro;4;unflown;on;?;? €
+DARPA TX;Roadable aircraft;4;unflown; ;?;? €
+DM AeroSafe Eagle Aero-Cart;VTOL aircraft;1;unflown;? km;?;? €
+Peebles Fanwing;?;?;unflown;? km;?;? €
+GEN H-4;Ultralight helicopter;1;on;on;Yes;7 500 000 JPY
+Gress Aerospace PAV;?;?;? km/h;? km;?;? €
+BLI Helodyne;VTOL aircraft;4;on;on;Yes;$67,500 US
+Entecho Hoverpod;?;?;? km/h;? km;?;? €
+AVCEN Jetpod;STOL aircraft;?;unflown;? km;?;n/a
+Kitty Hawk Flyer;VTOL aircraft;?;?;?;?;?
+TAM Libelula;Backpack helicopter;?;? km/h;? km;?;? €
+PAV-X;Ultralight Semi-Autonomous Drone;1;on;on;?;€50,000
+Lilium Jet;VTOL;1;on;on;?;?
+Mosquito XE/XEL;ultralight helicopter;1;on;on;?;€43,000
+PAL-V gyrocopter;autogyro;2;on;on;Yes;€200,000
+Kestel PAV;?;?;unflown;? km;?;? €
+Samson Skybike;Paramotor;1;? km/h;on;?;$6,000 US
+Moller Skycar;VTOL aircraft;?;unflown;? km;?;?
+Parajet Skycar;Paramotor;2;on;on;Yes;£50,000
+Macro SkyRider X2R;?;?;unflown;? km;?;? €
+Butterfly Super Sky Cycle;Autogyro;1;on;? km;?;?
+Samson Switchblade;Roadable aircraft;2;unflown;on;Yes;$60,000 US (kit)
+Terrafugia Transition;Roadable aircraft;2;on;on;?;$194,000 US
+VerdeGo Aero PAT200;hybrid electric VTOL;2 pax/500lb (227kg);> 150mph (240 kph);20-40mi (30–60km);urban vertiports;for operators
+Xplorair PX200;VTOL aircraft;1;unflown;on;Yes;$80,000 US

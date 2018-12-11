@@ -1,0 +1,20 @@
+ Name ; Frequency; Credit bureau; Full SSN required? ; Scoring model
+AnnualCreditReport.com;Annual full official report (one from each agency);Equifax, Experian, TransUnion;Yes;No score provided
+CreditCards.com by Bankrate;Monthly full report;TransUnion;Last 4 digits only;[[VantageScore]] 3.0
+Credit.com;Monthly summary;Experian;Yes;VantageScore 3.0, Experian's National Equivalency Score
+Credit Journey by Chase;Weekly summary;TransUnion;Yes;VantageScore 3.0
+Credit Karma;Weekly full reports;TransUnion, Equifax;Sometimes;VantageScore 3.0
+Credit Scorecard by Discover;Monthly summary;Experian;Yes;FICO 8
+Credit Sesame;Monthly summary;TransUnion;Last 4 digits only;VantageScore 3.0
+CreditWise by Capital One;Weekly full report;TransUnion;Yes;VantageScore 3.0
+CreditWorks Basic by Experian;Monthly full report;Experian;Last 4 digits only;FICO 8
+LendingTree;Monthly summary;TransUnion;Last 4 digits only;VantageScore 3.0
+Mint by Intuit;Monthly summary;TransUnion;Yes;VantageScore 3.0
+MoneyLion;Monthly summary;TransUnion;Yes;VantageScore 3.0
+myBankrate;Monthly full report;TransUnion;Last 4 digits only;VantageScore 3.0
+MyCredit Guide by American Express;Weekly full report;TransUnion;Last 4 digits only;VantageScore 3.0
+NerdWallet;Weekly full report;TransUnion;Last 4 digits only;VantageScore 3.0
+SavvyMoney;Monthly summary;TransUnion;Yes;VantageScore 3.0
+QLCredit;Biweekly full report;TransUnion;Yes;VantageScore 3.0
+Quizzle by Bankrate;Quarterly full report;TransUnion;Last 4 digits only;VantageScore 3.0
+WalletHub;Daily full report;TransUnion;Last 4 digits only;VantageScore 3.0

@@ -1,0 +1,32 @@
+Name;Official website;Programming language;Software license;Used by
+Boost.Regexboost_regex_formerly_regex; ;C++;[[Boost Software License|Boost]];Notepad++ >= 6.0.0, EmEditor
+Boost.Xpressive; ;C++;Boost; 
+CL-PPCRE; ;Common Lisp;[[BSD licenses|BSD]]; 
+cppre; ;C++;[[GNU General Public License|GPL]]; 
+DEELX; ;C++;free personal and commercial use; 
+FREJfuzzy_regexp_libraries; ;Java;[[GNU Lesser General Public License|LGPL]]; 
+GLib/GRegexglib_gregex_version; ;C;LGPL; 
+GRETA; ;C++;dunno; 
+ ; ;RTL;Proprietary;hardware accelerated regex engine for cybersecurity OEMs
+Hyperscan;;C, x86-specific assembly (SSSE3+);3-clause BSD; 
+ICU; ;C, C++icu4j;[https://github.com/unicode-org/icu/blob/master/icu4c/LICENSE ICU];Foundation (Apple and Swift open-source versions)
+Jakarta/Regexp; ;Java;[[Apache License|Apache]]; 
+java.util.regex; ;Java;Proprietary;jEdit
+JRegex; ;Java;BSD; 
+MATLAB; ;;MATLAB, The Language of Technical Computing; 
+Oniguruma;;C;BSD;Atom, Take Command Console, Tera Term, TextMate, Sublime Text, SubEthaEdit, EmEditor and jq
+Pattwo; ;Java (compatible with Java 1.0);LGPL; 
+PCRE; ;C, C++pcre_cpp;BSD;Apache HTTP Server, Nginx, Julia, HHVM, Notepad++ < 6.0.0, PHP
+Qt/QRegExp; ;C++;[http://qt-project.org/doc/qt-5.1/qtdoc/gpl.html Qt GNU GPL v. 3.0],"
+[http://qt-project.org/doc/qt-5.1/qtdoc/lgpl.html Qt GNU LGPL v. 2.1],"
+[http://qt-project.org/doc/qt-5.1/qtdoc/commerciallicense.html Qt Commercial];Kate, Kile
+regex - Henry Spencer's regular expression libraries; ;C;BSD; 
+RE2; ;C++;BSD; 
+Henry Spencer's Advanced Regular Expressions; ;C;BSD; 
+RGX; ;C++ based component library;[https://www.p6r.com/p6r-software-library-license-1-1.html P6R]; 
+SubReg; ;C;MIT; 
+TPerlRegEx; ;Object Pascal;[[Mozilla Public License|MPLv1.1]]; 
+TREfuzzy_regexp_libraries; ;C;BSD; 
+TRegExpr; ;Object Pascal;Dual-license: [[freeware]], or LGPL with static linking exception;Total Commander
+XRegExp; ;JavaScript;[[MIT License|MIT]]; 
+Wolfram Language (Mathematica); ;Wolfram Language; ;Mathematica, the Wolfram Development Platform

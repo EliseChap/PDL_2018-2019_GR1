@@ -1,0 +1,9 @@
+;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossy compression;Lossy compression;No compression;No compression;Lossless compression;Lossless compression;Lossless compression;Lossless compression
+;MP3;WMA;Vorbis;Opus;AAC;AC-3;DTS;PCM;LPCM;FLAC;ALAC;MLP / Dolby TrueHD;DTS-HD
+AVI;yes;yes;Not officially;dunno;yes;yes;yes;yes;yes;no;no;no;dunno
+Matroska;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes
+MP4;yes;yes;Not officially;yes;yes;yes;yes;no;yes;Not officially;yes;no;yes
+MPG;yes;dunno;dunno;no;dunno;dunno;dunno;dunno;yes;dunno;dunno;dunno;dunno
+MXF;yes;no;dunno;dunno;yes;yes;yes;yes;yes;no;no;yes;yes
+Ogg;yes;no;yes;yes;no;no;no;yes;yes;yes;no;no;no
+QuickTime;yes;yes;yes;dunno;yes; ;dunno;yes;yes;yes;yes;no;no

@@ -1,0 +1,19 @@
+Editor;Site;Latest version;Style, clone of;Cost (US$);Software license;Open source;Browser support;Activity
+Ace;,;, 2018-03-26;Sublime Text / Microsoft Visual Studio;free;New BSD License;[https://github.com/ajaxorg/ace Yes];Firefox 3.5+, Safari 4+, Chrome, IE 8+, Opera 11.5+;yes
+Atom; ;, 2016-04-28;Emacs, Vim and others;Free;Dual;Yes;Chrome;yes
+CodeMirror;,;, 2018-06-20;plain textarea;free;MIT-like;[https://github.com/marijnh/CodeMirror Yes];Firefox 3+, Chrome, Safari 3+, Internet Explorer 8+, Opera 9+;yes
+Codeanywhere; ;6.0;SublimeText;-;Public Cloud;no;Firefox 3+, Chrome, Safari 3+, Internet Explorer 8+, Opera 9+;yes
+Codenvy Editor; ;2.10.17, 2014-01-17;Eclipse;-;Public Cloud;yes;Firefox 3+, Chrome, Safari 3+, Internet Explorer 8+, Opera 9+;yes
+Orion; ;, 2015-03-04;Eclipse SWT StyledText, regular textarea;free;dual-licensed: 3-clause and EPL;[https://github.com/eclipse/orion.client Yes];Firefox 37+, Chrome 40+, Safari7+, Internet Explorer 11+;yes
+Monaco Editor;,;, 2018-11-23;Visual Studio Code;free;MIT;[https://github.com/Microsoft/monaco-editor/ Yes];IE8+, Firefox 4+, Chrome;yes
+Markitup;,;1.1.14, 2013-02-04;Markup editor, no syntax highlight;free;MIT, GPL;yes;IE 6 & 7, Firefox 2 & 3, Safari 3.1, Opera 9+;some
+LDT; ;2012-02-19;regular textarea;free;MIT, GPL;[https://github.com/kueblc/LDT/ Yes];Firefox 3.6+, IE8, Chromium 16, Midori 4.1, Opera 11, Epiphany;some
+Ymacs;,;0.5, 2012-03-28;Emacs;free;BSD;[http://code.ymacs.org/hgwebdir.cgi/ymacs/ Yes];Firefox, Chrome, Safari;some
+CodePress; ;0.9.6, 2007-09-26;Microsoft Visual Studio;free;LGPL;yes;dunno;no
+CodeTextArea;,;2009-06;Microsoft Visual Studio;free;BSD;yes;Dojo widget;no
+EditArea;,;0.8.2, 2010-01-14;Microsoft Visual Studio;free;LGPL;yes;IE 6+, Firefox 1.5+, Safari 3+, Opera 9+, Chrome;no
+Helene;,;0.9, unknown release date;Microsoft Visual Studio;free;GPL;yes;;no
+9ne; ;dunno;Emacs;free;GPL;yes;;no
+jsvi; ;dunno;vi;free;GPL;yes;;no
+MDK-Editor; ;2.10, 2008;Microsoft Visual Studio;Depends on use;Dual;Code is readable;tested to work on: IE 6, 7 - Firefox 2, 3 - Chrome;Yes
+Micro; ;2013;nano;free;GPL;yes;;some

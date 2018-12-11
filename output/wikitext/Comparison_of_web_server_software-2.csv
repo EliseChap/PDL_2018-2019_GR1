@@ -1,0 +1,34 @@
+Server;Security;Security;Security;;Dynamic content""Dynamic content"";Dynamic content""Dynamic content"";Dynamic content""Dynamic content"";Dynamic content""Dynamic content"";Dynamic content""Dynamic content"";Dynamic content""Dynamic content"";Dynamic content""Dynamic content"";Dynamic content""Dynamic content"";;;;;
+Server;authentication;authentication;SSL/TLShttps;hosting;CGI;FCGI;SCGI;WSGI;Servlets;SSI;ISAPI;SSJS;Runs in user spaceor kernel space;Administrationconsole;IPv6;HTTP/2;QUIC
+AOLserver;Yes;No;Yes""RSA BSAFE""""openSSL""""NSS"";Yes;Yes;No;Unknown;No;No;Yes;Unknown;Unknown;user;Unknown;Unknown;Unknown;Unknown
+Apache HTTP Server;Yes;Yes;Yes""modules""""openSSL""""GnuTLS"";Yes;Yes;Yes;Yes;Yes""modules"";No""AJP"";Yes;Yes""mod_isapi"";Unknown;user;Yesvia [[Apache Geronimo|Geronimo]];Yes;Yes;Unknown
+Apache Tomcat;Yes;Yes;Yes""jsse"";Yes;Yes;No;Unknown;No;Yes;Yes;No""ApacheTomcatISAPI"";Unknown;user;Yes;Yes""RequiresJVMIPv6Support"";Yes;Unknown
+Boa;No;No;Yeswith external patch;Yes;Yes;No;Unknown;No;No;No;No;Unknown;user;Unknown;Yes;Unknown;Unknown
+Caddy;Yes;No;Yes;Yes;partialCGI implemented for WebSocket connections;Yes;No;No;No;NoSame capabilities as SSI available with templates;No;No;user;No;Yes;Yes;Yes
+Caucho Resin Server;Yes;Yes;paid version""openSSL"";Yes;Yes;Yes;Unknown;No;Yes;Yes;No;Unknown;user;Yes;Yes;Unknown;Unknown
+Caudium;Yes;Yes;Yes;Yes;Yes;Yes;Unknown;No;Yes;Yes;Unknown;Unknown;user;Yes;Yes""CIPVN"";Unknown;Unknown
+Cherokee HTTP Server;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;No;Yes;No;Unknown;user;Yes;Yes;Unknown;Unknown
+HFS;Yes;No;Yes via Stunnel;No;No;No;Unknown;No;No;No;Unknown;Unknown;user;Unknown;No;Unknown;Unknown
+Hiawatha HTTP Server;Yes;Yes;Yes""PolarSSL"";Yes;Yes;Yes;No;No;No;Yes;No;Unknown;user;Yes;Yes;Unknown;Unknown
+IBM HTTP Server;Yes;Yes;Yes;Yes;Yes;Yes;Unknown;No;No;Yes;No;Unknown;user;Yes;Yes;Unknown;Unknown
+Internet Information Services;Yes;Yes;Yes;Yes;Yes;Yes;Yes;No;No""IIS Java"";Yes;Yes;Yes;kernel and user;Yes;Yes;Yes;Unknown
+Jetty;Yes;Yes;Yes;Yes;Yes;Unknown;Unknown;No;Yes;Unknown;Unknown;Yes;user;Unknown;Unknown;Yes;Unknown
+Jexus;No;No;Yes;Yes;No;Yes;No;No;No;No;No;Yes;user;Yes;No;Unknown;Unknown
+lighttpd;Yes;Yes;Yes""openSSL"";Yes;Yes;Yes;Yes;Yes;No""AJP"";Yes;No;No;user;No;Yes;No;Unknown
+LiteSpeed Web Server;Yes;Yes;Yes;Yes;Yes;Yes;Unknown;No;No""AJP"";Yes;No;Unknown;user;Yes;Yes;Yes;Yes
+Mongoose;Yes;Yes;Yes;Yes;Yes;No;No;No;No;Yes;No;No;user;Yes;Yes;Unknown;Unknown
+Monkey HTTP Server;Yes;No;Yes""PolarSSL"";Yes;Yes;Yes;No;No;No;No;No;No;user;No;Yes;Unknown;Unknown
+NaviServer;Yes;No;Yes;Yes;Yes;No;Unknown;No;No;No;Unknown;Unknown;user;Yes;Unknown;Unknown;Unknown
+NCSA HTTPd;Yes;Yes;Unknown;partial""NCSA virtual hosting"";Yes;Unknown;Unknown;No;No;Yes;No;Unknown;user;Unknown;Unknown;Unknown;Unknown
+nginx;Yes;Yes (module);Yes;Yes;No;Yes;Yes;Yes;No;Yes;No;Unknown;user;Yes;Yes;Yes;Unknown
+OpenLink "
+Virtuoso;Yes;Yes;Yes;Yes;No;No;No;No;Yes;Yes;No;No;user;Yes;No;No;Unknown
+OpenLiteSpeed;Yes;Yes;Yes;Yes;Yes;Yes;Unknown;No;No;No;No;Unknown;user;Yes;Yes;Yes;Unknown
+Oracle HTTP Server;Yes;Yes;Yes;Yes;Yes;Yes;Unknown;No;No;Yes;No;Unknown;user;Yesvia Enterprise Manager;Yes;Unknown;Unknown
+Oracle iPlanet Web Server;Yes;Yes;Yes;Yes;Yes;Yes;Unknown;No;Yes;Yes;No;Yes;user;Yes;Yes;Unknown;Unknown
+thttpd;Yes;Unknown;No;Yes;Yes;No;Unknown;No;No;No;No;Unknown;user;No;Yes;Unknown;Unknown
+TUX web server;No;No;No;Yes;Yes;No;Unknown;No;No;No;No;Unknown;kernel;Unknown;Unknown;Unknown;Unknown
+Wakanda Server;Yes;Yes;Yes;Yes;No;No;No;No;No;No;No;Yes;user;Yes;Yes;Unknown;Unknown
+Xitami;Yes;Unknown;paid version;Yes;Yes;Unknown;Unknown;No;Unknown;Yes;Unknown;Unknown;user;Unknown;Unknown;Unknown;Unknown
+Yaws;Yes;Unknown;Yes;Yes;Yes;Yes;Unknown;No;No;Yes;No;Unknown;user;Unknown;Yes;Unknown;Unknown
+Zeus Web Server;Yes;Yes;Yes;Yes;Yes;Yes;Unknown;No;No""AJP"";Yes;Yes;Unknown;user;Yes;No;Unknown;Unknown

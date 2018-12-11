@@ -1,0 +1,32 @@
+Implementation;SSL 2.0 (insecure);SSL 3.0 (insecure);TLS 1.0;TLS 1.1;TLS 1.2;TLS 1.3;DTLS 1.0;DTLS 1.2
+BearSSL;No;No;yes;yes;yes; ;no;no
+Botan;No;No;yes;yes;yes;;yes;yes
+BoringSSL; ; ;yes;yes;yes;Yes(draft version);yes;yes
+Bouncy Castle;No;No;yes;yes;yes;Yes(draft version);yes;yes
+CryptoComply;No;Disabled by default;yes;yes;yes;Yes(draft version);yes;yes
+cryptlib;No;Disabled by default at compile time;yes;yes;yes;;no;no
+GnuTLS;Noa;Disabled by default;yes;yes;yes;Yes;yes;yes
+JSSE;Noa;Disabled by default;yes;yes;yes;Yes<br /><small>(JDK 11+)</small>;yes;yes
+LibreSSL;No;No;yes;yes;yes;;yes;no
+MatrixSSL;No;Disabled by default at compile time;yes;yes;yes;yes;yes;yes
+mbed TLS;No;Disabled by default;yes;yes;yes;;yes;yes
+NSS;Nob;Disabled by default;yes;yes;yes;yes;yes;yes
+OpenSSL;No;Disabled by default;yes;yes;yes;yes;yes;yes
+RomSTL;No;No;yes;yes;yes;Not yet;yes;yes
+RSA BSAFE;No;Disabled by default;yes;yes;yes;Not yet;no;no
+rustls;No;No;no;no;yes;Yes(draft version);no;no
+S2n;No;Disabled by default;yes;yes;yes;;no;no
+SChannel XP, 2003;Disabled by default in MSIE 7;Enabled by default;Enabled by default in MSIE 7;no;no;;no;no
+SChannel Vista;Disabled by default;Enabled by default;yes;no;no;;no;no
+SChannel 2008;Disabled by default;Enabled by default;yes;<small>Disabled by default (KB4019276)</small>;<small>Disabled by default (KB4019276)</small>;;no;no
+SChannel 7, 2008R2;Disabled by default;Disabled by default in MSIE 11;yes;Enabled by default in MSIE 11;Enabled by default in MSIE 11;;yes;no
+SChannel 8, 2012;Disabled by default;Enabled by default;yes;Disabled by default;Disabled by default;;yes;no
+SChannel 8.1, 2012R2, 10 v1507 & v1511;Disabled by default;Disabled by default in MSIE 11;yes;yes;yes;;yes;no
+SChannel 10 v1607 / 2016;No;Disabled by default;yes;yes;yes;;yes;yes
+OS X 10.2-10.7, iOS 1-4;Yes;Yes;yes;no;no;;no;no
+OS X 10.8-10.10, iOS 5-8;Noc;Yes;yes;yesc;yesc;;yesc;no
+Secure Transport OS X 10.11, iOS 9;No;Noc;yes;yes;yes;;yes;Unknown
+Secure Transport OS X 10.13, iOS 11;No;Noc;yes;yes;yes;Yes(draft version);yes;Unknown
+wolfSSL;No;Disabled by default;yes;yes;yes;yes;yes;yes
+Erlang/OTP SSL application;No;Disabled by default;yes;yes;yes;Not yet;yes;yes
+Implementation;SSL 2.0 (insecure);SSL 3.0 (insecure);TLS 1.0;TLS 1.1;TLS 1.2;TLS 1.3;DTLS 1.0;DTLS 1.2

@@ -1,0 +1,35 @@
+Function;Size (bit);Size (bit);Size (bit);Size (bit);Size (bit);Size (bit);Words × Passes = Rounds;Operations;Endian;Specification
+Function;Word;Digest;values;Computationvalues;Block;Length;Words × Passes = Rounds;Operations;Endian;Specification
+GOST R 34.11-94;32;256;256;256;256;32;4;A B L S;Little;RFC 5831
+HAVAL-3-128;32;128;256;256;1,024;64;96;A B S;Little; 
+HAVAL-3-160;32;160;256;HAVAL-3-192;1,024;64;96;A B S;Little; 
+192;32;HAVAL-3-224;256;224;1,024;64;96;A B S;Little; 
+HAVAL-3-256;32;256;256;HAVAL-4-128;1,024;64;96;A B S;Little; 
+128;32;128;256;HAVAL-4-160;1,024;64;96;A B S;Little; 
+160;32;HAVAL-4-192;256;192;1,024;64;HAVAL-4-224;A B S;Little; 
+224;32;HAVAL-4-256;256;256;1,024;64;HAVAL-5-128;A B S;Little; 
+128;32;160;256;HAVAL-5-160;1,024;64;160;A B S;Little; 
+HAVAL-5-192;32;192;256;HAVAL-5-224;1,024;64;224;A B S;Little; 
+HAVAL-5-256;32;256;256;MD2;1,024;64;8;A B S;Little; 
+128;32;256;256;384;1,024;64;128;A B S;Little; 
+None;32;864;256;B;1,024;64;N/A;A B S;Little; 
+RFC 1319;32;MD4;256;32;1,024;64;128;A B S;Little; 
+128;32;128;256;512;1,024;64;64;A B S;Little; 
+48;32;A B S;256;Little;1,024;64;RFC 1320;A B S;Little; 
+MD5;64;RFC 1321;RIPEMD;32;128;128;256;512;64;48
+A B S;Little;;RIPEMD-128;64; ;RIPEMD-256;256;256;RIPEMD-160;160
+160;32;128;320;80;512;64;RIPEMD-320;A B S;Little;
+320;320;SHA-0;32;160;160;160;512;64;80;A B S
+Big;32;128;SHA-1;256;512;64; ;A B S;Little;
+SHA-256;32;256;64;256;512;64;256;A B S;Little;
+256;32;64;SHA-224;224;512;64;SHA-512;A B S;Little;
+64;32;512;320;80;512;64;512;A B S;Little;
+512;1024;128;80;SHA-384;384;Tiger-192;64;192;192;192
+512;32;160;64;24;512;64;80;A B S;Big;
+A B L S;32;Not Specified; ; ;512;64;Tiger-160;A B S;Big;
+×2.5=160;32;Tiger-128; ;128;512;64;;A B S;Big;
+;;; ;;;;;A B S;Big;
+;;; ;;;;;A B S;Big;
+;;;;;;;;;;
+;;;;;;;;;;
+;;;;;;;;;;

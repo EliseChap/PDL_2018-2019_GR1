@@ -1,0 +1,61 @@
+;Trident;Gecko;WebKit;Presto
+The canvas state;The canvas state;The canvas state;The canvas state;The canvas state
+save;rowspan=""2"" 5.0;rowspan=""2"" 1.8;rowspan=""2"" yes;rowspan=""2"" 2.0
+restore;Transformations;Transformations;Transformations;Transformations
+Transformations;scale;rowspan=""5"" 5.0;rowspan=""5"" 1.8;rowspan=""5"" yes
+rowspan=""3"" 2.0;rotate;translate;transform;2.6
+setTransform;2.6;Compositing;Compositing;Compositing
+Compositing;Compositing;globalAlpha;rowspan=""2"" 5.0;rowspan=""2"" 1.8
+rowspan=""2"" yes;rowspan=""2"" 2.0;globalCompositeOperation;Colors and styles;Colors and styles
+Colors and styles;Colors and styles;Colors and styles;strokeStyle;rowspan=""5"" 5.0
+rowspan=""5"" 1.8;rowspan=""5"" yes;rowspan=""5"" 2.0;fillStyle;createLinearGradient
+createRadialGradient;createPattern;Line styles;Line styles;Line styles
+Line styles;Line styles;lineWidth;rowspan=""4"" 5.0;rowspan=""4"" 1.8
+rowspan=""4"" yes;rowspan=""4"" 2.0;lineCap;lineJoin;miterLimit
+Shadows;Shadows;Shadows;Shadows;Shadows
+shadowOffsetX;rowspan=""4"" 5.0;rowspan=""4"" 1.9.1;rowspan=""4"" yes;rowspan=""4"" 2.4
+shadowOffsetY;shadowBlur;shadowColor;Simple shapes;Simple shapes
+Simple shapes;Simple shapes;Simple shapes;clearRect;rowspan=""3"" 5.0
+rowspan=""3"" 1.8;rowspan=""3"" yes;rowspan=""3"" 2.0;fillRect;strokeRect
+Complex shapes;Complex shapes;Complex shapes;Complex shapes;Complex shapes
+beginPath;rowspan=""13"" 5.0;rowspan=""4"" 1.8;rowspan=""13"" yes;rowspan=""13"" 2.0
+closePath;moveTo;lineTo;quadraticCurveTo;1.8.1
+bezierCurveTo;1.8;arcTo;1.8.1;rect
+rowspan=""6"" 1.8;arc;fill;stroke;clip
+isPointInPath;Focus management;Focus management;Focus management;Focus management
+Focus management;drawFocusRing;no;28.0;no
+no;Text;Text;Text;Text
+Text;font;rowspan=""6"" 5.0;rowspan=""6"" 1.9.1note;rowspan=""6"" yes
+no;textAlign;rowspan=""5"" 2.6;textBaseline;fillText
+strokeText;measureText;Images;Images;Images
+Images;Images;drawImage;rowspan=""4"" 5.0;1.8
+rowspan=""4"" yes;2.0;createImageData;1.9.1;2.7
+getImageData;1.9;rowspan=""2"" 2.6;putImageData;2.0
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;
+;;;;

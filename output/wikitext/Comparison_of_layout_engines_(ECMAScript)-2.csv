@@ -1,0 +1,37 @@
+;Trident;Gecko;WebKit;Presto;Blink
+Value properties;Value properties;Value properties;Value properties;Value properties;Value properties
+NaN;4.0;0.6;yes;yes;yes
+Infinity;4.0;0.6;yes;yes;yes
+undefined;5.5;0.6;yes;yes;yes
+Function properties;Function properties;Function properties;Function properties;Function properties;Function properties
+eval(x);3.0;0.6;yes;yes;yes
+parseInt(string [, radix]);3.0;0.6;yes;yes;yes
+parseFloat(string);3.0;0.6;yes;yes;yes
+isNaN(number);4.0;0.6;yes;yes;yes
+isFinite(number);4.0;0.6;yes;yes;yes
+URI handling functions;URI handling functions;URI handling functions;URI handling functions;URI handling functions;URI handling functions
+decodeURI(encodedURI);5.5;0.6;yes;yes;yes
+decodeURIComponent(encodedURIComponent);5.5;0.6;yes;yes;yes
+encodeURI(uri);5.5;0.6;yes;yes;yes
+encodeURIComponent(uriComponent);5.5;0.6;yes;yes;yes
+Constructor properties;Constructor properties;Constructor properties;Constructor properties;Constructor properties;Constructor properties
+Object;4.0;yes;yes;yes;yes
+Function;4.0;yes;yes;yes;yes
+Array;4.0;yes;yes;yes;yes
+String;3.0;yes;yes;yes;yes
+Boolean;3.0;yes;yes;yes;yes
+Number;3.0;yes;yes;yes;yes
+Date;3.0;yes;yes;yes;yes
+RegExp;4.0;yes;yes;yes;yes
+Error;5.0;yes;yes;yes;yes
+EvalError;5.0;yes;yes;yes;yes
+RangeError;5.0;yes;yes;yes;yes
+ReferenceError;5.0;yes;yes;yes;yes
+SyntaxError;5.0;yes;yes;yes;yes
+TypeError;5.0;yes;yes;yes;yes
+URIError;5.0;yes;yes;yes;yes
+Other properties;Other properties;Other properties;Other properties;Other properties;Other properties
+Math;3.0;yes;yes;yes;yes
+Additional properties;Additional properties;Additional properties;Additional properties;Additional properties;Additional properties
+escape(string);3.0;yes;yes;yes;yes
+unescape(string);3.0;yes;yes;yes;yes

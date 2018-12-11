@@ -1,0 +1,33 @@
+;HTML5 standard;HTML web browser features;Adobe Flash/AIR features
+Date started;Work began in 2003  Working Draft as of 2011;N/A;Work began in 1996  Version 1 released in 1997
+Desktop operating systems;N/A;[[AmigaOS]], [[MorphOS]], Apple [[macOS]], [[Linux]], [[Microsoft Windows]];Apple [[macOS]],  [[Linux]], [[Microsoft Windows]]
+Mobile operating systems;N/A;;[[Windows RT]] , iOS 64-bit Support, Leapfrog Leapster (Uses cartriges that contains flash files.)
+Video game console;N/A;[[PlayStation Vita]];Sony [[PlayStation 3]] (Flash 9 only), Nintendo [[Wii]] (Flash Lite only)
+Device support;N/A;Limited access to [[web camera]], [[microphone]], [[accelerometer]], [[GPS]];Full access to [[web camera]], [[microphone]], [[accelerometer]], [[GPS]]
+Market penetration;N/A;~97% of devices support basic SVG;<br/>(~83% have Flash Player 11, ~17% have 10 and below),but >50% of web traffic comes from mobile devices
+Vector graphics formats;N/A;[[Scalable Vector Graphics]] (SVG) supported on ~97% of browsers;[[SWF]] with embedded graphics and AS3SVGRenderer
+Bitmap effects;yes;support of Filters in CSS3 (e.g. Glow, Blur, Drop Shadow, Sepia);yes, applied to text or graphics (e.g. Glow, Drop Shadow, Bevel)
+Vector text display;yes;yes;yes, with Saffron Type System
+Font support;N/A;Installed fonts and custom fonts using [[Web typography|CSS 3 web fonts]];Installed fonts and embedded fonts
+Text anti-aliasing;N/A;yes, implemented in most browsers, for system and custom fonts;yes, in most cases2
+Text tab stop;no;Only supported inside ""pre"" tags;yes, with Text Layout Framework
+Liquid text layout;yes;yes, via ""div"" tag and CSS styling;No, but text fields can be resized in ActionScript
+Tabular data;yes;yes, via ""table"" tag;No, but text fields can be arranged into a grid
+Linked text frames1;and CSS Overflow;With CSS Regions, supported by Safari, IE11 and Edge;yes, with Text Layout Framework
+Programming languages;depends;[[JavaScript]];[[ActionScript]], [[Adobe Pixel Bender|Pixel Bender]]
+C++ support;Cross-compiling C++ code to JavaScript via [[Emscripten]];Native code execution with [[Google Native Client]] in [[Google Chrome]], also supported with [[WebAssembly]] (experimental);AIR has AIR Native Extensions that allow loading native code, such as compiled c++ code.
+Code delivery format;Plaintext;Plaintext JavaScript with limited obfuscation, WebAssembly bytecode (experimental), GLSL for GPUs, in Canvas element;Compiled bytecode, can be obfuscated
+Data formats;depends;[[CSS]] 3, [[HTML]], [[XML]], [[JSON]];[[JSON]], [[XML]], Subset of [[CSS]] 1
+Data compression;no;[[GZIP]] compression for HTML, JS and CSS files;[[LZMA]] or [[DEFLATE]] for SWF files
+Image formats;depends;[[Portable Network Graphics|PNG]], [[JPEG]], Animated [[Graphics Interchange Format|GIF]];[[Portable Network Graphics|PNG]], [[JPEG]], [[JPEG-XR]], Single-frame [[Graphics Interchange Format|GIF]]
+Video formats;depends;varying support of [[WebM]] and [[Ogg Theora]] (see [[HTML5 video]]);H.264, [[Sorenson Spark]], and [[VP6|On2 VP6]]
+Streaming video;yes;Supported by IE, Edge, Firefox, Chrome, Safari and Opera.;[[Flash Video]], [[H.264]] and partial support for [[MP4]]
+Audio formats;depends;and [[WAV]] [[Pulse-code modulation|PCM]]"; varying support of [[Ogg]] [[Vorbis]], and [[WebM Project|WebM]] [[Vorbis]] (see [[HTML5 audio]]);[[MP3]], [[WAV]] and [[Advanced Audio Coding|AAC]] audio files or embedded sound
+Fullscreen support;yes;Not yet widely supported on mobile;yes, with warning displayed
+Encryption DRM;depends;All other files being plaintext, except for obfuscation;No, binary formatted files can be decompiled, which is obfuscation
+File system access;depends;~87% support of single file upload, and [[drag and drop]] of files onto browser;<br/> AIR only: full create/read/write access to file system
+Bitmap manipulation;depends;~95% support for canvas element;yes, via BitmapData class
+Binary manipulation;yes;yes, via JavaScript Typed Arrays;yes, via ByteArray class
+Large binary data;no;Via Web Sockets to stream binary or XML data;yes, embedded or streaming binary data
+Offline storage;depends;yes, via Web storage, HTTP cookie, or Indexed DB to store binary, XML or JSON data;yes, via Local Shared Object to store AMF-formatted data
+Metadata;[[Meta tag]]s;Can be included in [[meta tag]]s;[[Extensible Metadata Platform]]

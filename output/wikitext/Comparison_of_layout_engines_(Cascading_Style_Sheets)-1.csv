@@ -1,0 +1,41 @@
+;;; Trident; EdgeHTML; Gecko; WebKit; KHTML; Presto;;;
+CSS2;!important;Weight increasing;[[#trident-important-bug|7.0]];12;1.0;85;yes;1.0;/*Comment*/;Comments;3.0
+CSS2;12;1.0;85;yes;1.0;@import;Import stylesheet;[[#trident-import-bug|8.0]];12;1.0;yes
+CSS2;yes;[[#presto at-import|1.0]];@charset;Character set;5.5;12;1.0;yes;4.2.3;1.0;@media
+CSS2;Media-specific rules;5.5;12;1.0;yes;yes;1.0; ;@namespace;Namespace declaration;9.0
+CSS2;12;1.0;yes;yes;1.0;earlier draft of css-conditional3;@document;Restriction by URLs;no;no;6.0
+no;no;no; ;@keyframes;Animation key;10.0;12;16.0;table-experimental;no;2.12
+ ;@supports;Conditional Rules;no;12;22.0;28.0;no;2.12; ;@counter-style;Custom Counter Styles
+no;no;33.0;no;no;no; ;@viewport;Viewport, Device Adaptation;10.0;12.0;no
+no;no;2.7.62; ;@filter;Filter;no;no;35.0;table-experimental;no;no
+Page;Page;Page;Page;Page;Page;Page;Page;Page;Page;Page;Page
+CSS2;@page;For paged media;8.0;12;19.0;[[#webcore -webkit-|Nightly Build]];no;1.0; ;@top-left-corner;Margin boxes
+rowspan=""16"" no;rowspan=""16"" no;rowspan=""16"" no;rowspan=""16"" no;rowspan=""16"" no;rowspan=""16"" no;@top-left;@top-center;@top-right;@top-right-corner;@bottom-left-corner;@bottom-left
+@bottom-center;@bottom-right;@bottom-right-corner;@left-top;@left-middle;@left-bottom;@right-top;@right-middle;@right-bottom;Font;Font;Font
+Font;Font;Font;Font;Font;Font;Font;Font;Font; ;@font-face;Define font
+9.0;12;1.9.1;525;4.3;2.2;@font-feature-values;Define font features;rowspan=""2"" no;rowspan=""2"" no;rowspan=""7"" 34.0;rowspan=""2"" no
+ ;rowspan=""2"" no;Margin boxes;rowspan=""2"" no;@annotation;Font feature value block;@styleset;no;no;no;no;no
+ ;@swash;Margin boxes;no;no;no;no;no;@ornaments;no;no;no
+ ;no;Margin boxes;no;@stylistic;no;no;no;no;no;@character-variant;no
+ ;no;Margin boxes;no;no;no;;;;Trident;EdgeHTML;Gecko
+ ;WebKit;Margin boxes;KHTML;Presto;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+ ;;Margin boxes;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;

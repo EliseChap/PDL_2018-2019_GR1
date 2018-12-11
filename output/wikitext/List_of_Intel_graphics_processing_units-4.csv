@@ -1,0 +1,22 @@
+Graphics;Launch;Market;Chipset;Code name;Device id.;Core renderclock (MHz);Execution units;Shader model(vertex/pixel);API support;API support;API support;Memory bandwidth (GB/s);DVMT (MB);Hardware acceleration;Hardware acceleration;Hardware acceleration
+Graphics;Launch;Market;Chipset;Code name;Device id.;Core renderclock (MHz);Execution units;Shader model(vertex/pixel);Direct3D;OpenGL;OpenCL;Memory bandwidth (GB/s);DVMT (MB);MPEG-2;VC-1;AVC
+GMA 3000;2006;Desktop;946GZ;Lakeport;2972;667;8;3.0 (SW) / 2.0;9.0c  FL9_1;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;10.6;256;MC;No;No
+GMA 3000;2006;Desktop;Q963;Broadwater;2992;667;8;3.0 (SW) / 2.0;9.0c  FL9_1;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;10.6;256;MC;No;No
+GMA 3000;2006;Desktop;Q965;12.8;GMA X3000;667;8;3.0 (SW) / 2.0;9.0c  FL9_1;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;G965;256;MC;No;No
+29A2;2006;Desktop;3.0;384;Full;667;8;MC + (LF ?WMV9 only);9.0c  FL9_1;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;GMA X3500;2007;G35;Bearlake;No
+2982;4.0;Desktop;10.0  FL10_0;384;Full;667;8;MC + LF;GMA X3100;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;Mobile;GL960;Crestline;2A022A12;No
+400;2007;8.5;MC + (LF ?WMV9 only);384;Full;GLE960;8;GM965;500;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;10.7;GME965;GMA 4500;2008;No
+GMA X3100;2007;Mobile;Crestline;384;Full;2A022A12;8;MC + (LF ?WMV9 only);Desktop;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;B43;Eaglelake;2E422E92;533;No
+GMA X3100;2007;Mobile;Crestline;384;Full;2A022A12;8;MC + (LF ?WMV9 only);10;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;MC + LF;No
+GMA X3100;2007;Mobile;Crestline;384;Full;2A022A12;8;MC + (LF ?WMV9 only);MC + LF;1.5Windows  2.1macOS  2.1Linux  ES2.0Linux;;Q43;2E12;Q45;GMA X4500;No
+G41;2E32;800;G43;2E22;Full;GMA X4500HD;G45;Full;Full;GMA 4500MHD;;Mobile;GL40;Cantiga;2A42;400
+GMA 4500;2008;Desktop;GS40;Eaglelake;Full;GM45;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;MC + LF;533;GS45;GM47;640
+GMA 4500;2008;Desktop;;Eaglelake;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;MC + LF;;;;
+;2008;Desktop;;Eaglelake;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;MC + LF;;;;
+;2008;Desktop;;Eaglelake;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;MC + LF;;;;
+;2008;Desktop;;Eaglelake;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;;;;;
+;2008;;;;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;;;;;
+;2008;;;;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;;;;;
+;2008;;;;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;;;;;
+;2008;;;;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;;;;;
+;2008;;;;Full;;10;2.1  ES2.0Linux;12.8 (DDR2)17 (DDR3);1720;;;;;;

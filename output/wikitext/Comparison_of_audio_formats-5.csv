@@ -1,0 +1,15 @@
+Audio compression format|Algorithm|Sample rate|Bits per sample|Latency|Stereo|Multichannel
+ALAC|Lossless|1–384000Hz|16, 20, 24, 32|Dunno|yes|yes: Up to 8 channels
+ALS|Lossless|0–4GHz|8, 16, 24, 32 (int or float)|Dunno|yes|yes: Up to 65536 channels
+ATRAC Advanced Lossless|dunno|dunno|dunno|dunno|dunno|dunno
+Dolby TrueHD|Lossless|48, 96, 192kHz|16, 20, 24|dunno|yes|yes: 5.1, 7.1, and Dolby Atmos object-based audio
+DTS-HD Master Audio|dunno|dunno|dunno|dunno|dunno|dunno
+FLAC|Lossless|1–655350Hz|8, 16, 20, 24, 32|4.3–92ms (46.4ms typical)|yes|yes: Up to 8 channels
+HD-AAC|dunno|dunno|dunno|dunno|dunno|dunno
+Monkey's Audio|Lossless|1–655350HzJune 2015|8, 16, 24|1670 to 26,749 ms (varies with compression)|yes|no
+OptimFROG|dunno|dunno|dunno|dunno|dunno|dunno
+OSQ|dunno|dunno|dunno|dunno|dunno|dunno
+RealAudio Lossless|Lossless|Varies (see article)|Varies (see article)|Varies|yes|yes: Up to 6 channels
+True Audio (TTA)|Lossless|0–4GHz|1 to > 64|approx. 1045ms|yes|yes: Up to 65535 channels
+WavPack Lossless|Lossless, Hybrid|1Hz to 16.777216MHz|Varies in lossless mode; supports 32-bit float input; 2.2 minimum in lossy mode|dunno|yes|yes: Up to 256 channels
+Windows Media Audio Lossless|Lossless|8, 11.025, 16, 22.05, 32, 44.1, 48, 88.2, 96kHz|16, 24|>100ms|yes|yes: Up to 6 channels

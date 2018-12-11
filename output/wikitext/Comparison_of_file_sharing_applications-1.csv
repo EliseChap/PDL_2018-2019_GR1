@@ -1,0 +1,54 @@
+Name;Network;Anonymous P2P;Link system compatibility;Price;Platform;License;Programming language;Free Spyware-Adware;Latest release version;Extra information
+A Acquisition;Gnutella, BitTorrent;no;[[magnet URI scheme|magnet]];Nagware or US$17.99;macOS;[[GNU General Public License|GPL]];Objective-C, Java;yes;2010, Latest stable software release/Acquisition;Alternative to LimeWire for Mac users"; uses Cocoa GUI
+aMule;eDonkey, Kad;no;[[ed2k URI scheme|eD2k]], magnet;Free;GNU, macOS, Windows;GPL;C++;yes;2011, Latest stable software release/aMule; 
+Ares Galaxy;Ares, BitTorrent;no;arlnk;Free;Windows;GPL;Object Pascal (Delphi);yes;2014, Latest stable software release/Ares Galaxy; 
+BBearShare (pre v6.0);Gnutella;no;ed2k, magnet;Free or US$3.29 monthly;Windows;Proprietary;C++;no;2013, Latest stable software release/BearShare;Since version 6: clone of the commercial iMesh software"; does not connect to Gnutella and restricts downloads to media formats
+BitComet;BitTorrent, eDonkey, Kad"; HTTP/FTP download;no;magnet;Free;Windows;Proprietary;C++;yes;2015, Latest stable software release/BitComet;Exploits SuperSeeding and thus is often banned by trackers and peers. Compatible with e2DK links through an eMule plugin which gives access to eDonkey and Kad networks and cross-network sharing abilities with BitTorrent network.
+C Cabos;Gnutella;no;magnet;Free;macOS, Windows;GPL;Java, REALbasic;yes;2010, Latest stable software release/Cabos; 
+DC++;Direct Connect;no;magnet;Free;Windows;GPL;C++;yes;2017, 0.866 20;Many modifications exist, for example: , EiskaltDC++, FlylinkDC++, etc.
+E eDonkey2000;eDonkey, Overnet;no;ed2k;Free or US$19.95;GNU, macOS, Windows;Proprietary;C++;yes;2005;Discontinued
+eMule;eDonkey, Kad;no;ed2k;Free;Windows;GPL;C++;yes;2010, Latest stable software release/eMule;Supports protocol obfuscation
+F Filetopia;Filetopia;no  (except when using a bouncer);no;Free;Windows;Proprietary;Java;no;2015;
+Flashget;BitTorrent, eDonkey"; HTTP/FTP download;no;dunno;dunno;Windows;Proprietary;dunno;dunno;2012;
+Free Download Manager;BitTorrent"; HTTP/FTP download;no;[[metalink]];Free;Windows;GPL;C++;yes;2015, Latest stable software release/Free Download Manager;
+Freenet's FProxy;Freenet;yes;no;Free;GNU, macOS, Windows;GPL;Java;yes;2017, Latest stable software release/Freenet; 
+Frost;Freenet;yes;no;Free;GNU, macOS, Windows;GPL;Java;yes;2011; 
+FrostWire;BitTorrent;no;magnet;Free;GNU, macOS, Windows;GPL;Java;yes;2015, Latest stable software release/FrostWire;Fork of LimeWire, with no copyrighted-material blocker planned.
+G GetRight;BitTorrent"; HTTP/FTP download;no;dunno;dunno;Windows;dunno;dunno;dunno;2011;
+giFT;OpenFT and, with plugins, Ares, Gnutella, FastTrack;no;no;Free;GNU, macOS, Windows;GPL;C;yes;2004, Latest stable software release/giFT;
+GnucDNA / Gnucleus;Gnutella, Gnutella2;No;no;Free;Windows;GPL;C++;yes;2005, Latest stable software release/Gnucleus;
+GNUnet / gnunet-fs;GNUnet;yes;[[GNUnet#File sharing URIs|ECRS]];Free;GNU, FreeBSD, macOS, Windows;([[Free software]]);C;yes;2014, Latest stable software release/GNUnet;Latest preview release: 0.11.0pre66 / 06
+gtk-gnutella;Gnutella;no;magnet;Free;GNU, Windows;GPL;C;yes;2018, Latest stable software release/gtk-gnutella;
+HI iMesh  (pre v6.0);FastTrack, Gnutella, Gnutella2;no;no;Free;Windows;Proprietary;C++;yes;2008;
+I2Phex;I2P (protocol Gnutella);yes;magnet;Free;GNU, macOS, Windows;GPL;Java;yes;2011;Need I2P to run.
+I2PSnark;I2P (protocol BitTorrent);yes;magnet;Free;GNU, macOS, Windows;GPL;Java;yes;2014;Integrated into I2P distribution.
+iMule;I2P (protocol Kad network);yes;ed2k, magnet;Free;GNU, macOS, Windows;GPL;C++;yes;2013, Latest stable software release/iMule;needs I2P to run
+Jumpshare;Jumpshare;no;no;Free or US$9.99/month;Windows, macOS;Proprietary;Various;yes;2015;Real-time file sharing with built-in utilities for screenshots, screencasts, notes, and voice clips
+JK Kazaa;FastTrack;no;no;Free;Windows;Proprietary;C++;adware & spyware;2006;Illegal in Australia.
+Kazaa Lite;FastTrack;no;no;Free;Windows;Proprietary;?;yes;2007;Adware-disabled version of Kazaa (fake versions in circulation)
+KCeasy;Ares, Gnutella, FastTrack, OpenFT;no;no;Free;Windows;GPL;C++, Object Pascal (Delphi);yes;2008;Uses integrated giFT file sharing daemon as back-end.
+KGet;BitTorrent"; HTTP/FTP download;no;dunno;Free;part of KDE on Windows;GPL;C++;dunno;2012;dunno
+L LimeWire;Gnutella, BitTorrent;no;magnet;Free or US$18.88;GNU, macOS, Windows;GPL;Java;no;2010;Shutdown permanently due to injunction from MGM v. Grokster in which Limewire was ordered to disable all functionality of the software.
+Manolito;MP2P;no;MP2P;Free or US$19.95;Windows;Proprietary;?;no;2008;
+M MLDonkey;BitTorrent, eDonkey, FastTrack, (Gnutella, Gnutella2), Kad"; HTTP/FTP download;no;ed2k, magnet, [[UUHash#Sig2Dat|sig2dat]];Free;GNU, macOS, Windows;GPL;OCaml;yes;2014, Latest stable software release/MLDonkey;P2P application, telnet / web-interface / GUI interface, complete and complex remote usage. Sancho GUI makes automatic SSH tunnels.
+Morpheus;NEOnet, Gnutella, Gnutella2, BitTorrent;no;no;Free or US$19.95;Windows;Proprietary;?;yes;2007, Latest stable software release/Morpheus;
+MUTE;MUTE;yes;no;Donation;GNU, macOS, Windows;GPL;C++;yes;2009;
+N Nachtblitz;I2P (protocol Kad network);yes;ed2k, magnet;Free;Windows, GNU with Wine;GPL;C#;yes;2016;needs I2P to run
+Nodezilla;Private;yes;no;Free;GNU, Windows;core proprietary, GUI GPL;Java;yes;2010;Most is proprietary, GUI is GPL.
+O OperaSeptember 2018;BitTorrent"; HTTP/FTP download;no;no;Free;GNU, macOS, Windows;Proprietary;C++;yes;2015, Latest stable software release/Opera;
+Perfect Dark;Perfect Dark;yes;no;Free;Windows;Proprietary;C++;Yes;2015;Boards. Auto update.
+PioletSeptember 2018;MP2P;no;MP2P;Free or US$19.95;Windows;Proprietary;?;no;2008; 
+R Retroshare;Retroshare;yes;Own format;Free;Windows, GNU, macOS;GPL;C++;yes;2017;Uses PGP for friend authentication. Decentralized F2F network type.
+Robert;I2P (protocol BitTorrent);yes;magnet;Free;GNU, macOS, Windows;GPL;Python;yes;2012;needs I2P to run
+S Share;Share;yes;no;Free;Windows;Proprietary;Object Pascal (Delphi);yes;2006;Anonymous developer"; tries to be Winny successor
+Shareaza;eDonkey, BitTorrent, Gnutella, Gnutella2, Direct Connect"; HTTP/FTP download;no;ed2k, [[magnet link|magnet]], Piolet/MP2P, gnutella;Free;Windows;GPL;C++;yes;2017, Latest stable software release/Shareaza;Uses a powerful files library"; maintained by volunteer group
+StealthNet;RShare;yes;no;Free;GNU, macOS, Windows;GPL;C#;yes;2011;Evolution of the RShare client with many functions.
+Soulseek;Soulseek;no;no;Free, donations for privileges;Windows, Mac, Linux;Proprietary;?;yes;2015, Latest stable software release/Soulseek;Folder downloads, browse users with folder trees, no multi-source downloads
+Tribler;BitTorrent and its own;yes;magnet;Free;Windows, GNU, macOS;[[GNU Lesser General Public License|GNU LGPL v2.1+]];Python, C++;yes;2016, Latest stable software release/Tribler;Unlike most other torrent clients, Tribler is decentralized (as well as anonymous) and does not rely on any trackers or any other indexing service to discover content. Also features a built-in video streamer.
+V Vuze  (formerly Azureus);BitTorrent and I2P;no (except when using I2P);magnet;Free;GNU, macOS, Windows;GPL;Java;no;2016, Latest stable software release/Vuze;
+W Warez P2P;iP2P DHT;no;no;Free or US$19.99;Windows;Proprietary;?;yes;2007;Developer claims Warez v3.0 beta is malware-free
+WinMX;WinMX Peer Network (independent, now user-operated), OpenNAP, chatrooms supported;no;no;Free;Windows;Proprietary;C++;yes;2004;Official development has ceased due to RIAA coercion. Versions 3.53, 3.54 beta 4 and older are available from 3rd parties.
+Winny;Winny;yes;no;Free;Windows;Proprietary;C++;yes;2003; 
+L WireShare;Gnutella, BitTorrent;no;magnet;Free;GNU, macOS, Windows;GPL;Java;yes;2016;Forked from Limewire pro
+Wuala;Wuala;no;no;Free;GNU, macOS, Windows;Proprietary;Java;yes;2009;
+Name;Network;Anonymous P2P;Link system compatibility;Price;Platform;License;Programming language;Free Spyware-Adware;Last release year;Extra information

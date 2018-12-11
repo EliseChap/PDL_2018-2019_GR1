@@ -1,0 +1,17 @@
+Graphics;Launch;Market;Chipset;Code name;Device id.[3];Core render clock (MHz);Pixel pipelines;Shader model (vertex/pixel);API support[4];API support[4];API support[4];Memory bandwidth (GB/s);DVMT (MiB);Hardware acceleration;Hardware acceleration;Hardware acceleration
+Graphics;Launch;Market;Chipset;Code name;Device id.[3];Core render clock (MHz);Pixel pipelines;Shader model (vertex/pixel);Direct3D;OpenGL;OpenCL;Memory bandwidth (GB/s);DVMT (MiB);MPEG-2;VC-1;AVC
+GMA 900;2004;Desktop;910GL;Grantsdale;2582 258A;333;4;3.0 (SW) / 2.0;9.0 (No WDDM nor Aero support);1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;3.2;128;MC[6][7];No;No
+GMA 900;2004;Desktop;915GL;Grantsdale;2582 258A;333;4;3.0 (SW) / 2.0;9.0 (No WDDM nor Aero support);1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;3.2;128;MC[6][7];No;No
+GMA 900;2004;Desktop;915GV;Grantsdale;2582 258A;333;4;3.0 (SW) / 2.0;9.0 (No WDDM nor Aero support);1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;8.5;128;MC[6][7];No;No
+GMA 900;2004;Desktop;915G;Grantsdale;2582 258A;333;4;3.0 (SW) / 2.0;9.0 (No WDDM nor Aero support);1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;8.5;128;MC[6][7];No;No
+GMA 900;2005;Mobile;Mobile 915 Family;Alviso;2592;133–333;4;3.0 (SW) / 2.0;9.0 (No WDDM nor Aero support);1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;8.5;128;MC[6][7];No;No
+GMA 950;2005;Desktop;945GZ;Lakeport;2772;400;4;3.0 (SW) / 2.0;9.0c FL9_1;1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;8.5;256[7][8];MC[6][7];No;No
+GMA 950;2005;Desktop;945GC;Lakeport;2772;400;4;3.0 (SW) / 2.0;9.0c FL9_1;1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;10.7;256[7][8];MC[6][7];No;No
+GMA 950;2005;Desktop;945G;Lakeport;2772;400;4;3.0 (SW) / 2.0;9.0c FL9_1;1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;10.7;256[7][8];MC[6][7];No;No
+GMA 950;2006;Mobile;Mobile 945 Family;Calistoga;27A2 27AE;166–400[9];4;3.0 (SW) / 2.0;9.0c FL9_1;1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;10.7;256[7][8];MC[6][7];No;No
+GMA 3100;2007;Desktop;Q33;Bearlake;29D2;400[10][11];4;3.0 (SW) / 2.0;9.0c FL9_1;1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;12.8;256[7][8];MC[6][7];No;No
+GMA 3100;2007;Desktop;Q35;Bearlake;29B2;400[10][11];4;3.0 (SW) / 2.0;9.0c FL9_1;1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;12.8;256[7][8];MC[6][7];No;No
+GMA 3100;2007;Desktop;G31;Bearlake;29C2;400[10][11];4;3.0 (SW) / 2.0;9.0c FL9_1;1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;12.8;256[7][8];MC[6][7];No;No
+GMA 3100;2007;Desktop;G33;Bearlake;29C2;400[10][11];4;3.0 (SW) / 2.0;9.0c FL9_1;1.4Windows 1.4macOS 2.1Linux ES 2.0Linux;No;12.8 (DDR2) 17 (DDR3);256[7][8];Variable-Length Decoding (VLD) + iDCT + MC (Full)[7];No;No
+GMA 3150;2010;Nettop;Atom D4xx Atom D5xx;Pineview;A001;400[10][11];2;3.0 (SW) / 2.0;9.0c FL9_1;1.5Windows 2.1Linux ES 2.0Linux;No;6.4;384;Variable-Length Decoding (VLD) + iDCT + MC (Full)[7];No;No
+GMA 3150;2010;Netbook;Atom N4xx Atom N5xx;Pineview;A011;200;2;3.0 (SW) / 2.0;9.0c FL9_1;1.5Windows 2.1Linux ES 2.0Linux;No;5.3;384;Variable-Length Decoding (VLD) + iDCT + MC (Full)[7];No;No

@@ -1,0 +1,24 @@
+;;;Archival Disc;Blu-ray Disc;HD DVD;CBHD (CH-DVD);AVCHD;AVCREC;DVD;MUSE LD
+Laser wavelength;Laser wavelength;Laser wavelength;405 nm (blue-violet laser);405 nm (blue-violet laser);405 nm (blue-violet laser);405 nm (blue-violet laser);405 or 650nm;650nm (red laser);650nm (red laser);650nm (red laser)
+Numerical aperture;Numerical aperture;Numerical aperture;1;0.85;0.65;0.65;0.85 or 0.6;0.6;0.6;unk
+Storage capacity(single side);Storage capacity(single side);per layer/maximum;300(500)/1 TB;25(50)/128 GB[a];15/30 GB[a];15/30 GB[a];1.4/2.6 GB (8cm DVD),4.7/8.5 GB (12cm DVD),25/50GB(12cm BD);4.7/8.5 GB;4.7/8.5 GB;30cm, 60 min per side
+Maximumbitrate;Raw data transfer;Raw data transfer;100 Mbit/s;53.95 Mbit/s;36.55 Mbit/s;36.55 Mbit/s;colspan=""2"" unk;11.08 Mbit/s;unk;Audio+Video+Subtitles
+Maximumbitrate;Audio+Video+Subtitles;100.0 Mbit/s;48.0 Mbit/s;30.24 Mbit/s;30.24 Mbit/s;27 Mbit/s;27 Mbit/s;10.08 Mbit/s;unk;Video
+Maximumbitrate;Video;100 Mbit/s;40.0 Mbit/s;29.4 Mbit/s;29.4 Mbit/s;colspan=""2"" unk;9.8 Mbit/s;unk;Mandatory video codec;Mandatory video codec
+Mandatory video codec;H.265/MPEG-H HEVC / H.264/MPEG-4 AVC / VC-1 / MPEG-2;H.265/MPEG-H HEVC / H.264/MPEG-4 AVC / VC-1 / MPEG-2;H.264/MPEG-4 AVC / VC-1 / MPEG-2;China's AVS / H.264/MPEG-4 AVC / VC-1 / MPEG-2;H.264/MPEG-4 AVC;H.264/MPEG-4 AVCMPEG-2;MPEG-1 / MPEG-2;MUSE;Audio codec(maximum data rates shown);lossy
+Dolby Digital;colspan=""2"" Mandatory<br>640 kbit/s;colspan=""2"" Mandatory<br>504 kbit/s [http://www.dolby.com/uploadedFiles/zz-_Shared_Assets/English_PDFs/Professional/DPlus_TrueHD_whitepaper.pdf];colspan=""2"" Mandatory<br>64-640 kbit/s;Mandatory<br>448 kbit/s;unk;DTS;colspan=""2"" Mandatory<br>1.5 Mbit/s;unk;colspan=""2"" n/a;Optional<br>1.5 Mbit/s
+Audio codec(maximum data rates shown);lossy;unk;Dolby Digital Plus[d];Mandatory<br>3.0 Mbit/s;Optional<br>1.7 Mbit/s;colspan=""2"" Mandatory<br>3.0 Mbit/s;colspan=""2"" n/a;n/a;unk;DTS-HD High Resolution
+Audio codec(maximum data rates shown);lossy;Mandatory<br>6.0 Mbit/s;Optional<br>6.0 Mbit/s;Optional<br>3.0 Mbit/s;unk;colspan=""2"" n/a;n/a;n/a;lossless;Linear PCM[h]
+Audio codec(maximum data rates shown);lossy;colspan=""4"" Mandatory;colspan=""3"" Optional;(B Mode)2 channel PCM;Dolby TrueHD[h];Mandatory<br>18 Mbit/s;Optional<br>18 Mbit/s;colspan=""2"" Mandatory<br>18 Mbit/s;colspan=""2"" n/a;n/a
+Audio codec(maximum data rates shown);unk;DTS-HD Master Audio[h];Mandatory<br>24.5 Mbit/s;Optional<br>24.5 Mbit/s;Optional<br>18 Mbit/s;unk;colspan=""2"" n/a;n/a;n/a;Secondary video decoder (PiP)
+Audio codec(maximum data rates shown);lossless;Secondary video decoder (PiP);Secondary video decoder (PiP);Mandatory;Mandatory for [[Blu-ray_Disc#Player_profiles|Bonus View]] players;Mandatory;unk;colspan=""2"" unk;n/a;n/a
+Audio codec(maximum data rates shown);lossless;Secondary audio decoder;Secondary audio decoder;Secondary audio decoder;Mandatory;Mandatory for [[Blu-ray_Disc#Player_profiles|Bonus View]] players;Mandatory;unk;colspan=""2"" unk;Optional
+n/a;Interactivity;Interactivity;Interactivity;ADMV and [[BD-J|Archival Disc Java]];BDMV and [[BD-J|Blu-ray Disc Java]];Standard Content and [[Advanced Content]];CETC;colspan=""3"" Rudimentary;n/a;Internet support
+Internet support;Internet support;Mandatory;Mandatory for [[Blu-ray_Disc#Player_profiles|BD-Live]] players;Mandatory;unk;colspan=""4"" n/a;Video resolution(maximum);Video resolution(maximum);Video resolution(maximum);1920×1080p / 3840×2160p / 5120?×?2880 / 7680?×?4320
+1920×1080p / 3840×2160p;1920×1080p;1920×1080p;1920×1080p;1920×1080p;720×480 (NTSC)720×576 (PAL);1125 interlaced lines1035 lines displayed;Frame rate at maximum resolution;Frame rate at maximum resolution;Frame rate at maximum resolution;24/30p, 50/60/100/120p
+24/30p, 50/60i[g] 50/60p;24/25/30p, 50/60i;24/25/30p, 50/60i;24/25/30p, 50/60i;unk;24/25/30p[g] 50/60i;60i;Digital Rights Management;Digital Rights Management;Digital Rights Management;AACS-512bit
+AACS-128bit / BD+ / ROM-Mark;AACS-128bit;AACS-128bit / DKAA;None (Not intended for prerecorded content);None (Not intended for prerecorded content);CSS 40-bit;None;Region codes;Region codes;Region codes;None
+Three region codes[f];None;unk;None;None;8 regions (6 commercial);None;Hardcoating of disc;Hardcoating of disc;Hardcoating of disc;colspan=""2"" Mandatory
+colspan=""5"" Optional;unk;;;;;;;;;
+;;;;;;;;;;
+;;;;;;;;;;

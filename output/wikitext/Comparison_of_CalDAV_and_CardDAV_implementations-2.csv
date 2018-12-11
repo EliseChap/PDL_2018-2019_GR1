@@ -1,0 +1,20 @@
+Server name;License;Programming language;RFC 2616 HTTP/1.1;RFC 2617 HTTP authentication;RFC 2518 WebDAV;RFC 3253 WebDAV versioning;RFC 3744 WebDAV ACL;RFC 4324 iCal Calendar Access Protocol;RFC 4331 WebDAV quota;RFC 4709 WebDAV mount;RFC 4791 CalDAV;RFC 4918 WebDAV extensions;RFC 5397 WebDAV current principal;RFC 5545 revised iCal(Availability Check);RFC 5546 iCal transport-independent interoperability protocol(Group Scheduling);RFC 5689 WebDAV extended MKCOL;RFC 5995 WebDAV POST add member;RFC 6352 CardDAV vCard;RFC 6578 WebDAV synchronise;RFC 6638 CalDAV scheduling(Auto-Schedule);RFC 7529 iCal non-Gregorian calendar;RFC 7540 HTTP/2;RFC 7809 CalDAV time zones by reference;RFC 7953 iCal personal availability; 
+Baïkal;GPL-lic;PHP;yes;yes;yes;no;Some;no;unk;no;yes;yes;yes;yes;unk;yes;unk;yes;unk;unk;unk;unk;unk;unk;unk
+Bedework;[[Apache License|Apache]];Java;unk;unk;unk;unk;unk;unk;unk;unk;yes;unk;unk;yes;yes;unk;unk;yes;yes;yes;unk;unk;unk;unk;unk
+Calendar and Contacts Server;[[Apache License|Apache]];Python;yes;yes;yes;yes;yes;no;unk;no;yes;yes;yes;yes;yes;yes;unk;yes;yes;yes;unk;unk;unk;unk;unk
+Calypso;GPL-lic;Python;yes;yes;yes;no;unk;no;unk;no;yes;yes;no;yes;yes;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk
+Cyrus IMAP;[[BSD licenses|BSD]];C;yes;yes;yes;Some;yes;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes
+DAViCal;GPL-lic;PHP;yes;unk;unk;yes;yes;yes;unk;yes;yes;yes;yes;yes;yes;yes;unk;yes;yes;yes;unk;unk;unk;unk;unk
+DavMail;GPL-lic;Java;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk
+Fennel;[[GNU GPLv3]];JavaScript;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk
+Group-Office;[[Affero General Public License|AGPL]], [[proprietary software|proprietary]];PHP;yes;yes;yes;unk;Some;unk;unk;yes;yes;yes;yes;yes;unk;yes;unk;yes;unk;unk;unk;unk;unk;unk;unk
+Horde Groupware;OSS;PHP;yes;yes;yes;no;Some;no;no;unk;yes;yes;yes;yes;yes;no;no;yes;no;no;no;no;no;no;no
+Nextcloud;[[Affero General Public License|AGPL]] v3;PHP;unk;unk;unk;unk;unk;unk;unk;unk;yes;unk;unk;unk;unk;unk;unk;yes;unk;unk;unk;unk;unk;unk;unk
+Open Xchange;GPL-lic, CC;Java, JavaScript;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;yes;unk;unk;unk;unk;unk;unk;unk
+ownCloud;[[Affero General Public License|AGPL]] v3;PHP;unk;unk;unk;unk;unk;unk;unk;unk;yes;unk;unk;unk;unk;unk;unk;yes;unk;unk;unk;unk;unk;unk;unk
+;GPL-lic;Python;yes;yes;Some;no;Some;no;unk;no;Some;Some;Some;no;Some;no;unk;Some;unk;no;unk;unk;unk;unk;unk
+SabreDAV;[[BSD licenses|BSD]];PHP;yes;yes;yes;yes;yes;yes;unk;yes;yes;yes;yes;yes;yes;yes;unk;yes;unk;yes;unk;unk;unk;unk;unk
+Xandikos;GPL-lic;Python;yes;yes;yes;some;some;no;no;no;yes;yes;yes;yes;no;yes;yes;yes;yes;no;unk;yes;no;no;unk
+Zarafa;[[Affero General Public License|AGPL]],  [[proprietary software|proprietary]];PHP;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;Read only;unk;unk;unk;unk;unk;unk;unk
+Zentyal;GPL-lic;Perl;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk;unk
+Zimbra;GPL-lic;Perl;yes;yes;yes;yes;yes;no;unk;no;yes;unk;yes;yes;yes;yes;unk;yes;unk;yes;unk;unk;unk;unk;unk

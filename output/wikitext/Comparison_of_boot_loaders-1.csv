@@ -1,0 +1,38 @@
+ Name; License; Can reside in; Can reside in; Can reside in; Can reside in; Can boot from; Can boot from; Can boot from; Can boot from; Can boot from; Can boot from; Can boot from; Can boot from; Can boot; Can boot; Can boot; Can boot; Can boot; Can boot; Can boot; Can boot; Can boot
+Name;License;ESP (UEFI);MBR;VBR;Floppy;Hard disk;Second Hard disk;Logical partitions;CD-ROM;Floppy;USB;Zip;LAN;MS-DOS;Windows 9x/Me;Windows NT series;Windows Vista/7/8/10;Linux;ReactOS;MenuetOS;*BSD;X
+Acronis OS Selector;proprietary;Dunno;Dunno;Dunno;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Dunno;Yes;Yes;Yes;Yes;Yes;Dunno;Dunno;Yes;Yes
+AiR-Boot;[[GNU General Public License#Version 3|GPLv3]];Dunno;Yes;No;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Yes;Yes;Yes;Dunno;Dunno;Dunno;Dunno
+AKernelLoader;[[GNU General Public License#Version 2|GPLv2]];Dunno;Yes;No;Yes;Yes;Yes;Yes;Dunno;Yes;Yes;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Yes;Dunno;Dunno;Dunno;Dunno
+Barebox;[[GNU General Public License#Version 2|GPLv2]];Yes;Yes;No;Dunno;Yes;Yes;Yes;Yes;Yes;Yes;No;Yes;Dunno;Dunno;Dunno;Dunno;Yes;Dunno;Dunno;Dunno;Dunno
+BootIt Bare Metal (formerly BootIt Next Generation);proprietary;Dunno;Dunno;Dunno;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Yes;Dunno;Yes;Yes;Yes;Yes;Yes;Dunno;Dunno;Dunno;Dunno
+BootKey;proprietary;Dunno;No;No;Yes;No;No;No;Yes;Yes;Yes;No;No;Yes;Yes;Yes;Yes;Yes;Dunno;Dunno;Dunno;Dunno
+BootManager;[[MIT License|MIT]];Dunno;Yes;No;No;Yes;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;No;Yes;Yes;Calls [[NTLDR]];Calls [[Windows Boot Manager]];Calls [[GRUB]] or [[LILO (boot loader)|LILO]];Dunno;Dunno;Dunno;Dunno
+BootX (Apple);proprietary;Dunno;Dunno;Dunno;Dunno;Yes;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Yes;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Yes
+BootX (Linux);proprietary;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Yes;Dunno;Dunno;Dunno;Dunno
+Darwin Boot Loader;[[Apple Public Source License|APSL 2.0]];Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;Dunno;yes;Yes
+Das U-Boot;[[GNU General Public License#Version 2|GPLv2]];Dunno;Dunno;Dunno;Dunno;Yes;Yes;Yes;Yes;Yes;Yes;No;Yes;Dunno;Dunno;Dunno;Dunno;Yes;Dunno;Dunno;Yes (FreeBSD);Dunno
+GAG;[[GNU General Public License#Version 2|GPLv2]]+;Dunno;Yes (SafeBoot);No;Yes;Yes;Yes;Yes;Yes;Yes;Yes;No;No;Yes;Yes;Calls NTLDR;Calls Windows Boot Manager;Calls GRUB or LILO;Calls bootloader;Calls bootloader;Calls bootloader;No
+GRUB Legacy;[[GNU General Public License#Version 2|GPLv2]]+;Dunno;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;Calls NTLDR;Calls Windows Boot Manager;yes;Calls [[FreeLoader]];yes;yes;yes
+GNU GRUB;[[GNU General Public License#Version 3|GPLv3]];yes;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;Calls NTLDR;Calls Windows Boot Manager;yes;Calls [[FreeLoader]];yes;yes;yes
+GRUB4DOS;[[GNU General Public License#Version 2|GPLv2]]+;Dunno;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;Calls NTLDR;Calls Windows Boot Manager;yes;dunno;dunno;dunno;dunno
+Gujin;[[GNU General Public License#Version 2|GPLv2]];Dunno;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;Calls NTLDR;yes;yes;dunno;dunno;dunno;dunno
+systemd-boot / Gummiboot;[[GNU Lesser General Public License|LGPL 2.1]];yes;no;no;dunno;yes;yes;yes;dunno;dunno;yes;dunno;dunno;no;no;Windows Server 2013 64bits with UEFI only;Calls Windows Boot Manager;yes;dunno;dunno;UEFI only;yes
+iBoot;proprietary;yes;dunno;dunno;dunno;yes;dunno;yes;yes;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;yes
+Libreboot;[[GNU General Public License#Version 3|GPLv3]];dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno;dunno
+LILO;[[BSD licenses|BSD license]];yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;dunno;dunno;yes;Calls NTLDR;yes;yes;dunno;dunno;Calls biosboot (FreeBSD, PC-BSD, ...);dunno
+loader(8);[[BSD licenses|BSD license]];yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;dunno;yes;dunno;dunno;dunno;dunno;dunno;dunno;dunno;yes (FreeBSD, TrueOS);dunno
+loadlin;[[GNU General Public License#Version 2|GPLv2]]+;Dunno;no;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;no;no;no;no;yes;no;no;dunno;dunno
+MasterBooter;proprietary;dunno;yes;Dunno;dunno;yes;yes;yes;dunno;yes;dunno;dunno;dunno;yes;yes;yes;yes;yes;dunno;dunno;yes;dunno
+NTLDR;proprietary;Dunno;no;yes;yes;yes;dunno;no;no;yes;yes;dunno;dunno;yes;yes;yes;no;Calls GRUB4DOS;dunno;dunno;dunno;Calls Darwin bootloader
+OSL2000 Boot Manager;proprietary;Dunno;yes;yes;no;yes;yes;yes;yes;yes;yes;yes;no;yes;yes;yes;yes;Calls GRUB or LILO;dunno;dunno;dunno;dunno
+PLoP Bootmanager;proprietary;Dunno;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;Calls GRUB or LILO;dunno;dunno;dunno;dunno
+RedBoot;mod [[GNU General Public License#Version 2|GPLv2]]+;Dunno;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;Calls NTLDR;Calls Windows Boot Manager;yes;Calls [[FreeLoader]];yes;yes;yes
+rEFInd;[[GNU General Public License#Version 3|GPLv3]]/BSD license;yes;no;no;no;yes;yes;Dunno;yes;Dunno;yes;Dunno;no;Dunno;Dunno;yes;yes;yes;Dunno;Dunno;yes;yes
+Smart Boot Manager;[[GNU General Public License#Version 2|GPLv2]]+;Dunno;yes;no;yes;yes;yes;yes;yes;yes;dunno;dunno;dunno;yes;yes;yes;dunno;yes;dunno;dunno;yes;dunno
+SPFdisk;[[GNU General Public License#Version 2|GPLv2]]+;Dunno;yes;yes;yes;yes;yes;dunno;dunno;yes;dunno;dunno;dunno;yes;yes;dunno;dunno;dunno;dunno;dunno;dunno;dunno
+SYSLINUX;[[GNU General Public License#Version 2|GPLv2]]+;yes;no;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;yes;Calls NTLDR;Calls Windows Boot Manager;yes;dunno;yes;via mboot.c32 module [http://www.syslinux.org/wiki/index.php/Mboot.c32];dunno
+XOSL;[[GNU General Public License#Version 2|GPLv2]];Dunno;no;no;yes;yes;yes;yes;yes;dunno;no;dunno;no;yes;yes;yes;yes;yes;dunno;dunno;dunno;dunno
+Windows Boot Manager;proprietary;yes;no;yes;no;yes;yes;dunno;yes;yes;yes;yes;dunno;dunno;yes;Calls NTLDR;yes;Calls GRUB or LILO;dunno;dunno;dunno;dunno
+FreeLoader (ReactOS Boot Loader);[[GNU General Public License#Version 2|GPLv2]]+;Dunno;no;yes;yes;yes;yes;dunno;yes;yes;yes;yes;dunno;yes;yes;partial;Calls Windows Boot Manager;yes;yes;dunno;dunno;dunno
+Name;Software license;Can reside in;Can reside in;Can reside in;Can reside in;Can boot from;Can boot from;Can boot from;Can boot from;Can boot from;Can boot from;Can boot from;Can boot from;Can boot;Can boot;Can boot;Can boot;Can boot;Can boot;Can boot;Can boot;Can boot
+Name;Software license;ESP (UEFI);MBR;VBR;Floppy;Hard disk;Second hard disk;Logical partitions;CD-ROM;Floppy;USB;Zip;LAN;MS-DOS;Windows 9x/Me;Windows NT series;Windows Vista/7/8;Linux;ReactOS;MenuetOS;*BSD;X

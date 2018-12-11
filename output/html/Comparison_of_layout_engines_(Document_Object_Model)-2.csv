@@ -1,0 +1,22 @@
+;;Trident;Tasman;Gecko;WebKit;KHTML;Presto
+Interface StyleSheet;Interface StyleSheet;Interface StyleSheet;Interface StyleSheet;Interface StyleSheet;Interface StyleSheet;Interface StyleSheet;Interface StyleSheet
+type;DOM2;6.0;?;1.0;Yes;?;2.0
+disabled;DOM2;6.0;?;1.0;Yes;?;2.0
+ownerNode;DOM2;No;?;1.0;Yes;?;2.0
+parentStyleSheet;DOM2;6.0;?;1.0;Yes;?;2.0
+href;DOM2;8.0;?;1.0;Yes;?;2.0
+title;DOM2;6.0;?;1.0;Yes;?;2.0
+media;DOM2;Incorrect;?;1.0;Yes;?;2.0
+Interface StyleSheetList;Interface StyleSheetList;Interface StyleSheetList;Interface StyleSheetList;Interface StyleSheetList;Interface StyleSheetList;Interface StyleSheetList;Interface StyleSheetList
+length;DOM2;6.0;?;1.0;Yes;?;2.0
+item();DOM2;6.0;?;1.0;Yes;?;2.0
+Interface MediaList;Interface MediaList;Interface MediaList;Interface MediaList;Interface MediaList;Interface MediaList;Interface MediaList;Interface MediaList
+mediaText;DOM2;No;?;1.0;Yes;?;2.0
+length;DOM2;No;?;1.0;Yes;?;2.0
+item();DOM2;No;?;1.0;Yes;?;2.0
+deleteMedium();DOM2;No;?;1.0;Yes;?;2.0
+appendMedium();DOM2;No;?;1.0;Yes;?;2.0
+Interface LinkStyle;Interface LinkStyle;Interface LinkStyle;Interface LinkStyle;Interface LinkStyle;Interface LinkStyle;Interface LinkStyle;Interface LinkStyle
+sheet;DOM2;No;?;1.0;No;?;2.0
+Interface DocumentStyle;Interface DocumentStyle;Interface DocumentStyle;Interface DocumentStyle;Interface DocumentStyle;Interface DocumentStyle;Interface DocumentStyle;Interface DocumentStyle
+styleSheets;DOM2;No;?;1.0;No;?;2.0

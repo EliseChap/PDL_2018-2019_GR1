@@ -1,0 +1,99 @@
+;;; Trident; EdgeHTML; Gecko; WebKit; KHTML; Presto
+Numbers;Numbers;Numbers;Numbers;Numbers;Numbers;Numbers;Numbers;Numbers
+CSS2;number;A floating-point number;rowspan=""4"" 3.0;rowspan=""4"" 12;rowspan=""4"" 1.0;rowspan=""4"" 85;rowspan=""4"" yes;rowspan=""4"" [[#presto float|1.0]]
+CSS2;length;number followed by units;percentage;number followed by %;integer;An integer; ;angle
+CSS2;number angle-unit;rowspan=""2"" 9.0;rowspan=""2"" 12;yes;[[#general_angle|Partial]];[[#general_angle|Partial]];[[#general_angle|Partial]];time
+CSS2;number time-unit;2.0;rowspan=""2"" yes;rowspan=""2"" yes;2.5;frequency;number frequency-unit;rowspan=""2"" no
+rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no;fraction;Remaining space;no;no;Strings;Strings
+ ;Strings;Strings;Strings;Strings;Strings;Strings;Strings;CSS2
+ ;string;String;3.0;rowspan=""2"" 12;rowspan=""2"" 1.0;rowspan=""2"" 85;rowspan=""2"" yes;rowspan=""2"" 1.0
+ ;\code;Unicode escapes;6.0;Functions;Functions;Functions;Functions;Functions
+Functions;Functions;Functions;Functions;CSS2;rect();A rectangle;[[#trident rect|8.0]];12
+1.0;85;yes;1.0;url();Uniform Resource Identifier;3.0;rowspan=""3"" 12;rowspan=""3"" 1.0
+CSS2;rowspan=""3"" 85;rowspan=""3"" yes;rowspan=""3"" 1.0;counter();;rowspan=""2"" 8.0;attr();Attribute identifier
+ ;calc();;9.0;12;16.0;yes;no;no
+toggle();Toggling between values;no;no;no;no;no;no;?
+CSS2;repeat();Repeat n times;no;no;rowspan=""1"" 32.0;no;no;no
+CSS2;Colors;Colors;Colors;Colors;Colors;Colors;Colors;Colors
+CSS2;Colors;CSS2;HTML4 color keywords;16 predefined web colors;rowspan=""2"" 3.0;rowspan=""4"" 12;rowspan=""4"" 1.0;rowspan=""4"" 85
+rowspan=""4"" yes;rowspan=""4"" 1.0;#rrggbb or #rgb;Hexadecimal notation;rgb(r, g, b);RGB notation;4.0;system colors;28 predefined system colors
+ ;3.0; ;SVG color keywords;;8.0;rowspan=""6"" 12;yes;yes
+yes;yes;currentColor;The value of the color property.;rowspan=""4"" 9.0;1.8;528;yes;2.1
+rgba(r, g, b, a);RGBA notation;1.9;rowspan=""4"" 525;4.0;2.2;hsl(h, s, l);HSL notation;1.5
+3.5.5;2.1;hsla(h, s, l, a);HSLA notation;1.9;3.5.5;2.2;transparent;Full transparency
+CSS2;[[#trident transparent|9.0]];1.9;4.0;[[#presto transparent|Partial]];Image values;Image values;Image values;Image values
+CSS2;Image values;Image values;Image values;Image values;Image values;CSS2;url;Image types
+CSS2;3.0;12;1.0;85;yes;1.0; ;sprite
+rowspan=""2"" no;rowspan=""2"" no;no;no;rowspan=""8"" no;no;image-list;no;no
+ ;no;linear-gradient;rowspan=""6"" 10.0;rowspan=""6"" 12;rowspan=""6"" 16.0;rowspan=""6"" yes;rowspan=""6"" [[#presto -o-|Experimental]];radial-gradient
+ ;linear-gradient();Color gradients;radial-gradient();repeating-linear-gradient();repeating-radial-gradient(); ;conic-gradient(); 
+ ;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no;repeating-conic-gradient(); 
+ ;element();Reproduce element;no;no;[[#gecko -moz-|Experimental]];no;no;no
+ ;cross-fade();Transitioning between images;no;no;no;no;no;no
+image-set();Resolution negotiation;no;no;no;no;no;no;Counter Styles
+Counter Styles;Counter Styles;Counter Styles;Counter Styles;Counter Styles;Counter Styles;Counter Styles;Counter Styles; 
+symbols();Anonymous Counter Styles;Image types;rowspan=""1"" no;rowspan=""1"" no;rowspan=""1"" no;rowspan=""1"" no;rowspan=""1"" no;rowspan=""1"" no
+ ;Keywords;Image types;Keywords;Keywords;Keywords;Keywords;Keywords;Keywords
+ ;Keywords;Image types;Keywords;CSS2;auto;Automatically calculated;[[#trident auto|6.0]];rowspan=""2"" 12
+ ;rowspan=""2"" 1.0;Image types;rowspan=""2"" 85;rowspan=""2"" yes;rowspan=""2"" 1.0;inherit;Inherited from the parent;8.0
+ ; ;initial;;no;13;19.0;125;no
+ ;no;Units;Units;Units;Units;Units;Units;Units
+ ;Units;Units;CSS2;px;Pixel;rowspan=""9"" 3.0;rowspan=""9"" 12;rowspan=""9"" 1.0
+ ;rowspan=""9"" 85;rowspan=""9"" yes;rowspan=""9"" 1.0;pt;Point;pc;Pica;cm
+Centimetre;mm;Millimetre;in;inch;em;em;ex;ex
+ ;%;Percent; ;deg;Degree;rowspan=""6"" 9.0;rowspan=""6"" 12;rowspan=""3"" 1.9.1
+ ;rowspan=""3"" yes;rowspan=""3"" yes;rowspan=""3"" 2.5;grad;Grad;rad;Radian;turn
+ ;turn;13.0;no;no;no;ms;Millisecond;rowspan=""2"" 2.0
+ ;rowspan=""4"" yes;rowspan=""4"" yes;rowspan=""2"" 2.5;s;Second;Hz;Hertz;rowspan=""7"" no
+rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" no;kHz;Kilohertz;dpi;Dots per inch;rowspan=""3"" 12;rowspan=""2"" 1.9.1
+rowspan=""2"" no;rowspan=""2"" 4.1;rowspan=""2"" 2.5;dpcm;Dots per centimetre;dppx;Dots per pixel-unit;16.0;no
+dunno;no;earlierdraft ofcss-line-grid;gd;Cells in the layout-grid;no;no;no;no
+no;unit beingconsideredfor;fr;Remaining space in a series of length values;rowspan=""7"" 12;no;no;no;no
+CSS2; ;rem;the font size of the root element;rowspan=""3"" 9.0;1.9.2;yes;no;2.10.229
+vw;the viewport's width;rowspan=""4"" 19.0;rowspan=""4"" 28.0;rowspan=""4"" no;rowspan=""4"" no;vh;the viewport's height;vmin
+equal to the smaller of ‘vw’ or ‘vh’.;rowspan=""2"" no;vmax;equal to the larger of ‘vw’ or ‘vh’.;ch;the width of the ""0"" (ZERO, U+0030) glyph found in the font for the font size used to render.;no;[[#gecko_ch|1.9.1]];no
+no;no;Filter Effects;Filter Effects;Filter Effects;Filter Effects;Filter Effects;Filter Effects;Filter Effects
+CSS2;Filter Effects;Filter Effects; ;grayscale(); ;rowspan=""10"" no;rowspan=""10"" 13;rowspan=""10"" 35.0
+CSS2;rowspan=""10"" 18.0;rowspan=""10"" no;rowspan=""10"" no;sepia(); ;saturate(); ;hue-rotate()
+CSS2; ;invert(); ;opacity(); ;brightness(); ;contrast()
+CSS2; ;blur(); ;drop-shadow(); ;Variables;Variables;Variables
+CSS2;Variables;Variables;Variables;Variables;Variables;Variables; ;--*
+CSS2;define variable;rowspan=""2"" no;rowspan=""2"" no;rowspan=""2"" 31.0;rowspan=""2"" table-experimentalAugust 2014;rowspan=""2"" no;rowspan=""2"" no;var(--*)
+CSS2;use variable;;;;Trident;EdgeHTML;Gecko;WebKit
+CSS2;KHTML;Presto;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;

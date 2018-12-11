@@ -1,0 +1,27 @@
+Shell:completion:completion:completion:completion:history:prompt:suggestions:highlighting:Directory history, stack or similar features:change:correction:environment:Snippets:prompt:prompt:indicator:help:builder
+Thompson shell:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no
+Bourne shell 1977 version:no:no:no:no:no:no:no:no:no:no:no:no:no:yes:no:no:no:no
+Bourne shell current version:no:yes:no:no:yes:no:no:no:yes (CDPATH, pushd, popd, dirs), CDPATH since SVr4:no:no:no:no:yes:no:no:no:no
+POSIX shell:no:no:no:no:yes:no:no:no:Yes (<tt>CDPATH</tt>):no:no:no:no:yes:no:no:no:no
+bash (v4.0):yes:yes:when defined:yes:yes:no:no:no:Yes (<tt>CDPATH</tt>, <tt>pushd</tt>, <tt>popd</tt>):optional:no:no:no:yes:yes:no:no:no
+csh:yes:yes:no:no:yes:no:no:no:Yes (<tt>cdpath</tt>, <tt>pushd</tt>, <tt>popd</tt>):optional:no:no:no:yes:no:no:no:no
+tcsh:yes:yes:when defined:no:yes:no:no:no:Yes (<tt>cdpath</tt>, <tt>pushd</tt>, <tt>popd</tt>):optional:yes:no:no:yes:no:no:no:no
+Hamilton C shell:yes:yes:no:yes:yes:no:no:no:Yes (<tt>cdpath</tt>, <tt>pushd</tt>, <tt>popd</tt>):no:no:no:no:yes:no:no:no:no
+Scsh:no:no:no:no:no:no:no:no:no:no:no:no:no:yes:no:no:no:no
+ksh (ksh93t+):Yes (extendable):Yes (extendable):no:no:yes:no:no:no:Yes (<tt>cdpath</tt> builtin, <tt>pushd</tt>, <tt>popd</tt> implemented as functions):no:no:no:no:yes:yes:no:no:no
+pdksh:yes:yes:no:no:yes:no:no:no:no:no:no:no:no:yes:yes:no:no:no
+zsh:yes:yes:when defined:yes:yes:no:):Third-party extension:yes:optional:yes:no:when defined (as ZLE widgets):yes:yes:no:yes:no
+ash:no:no:no:no:yes:no:no:no:no:no:no:no:no:yes:yes:no:no:no
+CCP:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no
+COMMAND.COM:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no (only via external CHOICE command, in DR-DOS also via SWITCH/ DRSWITCH internal commands):no:no:no
+OS/2CMD.EXE:yes:yes:no:no:yes:no:no:no:no:no:no:no:no:no:no:no:no:no
+WindowsCMD.EXE:partial:partial:no:no:Yes (<tt>F8</tt>):no:no:no:Yes (<tt>PUSHD</tt>, <tt>POPD</tt>):no:no:no:no:yes (via SET /P command):no:no:no:no
+4DOS:yes:yes:yes:yes:yes:no:no:no:(via popup, extended directory searches, <tt>CDPATH</tt>, <tt>PUSHD</tt>, <tt>POPD</tt>, <tt>DIRHISTORY</tt>, <tt>DIRS</tt>, <tt>CDD</tt>, <tt>CD&nbsp;-</tt> commands and <tt>%@DIRSTACK[]</tt> function):yes:no:yes:no:yes (via INPUT, INKEY and ESET commands):yes (via @SELECT[] function, and indirectly via a combination of INKEY, INPUT, SWITCH commands):no:yes:no (except for OPTION command for INI file directives)
+4OS2:?:?:?:?:yes:no:no:no:yes:yes:no:?:no:?:?:no:yes:no
+TCC (formerly 4NT):yes:yes:yes:yes:yes:no:no:yes:(via popup, extended directory searches, <tt>CDPATH</tt>, <tt>PUSHD</tt>, <tt>POPD</tt>, <tt>DIRHISTORY</tt>, <tt>DIRS</tt>, <tt>CDD</tt>, <tt>CD&nbsp;-</tt> commands and <tt>%@DIRSTACK[]</tt> function):yes:no:yes:no:yes (via INPUT, INKEY, ESET and SET /P commands):yes (via @SELECT[] function, and indirectly via a combination of INKEY, INPUT, SWITCH commands):no:yes:no
+PowerShell:yes:yes:yes:yes:Yes (<tt>F8</tt>):yes:yes2Yes, in ISE:yes2Yes, in ISE and PSReadLine module (included in v5.0):Yes; multiple stacks; multiple location types:no:yes2Yes, in PSReadLine module:yes2Yes, in ISE:yes2Yes, in ISE:yes:yes:yes:yes2Yes, in ISE:popup window
+rc:yes:yes:no:no:yes:no:no:no:no:no:no:no:no:?:no:no:no:no
+BeanShell:yes:yes:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no:no
+VMS DCL:Minimum uniqueness scheme:no:no:no:yes:yes:no:no:no:no:no:no:no:yes:no:no:no:no
+fish:yes:yes:when defined or parsable in man pages:yes:yes:no:yes:yes:yes:yes:yes:yes:no:yes:(via <tt>fish_config</tt> command):no:no:no
+Shell:completion:completion:completion:completion:history:prompt:suggestions:highlighting:Directory history, stack or similar features:change:correction:environment:Snippets:prompt:prompt:indicator:help:builder

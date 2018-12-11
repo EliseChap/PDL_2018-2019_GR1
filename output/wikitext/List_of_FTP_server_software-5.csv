@@ -1,0 +1,26 @@
+;;CrushFTP;ProFTPD;Pure-FTPd;vsftpd;Wu-ftp
+;License type;proprietary;FLOSS/GPL;BSD;FLOSS/GPL2;proprietary
+OS;Linux;yes;yes;yes;yes;yes
+OS;Mac OS X;yes;yes;yes;yes;yes
+OS;Unix;yes;yes;yes;yes;yes
+OS;Windows;yes;no;?;?;?
+User Interface;CLI;yes;yes;?;?;?
+User Interface;GUI integrated;yes;no;?;?;?
+User Interface;GUI(s) separately;yes;yes;?;?;?
+User Interface;Web-based GUI;yes;?;?;?;?
+Services;FTP;yes;yes;yes;yes;yes
+Services;SFTP;yes;yes;no;no;no
+Services;FTPS;yes;yes;yes;yes;?
+Services;SCP;yes;?;?;?;?
+Services;WebDAV;yes;?;?;?;?
+Services;HTTP/HTTPS;yes;?;?;?;?
+Services;AS2;no;?;?;?;?
+Authentication;LDAP;yes;yes;yes;?;?
+Authentication;Active Directory;yes;?;?;?;?
+Authentication;Local;yes;yes;yes;yes;yes
+Authentication;Database;yes;yes;yes;?;?
+High Availability;(active/passive);yes;?;?;?;?
+High Availability;(active/active);yes;?;?;?;?
+Automation;Event-handling;yes;yes;?;?;?
+Automation;Scripting;yes;yes;?;?;?
+ ; ;CrushFTP;ProFTPD;Pure-FTPd;vsftpd;Wu-ftp

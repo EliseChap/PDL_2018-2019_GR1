@@ -1,0 +1,14 @@
+ADC hub;FOSS;Software license;Active;Last Update;Notes
+ADCH++;yes;[[GNU General Public License|GPL]];yes;2016-03-08 / 2.12.1;ADCH++ GUI
+yes;[[GNU General Public License|GPL]];no;;DSHub;yes
+[[GNU General Public License|GPL]];no;2008-10-09 / RC1;FlexHub;yes;[[Affero General Public License|AGPL]]
+yes;2013-10-20 / 0.2 svn 1469;Luadch;yes;[[GNU General Public License|GPLv2]];yes
+2017-05-24 / v2.19;Nexthub;yes;[[MIT License]];no;
+uhub;yes;[[GNU General Public License|GPL]];yes;2014-10-17 / 0.5.0;In Debian and OpenWrt
+ErlHub;yes;[[GNU General Public License|GPL]];dunno;;Qhub
+yes;[[GNU General Public License|GPL]];no;2006-07-09 / v0.10;Starlet ADC Hub;No
+proprietary;yes;;Starhub;No;source code available
+No;;RusHub;yes;[[GNU General Public License|GPL]];yes
+2012-07-10 / 2.3.10;ADC hub;FOSS;Software license;Active;
+;;;;;
+;;;;;

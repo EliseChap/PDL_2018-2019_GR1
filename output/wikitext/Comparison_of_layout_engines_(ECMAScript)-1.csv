@@ -1,0 +1,13 @@
+;Trident;Gecko;WebKit;Presto;Blink
+Name of ECMAScript Engine;JScript/Chakra;Spidermonkey/TraceMonkey/JägerMonkey/IonMonkey;JavaScriptCore/SquirrelFish Extreme;Linear B/Futhark/Carakan;V8
+ECMAScript Edition 3;yes;0.6;yes;1.0;yes
+ECMAScript Edition 5;5.0;2.0;partial;yes;yes
+ECMA Script Edition 6;??;??;??;??;??
+JavaScript 1.5 extensions;no;0.6;yes;1.0;yes
+JavaScript 1.6 extensions(excluding E4X);no;1.8;partial;partial;partial
+JavaScript 1.7 extensions;no;1.8.1;no;partial;no
+JavaScript 1.8 extensions;no;1.9;partial;no;partial
+JavaScript 1.8.1 extensions;no;1.9.1;no;no;no
+JScript .NET extensions;no;no;no;no;no
+ActionScript extensions;no;no;no;no;no
+E4X;no;Dropped;no;no;no

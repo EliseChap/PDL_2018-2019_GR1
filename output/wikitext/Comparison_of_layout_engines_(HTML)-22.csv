@@ -1,0 +1,8 @@
+, Trident, EdgeHTML, Gecko, WebKit, Presto
+getElementsByClassName,5.0,12,1.9,525,2.1
+registerProtocolHandler,rowspan=""2"" No,rowspan=""2"" No,1.9Limited to the [[Feed: URI scheme|feed protocol]] in 1.8; fully supported in 1.9.May 2014,rowspan=""2"" yes,rowspan=""2"" 2.10
+registerContentHandler,1.8Limited to [[Web feed|feed]] [[MIME]] types in 1.8 and 1.9.,Cross-document messaging,4.0,12,1.9
+Yes,2.0,Drag-and-drop,6.0,12,1.9.1
+Yes,2.10.270,pushState() and replaceState(),6.0,12,2.0
+528,2.9,,Trident,EdgeHTML,Gecko
+WebKit,Presto,,,,

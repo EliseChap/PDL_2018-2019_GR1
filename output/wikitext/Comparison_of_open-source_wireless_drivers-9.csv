@@ -1,0 +1,19 @@
+Driver;Chipset;Integration;Free firmware;License;Development;Free software
+ ;Atheros AR5211/ AR5212/ AR5213/ AR5214;Integrated with Solaris Nevada build 29;No firmware required;Dual GPL/BSD with proprietary HAL;Port of Madwifi;no
+ ;Intel PRO/Wireless 2100;Community project;no;BSD;Ported from OpenBSD;yes
+ ;Intel PRO/Wireless 2200BG/2225BG/2915ABG;Community project;no;BSD;Ported from OpenBSD;yes
+ ;Cisco Aironet 340/350;Community project;n/a;BSD;Ported from FreeBSD;yes
+ ;Lucent/Agere Systems Hermes (WaveLAN/ORiNOCO), Intersil PRISM-2 802.11b;Community project;n/a;BSD;Ported from FreeBSD;yes
+ ;Ralink RT2500;Community project;n/a;BSD;Ported from OpenBSD;yes
+ ;Realtek RTL8180L;Community project;n/a;BSD;Ported from NetBSD;yes
+ ;Marvell 88W8335/ 88W8310;Community project;n/a;BSD;Ported from OpenBSD;yes
+ ;Intel PRO/Wireless 3945ABG;Community project;no;BSD;Ported from OpenBSD;yes
+ ;Intel Wireless WiFi Link 4965AGN;Community project;no;BSD;Ported from OpenBSD;yes
+ ;Atheros 9000;Community project;no;BSD;based on ath9k;yes
+ ;Ralink RT2561/RT2561S/RT2661;Community project;no;BSD;;yes
+ ;Ralink RT2700/2800;Community project;no;BSD;;yes
+ ;Realtek RTL8187L/B USB;Community project;no;BSD;;yes
+ ;Atmel AT76C50x;Community project;no;BSD;;yes
+ ;Marvell 88W8363;Community project;no;BSD;;yes
+ ;Ralink RT2500USB;Community project;no;BSD;;yes
+ ;ZyDAS ZD1211 chipsets;Community project;yes;BSD;Ported from OpenBSD;yes

@@ -1,0 +1,3 @@
+; Trident; EdgeHTML; Gecko; WebKit; Presto
+track;6.0;12;a ping;no;no
+dependsThe <code>ping</code> attribute is disabled by default, due to privacy concerns.;dependsThe <code>ping</code> attribute is disabled by default, thus needs to be manually enabled by each port;;;;

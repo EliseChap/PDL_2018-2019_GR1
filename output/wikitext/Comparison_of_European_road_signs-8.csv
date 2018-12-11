@@ -1,0 +1,10 @@
+; Austria; Belgium; CzechRepublic; Denmark; Estonia; Finland; France; Germany; Greece; Hungary; Iceland; Ireland; Italy; Luxembourg; Netherlands; Norway; Poland; Portugal; Romania; Russia&Belarus; Slovakia; Slovenia; Spain; Sweden; Switzerland&Liechtenstein; Turkey; Ukraine; UnitedKingdom
+No through road; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Hospital; ; ; ; ;NOTUSED; ;(Clinic)or; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;(With A&E)or(With no A&E)
+First aid; ; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;NOTUSED
+Pharmacy; ;NOTUSED;NOTUSED; ;NOTUSED; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+Bus stop; ;NOTUSED;Front:orRear:; ; ;or;Fare network-specificor; ; ; ; ; ; ; ;or; ; ; ; ; ; ; ; ; ;Fare network-specificand:; ; ; 
+Escape lane; ; ; ;NOTUSED;NOTUSED;NOTUSED; ; ; ; ;NOTUSED;NOTUSED;NOTUSED; ; ; ; ; ; ; ; ; ; ;NOTUSED; ; ; ; 
+Tunnel; ; ; ; ; ; ; ; ; ; ;NOTUSED;NOTUSED;or; ; ; ; ; ; ;NOTUSED; ; ; ; ; ; ; ;NOTUSED
+Parking place; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; 
+;Austria;Belgium;CzechRepublic;Denmark;Estonia;Finland;France;Germany;Greece;Hungary;Iceland;Ireland;Italy;Luxembourg;Netherlands;Norway;Poland;Portugal;Romania;Russia&Belarus;Slovakia;Slovenia;Spain;Sweden;Switzerland&Liechtenstein;Turkey;Ukraine;UnitedKingdom

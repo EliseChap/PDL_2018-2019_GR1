@@ -1,0 +1,20 @@
+;Access control list;Form CAPTCHA;Staff action logging;PA/DSS certified
+Apache OFBiz;yes;yes;yes;no
+Batavi;yes;no;yes;no
+Bigcommerce;yes;yes;yes;yes
+Drupal Commerce;yes;free add-on;yes;no
+KonaKart;yes;no;yes;no
+LemonStand;yes;yes;yes;no
+Magento;yes;yes;enterprise;yes / Magento Payment Bridge
+Miva Merchant;n/a;n/a;n/a;yes
+nopCommerce;yes;yes;yes;no
+osCommerce;yes;no;no;no
+pimcore;yes;no;no;no
+PrestaShop;yes;yes;no;no
+Sana Commerce;yes;no;yes;yes
+Shopify;yes;yes;yes;no
+SupaDupa;yes;no;no;no
+Virto Commerce;yes;no;yes;no
+WooCommerce;?;?;?;?
+Zen Cart;yes;free add-on;yes;yes
+;Access control list;Form CAPTCHA;Staff action logging;PA/DSS certified

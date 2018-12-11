@@ -59,7 +59,7 @@ public class BenchTest {
 			System.out.println("CSV file name: " + url);
 
 			try {
-				Url url2 = new Url(wurl, ';', url + ".csv", "output/",  true, false);
+				Url url2 = new Url(wurl, ';', url + ".csv", "output/",  true, true);
 			} catch (Exception e) {
 				listException.add(wurl + ";" + e);
 			}
@@ -68,7 +68,7 @@ public class BenchTest {
 
 		br.close();
 		assertEquals(nurl, 336);
-		// run();
+		run();
 	}
 
 	/*
@@ -78,8 +78,12 @@ public class BenchTest {
 	public void testFichierUrl() throws Exception {
 		this.stat = new LinkedHashMap<String, Double>();
 		this.listException = new ArrayList();
+		try {
 		Fichier monFichier = new Fichier("src/test/java/Fichiers_entree/mesUrl.txt", ';', "WikiMatrix.csv", "output/", true,
 				true);
+		} catch (Exception e) {
+		
+		}
 		run();
 	}
 

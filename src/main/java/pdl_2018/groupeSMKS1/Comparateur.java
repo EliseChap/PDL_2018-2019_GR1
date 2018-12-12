@@ -109,22 +109,22 @@ public class Comparateur implements IComparateur {
 		while (i < nbLigneWiki || i < nbLigneHtml) {
 			if (i >= nbLigneWiki) {
 				nombreDifference++;
-				System.out.println("ligne " + i + " differente html" + " : " + html[i]);
-				System.out.println("ligne " + i + " differente wiki" + " : ");
+				/*System.out.println("ligne " + i + " differente html" + " : " + html[i]);
+				System.out.println("ligne " + i + " differente wiki" + " : ");*/
 			}
 			if (i >= nbLigneHtml) {
 				nombreDifference++;
-				System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
-				System.out.println("ligne " + i + " differente html" + " : ");
+				/*System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
+				System.out.println("ligne " + i + " differente html" + " : ");*/
 			}
 
 			if (i < nbLigneWiki && i < nbLigneHtml) {
 				if(wiki[i]!=null) {
 				if (!wiki[i].equals(html[i])) {
 					nombreDifference++;
-					System.out.println("diffrérence entre les deux fichiers :");
+					/*System.out.println("diffrérence entre les deux fichiers :");
 					System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
-					System.out.println("ligne " + i + " differente html" + " : " + html[i]);
+					System.out.println("ligne " + i + " differente html" + " : " + html[i]);*/
 				}
 			}}
 			i++;

@@ -52,7 +52,6 @@ public class Csv implements ICsv {
 		tableau = tableau2;
 		initialisationSeparateurAutomatique();
 		exporterCSV();
-		System.out.println("fin");
 	}
 
 	/**

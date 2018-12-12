@@ -397,7 +397,7 @@ public class Html extends Extracteur {
 	public void lectureTableau(String[][] tab) {
 		for (int a = 0; a < tab.length; a++) {
 			for (int b = 0; b < tab[a].length; b++) {
-				System.out.println("i : " + a + " j : " + b + " valeur : " + tab[a][b]);
+				//System.out.println("i : " + a + " j : " + b + " valeur : " + tab[a][b]);
 			}
 		}
 	}
@@ -426,7 +426,7 @@ public class Html extends Extracteur {
 			}
 
 		} else {
-			System.out.println("j" + j + "y" + y);
+			//System.out.println("j" + j + "y" + y);
 			
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;

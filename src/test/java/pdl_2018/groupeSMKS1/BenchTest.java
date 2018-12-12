@@ -35,7 +35,7 @@ public class BenchTest {
 	 * 
 	 * @throws Exception
 	 */
-	//@Test
+	@Test
 	public void testBenchExtractors() throws Exception {
 		this.listException = new ArrayList();
 		this.stat = new LinkedHashMap<String, Double>();

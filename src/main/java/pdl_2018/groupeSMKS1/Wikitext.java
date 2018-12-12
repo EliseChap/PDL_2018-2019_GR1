@@ -396,7 +396,7 @@ public class Wikitext extends Extracteur {
 				rowspanList.clear();
 				rowspanHeaderList.clear();
 				WtTable table = (WtTable) fils;
-				System.out.println(table);
+				//System.out.println(table);
 				WtXmlAttributes e = table.getXmlAttributes();
 				if (findClassWikitable(e)) {
 					List<String> headerList = new ArrayList<String>();
@@ -413,7 +413,7 @@ public class Wikitext extends Extracteur {
 
 							WtTableCaption caption = (WtTableCaption) node;
 							titre = findCaption(caption);
-							System.out.println(titre);
+							//System.out.println(titre);
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_HEADER) {
 
@@ -434,11 +434,11 @@ public class Wikitext extends Extracteur {
 								nbCol = findCol(row, rowsList, compteRows);
 								compteRows++;
 							}
-//							if (nbCol < nbColTemp && nbCol != 0) {
-//								for (int j = 1; j <= nbColTemp - nbCol; j++) {
-//									rowsList.add("");
-//								}
-//							}
+							// if (nbCol < nbColTemp && nbCol != 0) {
+							// for (int j = 1; j <= nbColTemp - nbCol; j++) {
+							// rowsList.add("");
+							// }
+							// }
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
 							WtTableCell cell = (WtTableCell) node;
@@ -450,7 +450,6 @@ public class Wikitext extends Extracteur {
 								rowsList.add(textCell);
 								nbCol++;
 							}
-
 
 						}
 						if (nbCol > nbColTemp) {
@@ -468,7 +467,6 @@ public class Wikitext extends Extracteur {
 
 					int colonnes = 0;
 					int lig = 0;
-				
 
 					for (String item : headerList) {
 						tab[lig][colonnes] = item;
@@ -628,11 +626,14 @@ public class Wikitext extends Extracteur {
 
 	/**
 	 * 
-	 * @param tab      Un tableau de string comportant les valeurs d'un tableau
-	 *                 extrait de wikipédio
-	 * @param nomTab   Le nom du tableau wikipédia
-	 * @param wikiHtml true pour indiquer que les données on était extraites avec
-	 *                 wikicode
+	 * @param tab
+	 *            Un tableau de string comportant les valeurs d'un tableau extrait
+	 *            de wikipédio
+	 * @param nomTab
+	 *            Le nom du tableau wikipédia
+	 * @param wikiHtml
+	 *            true pour indiquer que les données on était extraites avec
+	 *            wikicode
 	 * @return Un objet tableau
 	 */
 	public Tableau constructeurTableau(String[][] tab, String nomTab, boolean wikiHtml) {
@@ -665,8 +666,8 @@ public class Wikitext extends Extracteur {
 
 	/**
 	 * 
-	 * @return un boolean qui indique si l'extraction doit �tre faire en HTML (true)
-	 *         ou non (false)
+	 * @return un boolean qui indique si l'extraction doit �tre faire en HTML
+	 *         (true) ou non (false)
 	 */
 	public boolean getExtraHTML() {
 		return this.extraHTML;
@@ -698,8 +699,8 @@ public class Wikitext extends Extracteur {
 	public static void main(String[] args) {
 
 		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_(grammar)", ';',
-					"chemin", " nomCSV.csv", false, true);
+			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_(grammar)", ';', "chemin", " nomCSV.csv", false,
+					true);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

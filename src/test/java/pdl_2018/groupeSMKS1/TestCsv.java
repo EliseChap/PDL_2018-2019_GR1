@@ -25,7 +25,7 @@ import static org.junit.Assert.*;
 public class TestCsv {
 
 	/**
-	 * Test des parametres en entree et creation de l'objet CVS
+	 * Test the input parametres and the creation of CSV object
 	 */
 	@Test
 	public void testObjectCsvStandard() {
@@ -41,7 +41,7 @@ public class TestCsv {
 	}
 
 	/**
-	 * Test des parametres en entree null et creation de l'objet CVS
+	 * Test the input parametres null and creation of the CSV object
 	 */
 	@Test
 	public void testObjectCsvNull() {
@@ -55,7 +55,7 @@ public class TestCsv {
 	}
 
 	/**
-	 * Verification de l'exportation d'un csv
+	 * Verification of the export of a csv
 	 */
 
 	@Test
@@ -85,7 +85,7 @@ public class TestCsv {
 				}
 		
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		
 			//e.printStackTrace();
 		}
 		
@@ -97,7 +97,7 @@ public class TestCsv {
 	}
 
 	/**
-	 * Verifiation si le hashmap est initialise en faux
+	 * Check if the hashmap is initialized to false
 	 */
 	@Test
 	public void testInitialisationSeparateurAutomatique() {
@@ -123,7 +123,7 @@ public class TestCsv {
 	}
 
 	/*
-	 * Verification de l'incrementation du fichier
+	 * Verification of file incrementation
 	 */
 
 	@Test
@@ -168,7 +168,7 @@ public class TestCsv {
 	}
 
 	/**
-	 * Verifie si l'emplacement est pris
+	 * Check if the location is taken
 	 */
 
 	@Test
@@ -190,7 +190,7 @@ public class TestCsv {
 	}
 
 	/*
-	 * Verification du choix du delimiter
+	 * Verification of the choice of delimitation
 	 */
 
 	@Test

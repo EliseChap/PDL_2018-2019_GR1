@@ -6,9 +6,9 @@ import static org.junit.Assert.*;
 
 @Ignore
 public class TestCommandLine {
-//TODO test généralisé
+//TODO general test 
     /**
-     * Tests pour la méthode verifDelimiteur
+     * Tests fort the method verifDelimiteur
      */
     @Test
     public void testVerifDelimiteur() {
@@ -32,7 +32,7 @@ public class TestCommandLine {
     }
 
     /**
-     * Test pour la méthode verifHtmlOrWikicodeChoice
+     * Test for the method verifHtmlOrWikicodeChoice
      */
     @Test
     public void testVerifHtmlOrWikicodeChoice(){
@@ -69,7 +69,7 @@ public class TestCommandLine {
     }
 
     /**
-     * Test de la méthode verifCheminSortie
+     * Test for the method verifCheminSortie
      */
     @Test
     public void testVerifCheminSortie(){
@@ -89,7 +89,7 @@ public class TestCommandLine {
     }
 
     /**
-     * Test de la méthode verifNomSortie
+     * Test for the method verifNomSortie
      */
     @Test
     public void testVerifNomSortie(){
@@ -109,7 +109,7 @@ public class TestCommandLine {
     }
 
     /**
-     *
+     *This Junit test check the verifUrlOrFichierChoice method
      */
     @Test
     public void testVerifUrlOrFichierChoice(){

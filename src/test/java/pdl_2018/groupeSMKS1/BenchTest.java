@@ -30,8 +30,8 @@ public class BenchTest {
 	private Map<String, Double> stat;
 
 	/**
-	 * Methode Challenge Importe le fichier txt Parcours le fichier lance run
-	 * (analyse des csv)
+	 * Methode Challenge Imports the txt file Browse the run run file
+	 * (csv analysis)
 	 * 
 	 * @throws Exception
 	 */
@@ -72,7 +72,7 @@ public class BenchTest {
 	}
 
 	/*
-	 * Methode ouvrir un fichier txt avec des urls http://...
+	 * Method to open a txt file with urls http: // ...
 	 */
 	// @Test
 	public void testFichierUrl() throws Exception {
@@ -88,8 +88,8 @@ public class BenchTest {
 	}
 
 	/**
-	 * Recherche des fichiers dans le dossier Recherche des fichiers commun et les
-	 * analyses Recherche des fichiers non presente et ajoute dans la liste
+	 * Search for files in the Common File Search folder and
+	* Scans File search not present and adds to the list
 	 */
 	private void run() {
 
@@ -112,8 +112,8 @@ public class BenchTest {
 	}
 
 	/**
-	 * Ajoute a la liste tous les fichiers non trouve dans le dossier
-	 * oppose(wiki/html)
+	 * Add to the list all the files not found in the folder
+	* opposes (wiki / html) list
 	 * 
 	 * @param NonTrouve
 	 * @param type
@@ -127,7 +127,7 @@ public class BenchTest {
 	}
 
 	/**
-	 * parcourir les csv et les comparer puis les mettres dans la liste de resultats
+	 * browse the csv and compare them and put them in the list of results
 	 * 
 	 * @param listCommum
 	 */
@@ -148,7 +148,7 @@ public class BenchTest {
 	}
 
 	/**
-	 * lecture du csv et recupere son tableau de ligne
+	 * read the csv and get back his line board
 	 * 
 	 * @param cheminWiki
 	 * @return
@@ -184,7 +184,7 @@ public class BenchTest {
 	}
 
 	/**
-	 * Intersection de deux listes
+	 * Intersection of two lists
 	 * 
 	 * @param list1
 	 * @param list2
@@ -203,7 +203,7 @@ public class BenchTest {
 	}
 
 	/**
-	 * Recuperer ensemble des nom de fichiers
+	 *Collect file names together
 	 * 
 	 * @param chemin
 	 * @return
@@ -220,7 +220,7 @@ public class BenchTest {
 	}
 
 	/**
-	 * Ecrire les Csv
+	 * Write the Csv
 	 * 
 	 * @param chemin
 	 * @param list
@@ -246,7 +246,7 @@ public class BenchTest {
 	}
 
 	/**
-	 * Ecrire csv d'une map 
+	 *Write csv of a map
 	 * @param chemin
 	 * @param stat
 	 */

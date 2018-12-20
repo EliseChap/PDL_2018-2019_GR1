@@ -23,8 +23,8 @@ public class TestFichier {
     }
 
     /**
-     * Tests pour la méthode traitementFichierEntree
-     * On teste avec differents fichiers en entrée
+     * Tests the testTraitementFichierEntree method
+     *  We test with different input files
      */
     @Test
     public void testTraitementFichierEntree() {
@@ -62,8 +62,8 @@ public class TestFichier {
     }
 
     /**
-     * Tests pour la méthode decoupageAndGenerationURLs
-     * On teste avec différentes lectures de ligne
+     * Tests for the  decoupageAndGenerationURLs method
+     * We test with different line readings
      */
     @Test
     public void testDecoupageAndGenerationURLs() {

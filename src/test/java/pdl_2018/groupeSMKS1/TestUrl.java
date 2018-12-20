@@ -16,7 +16,10 @@ public class TestUrl {
 		u = new Url("https://www.facebook.com/", ' ', "", "", true, false);
 		
 	}
- 
+	/**
+	 * Test the URLstandart method
+	 */
+	
 	@Test
 	public void testURLstandard() {
 
@@ -33,6 +36,9 @@ public class TestUrl {
 		assertFalse(u.isWikipediaURL());
 	}
 
+	/**
+	 * Test the URLNonValide method
+	 */
 	@Test
 	public void testURLNonValide() {
 		u.setUrl("https://fr.wikipedia.");
@@ -44,11 +50,11 @@ public class TestUrl {
 		u.setUrl("https://fr.wikipedia.org/wiki/Page");
 		assertTrue(u.verifURL());
 
-		// u.setUrl("http://etudiant.istic.univ-rennes1.fr/current/L1L2/for");
-		// assertFalse(u.verifURL());
-
 	}
 
+	/**
+	 * Test the WikiURLfalse method
+	 */
 	@Test
 	public void testIsWikiURLFalse() {
 
@@ -60,6 +66,9 @@ public class TestUrl {
 
 	}
 
+	/**
+	 * Test the isPicture method
+	 */
 	@Test
 	public void testIsAPicture() {
 		u.setUrl("https://fr.wikipedia.org/wiki/Page");
@@ -82,9 +91,11 @@ public class TestUrl {
 				"https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football#/media/File:Jogo_no_Est%C3%A1dio_do_Maracan%C3%A3,_antes_da_Copa_do_Mundo_de_1950.tif");
 		assertTrue(u.isAPicture());
 
-		// A Ajouter : test pour gif bmp
 	}
 
+	/**
+	 * Test the isDiscusion method
+	 */
 	@Test
 	public void testIsDiscussion() {
 		u.setUrl("https://fr.wikipedia.org/wiki/Discussion_utilisateur:148.60.32.206");
@@ -95,12 +106,18 @@ public class TestUrl {
 
 	}
 
+	/**
+	 * Test the isContrbutions method
+	 */
 	@Test
 	public void testIsContributions() {
 		u.setUrl("https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Contributions/86.253.41.153");
 		assertFalse(u.isAnArticle());
 	}
 
+	/**
+	 * Test the isRealUrl method
+	 */
 	@Test
 	public void testIsRealURL() {
 	}

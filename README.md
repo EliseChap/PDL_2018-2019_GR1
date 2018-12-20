@@ -5,83 +5,83 @@
 # WikiMatrix
 
 
-**Objectif**
+**Goal**
 
-Wikipédia est une encyclopédie numérique collaborative universelle. Une communauté importante consulte et alimente Wikipédia régulièrement, les données présentes dans le site sont donc difficilement exploitables du fait de leur hétérogénéité. Ainsi, chaque contributeur écrit lui-même le wikicode de ses pages, ce qui peut entraîner de grandes divergences entre les pages. De plus, il n’est pas facile actuellement d’extraire des tableaux, les solutions existantes étant rudimentaires (Ex : copier/coller) et limitées. Wikimatrix permettra l’exportation d’un maximum de données tabulaires de Wikipédia vers des fichiers de format CSV. La force de ce projet est de solutionner l’hétérogénéité des différents tableaux. L’extraction permet une meilleure réutilisation des données, notamment dans les domaines de la statistique et de l’analyse.
+Wikipedia is a universal collaborative digital encyclopedia. A large community consults and feeds Wikipedia regularly, the data on the site are therefore difficult to exploit because of their heterogeneity. Thus, each contributor writes himself the wikicode of his pages, which can lead to big differences between the pages. Moreover, it is not easy at present to extract tables, the existing solutions being rudimentary (Ex: copy / paste) and limited. Wikimatrix will allow the export of a maximum of Wikipedia tabular data to CSV format files. The strength of this project is to solve the heterogeneity of the different tables. Extraction allows a better reuse of data, especially in the fields of statistics and analysis.
 
 **Description**
 
-L'utilisateur peut demander l’extraction, par l’intermédiaire d’une ligne de commande, d’une ou plusieurs URLs (instanciation des URLs automatique via un fichier txt). Pour interagir avec la machine, l’utilisateur  à sa disposition une liste de commandes. Il peut demander à récupérer les tableaux à partir du format HTML, du Wikicode ou des deux en même temps. 
+The user can request the extraction, via a command line, of one or more URLs (instantiation of automatic URLs via a txt file). To interact with the machine, the user has at his disposal a list of commands. It can request to retrieve tables from HTML, Wikicode or both at the same time.
 
 ## Getting Started
 
-**Lancer la classe App**
+** Launch the class App **
 
-**Renseigner une ou plusieurs URLs.**
+** Enter one or more URLs. **
 
-Les commandes à renseigner dans le terminal.
+The commands to be filled in the terminal.
 
-**Importer un fichier .txt où sont rangées l’ensemble des URLs   :**  
-
-```
--import[C://AdresseFichier]
-```
-
-Lorsqu’on utilise la commande -import[C://AdresseFichier] cela extrait la liste des URLs d’un fichier. Afin de normaliser le fichier d’entrée, il a été décidé dans la première version de notre application de se limiter au format “txt”. À l'intérieur de ce fichier, les données seront délimitées par le caractère “ ;’”. Ainsi chaque URL sera séparée par ce caractère.
-
-**Une URL**  
+** Import a .txt file where all the URLs are stored: **
 
 ```
--url[adresse]
+-import[C://FileAddress]
 ```
 
-**Choisir extraction html et/ou Wikicode**  
+When using the command -import [C: // FileAddress] this extracts the list of URLs from a file. In order to standardize the input file, it was decided in the first version of our application to be limited to "txt" format. Inside this file, the data will be delimited by the "; '" character. Thus each URL will be separated by this character.
+
+**URL**  
+
+```
+-url[Address]
+```
+
+**Choose html and / or Wikicode extraction**  
 
 ```
 -html 
 ```
 
-Extraction des données par le code HTML 
+Extraction of data by HTML code
 
 ```
 -wikicode
 ```
 
-Extraction des données par le code Wikicode
+Extraction of data by Wikicode code
 
 
-**Choisir le délimiteur dans le CSV final**
+**Choose the delimiter in the final CSV**
 
 ```
 -delimit[,] : 
 ```
 
-**Enregistrer le/les CSV**
+**Register the CSV**
 
 ```
 -save[c//] :
 ```
 
-**Enregistrer le/les CSV sous quel nom**
+**Register the CSV (s) under which name**
 
 ```
 -name[fichier.csv] :
 ```
 
-Attention, les commandes import et url ne peuvent pas être réalisées en même temps. Les commandes -html et -wikicode peuvent être cumulées pour avoir les deux extractions simultanément sur les mêmes tableaux.
+Attention, the import and url commands can not be realized at the same time. The -html and -wikicode commands can be cumulated to have both extractions simultaneously on the same tables.
 
-**Exemples de commandes acceptées par l’application :**
+**Examples of commands accepted by the application:**
 
 ```
 WikiMatrix -import[C:\Users\Sophie\Documents\Dossier cours\liens.txt] -html 
 ```
 
-Cette commande permet la création de fichiers CSV à partir des URL présentent de “liens.txt”. L’extraction sera fera à partir du code HTML. Tous les autres paramètres seront définis par leur valeur par défaut.
+This command allows the creation of CSV files from URLs that have "links.txt". The extraction will be done from the HTML code. All other parameters will be defined by their default value.
 
 ```
 WikiMatrix -url[https://fr.wikipedia.org/wiki/Rennes] -html -wikicode -delimit[;] -save[C:\ Users\Sophie\Documents\] 
 ```
-Le programme extrait l’URL et analyse la page avec les deux algorithmes. A l’aide de cette commande, l’utilisateur paramètre le délimiteur et l’emplacement de sauvegarde.
+The program extracts the URL and parses the page with both algorithms. Using this command, the user sets the delimiter and the save location.
 
 
 ### Prerequisites
@@ -93,7 +93,7 @@ IDE (Eclipse or IntelliJ IDEA)
 
 ## Running the tests
 
-Pour lancer les tests saisir :
+To start the tests enter:
 
 ```
 mvn test
@@ -102,58 +102,58 @@ mvn test
 ### Break down into end to end tests
 
 
-Lancer les 300 Urls, c'est le test qui est generale dans le projet.
+Launch the 300 Urls, this is the test that is general in the project.
 
 ```
 BenchTest
 ```
 
-Test La classe Commande Line afin de verifie si la commande est valide
+Test The Line Command class to check if the command is validated
 
 ```
 TestCommandLine
 ```
-Test la comparaison Html et WikiText
+Test the Html and WikiText comparison
 
 ```
 TestComparateur
 ```
 
-Test la création des CSV
+Test the creation of CSV
 
 ```
 TestCsv
 ```
-Test la classe Extracteur
+Test the class Extractor
 
 ```
 TestExtracteur
 ```
-Test la lecture des urls
+Test reading urls
 
 ```
 TestFichier
 ```
 
-Test l'extraction Html
+Html extraction test
 
 ```
 TestHtml
 ```
 
-Test la création de Tableau
+Test the creation of Tableau
 
 ```
 TestTableau
 ```
 
-Extraction de l'url vers l'extracteur
+Extracting the url to the extractor
 
 ```
 TestUrl
 ```
 
-Test la classe Wikitext
+Test the Wikitext class
 
 ```
 TestWikitext
@@ -188,7 +188,7 @@ Please read  [ANNEXES] (https://github.com/SulliDai/PDL_2018-2019_GR1/blob/maste
 
 
 See also the list of [contributors](https://github.com/SulliDai/PDL_2018-2019_GR1/graphs/contributors) who participated in this project.
-Cahier-des-charges-Rendu.pdf
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

@@ -10,7 +10,7 @@ public class TestComparateur {
 
 	
 /*
- * Test ratio contenu
+ * Test the ratio of the content
  */
 	@Test
 	public void ratioContenuTest() {
@@ -21,7 +21,7 @@ public class TestComparateur {
 	}
 	
 	/*
-	 * Test nombre d erreur dans le contenu
+	 * Test the number of fails in the content
 	 */	
 	@Test
 	public void comparaisonTest() {
@@ -34,7 +34,7 @@ public class TestComparateur {
 	}
 	
 	/*
-	 * test Comparaison nombre de ligne
+	 * test the difference of line between wiki and html 
 	 */
 	@Test
 	public void differentNombreLigneWikiHtmlTest() {
@@ -45,7 +45,7 @@ public class TestComparateur {
 	}
 
 	/*
-	 * Test du retours du nombre de ligne
+	 * Test the nomber of lines between wiki and html
 	 */
 	@Test
 	public void nombreLigneWikiTest() {
@@ -56,7 +56,7 @@ public class TestComparateur {
 	}
 
 	/*
-	 * Test nbre de ligne html
+	 * Test the nimber of line in html
 	 */
 	@Test
 	public void nombreLigneHtmlTest() {
@@ -66,7 +66,7 @@ public class TestComparateur {
 		assertEquals(comparateur.nombreLigneHtml(),1);
 	}
 	/*
-	 * Test ratio nbre de ligne html
+	 * Test the number of ligne html ratio 
 	 */
 	@Test
 	public void ratioLigneTest() {

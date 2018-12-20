@@ -16,11 +16,11 @@ public class Comparateur implements IComparateur {
 	}
 
 	/*
-	 * TRAITEMENT LIGNE
+	 * LINE TREATMENT
 	 */
 	
 	/**
-	 * Afficher ratio
+	 * Show ratio
 	 * @return
 	 */
 	public Double getRatio() {
@@ -28,9 +28,9 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Nombre de ligne Wikicode
+	 * number of Wikicode lines
 	 * 
-	 * @return nombre de ligne
+	 * @return number of lines
 	 * @date 17/11/2018
 	 */
 	public int nombreLigneWiki() {
@@ -38,9 +38,9 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Nombre de ligne Html
+	 * Number of HTML lines
 	 * 
-	 * @return nombre de ligne
+	 * @return Number of lines
 	 * @date 17/11/2018
 	 */
 	public int nombreLigneHtml() {
@@ -48,9 +48,9 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Comparaison du nombre de lignes
+	 * Comparison of the number of lines
 	 * 
-	 * @return Vrai si le nombre de ligne est identique
+	 * @return True if the number of lines is the same
 	 * @date 17/11/2018
 	 */
 
@@ -61,9 +61,9 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Ratio entre les nombre de ligne
+	 * Ratio between the number of lines
 	 * 
-	 * @return pourcentage
+	 * @return percentage
 	 * @date 17/11/2018
 	 */
 	public double ratioLigne() {
@@ -74,11 +74,11 @@ public class Comparateur implements IComparateur {
 	}
 
 	/*
-	 * TRAITEMENT CONTENU
+	 * CONTENT TREATMENT
 	 */
 
 	/**
-	 * Verification de la methode de comparaison partiel ou complet
+	 * Verification of partial or complete comparison method
 	 * @return
 	 */
 	public double analyse() {
@@ -92,10 +92,10 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Methode qui parcourts l'ensemble des deux tableaux pour pouvoir trouver les
-	 * differences
+	 * Method that path all the two tables to be able to find differences
+	 *
 	 * 
-	 * @return Nombre de difference de contenu
+	 * @return Number of content differences
 	 * @date 17/11/2018
 	 */
 	public int analyseComplet() {
@@ -122,7 +122,7 @@ public class Comparateur implements IComparateur {
 				if(wiki[i]!=null) {
 				if (!wiki[i].equals(html[i])) {
 					nombreDifference++;
-					/*System.out.println("diffrérence entre les deux fichiers :");
+					/*System.out.println("difference entre les deux fichiers :");
 					System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
 					System.out.println("ligne " + i + " differente html" + " : " + html[i]);*/
 				}
@@ -134,10 +134,10 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Realisation du pourcentage de difference de contenu entre les deux tableaux
+	 * Realization of the content difference percentage between the two tables
 	 * 
 	 * @param erreurContenu
-	 * @return pourcentage de difference entre les deux type de tableau
+	 * @return Difference percentage between the two types of tables
 	 * @date 17/11/2018
 	 */
 	public double ratioContenu(int erreurContenu) {
@@ -148,9 +148,9 @@ public class Comparateur implements IComparateur {
 	}
 
 	/**
-	 * Ratio generale avec tous les crit�res
+	 * General ratio with all criteria
 	 * 
-	 * @return pourcentage
+	 * @return percentage
 	 * @date 17/11/2018
 	 */
 
@@ -162,7 +162,7 @@ public class Comparateur implements IComparateur {
 	 * return ratioColonne() * 0.2 + ratioLigne() * 0.2 +
 	 * ratioContenu(analyseComplet()) * 0.4; }
 	 * 
-	 * private void analyseAlgoDiff() { // TODO Auto-generated method stub
+	 * private void analyseAlgoDiff() {
 	 * 
 	 * }
 	 * 
@@ -199,13 +199,13 @@ public class Comparateur implements IComparateur {
 	 */
 
 	/*
-	 * TRAITEMENT CELLULE
+	 * CELL TREATMENT
 	 */
 
 	/**
-	 * Calculateur du nombre de cellule wiki
+	 * Calculator of the number of wiki cells
 	 * 
-	 * @return nombreCellule
+	 * @return cellNumbers
 	 */
 
 	/*
@@ -214,9 +214,9 @@ public class Comparateur implements IComparateur {
 	 */
 
 	/**
-	 * Calculateur du nombre de cellule wiki
+	 * Calculator of the number of wiki cells
 	 * 
-	 * @return nombreCellule
+	 * @return cellNumber
 	 */
 
 	/*

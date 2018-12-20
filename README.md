@@ -15,9 +15,9 @@ L'utilisateur peut demander l’extraction, par l’intermédiaire d’une ligne
 
 ## Getting Started
 
-- Lancer la classe App
+***Lancer la classe App**
 
-→  Renseigner une ou plusieurs URLs.
+***Renseigner une ou plusieurs URLs.**
 Les commandes à renseigner dans le terminal sont en gras.
 → Importer un fichier .txt où sont rangées l’ensemble des URLs   :  
 -import[C://AdresseFichier] :
@@ -31,11 +31,21 @@ Lorsqu’on utilise la commande -import[C://AdresseFichier] cela extrait la list
 -save[c//] :
 → Enregistrer le/les CSV sous quel nom
 -name[fichier.csv] :
+
 Attention, les commandes import et url ne peuvent pas être réalisées en même temps. Les commandes -html et -wikicode peuvent être cumulées pour avoir les deux extractions simultanément sur les mêmes tableaux.
-Page 17
-Exemples de commandes acceptées par l’application :
-WikiMatrix -import[C:\Users\Sophie\Documents\Dossier cours\liens.txt] -html Cette commande permet la création de fichiers CSV à partir des URL présentent de “liens.txt”. L’extraction sera fera à partir du code HTML. Tous les autres paramètres seront définis par leur valeur par défaut.
-WikiMatrix -url[https://fr.wikipedia.org/wiki/Rennes] -html -wikicode -delimit[;] -save[C:\ Users\Sophie\Documents\] Le programme extrait l’URL et analyse la page avec les deux algorithmes. A l’aide de cette commande, l’utilisateur paramètre le délimiteur et l’emplacement de sauvegarde.
+
+***Exemples de commandes acceptées par l’application :**
+
+```
+WikiMatrix -import[C:\Users\Sophie\Documents\Dossier cours\liens.txt] -html 
+```
+
+Cette commande permet la création de fichiers CSV à partir des URL présentent de “liens.txt”. L’extraction sera fera à partir du code HTML. Tous les autres paramètres seront définis par leur valeur par défaut.
+
+```
+WikiMatrix -url[https://fr.wikipedia.org/wiki/Rennes] -html -wikicode -delimit[;] -save[C:\ Users\Sophie\Documents\] 
+```
+Le programme extrait l’URL et analyse la page avec les deux algorithmes. A l’aide de cette commande, l’utilisateur paramètre le délimiteur et l’emplacement de sauvegarde.
 
 
 ### Prerequisites
@@ -132,12 +142,11 @@ Please read  [ANNEXES] (https://github.com/SulliDai/PDL_2018-2019_GR1/blob/maste
 
 ## Authors
 
-* **
-→ Margaux Boullé
-→ Sophie Bouvry
-→ Sullivan Dairou
-→ Kénan Lethimonier-Herout 
-**
+***Margaux Boullé**
+***Sophie Bouvry**
+***Sullivan Dairou**
+***Kénan Lethimonier-Herout **
+
 
 See also the list of [contributors](https://github.com/SulliDai/PDL_2018-2019_GR1/graphs/contributors) who participated in this project.
 Cahier-des-charges-Rendu.pdf

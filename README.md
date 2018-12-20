@@ -19,7 +19,7 @@ The user can request the extraction, via a command line, of one or more URLs (in
 
 ** Enter one or more URLs. **
 
-# The commands to be filled in the terminal.
+## The commands to be filled in the terminal.
 
 ** Import a .txt file where all the URLs are stored: **
 

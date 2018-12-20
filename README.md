@@ -15,13 +15,13 @@ L'utilisateur peut demander l’extraction, par l’intermédiaire d’une ligne
 
 ## Getting Started
 
--Lancer la classe App
+**Lancer la classe App**
 
--Renseigner une ou plusieurs URLs.
+**Renseigner une ou plusieurs URLs.**
 
-Les commandes à renseigner dans le terminal sont en gras.
+Les commandes à renseigner dans le terminal.
 
--Importer un fichier .txt où sont rangées l’ensemble des URLs   :  
+**Importer un fichier .txt où sont rangées l’ensemble des URLs   :**  
 
 ```
 -import[C://AdresseFichier]
@@ -29,36 +29,40 @@ Les commandes à renseigner dans le terminal sont en gras.
 
 Lorsqu’on utilise la commande -import[C://AdresseFichier] cela extrait la liste des URLs d’un fichier. Afin de normaliser le fichier d’entrée, il a été décidé dans la première version de notre application de se limiter au format “txt”. À l'intérieur de ce fichier, les données seront délimitées par le caractère “ ;’”. Ainsi chaque URL sera séparée par ce caractère.
 
+**  Une URL**  
 
 ```
 -url[adresse]
 ```
 
--Choisir extraction html et/ou Wikicode
+**  Choisir extraction html et/ou Wikicode**  
 
 ```
 -html 
 ```
 
--Extraction des données par le code HTML 
+Extraction des données par le code HTML 
 
 ```
--wikicode : Extraction des données par le code Wikicode
+-wikicode
 ```
 
--Choisir le délimiteur dans le CSV final
+Extraction des données par le code Wikicode
+
+
+**Choisir le délimiteur dans le CSV final**
 
 ```
 -delimit[,] : 
 ```
 
--Enregistrer le/les CSV
+**Enregistrer le/les CSV**
 
 ```
 -save[c//] :
 ```
 
--Enregistrer le/les CSV sous quel nom
+**Enregistrer le/les CSV sous quel nom**
 
 ```
 -name[fichier.csv] :
@@ -66,7 +70,7 @@ Lorsqu’on utilise la commande -import[C://AdresseFichier] cela extrait la list
 
 Attention, les commandes import et url ne peuvent pas être réalisées en même temps. Les commandes -html et -wikicode peuvent être cumulées pour avoir les deux extractions simultanément sur les mêmes tableaux.
 
-***Exemples de commandes acceptées par l’application :**
+**Exemples de commandes acceptées par l’application :**
 
 ```
 WikiMatrix -import[C:\Users\Sophie\Documents\Dossier cours\liens.txt] -html 

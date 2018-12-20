@@ -1,9 +1,0 @@
- Distribution; Approximate number of packages; Package format/tools; Default installer; Graphical installation procedure
-BeleniX;dunno;RPM;dunno;dunno
-Nexenta OS;dunno;APT;dunno;dunno
-NexentaStor;dunno;dunno;dunno;dunno
-OmniOS;1032;IPS;Kayak;No
-OpenIndiana;dunno;IPS;dunno;Yes
-SmartOS;dunno;pkgsrc/pkgin;N/A (live system);N/A
-v9os;dunno;IPS;dunno;No
-Distribution;Approximate number of packages;Package format/tools;Default installer;Graphical installation procedure

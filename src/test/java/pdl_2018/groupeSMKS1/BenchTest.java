@@ -61,7 +61,7 @@ public class BenchTest {
 			try {
 				Url url2 = new Url(wurl, ';', url + ".csv", "output/",  true, true);
 			} catch (Exception e) {
-				
+				listException.add(wurl);
 			}
 			nurl++;
 		}
@@ -107,7 +107,6 @@ public class BenchTest {
 		parcourirCsv(listCommun);
 		parcourirNonTrouve(wikiListNonTrouve, "Html");
 		parcourirNonTrouve(htmlListNonTrouve, "Wiki");
-		rapportCsv("rapportWikiMatrixErreur.csv", this.listException);
 		rapportCsvStat("rapportWikiMatrixComparaison.csv", this.stat);
 
 	}

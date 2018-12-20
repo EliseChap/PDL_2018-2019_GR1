@@ -1,9 +1,0 @@
-Operating system;Mandatory access control;Software executable space protection;Operating system-level virtualization;Virtualisation;Userspace protection;Others
-Linux; ; ;;[[Kernel-based Virtual Machine|KVM]];IPFilter, Iptables;grsecurity,z1 RSBACz1
-FreeBSD;[[SeBSD]], TrustedBSD;[[ProPolice|ProPolice/SSP]];[[FreeBSD jail|jail]];[[bhyve]];IPFW, PF, IPFilter;
-Darwin;[[SEDarwin]], TrustedBSD;;jail;;IPFW;
-OpenBSD;;[[W^X]], [[ProPolice|ProPolice/SSP]];;vmm;PF;
-OpenSolaris, illumos;TrustedBSD;;[[Solaris Containers]];KVM;IPFilter;RBAC
-AuroraUX;TrustedBSD;;Solaris Containers;;IPFilter;
-Plan 9;no;no;per-process namespaces;;;
-Inferno;no;no;per-process namespaces;;;

@@ -1,3 +1,0 @@
-Name;Parsing algorithm;Input grammar notation;Boolean grammar capabilities;Development platform;License
-LuZc;delta chain;modular;Conjunctive, not complimentary;POSIX;proprietary
-;recursive descent (is a text filter output is xml);simple bnfJanuary 2018 grammar (input matching), output is xml;?;beta, and not a full-fledged EBNF parser;GNU GPLv2

@@ -1,4 +1,0 @@
-IDE;License;Windows;Linux;macOS;Other platforms
-Eclipse JDT;[[Eclipse Public License|EPL]];yes;yes;yes;FreeBSD, JVM, Solaris
-IntelliJ IDEA;[[Apache License|ASLv2]], proprietary;yes;yes;yes;FreeBSD, OpenBSD, Solaris
-NetBeans;[[CDDL]], GPL2;yes;yes;yes;Solaris

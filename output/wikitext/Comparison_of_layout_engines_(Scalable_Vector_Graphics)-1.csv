@@ -1,8 +1,0 @@
-; Trident; Gecko; WebKit; Blink; Presto; KSVG; Amaya
-img;rowspan=""5"" 5.0;2.0;yes;rowspan=""7"" dunno;2.1;no;5.1
-embed;rowspan=""2"" 1.8;rowspan=""2"" yes;partialnote;rowspan=""2"" partialnote;5.2;object;yes
-5.1;CSS background-image;rowspan=""2"" 2.0;no;rowspan=""2"" 2.1;rowspan=""3"" no;dunno;CSS list-style-image
-partialnote;dunno;as Favicon;no;41;no;2.1.1;dunno
-in data URIs;5.0;yes;yes;no;dunno;dunno;
-;;;;;;;
-;;;;;;;

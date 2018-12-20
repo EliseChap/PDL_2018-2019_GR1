@@ -1,4 +1,0 @@
-;Trident;edgeHTML;Gecko;WebKit;Presto
-Ogg Theora;Manual installie-codecs;;1.9.1;dependswebkit-codecs;2.5
-H.264;5.0; ;33.0via [[OpenH264]];Depends (525);dependsopera-av
-WebM VP8;Manual install;yes;2.0;Depends (534);2.6.30

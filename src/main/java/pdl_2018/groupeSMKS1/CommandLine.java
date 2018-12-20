@@ -375,7 +375,7 @@ if(this.ligneDeCommande.length()>10) {
 
     public static void main(String[] args){
 
-        CommandLine myCommand = new CommandLine("wikimatrix -html -wikicode -import[src/test/java/Fichiers_entree/urlWithAllDelimiteurs.txt] -delimit[;]");
+        CommandLine myCommand = new CommandLine("wikimatrix -save[output/]  -html -wikicode -import[src/test/java/Fichiers_entree/urlWithAllDelimiteurs.txt] -delimit[;]");
     }
 
 }

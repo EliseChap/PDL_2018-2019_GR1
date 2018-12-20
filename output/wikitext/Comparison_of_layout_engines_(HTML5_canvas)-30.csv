@@ -1,7 +1,0 @@
-;Trident;edgeHTML;Gecko;WebKit;Presto
-Ogg Vorbis;rowspan=""2"" Manual install;;rowspan=""2"" 1.9.1;depends;2.5
-WAV PCM;;rowspan=""3"" 525;2.0;MP3;rowspan=""2"" 5.0
-;no;rowspan=""2"" depends;AAC;;no
-Speex;rowspan=""1"" Manual install;;no;depends;no
-Opus;no;yes;15.0;depends;no
-;;;;;

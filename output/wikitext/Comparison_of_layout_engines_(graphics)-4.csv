@@ -1,8 +1,0 @@
-;;;;;;;;
-Trident;EdgeHTML;Gecko;WebKit;Blink;KHTML;Presto;Color mode;True color
-Color mode;rowspan=""3"" 3.1;rowspan=""3"" yes;rowspan=""3"" 1.0;rowspan=""3"" 85;rowspan=""3"" yes;rowspan=""3"" yes;rowspan=""3"" 1.0;Grayscale
-Color mode;Palette-based;Alpha channel;Alpha channel;3.1;yes;1.0;85;yes
-yes;1.0;Gamma correction;Gamma correction;rowspan=""2"" 5.0;yes;3.5;incorrectn;dunno
-no;partialgamma-correction;Color correction;Color correction;yes;1.9;dunno;dunno;dunno
-no;Interlacing;Interlacing;incorrect;dunno;1.0;dunno;dunno;4.0
-1.0;;;;;;;;

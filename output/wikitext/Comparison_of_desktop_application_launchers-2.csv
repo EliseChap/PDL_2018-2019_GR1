@@ -1,7 +1,0 @@
-;Creator;Latest stable version;Release date;OS;Software license;Open source;Programming language;Plugin support
-9menu;Arnold Robbins;1.8;01;Linux;GPL;yes;C;no
-Avant Window Navigator;Neil J. Patel;0.4.2;27;Linux;GPL;yes;C;yes
-dmenu;dwm developers;4.5;19;Linux;MIT License;yes;C;no
-GNOME Do;GNOME Do Developers;0.95.1;23;Linux;GPL;yes;C Sharp;yes
-Katapult;Katapult Developers;0.3.2.1;23;Linux with KDE;GPL;yes;C++;yes
-Unity Dash;Canonical Ltd.;7.3.0;19;Ubuntu;GPLv3;yes;Vala;yes (""lenses"" and ""scopes"")

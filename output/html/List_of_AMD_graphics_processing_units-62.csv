@@ -1,9 +1,0 @@
-Model (Codename);Launch;Architecture (Fab);Transistors Die Size;Core;Core;Fillrate[a][b][c];Fillrate[a][b][c];Processing power[a][d] (GFLOPS);Processing power[a][d] (GFLOPS);Memory;Memory;Memory;Memory;TDP (W);Bus interface;Release Price (USD)
-Model (Codename);Launch;Architecture (Fab);Transistors Die Size;Config[e];Clock[a] (MHz);Texture (GT/s);Pixel (GP/s);Single;Double;Bus type & width (bit);Size (GiB);Clock (MT/s);Band- width (GB/s);TDP (W);Bus interface;Release Price (USD)
-Radeon Pro 555 (Polaris 21)[269][270][271][272];June 2017;GCN 4th gen (14 nm);7009300000000000000?3.0×109 123 mm2;768:48:16:12;850;13.6;40.8;1306;1/16 SP;GDDR5 128-bit;2;5100;81.60;75;PCIe 3.0 ×16;Unknown
-Radeon Pro 555X (Polaris 21)[269][270][271][273];July 2018;GCN 4th gen (14 nm);7009300000000000000?3.0×109 123 mm2;768:48:16:12;907;14.51;43.54;1393;1/16 SP;GDDR5 128-bit;4;5100;81.60;75;PCIe 3.0 ×16;Unknown
-Radeon Pro 560 (Polaris 21)[269][270][271][274];June 2017;GCN 4th gen (14 nm);7009300000000000000?3.0×109 123 mm2;1024:64:16:16;907;14.51;58.05;1858;1/16 SP;GDDR5 128-bit;4;5080;81.28;75;PCIe 3.0 ×16;Unknown
-Radeon Pro 560X (Polaris 21)[269][270][271][275];July 2018;GCN 4th gen (14 nm);7009300000000000000?3.0×109 123 mm2;1024:64:16:16;1004;16.06;64.26;2056;1/16 SP;GDDR5 128-bit;4;5080;81.28;75;PCIe 3.0 ×16;Unknown
-Radeon Pro 570 (Polaris 20)[269][270][271][276];June 2017;GCN 4th gen (14 nm);7009570000000000000?5.7×109 232 mm2;1792:112:32:28;1000;32;112;3584;1/16 SP;GDDR5 256-bit;4;6800;217.6;120;PCIe 3.0 ×16;Unknown
-Radeon Pro 575 (Polaris 20)[269][270][271][277];June 2017;GCN 4th gen (14 nm);7009570000000000000?5.7×109 232 mm2;2048:128:32:32;1100;35.2;140.8;4506;1/16 SP;GDDR5 256-bit;4;6800;217.6;120;PCIe 3.0 ×16;Unknown
-Radeon Pro 580 (Polaris 20)[269][270][271][278];June 2017;GCN 4th gen (14 nm);7009570000000000000?5.7×109 232 mm2;2304:144:32:36;1100 1200;38.4;172.8;5530;1/16 SP;GDDR5 256-bit;8;6800;217.0;150;PCIe 3.0 ×16;Unknown

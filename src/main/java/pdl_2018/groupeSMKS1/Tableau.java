@@ -52,7 +52,7 @@ public class Tableau implements ITableau {
 
 
 	/**
-	 * Parcourir le tableau afin de l'afficher
+	 * Browse the table to display it
 	 * @return String
 	 */
 	public String getTableauToString() {
@@ -64,7 +64,7 @@ public class Tableau implements ITableau {
 	}
 	
 	/**
-	 * Retourne le nombre de vide dans le tableau
+	 * Returns the number of empty cells in the table
 	 * @return countEmpty
 	 */
 	/*public int countEmpty() {

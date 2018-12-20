@@ -25,6 +25,9 @@ public class Wikitext extends Extracteur {
 	private String rowspan = "rowspan";
 	private Map<String, WtBody> lesWikitab;
 	private Wiki wikisweble;
+	private int comp = 0;
+	private List<String[][]> rowspanList = new ArrayList<String[][]>();
+	private List<String[][]> rowspanHeaderList = new ArrayList<String[][]>();
 
 	public Wikitext(String domain, String sousDomain, char delimit, String cheminCSV, String nomCSV, boolean extraHTML,
 			boolean extraWiki) throws Exception {
@@ -53,7 +56,6 @@ public class Wikitext extends Extracteur {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			// System.out.println(e.getMessage());
 		}
 	}
 
@@ -69,22 +71,16 @@ public class Wikitext extends Extracteur {
 		EngProcessedPage parse = engine.parse(pageId, contenu, callback);
 
 		parcourirNode(parse);
-		// testAffichage();
+	
 
 	}
 
-	private void testAffichage() {
 
-		for (Entry<String, WtBody> entry : lesWikitab.entrySet()) {
-			String cle = entry.getKey();
-			WtBody valeur = entry.getValue();
-			System.out.println("******");
-			System.out.println(cle);
-			System.out.println("******");
-			System.out.println(valeur);
-		}
-	}
-
+/**
+ * Find if the node contains "wikiclass"
+ * @param e an WtXmlAttributes of a node
+ * @return true if the Xmlattribut contains "wikiclass" else false
+ */
 	private boolean findClassWikitable(WtXmlAttributes e) {
 
 		int compteur = 0;
@@ -101,6 +97,11 @@ public class Wikitext extends Extracteur {
 		return false;
 	}
 
+	/**
+	 * return the text of the node in the param
+	 * @param t a node of the tree
+	 * @return the text of the node
+	 */
 	private String getTextWtValue(WtValue t) {
 		Iterator<WtNode> l = t.iterator();
 		String valeur = "1";
@@ -113,7 +114,12 @@ public class Wikitext extends Extracteur {
 		}
 		return valeur;
 	}
-
+/**
+ * 
+ * @param e
+ * @param textFind
+ * @return
+ */
 	private int findColspanRowSpan(WtXmlAttributes e, String textFind) {
 		int nbSpan = 1;
 		int compteur = 0;
@@ -130,7 +136,11 @@ public class Wikitext extends Extracteur {
 
 		return nbSpan;
 	}
-
+/**
+ * Find the table caption text and return it
+ * @param c a table caption node
+ * @return the table caption
+ */
 	private String findCaption(WtTableCaption c) {
 		WtBody captionBody = c.getBody();
 		int comp = 0;
@@ -153,7 +163,12 @@ public class Wikitext extends Extracteur {
 		}
 		return titreCaption;
 	}
-
+	
+/**
+ * Find the table header text and return it
+ * @param h A tableHeader node
+ * @return the table header text
+ */
 	private String findHeader(WtTableHeader h) {
 		WtBody headerBody = h.getBody();
 		int comp = 0;
@@ -180,7 +195,11 @@ public class Wikitext extends Extracteur {
 		}
 		return titreHeader;
 	}
-
+/**
+ * Find the template node text and return it
+ * @param t a template node
+ * @return the template node text
+ */
 	private String getTextWtTemplate(WtTemplate t) {
 		Iterator<WtNode> l = t.iterator();
 		String valeur = "";
@@ -223,6 +242,11 @@ public class Wikitext extends Extracteur {
 		}
 	}
 
+	/**
+	 * Find the Unordered list and return the text
+	 * @param i a node
+	 * @return return the unorderedList text
+	 */
 	private String getTextWtUnorderedList(WtNode i) {
 		Iterator<WtNode> l = i.iterator();
 		String valeur = "";
@@ -249,6 +273,11 @@ public class Wikitext extends Extracteur {
 		return valeur;
 	}
 
+	/**
+	 * return the text of the internal link node
+	 * @param i A node of the tree
+	 * @return Internal link text
+	 */
 	private String getTextWtInternalLink(WtNode i) {
 		Iterator<WtNode> l = i.iterator();
 		String valeurTitle = "";
@@ -288,7 +317,11 @@ public class Wikitext extends Extracteur {
 		}
 
 	}
-
+/**
+ * Find the cell text in the body and return if
+ * @param celluleBody a Body node
+ * @return text of the cell
+ */
 	private String findCellText(WtBody celluleBody) {
 		int comp2 = 0;
 		String text = "";
@@ -317,7 +350,13 @@ public class Wikitext extends Extracteur {
 		}
 		return text;
 	}
-
+/**
+ * Add the table cells text in the rows list
+ * @param r A TableRow node
+ * @param rows The list of any rows
+ * @param nbRow 
+ * @return the number of columns in the tableRow
+ */
 	private int findCol(WtTableRow r, List<String> rows, int nbRow) {
 		WtBody row = r.getBody();
 		int comp = 0;
@@ -354,10 +393,16 @@ public class Wikitext extends Extracteur {
 		return nbCol;
 	}
 
-	int comp = 0;
-	List<String[][]> rowspanList = new ArrayList<String[][]>();
-	List<String[][]> rowspanHeaderList = new ArrayList<String[][]>();
 
+
+	/**
+	 * Add the rowspan text in the lists
+	 * @param compteRows 
+	 * @param nbCol Columns of the row
+	 * @param k number of occurence 
+	 * @param text text of the rowSpan
+	 * @param header true is the rowspan is a header, else false
+	 */
 	private void addRowSpan(int compteRows, int nbCol, int k, String text, boolean header) {
 		if (k > 1) {
 			String[][] tabRow = new String[1][4];
@@ -374,6 +419,11 @@ public class Wikitext extends Extracteur {
 		}
 	}
 
+	/**
+	 *landmark the line break
+	 * @param b a body node
+	 * @return return true if this is it /n
+	 */
 	private boolean sautDeLigne(WtBody b) {
 		int comp = 0;
 
@@ -386,7 +436,10 @@ public class Wikitext extends Extracteur {
 		}
 		return false;
 	}
-
+/**
+ * browse all node in the table and create a tableau object
+ * @param fils a node
+ */
 	private void parcourirNode(WtNode fils) {
 
 		Iterator<WtNode> l = fils.iterator();
@@ -396,7 +449,6 @@ public class Wikitext extends Extracteur {
 				rowspanList.clear();
 				rowspanHeaderList.clear();
 				WtTable table = (WtTable) fils;
-				//System.out.println(table);
 				WtXmlAttributes e = table.getXmlAttributes();
 				if (findClassWikitable(e)) {
 					List<String> headerList = new ArrayList<String>();
@@ -413,7 +465,7 @@ public class Wikitext extends Extracteur {
 
 							WtTableCaption caption = (WtTableCaption) node;
 							titre = findCaption(caption);
-							//System.out.println(titre);
+					
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_HEADER) {
 
@@ -434,11 +486,7 @@ public class Wikitext extends Extracteur {
 								nbCol = findCol(row, rowsList, compteRows);
 								compteRows++;
 							}
-							// if (nbCol < nbColTemp && nbCol != 0) {
-							// for (int j = 1; j <= nbColTemp - nbCol; j++) {
-							// rowsList.add("");
-							// }
-							// }
+							
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
 							WtTableCell cell = (WtTableCell) node;
@@ -456,11 +504,10 @@ public class Wikitext extends Extracteur {
 							nbColTemp = nbCol;
 						}
 					}
-					// boolean premiereLinge = false;
+		
 					if (headerList.size() != 0) {
 						compteRows = compteRows + 1;
 						nbCol = headerList.size();
-						// premiereLinge = true;
 					}
 					nbCol = nbColTemp;
 					String[][] tab = new String[compteRows][nbCol];
@@ -472,7 +519,7 @@ public class Wikitext extends Extracteur {
 						tab[lig][colonnes] = item;
 						int index = 0;
 						boolean find = false;
-						// && !find
+			
 						while (rowspanHeaderList.size() > index) {
 							String[][] tableau = rowspanHeaderList.get(index);
 							if (Integer.parseInt(tableau[0][0]) == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
@@ -585,7 +632,11 @@ public class Wikitext extends Extracteur {
 		}
 
 	}
-
+/**
+ * Remove the white space 
+ * @param valeur a string 
+ * @return the new valeur of string
+ */
 	private String checkString(String valeur) {
 		if (!" ".equals(valeur)) {
 			return valeur.trim();
@@ -617,7 +668,9 @@ public class Wikitext extends Extracteur {
 	public String getSousDomain() {
 		return sousDomain;
 	}
-
+/**
+ * Add a tableau object in the lesTableaux list
+ */
 	public void addTableau(Tableau leTableau) {
 		if (!lesTableaux.contains(leTableau)) {
 			lesTableaux.add(leTableau);
@@ -696,15 +749,5 @@ public class Wikitext extends Extracteur {
 		return leTableau.getnomTab();
 	}
 
-	public static void main(String[] args) {
 
-		try {
-			Wikitext t = new Wikitext("en.wikipedia.org", "Comparison_(grammar)", ';', "chemin", " nomCSV.csv", false,
-					true);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
 }

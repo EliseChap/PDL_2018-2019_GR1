@@ -368,15 +368,5 @@ if(this.ligneDeCommande.length()>10) {
     	return jetonIntegrite;
     }
 
-    /**
-     * Méthode main pour tester à la main la classe CommandLine
-     * @param args
-     * @date 15 novembre 2018
-     */
-
-    public static void main(String[] args){
-
-        CommandLine myCommand = new CommandLine("wikimatrix -save[output/]  -html -wikicode -import[src/test/java/Fichiers_entree/urlWithAllDelimiteurs.txt] -delimit[;]");
-    }
 
 }

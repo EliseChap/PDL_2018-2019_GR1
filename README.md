@@ -19,7 +19,7 @@ The user can request the extraction, via a command line, of one or more URLs (in
 
 ** Enter one or more URLs. **
 
-The commands to be filled in the terminal.
+## The commands to be filled in the terminal.
 
 ** Import a .txt file where all the URLs are stored: **
 
@@ -62,7 +62,7 @@ Extraction of data by Wikicode code
 -save[c//] :
 ```
 
-**Register the CSV (s) under which name**
+**Register the CSV (s) under a name**
 
 ```
 -name[fichier.csv] :
@@ -84,7 +84,7 @@ WikiMatrix -url[https://fr.wikipedia.org/wiki/Rennes] -html -wikicode -delimit[;
 The program extracts the URL and parses the page with both algorithms. Using this command, the user sets the delimiter and the save location.
 
 
-### Prerequisites
+### System requirements
 
 
 ```
@@ -99,10 +99,10 @@ To start the tests enter:
 mvn test
 ```
 
-### Break down into end to end tests
+### Tests
 
 
-Launch the 300 Urls, this is the test that is general in the project.
+Launch the 300 Urls, general test
 
 ```
 BenchTest
@@ -166,6 +166,8 @@ TestWikitext
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
+
+
 
 
 ## Annexe

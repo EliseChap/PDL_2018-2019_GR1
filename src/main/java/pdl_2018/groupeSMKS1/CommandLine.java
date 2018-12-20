@@ -22,7 +22,7 @@ private boolean jetonIntegrite = true;
     private String ligneDeCommande;
 
     /**
-     * Constructeur de la classe CommandLine
+     * Constructor of CommandLine class
      *
      */
     public CommandLine(String commandLine){
@@ -50,21 +50,24 @@ private boolean jetonIntegrite = true;
 	}
 
 	/**
-     * Vérification de l'intégrité de la ligne de commande
+     * Verifying the integrity of the command line
      * @override
      * @date 14 octobre 2018
-     * La méthode renvoie "true" si cette ligne de commande est conforme à la charte Wikimatrix, "false" sinon.
+     * The method returns "true" if this command line conforms to the Wikimatrix policy, "false" otherwise.
      */
     @Override
     public boolean verifIntegriteCommandLine() {
 
-        jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
-if(this.ligneDeCommande.length()>10) {
+        jetonIntegrite = true; // The integrity token is initialized. It passes if a non respect of the charter "command line" is detected.
+        if(this.ligneDeCommande.length()>10) {
         if(!this.ligneDeCommande.substring(0, 10).equals("wikimatrix")){
             jetonIntegrite = false;
-            System.out.println("La commande saisie n'est pas une commande Wikimatrix");
-        }}else {            jetonIntegrite = false;
-        System.out.println("La commande saisie n'est pas une commande Wikimatrix");}
+            System.out.println("The command entered is not a Wikimatrix command");
+        }
+        }else {
+            jetonIntegrite = false;
+        System.out.println("The command entered is not a Wikimatrix command");
+        }
 
         if(!verifUrlOrFichierChoice()){
             jetonIntegrite = false;
@@ -86,7 +89,7 @@ if(this.ligneDeCommande.length()>10) {
     }
 
     /**
-     * Cette fonction renvoie false si le choix html/wikicode n'est pas effectué ou effectué anormalement, true sinon.
+     * This method returns false if the html / wikicode choice is not made or made abnormally, true otherwise.
      * @date 3 novembre 2018
      * @return
      */
@@ -95,10 +98,10 @@ if(this.ligneDeCommande.length()>10) {
         int nbHTML = StringUtils.countMatches(this.ligneDeCommande, "-html");
         int nbWikicode = StringUtils.countMatches(this.ligneDeCommande, "-wikicode");
         if ((nbHTML > 1) || (nbWikicode > 1)) {
-            System.out.println("La syntaxe de la commande est erronée : un même paramètre est saisi plusieurs fois");
+            System.out.println("The syntax of the command is wrong: the same parameter is entered several times");
             return false;
         } else if ((nbHTML < 1) && (nbWikicode < 1)) {
-            System.out.println("Vous devez obligatoirement indiquer une méthode d'extraction, en ajoutant -html ou -wikicode");
+            System.out.println("You must specify an extraction method, adding -html or -wikicode");
             return false;
         }else{
             if(nbHTML==1 && nbWikicode==1){
@@ -116,7 +119,7 @@ if(this.ligneDeCommande.length()>10) {
     }
 
     /**
-     * Cette fonction renvoie false si aucune url ou aucun fichier d'entrée n'est indiqué, ou si l'indication n'est pas exploitable, et renvoie true sinon.
+     * This function returns false if no url or input file is specified, or if the indication is not exploitable, and returns true otherwise.
      * @date 3 novembre 2018
      * @return
      */
@@ -126,38 +129,38 @@ if(this.ligneDeCommande.length()>10) {
         int nbImport = StringUtils.countMatches(this.ligneDeCommande, "-import");
         boolean jetonLocal = true;
         if (nbURL > 1) {
-            System.out.println("Pour lancer l'extraction à partir de plusieurs URLs, veuillez utiliser la commande -import");
+            System.out.println("To start extraction from multiple URLs, please use the -import command");
             jetonLocal = false;
         }
         if (nbImport > 1) {
-            System.out.println("La commande import ne permet de manipuler qu'un seul fichier d'URLs à la fois");
+            System.out.println("The import command allows you to manipulate only one URL file at a time");
             jetonLocal = false;
         }
         if ((nbImport < 1) && (nbURL < 1)) {
-            System.out.println("Vous n'avez pas choisi de source à partir de laquelle lancer l'extraction");
+            System.out.println("You did not choose a source from which to start the extraction");
             jetonLocal = false;
         }
         if ((nbImport > 0) && (nbURL > 0)) {
-            System.out.println("Vous ne pouvez choisir qu'un seul mode d'importation pour lancer l'extraction");
+            System.out.println("You can only choose one import mode to start the extraction");
             jetonLocal = false;
         }
 
         if(jetonLocal) {
-            jetonLocal = verifUrlOrCheminEntree(nbURL, nbImport); //Lancement de l'analyse en profondeur
+            jetonLocal = verifUrlOrCheminEntree(nbURL, nbImport); //Launch of the in-depth analysis
         }
         return jetonLocal;
     }
 
     /**
-     * Cette fonction vérifie que le chemin du fichier d'entrée ou l'url est renseigné et renvoie vrai dans ce cas, et false sinon.
+     * This function checks that the path of the input file or url is filled in and returns true in this case, and false otherwise.
      * @date 3 novembre 2018
-     * @param nbURL : nombre de commandes "url" dans la ligne de commande
-     * @param nbImport : nombre de commandes "import" dans la ligne de commande
+     * @param nbURL : number of "url" commands in the command line
+     * @param nbImport : number of "import" commands in the command line
      * @return
      */
     @Override
     public boolean verifUrlOrCheminEntree(int nbURL, int nbImport){
-        if (nbImport == 1){ // On vérifie que le chemin de fichier spécifié n'est pas vide (on ne teste pas s'il est fonctionnel)
+        if (nbImport == 1){ // We check that the specified file path is not empty (we do not test if it is functional)
             Pattern pImport=Pattern.compile("-import\\[.*?\\]");
             Matcher mImport=pImport.matcher(this.ligneDeCommande);
             String contenuImport = "";
@@ -166,11 +169,11 @@ if(this.ligneDeCommande.length()>10) {
                 contenuImport = contenuImport.substring(8,contenuImport.length()-1);
             }
             if(contenuImport=="" || contenuImport==null){
-                System.out.print("Le chemin d'accès au fichier d'URLs à importer n'est pas renseigné");
+                System.out.print("The path to the URLs file to import is not filled");
                return false;
             }
             setCheminEntree(contenuImport);
-        } else if (nbURL == 1){ // On vérifie que l'URL spécifiée est valide, qu'il s'agit d'une url wiki (on ne teste pas si elle est fonctionnelle)
+        } else if (nbURL == 1){ // We verify that the specified URL is valid, that it is a wiki URL (we do not test if it is functional)
             Pattern pURL=Pattern.compile("-url\\[.*?\\]");
             Matcher mURL = pURL.matcher(this.ligneDeCommande);
             String contenuURL = "";
@@ -179,30 +182,17 @@ if(this.ligneDeCommande.length()>10) {
                 contenuURL = contenuURL.substring(5, contenuURL.length()-1);
             }
             if(contenuURL=="" || contenuURL==null){
-                System.out.println("L'url n'est pas renseignée");
+                System.out.println("The url is not filled");
                 return false;
             }
             setUrl(contenuURL);
         }
 
-/* Code qui vérifie que l'url saisie est une url wikipédia. VOIR AVEC LE PROF SI ON GARDE ON PAS
-    } else if (nbURL == 1){ // On vérifie que l'URL spécifiée est valide, qu'il s'agit d'une url wiki (on ne teste pas si elle est fonctionnelle)
-        Pattern pURL=Pattern.compile("-url\\[.*?\\]");
-        Matcher mURL = pURL.matcher(this.ligneDeCommande);
-        String contenuURL = mURL.group(1);
-        if((contenuURL.substring(0, 24)!="https://en.wikipedia.org/") || (contenuURL.substring(0, 24)!="https://fr.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://en.wikipedia.org/") || (contenuURL.substring(0, 23)!="http://fr.wikipedia.org/")){
-            System.out.println("L'url saisie n'est pas prise en charge par Wikimatrix");
-            return false;
-        }
-        setUrl(contenuURL);
-    }
-    */
-
         return true;
     }
 
     /**
-     * Cette fonction vérifie que le chemin de sortie est renseigné puis renvoie vrai dans ce cas, false sinon.
+     * This function checks that the output path is filled and returns true in this case, false otherwise.
      * @date 4 novembre 2018
      * @return
      */
@@ -210,7 +200,7 @@ if(this.ligneDeCommande.length()>10) {
     public boolean verifRepertoireSortie(){
         int nbSave = StringUtils.countMatches(this.ligneDeCommande, "-save");
         String contenuSave = "";
-        if (nbSave == 1){ // On vérifie que le chemin de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
+        if (nbSave == 1){ // We check that the output file path is valid (we do not test if it is functional)
                   	
         	Pattern pSave=Pattern.compile("-save\\[.*?\\]");
             Matcher mSave=pSave.matcher(this.ligneDeCommande);
@@ -221,11 +211,11 @@ if(this.ligneDeCommande.length()>10) {
             }
             
             if(contenuSave=="" || contenuSave==null){
-                System.out.println("Le chemin du fichier de sortie n'est pas renseigné");
+                System.out.println("The output file path is not filled");
                 return false;
             }
         } else if (nbSave > 1){
-            System.out.println("Il est impossible de spécifier plusieurs répertoires de sortie");
+            System.out.println("You can not specify multiple output directories");
             return false;
         }
         setCheminCSV(contenuSave);
@@ -233,7 +223,7 @@ if(this.ligneDeCommande.length()>10) {
     }
 
     /**
-     * Cette fonction vérifie que le nom de sortie n'est pas vide puis renvoie vrai dans ce cas, false sinon.
+     * This function checks that the output name is not empty, then returns true in this case, false otherwise.
      * @date 4 novembre 2018
      * @return
      */
@@ -241,7 +231,7 @@ if(this.ligneDeCommande.length()>10) {
     public boolean verifNomSortie(){
         int nbSave = StringUtils.countMatches(this.ligneDeCommande, "-name");
         String contenuName = "";
-        if (nbSave == 1){ // On vérifie que le nom de fichier de sortie est valide (on ne teste pas s'il est fonctionnel)
+        if (nbSave == 1){ // We check that the output file name is valid (we do not test if it is functional)
             Pattern pName=Pattern.compile("-name\\[.*?\\]");
             Matcher mName=pName.matcher(this.ligneDeCommande);
             while (mName.find()) {
@@ -249,24 +239,18 @@ if(this.ligneDeCommande.length()>10) {
                 contenuName = contenuName.substring(6, contenuName.length()-1);
             }
             if(contenuName=="" || contenuName==null){
-                System.out.println("Le nom du fichier de sortie n'est pas renseigné");
+                System.out.println("The output file name is not filled");
                 return false;
             }
-            /*
-                if((contenuName.substring(contenuName.length()-5)!=".csv") || (contenuName.length()<5)){ //Le fichier termine obligatoirement par .csv et fait au moins 5 caractères (le nom minimum 1 + le .csv de taille 4).
-                System.out.println("Le chemin du fichier de sortie spécifié est invalide");
-                return false;
-                }
-             */
         } else if (nbSave > 1){
-            System.out.println("Il est impossible de spécifier plusieurs fichiers de sortie");
+            System.out.println("You can not specify multiple output files");
             return false;
         }
         setNomCSV(contenuName);
         return true;
     }
     /**
-     * Cette fonction renvoie vrai si le délimiteur choisi par l'utilisateur est autorisé par l'application, et renvoie false sinon.
+     * This function returns true if the delimiter chosen by the user is allowed by the application, and returns false otherwise.
      * @date 4 novembre 2018
      * @return
      */
@@ -274,10 +258,10 @@ if(this.ligneDeCommande.length()>10) {
     public boolean verifDelimiteur(){
         int nbDelimit = StringUtils.countMatches(this.ligneDeCommande, "-delimit");
         char contenuDelimit = '\0';
-        List caracteresAutorises = new ArrayList(); // Cette liste permet de modifier facilement les délimiteurs autorisés par Wikimatrix sans changer le reste de la méthode.
+        List caracteresAutorises = new ArrayList(); // This list allows you to easily edit the delimiters allowed by Wikimatrix without changing the rest of the method.
         caracteresAutorises.add(';');
-        caracteresAutorises.add(','); // A CHANGER, C'EST PAS BEAU
-        if (nbDelimit == 1) { //On vérifie l'intégrité du délimiteur : est-il autorisé par Wikimatrix ?
+        caracteresAutorises.add(',');
+        if (nbDelimit == 1) { //We check the integrity of the delimiter: is it authorized by Wikimatrix?
             Pattern pDelimit=Pattern.compile("-delimit\\[.*?\\]");
             Matcher mDelimit = pDelimit.matcher(this.ligneDeCommande);
             while (mDelimit.find()) {
@@ -285,15 +269,15 @@ if(this.ligneDeCommande.length()>10) {
                 contenuDelimit = contenuDelimitTemp.substring(9, contenuDelimitTemp.length()-1).charAt(0);
             }
             if(!caracteresAutorises.contains(contenuDelimit)){
-                System.out.println("Le délimiteur saisi n'est pas pris en charge par Wikimatrix");
+                System.out.println("The entered delimiter is not supported by Wikimatrix");
                 return false;
             }
             if(contenuDelimit=='\0'){
-                System.out.println("Le délimiteur n'a pas été renseigné");
+                System.out.println("Delimiter has not been filled");
                 return false;
             }
         } else if (nbDelimit>1){
-            System.out.println("Vous ne pouvez choisir qu'un seul délimiteur");
+            System.out.println("You can only choose one delimiter");
             return false;
         }
         setDelimit(contenuDelimit);

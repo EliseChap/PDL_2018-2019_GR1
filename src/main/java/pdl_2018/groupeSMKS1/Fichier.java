@@ -9,13 +9,13 @@ import java.io.*;
 
 public class Fichier {
 
-    private ArrayList<Url> lesURLs; //Le tableau qui contient toutes les URLs issues du fichier d'entrée
+    private ArrayList<Url> lesURLs; // The array that contains all the URLs from the input file
     private String cheminFichierEntree;
 
     /**
      * @author KLH
      * @date 10 novembre 2018
-     * @param cheminEntree : Chemin où trouver le fichier contenant les URLs wikipedia
+     * @param cheminEntree : Path to find the file containing wikipedia URLs
      * @param delimit
      * @param nomCsv
      * @param cheminCsv
@@ -28,16 +28,16 @@ public class Fichier {
 
         this.cheminFichierEntree = cheminEntree;
 
-        ArrayList<String> lignesADecouper = traitementFichierEntree(); //Permet de traiter un fichier d'entrée dont les URLs sont séparées par un retour chariot.
+        ArrayList<String> lignesADecouper = traitementFichierEntree(); // Process an input file whose URLs are separated by a carriage return.
 
-        decoupageAndGenerationURLs(lignesADecouper, delimit, nomCsv, cheminCsv, extraWiki, extraHtml); //Permet de traiter un fichier d'entrée dont les URLs sont séparées par ";" ou ","
+        decoupageAndGenerationURLs(lignesADecouper, delimit, nomCsv, cheminCsv, extraWiki, extraHtml); // Used to process an input file whose URLs are separated by ";" or ","
 
-        //On effectue ce double traitement pour rendre Wikimatrix plus souple concernant les fichiers .txt qu'il peut accépter en entrée.
+        // We do this double processing to make Wikimatrix more flexible concerning the .txt files that can be input
 
     }
 
     /**
-     * La méthode récupère le fichier, et retourne un ArrayList contenant toutes les lignes du fichier
+     * The method retrieves the file, and returns an ArrayList containing all the lines of the file
      * @date 10 novembre 2018
      * @return
      */
@@ -59,19 +59,19 @@ public class Fichier {
                 bufferReader.close();
                 fichierReader.close();
             }catch (Exception exception){
-                System.out.println ("Erreur lors de la lecture du fichier d'entrée : " + exception.getMessage());
+                System.out.println ("Error to read the input file: " + exception.getMessage());
             }
         }catch(FileNotFoundException file_exception){
-            System.out.println ("Le fichier d'entrée n'a pas été trouvé par Wikimatrix");
+            System.out.println ("The input file was not found by Wikimatrix");
         }
         return lignesDuFichier;
     }
 
 
     /**
-     * Cette méthode prend en paramètre l'ArrayList contenant toutes les lignes du fichier d'entrée, découpe ces lignes via les délimiteurs ";" et ",", puis instancie dans un ArrayList chaque URL issue du découpage.
+     * This method takes as parameter the ArrayList containing all the lines of the input file, cutting these lines via the delimiters ";" and "," and then instantiates in each ArrayList every URL that comes from the clipping.
      * @date 11 novembre 2018
-     * @param lignesADecouper : ArrayList contenant les lignes du fichier d'entrée
+     * @param lignesADecouper : ArrayList containing the lines of the input file
      * @param delimit
      * @param nomCsv
      * @param cheminCsv
@@ -105,7 +105,7 @@ public class Fichier {
     }
 
     /**
-     * Méthode main pour tester à la main la classe Fichier
+     * Main method to manually test the Fichier class
      * @param args
      * @date 15 novembre 2018
      */

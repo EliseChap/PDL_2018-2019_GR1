@@ -184,7 +184,7 @@ Please read  [ANNEXES] (https://github.com/SulliDai/PDL_2018-2019_GR1/blob/maste
 
 **Sullivan Dairou**
 
-**Kénan Lethimonier Herout **
+**Kénan Lethimonier-Herout**
 
 
 See also the list of [contributors](https://github.com/SulliDai/PDL_2018-2019_GR1/graphs/contributors) who participated in this project.

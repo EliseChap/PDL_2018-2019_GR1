@@ -5,11 +5,11 @@
 # WikiMatrix
 
 
-→ Objectif
+**Objectif**
 
 Wikipédia est une encyclopédie numérique collaborative universelle. Une communauté importante consulte et alimente Wikipédia régulièrement, les données présentes dans le site sont donc difficilement exploitables du fait de leur hétérogénéité. Ainsi, chaque contributeur écrit lui-même le wikicode de ses pages, ce qui peut entraîner de grandes divergences entre les pages. De plus, il n’est pas facile actuellement d’extraire des tableaux, les solutions existantes étant rudimentaires (Ex : copier/coller) et limitées. Wikimatrix permettra l’exportation d’un maximum de données tabulaires de Wikipédia vers des fichiers de format CSV. La force de ce projet est de solutionner l’hétérogénéité des différents tableaux. L’extraction permet une meilleure réutilisation des données, notamment dans les domaines de la statistique et de l’analyse.
 
-→ Description 
+**Description**
 
 L'utilisateur peut demander l’extraction, par l’intermédiaire d’une ligne de commande, d’une ou plusieurs URLs (instanciation des URLs automatique via un fichier txt). Pour interagir avec la machine, l’utilisateur  à sa disposition une liste de commandes. Il peut demander à récupérer les tableaux à partir du format HTML, du Wikicode ou des deux en même temps. 
 
@@ -29,13 +29,13 @@ Les commandes à renseigner dans le terminal.
 
 Lorsqu’on utilise la commande -import[C://AdresseFichier] cela extrait la liste des URLs d’un fichier. Afin de normaliser le fichier d’entrée, il a été décidé dans la première version de notre application de se limiter au format “txt”. À l'intérieur de ce fichier, les données seront délimitées par le caractère “ ;’”. Ainsi chaque URL sera séparée par ce caractère.
 
-**  Une URL**  
+**Une URL**  
 
 ```
 -url[adresse]
 ```
 
-**  Choisir extraction html et/ou Wikicode**  
+**Choisir extraction html et/ou Wikicode**  
 
 ```
 -html 
@@ -184,7 +184,7 @@ Please read  [ANNEXES] (https://github.com/SulliDai/PDL_2018-2019_GR1/blob/maste
 
 **Sullivan Dairou**
 
-**Kénan Lethimonier-Herout **
+**Kénan Lethimonier Herout **
 
 
 See also the list of [contributors](https://github.com/SulliDai/PDL_2018-2019_GR1/graphs/contributors) who participated in this project.

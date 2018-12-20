@@ -14,11 +14,11 @@ public class CommandLine implements ICommandLine {
     private char delimit;
     private String cheminCSV;
     private String nomCSV;
-    private String cheminEntree;
-    private Boolean extraHTML;
+	private String cheminEntree;
+	private Boolean extraHTML;
     private Boolean extraWiki;
     private String url;
-
+private boolean jetonIntegrite = true;
     private String ligneDeCommande;
 
     /**
@@ -42,10 +42,7 @@ public class CommandLine implements ICommandLine {
                 Fichier monFichier = new Fichier(this.cheminEntree, this.delimit, this.nomCSV, this.cheminCSV, this.extraWiki,this.extraHTML);
             }
 
-        } else {
-            //Demander à l'utilisateur de saisir à nouveau la ligne de commande, en prenant compte des messages d'erreurs affichés. Comment on gère ça ?
         }
-        System.out.println("CommandLine");
     }
 
     public CommandLine() {
@@ -61,7 +58,7 @@ public class CommandLine implements ICommandLine {
     @Override
     public boolean verifIntegriteCommandLine() {
 
-        boolean jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
+        jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
 if(this.ligneDeCommande.length()>10) {
         if(!this.ligneDeCommande.substring(0, 10).equals("wikimatrix")){
             jetonIntegrite = false;
@@ -365,6 +362,10 @@ if(this.ligneDeCommande.length()>10) {
 
     public void setLigneDeCommande(String ligneDeCommande) {
         this.ligneDeCommande = ligneDeCommande;
+    }
+    
+    public boolean getJeton() {
+    	return jetonIntegrite;
     }
 
     /**

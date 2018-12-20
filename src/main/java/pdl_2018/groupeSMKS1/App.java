@@ -8,10 +8,10 @@ public class App {
 	public static void main(String[] args) {
 		
 		afficherMessageBienvenue();
+		
 		CommandLine com = demanderCommande();
 		
-		while(!com.verifIntegriteCommandLine()) {
-			afficherMessageBienvenue();
+		while(!com.getJeton()) {
 			com = demanderCommande();
 		}
 		

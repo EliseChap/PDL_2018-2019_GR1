@@ -16,7 +16,7 @@ public class Url implements IUrl {
 	private boolean extraWiki;
 	private boolean extraHtml;
 	private ArrayList<Extracteur> lesExtracteurs;
-	private final String domain = "wikipedia.org"; // La mettre tout en haut en attribut final
+	private final String domain = "wikipedia.org";
 
 	public Url(String url, char delimit, String nomCsv, String cheminCsv, boolean extraWiki, boolean extraHtml) {
 		this.url = url;
@@ -46,7 +46,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return true si l'URL est valide, false sinon
+	 * @return true if URL is valid, false otherwise
 	 * 
 	 */
 
@@ -65,7 +65,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return l'Url traitee
+	 * @return treated URL
 	 */
 
 	public String getUrl() {
@@ -74,7 +74,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return myUrl : la string url sous forme URL
+	 * @return myUrl : the string URLin URL form
 	 */
 
 	public URL getmyUrl() {
@@ -88,7 +88,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @para Nouvelle Url
+	 * @para New Url
 	 * 
 	 */
 
@@ -103,7 +103,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return le delimiteur choisit par lutilisateur
+	 * @return the delimiter chosen by the user
 	 */
 	public char getDelimit() {
 		return this.delimit;
@@ -111,7 +111,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return le nom du fichier CSV choisit par lutilisateur
+	 * @return CSV file name chosen by the user
 	 */
 	public String getNomCSV() {
 		return this.nomCsv;
@@ -119,32 +119,32 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return le chemin de sauvegarde du fichier choisit par lutilisateur
+	 * @return the backup path of the file chosen by the user
 	 */
 	public String getCheminCSV() {
 		return this.cheminCsv;
 	}
 
 	/**
-	 * 
-	 * @return Un booleen qui indique si lextraction doit etre faite en HTML (true)
-	 *         ou non (false)
+	 *
+	 * @return A boolean that indicates whether the extraction should be done in HTML (true)
+	 * or not (false)
 	 */
 	public boolean getExtraHTML() {
 		return this.extraHtml;
 	}
 
 	/**
-	 * 
-	 * @return Un booleen qui indique si l'extraction doit etre faite en
-	 *         wikicode(true) ou non (false)
+	 *
+	 * @return A booleen that indicates whether the extraction should be done in
+	 * wikicode (true) or not (false)
 	 */
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
 
 	/**
-	 * @return Une string avec le sous domaine de lurl
+	 * @returnA string with the sub domain of the URL
 	 */
 
 	public String GetSousDomain() {
@@ -154,7 +154,7 @@ public class Url implements IUrl {
 	}
 
 	/**
-	 * @return Une string avec le domaine de lurl
+	 * @return String with the domain of URL
 	 */
 
 	public String GetDomain() {
@@ -167,7 +167,7 @@ public class Url implements IUrl {
 	}
 
 	/**
-	 * @return true si lurl est une adresse wikipedia, false sinon
+	 * @return true if the url is a wikipedia address, false otherwise
 	 */
 
 	@Override
@@ -177,21 +177,21 @@ public class Url implements IUrl {
 		if (GetDomain().contains(domain)) {
 			return true;
 		}
-		System.out.println("L'url : " + url + " rentree n'est pas une adresse wikipedia");
+		System.out.println("URL : " + url + " is not a wikipedia address");
 		return false;
 		
 	}
 
 	/**
 	 * 
-	 * @return true si l'url est une image
+	 * @return true if URL is an image
 	 */
 
 	public boolean isAPicture() {
 	
 		boolean picture =  url.endsWith("jpg") || url.endsWith("JPG") || url.endsWith("svg") || url.endsWith("png")
 				|| url.endsWith("gif") || url.endsWith("tif") || url.endsWith("bmp");
-		if(picture) {System.out.println("L'url : " + url +" ne peut etre traitee, il s'agit d'une image");}
+		if(picture) {System.out.println("The URL : " + url +" can not be treated, this is an image");}
 		return picture;
 	}
 
@@ -209,7 +209,7 @@ public class Url implements IUrl {
 
 		if (sD.contains(twopoint)) { // Si cest present, on verifie que cest si cest sous la forme "_:_" (dans un titre)
 				if(!sD.contains(twopointbis))	{
-					System.out.println("L'url : " + url + " traitee n'est pas un article wikipedia");
+					System.out.println("The URL : " + url + " treated is not a wikipedia article");
 				}
 			return sD.contains(twopointbis);
 		}
@@ -218,7 +218,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @return un Extracteur wiki et/ou un Extracteur html
+	 * @return an wiki extractor and/or an html extractor
 	 */
 	@Override
 	public void ConstructeurExtracteur() {

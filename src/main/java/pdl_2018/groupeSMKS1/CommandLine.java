@@ -48,7 +48,11 @@ public class CommandLine implements ICommandLine {
         System.out.println("CommandLine");
     }
 
-    /**
+    public CommandLine() {
+		
+	}
+
+	/**
      * Vérification de l'intégrité de la ligne de commande
      * @override
      * @date 14 octobre 2018
@@ -58,11 +62,12 @@ public class CommandLine implements ICommandLine {
     public boolean verifIntegriteCommandLine() {
 
         boolean jetonIntegrite = true; //On initialise à vrai le jeton d'intégrité. Il passe à faux dès qu'un non respect de la charte "ligne de commande" est détecté.
-
-        if(this.ligneDeCommande.substring(0, 9)!="wikimatrix"){
+if(this.ligneDeCommande.length()>10) {
+        if(!this.ligneDeCommande.substring(0, 10).equals("wikimatrix")){
             jetonIntegrite = false;
             System.out.println("La commande saisie n'est pas une commande Wikimatrix");
-        }
+        }}else {            jetonIntegrite = false;
+        System.out.println("La commande saisie n'est pas une commande Wikimatrix");}
 
         if(!verifUrlOrFichierChoice()){
             jetonIntegrite = false;
@@ -370,7 +375,7 @@ public class CommandLine implements ICommandLine {
 
     public static void main(String[] args){
 
-        CommandLine myCommand = new CommandLine("-html -wikicode -import[c:/urlWithAllDelimiteurs.txt] -delimit[,]");
+        CommandLine myCommand = new CommandLine("wikimatrix -html -wikicode -import[src/test/java/Fichiers_entree/urlWithAllDelimiteurs.txt] -delimit[;]");
     }
 
 }

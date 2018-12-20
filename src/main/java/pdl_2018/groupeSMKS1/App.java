@@ -6,8 +6,15 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) {
-		afficherMessageBienvenue();//On ne le lance qu'une fois, même si il y a un problème et que l'user doit re-saisir une commande
-		demanderCommande(); //On demande la saisie d'une commande pour la 1ere fois.
+		
+		afficherMessageBienvenue();
+		CommandLine com = demanderCommande();
+		
+		while(!com.verifIntegriteCommandLine()) {
+			afficherMessageBienvenue();
+			com = demanderCommande();
+		}
+		
 	}
 
 	public static void afficherMessageBienvenue(){
@@ -16,9 +23,8 @@ public class App {
 		System.out.println("Pour obtenir la liste des commandes obligatoires ou optionnelles disponibles, tapez directement \"entrée\".");
 	}
 
-	public static void demanderCommande(){
-		// TODO: Comment on gère la relance de cette méthode en cas de plantage ? Voir jeudi 6 déc.
-
+	public static CommandLine demanderCommande(){
+		
 		Scanner saisieClavier = new Scanner(System.in);
 		System.out.println("VOTRE COMMANDE >>> ");
 		String ldc = saisieClavier.nextLine();
@@ -26,9 +32,9 @@ public class App {
 		if(ldc==null || ldc==""){
 			afficherCommandesDisponibles();
 		}else{
-			new CommandLine(ldc);
+			return new CommandLine(ldc);
 		}
-
+return null;
 	}
 
 	public static void afficherCommandesDisponibles(){
@@ -42,14 +48,4 @@ public class App {
 	}
 }
 
-	/*	char delimit = ';';
-		String url ="https://fr.wikipedia.org/wiki/Stranger_Things";
-		String cheminCSV = "C:/Users/sullivand/Music/Desktop/";
-		boolean extraHTML = true;
-		String nomCSV = "Html_Csv.csv";
-		boolean extraWiki = false;
-		/*Html html = new Html(url, delimit, cheminCSV, nomCSV, extraHTML, extraWiki);
-		html.recuperationPage();
 
-		CommandLine commandLine = new CommandLine("-delimit[;] -wikicode -save[C:/Users/Margaux/Music/Desktop/] -name[monBeauTableauWiki.csv] -url[https://fr.wikipedia.org/wiki/Stranger_Things]");
-		*/

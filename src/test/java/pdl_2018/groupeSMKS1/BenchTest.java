@@ -37,7 +37,7 @@ public class BenchTest {
 	 */
 	@Test
 	public void testBenchExtractors() throws Exception {
-		this.listException = new ArrayList();
+		
 		this.stat = new LinkedHashMap<String, Double>();
 
 		List<String> listException = new ArrayList<>();
@@ -61,7 +61,7 @@ public class BenchTest {
 			try {
 				Url url2 = new Url(wurl, ';', url + ".csv", "output/",  true, true);
 			} catch (Exception e) {
-				listException.add(wurl + ";" + e);
+				
 			}
 			nurl++;
 		}

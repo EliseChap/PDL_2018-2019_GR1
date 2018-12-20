@@ -37,7 +37,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return la liste LesTableaux
+	 * @return  LesTableaux list
 	 */
 	@Override
 	public ArrayList<Tableau> getLesTableaux() {
@@ -46,7 +46,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * Supprime le Tableau
+	 * Delete the table
 	 */
 	@Override
 	public void removeTableau(Tableau leTableau) {
@@ -57,7 +57,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return Le nom du Tableau
+	 * @return The name of the table
 	 */
 	@Override
 	public String getNomTableau(Tableau leTableau) {
@@ -66,7 +66,7 @@ public class Html extends Extracteur {
 
 	@Override
 	/**
-	 * Ajoute le Tableau a la liste lesTableaux si il n'est pas déjà présents
+	 * Add the Table to the list lesTableaux if he is not already present
 	 * 
 	 * @param leTableau
 	 */
@@ -78,12 +78,12 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @param tab      Un tableau de string comportant les valeurs d'un tableau
-	 *                 extrait de wikipédia
-	 * @param nomTab   Le nom du tableau wikipédia
-	 * @param wikiHtml true pour indiquer que les données on était extraites avec
+	 * @param tab      A string array with the values of a table
+	 *                 extracted from wikipedia
+	 * @param nomTab   The name of the wikipedia table
+	 * @param wikiHtml true to indicate that the data has been extracted with
 	 *                 wikicode
-	 * @return Un objet tableau
+	 * @return A Table object
 	 */
 	@Override
 	public Tableau constructeurTableau(String[][] tab, String cle, boolean wikiHtml) {
@@ -92,7 +92,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return Le delimiteur choisit par l'utilisateur
+	 * @return The delimiter chosen by the user
 	 */
 	public char getDelimit() {
 		return this.delimit;
@@ -100,7 +100,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return Le chemin de sauvegarde du fichier choisit par l'utilisateur
+	 * @return The backup path of the file chosen by the user
 	 */
 	public String getCheminCSV() {
 		return this.cheminCSV;
@@ -108,7 +108,7 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return Le nom du fichier CSV choisit par l'utilisateur
+	 * @return The name of the CSV file chosen by the user
 	 */
 	public String getNomCSV() {
 		return this.getNomCSV();
@@ -116,8 +116,8 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return Un booleen qui indique si l'extraction est faite en HTML (true) ou
-	 *         non (false)
+	 * @return A booleen that indicates whether the extraction is done in HTML (true) or
+	 *         not (false)
 	 */
 	public boolean getExtraHTML() {
 		return this.extraHTML;
@@ -125,16 +125,16 @@ public class Html extends Extracteur {
 
 	/**
 	 * 
-	 * @return Un booleen qui indique si l'extraction doit est faite en
-	 *         wikicode(true) ou non (false)
+	 * @return A booleen that indicates if the extraction must be done in
+	 *         wikicode(true) or not (false)
 	 */
 	public boolean getExtraWiki() {
 		return this.extraWiki;
 	}
 
 	/**
-	 * Récupère la page et chaque tableau de cette page est mis dans une map avec
-	 * pour cle son nom ou par defaut table + son numero de table
+	 * Get the page, and each table on this page is put in a map with
+	 * for key his name or by default table + his table number
 	 * 
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class Html extends Extracteur {
 				if (lesHtmltab.containsKey(nom)) {
 					nom = nom + i;
 				}
-				lesHtmltab.put(nom, table.get(i)); // cle : titre du tableau
+				lesHtmltab.put(nom, table.get(i)); // key : title of the table
 
 			}
 			TraitementMap();
@@ -168,7 +168,7 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Pour chaque tableau de la Map, on fait les traitements nécessaires
+	 * For each table of the Map, we do the necessary treatments
 	 * 
 	 */
 
@@ -221,9 +221,9 @@ public class Html extends Extracteur {
 
 	
 	/**
-	 * Analyse du contenu du tableau
+	 * Analysis of table content
 	 * 
-	 * @param tab, un tableau dimensionnel de string
+	 * @param tab, a dimensional array of Strings
 	 * @param i
 	 * @param j
 	 * @param td
@@ -300,10 +300,10 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Traitement du tableau si il existe des colonnes vides dans le tableau
+	 * Treatment of the table if there are empty columns in the table
 	 * 
 	 * @param tab
-	 * @return String[][] tab, sans les colonnes vides
+	 * @return String[][] tab, without empty columns
 	 */
 	public String[][] TraitementColonnesVides(String[][] tab) {
 		boolean vide = true;
@@ -328,11 +328,11 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Suppression des colonnes vides
+	 * Deleting empty columns
 	 * 
 	 * @param tab
 	 * @param j
-	 * @return String[][] tab, sans les colonnes vides
+	 * @return String[][] tab, without empty columns
 	 */
 
 	public String[][] SuppressionColVides(String[][] tab, int j) {
@@ -359,13 +359,13 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Deplace le curseur si la cellule est deja  pleine
+	 * Move the cursor if the cell is already full
 	 * 
 	 * @param tab
 	 * @param i
 	 * @param j
 	 * @param vertical
-	 * @return int, i si vertical j sinon
+	 * @return int, i if vertical and j otherwise
 	 */
 
 	public int deplacerTableau(String[][] tab, int i, int j, boolean vertical) {
@@ -390,7 +390,7 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Afficher l'integralite du tableau
+	 * Display the entire table
 	 * 
 	 * @param tab
 	 */
@@ -403,7 +403,7 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Remplir le tableau suivant les fusions horizontales ou verticales
+	 * Fill in the table following the horizontal or vertical mergers
 	 * 
 	 * @param tab
 	 * @param i
@@ -441,10 +441,10 @@ public class Html extends Extracteur {
 	}
 
 	/**
-	 * Recuperer l'url dune image contenu dans une cellule
+	 * Retrieve the URL of an image contained in a cell
 	 * 
 	 * @param Element g
-	 * @return String de l'url
+	 * @return String of the URL
 	 */
 
 	public String getUrlImage(Element g) {
@@ -462,10 +462,10 @@ public class Html extends Extracteur {
 	}
 	
 	/**
-	 * Recupère le nombre de colonnes maximum du tableau 
+	 * Retrieves the maximum number of columns in the table
 	 * 
 	 * @param Elements tr
-	 * @return int qui est le maximum
+	 * @return int who is the maximum
 	 */
 
 

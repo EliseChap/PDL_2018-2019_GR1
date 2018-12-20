@@ -23,20 +23,20 @@ public class Csv implements ICsv {
 	public Csv(char pdelimit, String pcheminCsv, String pnomCsv, String[][] tableau2, String nomTab,
 			boolean extraHtmlWiki) {
 
-		// Verification si delimitation est null
+		//Verification if delimitation is null
 		if (pdelimit == '\u0000') {
 			delimit = ',';
 		} else {
 			delimit = pdelimit;
 		}
-		// Verification si nom est null
+		// Verification if name is null
 		this.nomTab = nomTab;
 		nomCsv = pnomCsv;
 		nomCsv = choixNomCsv();
 		nomCsv = nomCsv.replaceAll(".csv", "");
 		nomCsv = nomCsv + "-1.csv";
 
-		// Verification si cheminCsv est null
+		// Verification if cheminCSV is null
 		if (pcheminCsv == null) {
 			cheminCsv = "";
 		} else {
@@ -55,8 +55,8 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Choix du nom du csv entre l'utilisateur et automatique
-	 * si non renseigner prendre nom tableau si vide prendre WikiMatrix
+	 * Choice of the name of the csv between the user and automatic
+	 * if not informed take name table, if empty take WikiMatrix
 	 * @return
 	 */
 	private String choixNomCsv() {
@@ -100,11 +100,11 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Initialisation du hashmap du separateur False signifie non present dans les
-	 * donnees
+	 * Initialization of the separator hashmap False means not present in the
+	 * data
 	 * 
 	 * @date 25/10/2018
-	 * @return Boolean signification de présence
+	 * @return Boolean meaning of presence
 	 */
 	@Override
 	public void initialisationSeparateurAutomatique() {
@@ -125,10 +125,10 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Verifie si le separateur de l'utilisateur n'est pas utilise sinon choisi un
-	 * autre automatiquement
+	 * Check if the user's separator is not used otherwise choose a
+	 * other automatically
 	 * 
-	 * @return le separateur choisi
+	 * @return the chosen separator
 	 * @date 25/10/2018
 	 * 
 	 */
@@ -137,7 +137,7 @@ public class Csv implements ICsv {
 
 		Boolean separateurUtilisateur = false;
 
-		// Analyse les donnees afin de savoir quel est le separateur adapte
+		// Analyze the data to find out which is the appropriate separator
 
 		String separateur = "" + delimit;
 
@@ -165,11 +165,11 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Choix du separateur selon si le choix de l'utilisateur est dans les donnees
-	 * si oui en choisir un autre
+	 * Choice of the separator according to whether the choice of the user is in the data
+	 * if yes choose another
 	 * 
 	 * @param separateurUtilisateur,separateur
-	 * @return le separateur choisi
+	 * @return choosen separator
 	 * @date 13/11/2018
 	 * 
 	 */
@@ -191,7 +191,7 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Creation du CSV grace a un String en entree
+	 * Creating the CSV with an input String
 	 *
 	 * @throws IOException
 	 * @throws FileNotFoundException
@@ -222,7 +222,6 @@ public class Csv implements ICsv {
 			}
 			writer.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		;
@@ -231,7 +230,7 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Verifie si le fichier existe si oui alors true
+	 * Check if the file exists if yes then true
 	 * 
 	 * @return Boolean
 	 * @date 25/10/2018
@@ -250,9 +249,9 @@ public class Csv implements ICsv {
 	}
 
 	/**
-	 * Trouve un nom de CSV non deja pris
+	 * Find a CSV name not already taken
 	 * 
-	 * @return String nomDuFichierAleatoire
+	 * @return String random file name
 	 * @date 25/10/2018
 	 */
 	@Override

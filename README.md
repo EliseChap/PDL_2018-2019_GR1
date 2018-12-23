@@ -73,7 +73,7 @@ Attention, the import and url commands can not be realized at the same time. The
 **Examples of commands accepted by the application:**
 
 ```
-WikiMatrix -import[C:\Users\Sophie\Documents\Dossier cours\liens.txt] -html 
+WikiMatrix -import[C:\Users\Documents\Dossier cours\liens.txt] -html 
 ```
 
 This command allows the creation of CSV files from URLs that have "links.txt". The extraction will be done from the HTML code. All other parameters will be defined by their default value.

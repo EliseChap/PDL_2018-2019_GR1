@@ -28,6 +28,8 @@ public class BenchTest {
 
 	private List<String> listException;
 	private Map<String, Double> stat;
+	private Map<String, String> ensembleDiff;
+	private Map<String, String> fusion;
 
 	/**
 	 * Methode Challenge Imports the txt file Browse the run run file
@@ -37,9 +39,9 @@ public class BenchTest {
 	 */
 	@Test
 	public void testBenchExtractors() throws Exception {
-		
+		this.fusion = new LinkedHashMap<String, String>();
 		this.stat = new LinkedHashMap<String, Double>();
-
+		this.ensembleDiff = new LinkedHashMap<String, String>();
 		List<String> listException = new ArrayList<>();
 
 		String BASE_WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/";
@@ -59,7 +61,10 @@ public class BenchTest {
 			System.out.println("CSV file name: " + url);
 
 			try {
-				Url url2 = new Url(wurl, ';', url + ".csv", "output/",  true, true);
+								//Html html=new Html(wurl);
+			//	this.fusion.putAll(html.getNbreFusion());
+			//	Url url2 = new Url(wurl, ';', url + ".csv", "output/",  true, true);
+
 			} catch (Exception e) {
 				listException.add(wurl);
 			}
@@ -67,12 +72,12 @@ public class BenchTest {
 		}
 
 		br.close();
-		assertEquals(nurl, 336);
+	//	assertEquals(nurl, 336);
 		run();
 	}
 
 	/*
-	 * Method to open a txt file with urls http: // ...
+	 * Methode ouvrir un fichier txt avec des urls http://...
 	 */
 	// @Test
 	public void testFichierUrl() throws Exception {
@@ -107,8 +112,38 @@ public class BenchTest {
 		parcourirCsv(listCommun);
 		parcourirNonTrouve(wikiListNonTrouve, "Html");
 		parcourirNonTrouve(htmlListNonTrouve, "Wiki");
-		rapportCsvStat("rapportWikiMatrixComparaison.csv", this.stat);
+		
+		Map<String, String> croisement = new LinkedHashMap<String, String>();
+		
 
+		rapportCsvStat("rapportWikiMatrixComparaison.csv", this.stat);
+		rapportCsvdiff("rapportWikiMatrixDiff.csv", this.ensembleDiff);
+		rapportCsvdiff("rapportWikiMatrixFusion.csv", this.fusion);
+	}
+
+	private void rapportCsvdiff(String chemin, Map<String, String> ensembleDiff) {
+	
+		File fichier1 = new File(chemin);
+		fichier1.delete();
+		String csv = chemin;
+		CSVWriter writer;
+		try {
+			writer = new CSVWriter(new FileWriter(csv));
+
+			Set cles = ensembleDiff.keySet();
+			Iterator it = cles.iterator();
+			while (it.hasNext()) {
+				Object cle = it.next();
+				String valeur = ensembleDiff.get(cle);
+				writer.writeNext(new String[] { cle.toString() + ";" + valeur });
+			}
+
+			System.out.println("CSV File written successfully All at a time");
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -141,10 +176,37 @@ public class BenchTest {
 
 			String[] tabWiki = lectureCSV(cheminWiki);
 			String[] tabHtml = lectureCSV(cheminHtml);
+			Comparateur comp = new Comparateur(tabWiki, tabHtml,nom,nom);
+			
+			if(comp.getRatio()!=0){
+						stat.put(nom+";"+nom, comp.getRatio());
+			this.ensembleDiff.putAll(comp.getDiff());
+			}
+		else {
+			String autreNom = nom.replaceAll("-[0-9]*.csv", "");
+				AutreNom(autreNom,comp,cheminWiki,nom);
+			}}
+	
+		
+	}
 
-			Comparateur comp = new Comparateur(tabWiki, tabHtml);
-			stat.put(nom, comp.getRatio());
+	private void AutreNom(String autreNom, Comparateur comp, String cheminWiki, String nom) {
+		int i = 1;
+		String cheminHtml = "output/html/" + autreNom+"-"+i+".csv";
+		File f = new File(cheminHtml);
+		while(comp.getRatio()==0 && f.isFile()) {
+			cheminHtml = "output/html/" + autreNom+"-"+i+".csv";
+			String[] tabWiki = lectureCSV(cheminWiki);
+			String[] tabHtml = lectureCSV(cheminHtml);
+			comp = new Comparateur(tabWiki, tabHtml,autreNom+"-"+i+".csv",nom);
+			i++;
+			cheminHtml = "output/html/" + autreNom+"-"+i+".csv";
+			f = new File(cheminHtml);
 		}
+		i--;
+		stat.put(nom+";"+autreNom+"-"+i+".csv", comp.getRatio());
+		this.ensembleDiff.putAll(comp.getDiff());
+		
 	}
 
 	/**
@@ -219,31 +281,7 @@ public class BenchTest {
 		return list;
 	}
 
-	/**
-	 * Write the Csv
-	 * 
-	 * @param chemin
-	 * @param list
-	 */
 
-	public void rapportCsv(String chemin, List<String> list) {
-		File fichier1 = new File(chemin);
-		fichier1.delete();
-		String csv = chemin;
-		CSVWriter writer;
-		try {
-			writer = new CSVWriter(new FileWriter(csv));
-			for (String i : list) {
-				writer.writeNext(new String[] { i.toString() });
-			}
-			System.out.println("CSV File written successfully All at a time");
-			writer.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
 
 	/**
 	 *Write csv of a map

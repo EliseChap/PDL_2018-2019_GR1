@@ -2,19 +2,30 @@ package pdl_2018.groupeSMKS1;
 
 
 import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 
 public class Comparateur implements IComparateur {
 	private String[] wiki;
 	private String[] html;
 	private Double ratio;
+	private String htmlNom;
+	private Map<String, String> diff;
+	private String wikiNom;
 
-	public Comparateur(String[] wiki, String[] html) {
+	public Comparateur(String[] wiki, String[] html, String htmlNom, String wikiNom) {
+		this.diff = new LinkedHashMap<String, String>();
 		this.wiki = wiki;
 		this.html = html;
+		this.htmlNom=htmlNom;
+		this.wikiNom=wikiNom;
 		analyse();
 	}
 
+	public Map<String, String> getDiff() {
+		return diff;
+	}
 	/*
 	 * LINE TREATMENT
 	 */
@@ -111,18 +122,32 @@ public class Comparateur implements IComparateur {
 				nombreDifference++;
 				/*System.out.println("ligne " + i + " differente html" + " : " + html[i]);
 				System.out.println("ligne " + i + " differente wiki" + " : ");*/
+				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "¤" ,"");
+				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "¤" ,html[i]);
+		
 			}
 			if (i >= nbLigneHtml) {
 				nombreDifference++;
 				/*System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
 				System.out.println("ligne " + i + " differente html" + " : ");*/
+				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "¤" ,wiki[i]);
+				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "¤" ,"");
 			}
 
 			if (i < nbLigneWiki && i < nbLigneHtml) {
+				String strhtml;
 				if(wiki[i]!=null) {
-				if (!wiki[i].equals(html[i])) {
+					String strWiki = wiki[i].toLowerCase().replaceAll(" ", "").replaceAll("\\[[0-9]*\\]", "").replaceAll("unk", "unknown").replace("dunno", "?"); // majscule, [indice] et " "
+					if(html[i]!=null) {
+					strhtml = html[i].toLowerCase().replaceAll(" ", "").replaceAll("\\[[0-9]*\\]", "");}
+					else {
+						strhtml="";
+					}
+				if (!strWiki.equals(strhtml)) {
 					nombreDifference++;
-					/*System.out.println("difference entre les deux fichiers :");
+					this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "¤" ,wiki[i]);
+					this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "¤" ,html[i]);
+				/*	System.out.println("difference entre les deux fichiers :");
 					System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
 					System.out.println("ligne " + i + " differente html" + " : " + html[i]);*/
 				}
@@ -146,6 +171,15 @@ public class Comparateur implements IComparateur {
 		double V3 = 100 - (V2 / V1 * 100);
 		return V3;
 	}
+	
+	
+	   public static void main(String[] args)
+	    {
+	        String s = ";WinAce;yes;yes;yes;yes;yes;yes;yes;no;yes;unk";
+	        s = s.replaceAll("unk", "Unknown");
+	        s=s.toLowerCase();
+	        System.out.println(s);
+	    }
 
 	/**
 	 * General ratio with all criteria

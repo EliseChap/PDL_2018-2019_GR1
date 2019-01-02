@@ -21,7 +21,11 @@ public class Html extends Extracteur {
 	private boolean extraHTML;
 	private boolean extraWiki;
 	private ArrayList<Tableau> lesTableaux;
+	private HashMap<String, String> nbreFusion;
 	private Map<String, Element> lesHtmltab;
+	private int nbreFusionV;
+	private int nbreFusionH;
+
 
 	public Html(String url, char delimit, String cheminCSV, String nomCSV, boolean extraHTML, boolean extraWiki) {
 		this.url = url;
@@ -30,6 +34,15 @@ public class Html extends Extracteur {
 		this.extraHTML = extraHTML;
 		this.extraWiki = extraWiki;
 		this.nomCSV = nomCSV;
+		lesTableaux = new ArrayList<Tableau>();
+		lesHtmltab = new HashMap<String, Element>();
+		recuperationPage();
+		nbreFusion = new HashMap<String, String>();
+	}
+
+	public Html(String wurl) {
+		nbreFusion = new HashMap<String, String>();
+		this.url = wurl;
 		lesTableaux = new ArrayList<Tableau>();
 		lesHtmltab = new HashMap<String, Element>();
 		recuperationPage();
@@ -44,6 +57,9 @@ public class Html extends Extracteur {
 		return lesTableaux;
 	}
 
+	public HashMap<String, String> getNbreFusion() {
+		return nbreFusion;
+	}
 	/**
 	 * 
 	 * Delete the table
@@ -175,8 +191,13 @@ public class Html extends Extracteur {
 	public void TraitementMap() {
 		Set cles = lesHtmltab.keySet();
 		Iterator<String> it = cles.iterator();
+		
 
-		while (it.hasNext()) {
+int b =1;
+		while (it.hasNext()) {		
+			this.nbreFusionV=0;
+			this.nbreFusionH=0;
+			
 			String cle = it.next();
 			Element ensemble = lesHtmltab.get(cle);
 			boolean tabcreated = false;
@@ -216,6 +237,8 @@ public class Html extends Extracteur {
 			tab = TraitementColonnesVides(tab);
 			//lectureTableau(tab);
 			lesTableaux.add(constructeurTableau(tab, cle, false));
+			//this.nbreFusion.put(url.replace("https://en.wikipedia.org/wiki/", "")+"-"+b+".csv¤",nbreFusionH+";"+nbreFusionV);
+			b++;
 		}
 	}
 
@@ -415,6 +438,8 @@ public class Html extends Extracteur {
 	 */
 	public String[][] Fusion(String[][] tab, int i, int j, int y, String current, boolean vertical) {
 		if (vertical) {
+			this.nbreFusionV++;
+			
 
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
@@ -427,7 +452,7 @@ public class Html extends Extracteur {
 
 		} else {
 			//System.out.println("j" + j + "y" + y);
-			
+			this.nbreFusionH++;
 			for (int b = 0; b < y; b++) {
 				tab[i][j] = current;
 				if (j < tab[i].length - 1) {
@@ -500,6 +525,7 @@ public class Html extends Extracteur {
 		}
 		return max;
 	}
+
 
 
 

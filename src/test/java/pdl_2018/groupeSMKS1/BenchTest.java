@@ -63,7 +63,7 @@ public class BenchTest {
 			try {
 								//Html html=new Html(wurl);
 			//	this.fusion.putAll(html.getNbreFusion());
-			//	Url url2 = new Url(wurl, ';', url + ".csv", "output/",  true, true);
+			Url url2 = new Url(wurl, ';', url + ".csv", "output/",  true, true);
 
 			} catch (Exception e) {
 				listException.add(wurl);
@@ -72,7 +72,7 @@ public class BenchTest {
 		}
 
 		br.close();
-	//	assertEquals(nurl, 336);
+		assertEquals(nurl, 336);
 		run();
 	}
 

@@ -39,7 +39,7 @@ public class Html extends Extracteur {
 		recuperationPage();
 		nbreFusion = new HashMap<String, String>();
 	}
-
+	
 	public Html(String wurl) {
 		nbreFusion = new HashMap<String, String>();
 		this.url = wurl;
@@ -52,6 +52,7 @@ public class Html extends Extracteur {
 	 * 
 	 * @return  LesTableaux list
 	 */
+	
 	@Override
 	public ArrayList<Tableau> getLesTableaux() {
 		return lesTableaux;
@@ -237,7 +238,7 @@ int b =1;
 			tab = TraitementColonnesVides(tab);
 			//lectureTableau(tab);
 			lesTableaux.add(constructeurTableau(tab, cle, false));
-			//this.nbreFusion.put(url.replace("https://en.wikipedia.org/wiki/", "")+"-"+b+".csv¤",nbreFusionH+";"+nbreFusionV);
+			//this.nbreFusion.put(url.replace("https://en.wikipedia.org/wiki/", "")+"-"+b+".csvï¿½",nbreFusionH+";"+nbreFusionV);
 			b++;
 		}
 	}

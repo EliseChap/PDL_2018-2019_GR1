@@ -109,6 +109,7 @@ public class Comparateur implements IComparateur {
 	 * @return Number of content differences
 	 * @date 17/11/2018
 	 */
+	
 	public int analyseComplet() {
 
 		int nombreDifference = 0;
@@ -122,16 +123,16 @@ public class Comparateur implements IComparateur {
 				nombreDifference++;
 				/*System.out.println("ligne " + i + " differente html" + " : " + html[i]);
 				System.out.println("ligne " + i + " differente wiki" + " : ");*/
-				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "¤" ,"");
-				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "¤" ,html[i]);
+				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "ï¿½" ,"");
+				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "ï¿½" ,html[i]);
 		
 			}
 			if (i >= nbLigneHtml) {
 				nombreDifference++;
 				/*System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
 				System.out.println("ligne " + i + " differente html" + " : ");*/
-				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "¤" ,wiki[i]);
-				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "¤" ,"");
+				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "ï¿½" ,wiki[i]);
+				this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "ï¿½" ,"");
 			}
 
 			if (i < nbLigneWiki && i < nbLigneHtml) {
@@ -145,8 +146,8 @@ public class Comparateur implements IComparateur {
 					}
 				if (!strWiki.equals(strhtml)) {
 					nombreDifference++;
-					this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "¤" ,wiki[i]);
-					this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "¤" ,html[i]);
+					this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";wiki" + "ï¿½" ,wiki[i]);
+					this.diff.put(wikiNom+";" +htmlNom+";"+ i + ";html" + "ï¿½" ,html[i]);
 				/*	System.out.println("difference entre les deux fichiers :");
 					System.out.println("ligne " + i + " differente wiki" + " : " + wiki[i]);
 					System.out.println("ligne " + i + " differente html" + " : " + html[i]);*/

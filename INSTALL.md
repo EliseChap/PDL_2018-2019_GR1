@@ -16,7 +16,7 @@ If you have github desktop you can clone the project, in the view select "Add an
 <img src= "ANNEXES/ExistingLocalGit.png"><br>
 <img src= "ANNEXES/projectClone.png"><br>
 
-If you doesn't use the github desktop you can download the projet, in the wiew select "Clone a Git Repository" and choose your project.
+If you doesn't use the github desktop you can download the projet, in the wiew select "Clone a Git Repository" and choose your project.<br>
 <img src= "ANNEXES/imgGitRepositories.png"><br>
 <img srx= "ANNEXES/projectDownload.png"><br>
 

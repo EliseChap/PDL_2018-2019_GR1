@@ -22,20 +22,11 @@ If you doesn't use the github desktop you can download the projet, in the wiew s
 
 **For IntelliJ**
 
-1. From the main menu, choose the menu VCS. 
+1. From the main menu, choose the menu VCS, then Checkout from Version Control and then choose Git.
 <br><img src= "ANNEXES/capture1intel.png"><br>
 
 
-In the Clone Repository dialog, specify the URL of the repository that you want to clone. You can select a repository from the list of all GitHub projects associated with your account and the organization that your account belongs to.
-
-In the Directory field, enter the path to the folder where your local Git repository will be created.
-
-Click Clone. If you want to create a project based on these sources, click Yes in the confirmation dialog. IntelliJ IDEA will automatically set Git root mapping to the project root directory.
-
-
-
-
-
+2. In the Clone Repository dialog, specify the URL of the repository that you want to clone. For this project the URI is : https://github.com/EliseChap/PDL_2018-2019_GR1. In the Directory field, enter the path to the folder where your local Git repository will be created. Then click Clone. 
 
 ## Launch the App
 Now you can use the app. 

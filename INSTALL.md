@@ -23,7 +23,7 @@ If you doesn't use the github desktop you can download the projet, in the wiew s
 **For IntelliJ**
 
 1. From the main menu, choose the menu VCS. 
-<br><img src= "ANNEXES/capture1off.png"><br>
+<br><img src= "ANNEXES/capture1intel.png"><br>
 
 
 In the Clone Repository dialog, specify the URL of the repository that you want to clone. You can select a repository from the list of all GitHub projects associated with your account and the organization that your account belongs to.

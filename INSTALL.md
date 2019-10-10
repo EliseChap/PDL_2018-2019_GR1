@@ -4,13 +4,15 @@ Comment on exécute le logiciel?
 
 # INSTALL 
 
+For the project you can use <a href="#eclipse">Eclipse</a> or IntelliJ. 
+
 ## Get the project 
 
 From GitHub, you must follow this link: https://github.com/EliseChap/PDL_2018-2019_GR1
 
 **For Eclipse**
 
-*Setting* <br>
+<p id=eclipse> Setting </p>
 First, you have to add the git repository to Eclipse. It's important to have the view visible on your Eclipse. For that, from the menu 'Window > Show views > Other > Git > Git Repositories'.
 If you have github desktop you can clone the project, in the view select "Add an existing local Git Repository" and choose your project.
 <br><img src= "ANNEXES/ExistingLocalGit.png"><br>

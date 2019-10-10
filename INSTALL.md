@@ -17,10 +17,9 @@ If you have github desktop you can clone the project, in the view select "Add an
 <br><img src= "ANNEXES/projectClone.png"><br>
 
 1. If you don't use the github desktop you can download the projet, in the wiew select "Clone a Git Repository" and choose your project.<br><img src= "ANNEXES/imgGitRepositories.png"><br>
-<br><img src= "ANNEXES/projectDownload.png"><br>
 
 2.  For this project the URI is : https://github.com/EliseChap/PDL_2018-2019_GR1. Then click on next. 
-<br> <img src= "ANNEXES/capture2intel.png"><br>
+<br><img src= "ANNEXES/projectDownload.png"><br>
 
 3. Don't forget to select the box <b> Import all existing Eclipse projects after clones finishes </b>. Then select Finish. 
 <br> <img src= "ANNEXES/capture3intel.png"><br>

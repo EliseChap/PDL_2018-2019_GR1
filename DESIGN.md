@@ -7,21 +7,21 @@
 ### Main classes :
 * Fichier
 
-* Extracteur
+* Extracteur <br/>
 Implements an interface.
-* Url
+* Url <br/>
 Implements an interface.
-* Tableau
+* Tableau <br/>
 Implements an interface.
-* Csv
+* Csv <br/>
 Implements an interface.
-* Comparateur
+* Comparateur <br/>
 Implements an interface.
-* Html
+* Html <br/>
 Type of extractor.
-* Wikitext 
+* Wikitext <br/>
 type of extractor.
-* CommandLine
+* CommandLine <br/>
 Implements an interface.
 
 ## Modèles dynamiques

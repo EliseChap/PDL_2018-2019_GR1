@@ -22,7 +22,7 @@ If you have github desktop you can clone the project, in the view select "Add an
 <br><img src= "ANNEXES/projectDownload.png"><br>
 
 3. Don't forget to select the box <b> Import all existing Eclipse projects after clones finishes </b>. Then select Finish. 
-<br> <img src= "ANNEXES/image.PNG"><br>
+<br> <img src= "ANNEXES/Capture.PNG"><br>
 
 
 <h3 id=intellij> For IntelliJ </h3>

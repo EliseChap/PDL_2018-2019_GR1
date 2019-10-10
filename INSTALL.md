@@ -39,7 +39,7 @@ To start the test, you have to enter:
 ```
 mvn test
 ```
-Then, it exists different type of test: <br>
+*Then, it exists different type of test:* <br>
 
 Launch the 300 Urls, general test
 ```

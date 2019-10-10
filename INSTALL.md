@@ -12,9 +12,9 @@ From GitHub, you must follow this link: https://github.com/EliseChap/PDL_2018-20
 
 <h3 id=eclipse> For Eclipse </h3>
 
-First, you have to add the git repository to Eclipse. It's important to have the view visible on your Eclipse. For that, from the menu 'Window > Show views > Other > Git > Git Repositories'. <br/>
+First, you have to add the git repository to Eclipse. It's important to have the view visible on your Eclipse. For that, from the menu 'Window > Show views > Other > Git > Git Repositories'. <br/><br/>
 If you have github desktop you can clone the project, in the view select "Add an existing local Git Repository" and choose your project.
-<br/><br/>
+<br/>
 <br><img src= "ANNEXES/ExistingLocalGit.png"><br>
 <br><img src= "ANNEXES/projectClone.png"><br>
 

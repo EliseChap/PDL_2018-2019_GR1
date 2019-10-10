@@ -6,7 +6,7 @@ Comment on exécute le logiciel?
 
 For the project you can use <a href="#eclipse">Eclipse</a> or  <a href="#intellij">IntelliJ</a> . 
 
-## Get the project 
+## Choose your framework
 
 <h3 id=eclipse> For Eclipse </h3>
 
@@ -32,49 +32,61 @@ If you have github desktop you can clone the project, in the view select "Add an
 
 2. In the Clone Repository dialog, specify the URL of the repository that you want to clone. For this project the URI is : https://github.com/EliseChap/PDL_2018-2019_GR1. In the Directory field, enter the path to the folder where your local Git repository will be created. Then click Clone. 
 
-## Launch the App
 ## Getting Started
 
-** Launch the class App **
+First you have to launch the class App. 
 
-** Enter one or more URLs. **
+Then you have to enter different commands in the terminal. 
 
-## The commands to be filled in the terminal.
+<h3> Select the URL you want to convert </h3>
 
-** Import a .txt file where all the URLs are stored: **
+You have the choice to convert one or several Wikipedia pages. <br/>
+
+If you want to convert one page you must enter the following command : 
 
 ```
--import[C://FileAddress]
+wikimatrix-url[Address]
 ```
 
+If you want to convert more than one Wikipedia page you must enter : 
+
+```
+wikimatrix-import[C://FileAddress]
+```
 When using the command -import [C: // FileAddress] this extracts the list of URLs from a file. In order to standardize the input file, it was decided in the first version of our application to be limited to "txt" format. Inside this file, the data will be delimited by the "; '" character. Thus each URL will be separated by this character.
 
-**URL**  
+<h3> Choose html and / or Wikicode extraction </h3>
+
+Then you have to choose between an html extraction or a wikicode extraction. If you choose an html extraction and to extract from one page, then you must unter this in your terminal : 
 
 ```
--url[Address]
+wikimatrix-url[Adress]-html
 ```
 
-**Choose html and / or Wikicode extraction**  
+If you choose a wikicode extraction and to extract from a txt file, then you must unter this in your terminal : 
 
 ```
--html 
+wikimatrix-import[C://]-wikicode
 ```
 
-Extraction of data by HTML code
+Every type of extraction works with -import and -url.
+
+<h3> Choose the delimiter in the final CSV </h3>
+
+Buy default, the delimiter is a comma but you can change it with the following command: 
 
 ```
--wikicode
+-delimit[;] : 
 ```
 
-Extraction of data by Wikicode code
-
-
-**Choose the delimiter in the final CSV**
+Exemple : 
 
 ```
--delimit[,] : 
+wikimatrix-import[C://]-wikicode-delimit[;]; 
 ```
+<h3> Choose where the CSV file is registered </h3>
+
+Buy default the CSV file is registered under the file ...
 
 **Register the CSV**
 

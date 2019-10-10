@@ -10,7 +10,7 @@ For the project you can use <a href="#eclipse">Eclipse</a> or IntelliJ.
 
 From GitHub, you must follow this link: https://github.com/EliseChap/PDL_2018-2019_GR1
 
-<p id=eclipse> **For Eclipse** </p>
+<h2 id=eclipse> **For Eclipse** </h2>
 
 First, you have to add the git repository to Eclipse. It's important to have the view visible on your Eclipse. For that, from the menu 'Window > Show views > Other > Git > Git Repositories'.
 If you have github desktop you can clone the project, in the view select "Add an existing local Git Repository" and choose your project.

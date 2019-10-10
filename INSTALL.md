@@ -21,6 +21,15 @@ If you doesn't use the github desktop you can download the projet, in the wiew s
 
 **For IntelliJ**
 
+1. From the main menu, choose the menu VCS. 
+<br><img src= "H:\workspace\PDL\capture1off.png"><br>
+
+
+In the Clone Repository dialog, specify the URL of the repository that you want to clone. You can select a repository from the list of all GitHub projects associated with your account and the organization that your account belongs to.
+
+In the Directory field, enter the path to the folder where your local Git repository will be created.
+
+Click Clone. If you want to create a project based on these sources, click Yes in the confirmation dialog. IntelliJ IDEA will automatically set Git root mapping to the project root directory.
 
 
 

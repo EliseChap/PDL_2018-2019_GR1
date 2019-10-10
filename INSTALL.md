@@ -4,7 +4,7 @@ Comment on exécute le logiciel?
 
 # INSTALL 
 
-For the project you can use <a href="#eclipse">Eclipse</a> or IntelliJ. 
+For the project you can use <a href="#eclipse">Eclipse</a> or  <a href="#intellij">IntelliJ</a> . 
 
 ## Get the project 
 
@@ -26,7 +26,7 @@ If you have github desktop you can clone the project, in the view select "Add an
 <br/> <img src= "ANNEXES/capture3intel.png"><br/>
 
 
-**For IntelliJ**
+<h3 id=intellij> For IntelliJ </h3>
 
 1. From the main menu, choose the menu VCS, then Checkout from Version Control and then choose Git. <br/>
 <br><img src= "ANNEXES/capture1intel.png"><br>

@@ -22,14 +22,13 @@ If you have github desktop you can clone the project, in the view select "Add an
 <br><img src= "ANNEXES/projectDownload.png"><br>
 
 3. Don't forget to select the box <b> Import all existing Eclipse projects after clones finishes </b>. Then select Finish. 
-<br> <img src= "ANNEXES/image.png"><br>
+<br> <img src= "ANNEXES/image.PNG"><br>
 
 
 <h3 id=intellij> For IntelliJ </h3>
 
 1. From the main menu, choose the menu VCS, then Checkout from Version Control and then choose Git. <br/>
 <br><img src= "ANNEXES/image2.png"><br>
-
 
 2. In the Clone Repository dialog, specify the URL of the repository that you want to clone. For this project the URI is : https://github.com/EliseChap/PDL_2018-2019_GR1. In the Directory field, enter the path to the folder where your local Git repository will be created. Then click Clone. 
 

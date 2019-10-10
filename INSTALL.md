@@ -8,8 +8,6 @@ For the project you can use <a href="#eclipse">Eclipse</a> or IntelliJ.
 
 ## Get the project 
 
-From GitHub, you must follow this link: https://github.com/EliseChap/PDL_2018-2019_GR1
-
 <h3 id=eclipse> For Eclipse </h3>
 
 First, you have to add the git repository to Eclipse. It's important to have the view visible on your Eclipse. For that, from the menu 'Window > Show views > Other > Git > Git Repositories'. <br/><br/>
@@ -18,8 +16,15 @@ If you have github desktop you can clone the project, in the view select "Add an
 <br><img src= "ANNEXES/ExistingLocalGit.png"><br>
 <br><img src= "ANNEXES/projectClone.png"><br>
 
-If you don't use the github desktop you can download the projet, in the wiew select "Clone a Git Repository" and choose your project.<br><img src= "ANNEXES/imgGitRepositories.png"><br>
+1. If you don't use the github desktop you can download the projet, in the wiew select "Clone a Git Repository" and choose your project.<br><img src= "ANNEXES/imgGitRepositories.png"><br>
 <br><img srx= "ANNEXES/projectDownload.png"><br>
+
+2.  For this project the URI is : https://github.com/EliseChap/PDL_2018-2019_GR1. Then click on next. 
+<br/> <img srx= "ANNEXES/capture2intel.png"><br/>
+
+3. Don't forget to select the box <b> Import all existing Eclipse projects after clones finishes <b>. Then select Finish. 
+<br/> <img srx= "ANNEXES/capture3intel.png"><br/>
+
 
 **For IntelliJ**
 

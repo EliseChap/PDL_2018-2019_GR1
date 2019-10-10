@@ -33,7 +33,75 @@ If you have github desktop you can clone the project, in the view select "Add an
 2. In the Clone Repository dialog, specify the URL of the repository that you want to clone. For this project the URI is : https://github.com/EliseChap/PDL_2018-2019_GR1. In the Directory field, enter the path to the folder where your local Git repository will be created. Then click Clone. 
 
 ## Launch the App
-Now you can use the app. 
+## Getting Started
+
+** Launch the class App **
+
+** Enter one or more URLs. **
+
+## The commands to be filled in the terminal.
+
+** Import a .txt file where all the URLs are stored: **
+
+```
+-import[C://FileAddress]
+```
+
+When using the command -import [C: // FileAddress] this extracts the list of URLs from a file. In order to standardize the input file, it was decided in the first version of our application to be limited to "txt" format. Inside this file, the data will be delimited by the "; '" character. Thus each URL will be separated by this character.
+
+**URL**  
+
+```
+-url[Address]
+```
+
+**Choose html and / or Wikicode extraction**  
+
+```
+-html 
+```
+
+Extraction of data by HTML code
+
+```
+-wikicode
+```
+
+Extraction of data by Wikicode code
+
+
+**Choose the delimiter in the final CSV**
+
+```
+-delimit[,] : 
+```
+
+**Register the CSV**
+
+```
+-save[c//] :
+```
+
+**Register the CSV (s) under a name**
+
+```
+-name[fichier.csv] :
+```
+
+Attention, the import and url commands can not be realized at the same time. The -html and -wikicode commands can be cumulated to have both extractions simultaneously on the same tables.
+
+**Examples of commands accepted by the application:**
+
+```
+WikiMatrix -import[C:\Users\Documents\Dossier cours\liens.txt] -html 
+```
+
+This command allows the creation of CSV files from URLs that have "links.txt". The extraction will be done from the HTML code. All other parameters will be defined by their default value.
+
+```
+WikiMatrix -url[https://fr.wikipedia.org/wiki/Rennes] -html -wikicode -delimit[;] -save[C:\ Users\Sophie\Documents\] 
+```
+The program extracts the URL and parses the page with both algorithms. Using this command, the user sets the delimiter and the save location.
 
 
 

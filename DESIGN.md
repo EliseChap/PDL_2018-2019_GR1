@@ -1,30 +1,30 @@
 # DESIGN
 
-## Modèles statiques
+## Static models
  ### Class diagram
 <img src = "/ANNEXES/diagrammes/ClassDiagram.png"> <br>
 * explication (organisation des packages, descriptions des classes principales et de leurs responsabilités, etc)
 ## Main classes :
-* Fichier
+* **Fichier** <br/>
 
-* Extracteur <br/>
+* **Extracteur** <br/>
 Implements an interface.
-* Url <br/>
+* **Url** <br/>
 Implements an interface.
-* Tableau <br/>
+* **Tableau** <br/>
 Implements an interface.
-* Csv <br/>
+* **Csv** <br/>
 Implements an interface.
-* Comparateur <br/>
+* **Comparateur** <br/>
 Implements an interface.
-* Html <br/>
+* **Html** <br/>
 Type of extractor.
-* Wikitext <br/>
+* **Wikitext** <br/>
 type of extractor.
-* CommandLine <br/>
+* **CommandLine** <br/>
 Implements an interface.
 
-## Modèles dynamiques
+## Dynamic models
   ### Use case diagram
   <img src = "/ANNEXES/diagrammes/DCU%20-%20Complet.PNG"> <br>
   ### Use case scenarios <br>
@@ -140,4 +140,4 @@ Implements an interface.
     **Post condition :** The different elements of the output CSV file are separated using the
                          separator indicated by the user. <br> <br>  
 ## Diagrammes
-diagramme de cas d'utilisation, diagramme de classes/d’objets, machines à états, etc
+machines à états ?

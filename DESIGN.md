@@ -3,7 +3,7 @@
 ## Static models
  ### Class diagram
 <img src = "/ANNEXES/diagrammes/ClassDiagram.png"> <br>
-* explication (organisation des packages, descriptions des classes principales et de leurs responsabilités, etc)
+
 ## Main classes :
 * **Fichier** <br/>
 

@@ -15,6 +15,8 @@ The user can request the extraction, via a command line, of one or more URLs (in
 
 The user can also choose the delimiter in the final CSV, the name of the CSV file and where the CSV file is registered. 
 
+Every features is explained more in details in the file <a href="Install.md> Install.md </a>. 
+
 **Future Features**
 
 The extractor doesn't manage to convert complex tables with the wikicode extraction method. In the future, the extractor will have to be able to convert every table in a CSV file with the wikicode extraction method, no matter how complex it is.

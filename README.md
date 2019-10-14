@@ -15,7 +15,7 @@ The user can request the extraction, via a command line, of one or more URLs (in
 
 The user can also choose the delimiter in the final CSV, the name of the CSV file and where the CSV file is registered. 
 
-Every features is explained more in details in the file <a href="INSTALL.md> INSTALL.md </a>. 
+Every features is explained more in details in the file <a href="INSTALL.md>INSTALL.md</a>. 
 
 **Future Features**
 

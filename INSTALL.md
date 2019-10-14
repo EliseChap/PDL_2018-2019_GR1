@@ -1,6 +1,3 @@
-Comment on construit le projet à partir du code source?
-Comment on exécute les suites de tests?
-Comment on exécute le logiciel?
 
 # INSTALL 
 

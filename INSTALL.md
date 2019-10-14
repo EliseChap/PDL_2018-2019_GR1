@@ -56,9 +56,17 @@ wikimatrix-import[C://FileAddress]
 ```
 When using the command -import [C: // FileAddress] this extracts the list of URLs from a file. In order to standardize the input file, it was decided in the first version of our application to be limited to "txt" format. Inside this file, the data will be delimited by the "; '" character. Thus each URL will be separated by this character.
 
+<b> Attention, the import and url commands can not be realized at the same time. </b>
+
 <h3> Choose html and / or Wikicode extraction </h3>
 
 Then you have to choose between an html extraction or a wikicode extraction. If you choose an html extraction and to extract from one page, then you must unter this in your terminal : 
+
+```
+-html
+```
+
+Example : 
 
 ```
 wikimatrix-url[Adress]-html
@@ -67,43 +75,52 @@ wikimatrix-url[Adress]-html
 If you choose a wikicode extraction and to extract from a txt file, then you must unter this in your terminal : 
 
 ```
+-wikicode
+```
+Example : 
+
+```
 wikimatrix-import[C://]-wikicode
 ```
 
-Every type of extraction works with -import and -url.
+The -html and -wikicode commands can be cumulated to have both extractions simultaneously on the same tables.
 
 <h3> Choose the delimiter in the final CSV </h3>
 
-Buy default, the delimiter is a comma but you can change it with the following command: 
+Optional. Buy default, the delimiter is a comma but you can change it with the following command: 
 
 ```
 -delimit[;] : 
 ```
 
-Exemple : 
+Example : 
 
 ```
 wikimatrix-import[C://]-wikicode-delimit[;]; 
 ```
 <h3> Choose where the CSV file is registered </h3>
 
-Buy default the CSV file is registered under the file ...
-
-**Register the CSV**
+Optional. Buy default the CSV file is registered under the file output but you can change the destination file with the following command : 
 
 ```
--save[c//] :
+-save[C://] :
+```
+Example : 
+
+```
+wikimatrix-import[C://]-wikicode-save[C://]; 
 ```
 
-**Register the CSV (s) under a name**
+<h3>Register the CSV (s) under a name**</h3>
+
+Optional. Buy default the name of the CSV file is the name of the table in the Wikipedia page.You can change the name of the file with the following command : 
 
 ```
 -name[fichier.csv] :
 ```
 
-Attention, the import and url commands can not be realized at the same time. The -html and -wikicode commands can be cumulated to have both extractions simultaneously on the same tables.
 
-**Examples of commands accepted by the application:**
+<h3>Examples of commands accepted by the application </h3>
 
 ```
 WikiMatrix -import[C:\Users\Documents\Dossier cours\liens.txt] -html 
@@ -115,9 +132,6 @@ This command allows the creation of CSV files from URLs that have "links.txt". T
 WikiMatrix -url[https://fr.wikipedia.org/wiki/Rennes] -html -wikicode -delimit[;] -save[C:\ Users\Sophie\Documents\] 
 ```
 The program extracts the URL and parses the page with both algorithms. Using this command, the user sets the delimiter and the save location.
-
-
-
 
 ## Running the tests
 

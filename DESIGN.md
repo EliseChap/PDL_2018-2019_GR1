@@ -26,7 +26,7 @@ Implements an interface. Verify if the command line typed is written in the good
 
 ## Dynamic models
   ### Use case diagram
-  <img src = "/ANNEXES/diagrammes/DCU%20-%20Complet.PNG"> <br>
+  <img src = "/ANNEXES/diagrammes/Use_Case_Diagram.PNG"> <br>
   ### Use case scenarios <br>
   * 1 - Configure the output directory <br> <br>
     **Actors :** The customer <br>
@@ -139,5 +139,6 @@ Implements an interface. Verify if the command line typed is written in the good
     **Fin :** <br>
     **Post condition :** The different elements of the output CSV file are separated using the
                          separator indicated by the user. <br> <br>  
-## Diagrammes
-machines à états ?
+## Diagram
+ ### State diagram
+ <img src = "/ANNEXES/diagrammes/State_Diagram.PNG"> <br>

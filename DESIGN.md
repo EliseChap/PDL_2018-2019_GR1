@@ -6,23 +6,23 @@
 
 ## Main classes :
 * **Fichier** <br/>
-
+Recover the .txt document with the urls to use and convert it into an arraylist.
 * **Extracteur** <br/>
 Implements an interface.
 * **Url** <br/>
-Implements an interface.
+Implements an interface. Check the url written in the .txt document to know if it's a wikipedia url and then create the extractor asked.
 * **Tableau** <br/>
-Implements an interface.
+Implements an interface. Tables extracted from wikipedia.
 * **Csv** <br/>
-Implements an interface.
+Implements an interface. Create the csv document recovered from tables extracted.
 * **Comparateur** <br/>
-Implements an interface.
+Implements an interface. Compare the wikicode's table and the html one.
 * **Html** <br/>
-Type of extractor.
+Its a type of extractor. The HTML format is present in each web pages.
 * **Wikitext** <br/>
-type of extractor.
+Its a type of extractor. The wikicode format is present in each wikipedia pages.
 * **CommandLine** <br/>
-Implements an interface.
+Implements an interface. Verify if the command line typed is written in the good syntax.
 
 ## Dynamic models
   ### Use case diagram

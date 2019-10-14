@@ -108,7 +108,7 @@ Example :
 wikimatrix-import[C://]-wikicode-save[C://]; 
 ```
 
-<h3>Register the CSV (s) under a name**</h3>
+<h3>Register the CSV (s) under a name</h3>
 
 Optional. Buy default the name of the CSV file is the name of the table in the Wikipedia page.You can change the name of the file with the following command : 
 
@@ -120,13 +120,13 @@ Optional. Buy default the name of the CSV file is the name of the table in the W
 <h3>Examples of commands accepted by the application </h3>
 
 ```
-WikiMatrix -import[C:\Users\Documents\Dossier cours\liens.txt] -html 
+wikiMatrix-import[C:\Users\Documents\Dossier cours\liens.txt]-html 
 ```
 
 This command allows the creation of CSV files from URLs that have "links.txt". The extraction will be done from the HTML code. All other parameters will be defined by their default value.
 
 ```
-WikiMatrix -url[https://fr.wikipedia.org/wiki/Rennes] -html -wikicode -delimit[;] -save[C:\ Users\Sophie\Documents\] 
+wikiMatrix-url[https://fr.wikipedia.org/wiki/Rennes]-html-wikicode-delimit[;]-save[C:\ Users\Sophie\Documents\] 
 ```
 The program extracts the URL and parses the page with both algorithms. Using this command, the user sets the delimiter and the save location.
 

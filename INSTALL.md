@@ -8,12 +8,8 @@ For the project you can use <a href="#eclipse">Eclipse</a> or  <a href="#intelli
 <h3 id=eclipse> For Eclipse </h3>
 
 First, you have to add the git repository to Eclipse. It's important to have the view visible on your Eclipse. For that, from the menu 'Window > Show views > Other > Git > Git Repositories'. <br/><br/>
-If you have github desktop you can clone the project on GitHub, in the view select "Add an existing local Git Repository" on Eclipse and choose your project.
-<br/>
-<br><img src= "ANNEXES/ExistingLocalGit.png"><br>
-<br><img src= "ANNEXES/projectClone.png"><br>
 
-1. If you don't use the github desktop you can download the projet on GitHub, in the view select "Clone a Git Repository" on Eclipse and choose your project.
+1. You can clone the projet: in the view select "Clone a Git Repository" on Eclipse.
 <br><img src= "ANNEXES/imgGitRepositories.png"><br>
 
 2.  For this project the URI is : https://github.com/EliseChap/PDL_2018-2019_GR1. Then click on next. 

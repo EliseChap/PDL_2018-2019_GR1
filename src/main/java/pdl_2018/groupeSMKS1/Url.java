@@ -33,7 +33,7 @@ public class Url implements IUrl {
 		
 			verifURL();
 			if(isWikipediaURL()) {
-				System.out.println("teste");
+				System.out.println("L'URL correspond bien à une page Wikipédia");
 			isAPicture();
 			isAnArticle();
 			ConstructeurExtracteur();
@@ -148,7 +148,7 @@ public class Url implements IUrl {
 	 */
 
 	public String GetSousDomain() {
-		System.out.println("passers");
+		// System.out.println("passers");
 		String[] str = url.split("/wiki/");
 		return str[1];
 	}
@@ -172,8 +172,8 @@ public class Url implements IUrl {
 
 	@Override
 	public boolean isWikipediaURL() {
-		System.out.println("1"+GetDomain());
-		System.out.println("2"+domain);
+		System.out.println("Nom de domaine: "+GetDomain());
+		//System.out.println("2"+domain);
 		if (GetDomain().contains(domain)) {
 			return true;
 		}
@@ -246,7 +246,7 @@ public class Url implements IUrl {
 			if (extraHtml) {
 				Extracteur html = new Html(url, delimit, cheminCsv, nomCsv, extraHtml, extraWiki);
 				lesExtracteurs.add(html);
-	//			System.out.println("html : "+html.getLesTableaux());
+				//System.out.println("html : "+html.getLesTableaux());
 			}
 		}
 

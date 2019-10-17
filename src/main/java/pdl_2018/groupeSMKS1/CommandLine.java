@@ -1,5 +1,6 @@
 package pdl_2018.groupeSMKS1;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -199,7 +200,9 @@ private boolean jetonIntegrite = true;
     @Override
     public boolean verifRepertoireSortie(){
         int nbSave = StringUtils.countMatches(this.ligneDeCommande, "-save");
-        String contenuSave = "";
+        File file = new File("output");
+        String path = file.getAbsolutePath(); 
+        String contenuSave = path;
         if (nbSave == 1){ // We check that the output file path is valid (we do not test if it is functional)
                   	
         	Pattern pSave=Pattern.compile("-save\\[.*?\\]");

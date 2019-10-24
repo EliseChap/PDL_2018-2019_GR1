@@ -61,9 +61,10 @@ public class Csv implements ICsv {
 	 */
 	private String choixNomCsv() {
 		if (nomCsv == null || nomCsv == "") {
-			if (nomTab == null || nomTab == "") {
+			if (nomTab == null || nomTab == "" || nomTab == "WithoutTitle") {
 				nomCsv = "WikiMatrix.csv";
 			} else {
+				
 				nomCsv = nomTab + ".csv";
 			}
 

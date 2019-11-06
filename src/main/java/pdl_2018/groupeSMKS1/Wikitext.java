@@ -560,7 +560,7 @@ public class Wikitext extends Extracteur {
 								colonnes = 1;
 							}
 						while (tab[lig][colonnes] != null && colonnes < nbCol - 1) {
-								colonnes++;
+								colonnes++; //f
 								colDeacalle++;
 							}
 						}

@@ -540,8 +540,8 @@ public class Wikitext extends Extracteur {
 					}
 
 					for (String item : rowsList) {
-						int colDeacalle = 0;
-						int LigDeacalle = 0;
+						int colDeacalle = 1;
+						int LigDeacalle = 1;
 						if (colonnes == nbCol - 1) {
 							colonnes = 0;
 							lig++;
@@ -554,13 +554,13 @@ public class Wikitext extends Extracteur {
 								colonnes++;
 								colDeacalle++;
 							}
-							if (colonnes >= nbCol - 1) {
+							if (colonnes+10 >= nbCol - 1) {
 								lig++;
-								LigDeacalle = 0;
-								colonnes = 0;
+								LigDeacalle = 1;
+								colonnes = 1;
 							}
-							while (tab[lig][colonnes] != null && colonnes < nbCol - 1) {
-								colonnes++;
+						while (tab[lig][colonnes] != null && colonnes < nbCol - 1) {
+								colonnes++; //f
 								colDeacalle++;
 							}
 						}

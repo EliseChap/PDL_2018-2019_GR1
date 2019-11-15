@@ -554,7 +554,7 @@ public class Wikitext extends Extracteur {
 								colonnes++;
 								colDeacalle++;
 							}
-							if (colonnes+10 >= nbCol - 1) {
+							if (colonnes>= nbCol - 1) {
 								lig++;
 								LigDeacalle = 1;
 								colonnes = 1;

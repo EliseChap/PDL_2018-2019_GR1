@@ -83,7 +83,7 @@ public class Html extends Extracteur {
 
 	@Override
 	/**
-	 * Add the Table to the list lesTableaux if he is not already present
+	 * Add the Table to the list lesTableaux if it is not already present
 	 * 
 	 * @param leTableau
 	 */

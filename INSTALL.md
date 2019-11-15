@@ -80,7 +80,7 @@ The -html and -wikicode commands can be cumulated to have both extractions simul
 
 <h3> Choose the delimiter in the final CSV </h3>
 
-Optional. Buy default, the delimiter is a comma but you can change it with the following command: 
+Optional. Buy default, the delimiters are two points but you can change it with the following command: 
 
 ```
 -delimit[;] : 

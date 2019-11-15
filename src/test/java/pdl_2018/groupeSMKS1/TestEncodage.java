@@ -25,7 +25,9 @@ public class TestEncodage {
 	@Test
 	public void testEncodage() throws IOException {
 	
-		/*String saisie = "wikimatrix-url[https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido]-html-delimit[;]";
+		/* A DECOMMENTER LA PREMIERE FOIS POUR EXTRAIRE LE TABLEAU
+		 * 
+		 * String saisie = "wikimatrix-url[https://en.wikipedia.org/wiki/Comparison_between_Esperanto_and_Ido]-html-delimit[;]";
 		CommandLine com = new CommandLine(saisie);
 		System.out.println(com);  */
 		Reader in = new FileReader("output/html/Alphabets-1.csv");

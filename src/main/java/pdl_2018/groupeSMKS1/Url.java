@@ -88,7 +88,7 @@ public class Url implements IUrl {
 
 	/**
 	 * 
-	 * @para New Url
+	 * @param New Url
 	 * 
 	 */
 
@@ -136,7 +136,7 @@ public class Url implements IUrl {
 
 	/**
 	 *
-	 * @return A booleen that indicates whether the extraction should be done in
+	 * @return A boolean that indicates whether the extraction should be done in
 	 * wikicode (true) or not (false)
 	 */
 	public boolean getExtraWiki() {

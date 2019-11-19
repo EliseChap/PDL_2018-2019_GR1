@@ -12,7 +12,8 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding> UTF-8 </project.build.sourceEncoding>
+		  <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
 		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
 		<sonar.language>java</sonar.language>
@@ -20,9 +21,6 @@
 	</properties>
 
 	<dependencies>
-
-
-
 
 		<dependency>
   <groupId>org.apache.commons</groupId>
@@ -143,10 +141,7 @@
 						<artifactId>jacoco-maven-plugin</artifactId>
 						<version>0.8.2</version>
 					</dependency>
-				</dependencies>
-				
-				
-				
+				</dependencies>				
 			</plugin>
 			
 			<plugin>
@@ -185,6 +180,15 @@
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
+			<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
 		</plugins>
 	</build>
 </project>

@@ -12,6 +12,9 @@ addons:
     organization: "elisechap"
     token:
       secure: "87cf3a2b8e1af8330051ad6c68f919a45b676203"
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=EliseChap_PDL_2018-2019_GR1
 
 notifications:
   email:

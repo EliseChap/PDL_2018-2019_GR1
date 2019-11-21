@@ -549,22 +549,7 @@ public class Wikitext extends Extracteur {
 							colonnes++;
 						}
 
-						if (tab[lig][colonnes] != null) {
-							while (tab[lig][colonnes] != null && colonnes < nbCol - 1) {
-								colonnes++;
-								colDeacalle++;
-							}
-							if (colonnes>= nbCol - 1) {
-								lig++;
-								LigDeacalle = 1;
-								colonnes = 1;
-							}
-						while (tab[lig][colonnes] != null && colonnes < nbCol - 1) {
-								colonnes++; //f
-								colDeacalle++;
-							}
-						}
-
+						
 						tab[lig][colonnes] = checkString(item);
 						int index = 0;
 						boolean find = false;
@@ -589,7 +574,6 @@ public class Wikitext extends Extracteur {
 								find = true;
 								int Newligne = lig + 1;
 								for (int i = 0; i < Integer.parseInt(tableau[0][2]); i++) {
-									tab[Newligne][colonnes] = checkString(tableau[0][3]);
 									Newligne += 1;
 								}
 							}

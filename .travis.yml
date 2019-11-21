@@ -9,11 +9,10 @@ script:
 - mvn sonar:sonar
 addons:
   sonarcloud:
-    organization: "sullidai-github"
+    organization: "elisechap"
     token:
       secure: "87cf3a2b8e1af8330051ad6c68f919a45b676203"
 
 notifications:
   email:
-    - sophie.bouvry1@gmail.com
-    - gogot35@hotmail.fr
+    - chaponelise@gmail.com

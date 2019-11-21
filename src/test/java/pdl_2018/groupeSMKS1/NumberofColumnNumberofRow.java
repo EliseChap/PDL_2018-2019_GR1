@@ -64,6 +64,9 @@ public class NumberofColumnNumberofRow {
 	@Test
 	public void comparisonNumberofColumns() throws IOException{
 		
+		String saisie = "wikimatrix-url[https://en.wikipedia.org/wiki/Comparison_of_World_War_I_tanks]-wikicode-name[fichiertestwikicode.csv]";
+		CommandLine com = new CommandLine(saisie);
+		
 		Reader in = new FileReader("output/wikitext/fichiertestwikicode-1.csv");
 		
       	 int nb = 0;
@@ -87,7 +90,8 @@ public class NumberofColumnNumberofRow {
 
    	              }
 
- 	
+   	String saisie2 = "wikimatrix-url[https://en.wikipedia.org/wiki/Comparison_of_World_War_I_tanks]-html-name[fichiertesthtml.csv]";
+	CommandLine com2 = new CommandLine(saisie2);
 	Reader in2 = new FileReader("output/html/fichiertesthtml-1.csv");
 	
 

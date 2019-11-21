@@ -47,7 +47,7 @@ If you want to convert more than one Wikipedia page you must enter :
 ```
 wikimatrix-import[C://FileAddress]
 ```
-When using the command -import [C: // FileAddress] this extracts the list of URLs from a file. In order to standardize the input file, it was decided in the first version of our application to be limited to "txt" format. Inside this file, the data will be delimited by the "; '" character. Thus each URL will be separated by this character.
+When using the command -import [C: // FileAddress] this extracts the list of URLs from a file. In order to standardize the input file, it was decided in the first version of our application to be limited to "txt" format. 
 
 <b> Attention, the import and url commands can not be realized at the same time. </b>
 
@@ -80,7 +80,7 @@ The -html and -wikicode commands can be cumulated to have both extractions simul
 
 <h3> Choose the delimiter in the final CSV </h3>
 
-Optional. Buy default, the delimiters is a comma but you can change it with the following command: 
+Optional. Buy default, the delimiter is the caractere ":" but you can change it with the following command: 
 
 ```
 -delimit[;] : 

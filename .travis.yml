@@ -11,7 +11,7 @@ addons:
   sonarcloud:
     organization: "elisechap"
     token:
-      secure: "87cf3a2b8e1af8330051ad6c68f919a45b676203"
+      secure: "a9120031edaf13db44637f19010a6e6cddf20341"
 
 notifications:
   email:

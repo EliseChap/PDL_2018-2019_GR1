@@ -71,16 +71,16 @@ public class Wikitext extends Extracteur {
 		EngProcessedPage parse = engine.parse(pageId, contenu, callback);
 
 		parcourirNode(parse);
-	
+
 
 	}
 
 
-/**
- * Find if the node contains "wikiclass"
- * @param e an WtXmlAttributes of a node
- * @return true if the Xmlattribut contains "wikiclass" else false
- */
+	/**
+	 * Find if the node contains "wikiclass"
+	 * @param e an WtXmlAttributes of a node
+	 * @return true if the Xmlattribut contains "wikiclass" else false
+	 */
 	private boolean findClassWikitable(WtXmlAttributes e) {
 
 		int compteur = 0;
@@ -114,12 +114,12 @@ public class Wikitext extends Extracteur {
 		}
 		return valeur;
 	}
-/**
- * 
- * @param e
- * @param textFind
- * @return
- */
+	/**
+	 * 
+	 * @param e
+	 * @param textFind
+	 * @return
+	 */
 	private int findColspanRowSpan(WtXmlAttributes e, String textFind) {
 		int nbSpan = 1;
 		int compteur = 0;
@@ -136,11 +136,11 @@ public class Wikitext extends Extracteur {
 
 		return nbSpan;
 	}
-/**
- * Find the table caption text and return it
- * @param c a table caption node
- * @return the table caption
- */
+	/**
+	 * Find the table caption text and return it
+	 * @param c a table caption node
+	 * @return the table caption
+	 */
 	private String findCaption(WtTableCaption c) {
 		WtBody captionBody = c.getBody();
 		int comp = 0;
@@ -163,12 +163,12 @@ public class Wikitext extends Extracteur {
 		}
 		return titreCaption;
 	}
-	
-/**
- * Find the table header text and return it
- * @param h A tableHeader node
- * @return the table header text
- */
+
+	/**
+	 * Find the table header text and return it
+	 * @param h A tableHeader node
+	 * @return the table header text
+	 */
 	private String findHeader(WtTableHeader h) {
 		WtBody headerBody = h.getBody();
 		int comp = 0;
@@ -195,11 +195,11 @@ public class Wikitext extends Extracteur {
 		}
 		return titreHeader;
 	}
-/**
- * Find the template node text and return it
- * @param t a template node
- * @return the template node text
- */
+	/**
+	 * Find the template node text and return it
+	 * @param t a template node
+	 * @return the template node text
+	 */
 	private String getTextWtTemplate(WtTemplate t) {
 		Iterator<WtNode> l = t.iterator();
 		String valeur = "";
@@ -317,11 +317,11 @@ public class Wikitext extends Extracteur {
 		}
 
 	}
-/**
- * Find the cell text in the body and return if
- * @param celluleBody a Body node
- * @return text of the cell
- */
+	/**
+	 * Find the cell text in the body and return if
+	 * @param celluleBody a Body node
+	 * @return text of the cell
+	 */
 	private String findCellText(WtBody celluleBody) {
 		int comp2 = 0;
 		String text = "";
@@ -350,13 +350,13 @@ public class Wikitext extends Extracteur {
 		}
 		return text;
 	}
-/**
- * Add the table cells text in the rows list
- * @param r A TableRow node
- * @param rows The list of any rows
- * @param nbRow 
- * @return the number of columns in the tableRow
- */
+	/**
+	 * Add the table cells text in the rows list
+	 * @param r A TableRow node
+	 * @param rows The list of any rows
+	 * @param nbRow 
+	 * @return the number of columns in the tableRow
+	 */
 	private int findCol(WtTableRow r, List<String> rows, int nbRow) {
 		WtBody row = r.getBody();
 		int comp = 0;
@@ -436,10 +436,10 @@ public class Wikitext extends Extracteur {
 		}
 		return false;
 	}
-/**
- * browse all node in the table and create a tableau object
- * @param fils a node
- */
+	/**
+	 * browse all node in the table and create a tableau object
+	 * @param fils a node
+	 */
 	private void parcourirNode(WtNode fils) {
 
 		Iterator<WtNode> l = fils.iterator();
@@ -465,7 +465,7 @@ public class Wikitext extends Extracteur {
 
 							WtTableCaption caption = (WtTableCaption) node;
 							titre = findCaption(caption);
-					
+
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_HEADER) {
 
@@ -486,7 +486,7 @@ public class Wikitext extends Extracteur {
 								nbCol = findCol(row, rowsList, compteRows);
 								compteRows++;
 							}
-							
+
 						}
 						if (node.getNodeType() == WtTable.NT_TABLE_CELL) {
 							WtTableCell cell = (WtTableCell) node;
@@ -504,12 +504,13 @@ public class Wikitext extends Extracteur {
 							nbColTemp = nbCol;
 						}
 					}
-		
+
 					if (headerList.size() != 0) {
 						compteRows = compteRows + 1;
 						nbCol = headerList.size();
 					}
 					nbCol = nbColTemp;
+				
 					String[][] tab = new String[compteRows][nbCol];
 
 					int colonnes = 0;
@@ -519,7 +520,7 @@ public class Wikitext extends Extracteur {
 						tab[lig][colonnes] = item;
 						int index = 0;
 						boolean find = false;
-			
+
 						while (rowspanHeaderList.size() > index) {
 							String[][] tableau = rowspanHeaderList.get(index);
 							if (Integer.parseInt(tableau[0][0]) == lig && Integer.parseInt(tableau[0][1]) == colonnes) {
@@ -549,7 +550,7 @@ public class Wikitext extends Extracteur {
 							colonnes++;
 						}
 
-						
+
 						tab[lig][colonnes] = checkString(item);
 						int index = 0;
 						boolean find = false;
@@ -616,11 +617,11 @@ public class Wikitext extends Extracteur {
 		}
 
 	}
-/**
- * Remove the white space 
- * @param valeur a string 
- * @return the new valeur of string
- */
+	/**
+	 * Remove the white space 
+	 * @param valeur a string 
+	 * @return the new valeur of string
+	 */
 	private String checkString(String valeur) {
 		if (!" ".equals(valeur)) {
 			return valeur.trim();
@@ -652,9 +653,9 @@ public class Wikitext extends Extracteur {
 	public String getSousDomain() {
 		return sousDomain;
 	}
-/**
- * Add a tableau object in the lesTableaux list
- */
+	/**
+	 * Add a tableau object in the lesTableaux list
+	 */
 	public void addTableau(Tableau leTableau) {
 		if (!lesTableaux.contains(leTableau)) {
 			lesTableaux.add(leTableau);

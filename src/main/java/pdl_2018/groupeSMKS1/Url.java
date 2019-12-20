@@ -149,7 +149,7 @@ public class Url implements IUrl {
 
 	public String GetSousDomain() {
 		// System.out.println("passers");
-		String[] str = url.split("/wiki/");
+		String[] str = url.split("/w/");  // A REMETTRE A /WIKI/
 		return str[1];
 	}
 

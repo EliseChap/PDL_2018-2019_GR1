@@ -22,6 +22,7 @@ public class TestTableau {
 		Tableau csv = new Tableau(';', "src/test/java/Fichiers_Sortie", "WikiMatrix.csv", tab,"tableau",false);
 		assertEquals(csv.getDelimit(), ';');
 		assertEquals(csv.getCheminCsv(), "src/test/java/Fichiers_Sortie");
+		System.out.println(csv.getNomCsv());
 		assertEquals(csv.getNomCsv(), "WikiMatrix.csv");
 		System.out.println(csv.getTableauToString());
 		assertEquals(csv.getTableauToString(),"[0, 2a, 4h, 6, fds8][sQ1, 3, GRE5, 7, D9]");

@@ -64,10 +64,8 @@ public class Csv implements ICsv {
 			if (nomTab == null || nomTab == "" || nomTab == "WithoutTitle") {
 				nomCsv = "WikiMatrix.csv";
 			} else {
-				
 				nomCsv = nomTab + ".csv";
 			}
-
 		} else {
 			nomCsv = nomCsv;
 		}

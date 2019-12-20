@@ -34,12 +34,13 @@ public class GroundTruth1 {
 
 	@Test
 	public void groundTruth() {
-
+//		Adresse de la révision qu'on a pas réussi à mettre en place.
+//		https://en.wikipedia.org/w/index.php?title=Comparison_of_Afrikaans_and_Dutch&oldid=930917365
 		String saisie = "wikimatrix-url[https://en.wikipedia.org/wiki/Comparison_of_Afrikaans_and_Dutch]-wikicode-name[compafrikaansdutch.csv]";
 		CommandLine com = new CommandLine(saisie);
 		System.out.println(com);
-		List<String[]> csv1 = readFromCsvFile(":", "output/wikitext/compafrikaansdutch-1.csv");
-		List<String[]> csv2 = readFromCsvFile(":", "inputdata/compafdu.csv");
+		List<String[]> csv1 = readFromCsvFile(";", "output/wikitext/compafrikaansdutch-1.csv");
+		List<String[]> csv2 = readFromCsvFile(";", "inputdata/compafdu.csv");
 		for (int i = 0; i < csv1.size(); i++) {
 
 			String[] result1 = csv1.get(i);

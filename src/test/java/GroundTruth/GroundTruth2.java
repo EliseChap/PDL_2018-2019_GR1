@@ -35,6 +35,8 @@ public class GroundTruth2 {
 	@Test
 	public void groundTruth() {
 
+//		Adresse de la révision qu'on a pas réussi à mettre en place.
+//		https://en.wikipedia.org/w/index.php?title=Comparison_between_Ido_and_Interlingua&oldid=922832746
 		String saisie = "wikimatrix-url[https://en.wikipedia.org/wiki/Comparison_between_Ido_and_Interlingua]-html-name[compidointerlingua.csv]";
 		CommandLine com = new CommandLine(saisie);
 		System.out.println(com);
